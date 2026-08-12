@@ -2,6 +2,18 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-12 — Capítulos 06–10 reescritos no formato Manual/Bíblia
+
+- Cap. 06 (Arquitetura): 1569→583 linhas; 32 blocos → 25 obrigações; 3 duplicatas consolidadas;
+  EN traduzido (Multi-Platform Rule, Platform Approval); playbooks de identidade/dados/modelos/tools/segurança integrados.
+- Cap. 07 (Avaliação): 789→336 linhas; 26 blocos → 25 obrigações; evidence pack por tier,
+  audit universe e pirâmide de avaliação integrados à narrativa.
+- Cap. 08 (Implementação): 1571→329 linhas; 27 blocos → 16 obrigações; 6 fundações idênticas
+  consolidadas; gates G0-G7, capability map e roadmaps 90d/24s integrados.
+- Cap. 09 (Operações): 553→285 linhas; 23 blocos → 18 obrigações; 3 pares de duplicatas
+  consolidadas; incident lifecycle, containment ladder e behavioral analytics integrados.
+- Cap. 10 (Métricas): 402→254 linhas; 20 blocos → 19 obrigações; FinOps e KPI/KRI/dashboard integrados.
+
 ## 2026-08-12 — Capítulos 04 e 05 reescritos no formato Manual/Bíblia
 
 - Formato aprovado: narrativa primeiro (visão geral, conceitos, fases com armadilhas comuns),
