@@ -2,7 +2,7 @@
 title: 00 — Controle do documento
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-12
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -10,125 +10,41 @@ source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 
 # 00 — Controle do documento
 
-Este capítulo integra a estrutura clean-room aprovada com o conteúdo substantivo do corpus autoritativo. Requisitos do framework são vendor-neutral; legislação externa, guidance, casos e histórico são identificados como tais. A implementação organizacional exige adoção formal pela authority competente e não decorre do versionamento deste repositório.
 
-## Contrato operacional do capítulo
+## Visão geral
 
-As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
+Todo framework precisa de um "manual do manual": as regras que dizem o que este documento é, quem o aprova, como ele muda e como resolver conflitos quando as regras se chocam. Sem isso, o framework envelhece mal — versões se confundem, ninguém sabe se um texto é norma vigente ou rascunho, e cada time interpreta ambiguidade do seu jeito.
 
-### 00.1 Identificação e finalidade
+Este capítulo é o **contrato de governo do próprio framework**. Ele responde:
 
-**Decisão/ação obrigatória.** Para **identificação e finalidade**, a organização deve atribuir um identificador de documento estável e declarar o problema de decisão, o público e o uso pretendido.
+1. **O que é este documento?** — identificação, finalidade e escopo.
+2. **Quem manda nele?** — owner, autoridade, aprovação e interpretação.
+3. **Como ele muda?** — versão, revisão, processo de mudança e histórico.
+4. **Como ele se relaciona com o resto?** — políticas superiores, padrões locais e resolução de conflitos.
 
-**Registro e evidência.** Registrar identificador, título, finalidade, público, status normativo e localização no repositório no controle do documento.
+Uma leitura atenta deste capítulo evita os dois erros mais caros de qualquer política: **tratar referência técnica como norma vigente** e **reescrever decisões em vez de superá-las**.
 
-**Concluído quando.** Um leitor consegue distinguir este framework, seus produtos dependentes e seus não-objetivos sem depender de conhecimento tribal.
+## 1. O que este framework é
 
-### 00.2 Owner do documento e autoridade responsável
+### 1.1 Identificação e finalidade
 
-**Decisão/ação obrigatória.** Para **owner do documento e autoridade responsável**, a organização deve nomear uma autoridade responsável e um custodiano operacional para o documento.
+O framework tem um identificador estável e declara explicitamente o problema de decisão que resolve, o público a que se destina e o uso pretendido. A finalidade deste repositório: ser a **fonte modular** a partir da qual a política final de governança de IA e agentes é mantida, revisada e versionada.
 
-**Registro e evidência.** Registrar papel, delegado nomeado quando aplicável, fonte de autoridade, rota de contato e regra de sucessão.
+A policy não é um documento monolítico nem depende de plataforma: é composta por princípios, decision rights, requisitos, controles, evidências e regras de lifecycle distribuídos em módulos canônicos.
 
-**Concluído quando.** Aprovação, interpretação, revisão programada e mudança emergencial têm cada uma um tomador de decisão inequívoco.
+**Concluído quando:** um leitor consegue distinguir este framework, seus produtos dependentes e seus não-objetivos sem depender de conhecimento tribal.
 
-### 00.3 Status de aprovação e força normativa
+### 1.2 Dois níveis de adoção (não confundir)
 
-**Decisão/ação obrigatória.** Para **status de aprovação e força normativa**, a organização deve declarar se o artefato é draft, aprovado, histórico, informativo ou descontinuado e o que esse status permite.
+A **release 1.0 deste framework está `adopted`** desde 2026-08-10. Isso significa que esta versão é a baseline canônica estável e que mudança normativa exige proposta, rationale, authority, changelog e release versionada.
 
-**Registro e evidência.** Reter decisão de aprovação, aprovador, data, condições, data de efetividade e evidência de adoção.
+Isso **não** significa que qualquer organização adotou esta policy. A adoção organizacional é uma decisão separada: cada organização declara esta baseline como sua política interna pela sua própria authority competente, com escopo, exceções e obrigações próprias. Enquanto essa decisão não existir, o conteúdo é **referência técnica canônica do framework — não a política vigente daquela organização**.
 
-**Concluído quando.** Nenhum draft, estudo de caso ou fonte histórica pode ser confundido com um requisito organizacional vigente.
+> **Armadilha comum:** confundir os dois níveis transforma versionamento em declaração de conformidade. Nenhum claim de certificação, auditoria independente ou conformidade decorre da adoção da release.
 
-### 00.4 Versão, data de efetividade e ciclo de revisão
+### 1.3 Composição da policy
 
-**Decisão/ação obrigatória.** Para **versão, data de efetividade e ciclo de revisão**, a organização deve versionar toda mudança material e vinculá-la a datas de efetividade, revisão e supersessão.
-
-**Registro e evidência.** Reter descrição da mudança, autor, aprovador, contratos impactados, ação de migração e referência à versão anterior.
-
-**Concluído quando.** Consumidores identificam a versão aplicável e registros incompatíveis são migrados, rejeitados ou explicitamente grandfather.
-
-### 00.5 Escopo de aplicação
-
-**Decisão/ação obrigatória.** Para **escopo de aplicação**, a organização deve enumerar inclusões, exclusões, jurisdições, estágios de lifecycle, unidades organizacionais e classes de stakeholders afetados.
-
-**Registro e evidência.** Reter declaração de escopo com rationale de fronteira, obrigações externas, padrões locais delegados e expiração de exclusões.
-
-**Concluído quando.** O intake consegue encaminhar cada candidato como dentro do escopo, fora do escopo ou exigindo decisão, sem isenção implícita.
-
-### 00.6 Políticas, padrões e registros relacionados
-
-**Decisão/ação obrigatória.** Para **políticas, padrões e registros relacionados**, a organização deve mapear este framework para políticas superiores, padrões subordinados e procedimentos locais sem criar uma segunda fonte canônica.
-
-**Registro e evidência.** Registrar tipo de relacionamento, owner, versão, regra de conflito e o requisito ou decisão exata vinculada.
-
-**Concluído quando.** Um conflito resolve-se por regra de precedência aprovada e artefatos a jusante podem ser avaliados por impacto em caso de mudança.
-
-### 00.7 Processo de mudança, consulta e aprovação
-
-**Decisão/ação obrigatória.** Para **processo de mudança, consulta e aprovação**, a organização deve encaminhar mudanças materiais por análise de impacto, consulta às funções afetadas e aprovação.
-
-**Registro e evidência.** Reter proposta, rationale, papéis consultados, objeções, resultado de compatibilidade, decisão e plano de migração.
-
-**Concluído quando.** Decisões aceitas são superseded em vez de reescritas silenciosamente e dependentes afetados recebem atualização rastreável.
-
-### 00.8 Distribuição, acesso e retenção
-
-**Decisão/ação obrigatória.** Para **distribuição, acesso e retenção**, a organização deve definir quem pode ler, alterar e recuperar o registro, por quanto tempo e sob qual regra de legal hold ou exclusão.
-
-**Registro e evidência.** Registrar classificação, grupos de acesso, custodiano, gatilho de retenção, período mínimo, disposição e caminho de recuperação de auditoria.
-
-**Concluído quando.** Evidências autorizadas são recuperáveis no prazo exigido e dados expirados são descartados sem romper a linhagem exigida.
-
-### 00.9 Interpretação e resolução de conflitos
-
-**Decisão/ação obrigatória.** Para **interpretação e resolução de conflitos**, a organização deve definir a autoridade e a rota de escalonamento para requisitos ambíguos, conflitantes ou localmente inaplicáveis.
-
-**Registro e evidência.** Reter pergunta, interpretações concorrentes, autoridades consultadas, restrição provisória e disposição final.
-
-**Concluído quando.** Times de entrega não resolvem ambiguidade material por conveniência e a decisão é propagada aos registros afetados.
-
-### 00.10 Histórico de revisões
-
-**Decisão/ação obrigatória.** Para **histórico de revisões**, a organização deve versionar toda mudança material e vinculá-la a datas de efetividade, revisão e supersessão.
-
-**Registro e evidência.** Reter descrição da mudança, autor, aprovador, contratos impactados, ação de migração e referência à versão anterior.
-
-**Concluído quando.** Consumidores identificam a versão aplicável e registros incompatíveis são migrados, rejeitados ou explicitamente grandfather.
-
-
-## Conteúdo canônico incorporado
-
-A seção preserva integralmente as unidades atribuídas pela matriz de cobertura. Os marcadores HTML são provenance machine-readable e não alteram o significado normativo.
-
-### Fonte: `docs/governance/policy.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 1, "source_field": "title", "source_heading": "", "source_path": "docs/governance/policy.md", "start_line": "2", "transformation": "synthesize-and-preserve", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** AI Agent Governance Policy — fonte canônica modular
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "19", "index": 2, "source_field": "", "source_heading": "AI Agent Governance Policy — fonte canônica modular", "source_path": "docs/governance/policy.md", "start_line": "18", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-### AI Agent Governance Policy — fonte canônica modular
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "23", "index": 3, "source_field": "", "source_heading": "Propósito", "source_path": "docs/governance/policy.md", "start_line": "20", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Propósito
-
-Este repositório é a fonte modular a partir da qual a **policy final de governança de IA e agentes** será mantida, revisada e versionada. A policy não é um documento monolítico nem depende de uma plataforma específica: ela é composta por princípios, decision rights, requisitos, controls, evidências e regras de lifecycle distribuídos em módulos canônicos.
-
-<!-- source-unit {"classification": "definition", "end_line": "31", "index": 4, "source_field": "", "source_heading": "Dois níveis de adoção", "source_path": "docs/governance/policy.md", "start_line": "24", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Dois níveis de adoção
-
-A **release 1.0 deste framework está `adopted`** desde 2026-08-10, conforme a [ADR-0006](../../project/decisions/source-history/0006-framework-release-1-0-adoption.md). Isso significa que esta versão é a baseline canônica estável e que mudança normativa passa a exigir proposta, rationale, authority, changelog e release versionada.
-
-Isso **não** significa que qualquer organização adotou esta policy. A adoção organizacional é uma decisão separada: cada organização declara esta baseline como sua policy interna pela sua própria authority competente, com escopo, exceções e obrigações próprias. Enquanto essa decisão não existir, o conteúdo é referência técnica canônica do framework — não a policy vigente daquela organização.
-
-Confundir os dois níveis transforma versionamento em declaração de conformidade. Nenhum claim de certificação, auditoria independente ou conformidade decorre da adoção da release.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "46", "index": 5, "source_field": "", "source_heading": "Composição da policy", "source_path": "docs/governance/policy.md", "start_line": "32", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Composição da policy
-
-A policy canônica deste framework é formada por:
+A policy canônica é formada por:
 
 1. [princípios arquiteturais](01-mandate-scope-and-principles.md);
 2. [operating model e decision rights](02-governance-and-accountability.md);
@@ -141,50 +57,109 @@ A policy canônica deste framework é formada por:
 
 O [handbook](../handbook/README.md) define a ordem editorial desses módulos, sem duplicá-los.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "61", "index": 6, "source_field": "", "source_heading": "Conteúdo não normativo", "source_path": "docs/governance/policy.md", "start_line": "47", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Conteúdo não normativo
+### 1.4 O que NÃO é policy (conteúdo não normativo)
 
 Não integram a policy, salvo incorporação explícita e versionada:
 
-- estudos de caso e explicações em `docs/explanations/`;
-- crosswalks e avaliações comparativas em `assessments/`;
-- fontes e referências externas em `references/`;
-- exemplos fictícios em `examples/`;
+- estudos de caso e explicações;
+- crosswalks e avaliações comparativas;
+- fontes e referências externas;
+- exemplos fictícios;
 - roadmap, specs e experimentos;
 - calendários de 90 dias/24 semanas e o plano opcional de piloto;
 - mappings de fornecedores.
 
-Esses artefatos podem informar decisões, mas não criam dependência tecnológica nem requisito normativo por associação.
+Esses artefatos podem informar decisões, mas **não criam dependência tecnológica nem requisito normativo por associação**.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "67", "index": 7, "source_field": "", "source_heading": "Neutralidade de fornecedor", "source_path": "docs/governance/policy.md", "start_line": "62", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Neutralidade de fornecedor
+### 1.5 Neutralidade de fornecedor
 
-A policy define **capabilities, outcomes, controls, evidências e boundaries**, não produtos obrigatórios. Fornecedores e plataformas nomeados podem aparecer como fonte, caso observado ou mapping opcional. Nenhum deles é componente necessário do framework ou condição para conformidade com a policy.
+A policy define **capabilities, outcomes, controls, evidências e boundaries** — não produtos obrigatórios. Fornecedores e plataformas nomeados podem aparecer como fonte, caso observado ou mapping opcional; nenhum deles é componente necessário do framework ou condição para conformidade. Um mapping deve poder ser removido sem alterar princípios, controls, decision gates, schemas ou a arquitetura canônica.
 
-Um mapping deve poder ser removido sem alterar princípios, controls, decision gates, schemas ou a arquitetura canônica.
+### 1.6 Origem histórica (o que alimentou este framework)
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "78", "index": 8, "source_field": "", "source_heading": "Evolução e versionamento", "source_path": "docs/governance/policy.md", "start_line": "68", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Evolução e versionamento
+- A **AI Agent Policy and Governance v1** foi o ponto inicial do trabalho. É preservada byte a byte para rastreabilidade histórica, mas não é usada como fonte normativa recorrente do framework modular.
+- O guia externo "Governança de Agentes de IA em Escala" também é **origem histórica**: seu conteúdo procedural foi absorvido e reescrito no formato canônico. Cópias daquele documento não são normativas e podem conter taxonomia divergente — a conversão para T1–T4 e a separação de `Restricted` como admissibilidade seguem a decisão registrada.
+- Este repositório é a **fonte única e final**. Qualquer publicação em outro formato deve ser derivada destes módulos, nunca mantida como cópia editorial independente.
 
-Mudanças normativas devem:
+## 2. Quem é responsável por este documento
+
+### 2.1 Owner e autoridade
+
+O framework nomeia uma **autoridade responsável** (quem aprova, interpreta e responde por ele) e um **custodiano operacional** (quem mantém o repositório no dia a dia): papel, delegado nomeado quando aplicável, fonte de autoridade, rota de contato e regra de sucessão.
+
+**Concluído quando:** aprovação, interpretação, revisão programada e mudança emergencial têm cada uma um tomador de decisão inequívoco.
+
+### 2.2 Status de aprovação e força normativa
+
+Todo artefato declara seu status — `draft`, `approved`, `histórico`, `informativo` ou `descontinuado` — e o que esse status permite: decisão de aprovação, aprovador, data, condições, data de efetividade e evidência de adoção.
+
+**Concluído quando:** nenhum draft, estudo de caso ou fonte histórica pode ser confundido com um requisito organizacional vigente.
+
+### 2.3 Interpretação e resolução de conflitos
+
+Ambiguidade material não se resolve por conveniência. O framework define a autoridade e a rota de escalonamento para requisitos ambíguos, conflitantes ou localmente inaplicáveis: pergunta, interpretações concorrentes, autoridades consultadas, restrição provisória e disposição final. A decisão é propagada aos registros afetados.
+
+**Concluído quando:** times de entrega não resolvem ambiguidade material por conveniência e a decisão é propagada aos registros afetados.
+
+## 3. Como este documento muda
+
+### 3.1 Versão, efetividade e ciclo de revisão
+
+Toda mudança material é versionada e vinculada a datas de efetividade, revisão e supersessão: descrição da mudança, autor, aprovador, contratos impactados, ação de migração e referência à versão anterior. O ciclo de revisão é definido (trimestral neste framework) e o histórico de revisões registra cada versão com o mesmo rigor.
+
+**Concluído quando:** consumidores identificam a versão aplicável e registros incompatíveis são migrados, rejeitados ou explicitamente grandfather.
+
+### 3.2 Processo de mudança, consulta e aprovação
+
+Mudanças materiais passam por análise de impacto, consulta às funções afetadas e aprovação: proposta, rationale, papéis consultados, objeções, resultado de compatibilidade, decisão e plano de migração. As regras de evolução normativa:
 
 1. declarar o requisito alterado e sua justificativa;
 2. registrar decisão e authority;
 3. atualizar controls, evidências e impactos operacionais;
-4. preservar versões anteriores;
+4. **preservar versões anteriores**;
 5. incluir changelog e migration guidance quando necessário;
 6. passar pelos quality gates do repositório antes de release.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "85", "index": 9, "source_field": "", "source_heading": "Origem histórica", "source_path": "docs/governance/policy.md", "start_line": "79", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Origem histórica
+**Concluído quando:** decisões aceitas são superseded em vez de reescritas silenciosamente e dependentes afetados recebem atualização rastreável.
 
-A [AI Agent Policy and Governance v1](../../project/history/ai-agent-policy-and-governance-v1.md) foi o ponto inicial deste trabalho. Ela é preservada byte a byte para rastreabilidade histórica, mas não é usada como fonte normativa recorrente do framework modular.
+### 3.3 Distribuição, acesso e retenção
 
-O guia externo "Governança de Agentes de IA em Escala", mantido anteriormente como documento independente, também é **origem histórica**. Seu conteúdo procedural foi absorvido por este repositório conforme a [ADR-0003](../../project/decisions/0001-canonical-source-and-product-boundaries.md), reescrito no formato canônico. Cópias daquele documento não são normativas e podem conter taxonomia divergente: a conversão para T1–T4 e a separação de `Restricted` como admissibilidade seguem a [ADR-0009](../architecture/decisions/0009-risk-tier-and-admissibility.md).
+Define-se quem pode ler, alterar e recuperar o registro, por quanto tempo e sob qual regra de legal hold ou exclusão: classificação, grupos de acesso, custodiano, gatilho de retenção, período mínimo, disposição e caminho de recuperação de auditoria.
 
-Este repositório é a **fonte única e final**. Qualquer publicação em outro formato deve ser derivada destes módulos, nunca mantida como cópia editorial independente.
+**Concluído quando:** evidências autorizadas são recuperáveis no prazo exigido e dados expirados são descartados sem romper a linhagem exigida.
 
-## Acceptance criteria
+## 4. Escopo e relacionamentos
+
+### 4.1 Escopo de aplicação
+
+O framework enumera inclusões, exclusões, jurisdições, estágios de lifecycle, unidades organizacionais e classes de stakeholders afetados: declaração de escopo com rationale de fronteira, obrigações externas, padrões locais delegados e expiração de exclusões.
+
+**Concluído quando:** o intake consegue encaminhar cada candidato como dentro do escopo, fora do escopo ou exigindo decisão, sem isenção implícita.
+
+### 4.2 Políticas, padrões e registros relacionados
+
+O framework mapeia políticas superiores, padrões subordinados e procedimentos locais **sem criar uma segunda fonte canônica**: tipo de relacionamento, owner, versão, regra de conflito e o requisito ou decisão exata vinculada.
+
+**Concluído quando:** um conflito resolve-se por regra de precedência aprovada e artefatos a jusante podem ser avaliados por impacto em caso de mudança.
+
+## 5. Referência normativa
+
+Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 1–4 explicam o porquê.
+
+| # | Obrigação | Evidência mínima | Concluído quando |
+|---|---|---|---|
+| R1 | Atribuir identificador estável e declarar problema de decisão, público e uso pretendido | identificador, título, finalidade, público, status normativo, localização no repositório | leitor distingue o framework, seus produtos dependentes e não-objetivos sem conhecimento tribal |
+| R2 | Nomear autoridade responsável e custodiano operacional | papel, delegado, fonte de autoridade, rota de contato, regra de sucessão | aprovação, interpretação, revisão e mudança emergencial têm tomador de decisão inequívoco |
+| R3 | Declarar status (draft/aprovado/histórico/informativo/descontinuado) e o que ele permite | decisão de aprovação, aprovador, data, condições, efetividade, evidência de adoção | nenhum draft, caso ou fonte histórica é confundido com requisito vigente |
+| R4 | Versionar toda mudança material com datas de efetividade, revisão e supersessão | descrição, autor, aprovador, contratos impactados, migração, referência à versão anterior | consumidores identificam versão aplicável; incompatíveis migrados/rejeitados/grandfather |
+| R5 | Enumerar inclusões, exclusões, jurisdições, estágios, unidades e stakeholders | declaração de escopo com rationale, obrigações externas, padrões delegados, expiração de exclusões | intake encaminha cada candidato sem isenção implícita |
+| R6 | Mapear políticas superiores, padrões e procedimentos sem segunda fonte canônica | tipo de relacionamento, owner, versão, regra de conflito, requisito vinculado | conflito resolve por precedência aprovada; dependentes avaliados por impacto |
+| R7 | Encaminhar mudanças materiais por impacto, consulta e aprovação | proposta, rationale, papéis consultados, objeções, compatibilidade, decisão, migração | decisões aceitas são superseded, não reescritas; dependentes atualizados |
+| R8 | Definir leitura/alteração/recuperação do registro, prazo e regra de legal hold | classificação, grupos de acesso, custodiano, gatilho, período mínimo, disposição, recuperação | evidências recuperáveis no prazo; expirados descartados sem romper linhagem |
+| R9 | Definir autoridade e rota de escalonamento para requisitos ambíguos ou conflitantes | pergunta, interpretações concorrentes, autoridades consultadas, restrição provisória, disposição | times não resolvem ambiguidade por conveniência; decisão propagada |
+| R10 | Versionar o histórico de revisões com o mesmo rigor das mudanças | histórico com descrição, autor, aprovador, contratos impactados, migração, versão anterior | qualquer versão anterior é recuperável e rastreável |
+
+## 6. Acceptance criteria
 
 - todas as decisões deste capítulo possuem authority, owner e evidência recuperável;
 - requisitos aplicáveis estão ligados ao catálogo de controles e ao método de verificação;
