@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Assemble a derived documentation site from the normalized repository tree.
+"""Monta um site de documentação derivado a partir da árvore normalizada do repositório.
 
-Markdown and structured contracts remain canonical in-place. This script copies
-them to ``site_src`` without changing paths, then asks MkDocs to build the derived
-site. It never publishes and never edits the canonical corpus.
+Markdown e contratos estruturados permanecem canônicos no lugar. Este script os copia
+para ``site_src`` sem alterar caminhos e então pede ao MkDocs que construa o site
+derivado. Ele nunca publica e nunca edita o corpus canônico.
 """
 
 from __future__ import annotations
@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STAGING = ROOT / "site_src"
 
-# Folders whose content is published. Everything else stays out of the site.
+# Pastas cujo conteúdo é publicado. Todo o resto fica fora do site.
 CONTENT_DIRS = (
     "docs",
     "toolkit",
@@ -28,13 +28,13 @@ CONTENT_DIRS = (
 )
 CONTENT_FILES = ("README.md", "CHANGELOG.md", "ROADMAP.md", "LICENSE", "CONTRIBUTING.md")
 
-# Extensions copied into the staging area. Schemas and examples are published as
-# source so a reader can inspect the contract, not only its description.
+# Extensões copiadas para a área de staging. Schemas e exemplos são publicados como
+# fonte para que o leitor possa inspecionar o contrato, não apenas sua descrição.
 PUBLISHED_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".py"}
 
-# Byte-preserved source history intentionally retains source-era references. The
-# derived site rewrites only its staged copy so strict navigation can resolve the
-# new repository locations without altering provenance artifacts.
+# O histórico de fonte preservado byte a byte retém intencionalmente referências da era da
+# fonte. O site derivado reescreve somente sua cópia em staging para que a navegação estrita
+# resolva os novos caminhos do repositório sem alterar artefatos de provenance.
 STAGED_HISTORICAL_LINK_REWRITES = {
     "project/history/SOURCE_CHANGELOG.md": {
         "docs/architecture/decisions/0009-risk-tier-and-admissibility.md": (

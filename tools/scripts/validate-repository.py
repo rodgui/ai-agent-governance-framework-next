@@ -115,7 +115,7 @@ def relative(path: Path) -> str:
 
 
 def is_historical_path(path: Path) -> bool:
-    """Return true when links are immutable source-era data, not target navigation."""
+    """Retorna verdadeiro quando os links são dados imutáveis da era da fonte, não navegação do destino."""
     rel = relative(path)
     return rel.startswith(
         (
@@ -127,7 +127,7 @@ def is_historical_path(path: Path) -> bool:
 
 
 def mask_provenanced_historical_units(text: str) -> str:
-    """Mask source-era blocks integrated verbatim into a maintained target chapter."""
+    """Mascara blocos da era da fonte integrados verbatim em um capítulo-alvo mantido."""
     marker_re = re.compile(r"<!-- source-unit (\{.*?\}) -->")
     matches = list(marker_re.finditer(text))
     if not matches:
@@ -325,8 +325,8 @@ def validate_citations(markdown_files: list[Path]) -> list[Issue]:
     issues: list[Issue] = []
     for path in markdown_files:
         text = path.read_text(encoding="utf-8")
-        # Master Document chapters contain independently imported source sections.
-        # Citation numbers are local to each section, not global to the whole chapter.
+        # Capítulos Master Document contêm seções de fonte importadas independentemente.
+        # Os números de citação são locais a cada seção, não globais ao capítulo inteiro.
         sections = re.split(r"(?m)^### Fonte: `[^`]+`\s*$", text)
         for index, section in enumerate(sections):
             source_blocks = list(re.finditer(r"(?m)^#{2,6} Sources\s*$", section))
@@ -386,12 +386,12 @@ def validate_json_references(parsed: dict[str, Any]) -> list[Issue]:
 
 
 def validate_case_bundle(paths: dict[str, str], parsed: dict[str, Any]) -> list[Issue]:
-    """Cross-record invariants for one case bundle.
+    """Invariantes entre registros (cross-record) para um bundle de caso.
 
-    `paths` maps a role (registry, blueprint, releaseManifest, model/source/tool catalog,
-    auditEvent) to the repository-relative file that plays it. Binding the invariants to a
-    bundle instead of fixed paths is what lets a second reference case be verified by the
-    same rules as the first.
+    `paths` mapeia um papel (registry, blueprint, releaseManifest, catálogo de
+    modelo/fonte/tool, auditEvent) para o arquivo relativo ao repositório que o desempenha.
+    Vincular os invariantes a um bundle em vez de caminhos fixos é o que permite que um
+    segundo caso de referência seja verificado pelas mesmas regras do primeiro.
     """
     issues: list[Issue] = []
     case_label = paths.get("caseLabel", "examples")
@@ -691,12 +691,12 @@ def validate_case_bundle(paths: dict[str, str], parsed: dict[str, Any]) -> list[
 
 
 def discover_case_bundles(parsed: dict[str, Any]) -> list[dict[str, str]]:
-    """Locate every reference case whose records must satisfy the cross-record invariants.
+    """Localiza todo caso de referência cujos registros devem satisfazer os invariantes entre registros.
 
-    Two shapes are recognised. The historical case keeps its records at the root of
-    `toolkit/examples/`, where the rest of the corpus already links to them. New cases live under
-    `toolkit/examples/cases/<case-id>/` with one file per role. Discovery by convention is what
-    keeps a new case from being added without being verified.
+    Duas formas são reconhecidas. O caso histórico mantém seus registros na raiz de
+    `toolkit/examples/`, onde o restante do corpus já vincula a eles. Novos casos vivem sob
+    `toolkit/examples/cases/<case-id>/` com um arquivo por papel. A descoberta por convenção é
+    o que impede que um novo caso seja adicionado sem ser verificado.
     """
     bundles: list[dict[str, str]] = [dict(FLAT_CASE_BUNDLE)]
     seen: set[str] = set()
@@ -1172,7 +1172,7 @@ def validate_policy_integrity() -> list[Issue]:
 
 
 def validate_tier_taxonomy() -> list[Issue]:
-    """Enforce ADR-0009: T1-T4 is the canonical risk-tier taxonomy."""
+    """Aplica a ADR-0009: T1-T4 é a taxonomia canônica de tier de risco."""
     issues: list[Issue] = []
     enum_locations = [
         ("toolkit/schemas/control-catalog.schema.json", ("$defs", "control", "properties", "appliesToTiers", "items")),
@@ -1219,10 +1219,10 @@ def validate_tier_taxonomy() -> list[Issue]:
 
 
 def validate_tier_labels(markdown_files: list[Path]) -> list[Issue]:
-    """Enforce ADR-0009 in prose: a tier column says T1-T4, not baixo/moderado/alto/critico.
+    """Aplica a ADR-0009 em prosa: uma coluna de tier diz T1-T4, não baixo/moderado/alto/critico.
 
-    Only the first column is inspected. A row like `| aprovar T1 | baixo |` uses the word
-    as an attribute of something else, not as the tier label, and stays legitimate.
+    Somente a primeira coluna é inspecionada. Uma linha como `| aprovar T1 | baixo |` usa a
+    palavra como atributo de outra coisa, não como rótulo de tier, e permanece legítima.
     """
     issues: list[Issue] = []
     for path in markdown_files:
@@ -1243,7 +1243,7 @@ def validate_tier_labels(markdown_files: list[Path]) -> list[Issue]:
 
 
 def validate_control_scope() -> list[Issue]:
-    """Enforce ADR-0010: an organization-scoped control cannot block a release."""
+    """Aplica a ADR-0010: um controle com escopo organizacional não pode bloquear um release."""
     issues: list[Issue] = []
     catalog_path = ROOT / "toolkit/controls/control-catalog.json"
     if not catalog_path.exists():
@@ -1384,8 +1384,8 @@ def validate_sensitive_content(files: list[Path]) -> list[Issue]:
         except UnicodeDecodeError:
             continue
         rel = relative(path)
-        # Local-only operational records must identify protected paths to fail closed;
-        # they are excluded from publishable framework-content path checks.
+        # Registros operacionais locais devem identificar caminhos protegidos para falhar de forma
+        # fail-closed; eles são excluídos das verificações de caminho do conteúdo publicável do framework.
         if rel == "AGENTS.md" or rel.startswith("project/migration/"):
             text = text.replace("/Users/" + "rodgui", "/LOCAL_USER")
         if rel == "tools/scripts/validate-repository.py":

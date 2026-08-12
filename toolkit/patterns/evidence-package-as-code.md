@@ -13,7 +13,7 @@ related:
 
 # Pattern — Evidence Package as Code
 
-## Intent
+## Intenção
 
 Versionar e validar a evidência de governança junto com o agent version, sem depender de e-mails ou decks dispersos.
 

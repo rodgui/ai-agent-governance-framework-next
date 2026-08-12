@@ -11,7 +11,7 @@ related:
   - governance-forum-tor.md
 ---
 
-# Governance RACI Template
+# Template RACI de Governança
 
 Use RACI para clarificar execução; use **decision rights** para clarificar authority. Cada decisão material possui um único accountable, mesmo quando várias funções são consulted.
 

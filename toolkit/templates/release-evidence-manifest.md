@@ -12,7 +12,7 @@ related:
   - release-decision-checklist.md
 ---
 
-# Release Evidence Manifest Template
+# Template do Manifesto de Evidências de Release
 
 Este é o formato humano para preparar a decisão. A versão final machine-readable deve validar contra o [schema](../schemas/release-evidence-manifest.schema.json). O manifesto aponta para evidências; não duplica nem substitui os artefatos de origem.
 

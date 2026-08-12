@@ -13,7 +13,7 @@ related:
 
 # Pattern — Lifecycle Attestation and Sunset
 
-## Intent
+## Intenção
 
 Fazer aprovação expirar e exigir reconfirmação periódica de purpose, owners, risk, controls, evidence, uso e valor.
 

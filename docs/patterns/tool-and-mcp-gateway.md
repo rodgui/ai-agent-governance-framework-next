@@ -13,7 +13,7 @@ related:
 
 # Pattern — Tool and MCP Gateway
 
-## Intent
+## Intenção
 
 Interpor um enforcement point entre agentes e capabilities para validar identidade, policy, argumentos, destino e efeito.
 

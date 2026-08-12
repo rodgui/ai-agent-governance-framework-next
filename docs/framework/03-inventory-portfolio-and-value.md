@@ -16,173 +16,173 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 03.1 Discovery of existing AI and agents
+### 03.1 Descoberta de IA e agentes existentes
 
-**Required decision/action.** For **discovery of existing ai and agents**, the organization must discover deployed, experimental, embedded and supplier-operated assets through multiple reconciled sources.
+**Decisão/ação obrigatória.** Para **descoberta de IA e agentes existentes**, a organização deve descobrir ativos implantados, experimentais, embarcados e operados por fornecedores por meio de múltiplas fontes reconciliadas.
 
-**Record and evidence.** Retain discovery source, last seen, confidence, owner match, unresolved identity and remediation status.
+**Registro e evidência.** Reter fonte de descoberta, última visualização, confiança, correspondência de owner, identidade não resolvida e status de remediação.
 
-**Done when.** Unowned or shadow assets enter containment and ownership resolution instead of being silently accepted into inventory.
+**Concluído quando.** Ativos sem owner ou shadow entram em contenção e resolução de ownership em vez de serem silenciosamente aceitos no inventário.
 
-### 03.2 Shadow AI and unowned assets
+### 03.2 Shadow AI e ativos sem owner
 
-**Required decision/action.** For **shadow ai and unowned assets**, the organization must discover deployed, experimental, embedded and supplier-operated assets through multiple reconciled sources.
+**Decisão/ação obrigatória.** Para **shadow AI e ativos sem owner**, a organização deve descobrir ativos implantados, experimentais, embarcados e operados por fornecedores por meio de múltiplas fontes reconciliadas.
 
-**Record and evidence.** Retain discovery source, last seen, confidence, owner match, unresolved identity and remediation status.
+**Registro e evidência.** Reter fonte de descoberta, última visualização, confiança, correspondência de owner, identidade não resolvida e status de remediação.
 
-**Done when.** Unowned or shadow assets enter containment and ownership resolution instead of being silently accepted into inventory.
+**Concluído quando.** Ativos sem owner ou shadow entram em contenção e resolução de ownership em vez de serem silenciosamente aceitos no inventário.
 
-### 03.3 AI-system and agent registry
+### 03.3 Registry de sistemas de IA e agentes
 
-**Required decision/action.** For **ai-system and agent registry**, the organization must operate the registry as the authoritative identity and lifecycle index for every in-scope agent.
+**Decisão/ação obrigatória.** Para **registry de sistemas de IA e agentes**, a organização deve operar o registry como o índice autoritativo de identidade e lifecycle de todo agente em escopo.
 
-**Record and evidence.** Validate stable ID, owner, purpose, tier, admissibility, version, environment, state, dependencies and last-attested date.
+**Registro e evidência.** Validar ID estável, owner, finalidade, tier, admissibilidade, versão, ambiente, estado, dependências e data do último attestation.
 
-**Done when.** Automated and manual reconciliation detects missing, stale, duplicate and invalid records and blocks required transitions.
+**Concluído quando.** Reconciliação automatizada e manual detecta registros ausentes, obsoletos, duplicados e inválidos e bloqueia transições exigidas.
 
-### 03.4 Mandatory inventory fields
+### 03.4 Campos obrigatórios do inventário
 
-**Required decision/action.** For **mandatory inventory fields**, the organization must operate the registry as the authoritative identity and lifecycle index for every in-scope agent.
+**Decisão/ação obrigatória.** Para **campos obrigatórios do inventário**, a organização deve operar o registry como o índice autoritativo de identidade e lifecycle de todo agente em escopo.
 
-**Record and evidence.** Validate stable ID, owner, purpose, tier, admissibility, version, environment, state, dependencies and last-attested date.
+**Registro e evidência.** Validar ID estável, owner, finalidade, tier, admissibilidade, versão, ambiente, estado, dependências e data do último attestation.
 
-**Done when.** Automated and manual reconciliation detects missing, stale, duplicate and invalid records and blocks required transitions.
+**Concluído quando.** Reconciliação automatizada e manual detecta registros ausentes, obsoletos, duplicados e inválidos e bloqueia transições exigidas.
 
-### 03.5 Ownership and accountability records
+### 03.5 Registros de ownership e accountability
 
-**Required decision/action.** For **ownership and accountability records**, the organization must bind each asset to active business, technical and operational owners with a succession rule.
+**Decisão/ação obrigatória.** Para **registros de ownership e accountability**, a organização deve vincular cada ativo a owners ativos de negócio, técnico e operacional com regra de sucessão.
 
-**Record and evidence.** Record role identifiers, acceptance date, delegates, organizational unit, status and orphan-detection evidence.
+**Registro e evidência.** Registrar identificadores de papel, data de aceite, delegados, unidade organizacional, status e evidência de detecção de órfãos.
 
-**Done when.** Owner departure or inactivity triggers reassignment, suspension or retirement before the record becomes orphaned.
+**Concluído quando.** Saída ou inatividade do owner dispara redesignação, suspensão ou aposentadoria antes de o registro tornar-se órfão.
 
-### 03.6 Purpose, intended users and affected stakeholders
+### 03.6 Finalidade, usuários pretendidos e stakeholders afetados
 
-**Required decision/action.** For **purpose, intended users and affected stakeholders**, the organization must document intended purpose, users, affected non-users, excluded uses and foreseeable scale.
+**Decisão/ação obrigatória.** Para **finalidade, usuários pretendidos e stakeholders afetados**, a organização deve documentar finalidade pretendida, usuários, não usuários afetados, usos excluídos e escala previsível.
 
-**Record and evidence.** Retain use-case statement, stakeholder analysis, affected groups, environment, volume and material assumptions.
+**Registro e evidência.** Reter declaração do caso de uso, análise de stakeholders, grupos afetados, ambiente, volume e premissas materiais.
 
-**Done when.** Evaluation and monitoring cover the actual affected population rather than only the requesting team.
+**Concluído quando.** Avaliação e monitoramento cobrem a população efetivamente afetada em vez de somente o time solicitante.
 
-### 03.7 Models, data, tools, integrations and third parties
+### 03.7 Modelos, dados, ferramentas, integrações e terceiros
 
-**Required decision/action.** For **models, data, tools, integrations and third parties**, the organization must enumerate every governed dependency and the authority inherited by each connection.
+**Decisão/ação obrigatória.** Para **modelos, dados, ferramentas, integrações e terceiros**, a organização deve enumerar toda dependência governada e a authority herdada por cada conexão.
 
-**Record and evidence.** The blueprint must reference approved model, data source, tool, integration and supplier records with versions and restrictions.
+**Registro e evidência.** O blueprint deve referenciar registros aprovados de modelo, fonte de dados, ferramenta, integração e fornecedor com versões e restrições.
 
-**Done when.** An unregistered or incompatible dependency prevents promotion and material dependency change triggers reassessment.
+**Concluído quando.** Uma dependência não registrada ou incompatível impede a promoção e mudança material de dependência dispara reavaliação.
 
-### 03.8 Environments, versions and lifecycle state
+### 03.8 Ambientes, versões e estado de lifecycle
 
-**Required decision/action.** For **environments, versions and lifecycle state**, the organization must maintain a consistent identity across environments while separating configuration, authority and lifecycle state.
+**Decisão/ação obrigatória.** Para **ambientes, versões e estado de lifecycle**, a organização deve manter identidade consistente entre ambientes enquanto separa configuração, authority e estado de lifecycle.
 
-**Record and evidence.** Record environment, release, artifact hashes, deployed configuration, state, promotion source and rollback target.
+**Registro e evidência.** Registrar ambiente, release, hashes de artefato, configuração implantada, estado, fonte de promoção e alvo de rollback.
 
-**Done when.** Operators can reconcile desired and observed state and cannot mistake test approval for production authorization.
+**Concluído quando.** Operadores conseguem reconciliar estado desejado e observado e não confundem aprovação de teste com autorização de produção.
 
-### 03.9 Intake of new demand
+### 03.9 Intake de nova demanda
 
-**Required decision/action.** For **intake of new demand**, the organization must capture the problem, proposed mechanism, owner and decision need before design work begins.
+**Decisão/ação obrigatória.** Para **intake de nova demanda**, a organização deve capturar o problema, o mecanismo proposto, o owner e a necessidade de decisão antes de iniciar o trabalho de design.
 
-**Record and evidence.** The intake record must include purpose, baseline, users, affected persons, data, actions, alternatives and urgency.
+**Registro e evidência.** O registro de intake deve incluir finalidade, baseline, usuários, pessoas afetadas, dados, ações, alternativas e urgência.
 
-**Done when.** The request is routed to appropriateness, risk and portfolio decisions without bypassing ownership or scope checks.
+**Concluído quando.** A solicitação é encaminhada às decisões de adequação, risco e portfólio sem ignorar verificações de ownership ou escopo.
 
-### 03.10 Appropriateness: whether an agent is the right mechanism
+### 03.10 Adequação: se um agente é o mecanismo certo
 
-**Required decision/action.** For **appropriateness: whether an agent is the right mechanism**, the organization must compare an agent with deterministic automation, workflow, search, analytics and non-technical alternatives.
+**Decisão/ação obrigatória.** Para **adequação: se um agente é o mecanismo certo**, a organização deve comparar um agente com automação determinística, workflow, busca, analytics e alternativas não técnicas.
 
-**Record and evidence.** Record alternatives, need for autonomy, uncertainty, expected benefit, failure cost and architectural decision.
+**Registro e evidência.** Registrar alternativas, necessidade de autonomia, incerteza, benefício esperado, custo de falha e decisão arquitetural.
 
-**Done when.** An agent proceeds only when its distinctive capability is necessary and the additional governance burden is accepted.
+**Concluído quando.** Um agente prossegue somente quando sua capacidade distintiva é necessária e o ônus adicional de governança é aceito.
 
-### 03.11 Business case and measurable hypothesis
+### 03.11 Business case e hipótese mensurável
 
-**Required decision/action.** For **business case and measurable hypothesis**, the organization must define a falsifiable outcome, pre-change baseline and credible counterfactual with an evidence cutoff.
+**Decisão/ação obrigatória.** Para **business case e hipótese mensurável**, a organização deve definir um resultado falseável, baseline pré-mudança e contrafactual crível com corte de evidências.
 
-**Record and evidence.** Record metric owner, population, formula, target, source, confounders, cost and decision threshold.
+**Registro e evidência.** Registrar owner da métrica, população, fórmula, alvo, fonte, confounders, custo e threshold de decisão.
 
-**Done when.** The authority can distinguish creation, adoption, quality and outcome and can stop work when evidence does not support expansion.
+**Concluído quando.** A authority consegue distinguir criação, adoção, qualidade e resultado e pode interromper o trabalho quando a evidência não suporta expansão.
 
-### 03.12 Baseline and counterfactual
+### 03.12 Baseline e contrafactual
 
-**Required decision/action.** For **baseline and counterfactual**, the organization must define a falsifiable outcome, pre-change baseline and credible counterfactual with an evidence cutoff.
+**Decisão/ação obrigatória.** Para **baseline e contrafactual**, a organização deve definir um resultado falseável, baseline pré-mudança e contrafactual crível com corte de evidências.
 
-**Record and evidence.** Record metric owner, population, formula, target, source, confounders, cost and decision threshold.
+**Registro e evidência.** Registrar owner da métrica, população, fórmula, alvo, fonte, confounders, custo e threshold de decisão.
 
-**Done when.** The authority can distinguish creation, adoption, quality and outcome and can stop work when evidence does not support expansion.
+**Concluído quando.** A authority consegue distinguir criação, adoção, qualidade e resultado e pode interromper o trabalho quando a evidência não suporta expansão.
 
-### 03.13 Portfolio prioritization
+### 03.13 Priorização de portfólio
 
-**Required decision/action.** For **portfolio prioritization**, the organization must prioritize the portfolio using value evidence, risk, dependency, reuse and capacity rather than sponsor preference alone.
+**Decisão/ação obrigatória.** Para **priorização de portfólio**, a organização deve priorizar o portfólio usando evidência de valor, risco, dependência, reuso e capacidade em vez de preferência do sponsor.
 
-**Record and evidence.** Record comparable scores, duplicate capabilities, shared services, constraints, decision and review date.
+**Registro e evidência.** Registrar pontuações comparáveis, capacidades duplicadas, serviços compartilhados, restrições, decisão e data de revisão.
 
-**Done when.** The portfolio authority can fund, pause, merge, restrict or retire items and the decision propagates to lifecycle records.
+**Concluído quando.** A authority de portfólio consegue financiar, pausar, mesclar, restringir ou aposentar itens e a decisão propaga-se aos registros de lifecycle.
 
-### 03.14 Duplication, reuse and shared capabilities
+### 03.14 Duplicação, reuso e capacidades compartilhadas
 
-**Required decision/action.** For **duplication, reuse and shared capabilities**, the organization must prioritize the portfolio using value evidence, risk, dependency, reuse and capacity rather than sponsor preference alone.
+**Decisão/ação obrigatória.** Para **duplicação, reuso e capacidades compartilhadas**, a organização deve priorizar o portfólio usando evidência de valor, risco, dependência, reuso e capacidade em vez de preferência do sponsor.
 
-**Record and evidence.** Record comparable scores, duplicate capabilities, shared services, constraints, decision and review date.
+**Registro e evidência.** Registrar pontuações comparáveis, capacidades duplicadas, serviços compartilhados, restrições, decisão e data de revisão.
 
-**Done when.** The portfolio authority can fund, pause, merge, restrict or retire items and the decision propagates to lifecycle records.
+**Concluído quando.** A authority de portfólio consegue financiar, pausar, mesclar, restringir ou aposentar itens e a decisão propaga-se aos registros de lifecycle.
 
-### 03.15 Cost, consumption and FinOps
+### 03.15 Custo, consumo e FinOps
 
-**Required decision/action.** For **cost, consumption and finops**, the organization must attribute consumption and total operating cost to agent, owner, environment and measurable outcome.
+**Decisão/ação obrigatória.** Para **custo, consumo e FinOps**, a organização deve atribuir consumo e custo operacional total a agente, owner, ambiente e resultado mensurável.
 
-**Record and evidence.** Record unit cost, budget, quota, forecast, variance, shared-cost allocation, anomaly and optimization decision.
+**Registro e evidência.** Registrar custo unitário, orçamento, quota, previsão, variância, alocação de custo compartilhado, anomalia e decisão de otimização.
 
-**Done when.** Threshold breach triggers throttling or review and cost claims remain separate from value realization claims.
+**Concluído quando.** Violação de threshold dispara throttling ou revisão e alegações de custo permanecem separadas de alegações de realização de valor.
 
-### 03.16 Adoption and utilization
+### 03.16 Adoção e utilização
 
-**Required decision/action.** For **adoption and utilization**, the organization must measure intended adoption, meaningful use and unsafe workaround behavior by target population.
+**Decisão/ação obrigatória.** Para **adoção e utilização**, a organização deve medir adoção pretendida, uso significativo e comportamento de workaround inseguro por população-alvo.
 
-**Record and evidence.** Record eligible population, active use, task completion, abandonment, support demand, feedback and sampling limitations.
+**Registro e evidência.** Registrar população elegível, uso ativo, conclusão de tarefa, abandono, demanda de suporte, feedback e limitações de amostragem.
 
-**Done when.** The owner can distinguish availability from useful adoption and can change training, design or rollout based on evidence.
+**Concluído quando.** O owner consegue distinguir disponibilidade de adoção útil e pode mudar treinamento, design ou rollout com base em evidência.
 
-### 03.17 Outcome and value measurement
+### 03.17 Medição de resultado e valor
 
-**Required decision/action.** For **outcome and value measurement**, the organization must define a falsifiable outcome, pre-change baseline and credible counterfactual with an evidence cutoff.
+**Decisão/ação obrigatória.** Para **medição de resultado e valor**, a organização deve definir um resultado falseável, baseline pré-mudança e contrafactual crível com corte de evidências.
 
-**Record and evidence.** Record metric owner, population, formula, target, source, confounders, cost and decision threshold.
+**Registro e evidência.** Registrar owner da métrica, população, fórmula, alvo, fonte, confounders, custo e threshold de decisão.
 
-**Done when.** The authority can distinguish creation, adoption, quality and outcome and can stop work when evidence does not support expansion.
+**Concluído quando.** A authority consegue distinguir criação, adoção, qualidade e resultado e pode interromper o trabalho quando a evidência não suporta expansão.
 
-### 03.18 Procurement and supplier intake
+### 03.18 Procurement e intake de fornecedores
 
-**Required decision/action.** For **procurement and supplier intake**, the organization must apply equivalent governance to built, bought, configured, SaaS, low-code and supplier-operated agents.
+**Decisão/ação obrigatória.** Para **procurement e intake de fornecedores**, a organização deve aplicar governança equivalente a agentes construídos, comprados, configurados, SaaS, low-code e operados por fornecedores.
 
-**Record and evidence.** Record supplier, service boundary, contractual duties, evidence supplied, sub-processors, exit rights, owner and unresolved gaps.
+**Registro e evidência.** Registrar fornecedor, fronteira de serviço, deveres contratuais, evidências fornecidas, subprocessadores, direitos de saída, owner e lacunas não resolvidas.
 
-**Done when.** Outsourcing does not remove accountability and an unevidenced supplier claim cannot satisfy a blocking control.
+**Concluído quando.** A terceirização não remove a accountability e uma alegação de fornecedor sem evidência não pode satisfazer um controle bloqueante.
 
-### 03.19 Third-party documentation obligations
+### 03.19 Obrigações de documentação de terceiros
 
-**Required decision/action.** For **third-party documentation obligations**, the organization must make this inventory or portfolio capability authoritative for all in-scope agents.
+**Decisão/ação obrigatória.** Para **obrigações de documentação de terceiros**, a organização deve tornar esta capacidade de inventário ou portfólio autoritativa para todos os agentes em escopo.
 
-**Record and evidence.** The registry or portfolio record must capture owner, purpose, users, dependencies, lifecycle state, value hypothesis, evidence date and data-quality status.
+**Registro e evidência.** O registro de registry ou portfólio deve capturar owner, finalidade, usuários, dependências, estado de lifecycle, hipótese de valor, data da evidência e status de qualidade de dados.
 
-**Done when.** Reconciliation detects unowned or missing assets and the portfolio authority can decide whether to fund, reuse, constrain, consolidate or retire them.
+**Concluído quando.** Reconciliação detecta ativos sem owner ou ausentes e a authority de portfólio decide se deve financiar, reutilizar, restringir, consolidar ou aposentá-los.
 
-### 03.20 Portfolio review
+### 03.20 Revisão de portfólio
 
-**Required decision/action.** For **portfolio review**, the organization must prioritize the portfolio using value evidence, risk, dependency, reuse and capacity rather than sponsor preference alone.
+**Decisão/ação obrigatória.** Para **revisão de portfólio**, a organização deve priorizar o portfólio usando evidência de valor, risco, dependência, reuso e capacidade em vez de preferência do sponsor.
 
-**Record and evidence.** Record comparable scores, duplicate capabilities, shared services, constraints, decision and review date.
+**Registro e evidência.** Registrar pontuações comparáveis, capacidades duplicadas, serviços compartilhados, restrições, decisão e data de revisão.
 
-**Done when.** The portfolio authority can fund, pause, merge, restrict or retire items and the decision propagates to lifecycle records.
+**Concluído quando.** A authority de portfólio consegue financiar, pausar, mesclar, restringir ou aposentar itens e a decisão propaga-se aos registros de lifecycle.
 
-### 03.21 Maintain, expand, consolidate or retire decision
+### 03.21 Decisão de manter, expandir, consolidar ou aposentar
 
-**Required decision/action.** For **maintain, expand, consolidate or retire decision**, the organization must prioritize the portfolio using value evidence, risk, dependency, reuse and capacity rather than sponsor preference alone.
+**Decisão/ação obrigatória.** Para **decisão de manter, expandir, consolidar ou aposentar**, a organização deve priorizar o portfólio usando evidência de valor, risco, dependência, reuso e capacidade em vez de preferência do sponsor.
 
-**Record and evidence.** Record comparable scores, duplicate capabilities, shared services, constraints, decision and review date.
+**Registro e evidência.** Registrar pontuações comparáveis, capacidades duplicadas, serviços compartilhados, restrições, decisão e data de revisão.
 
-**Done when.** The portfolio authority can fund, pause, merge, restrict or retire items and the decision propagates to lifecycle records.
+**Concluído quando.** A authority de portfólio consegue financiar, pausar, mesclar, restringir ou aposentar itens e a decisão propaga-se aos registros de lifecycle.
 
 
 ## Conteúdo canônico incorporado

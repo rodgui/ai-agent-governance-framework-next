@@ -11,7 +11,7 @@ related:
   - sunset-plan.md
 ---
 
-# Attestation and Sunset Record
+# Registro de Attestation e Sunset
 
 Attestation revalida necessidade, owner, acesso e controls; não prolonga aprovação automaticamente. Sunset remove capabilities, custo e acesso com evidência preservada.
 
@@ -27,7 +27,7 @@ Attestation revalida necessidade, owner, acesso e controls; não prolonga aprova
 | attestation due date | |
 | reason/trigger | periodic / owner JML / dormancy / material change / incident / value review |
 
-## Attestation checks
+## Verificações de attestation
 
 | Check | Resultado | Evidence ref | Finding/owner/due date |
 | --- | --- | --- | --- |
