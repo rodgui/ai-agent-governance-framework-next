@@ -258,7 +258,51 @@ Os itens 4 e 5 são verificáveis por consulta a records estruturados, sem entre
 
 Toda descoberta tem causa raiz, prioridade baseada em risco, ação corretiva e critério de fechamento: descoberta, evidência, owner, vencimento, controle provisório, causa raiz, remediação, reteste e disposição do revisor. **O fechamento exige evidência objetiva de reteste; descobertas materiais vencidas permanecem visíveis e afetam a aprovação.**
 
-## 7. Decisão go, conditional-go e no-go
+## 7. Score de prontidão do dossiê
+
+### 7.1 Por que pontuar o preenchimento
+
+Chegou a hora da decisão go/no-go — e surge a pergunta prática: **como sabemos que o dossiê está completo o bastante para ser julgado?** Sem uma resposta objetiva, o gate vira negociação: "está quase tudo, aprova aí". O score de prontidão existe para transformar essa negociação em regra.
+
+O score responde a uma pergunta e apenas uma: **o dossiê está completo e evidenciado no nível que o tier exige?** Ele não mede risco (isso é o tier do cap. 04), não mede qualidade do agente (isso é a avaliação das seções 1–2) e não mede maturidade organizacional (isso é o maturity model). É uma medida de **prontidão para decisão**.
+
+### 7.2 Como funciona
+
+Cada campo obrigatório da [autoavaliação](../../toolkit/templates/self-assessment-form.md) vira um item pontuável, agrupado em categorias com pesos: identificação vale menos que dados, dados valem menos que os itens críticos.
+
+| Resposta ao item | Pontos |
+|---|---|
+| Preenchido **com evidência recuperável** | pontos cheios |
+| Preenchido **sem evidência** | metade dos pontos |
+| `missing` | zero |
+| Item crítico `missing` | **bloqueador** — o score não importa |
+
+**Itens críticos:** owners nomeados e vivos; classificação dos dados e destino de processamento; HITL definido quando há ação state-changing; kill switch com owner e método testado; testes mínimos (prompt injection, exfiltração, tool-use) com evidência. Um único item crítico ausente bloqueia o gate — por design, para impedir que um score alto compense uma lacuna grave.
+
+**Threshold por tier:**
+
+| Tier | Score mínimo | Bloqueadores |
+|---|---|---|
+| T1 | ≥ 70 | zero |
+| T2 | ≥ 80 | zero |
+| T3 | ≥ 90 | zero |
+| T4 | 100 | zero |
+
+### 7.3 Regras de leitura
+
+- **Score abaixo do threshold = voltar ao trabalho**, não "aprovar com observações". O gate não é um espaço para negociar completeza.
+- **Score alto com bloqueador ativo continua bloqueado.** O bloqueador é binário; o score é gradiente.
+- **O score é um instantâneo datado**, não uma nota permanente: registre data, avaliador e versão do dossiê avaliado. Após correções, o score é recalculado — e o histórico mostra que ele subiu, quando e por quê.
+- **Thresholds são calibrados pela organização** com os primeiros 20–30 casos reais, como qualquer parâmetro do framework. Os valores acima são ponto de partida, não SLA universal.
+
+### 7.4 Armadilhas comuns
+
+- **Confundir score de prontidão com score de risco.** Um dossiê 100% completo de um agente que executa pagamentos continua T3/T4. Um dossiê 40% completo de um assistente de leitura continua T1 — e ainda não pode seguir para o gate.
+- **Premiar texto sem evidência.** "Logs: sim" sem configuração observável vale metade — e metade em todos os itens de peso 2 é o suficiente para falhar o threshold honestamente.
+- **Usar o score como métrica de desempenho do time.** O score mede o dossiê, não a pessoa. Rastrear score médio por time vira incentivo para inflar formulários.
+- **Recalcular sem registrar.** Um score novo sem data e avaliador é uma nota sem contexto; dois scores diferentes sem histórico viram disputa de "quem tem razão".
+
+## 8. Decisão go, conditional-go e no-go
 
 O release é decidido somente a partir do pacote vinculado de evidências de risco, avaliação, controle e operação: decisão, authority, versões, critérios aprovados e reprovados, condições, expiração, alvo de rollback e descobertas não resolvidas.
 
@@ -277,9 +321,9 @@ flowchart LR
 
 **Controles bloqueantes não podem ser dispensados por aprovação condicional; condições expiradas interrompem a operação continuada.** Um release `conditional` aprovado impõe condições — o teste é sobre a verificação declarada de cada condição.
 
-## 8. Referência normativa
+## 9. Referência normativa
 
-Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 1–7 explicam o porquê.
+Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 1–8 explicam o porquê.
 
 | # | Obrigação | Evidência mínima | Concluído quando |
 |---|---|---|---|
@@ -308,8 +352,9 @@ Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 
 | R23 | Designar peer challenge fora do produto de trabalho | revisor, conflitos, perguntas, evidências, discordâncias, disposição, ações | alegações disputadas visíveis; fechamento por evidência |
 | R24 | Atribuir causa raiz, prioridade e critério de fechamento a cada descoberta | descoberta, evidência, owner, vencimento, controle provisório, causa, remediação, reteste | fechamento exige reteste objetivo; vencidas afetam aprovação |
 | R25 | Definir retenção, acesso e legal hold de evidências | classificação, grupos, custodiano, gatilho, período, disposição, recuperação | recuperáveis no prazo; expirados descartados sem romper linhagem |
+| R26 | Calcular o score de prontidão do dossiê antes de julgar o gate | score datado com avaliador, pontos por categoria, itens críticos, threshold do tier | score no threshold sem bloqueadores; abaixo do threshold volta ao trabalho |
 
-## 9. Evidências, métricas e failure modes
+## 10. Evidências, métricas e failure modes
 
 **Evidências:** logging specification; sample events e schema; [audit event estruturado](../../toolkit/schemas/audit-event.schema.json); access/retention configuration; integrity test; evidence package index; [release evidence manifest](../../toolkit/schemas/release-evidence-manifest.schema.json); audit export test; deletion e legal-hold records; versioned evaluation plan; test sets e provenance; raw e summarized results; failure analysis; human review/calibration; gate decision; runtime trend e incident feedback; regression suite; índice do pacote por release; verificação de completude no gate.
 
