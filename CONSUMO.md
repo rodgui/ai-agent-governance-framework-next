@@ -56,8 +56,11 @@ sua intenção:
 O [handbook](docs/handbook/README.md) define a ordem editorial em 5 partes:
 **Fundamentos → Policy/operating model/risco → Domínios de controle → Método/toolkit →
 Fontes**. Cada capítulo canônico é escrito em **três níveis** — entender, decidir,
-executar — e um capítulo completo permite sair com algo **produzido, aprovado ou
-operacionalizado**, não apenas compreendido.
+executar — implementados de forma explícita: **narrativa primeiro** (o que é e por
+que importa), **seções didáticas com exemplos e armadilhas** (como decidir) e uma
+**tabela normativa R1–Rn no fim** (o que comprovar para concluir). Um capítulo
+completo permite sair com algo **produzido, aprovado ou operacionalizado**, não
+apenas compreendido.
 
 ### O start-here (implantação)
 
