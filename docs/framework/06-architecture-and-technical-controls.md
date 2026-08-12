@@ -2,7 +2,7 @@
 title: 06 — Arquitetura e controles técnicos
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-12
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -10,401 +10,26 @@ source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 
 # 06 — Arquitetura e controles técnicos
 
-Este capítulo integra a estrutura clean-room aprovada com o conteúdo substantivo do corpus autoritativo. Requisitos do framework são vendor-neutral; legislação externa, guidance, casos e histórico são identificados como tais. A implementação organizacional exige adoção formal pela authority competente e não decorre do versionamento deste repositório.
 
-## Contrato operacional do capítulo
+## Visão geral
 
-As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
+A arquitetura responde a uma pergunta que determina se todo o framework funciona: **onde cada controle realmente mora?**
 
-### 06.1 Princípios de arquitetura e atributos de qualidade
+- Se o controle de autorização vive no prompt, ele pode ser contornado com uma frase.
+- Se vive num gateway de policy, ele vale para todos os agentes, em todas as plataformas.
+- Se a identidade é uma service account compartilhada, nenhuma ação é atribuível.
+- Se a ferramenta é mais crítica que o modelo, a discussão sobre qual modelo usar é secundária.
 
-**Decisão/ação obrigatória.** Para **princípios de arquitetura e atributos de qualidade**, a organização deve traduzir princípios e atributos de qualidade em perguntas de decisão, requisitos mensuráveis e trade-offs explícitos.
+Este capítulo é o maior do framework porque cobre os **seis domínios técnicos** onde a governança se torna enforcement: arquitetura e capability map, identidade e acesso, dados e AI-ready, modelos e provedores, tools/APIs/MCP, e segurança. Cada domínio segue o mesmo padrão: o que é, o que decidir, como implantar (playbook), e o que bloqueia o release (decision gate).
 
-**Registro e evidência.** Registrar princípio aplicável, cenário, threshold, resposta de design, owner, teste e trade-off não resolvido.
+A ideia central, expressa em dois princípios:
 
-**Concluído quando.** Decisões de arquitetura e release mostram como qualidades conflitantes foram equilibradas em vez de apenas citar princípios.
+1. **Capability antes de produto.** A arquitetura define capabilities e boundaries independentes de plataforma; qualquer produto é uma implementação substituível. Troca-se o mapeamento, nunca se reescreve a arquitetura.
+2. **Controle fora do modelo.** O modelo propõe; a plataforma decide. Identity, policy, mediação de ferramentas, egress, rate limit, logging e contenção acontecem em pontos de enforcement conhecidos — nunca "no prompt".
 
-### 06.2 Arquitetura de referência e fronteiras do sistema
+## 1. A arquitetura de referência: cinco planos
 
-**Decisão/ação obrigatória.** Para **arquitetura de referência e fronteiras do sistema**, a organização deve documentar fronteiras, premissas de confiança, fluxos de dados e ações, atributos de qualidade, controles e comportamento de falha antes do build.
-
-**Registro e evidência.** Reter blueprint aprovado, diagramas, contratos de interface, vínculos de ameaça e impacto, alternativas e ADRs.
-
-**Concluído quando.** Revisores conseguem rastrear cada requisito material a um elemento de arquitetura e a um ponto de enforcement testável.
-
-### 06.3 Separação entre gestão de governança e enforcement em runtime
-
-**Decisão/ação obrigatória.** Para **separação entre gestão de governança e enforcement em runtime**, a organização deve separar autoria, decisão, distribuição e enforcement em runtime de policy preservando vínculo rastreável.
-
-**Registro e evidência.** O registro de arquitetura deve identificar fonte de policy, ponto de decisão, ponto de enforcement, propagação de versão, modo de falha e telemetria.
-
-**Concluído quando.** Uma mudança de policy chega ao enforcement de forma previsível e a falha não pode recuar silenciosamente para um caminho irrestrito.
-
-### 06.4 Integração com inventário empresarial e registry
-
-**Decisão/ação obrigatória.** Para **integração com inventário empresarial e registry**, a organização deve operar o registry como o índice autoritativo de identidade e lifecycle de todo agente em escopo.
-
-**Registro e evidência.** Validar ID estável, owner, finalidade, tier, admissibilidade, versão, ambiente, estado, dependências e data do último attestation.
-
-**Concluído quando.** Reconciliação automatizada e manual detecta registros ausentes, obsoletos, duplicados e inválidos e bloqueia transições exigidas.
-
-### 06.5 Identidade do agente
-
-**Decisão/ação obrigatória.** Para **identidade do agente**, a organização deve atribuir uma identidade não humana única por agente ou instância de runtime delimitada com owner nomeado.
-
-**Registro e evidência.** Registrar ID da identidade, emissor, owner, ambiente, modo de autenticação, entitlements, idade da credencial e estado de lifecycle.
-
-**Concluído quando.** Credenciais humanas compartilhadas estão ausentes e a desativação da identidade no registry revoga o acesso efetivo do agente.
-
-### 06.6 Identidade do usuário e contexto delegado
-
-**Decisão/ação obrigatória.** Para **identidade do usuário e contexto delegado**, a organização deve preservar a identidade, o consentimento e a authority delegada do usuário iniciador ao longo da cadeia de ações do agente.
-
-**Registro e evidência.** Registrar usuário, sessão, escopo de delegação, finalidade, expiração, propagação a jusante e correlação de auditoria.
-
-**Concluído quando.** O agente não pode expandir authority delegada e toda ação consequente é atribuível ao agente e ao contexto iniciador.
-
-### 06.7 Autenticação
-
-**Decisão/ação obrigatória.** Para **autenticação**, a organização deve usar autenticação de workload aprovada com rotação, restrição de audiência e revogação.
-
-**Registro e evidência.** Reter emissor, tipo de credencial, armazenamento, rotação, expiração, audiência, alertas de falha e evidência de teste.
-
-**Concluído quando.** Credenciais expiradas, reutilizadas ou de audiência errada falham e nenhum segredo está embutido em fonte, prompt ou configuração.
-
-### 06.8 Autorização e decisão de policy
-
-**Decisão/ação obrigatória.** Para **autorização e decisão de policy**, a organização deve avaliar cada ação sensível e parâmetro material contra sujeito, recurso, contexto e finalidade atuais.
-
-**Registro e evidência.** Registrar versão da policy, atributos de entrada, decisão, motivo, resultado do enforcement, override e ID de correlação.
-
-**Concluído quando.** Testes negativos negam ações fora do escopo e execução delegada ou em múltiplas etapas não pode contornar a mesma policy.
-
-### 06.9 Privilégio mínimo e acesso just-in-time
-
-**Decisão/ação obrigatória.** Para **privilégio mínimo e acesso just-in-time**, a organização deve conceder a ação, o recurso, o ambiente e a duração mínimos necessários para a finalidade aprovada.
-
-**Registro e evidência.** Registrar rationale do entitlement, aprovador, ativação, expiração, uso, attestation e evidência de revogação.
-
-**Concluído quando.** Privilégio não utilizado ou expirado é removido automaticamente e expansão de acesso reabre a revisão de autorização.
-
-### 06.10 Ciclo de vida de segredos e credenciais
-
-**Decisão/ação obrigatória.** Para **ciclo de vida de segredos e credenciais**, a organização deve emitir, armazenar, rotacionar, monitorar e revogar segredos por meio de um serviço de segredos aprovado.
-
-**Registro e evidência.** Registrar owner do segredo, identidade do consumidor, referência do store, alvo de rotação, último uso, resposta a exposição e exclusão.
-
-**Concluído quando.** Varreduras não encontram segredo embutido e rotação ou revogação pode ocorrer sem reconstruir componentes não relacionados.
-
-### 06.11 Classificação de dados e autorização
-
-**Decisão/ação obrigatória.** Para **classificação de dados e autorização**, a organização deve autorizar cada fonte de dados e classe de campo para a finalidade, identidade e ambiente declarados.
-
-**Registro e evidência.** Registrar classificação, owner, finalidade, operações permitidas, jurisdição, retenção, controles de DLP e teste de acesso.
-
-**Concluído quando.** Dados não autorizados e reuso entre finalidades são negados na fronteira e registrados com contexto atribuível.
-
-### 06.12 Minimização, provenance, qualidade e retenção de dados
-
-**Decisão/ação obrigatória.** Para **minimização, provenance, qualidade e retenção de dados**, a organização deve limitar os dados ao necessário e rastrear sua origem, transformações, qualidade e disposição.
-
-**Registro e evidência.** Registrar owner da fonte, linhagem, regras de qualidade, filtros, retenção, exclusão, tratamento de dados derivados e lacunas conhecidas.
-
-**Concluído quando.** Dados obsoletos, de baixa qualidade ou não rastreáveis são excluídos ou divulgados e a expiração de retenção é tecnicamente aplicada.
-
-### 06.13 Bases de conhecimento, recuperação e geração ancorada
-
-**Decisão/ação obrigatória.** Para **bases de conhecimento, recuperação e geração ancorada**, a organização deve governar fontes de recuperação, indexação, filtragem de acesso, atualidade e citação para o contexto de uso.
-
-**Registro e evidência.** Registrar catálogo de fontes, versão de ingestão, modelo de permissão, chunking, SLA de atualidade, testes de recuperação e evidência de citação.
-
-**Concluído quando.** A recuperação respeita permissões de fonte e respostas materiais podem ser rastreadas a evidência autorizada atual.
-
-### 06.14 Seleção de modelo e provedor
-
-**Decisão/ação obrigatória.** Para **seleção de modelo e provedor**, a organização deve selecionar combinações aprovadas de modelo-provedor contra requisitos de tarefa, dados, risco, portabilidade e fallback.
-
-**Registro e evidência.** Registrar versão de modelo e provedor, avaliação, restrições de dados, região, termos, fallback, aviso de mudança e teste de saída.
-
-**Concluído quando.** Substituição não aprovada é bloqueada e o fallback não enfraquece silenciosamente requisitos de dados, segurança ou avaliação.
-
-### 06.15 Versões de modelo, fallback e portabilidade
-
-**Decisão/ação obrigatória.** Para **versões de modelo, fallback e portabilidade**, a organização deve selecionar combinações aprovadas de modelo-provedor contra requisitos de tarefa, dados, risco, portabilidade e fallback.
-
-**Registro e evidência.** Registrar versão de modelo e provedor, avaliação, restrições de dados, região, termos, fallback, aviso de mudança e teste de saída.
-
-**Concluído quando.** Substituição não aprovada é bloqueada e o fallback não enfraquece silenciosamente requisitos de dados, segurança ou avaliação.
-
-### 06.16 Ferramentas, APIs, plugins e Model Context Protocol
-
-**Decisão/ação obrigatória.** Para **ferramentas, APIs, plugins e Model Context Protocol**, a organização deve registrar cada ferramenta chamável com owner, fonte, classe de ação, escopos, efeitos colaterais e versões aprovadas.
-
-**Registro e evidência.** Reter ID da ferramenta, provenance, hash de interface, parâmetros, permissões, classes de dados, limites de taxa, sandbox e data de revisão.
-
-**Concluído quando.** Ferramentas desconhecidas ou incompatíveis não podem ser invocadas e mudança de versão dispara teste de impacto e negativo.
-
-### 06.17 Registry de ferramentas e provenance
-
-**Decisão/ação obrigatória.** Para **registry de ferramentas e provenance**, a organização deve registrar cada ferramenta chamável com owner, fonte, classe de ação, escopos, efeitos colaterais e versões aprovadas.
-
-**Registro e evidência.** Reter ID da ferramenta, provenance, hash de interface, parâmetros, permissões, classes de dados, limites de taxa, sandbox e data de revisão.
-
-**Concluído quando.** Ferramentas desconhecidas ou incompatíveis não podem ser invocadas e mudança de versão dispara teste de impacto e negativo.
-
-### 06.18 Autorização em nível de ação e de parâmetro
-
-**Decisão/ação obrigatória.** Para **autorização em nível de ação e de parâmetro**, a organização deve avaliar cada ação sensível e parâmetro material contra sujeito, recurso, contexto e finalidade atuais.
-
-**Registro e evidência.** Registrar versão da policy, atributos de entrada, decisão, motivo, resultado do enforcement, override e ID de correlação.
-
-**Concluído quando.** Testes negativos negam ações fora do escopo e execução delegada ou em múltiplas etapas não pode contornar a mesma policy.
-
-### 06.19 Aprovação humana para ações consequentes
-
-**Decisão/ação obrigatória.** Para **aprovação humana para ações consequentes**, a organização deve posicionar um humano competente em um ponto de decisão onde a intervenção permaneça oportuna, informada e tecnicamente eficaz.
-
-**Registro e evidência.** Registrar gatilho, informações apresentadas, authority, tempo de resposta, caminho de override, carga de trabalho, treinamento e teste exercitado.
-
-**Concluído quando.** O humano consegue detectar, interromper, corrigir e escalonar uma falha representativa em vez de carimbar uma ação irreversível.
-
-### 06.20 Memória, persistência e exclusão
-
-**Decisão/ação obrigatória.** Para **memória, persistência e exclusão**, a organização deve definir qual estado pode persistir, quem pode acessá-lo, sua finalidade, isolamento, retenção e comportamento de exclusão.
-
-**Registro e evidência.** Registrar classe de memória, chaveamento, categorias de dados, owner, criptografia, retenção, controles do usuário e teste de exclusão.
-
-**Concluído quando.** Estado não vaza entre usuários ou finalidades e a exclusão remove cópias ativas e derivadas dentro do alvo.
-
-### 06.21 Delegação multi-agente e authority herdada
-
-**Decisão/ação obrigatória.** Para **delegação multi-agente e authority herdada**, a organização deve restringir profundidade de delegação, tarefa, orçamento, identidade e permissões em cada handoff entre agentes.
-
-**Registro e evidência.** Registrar delegador, delegado, tarefa, escopos herdados e reduzidos, expiração, ID da cadeia, resultado e revogação.
-
-**Concluído quando.** A cadeia não pode ampliar authority e operadores conseguem interromper e atribuir toda ação delegada.
-
-### 06.22 Execução de código e sandboxing
-
-**Decisão/ação obrigatória.** Para **execução de código e sandboxing**, a organização deve executar código gerado ou fornecido somente em ambiente isolado, de privilégio mínimo e descartável.
-
-**Registro e evidência.** Registrar hash de imagem ou runtime, recursos permitidos, filesystem, rede, timeout, entradas, saídas, varredura e limpeza.
-
-**Concluído quando.** Testes de escape, persistência, acesso a segredos e egress não autorizado falham com segurança e o sandbox é destruído após o uso.
-
-### 06.23 Fronteiras de rede, egress e isolamento
-
-**Decisão/ação obrigatória.** Para **fronteiras de rede, egress e isolamento**, a organização deve restringir caminhos de rede a destinos, protocolos, identidades e finalidades de dados aprovados.
-
-**Registro e evidência.** Registrar segmento, allowlist, policy de proxy ou gateway, logs de DNS e egress, inspeção, exceção e evidência de teste.
-
-**Concluído quando.** Egress não aprovado e movimento lateral são negados e uma falha de fronteira dispara contenção.
-
-### 06.24 Supply chain de software, modelo, dados e ferramentas
-
-**Decisão/ação obrigatória.** Para **supply chain de software, modelo, dados e ferramentas**, a organização deve inventariar e verificar dependências de software, modelo, dados e ferramentas da origem até a implantação.
-
-**Registro e evidência.** Reter provenance, versão, licença, assinatura de integridade ou hash, status de vulnerabilidade, owner, atualização e caminho de recall.
-
-**Concluído quando.** Componentes não verificáveis ou bloqueados não podem promover e uma dependência comprometida pode ser localizada e substituída.
-
-### 06.25 Controles de entrada, contexto e saída
-
-**Decisão/ação obrigatória.** Para **controles de entrada, contexto e saída**, a organização deve validar e limitar entradas, contexto do sistema, conteúdo recuperado e saídas conforme o risco de dados e ações.
-
-**Registro e evidência.** Registrar regras de validação, limites de tamanho e tipo, sanitização, verificações de policy, tratamento de saídas, falhas e corpus de teste.
-
-**Concluído quando.** Conteúdo malformado, injetado ou não permitido não pode cruzar a fronteira nem disparar ação não autorizada.
-
-### 06.26 Logging, correlação e integridade de evidências
-
-**Decisão/ação obrigatória.** Para **logging, correlação e integridade de evidências**, a organização deve emitir eventos atribuíveis que correlacionem usuário, agente, versão, tarefa, modelo, ferramenta, decisão de policy e resultado.
-
-**Registro e evidência.** Definir schema de evento, IDs, timestamps, controle de integridade, retenção, acesso, premissas de relógio e testes de cobertura.
-
-**Concluído quando.** Uma cadeia de ações representativa pode ser reconstruída sem expor prompt, segredo ou dados pessoais proibidos.
-
-### 06.27 Observabilidade e sinais comportamentais
-
-**Decisão/ação obrigatória.** Para **observabilidade e sinais comportamentais**, a organização deve estabelecer baselines e sinais para mudança de comportamento, qualidade, segurança, custo e dependências.
-
-**Registro e evidência.** Registrar definição do sinal, população, janela de baseline, threshold, confiança, owner, escada de resposta e histórico de calibração.
-
-**Concluído quando.** Alertas são calibrados contra comportamento real e levam a investigação, throttling, quarentena ou reavaliação.
-
-### 06.28 Limites de taxa, gasto e recursos
-
-**Decisão/ação obrigatória.** Para **limites de taxa, gasto e recursos**, a organização deve impor limites por agente e por owner para taxa, concorrência, gasto, tokens, armazenamento e ações de alto impacto.
-
-**Registro e evidência.** Registrar limite, escopo, rationale, thresholds de aviso e rígidos, authority de override, telemetria e teste.
-
-**Concluído quando.** Violação de limite faz throttling ou interrompe com segurança e um agente não pode contornar limites por delegação ou retries.
-
-### 06.29 Kill switch, circuit breaker e contenção
-
-**Decisão/ação obrigatória.** Para **kill switch, circuit breaker e contenção**, a organização deve implementar caminhos de authority e técnicos para interromper ações, isolar dependências e preservar evidências.
-
-**Registro e evidência.** Registrar gatilho, caminho de comando, escopo, estado esperado, operador, cadência de teste, resultado e pré-requisitos de recuperação.
-
-**Concluído quando.** Um exercício (drill) contém uma falha representativa dentro do alvo sem depender do próprio agente com falha.
-
-### 06.30 Comportamento fail-safe, rollback e recuperação
-
-**Decisão/ação obrigatória.** Para **comportamento fail-safe, rollback e recuperação**, a organização deve definir o estado mais seguro, o alvo de rollback e a sequência de recuperação para falhas de controle, dependência e modelo.
-
-**Registro e evidência.** Reter modos de falha, gatilho, artefato de rollback, reconciliação de dados, authority do operador, RTO/RPO e resultado do exercício.
-
-**Concluído quando.** Uma falha representativa restaura um serviço delimitado em estado bom conhecido sem perder evidência exigida nem duplicar ações.
-
-### 06.31 Resiliência, continuidade e estratégia de saída
-
-**Decisão/ação obrigatória.** Para **resiliência, continuidade e estratégia de saída**, a organização deve definir modos degradados aprovados, fallbacks de dependência, prioridades de continuidade e saída de fornecedores críticos.
-
-**Registro e evidência.** Registrar caminhos críticos, tolerâncias, RTO/RPO, capacidade de fallback, procedimento manual, reconciliação de dados e exercício.
-
-**Concluído quando.** O serviço atinge o alvo de recuperação aprovado sem contornar silenciosamente controles de risco, dados ou autorização.
-
-### 06.32 Integração de plataforma e pontos de extensão vendor-neutral
-
-**Decisão/ação obrigatória.** Para **integração de plataforma e pontos de extensão vendor-neutral**, a organização deve definir contratos de capacidade e interfaces de extensão independentemente de um produto específico.
-
-**Registro e evidência.** Registrar comportamento exigido, interface, contrato de dados e identidade, teste de portabilidade, mapping de fornecedor e restrição de saída.
-
-**Concluído quando.** Um fornecedor pode ser substituído ou isolado sem redefinir a policy, os control IDs, os schemas ou os decision gates.
-
-
-## Conteúdo canônico incorporado
-
-A seção preserva integralmente as unidades atribuídas pela matriz de cobertura. Os marcadores HTML são provenance machine-readable e não alteram o significado normativo.
-
-### Fonte: `docs/architecture/capability-to-technology.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 1, "source_field": "title", "source_heading": "", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "2", "transformation": "integrate-method-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Mapeamento de capability para tecnologia
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "16", "index": 2, "source_field": "", "source_heading": "Mapeamento de capability para tecnologia", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "15", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-### Mapeamento de capability para tecnologia
-
-<!-- source-unit {"classification": "objective", "end_line": "22", "index": 3, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "17", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Conectar as capacidades exigidas pelo framework aos sistemas que a organização **já tem**, sem transformar o framework em dependência de produto.
-
-Este é o documento que falta entre a arquitetura de referência e a execução: a arquitetura diz qual controle precisa existir e onde; o capability map diz onde a organização está; este mapeamento diz **qual sistema passa a responder por cada função** e quem é a fonte autoritativa de cada atributo.
-
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "30", "index": 4, "source_field": "", "source_heading": "Por que o mapeamento é um artefato separado", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "23", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Por que o mapeamento é um artefato separado
-
-A [arquitetura de referência](06-architecture-and-technical-controls.md) e a [policy modular](00-document-control.md) são agnósticas de produto por decisão registrada ([ADR-0002](../../project/decisions/0001-canonical-source-and-product-boundaries.md)). O mapeamento não é: ele nomeia sistemas concretos da organização.
-
-Manter os dois no mesmo documento é o erro que produz frameworks descartáveis. Quando o produto muda — e ele muda —, uma arquitetura contaminada por nomes de produto precisa ser reescrita inteira. Separados, troca-se o mapeamento e a arquitetura permanece.
-
-Por isso este documento descreve o **método** e as categorias de sistema. O mapeamento preenchido é artefato da organização e vive fora deste repositório.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "40", "index": 5, "source_field": "", "source_heading": "Método", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "31", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Método
-
-1. **Comece pela capability e pelo controle, nunca pelo produto.** A frase de partida é "precisamos de registry com owner, tier e lifecycle" — não "precisamos de uma ferramenta de governança de agentes".
-2. **Identifique os systems of record existentes que já fornecem parte da função.** Quase nenhuma organização parte do zero: inventário, identidade, risco, integração, telemetria e catálogo de dados normalmente já existem com owner e processo.
-3. **Defina contrato de integração e source of truth por atributo.** Não por sistema — por atributo. Owner de negócio pode vir do sistema de RH, tier do registro de risco, estado operacional da plataforma de execução. Duplicar ownership do mesmo atributo em cinco sistemas é como se perde a rastreabilidade.
-4. **Só então avalie produtos para os gaps remanescentes.** Um produto pode cobrir várias capabilities; isso é vantagem operacional, não razão para o framework depender do nome dele.
-5. **Registre um ADR para toda decisão que cria lock-in, centraliza enforcement ou altera trust boundary.** Essas três são reversíveis apenas com custo alto, e a justificativa precisa sobreviver à saída de quem decidiu.
-
-A ordem importa. Invertida — produto primeiro, capability depois — a organização passa a chamar de governança aquilo que a ferramenta comprada faz.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "56", "index": 6, "source_field": "", "source_heading": "Capacidades a mapear", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "41", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Capacidades a mapear
-
-| Capability | Função de controle | Categorias que costumam fornecer | Decidir antes de escolher produto |
-|---|---|---|---|
-| estate e registry | existência, ownership, tier e estado de cada agente | inventário de configuração, ITSM, GRC, plataforma de execução | quem é source of truth de cada campo e como conflitos são reconciliados |
-| identidade não-humana | emissão, escopo, expiry e revogação de identidade própria | IAM e governança de identidade, gestão de segredos | se o agente atua com identidade delegada, própria ou ambas, e como JML se aplica |
-| dados certificados | quais fontes podem ser usadas, por quem e com quais restrições | catálogo de dados, prevenção de perda de dados, plataforma de dados | critério de certificação e quem tem autoridade sobre a fonte |
-| mediação de ações | autorização por ação e parâmetro antes da execução | gateway de API, camada de integração, broker próprio | quais ações exigem mediação e quais podem permanecer no builder |
-| acesso a modelos | roteamento, allowlist, budget, fallback e logging de chamadas | gateway de modelos ou proxy de inferência | combinações modelo/provedor permitidas por classe de dado |
-| lifecycle e attestation | transições, dormancy, revalidação e retirada | GRC, ITSM, o próprio registry | o que é mudança material e o que dispara reassessment |
-| observabilidade e correlação | reconstruir o que aconteceu, ponta a ponta | plataforma de observabilidade, SIEM | schema de telemetria e chave de correlação comuns |
-| custo e unit economics | orçamento, quota e custo por resultado | gestão de custo de nuvem, FinOps | qual é a unidade de resultado antes de medir custo por ela |
-| evidência | pacote recuperável, versionado e íntegro por release | GRC, repositório de evidências | retenção por tier e como a integridade é verificada |
-
-Nenhuma linha nomeia produto. A coluna de categorias existe para acelerar o reconhecimento do que já existe na casa, não para sugerir compra.
-
-<!-- source-unit {"classification": "reference", "end_line": "62", "index": 7, "source_field": "", "source_heading": "Regra do source of truth", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "57", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Regra do source of truth
-
-Um atributo tem **exatamente um** sistema autoritativo. Os demais consomem e podem exibir, nunca redefinir.
-
-Quando dois sistemas discordam, a divergência é finding — não é resolvida escolhendo o valor mais recente. Reconciliação silenciosa por timestamp destrói a evidência de que houve conflito, que costuma ser o sinal mais útil.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "69", "index": 8, "source_field": "", "source_heading": "Quando o mapeamento exige ADR", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "63", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Quando o mapeamento exige ADR
-
-- a decisão cria dependência difícil de reverter em prazo aceitável;
-- o enforcement de um controle passa a existir em um único componente;
-- a fronteira de confiança muda, incluindo quem pode emitir identidade ou autorizar ação;
-- uma capability passa a depender de um sistema fora do perímetro de assurance da organização.
-
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "77", "index": 9, "source_field": "", "source_heading": "Evidências", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "70", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Evidências
-
-- mapeamento capability × sistema, com owner e data;
-- source of truth declarado por atributo;
-- contratos de integração e o que cada um garante;
-- ADRs das decisões de lock-in, centralização e trust boundary;
-- gaps sem sistema atribuído, com owner e prazo.
-
-<!-- source-unit {"classification": "metric", "end_line": "85", "index": 10, "source_field": "", "source_heading": "Métricas", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "78", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
-
-- capabilities sem sistema atribuído;
-- atributos com mais de um sistema se declarando autoritativo;
-- divergências de reconciliação abertas por período;
-- decisões de lock-in sem ADR;
-- capabilities cobertas por sistema fora do perímetro de assurance.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "94", "index": 11, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "86", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
-
-- escolher produto antes de definir capability e controle;
-- tratar cobertura de produto como cobertura de controle;
-- duplicar ownership do mesmo atributo em vários sistemas;
-- reconciliar divergência por timestamp e perder o sinal de conflito;
-- deixar o mapeamento sem data de revisão e descobrir na auditoria que ele descreve um estado antigo;
-- misturar o mapeamento na arquitetura e ter de reescrever a arquitetura quando o produto mudar.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "97", "index": 12, "source_field": "", "source_heading": "Decision gate", "source_path": "docs/architecture/capability-to-technology.md", "start_line": "95", "transformation": "integrate-method-completely", "unit_type": "markdown-atx-heading"} -->
-#### Decision gate
-
-Uma capability não é declarada implantada sem sistema atribuído, source of truth por atributo e evidência recuperável. Cobertura prometida por roadmap de fornecedor não é cobertura.
-
-### Fonte: `docs/architecture/overview.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 13, "source_field": "title", "source_heading": "", "source_path": "docs/architecture/overview.md", "start_line": "2", "transformation": "synthesize-and-preserve", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Arquitetura de referência para governança de agentes
-
-<!-- source-unit {"classification": "reference", "end_line": "15", "index": 14, "source_field": "", "source_heading": "Arquitetura de referência para governança de agentes", "source_path": "docs/architecture/overview.md", "start_line": "14", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-### Arquitetura de referência para governança de agentes
-
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "19", "index": 15, "source_field": "", "source_heading": "Status desta arquitetura", "source_path": "docs/architecture/overview.md", "start_line": "16", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Status desta arquitetura
-
-Este documento integra a [policy modular](00-document-control.md) como arquitetura canônica do framework. A adoção normativa de uma release continua dependendo da authority competente.
-
-<!-- source-unit {"classification": "objective", "end_line": "27", "index": 16, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/architecture/overview.md", "start_line": "20", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Conectar estratégia, dados, controles, Responsible AI, adoção, suporte e operação em um único fluxo verificável. O modelo define capabilities e boundaries independentes de produto; qualquer plataforma é uma implementação substituível e opcional.
-
-A ligação entre estas capabilities e os sistemas que a organização já opera é artefato separado, por decisão: [mapeamento de capability para tecnologia](06-architecture-and-technical-controls.md). Mantê-lo fora daqui é o que permite trocar de produto sem reescrever a arquitetura.
-
-Duas leituras complementam esta arquitetura: os [atributos de qualidade](06-architecture-and-technical-controls.md) que ela precisa sustentar e os [riscos arquiteturais](06-architecture-and-technical-controls.md) que ela assume. Uma arquitetura sem atributo declarado não pode ser avaliada; sem risco declarado, não pode ser desafiada.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "45", "index": 17, "source_field": "", "source_heading": "Modelo em cinco planos", "source_path": "docs/architecture/overview.md", "start_line": "28", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Modelo em cinco planos
+### 1.1 O modelo em cinco planos
 
 ```mermaid
 flowchart TB
@@ -422,58 +47,17 @@ flowchart TB
     R -->|quarantine, rollback, sunset| C
 ```
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "51", "index": 18, "source_field": "", "source_heading": "1. Estratégia e valor", "source_path": "docs/architecture/overview.md", "start_line": "46", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### 1. Estratégia e valor
+| Plano | O que faz | Artefatos |
+|---|---|---|
+| **1. Estratégia e valor** | define por que o agente existe, qual processo afeta, quem responde e como sucesso é medido | business case, persona, baseline, KPI, owner, critérios de sunset |
+| **2. Control plane** | mantém a visão compartilhada de agentes, ownership, identidade, capacidades, dados e lifecycle | registry, agent blueprint, identity record, policy template, attestation |
+| **3. Assurance plane** | avalia impactos, riscos, mitigadores, testes e accountability antes e durante a operação | self-assessment, impact assessment, release assessment, threat model, evidence package, waiver |
+| **4. Adoption and support** | prepara builders, usuários, líderes e suporte para criar e operar com segurança | adoption plan, coortes, learning assets, champion network, support model |
+| **5. Runtime and value** | observa comportamento, segurança, acesso, uso e valor; executa remediação e realimenta decisões | logs, dashboards, alerts, incidents, quarantine, rollback, value review |
 
-Define por que o agente existe, qual processo afeta, quem responde pelo resultado e como sucesso ou fracasso serão medidos.
+**Domínios canônicos por plano:** os cinco planos são a arquitetura; os domínios são a organização editorial do corpus. Um domínio pertence a um plano principal, mas quase sempre produz evidência consumida por outros. Um domínio novo só se justifica quando altera decisão, authority, control ou evidência — subdividir por afinidade temática aumenta manutenção sem aumentar governança.
 
-**Artefatos:** business case, persona, baseline, KPI, owner, critérios de sunset.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "57", "index": 19, "source_field": "", "source_heading": "2. Control plane", "source_path": "docs/architecture/overview.md", "start_line": "52", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### 2. Control plane
-
-Mantém a visão compartilhada de agentes, ownership, identidade, capacidades, dados, conectores, lifecycle e ações administrativas.
-
-**Artefatos:** registry, agent blueprint, identity record, policy template, attestation.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "63", "index": 20, "source_field": "", "source_heading": "3. Assurance plane", "source_path": "docs/architecture/overview.md", "start_line": "58", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### 3. Assurance plane
-
-Avalia impactos, riscos, mitigadores, testes e accountability antes e durante a operação.
-
-**Artefatos:** self-assessment, impact assessment, release assessment, threat model, evidence package, waiver.
-
-<!-- source-unit {"classification": "adoption-implementation", "end_line": "69", "index": 21, "source_field": "", "source_heading": "4. Adoption and support plane", "source_path": "docs/architecture/overview.md", "start_line": "64", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### 4. Adoption and support plane
-
-Prepara builders, usuários, líderes e suporte para criar, descobrir, usar e operar agentes com segurança.
-
-**Artefatos:** adoption plan, coortes, learning assets, champion network, support model, feedback backlog.
-
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "75", "index": 22, "source_field": "", "source_heading": "5. Runtime and value plane", "source_path": "docs/architecture/overview.md", "start_line": "70", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### 5. Runtime and value plane
-
-Observa comportamento, segurança, acesso, performance, uso e valor; executa remediação e realimenta decisões.
-
-**Artefatos:** logs, dashboards, alerts, incidents, quarantine, rollback, value review, retirement decision.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "89", "index": 23, "source_field": "", "source_heading": "Domínios canônicos por plano", "source_path": "docs/architecture/overview.md", "start_line": "76", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Domínios canônicos por plano
-
-Os cinco planos são a arquitetura. Os domínios canônicos são a organização editorial e de ownership do corpus. Um domínio pertence a um plano principal, mas quase sempre produz evidência consumida por outros.
-
-| Plano | Domínios canônicos |
-|---|---|
-| 1. Estratégia e valor | [estratégia, portfólio e valor](03-inventory-portfolio-and-value.md) |
-| 2. Control plane | [estate e registry](../../toolkit/registry/README.md) · [lifecycle](05-agent-lifecycle.md) · [identidade](06-architecture-and-technical-controls.md) · [dados](06-architecture-and-technical-controls.md) · [tools e MCP](06-architecture-and-technical-controls.md) · [modelos e provedores](06-architecture-and-technical-controls.md) |
-| 3. Assurance plane | [risco](04-risk-impact-and-compliance.md) · [Responsible AI](04-risk-impact-and-compliance.md) · [segurança](06-architecture-and-technical-controls.md) · [evaluations](07-evaluation-evidence-and-assurance.md) · [human oversight](02-governance-and-accountability.md) |
-| 4. Adoção e suporte | [adoção e enablement](08-implementation-and-adoption.md) |
-| 5. Runtime e valor | [operações e resposta](09-operations-incidents-and-continuity.md) · [auditabilidade](07-evaluation-evidence-and-assurance.md) |
-
-Um domínio novo só se justifica quando altera decisão, authority, control ou evidência. Subdividir por afinidade temática, sem consequência operacional, aumenta manutenção sem aumentar governança.
-
-<!-- source-unit {"classification": "procedure", "end_line": "110", "index": 24, "source_field": "", "source_heading": "Fluxo ponta a ponta", "source_path": "docs/architecture/overview.md", "start_line": "90", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Fluxo ponta a ponta
+### 1.2 O fluxo ponta a ponta
 
 ```mermaid
 flowchart LR
@@ -494,45 +78,17 @@ flowchart LR
     X -->|aposentar| S[Sunset]
 ```
 
-<!-- source-unit {"classification": "decision-authority", "end_line": "125", "index": 25, "source_field": "", "source_heading": "Matriz de proporcionalidade", "source_path": "docs/architecture/overview.md", "start_line": "111", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Matriz de proporcionalidade
+### 1.3 Matriz de proporcionalidade
 
-O grau de governança deve aumentar quando cresce qualquer uma destas dimensões:
+O grau de governança aumenta quando cresce qualquer uma destas dimensões: alcance e número de usuários; sensibilidade e criticidade dos dados; escrita, ação ou automação de workflows; interconectividade e uso de APIs/MCP; irreversibilidade; impacto financeiro, operacional, legal ou humano; autonomia; distribuição regional e exposição externa.
 
-- alcance e número de usuários;
-- sensibilidade e criticidade dos dados;
-- escrita, ação ou automação de workflows;
-- interconectividade e uso de APIs/MCP;
-- irreversibilidade;
-- impacto financeiro, operacional, legal ou humano;
-- autonomia;
-- distribuição regional e exposição externa.
+### 1.4 Boundaries: o que o control plane deve (e não deve) fazer
 
-O modelo combina autonomia, blast radius, capacidade de ação, criticidade, reversibilidade, dados e alcance. Taxonomias organizacionais adicionais podem ser mapeadas sem alterar a arquitetura.
+**O control plane deve:** consolidar contexto; reconciliar inventário; expor postura e sinais; acionar workflows e ferramentas especializadas; registrar evidências e decisões.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "127", "index": 26, "source_field": "", "source_heading": "Boundaries", "source_path": "docs/architecture/overview.md", "start_line": "126", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Boundaries
+**O control plane não deve:** substituir sistemas de identidade ou DLP; decidir sozinho risco residual; transformar telemetria incompleta em falsa certeza; centralizar toda responsabilidade em um único time; confundir uso com valor.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "135", "index": 27, "source_field": "", "source_heading": "O control plane deve", "source_path": "docs/architecture/overview.md", "start_line": "128", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### O control plane deve
-
-- consolidar contexto;
-- reconciliar inventário;
-- expor postura e sinais;
-- acionar workflows e ferramentas especializadas;
-- registrar evidências e decisões.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "143", "index": 28, "source_field": "", "source_heading": "O control plane não deve", "source_path": "docs/architecture/overview.md", "start_line": "136", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### O control plane não deve
-
-- substituir sistemas de identidade ou DLP;
-- decidir sozinho risco residual;
-- transformar telemetria incompleta em falsa certeza;
-- centralizar toda responsabilidade em um único time;
-- confundir uso com valor.
-
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "153", "index": 29, "source_field": "", "source_heading": "Princípios arquiteturais", "source_path": "docs/architecture/overview.md", "start_line": "144", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Princípios arquiteturais
+### 1.5 Princípios arquiteturais
 
 1. **Proporcional:** controles crescem com risco e capacidade.
 2. **Embedded by default:** guardrails entram nas ferramentas e pipelines.
@@ -542,10 +98,9 @@ O modelo combina autonomia, blast radius, capacidade de ação, criticidade, rev
 6. **Lifecycle-aware:** criação, mudança, attestation e sunset são partes do mesmo sistema.
 7. **Platform-agnostic:** a policy é comum; adapters e evidências variam por plataforma.
 
-<!-- source-unit {"classification": "procedure", "end_line": "166", "index": 30, "source_field": "", "source_heading": "Playbook do runtime control plane", "source_path": "docs/architecture/overview.md", "start_line": "154", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Playbook do runtime control plane
+### 1.6 Playbook do runtime control plane
 
-O control plane transforma os standards dos demais domínios em enforcement técnico. A arquitetura precisa deixar explícito **onde** autenticação, policy, acesso a modelo, mediação de ferramentas, egress, rate limit, logging e contenção realmente acontecem.
+O control plane transforma os standards dos domínios em enforcement técnico. A arquitetura precisa deixar explícito **onde** autenticação, policy, acesso a modelo, mediação de ferramentas, egress, rate limit, logging e contenção realmente acontecem:
 
 1. **Separar management plane de runtime plane.** O primeiro guarda registry, policy, lifecycle e configuração; o segundo executa sessões, recuperação, modelos e ferramentas. A separação revela onde cada controle deve residir.
 2. **Definir pontos de enforcement comuns.** Gateways e brokers para modelos, ferramentas e egress onde isso reduzir bypass. Nem todo tráfego precisa passar por um único componente, mas **toda rota de produção precisa de enforcement conhecido**.
@@ -556,156 +111,165 @@ O control plane transforma os standards dos demais domínios em enforcement téc
 7. **Padronizar correlation IDs e telemetria.** Uma execução precisa ser rastreável por tarefa, sessão, agente, usuário, modelo, ferramenta e policy. Sem correlação, segurança, custo e valor ficam em silos.
 8. **Validar por teste e cenário de ameaça.** Exercitar falha de componente, bypass de policy, negação de permissão, loop descontrolado, indisponibilidade de provedor e quarentena. **A arquitetura de referência só está pronta quando os padrões são demonstráveis em um piloto.**
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "172", "index": 31, "source_field": "", "source_heading": "Visual consolidado", "source_path": "docs/architecture/overview.md", "start_line": "167", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Visual consolidado
+### 1.7 Atributos de qualidade
 
-![Modelo operacional de governança de agentes](../annexes/diagrams/ai-agent-governance-framework.png)
+| Atributo | Significado |
+|---|---|
+| Auditability | toda decisão relevante tem owner, timestamp, evidência, versão e vínculo com agent ID |
+| Observability | operação expõe ações, ferramentas, dados acessados, erros, custo, policy signals e uso suficiente para decisão |
+| Remediability | restringir, quarentenar, corrigir, reverter e aposentar dentro de SLAs proporcionais ao risco |
+| Accountability | business owner, technical owner e authorities com responsabilidade e autoridade separadas |
+| Interoperability | registry, evidence e policy controls funcionam em múltiplas plataformas |
+| Security and privacy | least privilege, workload identity, secrets management, DLP, data boundaries e secure-by-default |
+| Reliability | agentes críticos exigem métricas, error handling, rollback, fallback e continuidade |
+| Usability | builders e usuários entendem limites, approvals, status e próximos passos sem especialistas |
+| Evolvability | risk matrix, connector catalog, model/tool inventory e policy templates aceitam novas capacidades sem reescrita |
+| Measurability | criação, descoberta, uso, qualidade, risco, custo e valor distinguíveis e comparáveis a baselines |
 
-A fonte reproduzível está em [`tools/scripts/render-agent-governance-infographic.py`](../../tools/render-agent-governance-infographic.py).
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "179", "index": 32, "source_field": "", "source_heading": "Próximos passos", "source_path": "docs/architecture/overview.md", "start_line": "173", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Próximos passos
-
-- aprovar mandato, escopo, sponsorship e risk appetite;
-- executar o [plano de 90 dias](08-implementation-and-adoption.md);
-- implantar registry, blueprint e risk tiering no portfólio inicial;
-- validar decision gates, containment, rollback e attestation por evidência;
-- promover mudanças normativas por proposta, revisão, authority, changelog e release versionada.
-
-### Fonte: `docs/architecture/quality-attributes.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 33, "source_field": "title", "source_heading": "", "source_path": "docs/architecture/quality-attributes.md", "start_line": "2", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Atributos de qualidade para governança de agentes
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "12", "index": 34, "source_field": "", "source_heading": "Atributos de qualidade para governança de agentes", "source_path": "docs/architecture/quality-attributes.md", "start_line": "11", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-### Atributos de qualidade para governança de agentes
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "16", "index": 35, "source_field": "", "source_heading": "Auditability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "13", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Auditability
-
-Toda decisão relevante precisa de owner, timestamp, evidência, versão e vínculo com agent ID.
-
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "20", "index": 36, "source_field": "", "source_heading": "Observability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "17", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Observability
-
-A operação deve expor ações, ferramentas, dados acessados, erros, custo, policy signals e uso suficiente para decisão.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "24", "index": 37, "source_field": "", "source_heading": "Remediability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "21", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Remediability
-
-O sistema deve permitir restringir, quarentenar, corrigir, reverter e aposentar dentro de SLAs proporcionais ao risco.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "28", "index": 38, "source_field": "", "source_heading": "Accountability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "25", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Accountability
-
-Business owner, technical owner e authorities precisam ter responsabilidade e autoridade claramente separadas.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "32", "index": 39, "source_field": "", "source_heading": "Interoperability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "29", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Interoperability
-
-Registry, evidence e policy controls devem funcionar em múltiplas plataformas, inclusive ferramentas de terceiros.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "36", "index": 40, "source_field": "", "source_heading": "Security and privacy", "source_path": "docs/architecture/quality-attributes.md", "start_line": "33", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Security and privacy
-
-Least privilege, workload identity, secrets management, DLP, data boundaries e secure-by-default são propriedades de base.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "40", "index": 41, "source_field": "", "source_heading": "Reliability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "37", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Reliability
-
-Agentes críticos exigem métricas, error handling, rollback, fallback e continuidade compatíveis com o processo afetado.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "44", "index": 42, "source_field": "", "source_heading": "Usability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "41", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Usability
-
-Builders e usuários precisam entender limites, approvals, status e próximos passos sem depender de especialistas para casos simples.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "48", "index": 43, "source_field": "", "source_heading": "Evolvability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "45", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Evolvability
-
-Risk matrix, connector catalog, model/tool inventory e policy templates devem aceitar novas capacidades sem reescrita completa.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "51", "index": 44, "source_field": "", "source_heading": "Measurability", "source_path": "docs/architecture/quality-attributes.md", "start_line": "49", "transformation": "integrate-as-quality-attributes-section-preserving-review-and-observed-status", "unit_type": "markdown-atx-heading"} -->
-#### Measurability
-
-Criação, descoberta, uso, qualidade, risco, custo e valor precisam ser distinguíveis e comparáveis a baselines.
-
-### Fonte: `docs/architecture/risks.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 45, "source_field": "title", "source_heading": "", "source_path": "docs/architecture/risks.md", "start_line": "2", "transformation": "synthesize-and-preserve", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Riscos arquiteturais da governança de agentes
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "27", "index": 46, "source_field": "", "source_heading": "Riscos arquiteturais da governança de agentes", "source_path": "docs/architecture/risks.md", "start_line": "11", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-### Riscos arquiteturais da governança de agentes
+### 1.8 Riscos arquiteturais (conhecer para mitigar)
 
 | Risco | Consequência | Mitigação arquitetural |
-| --- | --- | --- |
-| Catálogo incompleto | Falsa confiança e agentes órfãos | Reconciliation, missing-evidence status e coverage metrics |
-| Centralização excessiva | Gargalo, shadow AI e baixa accountability local | Ownership federado, common controls e handoffs explícitos |
-| Aprovação igual para todos | Burocracia em baixo risco e revisão insuficiente em alto risco | Risk matrix proporcional por alcance e capacidade |
-| Telemetria sem ação | Dashboard decorativo e incidentes sem owner | Alert-to-workflow, authority, SLA e remediation states |
-| Automação prematura | Enforcement incorreto e exceções ocultas | Escopo controlado, baselines e evidence before automation |
-| Dados não confiáveis | Respostas erradas, oversharing e decisões inválidas | AI-ready data, labels, connector gates e lineage |
-| Identidade fraca ou compartilhada | Acesso indevido e baixa rastreabilidade | Workload identity, least privilege e lifecycle de credenciais |
-| MCP sem governança | Tool poisoning, exfiltration e blast radius ampliado | Gateway, vetting, inventory, isolation e context trimming |
-| Métricas de vaidade | Investimento em agentes sem valor | Separar criação, descoberta, uso, qualidade e outcomes |
-| Dependência de fornecedor | Lock-in e perda de controle | Policy e schemas multiplataforma, exportable logs e adapters |
-| Owners nominais | Reviews e incidents sem decisão efetiva | Authority explícita, attestation e escalation path |
-| Policy drift | Agentes ficam não conformes após mudanças | Versionamento, review triggers, compliance monitoring e remediation |
+|---|---|---|
+| Catálogo incompleto | falsa confiança e agentes órfãos | reconciliation, missing-evidence status, coverage metrics |
+| Centralização excessiva | gargalo, shadow AI e baixa accountability local | ownership federado, common controls, handoffs explícitos |
+| Aprovação igual para todos | burocracia no baixo risco, revisão insuficiente no alto | risk matrix proporcional por alcance e capacidade |
+| Telemetria sem ação | dashboard decorativo e incidentes sem owner | alert-to-workflow, authority, SLA e remediation states |
+| Automação prematura | enforcement incorreto e exceções ocultas | escopo controlado, baselines, evidence before automation |
+| Dados não confiáveis | respostas erradas, oversharing e decisões inválidas | AI-ready data, labels, connector gates e lineage |
+| Identidade fraca ou compartilhada | acesso indevido e baixa rastreabilidade | workload identity, least privilege, lifecycle de credenciais |
+| MCP sem governança | tool poisoning, exfiltration e blast radius ampliado | gateway, vetting, inventory, isolation e context trimming |
+| Métricas de vaidade | investimento em agentes sem valor | separar criação, descoberta, uso, qualidade e outcomes |
+| Dependência de fornecedor | lock-in e perda de controle | policy e schemas multiplataforma, logs exportáveis, adapters |
+| Owners nominais | reviews e incidents sem decisão efetiva | authority explícita, attestation e escalation path |
+| Policy drift | agentes ficam não conformes após mudanças | versionamento, review triggers, compliance monitoring |
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "37", "index": 47, "source_field": "", "source_heading": "Review triggers", "source_path": "docs/architecture/risks.md", "start_line": "28", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Review triggers
+**Review triggers:** nova plataforma/model provider/connector/MCP; expansão regional ou exposição externa; mudança de autonomia ou capacidade de escrita/ação; incidente relevante; alteração regulatória; evidência operacional do portfólio inicial.
 
-Revisar este registro quando houver:
+## 2. Mapeamento de capability para tecnologia
 
-- nova plataforma, model provider, connector ou MCP server;
-- expansão regional ou exposição externa;
-- mudança de autonomia ou capacidade de escrita/ação;
-- incidente relevante;
-- alteração regulatória;
-- evidência operacional do portfólio inicial e dos decision gates.
+### 2.1 Por que o mapeamento é um artefato separado
 
-### Fonte: `docs/data-access/README.md`
+A arquitetura de referência e a policy são agnósticas de produto por decisão registrada. O mapeamento **não é**: ele nomeia sistemas concretos da organização. Manter os dois no mesmo documento é o erro que produz frameworks descartáveis — quando o produto muda (e ele muda), uma arquitetura contaminada por nomes de produto precisa ser reescrita inteira. Separados, troca-se o mapeamento e a arquitetura permanece. Por isso este framework descreve o **método** e as categorias; o mapeamento preenchido é artefato da organização e vive fora do repositório.
 
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
+### 2.2 Método (a ordem importa)
 
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 48, "source_field": "title", "source_heading": "", "source_path": "docs/data-access/README.md", "start_line": "2", "transformation": "split-without-loss", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Dados, acesso, provenance e AI-ready data
+1. **Comece pela capability e pelo controle, nunca pelo produto.** A frase de partida é "precisamos de registry com owner, tier e lifecycle" — não "precisamos de uma ferramenta de governança de agentes".
+2. **Identifique os systems of record existentes** que já fornecem parte da função. Quase nenhuma organização parte do zero: inventário, identidade, risco, integração, telemetria e catálogo de dados normalmente já existem com owner e processo.
+3. **Defina contrato de integração e source of truth por atributo.** Não por sistema — por atributo. Owner de negócio pode vir do RH, tier do registro de risco, estado operacional da plataforma de execução. Duplicar ownership do mesmo atributo em cinco sistemas é como se perde a rastreabilidade.
+4. **Só então avalie produtos para os gaps remanescentes.** Um produto pode cobrir várias capabilities; isso é vantagem operacional, não razão para o framework depender do nome dele.
+5. **Registre um ADR para toda decisão que cria lock-in, centraliza enforcement ou altera trust boundary.** Essas três são reversíveis apenas com custo alto, e a justificativa precisa sobreviver à saída de quem decidiu.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "18", "index": 49, "source_field": "", "source_heading": "Dados, acesso, provenance e AI-ready data", "source_path": "docs/data-access/README.md", "start_line": "17", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-### Dados, acesso, provenance e AI-ready data
+> Invertida — produto primeiro, capability depois — a organização passa a chamar de governança aquilo que a ferramenta comprada faz.
 
-<!-- source-unit {"classification": "objective", "end_line": "22", "index": 50, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/data-access/README.md", "start_line": "19", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
+### 2.3 Capacidades a mapear
 
-Garantir que dados usados por modelos e agentes sejam permitidos, adequados à finalidade, rastreáveis, minimizados, protegidos e operáveis ao longo do lifecycle.
+| Capability | Função de controle | Categorias que costumam fornecer | Decidir antes de escolher produto |
+|---|---|---|---|
+| estate e registry | existência, ownership, tier e estado de cada agente | inventário de configuração, ITSM, GRC, plataforma de execução | quem é source of truth de cada campo e como conflitos são reconciliados |
+| identidade não-humana | emissão, escopo, expiry e revogação de identidade própria | IAM, gestão de segredos | identidade delegada, própria ou ambas; como JML se aplica |
+| dados certificados | quais fontes podem ser usadas, por quem e com quais restrições | catálogo de dados, DLP, plataforma de dados | critério de certificação e autoridade sobre a fonte |
+| mediação de ações | autorização por ação e parâmetro antes da execução | gateway de API, camada de integração, broker próprio | quais ações exigem mediação e quais permanecem no builder |
+| acesso a modelos | roteamento, allowlist, budget, fallback e logging | gateway de modelos ou proxy de inferência | combinações modelo/provedor permitidas por classe de dado |
+| lifecycle e attestation | transições, dormancy, revalidação e retirada | GRC, ITSM, o próprio registry | o que é mudança material e o que dispara reassessment |
+| observabilidade e correlação | reconstruir o que aconteceu, ponta a ponta | observabilidade, SIEM | schema de telemetria e chave de correlação comuns |
+| custo e unit economics | orçamento, quota e custo por resultado | gestão de custo de nuvem, FinOps | qual é a unidade de resultado antes de medir custo por ela |
+| evidência | pacote recuperável, versionado e íntegro por release | GRC, repositório de evidências | retenção por tier e como a integridade é verificada |
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "39", "index": 51, "source_field": "", "source_heading": "AI-ready não significa apenas disponível", "source_path": "docs/data-access/README.md", "start_line": "23", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### AI-ready não significa apenas disponível
+### 2.4 Regra do source of truth
 
-Uma fonte é AI-ready para um uso específico quando possui:
+**Um atributo tem exatamente um sistema autoritativo.** Os demais consomem e podem exibir, nunca redefinir. Quando dois sistemas discordam, a divergência é finding — não é resolvida escolhendo o valor mais recente. **Reconciliação silenciosa por timestamp destrói a evidência de que houve conflito**, que costuma ser o sinal mais útil.
 
-- owner e steward;
-- classificação e finalidade permitida;
-- qualidade suficiente para o outcome;
-- provenance e lineage conhecidos;
-- freshness e janela temporal adequadas;
-- controles de acesso e segregação;
-- regras de retenção e exclusão;
-- cobertura de regiões, idiomas e populações relevantes;
-- limitações conhecidas e forma de comunicá-las;
-- mecanismo de incident, correção e revogação.
+### 2.5 Quando o mapeamento exige ADR
 
-A mesma fonte pode ser adequada para busca interna e inadequada para decisão sobre pessoas.
+- a decisão cria dependência difícil de reverter em prazo aceitável;
+- o enforcement de um controle passa a existir em um único componente;
+- a fronteira de confiança muda, incluindo quem pode emitir identidade ou autorizar ação;
+- uma capability passa a depender de um sistema fora do perímetro de assurance.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "56", "index": 52, "source_field": "", "source_heading": "Data contract para agentes", "source_path": "docs/data-access/README.md", "start_line": "40", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Data contract para agentes
+**Decision gate:** uma capability não é declarada implantada sem sistema atribuído, source of truth por atributo e evidência recuperável. **Cobertura prometida por roadmap de fornecedor não é cobertura.**
 
-Cada dataset, index, vector store, memory store ou connector deve declarar:
+## 3. Identidade e acesso
+
+### 3.1 O princípio
+
+Agentes **não devem herdar implicitamente** a identidade ampla de um usuário, builder, service account compartilhada ou runtime genérico. A identidade precisa refletir **quem opera**, **qual agente executa**, **em nome de quem**, **para qual finalidade** e **sob quais limites**. Identidade é o ponto que transforma atividade do agente em **ação atribuível**.
+
+### 3.2 Modelos de identidade
+
+| Modelo | Uso aceitável | Risco principal |
+|---|---|---|
+| identidade do usuário delegada | ação interativa, no escopo do usuário | privilege laundering e consentimento ambíguo |
+| workload identity do agente | execução autônoma ou serviço | privilégio persistente e ownerless identity |
+| identidade por execução | tarefas efêmeras ou sensíveis | complexidade de emissão e correlação |
+| service account compartilhada | legado temporário com waiver | baixa atribuição e blast radius amplo |
+| credencial embutida | nenhum | segredo exposto e impossível de governar |
+
+Service accounts compartilhadas exigem plano de eliminação, controles compensatórios e expiração da exceção.
+
+### 3.3 Requisitos mínimos
+
+1. Cada agente possui business owner, technical owner e identidade registrada.
+2. Produção usa identidade não humana quando a plataforma suporta.
+3. Secrets não ficam em prompt, código, blueprint público ou configuração não protegida.
+4. Scopes são derivados de tarefas aprovadas, não da conveniência do builder.
+5. Acesso privilegiado é just-in-time, time-bound e reautorizado quando possível.
+6. A identidade é revogada no sunset, troca de owner ou fim da finalidade.
+7. Ações registram actor humano, agent identity, delegated subject e correlation ID.
+8. Mudanças de role, scope, tenant, região ou credencial são material changes.
+9. Break-glass possui authority, logging, alerta e revisão posterior.
+10. **O agente não pode conceder a si mesmo novos privilégios.**
+
+### 3.4 Matriz de autorização (o blueprint mapeia)
+
+| Campo | Exemplo de decisão |
+|---|---|
+| recurso | sistema, API, dataset, fila ou tool |
+| ação | read, write, approve, execute, delete, delegate |
+| condição | ambiente, horário, região, valor ou tipo de dado |
+| subject | workload, usuário delegado ou equipe |
+| duração | sessão, tarefa, janela ou prazo |
+| approval | automático, owner, dual control ou proibido |
+| evidence | policy, role binding, token claim ou log |
+
+Permissões em produção são testadas com casos positivos e negativos. **Least privilege não é apenas limitar a API**: uma ferramenta de atualização pode editar descrição sem poder alterar prioridade crítica; uma ferramenta de pagamento pode consultar sem poder executar acima do limite sem aprovação humana.
+
+### 3.5 Delegação e "on behalf of"
+
+Quando um agente atua em nome de um usuário: a interface deixa claro qual ação será executada; o consentimento cobre objeto, destino e efeito; o token não amplia privilégios do usuário; a decisão distingue recomendação, preparação e execução; ações irreversíveis exigem confirmação compatível com o risco; logs preservam usuário, agente, tool e resultado. **A delegação não transfere accountability do sistema para o usuário final.**
+
+### 3.6 Controles por tier
+
+| Tier | Controle adicional |
+|---|---|
+| T1 — baixo | identidade atribuível e scopes documentados |
+| T2 — moderado | workload identity, expiry e teste negativo |
+| T3 — alto | JIT, dual control para privilégio, session recording quando cabível |
+| T4 — crítico | isolamento dedicado, autorização por transação e monitoramento contínuo |
+
+### 3.7 Playbook de implantação
+
+1. **Classificar os modos de atuação.** Existe usuário presente? A ação ocorre no escopo dele? O agente executa assíncrono ou para múltiplos usuários? Identidade delegada só quando a sessão humana e o escopo são reais; identidade própria quando o agente age por conta própria.
+2. **Inventariar e remediar credenciais.** Descobrir chaves de API, service accounts, tokens pessoais e secrets em builders, CI/CD e runtimes. Classificar como aprovada, transitória ou proibida, com owner e prazo. **Credencial compartilhada em T2/T3 é finding, não detalhe técnico.**
+3. **Padronizar emissão e ownership.** Convenção de nomes, owner, ambiente, expiry, tags, authority de criação e contato de recuperação. O registry precisa correlacionar `agent_id` ↔ `identity_id` ↔ owner.
+4. **Modelar autorização por recurso, ação e parâmetros.**
+5. **Definir tokens, secrets e sessão.** Tokens curtos, cofre, rotação e claims específicos. Proibir secrets em prompt, memória e código. Declarar o que acontece quando a identidade é revogada **durante** uma execução longa.
+6. **Integrar JML e attestation.** Saída de owner produz reatribuição ou suspensão; mudança de área pode alterar authority; attestation confirma owner, necessidade e permissões.
+7. **Aplicar step-up e dual control em ações críticas.** A aprovação é vinculada a `agent_id`, ferramenta, alvo, parâmetros e validade. **Aprovação genérica em chat não é aprovação.**
+8. **Fechar o ciclo com logs e investigação.** Reconstruir **quem pediu, qual agente decidiu, qual identidade executou e qual política autorizou**.
+
+**Decision gate:** nenhum agente com capacidade de escrita, execução ou deleção passa pelo release gate sem identity model, permission matrix, testes negativos e revocation plan.
+
+## 4. Dados, acesso e AI-ready data
+
+### 4.1 AI-ready não significa apenas disponível
+
+Uma fonte é AI-ready para um uso específico quando possui: owner e steward; classificação e finalidade permitida; qualidade suficiente para o outcome; provenance e lineage conhecidos; freshness e janela temporal adequadas; controles de acesso e segregação; regras de retenção e exclusão; cobertura de regiões, idiomas e populações relevantes; limitações conhecidas e forma de comunicá-las; mecanismo de incidente, correção e revogação.
+
+**A mesma fonte pode ser adequada para busca interna e inadequada para decisão sobre pessoas.**
+
+### 4.2 Data contract para agentes
+
+Cada dataset, index, vector store, memory store ou connector declara:
 
 | Dimensão | Pergunta |
 |---|---|
@@ -720,335 +284,55 @@ Cada dataset, index, vector store, memory store ou connector deve declarar:
 | região | onde é armazenado, processado e transferido? |
 | output | o que pode ser exposto, persistido ou usado para treinamento? |
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "74", "index": 53, "source_field": "", "source_heading": "Connector gate", "source_path": "docs/data-access/README.md", "start_line": "57", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Connector gate
+### 4.3 Connector gate
 
-```mermaid
-flowchart LR
-    N[Necessidade] --> O[Owner e finalidade]
-    O --> C[Classificação]
-    C --> Q[Qualidade e provenance]
-    Q --> A[Acesso e minimização]
-    A --> I[Impact assessment]
-    I --> T[Testes]
-    T --> G{Gate}
-    G -->|aprovar| M[Monitorar]
-    G -->|condicionar| R[Remediar]
-    G -->|negar| X[Bloquear]
-```
+O gate existe no ponto de criação do connector e na mudança material de source, scope ou destination: necessidade → owner e finalidade → classificação → qualidade e provenance → acesso e minimização → impact assessment → testes → aprovar/condicionar/negar.
 
-O gate deve existir no ponto de criação do connector e na mudança material de source, scope ou destination.
+### 4.4 Retrieval, memória e conteúdo gerado
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "76", "index": 54, "source_field": "", "source_heading": "RAG, memória e conteúdo gerado", "source_path": "docs/data-access/README.md", "start_line": "75", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### RAG, memória e conteúdo gerado
+**Retrieval:** filtrar por autorização **antes de recuperar**, não somente antes de exibir; preservar source IDs e timestamps; separar ranking de autorização; tratar conteúdo recuperado como não confiável para instruções; testar leakage entre usuários, grupos e tenants.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "84", "index": 55, "source_field": "", "source_heading": "Retrieval", "source_path": "docs/data-access/README.md", "start_line": "77", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-##### Retrieval
+**Memória:** definir se é de sessão, usuário, equipe ou organização; limitar categorias persistidas; oferecer correção, exclusão e expiração; impedir que instruções maliciosas se tornem memória operacional; registrar quem escreveu, leu e alterou.
 
-- filtrar por autorização antes de recuperar, não somente antes de exibir;
-- preservar source IDs e timestamps;
-- separar ranking de autorização;
-- tratar conteúdo recuperado como não confiável para instruções;
-- testar leakage entre usuários, grupos e tenants.
+**Conteúdo gerado:** marcar quando necessário; controlar reutilização para treinamento; separar output temporário de record oficial; validar antes de gravação em system of record; preservar provenance do modelo, prompt, fontes e revisão humana.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "92", "index": 56, "source_field": "", "source_heading": "Memória", "source_path": "docs/data-access/README.md", "start_line": "85", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-##### Memória
-
-- definir se memória é de sessão, usuário, equipe ou organização;
-- limitar categorias persistidas;
-- oferecer correção, exclusão e expiração;
-- impedir que instruções maliciosas se tornem memória operacional;
-- registrar quem escreveu, leu e alterou.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "100", "index": 57, "source_field": "", "source_heading": "Conteúdo gerado", "source_path": "docs/data-access/README.md", "start_line": "93", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-##### Conteúdo gerado
-
-- marcar quando necessário;
-- controlar reutilização para treinamento;
-- separar output temporário de record oficial;
-- validar antes de gravação em system of record;
-- preservar provenance do modelo, prompt, fontes e revisão humana quando aplicável.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "113", "index": 58, "source_field": "", "source_heading": "Controles mínimos", "source_path": "docs/data-access/README.md", "start_line": "101", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Controles mínimos
+### 4.5 Controles mínimos
 
 1. Data owner aprova finalidade e classes acessíveis.
 2. Acesso segue least privilege e identidade do agente.
 3. DLP e policy enforcement cobrem input, retrieval, output e tools.
 4. Dados de produção não são copiados para testes sem autorização e proteção.
-5. Prompt, log e trace são classificados como dados; não são “metadados inofensivos”.
+5. **Prompt, log e trace são classificados como dados; não são "metadados inofensivos".**
 6. Vector stores e caches possuem retention e deletion verificáveis.
 7. Sources externas têm licença, termos e provenance avaliados.
 8. Mudança de source, embedding, index ou policy é registrada.
 9. Outputs que alteram records passam por validação compatível com o risco.
 10. Incidentes de dados acionam contenção e análise de blast radius.
 
-<!-- source-unit {"classification": "procedure", "end_line": "126", "index": 59, "source_field": "", "source_heading": "Playbook de implantação", "source_path": "docs/data-access/README.md", "start_line": "114", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Playbook de implantação
+### 4.6 Playbook de implantação
 
-AI-ready não é sinônimo de "disponível para recuperação". Uma fonte só é certificada quando ownership, classificação, qualidade, autorização, finalidade e restrições de uso por IA são conhecidos **e operáveis**.
-
-1. **Inventariar fontes candidatas.** Começar pelos casos prioritários ou por uma cohort representativa e descobrir repositórios, APIs, bases estruturadas, documentos e knowledge stores. Registrar owner, sistema de origem e consumidores atuais.
-2. **Classificar e confirmar a authority do owner.** Validar classificação, presença de dados pessoais ou restritos, residency, retenção e quem pode autorizar uso por IA. **Fonte sem owner ou classificação confiável vai para remediação, não para produção.**
+1. **Inventariar fontes candidatas.** Começar pelos casos prioritários ou uma cohort representativa; registrar owner, sistema de origem e consumidores atuais.
+2. **Classificar e confirmar a authority do owner.** Validar classificação, dados pessoais/restritos, residency, retenção e quem pode autorizar uso por IA. **Fonte sem owner ou classificação confiável vai para remediação, não para produção.**
 3. **Definir critérios AI-ready observáveis.** Transformar "qualidade" em atualidade, completude, versionamento, metadados, ACL consistente, fonte autoritativa, restrições de modelo e procedimento de correção.
-4. **Certificar com evidência.** Aplicar o checklist, amostrar conteúdo e permissões, registrar findings e a decisão `certified`, `conditional` ou `not-ready`. Condicional exige restrições explícitas e data de revisão.
-5. **Manter catálogo e backlog.** O catálogo é o allowlist governado; o backlog contém fontes legítimas que ainda não atendem aos critérios. Use o [schema do Certified Source Catalog](../../toolkit/schemas/certified-source-catalog.schema.json) e o [exemplo JSON](../../toolkit/examples/certified-source-catalog.example.json); o [exemplo narrativo](../../toolkit/examples/certified-source-catalog.example.md) mostra como documentar rationale e backlog.
-6. **Separar acesso do agente do acesso do usuário.** Em recuperação e ferramentas, confirmar que o resultado respeita ACL e claims. **"O agente consegue buscar" não significa que todo usuário pode receber todo resultado.**
-7. **Controlar ingestão, indexação e memória.** Decidir quais campos podem virar embedding, o que pode ser cacheado, por quanto tempo, e como exclusão ou correção na origem se propaga ao índice e à memória.
-8. **Reavaliar em operação.** Nova classe de dados, mudança de owner, queda de qualidade, alteração de ACL ou troca de provedor podem invalidar a certificação. Monitorar atualidade, anomalias de acesso negado e incidentes de vazamento.
+4. **Certificar com evidência.** Aplicar o checklist, amostrar conteúdo e permissões, registrar findings e a decisão `certified`, `conditional` ou `not-ready`.
+5. **Manter catálogo e backlog.** O catálogo é o allowlist governado; o backlog contém fontes legítimas que ainda não atendem aos critérios.
+6. **Separar acesso do agente do acesso do usuário.** **"O agente consegue buscar" não significa que todo usuário pode receber todo resultado.**
+7. **Controlar ingestão, indexação e memória.** Quais campos podem virar embedding, o que pode ser cacheado, por quanto tempo, e como exclusão na origem se propaga ao índice e à memória.
+8. **Reavaliar em operação.** Nova classe de dados, mudança de owner, queda de qualidade, alteração de ACL ou troca de provedor podem invalidar a certificação.
 
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "139", "index": 60, "source_field": "", "source_heading": "Evidências", "source_path": "docs/data-access/README.md", "start_line": "127", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Evidências
+**Decision gate:** sem data contract, owner, classification, access model, retention e tests de segregação, o connector permanece bloqueado para produção.
 
-- data contract;
-- approval do owner;
-- classificação e purpose mapping;
-- connector configuration;
-- test cases de segregação e leakage;
-- lineage/provenance records;
-- DLP results;
-- retention/deletion test;
-- incident e correction records;
-- attestation periódica.
+## 5. Modelos e provedores
 
-<!-- source-unit {"classification": "metric", "end_line": "150", "index": 61, "source_field": "", "source_heading": "Métricas", "source_path": "docs/data-access/README.md", "start_line": "140", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
+### 5.1 A unidade governada é a combinação
 
-- connectors sem owner, classificação ou expiry;
-- respostas sem source attribution quando exigido;
-- unauthorized retrieval attempts;
-- leakage test failures;
-- stale indexes e freshness breaches;
-- registros sem lineage;
-- deletion requests não propagadas;
-- dados acessados mas não necessários ao outcome.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "161", "index": 62, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/data-access/README.md", "start_line": "151", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
-
-- chamar todo conteúdo interno de confiável;
-- usar “o usuário já tinha acesso” como única justificativa;
-- indexar além do scope aprovado;
-- aplicar autorização depois da retrieval;
-- persistir prompts e traces indefinidamente;
-- misturar memória entre personas ou tenants;
-- tratar qualidade de busca como qualidade da fonte;
-- permitir que output gerado se torne record oficial sem gate.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "164", "index": 63, "source_field": "", "source_heading": "Decision gate", "source_path": "docs/data-access/README.md", "start_line": "162", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Decision gate
-
-Sem data contract, owner, classification, access model, retention e tests de segregação, o connector permanece bloqueado para produção.
-
-### Fonte: `docs/governance/ai-agent-policy-and-governance-v1.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "198", "index": 64, "source_field": "", "source_heading": "14. Multi-Platform Rule", "source_path": "docs/governance/ai-agent-policy-and-governance-v1.md", "start_line": "192", "transformation": "archive-verbatim-and-integrate-unique-content", "unit_type": "markdown-atx-heading"} -->
-#### 14. Multi-Platform Rule
-The agent ecosystem evolves rapidly, and the company may operate on more than one cloud or platform. This section defines the principle of platform-agnostic governance: corporate rules are the same, but the company only allows agents on platforms that support minimum controls (identity, logs, consumption/cost telemetry, data security, blocking/quarantine capability). The goal is to preserve technological flexibility with governability — reducing lock-in without sacrificing security, compliance, and visibility.
-Governance is platform-agnostic.
-Approved platforms must expose minimum telemetry (catalog, logs, consumption) and support the controls of this policy.
-Preference for visibility integration (e.g., your-agent-platform as a source) without exclusivity.
-Suppliers and external platforms may only be used if they contractually agree to adhere to the requirements of this policy (exportable logs, kill switch, traceability, access controls, and data retention).
-
-<!-- source-unit {"classification": "decision-authority", "end_line": "212", "index": 65, "source_field": "", "source_heading": "14.1 Platform Approval Process (Onboarding/Offboarding)", "source_path": "docs/governance/ai-agent-policy-and-governance-v1.md", "start_line": "199", "transformation": "archive-verbatim-and-integrate-unique-content", "unit_type": "markdown-atx-heading"} -->
-##### 14.1 Platform Approval Process (Onboarding/Offboarding)
-Request: a Sponsor (IT or Business) submits a request to the Design Authority with a description of the platform, expected use cases, involved data, regions, and cost model.
-Technical assessment (Run Authority + Cyber): minimum requirements for IAM/SSO, RBAC/ABAC, exportable logs/audit, consumption/cost telemetry, egress controls, secrets/keys management, encryption, and kill-switch capability.
-Risk and compliance assessment (Compliance/DPO/ITGC): applicable data protection law (e.g., GDPR/LGPD)/DPIA when applicable, SOX/ITGC requirements, contractual terms, data retention and residency.
-Controlled pilot: enable in sandbox with integration to the Catalog and logs/consumption pipeline; validate controls and evidence.
-Decision:
-classify the platform as:
-(a) Approved for Production,
-(b) Restricted to Pilots, or
-(c) Not Approved.
-Record decision and justification.
-Operationalization: publish configuration standards (guardrails), access profiles (Creator/Publisher/Operator), and continuous telemetry integration.
-Revalidation and Offboarding: periodic review (e.g., annual) and discontinuation/migration process with a transition window and rollback plan.
-
-### Fonte: `docs/identity/README.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 66, "source_field": "title", "source_heading": "", "source_path": "docs/identity/README.md", "start_line": "2", "transformation": "integrate-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Identidade de agentes e least privilege
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "16", "index": 67, "source_field": "", "source_heading": "Identidade de agentes e least privilege", "source_path": "docs/identity/README.md", "start_line": "15", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-### Identidade de agentes e least privilege
-
-<!-- source-unit {"classification": "objective", "end_line": "20", "index": 68, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/identity/README.md", "start_line": "17", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Garantir que cada agente, execução e ação possam ser atribuídos a uma identidade apropriada, com privilégios mínimos, finalidade, duração e owner verificáveis.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "24", "index": 69, "source_field": "", "source_heading": "Princípio", "source_path": "docs/identity/README.md", "start_line": "21", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Princípio
-
-Agentes não devem herdar implicitamente a identidade ampla de um usuário, builder, service account compartilhada ou runtime genérico. A identidade precisa refletir **quem opera**, **qual agente executa**, **em nome de quem**, **para qual finalidade** e **sob quais limites**.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "36", "index": 70, "source_field": "", "source_heading": "Modelos de identidade", "source_path": "docs/identity/README.md", "start_line": "25", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Modelos de identidade
-
-| Modelo | Uso aceitável | Risco principal |
-|---|---|---|
-| identidade do usuário delegada | ação interativa, no escopo do usuário | privilege laundering e consentimento ambíguo |
-| workload identity do agente | execução autônoma ou serviço | privilégio persistente e ownerless identity |
-| identidade por execução | tarefas efêmeras ou sensíveis | complexidade de emissão e correlação |
-| service account compartilhada | legado temporário com waiver | baixa atribuição e blast radius amplo |
-| credencial embutida | nenhum | segredo exposto e impossível de governar |
-
-Service accounts compartilhadas exigem plano de eliminação, controles compensatórios e expiração da exceção.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "49", "index": 71, "source_field": "", "source_heading": "Requisitos mínimos", "source_path": "docs/identity/README.md", "start_line": "37", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Requisitos mínimos
-
-1. Cada agente possui business owner, technical owner e identidade registrada.
-2. Produção usa identidade não humana quando a plataforma suporta.
-3. Secrets não ficam em prompt, código, blueprint público ou configuração não protegida.
-4. Scopes são derivados de tarefas aprovadas, não da conveniência do builder.
-5. Acesso privilegiado é just-in-time, time-bound e reautorizado quando possível.
-6. A identidade é revogada no sunset, troca de owner ou fim da finalidade.
-7. Ações registram actor humano, agent identity, delegated subject e correlation ID quando aplicável.
-8. Mudanças de role, scope, tenant, região ou credencial são material changes.
-9. Break-glass possui authority, logging, alerta e revisão posterior.
-10. O agente não pode conceder a si mesmo novos privilégios.
-
-<!-- source-unit {"classification": "decision-authority", "end_line": "65", "index": 72, "source_field": "", "source_heading": "Matriz de autorização", "source_path": "docs/identity/README.md", "start_line": "50", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Matriz de autorização
-
-O blueprint deve mapear:
-
-| Campo | Exemplo de decisão |
-|---|---|
-| recurso | sistema, API, dataset, fila ou tool |
-| ação | read, write, approve, execute, delete, delegate |
-| condição | ambiente, horário, região, valor ou tipo de dado |
-| subject | workload, usuário delegado ou equipe |
-| duração | sessão, tarefa, janela ou prazo |
-| approval | automático, owner, dual control ou proibido |
-| evidence | policy, role binding, token claim ou log |
-
-Permissões em produção devem ser testadas com casos positivos e negativos.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "78", "index": 73, "source_field": "", "source_heading": "Delegação e “on behalf of”", "source_path": "docs/identity/README.md", "start_line": "66", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Delegação e “on behalf of”
-
-Quando um agente atua em nome de um usuário:
-
-- a interface deixa claro qual ação será executada;
-- o consentimento cobre objeto, destino e efeito;
-- o token não amplia privilégios do usuário;
-- a decisão distingue recomendação, preparação e execução;
-- ações irreversíveis exigem confirmação compatível com o risco;
-- logs preservam usuário, agente, tool e resultado.
-
-A delegação não transfere accountability do sistema para o usuário final.
-
-<!-- source-unit {"classification": "lifecycle-state", "end_line": "93", "index": 74, "source_field": "", "source_heading": "Lifecycle de identidade", "source_path": "docs/identity/README.md", "start_line": "79", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Lifecycle de identidade
-
-```mermaid
-flowchart LR
-    R[Registrar necessidade] --> D[Definir scopes]
-    D --> A[Aprovar]
-    A --> P[Provisionar]
-    P --> V[Validar positivo/negativo]
-    V --> M[Monitorar uso]
-    M --> T[Revalidar]
-    T -->|mantém| M
-    T -->|muda| D
-    T -->|encerra| X[Revogar e verificar]
-```
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "102", "index": 75, "source_field": "", "source_heading": "Controles por tier", "source_path": "docs/identity/README.md", "start_line": "94", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Controles por tier
-
-| Tier | Controle adicional |
-|---|---|
-| T1 — baixo | identidade atribuível e scopes documentados |
-| T2 — moderado | workload identity, expiry e teste negativo |
-| T3 — alto | JIT, dual control para privilégio, session recording quando cabível |
-| T4 — crítico | isolamento dedicado, autorização por transação e monitoramento contínuo |
-
-<!-- source-unit {"classification": "procedure", "end_line": "115", "index": 76, "source_field": "", "source_heading": "Playbook de implantação", "source_path": "docs/identity/README.md", "start_line": "103", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Playbook de implantação
-
-Identidade é o ponto que transforma atividade do agente em **ação atribuível**. Execute em ordem na primeira implantação; em ciclos posteriores, uma mudança material pode exigir apenas os passos afetados.
-
-1. **Classificar os modos de atuação.** Para cada agente: existe usuário presente? a ação ocorre exclusivamente no escopo dele? o agente executa de forma assíncrona ou para múltiplos usuários? Identidade delegada só quando a sessão humana e o escopo são reais; identidade própria quando o agente age por conta própria.
-2. **Inventariar e remediar credenciais.** Descobrir chaves de API, service accounts, tokens pessoais e secrets em builders, CI/CD e runtimes. Classificar como aprovada, transitória ou proibida, com owner e prazo. **Credencial compartilhada em T2/T3 é finding, não detalhe técnico.**
-3. **Padronizar emissão e ownership.** Convenção de nomes, owner, ambiente, expiry, tags, authority de criação e contato de recuperação. O registry precisa correlacionar `agent_id` ↔ `identity_id` ↔ owner — sem isso, JML e behavioral analytics ficam frágeis.
-4. **Modelar autorização por recurso, ação e parâmetros.** Least privilege não é apenas limitar a API. Uma ferramenta de atualização pode editar descrição sem poder alterar prioridade crítica; uma ferramenta de pagamento pode consultar sem poder executar acima do limite sem aprovação humana.
-5. **Definir tokens, secrets e sessão.** Tokens curtos, cofre, rotação e claims específicos. Proibir secrets em prompt, memória e código. Declarar o que acontece quando a identidade é revogada **durante** uma execução longa.
-6. **Integrar JML e attestation.** Saída de owner produz reatribuição ou suspensão; mudança de área pode alterar authority e centro de custo; attestation confirma owner, necessidade e permissões. Preservar o histórico de ownership e de mudanças de permissão.
-7. **Aplicar step-up e dual control em ações críticas.** A aprovação é vinculada a `agent_id`, ferramenta, alvo, parâmetros e validade. **Aprovação genérica em chat não é aprovação.** Para ações privilegiadas, autorização de curta duração e segregação de funções quando exigido.
-8. **Fechar o ciclo com logs e investigação.** Registrar usuário, agente, delegação, resultado da policy, ferramenta, ação, alvo e hash dos parâmetros. Validar que é possível reconstruir **quem pediu, qual agente decidiu, qual identidade executou e qual política autorizou**.
-
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "126", "index": 77, "source_field": "", "source_heading": "Evidências", "source_path": "docs/identity/README.md", "start_line": "116", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Evidências
-
-- identity record e owner;
-- role/scope mapping;
-- configuração de autenticação;
-- prova de armazenamento seguro de secrets;
-- testes de autorização positiva e negativa;
-- logs com correlation ID;
-- attestation de acesso;
-- evidência de revogação e orphan scan.
-
-<!-- source-unit {"classification": "metric", "end_line": "136", "index": 78, "source_field": "", "source_heading": "Métricas", "source_path": "docs/identity/README.md", "start_line": "127", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
-
-- agentes sem workload identity adequada;
-- shared accounts e credenciais persistentes;
-- scopes não usados ou excessivos;
-- identities sem owner ou attestation;
-- falhas de revogação;
-- ações sem correlação entre usuário, agente e tool;
-- exceções vencidas.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "146", "index": 79, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/identity/README.md", "start_line": "137", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
-
-- usar conta do builder em produção;
-- compartilhar identidade entre múltiplos agentes;
-- permitir refresh token sem prazo;
-- confiar apenas no prompt para proibir ações;
-- registrar “system” como actor de toda execução;
-- manter acesso após sunset;
-- tratar autenticação forte como autorização suficiente.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "149", "index": 80, "source_field": "", "source_heading": "Decision gate", "source_path": "docs/identity/README.md", "start_line": "147", "transformation": "integrate-completely-and-link-controls", "unit_type": "markdown-atx-heading"} -->
-#### Decision gate
-
-Nenhum agente com capacidade de escrita, execução ou deleção passa pelo release gate sem identity model, permission matrix, testes negativos e revocation plan.
-
-### Fonte: `docs/model-governance/README.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 81, "source_field": "title", "source_heading": "", "source_path": "docs/model-governance/README.md", "start_line": "2", "transformation": "synthesize-and-preserve", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Governança de modelos, provedores e dependências de IA
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "20", "index": 82, "source_field": "", "source_heading": "Governança de modelos, provedores e dependências de IA", "source_path": "docs/model-governance/README.md", "start_line": "19", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-### Governança de modelos, provedores e dependências de IA
-
-<!-- source-unit {"classification": "objective", "end_line": "32", "index": 83, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/model-governance/README.md", "start_line": "21", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Controlar as condições sob as quais um modelo pode ser usado — finalidade, classe de dados, região, retenção, logging, comportamento e custo — e manter a organização capaz de trocar, atualizar ou abandonar um provedor sem reescrever o sistema de governança.
-
-Aprovar um modelo não é aprovar uma marca. A unidade governada é a **combinação**:
+Aprovar um modelo não é aprovar uma marca. A unidade é:
 
 ```text
 provider × model × version × finalidade × data class × região × controles
 ```
 
 O mesmo modelo pode ser adequado para dados públicos e inadequado para dados restritos. Uma atualização de versão pode mudar comportamento sem alterar o nome lógico usado pela aplicação.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "43", "index": 84, "source_field": "", "source_heading": "O que este domínio decide", "source_path": "docs/model-governance/README.md", "start_line": "33", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### O que este domínio decide
 
 | Decisão | Pergunta | Evidência mínima |
 |---|---|---|
@@ -1059,83 +343,31 @@ O mesmo modelo pode ser adequado para dados públicos e inadequado para dados re
 | fallback e routing | o modelo alternativo tem os mesmos controles? | equivalência declarada e testada |
 | saída | é possível substituir esta dependência? | exit plan e teste de substituição |
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "61", "index": 85, "source_field": "", "source_heading": "Catálogo de modelos e provedores", "source_path": "docs/model-governance/README.md", "start_line": "44", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Catálogo de modelos e provedores
+### 5.2 Catálogo por combinação, não por marca
 
-O catálogo é por **combinação**, não por marca. Registro mínimo:
+Registro mínimo: provider, model, version e modalidade (API, managed, self-hosted, embedded); allowed data classes e tiers; regiões e residency; retenção, uso para treinamento, subprocessadores e controles contratuais; capacidades de telemetria; evaluation baseline vinculado à versão; fallback aprovado; data de depreciação; status (`approved`, `conditional`, `deprecated`, `blocked`). Um provedor sem telemetria mínima não é reprovado automaticamente, mas exige gateway ou proxy que produza a evidência ausente — o custo desse componente pertence à decisão.
 
-- provider, model, version e modalidade de serviço (API, managed, self-hosted ou embedded);
-- allowed data classes e tiers;
-- regiões permitidas e residency;
-- retenção, uso para treinamento/reuso, subprocessadores e controles contratuais;
-- capacidades de telemetria e atribuição de uso;
-- evaluation baseline vinculado à versão;
-- fallback aprovado e condições de acionamento;
-- data de depreciação prevista e processo de notificação de incidente;
-- status do catálogo: `approved`, `conditional`, `deprecated` ou `blocked`.
+### 5.3 Avaliação vinculada à versão
 
-O contrato vendor-neutral está no [schema do Model and Provider Catalog](../../toolkit/schemas/model-provider-catalog.schema.json), com [exemplo preenchido](../../toolkit/examples/model-provider-catalog.example.json). Uma organização pode implementá-lo em GRC, CMDB, catálogo interno, planilha controlada ou API; o formato de armazenamento não muda a semântica.
+Benchmark público de fornecedor não substitui avaliação do caso corporativo: qualidade na tarefa real e nos slices relevantes; comportamento de tool calling e confiabilidade de execução; safety e recusa em cenários adversariais; latência, custo por tarefa e comportamento sob retry; failure modes. **Uma boa pontuação de linguagem não indica confiabilidade de execução** — agentes com capacidade de ação exigem avaliação de tool-use específica.
 
-Um provedor sem capacidade mínima de telemetria não é reprovado automaticamente, mas exige gateway ou proxy que produza a evidência ausente — o custo desse componente pertence à decisão.
+### 5.4 Mudança de versão é change control
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "73", "index": 86, "source_field": "", "source_heading": "Avaliação vinculada à versão", "source_path": "docs/model-governance/README.md", "start_line": "62", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Avaliação vinculada à versão
+Uma nova major version pode alterar reasoning, seleção de ferramentas, postura de safety e custo **sem qualquer mudança no código do agente**. Rode regression evals antes do rollout; determine por agente se a mudança é material (a mesma versão pode ser irrelevante para um caso e material para outro); registre a versão avaliada no blueprint e no release evidence; preserve a capacidade de fixar versão. Quando pinning não for possível, `versionPinned: false` exige referência ao mecanismo de change detection. **Um alias sem detecção de mudança não é version binding.**
 
-Benchmark público de fornecedor não substitui avaliação do caso corporativo. Antes de aprovar uma versão, defina e meça:
+### 5.5 Fallback, routing e equivalência de controles
 
-- qualidade na tarefa real e nos slices relevantes;
-- comportamento de tool calling e confiabilidade de execução;
-- safety e recusa em cenários adversariais aplicáveis;
-- latência, custo por tarefa e comportamento sob retry;
-- failure modes: o que o modelo faz quando não sabe, quando a ferramenta falha e quando o contexto estoura.
+Se o runtime pode trocar de modelo, o fallback é parte da superfície governada: o modelo alternativo precisa estar aprovado para a **mesma classe de dados e capacidade**; failover para provedor com políticas incompatíveis é **violação de controle, não resiliência**; routing por custo ou latência não pode reduzir silenciosamente o nível de assurance; a troca aparece na telemetria. Se não houver fallback equivalente, `fail-closed` é uma decisão válida e frequentemente mais segura que degradar silenciosamente.
 
-Uma boa pontuação de linguagem não indica confiabilidade de execução. Agentes com capacidade de ação exigem avaliação de tool-use específica.
+### 5.6 Dependência, portabilidade e saída
 
-<!-- source-unit {"classification": "lifecycle-state", "end_line": "84", "index": 87, "source_field": "", "source_heading": "Mudança de versão é change control", "source_path": "docs/model-governance/README.md", "start_line": "74", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Mudança de versão é change control
+Documente as abstrações que isolam o agente do provedor; mantenha prompts, evals e configurações exportáveis; identifique dependências proprietárias; **para funções críticas, teste a substituição antes de precisar dela**; registre concentração por provedor e modelo. **Economia por tarefa, não por token**: o modelo mais barato por token pode ser o mais caro por tarefa concluída — meça retries, contexto, loops de ferramenta, cache e taxa de sucesso.
 
-Uma nova major version pode alterar reasoning, seleção de ferramentas, postura de safety e custo sem qualquer mudança no código do agente. Trate como mudança potencialmente material e aplique o processo de [reavaliação de risco](04-risk-impact-and-compliance.md#mudança-material).
-
-- rode regression evals antes do rollout, não depois;
-- determine por agente se a mudança é material — a mesma versão pode ser irrelevante para um caso e material para outro;
-- registre a versão avaliada no blueprint e no release evidence;
-- preserve a capacidade de fixar versão quando o provedor permitir.
-
-Quando pinning não for tecnicamente possível, `versionPinned: false` exige referência ao mecanismo de change detection e à policy de mudança do serviço. Um alias sem detecção de mudança não é version binding.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "95", "index": 88, "source_field": "", "source_heading": "Fallback, routing e equivalência de controles", "source_path": "docs/model-governance/README.md", "start_line": "85", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Fallback, routing e equivalência de controles
-
-Se o runtime pode trocar de modelo, o fallback é parte da superfície governada.
-
-- o modelo alternativo precisa estar aprovado para a **mesma classe de dados e capacidade**;
-- failover para provedor com políticas incompatíveis é violação de controle, não resiliência;
-- routing por custo ou latência não pode reduzir silenciosamente o nível de assurance;
-- a troca precisa aparecer na telemetria e no registro da execução.
-
-Se não houver fallback equivalente, `fail-closed` é uma decisão válida e frequentemente mais segura que degradar silenciosamente para uma combinação não avaliada.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "103", "index": 89, "source_field": "", "source_heading": "Dependência, portabilidade e saída", "source_path": "docs/model-governance/README.md", "start_line": "96", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Dependência, portabilidade e saída
-
-- documente as abstrações que isolam o agente do provedor;
-- mantenha prompts, evals e configurações exportáveis;
-- identifique dependências proprietárias que não têm equivalente;
-- para funções críticas, **teste a substituição antes de precisar dela**;
-- registre concentração por provedor e modelo no portfólio.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "107", "index": 90, "source_field": "", "source_heading": "Economia por tarefa, não por token", "source_path": "docs/model-governance/README.md", "start_line": "104", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Economia por tarefa, não por token
-
-O modelo mais barato por token pode ser o mais caro por tarefa concluída. Meça custo considerando retries, tamanho de contexto, loops de ferramenta, cache e taxa de sucesso. A comparação relevante é **custo por outcome com qualidade preservada**.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "111", "index": 91, "source_field": "", "source_heading": "Incidente, advisory e depreciação", "source_path": "docs/model-governance/README.md", "start_line": "108", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Incidente, advisory e depreciação
+### 5.7 Incidente, advisory e depreciação
 
 Defina antecipadamente como tratar incidente do provedor, security advisory, retirada de modelo e bloqueio emergencial. O registry e os blueprints precisam responder em minutos: **quais agentes dependem da combinação afetada?**
 
-<!-- source-unit {"classification": "procedure", "end_line": "124", "index": 92, "source_field": "", "source_heading": "Playbook de implantação", "source_path": "docs/model-governance/README.md", "start_line": "112", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Playbook de implantação
+### 5.8 Playbook de implantação
 
 1. Definir critérios de entrada no catálogo por tier e classe de dados.
 2. Criar evaluation baseline por use case, antes de aprovar qualquer versão.
@@ -1146,80 +378,61 @@ Defina antecipadamente como tratar incidente do provedor, security advisory, ret
 7. Preparar e testar a exit strategy das dependências críticas.
 8. Manter processo de incidente, advisory e depreciação com busca reversa por dependência.
 
-Execute em ordem na primeira implantação. Em ciclos posteriores, uma mudança material pode exigir apenas os passos afetados.
+**Decision gate:** nenhum agente entra em produção com combinação provider/model/version fora do catálogo aprovado para a sua classe de dados, sem evaluation vinculada à versão e sem registro da dependência no blueprint. Fallback precisa ter equivalência demonstrada **ou** o runtime falha fechado com rationale documentado. As decisões viram exigência contratual pelo checklist de cláusulas mínimas com fornecedor de IA — **fornecedor aprovado no catálogo sem contrato compatível é gap de controle, não pendência administrativa.**
 
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "134", "index": 93, "source_field": "", "source_heading": "Artefatos", "source_path": "docs/model-governance/README.md", "start_line": "125", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Artefatos
+## 6. Tools, APIs e MCP
 
-- Model & Provider Governance Standard;
-- [Approved Model/Provider Catalog](../../toolkit/schemas/model-provider-catalog.schema.json) por classe de dados, caso e região;
-- [exemplo estruturado do catálogo](../../toolkit/examples/model-provider-catalog.example.json);
-- evaluation baseline e regression suite por combinação;
-- provider assessment e data handling record;
-- exit plan e teste de substituição;
-- registro de depreciação e notificação de incidente.
+### 6.1 Taxonomia de capacidades
 
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "145", "index": 94, "source_field": "", "source_heading": "Evidências", "source_path": "docs/model-governance/README.md", "start_line": "135", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Evidências
+| Classe | Exemplos | Risco-base |
+|---|---|---|
+| observe | search, read, list, inspect | exposição e inferência |
+| create | criar draft, ticket ou arquivo | conteúdo incorreto e spam |
+| modify | atualizar record, config ou workflow | corrupção e efeito operacional |
+| execute | rodar código, comando ou job | compromisso de sistema |
+| approve | liberar pagamento, acesso ou mudança | quebra de segregation of duties |
+| delete | apagar dado ou recurso | irreversibilidade |
+| delegate | criar subagente ou conceder acesso | propagação e perda de controle |
 
-- critérios de aprovação e decisão de admissão;
-- data handling, residency e termos aplicáveis;
-- evaluation results vinculados a provider, model e version;
-- regression evidence de cada mudança de versão;
-- equivalência de controles do fallback;
-- custo por tarefa e por outcome;
-- inventário de dependências por agente;
-- decisões de depreciação e substituição.
+Risco real combina classe, dados, identity, alcance, reversibilidade, frequência e encadeamento. **O controle acompanha a ação específica, não o produto.**
 
-<!-- source-unit {"classification": "metric", "end_line": "156", "index": 95, "source_field": "", "source_heading": "Métricas", "source_path": "docs/model-governance/README.md", "start_line": "146", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
+### 6.2 Tool registry
 
-- agentes usando combinação fora do catálogo;
-- versões em produção sem evaluation vinculada;
-- mudanças de versão sem regression evidence;
-- acionamentos de fallback e quantos foram para combinação aprovada;
-- concentração por provedor, modelo e região;
-- custo por tarefa e variação após mudança de versão;
-- tempo entre advisory do provedor e identificação dos agentes afetados;
-- dependências críticas sem exit plan testado.
+Cada tool, API ou MCP server registra: owner e fornecedor/origem; versão e provenance; operações e schemas; identity model e scopes; dados acessados e destinos; network endpoints e regiões; side effects e reversibilidade; rate limits e custo; logs e correlation IDs; approval mode; kill switch e revocation path; vulnerabilities e validade da aprovação.
 
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "166", "index": 96, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/model-governance/README.md", "start_line": "157", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
+### 6.3 MCP governance
 
-- allowlist única de modelos sem contexto de dados ou tier;
-- acoplar cada agente a um provedor específico sem abstração ou plano de saída;
-- tratar mudança de major version como patch;
-- comparar apenas preço por token, ignorando retries, contexto, loops de ferramenta e qualidade do resultado;
-- permitir fallback para provedor não aprovado durante indisponibilidade;
-- aprovar modelo por reputação de fornecedor em vez de avaliação no caso real;
-- perder a rastreabilidade de qual versão produziu qual resultado.
+**MCP padroniza acesso a tools e contexto; não padroniza confiança.** Um servidor MCP pode alterar descrições, tools, resources e prompts e deve ser governado como software com autoridade. Requisitos mínimos: discovery somente em registries aprovados ou allowlists; provenance e versão fixadas; tool descriptions tratadas como input não confiável; gateway aplica identidade, scopes e policy; egress limitado; state-changing diferenciado de read-only; argumentos validados por schema; sensitive data filtrada antes do envio; logs preservam servidor, tool, versão e outcome; kill switch revoga sem depender do agente; mudanças materiais exigem reavaliação; sampling, roots e callbacks explicitamente autorizados.
 
-<!-- source-unit {"classification": "requirement-control", "end_line": "171", "index": 97, "source_field": "", "source_heading": "Decision gate", "source_path": "docs/model-governance/README.md", "start_line": "167", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Decision gate
+### 6.4 Enforcement patterns
 
-Nenhum agente entra em produção com combinação provider/model/version fora do catálogo aprovado para a sua classe de dados, sem evaluation vinculada à versão e sem registro da dependência no blueprint. Fallback precisa ter equivalência de controles demonstrada **ou** o runtime precisa falhar fechado com rationale documentado.
+- **Tool allowlist:** catálogo fechado por tier e ambiente.
+- **Policy gateway:** valida caller, tool, arguments, destination e context.
+- **Human confirmation:** mostra ação, alvo e efeito antes de executar.
+- **Transaction limit:** restringe valor, volume, frequência ou horário.
+- **Sandbox:** isola filesystem, network e processo.
+- **Two-person rule:** separa preparação e aprovação em ações críticas.
+- **Dry run:** calcula mudanças antes de commit.
+- **Kill switch:** remove capacidade imediatamente.
 
-As decisões deste domínio viram exigência contratual pelo checklist de [cláusulas mínimas de contrato com fornecedor de IA](../../toolkit/templates/ai-vendor-contract-clauses.md). Fornecedor aprovado no catálogo e sem contrato compatível é gap de controle, não pendência administrativa.
+**Prompt instructions não substituem enforcement técnico.**
 
-### Fonte: `docs/security/README.md`
+### 6.5 Playbook de implantação
 
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
+1. **Descobrir e registrar tools e servidores MCP.** Descoberta automática ajuda; ownership e autorização precisam ser confirmados por pessoa.
+2. **Classificar ações, não produtos.** Uma API contém operações de riscos distintos. Separar leitura, criação, atualização, exclusão, execução, privilegiada, financeira e safety-critical.
+3. **Definir tiers permitidos e pré-condições.** Ação de alto impacto é default deny salvo exceção explícita.
+4. **Autorizar por parâmetros.** Validar alvo, valor, escopo, recurso e constraints no gateway ou broker. **O modelo pode propor parâmetros; nunca deve ser a autoridade que decide se são permitidos.**
+5. **Governar MCP como camada de confiança.** Descoberta externa ilimitada e servidores não aprovados não pertencem a agentes de produção.
+6. **Mediar ações materiais.** Para ações privilegiadas, vincular a aprovação ao artefato da **ação exata**, não a uma sessão.
+7. **Definir quotas, circuit breakers e idempotência.** Um agente em loop repete ações válidas até causar dano. Limitar chamadas, custo, concorrência e retries.
+8. **Monitorar e versionar mudanças.** A telemetria correlaciona `agent_id` → ferramenta → ação → resultado → decisão de policy.
 
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 98, "source_field": "title", "source_heading": "", "source_path": "docs/security/README.md", "start_line": "2", "transformation": "integrate-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Segurança de sistemas de IA e agentes
+**Decision gate:** nenhuma tool state-changing entra em produção sem owner, provenance, scopes, threat model, enforcement, rollback e kill switch verificáveis.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "16", "index": 99, "source_field": "", "source_heading": "Segurança de sistemas de IA e agentes", "source_path": "docs/security/README.md", "start_line": "15", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-### Segurança de sistemas de IA e agentes
+## 7. Segurança de sistemas de IA e agentes
 
-<!-- source-unit {"classification": "objective", "end_line": "22", "index": 100, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/security/README.md", "start_line": "17", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Aplicar security engineering ao sistema completo: modelo, prompts, retrieval, memória, identidade, tools, supply chain, runtime e pessoas.
-
-O OWASP GenAI Security Project produz orientação para riscos de LLMs, sistemas agentic e aplicações orientadas por IA.[15] MITRE ATLAS é usado como fonte complementar para threat-informed defense; mappings precisam ser revisados conforme versão da base.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "39", "index": 101, "source_field": "", "source_heading": "Superfície de ataque", "source_path": "docs/security/README.md", "start_line": "23", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Superfície de ataque
+### 7.1 Superfície de ataque
 
 ```mermaid
 flowchart LR
@@ -1236,25 +449,9 @@ flowchart LR
 
 Ataques e falhas podem entrar por qualquer nó e se propagar pelos handoffs.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "55", "index": 102, "source_field": "", "source_heading": "Threat categories", "source_path": "docs/security/README.md", "start_line": "40", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Threat categories
+**Threat categories:** prompt injection direta e indireta; tool poisoning e descrição maliciosa; data poisoning e retrieval manipulation; supply chain compromise de modelo/prompt/dependência; secret leakage e credential misuse; excessive agency e authorization bypass; insecure output handling; memory poisoning e cross-session contamination; denial of wallet/service; exfiltration por output, tool, log ou side channel; unsafe code execution; multi-agent trust transitivity; monitoring evasion e evidence tampering.
 
-- direct e indirect prompt injection;
-- tool poisoning e descrição maliciosa;
-- data poisoning e retrieval manipulation;
-- model, prompt ou dependency supply chain compromise;
-- secret leakage e credential misuse;
-- excessive agency e authorization bypass;
-- insecure output handling;
-- memory poisoning e cross-session contamination;
-- denial of wallet/service;
-- exfiltration por output, tool, log ou side channel;
-- unsafe code execution;
-- multi-agent trust transitivity;
-- monitoring evasion e evidence tampering.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "70", "index": 103, "source_field": "", "source_heading": "Secure-by-design requirements", "source_path": "docs/security/README.md", "start_line": "56", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Secure-by-design requirements
+### 7.2 Secure-by-design requirements
 
 1. Trust boundaries aparecem no blueprint e threat model.
 2. Conteúdo externo e recuperado nunca define policy ou autorização.
@@ -1269,25 +466,11 @@ Ataques e falhas podem entrar por qualquer nó e se propagar pelos handoffs.
 11. Security tests cobrem chains, não apenas componentes isolados.
 12. Incidentes alimentam regression tests e risk review.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "86", "index": 104, "source_field": "", "source_heading": "Threat modeling", "source_path": "docs/security/README.md", "start_line": "71", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Threat modeling
+### 7.3 Threat modeling
 
-O threat model declara:
+O threat model declara: assets e impactos; trust boundaries; adversários e misuse cases; entry points e egress; identity/data/tool flow; side effects e blast radius; controls preventivos, detectivos e responsivos; residual risk e owner; testes e telemetry necessários. **Mudança de modelo, tool, connector, privilege, exposure ou data class reabre a análise.**
 
-- assets e impactos;
-- trust boundaries;
-- adversários e misuse cases;
-- entry points e egress;
-- identity/data/tool flow;
-- side effects e blast radius;
-- controls preventivos, detectivos e responsivos;
-- residual risk e owner;
-- testes e telemetry necessários.
-
-Mudança de modelo, tool, connector, privilege, exposure ou data class reabre a análise.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "97", "index": 105, "source_field": "", "source_heading": "Testing strategy", "source_path": "docs/security/README.md", "start_line": "87", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Testing strategy
+### 7.4 Testing strategy
 
 | Camada | Testes |
 |---|---|
@@ -1296,268 +479,95 @@ Mudança de modelo, tool, connector, privilege, exposure ou data class reabre a 
 | system | red team, abuse cases, load/cost e incident drill |
 | runtime | canaries, anomaly signals, policy denials e regression |
 
-LLM-as-judge pode auxiliar triagem; não é evidência única para riscos críticos.
+**LLM-as-judge pode auxiliar triagem; não é evidência única para riscos críticos.**
 
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "108", "index": 106, "source_field": "", "source_heading": "Runtime response", "source_path": "docs/security/README.md", "start_line": "98", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Runtime response
+### 7.5 Runtime response
 
-- identificar agent, version, user, tool e affected assets;
-- conter identidade, tool, connector ou agente no menor blast radius;
-- preservar evidências;
-- avaliar propagação para memórias, indexes e downstream systems;
-- corrigir causa, não apenas prompt;
-- executar regression e reauthorization;
-- comunicar conforme severidade e obrigação;
-- atualizar threat model e control catalog.
+Identificar agent, version, user, tool e affected assets; conter identidade, tool, connector ou agente no menor blast radius; preservar evidências; avaliar propagação para memórias, indexes e downstream systems; corrigir causa, não apenas prompt; executar regression e reauthorization; comunicar conforme severidade; atualizar threat model e control catalog.
 
-<!-- source-unit {"classification": "procedure", "end_line": "121", "index": 107, "source_field": "", "source_heading": "Playbook de implantação", "source_path": "docs/security/README.md", "start_line": "109", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Playbook de implantação
+### 7.6 Playbook AgentSecOps
 
-AgentSecOps conecta prevenção, detecção, contenção e investigação. Opera como extensão das práticas existentes de segurança, com riscos adicionais: prompt injection, uso indevido de ferramentas, autoridade delegada, envenenamento de memória e comportamento autônomo.
+1. **Modelar ameaças por fluxo e trust boundary.** **Incluir abuso legítimo de permissões**, não apenas atacante externo.
+2. **Construir catálogo de abuse cases.** Injeção que leva a uso indevido de ferramenta; envenenamento de memória; MCP comprometido; loop descontrolado; identidade usada fora do runtime.
+3. **Mapear controles preventivos.** Least privilege, allowlist, isolamento de conteúdo, gateway de policy, validação de parâmetros, sandbox, cofre, aprovação humana.
+4. **Definir sinais de detecção com owner.** Cada sinal precisa de severidade **e** owner.
+5. **Escrever runbooks de contenção.** Quando desabilitar identidade, ferramenta, provedor ou agente; como preservar evidência; **quem pode executar sem aprovação adicional**; como restaurar.
+6. **Diferenciar quarentena, kill switch e rollback.** Quarentena preserva o ativo com operação bloqueada; kill switch interrompe rapidamente; rollback retorna versão. Um incidente pode exigir os três em sequência.
+7. **Preparar forensics e evidência.** Garantir retenção e correlação; definir o tratamento de dados sensíveis **dentro dos próprios logs**.
+8. **Executar tabletop e tuning contínuo.** Ao menos um incidente T2/T3 simulado por trimestre no início; findings recorrentes viram melhoria de plataforma, não checklist.
 
-1. **Modelar ameaças por fluxo e trust boundary.** Partir do diagrama de runtime e identificar assets, atores, dados, modelos, ferramentas, conteúdo externo e pontos de controle. **Incluir abuso legítimo de permissões**, não apenas atacante externo.
-2. **Construir catálogo de abuse cases.** Injeção que leva a uso indevido de ferramenta; envenenamento de memória que altera decisão futura; servidor MCP comprometido que oferece ferramenta maliciosa; loop descontrolado que gera custo e ação repetida; identidade de agente usada fora do runtime.
-3. **Mapear controles preventivos.** Least privilege, allowlist de ferramentas, isolamento de conteúdo, gateway de policy, validação de parâmetros, sandbox, cofre de secrets, restrições de saída e aprovação humana para ação material.
-4. **Definir sinais de detecção com owner.** Correlacionar anomalia de autenticação, acesso a dados, frequência de ferramentas, alvos incomuns, negações de policy, pico de custo, destinos externos e desvio de comportamento. Cada sinal precisa de severidade **e** owner.
-5. **Escrever runbooks de contenção.** Cada um declara quando desabilitar identidade, ferramenta, provedor, connector ou o agente inteiro; como preservar evidência; **quem pode executar sem aprovação adicional**; e como restaurar.
-6. **Diferenciar quarentena, kill switch e rollback.** Quarentena preserva o ativo para investigação com operação bloqueada; kill switch interrompe rapidamente uma capacidade; rollback retorna versão ou configuração. Um incidente pode exigir os três em sequência.
-7. **Preparar forensics e evidência.** Garantir retenção e correlação de eventos, chamadas de ferramenta, resultados de autorização, versão de modelo e de policy, e mudanças. Definir o tratamento de dados sensíveis **dentro dos próprios logs**.
-8. **Executar tabletop e tuning contínuo.** Ao menos um incidente T2/T3 simulado por trimestre no início. Medir tempo até detecção, tempo até quarentena, clareza da authority e lacunas de evidência; findings recorrentes viram melhoria de plataforma, não item de checklist.
+## 8. Resiliência, contenção e recuperação
 
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "133", "index": 108, "source_field": "", "source_heading": "Evidências", "source_path": "docs/security/README.md", "start_line": "122", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Evidências
+### 8.1 Kill switch, circuit breaker e contenção
 
-- blueprint com trust boundaries;
-- threat model e misuse cases;
-- provenance/SBOM quando aplicável;
-- security test results;
-- sandbox/egress configuration;
-- vulnerability e patch records;
-- incident e containment drills;
-- runtime alerts e policy denials;
-- residual risk acceptance.
+Implementar caminhos de authority e técnicos para interromper ações, isolar dependências e preservar evidências: gatilho, caminho de comando, escopo, estado esperado, operador, cadência de teste, resultado e pré-requisitos de recuperação. **Um exercício (drill) contém uma falha representativa dentro do alvo sem depender do próprio agente com falha.** Kill switch e quarantine são independentes da lógica do agente.
 
-<!-- source-unit {"classification": "metric", "end_line": "144", "index": 109, "source_field": "", "source_heading": "Métricas", "source_path": "docs/security/README.md", "start_line": "134", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
+### 8.2 Comportamento fail-safe, rollback e recuperação
 
-- coverage de threat models e security tests;
-- prompt/tool injection success rate em teste;
-- actions blocked por policy;
-- mean time to contain e recover;
-- secrets ou sensitive data em traces;
-- assets sem provenance;
-- regressions por mudança material;
-- repeat findings e exceptions vencidas.
+Definir o estado mais seguro, o alvo de rollback e a sequência de recuperação para falhas de controle, dependência e modelo: modos de falha, gatilho, artefato de rollback, reconciliação de dados, authority do operador, RTO/RPO e resultado do exercício. **Uma falha representativa restaura um serviço delimitado em estado bom conhecido sem perder evidência exigida nem duplicar ações.**
 
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "155", "index": 110, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/security/README.md", "start_line": "145", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
+### 8.3 Resiliência, continuidade e estratégia de saída
 
-- “o system prompt proíbe” usado como controle principal;
-- red team sem cenários de tool e data flow;
-- scan de dependência sem provenance de modelo/prompt;
-- logar tudo e criar novo data breach;
-- permitir egress amplo em sandbox;
-- bloquear UI mas deixar API aberta;
-- corrigir incidente sem revalidar memória e indexes;
-- tratar output filter como segurança completa.
+Definir modos degradados aprovados, fallbacks de dependência, prioridades de continuidade e saída de fornecedores críticos: caminhos críticos, tolerâncias, RTO/RPO, capacidade de fallback, procedimento manual, reconciliação de dados e exercício. **O serviço atinge o alvo de recuperação aprovado sem contornar silenciosamente controles de risco, dados ou autorização.**
 
-<!-- source-unit {"classification": "reference", "end_line": "158", "index": 111, "source_field": "", "source_heading": "Sources", "source_path": "docs/security/README.md", "start_line": "156", "transformation": "split-by-heading-with-cross-links", "unit_type": "markdown-atx-heading"} -->
-#### Sources
+### 8.4 Limites de taxa, gasto e recursos
 
-[15] <https://owasp.org/www-project-top-10-for-large-language-model-applications> — OWASP Top 10 for Large Language Model Applications
+Impor limites por agente e por owner para taxa, concorrência, gasto, tokens, armazenamento e ações de alto impacto: limite, escopo, rationale, thresholds de aviso e rígidos, authority de override, telemetria e teste. **Violação de limite faz throttling ou interrompe com segurança; um agente não pode contornar limites por delegação ou retries.**
 
-### Fonte: `docs/tool-governance/README.md`
+## 9. Multi-plataforma
 
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
+A governança é platform-agnostic: regras corporativas são as mesmas, mas a empresa **só permite agentes em plataformas que suportam controles mínimos** (identidade, logs, telemetria de consumo/custo, segurança de dados, capacidade de bloqueio/quarentena). Plataformas aprovadas devem expor telemetria mínima e suportar os controles desta policy. Fornecedores e plataformas externas só podem ser usados se concordarem contratualmente com os requisitos (logs exportáveis, kill switch, rastreabilidade, controles de acesso e retenção).
 
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 112, "source_field": "title", "source_heading": "", "source_path": "docs/tool-governance/README.md", "start_line": "2", "transformation": "integrate-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Governança de tools, APIs e MCP
+**Processo de aprovação de plataforma (onboarding/offboarding):** solicitação do Sponsor à Design Authority com descrição, casos de uso, dados, regiões e modelo de custo; assessment técnico (Run Authority + Cyber) de IAM/SSO, RBAC/ABAC, logs exportáveis, telemetria de consumo, egress, secrets, criptografia e kill-switch; assessment de risco e compliance (DPO/ITGC) de lei de proteção de dados, DPIA, SOX/ITGC, termos contratuais e residency; piloto controlado em sandbox; decisão classificando a plataforma como `Approved for Production`, `Restricted to Pilots` ou `Not Approved`; operacionalização com padrões de configuração e perfis de acesso; revalidação anual e offboarding com janela de transição e rollback.
 
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "18", "index": 113, "source_field": "", "source_heading": "Governança de tools, APIs e MCP", "source_path": "docs/tool-governance/README.md", "start_line": "17", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-### Governança de tools, APIs e MCP
+## 10. Referência normativa
 
-<!-- source-unit {"classification": "objective", "end_line": "24", "index": 114, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/tool-governance/README.md", "start_line": "19", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
+Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 1–9 explicam o porquê.
 
-Controlar a descoberta, aprovação, concessão, execução e revogação de capacidades que permitem a um agente observar ou alterar sistemas.
+| # | Obrigação | Evidência mínima | Concluído quando |
+|---|---|---|---|
+| R1 | Documentar fronteiras, premissas, fluxos, atributos de qualidade, controles e comportamento de falha antes do build | blueprint aprovado, diagramas, contratos de interface, vínculos de ameaça/impacto, alternativas, ADRs | cada requisito material rastreável a elemento de arquitetura e ponto de enforcement testável |
+| R2 | Separar autoria, decisão, distribuição e enforcement de policy com vínculo rastreável | fonte de policy, ponto de decisão, ponto de enforcement, propagação de versão, modo de falha, telemetria | mudança de policy chega ao enforcement previsivelmente; falha não recua para caminho irrestrito |
+| R3 | Atribuir identidade não humana única por agente com owner nomeado | ID, emissor, owner, ambiente, autenticação, entitlements, idade da credencial, estado | credenciais humanas compartilhadas ausentes; desativação revoga acesso efetivo |
+| R4 | Preservar identidade, consentimento e authority delegada do usuário ao longo da cadeia | usuário, sessão, escopo de delegação, finalidade, expiração, propagação, correlação | agente não expande authority delegada; toda ação é atribuível ao agente e ao contexto |
+| R5 | Usar autenticação de workload aprovada com rotação, audiência e revogação | emissor, tipo de credencial, armazenamento, rotação, expiração, audiência, alertas, teste | credenciais expiradas/reutilizadas/audiência errada falham; nenhum segredo embutido |
+| R6 | Avaliar cada ação sensível e parâmetro contra sujeito, recurso, contexto e finalidade | versão da policy, atributos, decisão, motivo, enforcement, override, correlation ID | testes negativos negam fora de escopo; delegação/multi-etapas não contornam a policy |
+| R7 | Conceder privilégio mínimo just-in-time | rationale, aprovador, ativação, expiração, uso, attestation, revogação | privilégio não usado/expirado removido automaticamente; expansão reabre revisão |
+| R8 | Emitir, armazenar, rotacionar, monitorar e revogar segredos via serviço aprovado | owner, consumidor, store, rotação, último uso, resposta a exposição, exclusão | varreduras não encontram segredo embutido; rotação/revogação sem reconstruir componentes |
+| R9 | Autorizar cada fonte de dados e classe de campo para finalidade, identidade e ambiente | classificação, owner, finalidade, operações, jurisdição, retenção, DLP, teste | dados não autorizados negados na fronteira; reuso entre finalidades registrado |
+| R10 | Limitar dados ao necessário e rastrear origem, transformações, qualidade e disposição | owner da fonte, linhagem, regras de qualidade, filtros, retenção, exclusão, derivados | dados obsoletos/baixa qualidade/não rastreáveis excluídos ou divulgados; expiração aplicada |
+| R11 | Governar fontes de recuperação, indexação, filtragem, atualidade e citação | catálogo de fontes, versão de ingestão, permissão, chunking, SLA de atualidade, testes, citação | recuperação respeita permissões; respostas materiais rastreadas a evidência atual |
+| R12 | Selecionar combinações aprovadas modelo-provedor contra requisitos de tarefa, dados, risco e fallback | versão, avaliação, restrições de dados, região, termos, fallback, aviso, teste de saída | substituição não aprovada bloqueada; fallback não enfraquece requisitos |
+| R13 | Registrar cada ferramenta chamável com owner, fonte, classe de ação, escopos e versões | ID, provenance, hash de interface, parâmetros, permissões, classes de dados, limites, sandbox | ferramentas desconhecidas/incompatíveis não invocadas; mudança de versão dispara teste |
+| R14 | Restringir profundidade de delegação, tarefa, orçamento, identidade e permissões em cada handoff | delegador, delegado, tarefa, escopos, expiração, ID da cadeia, resultado, revogação | cadeia não amplia authority; operadores interrompem e atribuem toda ação delegada |
+| R15 | Executar código gerado somente em ambiente isolado, mínimo e descartável | hash, recursos, filesystem, rede, timeout, entradas, saídas, varredura, limpeza | testes de escape/persistência/segredos/egress falham com segurança; sandbox destruído |
+| R16 | Restringir caminhos de rede a destinos, protocolos, identidades e finalidades aprovados | segmento, allowlist, proxy/gateway, logs de DNS/egress, inspeção, exceção, teste | egress não aprovado e movimento lateral negados; falha de fronteira dispara contenção |
+| R17 | Inventariar e verificar dependências da origem à implantação | provenance, versão, licença, hash, vulnerabilidades, owner, atualização, recall | componentes não verificáveis não promovem; dependência comprometida localizável |
+| R18 | Validar e limitar entradas, contexto, conteúdo recuperado e saídas conforme risco | regras de validação, limites, sanitização, policy checks, tratamento de saídas, corpus de teste | conteúdo malformado/injetado não cruza fronteira nem dispara ação não autorizada |
+| R19 | Emitir eventos atribuíveis que correlacionem usuário, agente, versão, tarefa, modelo, ferramenta e policy | schema de evento, IDs, timestamps, integridade, retenção, acesso, relógio, testes | cadeia de ações representativa reconstruída sem expor prompt/segredo/dados proibidos |
+| R20 | Estabelecer baselines e sinais para mudança de comportamento, qualidade, segurança, custo e dependências | definição do sinal, população, janela, threshold, confiança, owner, escada de resposta | alertas calibrados contra comportamento real e levam a investigação/throttling/quarentena |
+| R21 | Impor limites por agente/owner para taxa, concorrência, gasto, tokens, armazenamento e ações de alto impacto | limite, escopo, rationale, thresholds, authority de override, telemetria, teste | violação faz throttling ou interrompe; agente não contorna por delegação/retries |
+| R22 | Implementar kill switch, circuit breaker e contenção independentes do agente | gatilho, comando, escopo, estado esperado, operador, cadência de teste, resultado | drill contém falha representativa sem depender do agente com falha |
+| R23 | Definir estado mais seguro, alvo de rollback e sequência de recuperação | modos de falha, gatilho, artefato, reconciliação, authority, RTO/RPO, exercício | falha restaura serviço em estado bom sem perder evidência nem duplicar ações |
+| R24 | Definir modos degradados, fallbacks, prioridades de continuidade e saída de fornecedores | caminhos críticos, tolerâncias, RTO/RPO, fallback, manual, reconciliação, exercício | recuperação atinge alvo sem contornar controles |
+| R25 | Definir contratos de capacidade e interfaces de extensão independentes de produto | comportamento exigido, interface, contrato de dados/identidade, teste de portabilidade, mapping | fornecedor substituído/isolado sem redefinir policy, control IDs, schemas ou gates |
 
-A OWASP mantém referências específicas para ameaças agentic e destaca que a combinação de LLMs com sistemas autônomos amplia capacidades e riscos.[14] O domínio de tools deve ser tratado como superfície de segurança e de decisão, não como conveniência de integração.
+## 11. Evidências, métricas e failure modes
 
-<!-- source-unit {"classification": "definition", "end_line": "38", "index": 115, "source_field": "", "source_heading": "Taxonomia de capacidades", "source_path": "docs/tool-governance/README.md", "start_line": "25", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Taxonomia de capacidades
+**Evidências:** blueprint com trust boundaries; mapeamento capability × sistema com source of truth por atributo; identity record e owner; configuração de autenticação; testes de autorização positiva/negativa; logs com correlation ID; data contract e approval do owner; lineage/provenance records; DLP results; retention/deletion test; critérios de aprovação de modelo e evaluation results; regression evidence por versão; equivalência de controles do fallback; exit plan testado; tool registry record; threat model e misuse cases; provenance/SBOM; security test results; sandbox/egress configuration; incident e containment drills; runtime alerts e policy denials; residual risk acceptance.
 
-| Classe | Exemplos | Risco-base |
-|---|---|---|
-| observe | search, read, list, inspect | exposição e inferência |
-| create | criar draft, ticket ou arquivo | conteúdo incorreto e spam |
-| modify | atualizar record, config ou workflow | corrupção e efeito operacional |
-| execute | rodar código, comando ou job | compromisso de sistema |
-| approve | liberar pagamento, acesso ou mudança | quebra de segregation of duties |
-| delete | apagar dado ou recurso | irreversibilidade |
-| delegate | criar subagente ou conceder acesso | propagação e perda de controle |
+**Métricas:** capabilities sem sistema atribuído; atributos com mais de um sistema autoritativo; agentes sem workload identity; shared accounts; scopes não usados; identidades sem owner/attestation; falhas de revogação; connectors sem owner/classificação; respostas sem source attribution; leakage test failures; stale indexes; agentes usando combinação fora do catálogo; versões sem evaluation; mudanças de versão sem regression; concentração por provedor; custo por tarefa; tools/servers não registrados; chamadas negadas por policy; state-changing calls sem approval; tempo para revogar; actions blocked; mean time to contain; secrets em traces; regressions por mudança material; cobertura de threat models.
 
-Risco real combina classe, dados, identity, alcance, reversibilidade, frequência e encadeamento.
+**Failure modes:** "o system prompt proíbe" como controle principal; red team sem cenários de tool/data flow; scan de dependência sem provenance de modelo/prompt; logar tudo e criar novo data breach; egress amplo em sandbox; bloquear UI mas deixar API aberta; corrigir incidente sem revalidar memória e indexes; tratar output filter como segurança completa; MCP irrestrito; tool description confiada como policy; standing privilege; shared identity; approval só no front-end; kill switch que exige redeploy; auto-descoberta de tools sem allowlist; cadeia de tools sem limite; usar conta do builder em produção; confiar apenas no prompt para proibir ações; registrar "system" como actor de toda execução; manter acesso após sunset; allowlist única de modelos sem contexto; tratar major version como patch; comparar apenas preço por token; fallback para provedor não aprovado; chamar todo conteúdo interno de confiável; indexar além do scope aprovado; aplicar autorização depois da retrieval; persistir prompts e traces indefinidamente.
 
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "57", "index": 116, "source_field": "", "source_heading": "Tool registry", "source_path": "docs/tool-governance/README.md", "start_line": "39", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Tool registry
+## Decision gates
 
-Cada tool, API ou MCP server registra:
-
-- owner e fornecedor/origem;
-- versão, hash ou provenance do pacote;
-- operações e schemas;
-- identity model e scopes;
-- dados acessados e destinos;
-- network endpoints e regiões;
-- side effects e reversibilidade;
-- rate limits, quotas e custo;
-- logs e correlation IDs;
-- approval mode;
-- kill switch e revocation path;
-- vulnerabilities, findings e validade da aprovação.
-
-O contrato mínimo vendor-neutral está no [Enterprise Tool Registry schema](../../toolkit/schemas/enterprise-tool-registry.schema.json), com [exemplo preenchido](../../toolkit/examples/enterprise-tool-registry.example.json). O registry pode viver em GRC, CMDB, catálogo de API ou plataforma equivalente; o importante é o binding estável `catalogEntryId` usado pelo Blueprint e pelos audit events.
-
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "61", "index": 117, "source_field": "", "source_heading": "MCP governance", "source_path": "docs/tool-governance/README.md", "start_line": "58", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### MCP governance
-
-MCP padroniza acesso a tools e contexto; não padroniza confiança. Um servidor MCP pode alterar descrições, tools, resources e prompts e deve ser governado como software com autoridade.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "76", "index": 118, "source_field": "", "source_heading": "Requisitos mínimos para MCP", "source_path": "docs/tool-governance/README.md", "start_line": "62", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-##### Requisitos mínimos para MCP
-
-1. Discovery somente em registries aprovados ou allowlists.
-2. Provenance e versão fixadas quando tecnicamente possível.
-3. Tool descriptions tratadas como input não confiável.
-4. Gateway ou enforcement point aplica identidade, scopes e policy.
-5. Egress e destinos são limitados.
-6. Operações state-changing são diferenciadas de read-only. Na taxonomia estruturada v1.0, `create` significa criar ou persistir um artefato/registro fora da resposta transitória do modelo e, portanto, exige `stateChanging: true`; geração puramente transitória não deve ser classificada como tool `create`.
-7. Argumentos e resultados são validados por schema.
-8. Sensitive data é filtrado antes do envio.
-9. Logs preservam servidor, tool, versão, argumentos protegidos e outcome.
-10. Kill switch revoga o server sem depender do agente.
-11. Mudanças materiais exigem reavaliação.
-12. Sampling, roots e callbacks são explicitamente autorizados.
-
-<!-- source-unit {"classification": "procedure", "end_line": "91", "index": 119, "source_field": "", "source_heading": "Fluxo de aprovação", "source_path": "docs/tool-governance/README.md", "start_line": "77", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Fluxo de aprovação
-
-```mermaid
-flowchart LR
-    N[Necessidade] --> R[Registro e provenance]
-    R --> T[Threat model]
-    T --> S[Scopes e data flow]
-    S --> X[Testes e sandbox]
-    X --> A{Authority}
-    A -->|aprova| G[Gateway/allowlist]
-    A -->|condiciona| C[Compensating controls]
-    A -->|nega| B[Bloqueio]
-    G --> M[Monitoramento e attestation]
-```
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "104", "index": 120, "source_field": "", "source_heading": "Enforcement patterns", "source_path": "docs/tool-governance/README.md", "start_line": "92", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Enforcement patterns
-
-- **Tool allowlist:** catálogo fechado por tier e ambiente.
-- **Policy gateway:** valida caller, tool, arguments, destination e context.
-- **Human confirmation:** mostra ação, alvo e efeito antes de executar.
-- **Transaction limit:** restringe valor, volume, frequência ou horário.
-- **Sandbox:** isola filesystem, network e processo.
-- **Two-person rule:** separa preparação e aprovação em ações críticas.
-- **Dry run:** calcula mudanças antes de commit.
-- **Kill switch:** remove capacidade imediatamente.
-
-Prompt instructions não substituem enforcement técnico.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "115", "index": 121, "source_field": "", "source_heading": "Build-time controls", "source_path": "docs/tool-governance/README.md", "start_line": "105", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Build-time controls
-
-- threat model por classe de tool;
-- dependency/provenance scan;
-- schema validation;
-- positive, negative e adversarial tests;
-- idempotency e rollback tests;
-- sandbox e egress tests;
-- rate/cost controls;
-- approval UX test.
-
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "125", "index": 122, "source_field": "", "source_heading": "Runtime controls", "source_path": "docs/tool-governance/README.md", "start_line": "116", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Runtime controls
-
-- anomaly detection por identidade, tool e sequência;
-- policy denial e alerting;
-- correlation entre intenção, chamada e efeito;
-- circuit breaker;
-- quarantine do agente ou tool;
-- audit de mudança de versão/capabilities;
-- periodic re-attestation.
-
-<!-- source-unit {"classification": "procedure", "end_line": "138", "index": 123, "source_field": "", "source_heading": "Playbook de implantação", "source_path": "docs/tool-governance/README.md", "start_line": "126", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Playbook de implantação
-
-Tools, APIs, connectors e MCP são a superfície onde o agente deixa de interpretar informação e passa a **agir**. Por isso a capacidade de ação precisa de classificação e autorização próprias, mesmo quando o agente já tem um tier.
-
-1. **Descobrir e registrar tools e servidores MCP.** Registry com owner, endpoint, autenticação, dados tocados, classes de ação, ambientes, consumidores e lifecycle. Descoberta automática ajuda; ownership e autorização precisam ser confirmados por pessoa.
-2. **Classificar ações, não produtos.** Uma API contém operações de riscos distintos. Separar leitura e busca, criação e atualização, exclusão e execução, privilegiada e administrativa, financeira e safety-critical. **O controle acompanha a ação específica.**
-3. **Definir tiers permitidos e pré-condições.** Para cada classe de ação: quais tiers podem consumi-la, identidade mínima, classe de dados, oversight humano e ambiente. Ação de alto impacto é default deny salvo exceção explícita.
-4. **Autorizar por parâmetros.** Validar alvo, valor, escopo, recurso e constraints no gateway ou broker. **O modelo pode propor parâmetros; nunca deve ser a autoridade que decide se são permitidos.**
-5. **Governar MCP como camada de confiança.** Registrar owner do servidor, ferramentas expostas, versão, autenticação, origem, fronteira de rede e política de descoberta. Descoberta externa ilimitada e servidores não aprovados não pertencem a agentes de produção.
-6. **Mediar ações materiais.** O broker aplica policy, rate limit, aprovações, validação de parâmetros e logging. Para ações privilegiadas, vincular a aprovação ao artefato da **ação exata**, não a uma sessão.
-7. **Definir quotas, circuit breakers e idempotência.** Um agente em loop repete ações válidas até causar dano. Limitar chamadas, custo, concorrência e retries; usar chave de idempotência e circuit breaker onde a operação suportar.
-8. **Monitorar e versionar mudanças.** Alteração de schema, autenticação, ação permitida ou servidor MCP pode ser mudança material. A telemetria precisa correlacionar `agent_id` → ferramenta → ação → resultado → decisão de policy.
-
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "152", "index": 124, "source_field": "", "source_heading": "Evidências", "source_path": "docs/tool-governance/README.md", "start_line": "139", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Evidências
-
-- tool registry record;
-- [Enterprise Tool Registry estruturado](../../toolkit/schemas/enterprise-tool-registry.schema.json);
-- provenance e versão;
-- threat model;
-- permission matrix;
-- test results;
-- gateway/policy configuration;
-- approval/denial logs;
-- rollback e kill-switch drill;
-- exception e expiry;
-- attestation.
-
-<!-- source-unit {"classification": "metric", "end_line": "164", "index": 125, "source_field": "", "source_heading": "Métricas", "source_path": "docs/tool-governance/README.md", "start_line": "153", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
-
-- tools e servers não registrados;
-- chamadas negadas por policy;
-- scopes não usados;
-- state-changing calls sem approval correto;
-- tempo para revogar uma tool;
-- versão fora de baseline;
-- ações sem correlation ID;
-- exceptions vencidas;
-- custo ou volume fora de envelope.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "176", "index": 126, "source_field": "", "source_heading": "Antipatterns", "source_path": "docs/tool-governance/README.md", "start_line": "165", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Antipatterns
-
-- MCP irrestrito;
-- tool description confiada como policy;
-- standing privilege para “facilitar” operação;
-- shared identity;
-- approval apenas no front-end;
-- log sem side effect real;
-- kill switch que exige redeploy completo;
-- auto-descoberta de tools em produção sem allowlist;
-- cadeia de tools sem limite de profundidade ou budget.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "180", "index": 127, "source_field": "", "source_heading": "Decision gate", "source_path": "docs/tool-governance/README.md", "start_line": "177", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Decision gate
-
-Nenhuma tool state-changing entra em produção sem owner, provenance, scopes, threat model, enforcement, rollback e kill switch verificáveis.
-
-<!-- source-unit {"classification": "reference", "end_line": "185", "index": 128, "source_field": "", "source_heading": "Sources", "source_path": "docs/tool-governance/README.md", "start_line": "181", "transformation": "integrate-completely-and-link-toolkit", "unit_type": "markdown-atx-heading"} -->
-#### Sources
-
-[14] <https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations> — OWASP Agentic AI Threats and Mitigations
-
-Para tools e MCP servers de terceiros, as exigências contratuais estão em [cláusulas mínimas de contrato com fornecedor de IA](../../toolkit/templates/ai-vendor-contract-clauses.md).
+- **Capability map:** uma capability não é implantada sem sistema atribuído, source of truth e evidência. Cobertura prometida por roadmap não é cobertura.
+- **Identidade:** nenhum agente com escrita/execução/deleção passa sem identity model, permission matrix, testes negativos e revocation plan.
+- **Dados:** sem data contract, owner, classification, access model, retention e testes de segregação, o connector permanece bloqueado.
+- **Modelos:** nenhum agente entra em produção com combinação fora do catálogo, sem evaluation vinculada e sem registro no blueprint.
+- **Tools:** nenhuma tool state-changing entra em produção sem owner, provenance, scopes, threat model, enforcement, rollback e kill switch.
+- **Segurança:** a release authority verifica se threat model, testes, contenção e runtime response correspondem ao tier e às ações possíveis.
 
 ## Acceptance criteria
 
