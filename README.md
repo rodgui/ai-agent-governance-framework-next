@@ -5,6 +5,12 @@ modular, 11 capítulos de domínio, 44 controles verificáveis, schemas estrutur
 patterns, templates e casos de referência fictícios. Escrito em PT-BR; contratos
 estruturados (schemas, IDs, enums) permanecem em inglês como contratos.
 
+> **Formato dos capítulos — Manual/Bíblia, não documento de auditoria.** Cada
+> capítulo (00–10) abre com narrativa ("por que importa"), explica conceitos com
+> exemplos e armadilhas comuns, e fecha com uma **tabela normativa R1–Rn** — o
+> contrato condensado para implementar. Quem lê não precisa conhecer o assunto
+> antes de começar.
+
 > **Para consumir este repositório, leia o [Guia de Consumo](CONSUMO.md) primeiro.**
 > Ele explica os dois repositórios do ecossistema (framework e template),
 > as trilhas de estudo, o fluxo de implantação e um caso prático passo a passo.
