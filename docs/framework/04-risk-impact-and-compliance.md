@@ -112,7 +112,36 @@ O fast path elimina revisão manual caso a caso. Ele **não** elimina controle. 
 
 > Materiais externos que usem `T0` convergem para T1: `T0` e `T1` externos mapeiam para o T1 canônico. `Restricted` do guia v3.4 mapeia para admissibilidade, não redefine T4.
 
-### 1.5 Admissibilidade: uma dimensão separada do risco
+### 1.5 O mapa de decisão: como risco, RAI e aprovação se encadeiam
+
+A dificuldade mais comum neste domínio é tratar scoring, Responsible AI e aprovação como controles concorrentes. **Eles não competem — funcionam em sequência:** o pre-screen coleta fatos; o scoring estima o risco base; os red flags corrigem fatores que não podem ser diluídos; o tier define a intensidade mínima de governança; o impact trigger identifica impactos sobre pessoas; o RAI impact assessment aprofunda esses impactos quando acionado; os domain reviews tratam controles especializados; e o publication gate apenas verifica se as evidências exigidas estão completas.
+
+**Fluxo mental recomendado:**
+
+```text
+PRE-SCREEN → SCORING → RED FLAGS → TIER + ADMISSIBILIDADE
+  → IMPACT TRIGGER → RAI IMPACT ASSESSMENT (quando acionado)
+  → DOMAIN REVIEWS (por gatilho) → PUBLICATION GATE
+```
+
+Uma etapa não substitui a anterior, e nem todas exigem trabalho manual. A matriz abaixo é o **mapa de calor operacional** — lida horizontalmente por tier e verticalmente por mecanismo, mostra quanta formalidade cada combinação exige:
+
+| Mecanismo | T1 | T2 | T3 | T4 |
+|---|---|---|---|---|
+| **Pre-screen + scoring** | automatizável (fast path) | obrigatório | formal | formal + enhanced (identifica uso restrito) |
+| **Red flags** | sempre checar | sempre checar | sempre checar | críticos / default deny |
+| **Impact trigger screen** | obrigatório | obrigatório | obrigatório | obrigatório se exceção for analisada |
+| **RAI impact assessment** | somente se trigger | formal se trigger | formal/aprofundado quando trigger | obrigatório se exceção envolver impacto |
+| **Domain reviews** | por trigger | formais por trigger | multidisciplinares | autoridade máxima + especialistas |
+| **Publication gate** | owner + policy gate (automatizável) | formal evidence gate | formal + assurance | sem rota normal de publicação |
+
+Legenda: **T1** = leve/automatizável · **T2** = obrigatório ou condicional · **T3** = formal/enhanced · **T4** = restrito/default deny.
+
+**T4 representa default deny**: não existe rota normal de publicação. Se a organização admitir exceção, a rota é explícita, executiva e altamente controlada — com authority máxima, registro da exceção, expiry e monitoramento contínuo.
+
+A [ferramenta de classificação](../../toolkit/templates/risk-scoring-worksheet.md) operacionaliza este mapa: ela aplica as sete dimensões de scoring, os red flags e o impact trigger para produzir tier, admissibilidade e a lista de reviews acionadas. A lógica normativa vive aqui; a ferramenta executa e registra.
+
+### 1.6 Admissibilidade: uma dimensão separada do risco
 
 Risk tier responde **quão severo pode ser o impacto**. Admissibilidade responde **se e sob quais condições o uso pode operar**. Um T1 pode ser proibido por finalidade ou obrigação legal; um T4 pode ser admitido quando authority, controles e evidências compatíveis existirem.
 
@@ -127,7 +156,7 @@ Tier e admissibilidade são registrados juntos no [Agent Risk Record](../../tool
 
 O piso de controles exigido por tier para entrar e permanecer em produção está no [Minimum Production Bar](../../toolkit/controls/minimum-production-bar.md).
 
-### 1.6 Regras de uso: o que é permitido, o que exige aprovação, o que é proibido
+### 1.7 Regras de uso: o que é permitido, o que exige aprovação, o que é proibido
 
 As regras abaixo são simples e objetivas, aplicáveis em todos os níveis (Grupo/Segmento/Local) e a qualquer plataforma aprovada. Elas servem de referência para self-assessment e auditoria. Fornecedores e parceiros que desenvolvem ou operam agentes em nome da empresa devem cumprir integralmente esta política e seus anexos.
 

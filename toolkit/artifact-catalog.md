@@ -49,6 +49,7 @@ Duas ressalvas sobre a coluna de fase. Ela referencia as fases F0–F6 do [progr
 | Use-case intake | problema, baseline e hipótese de valor | negócio + governança | F2 | [template](templates/use-case-intake.md) |
 | Agent use-case portfolio | priorizar investimento, detectar duplicidade e medir valor | portfolio owner | F2/F4 | [template](templates/use-case-portfolio.md) · [estratégia e valor](../docs/framework/03-inventory-portfolio-and-value.md) |
 | Risk pre-screen | roteamento rápido e acionamento de escaladores | governança | F2 | [template](templates/risk-pre-screen.md) |
+| Risk scoring worksheet | sete dimensões de scoring + red flags → tier e reviews | governança + risco | F2 | [template](templates/risk-scoring-worksheet.md) |
 | Agent risk record | tier, admissibilidade, residual risk e authority por agente | risco + owners | F2/F3 | [template](templates/agent-risk-record.md) |
 | Impact assessment | impactos sobre pessoas, mitigações e residual | Responsible AI + risco | F2 | [Responsible AI](../docs/framework/04-risk-impact-and-compliance.md#impact-assessment) |
 | Approval e publication workflow | gates por tier e por gatilho | governança + plataforma | F2/F3 | [decision gates](../docs/framework/08-implementation-and-adoption.md) · [checklist](templates/release-decision-checklist.md) |
