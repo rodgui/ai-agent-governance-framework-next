@@ -543,7 +543,7 @@ class FrontmatterRelatedPathTests(unittest.TestCase):
 
 
 class TierTaxonomyTests(unittest.TestCase):
-    """ADR-0009: T1-T4 is the canonical risk-tier taxonomy."""
+    """ADR-0009: T1-T4 é a taxonomia canônica de tier de risco."""
 
     def setUp(self) -> None:
         self.original_root = getattr(validator, "ROOT")
@@ -620,7 +620,7 @@ class TierTaxonomyTests(unittest.TestCase):
 
 
 class CaseBundleTests(unittest.TestCase):
-    """A second reference case must be verified by the same rules as the first."""
+    """Um segundo caso de referência deve ser verificado pelas mesmas regras do primeiro."""
 
     def setUp(self) -> None:
         self.original_root = getattr(validator, "ROOT")
@@ -638,7 +638,7 @@ class CaseBundleTests(unittest.TestCase):
         self.temporary.cleanup()
 
     def seed_case(self, mutate_registry=None, mutate_blueprint=None) -> list[Path]:
-        """Copy the canonical case into examples/cases/demo-case, optionally corrupted."""
+        """Copia o caso canônico para examples/cases/demo-case, opcionalmente corrompido."""
         registry = json.loads((self.root / "toolkit/examples/agent-registry.example.json").read_text(encoding="utf-8"))
         blueprint = json.loads((self.root / "toolkit/examples/agent-blueprint.example.json").read_text(encoding="utf-8"))
         registry["currentBlueprint"]["path"] = f"{self.case}/blueprint.json"
@@ -715,7 +715,7 @@ class CaseBundleTests(unittest.TestCase):
         )
 
     def test_case_without_own_catalogs_still_checks_bindings(self) -> None:
-        """A case that omits catalogs inherits the shared ones instead of skipping the checks."""
+        """Um caso que omite catálogos herda os compartilhados em vez de pular as verificações."""
         json_files = self.seed_case(
             mutate_blueprint=lambda document: document["tools"][0].__setitem__(
                 "catalogEntryId", "TLR-NOT-CATALOGED-999"
@@ -745,7 +745,7 @@ class CaseBundleTests(unittest.TestCase):
 
 
 class TierLabelTests(unittest.TestCase):
-    """ADR-0009 in prose: a tier column says T1-T4, not baixo/moderado/alto/critico."""
+    """ADR-0009 em prosa: uma coluna de tier diz T1-T4, não baixo/moderado/alto/critico."""
 
     def setUp(self) -> None:
         self.original_root = getattr(validator, "ROOT")
@@ -801,7 +801,7 @@ class TierLabelTests(unittest.TestCase):
 
 
 class GovernanceContractV2Tests(unittest.TestCase):
-    """Approved spec 002: structured governance contracts are explicit and versioned."""
+    """Spec 002 aprovada: contratos de governança estruturados são explícitos e versionados."""
 
     def load_json(self, relative_path: str):
         return json.loads((REPO_ROOT / relative_path).read_text(encoding="utf-8"))
