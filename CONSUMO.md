@@ -1,16 +1,15 @@
-# Guia de Consumo — Ecossistema de Governança de Agentes de IA
+# Guia de Consumo — Framework de Governança de Agentes de IA
 
-> **O que é:** este guia explica **como usar** os três repositórios do ecossistema:
-> o framework canônico (`ai-agent-governance-framework-next`), a camada comercial
-> (`ai-agent-governance-consulting`) e o ponto de partida de implementação
-> (`ai-agent-governance-implementation-template`).
+> **O que é:** este guia explica **como usar** este repositório — o framework
+> canônico (`ai-agent-governance-framework-next`) — e o ponto de partida de
+> implementação (`ai-agent-governance-implementation-template`).
 >
-> **Para quem:** qualquer pessoa que vai ler, implantar, instanciar ou vender este
+> **Para quem:** qualquer pessoa que vai ler, implantar ou instanciar este
 > conteúdo. Se você só quer estudar, o [handbook](docs/handbook/README.md) já basta.
 
 ---
 
-## 1. Os três repositórios e seus papéis
+## 1. Os dois repositórios e seus papéis
 
 ```
 ┌───────────────────────────────────────────────────┐
@@ -20,27 +19,24 @@
 │    schemas, patterns, templates, casos fictícios  │
 └───────────────────────┬───────────────────────────┘
                         │ pin @ 1.1.0 (referencia, nunca copia)
-            ┌───────────┴────────────┐
-            ▼                        ▼
-┌─────────────────────┐  ┌──────────────────────────┐
-│ 2. consulting       │  │ 3. implementation-       │
-│    O NEGÓCIO        │  │    template              │
-│    3 pacotes,       │  │    O ESQUELETO           │
-│    9 módulos,       │  │    registros vazios,     │
-│    playbooks        │  │    exemplos fictícios    │
-└─────────────────────┘  └──────────────────────────┘
+                        ▼
+┌───────────────────────────────────────────────────┐
+│ 2. implementation-template                        │
+│    O ESQUELETO                                    │
+│    registros vazios, exemplos fictícios,          │
+│    estrutura de pastas para a organização         │
+└───────────────────────────────────────────────────┘
 ```
 
-**Regra de ouro:** o framework é a **fonte única de verdade**. Os outros dois
-repositórios **referenciam** conteúdo canônico por ID e versão — nunca copiam
-policy, controles ou templates. Isso é verificado por validador: um fork canônico
+**Regra de ouro:** o framework é a **fonte única de verdade**. O template
+**referencia** conteúdo canônico por ID e versão — nunca copia policy, controles
+ou templates. Isso é verificado por validador: um fork canônico
 (`canonical framework fork detected`) faz a validação falhar.
 
 | Repositório | Você usa quando... | Entrada recomendada |
 |---|---|---|
 | **framework-next** | quer estudar, decidir ou implantar governança | [Comece aqui](docs/start-here.md) |
 | **implementation-template** | vai preencher registros de uma organização real | [README](https://github.com/rodgui/ai-agent-governance-implementation-template) → `docs/01-initialization.md` |
-| **consulting** | vai vender ou entregar serviço sobre o framework | [README](https://github.com/rodgui/ai-agent-governance-consulting) → `offerings/README.md` |
 
 ---
 
@@ -138,28 +134,7 @@ minimum production bar) → `incidents/` → `retirement/`.
 
 ---
 
-## 4. Como VENDER / ENTREGAR (consulting)
-
-O repositório de consultoria é a **produtificação comercial** do conhecimento do
-framework, deliberadamente separada da policy canônica:
-
-- **3 pacotes, 9 módulos** (README do repo):
-  - Pacote 1 — Readiness, Operating Model & Adoption (módulos 1, 2, 8)
-  - Pacote 2 — Policy, Controls & Lifecycle (módulos 3, 4, 5)
-  - Pacote 3 — Runtime, Tools & Evidence (módulos 6, 7, 9)
-- **Como usar:** proposta a partir de `templates/commercial/proposal.md` →
-  playbooks em `delivery/playbooks/` (diagnóstico, workshops, handoff) →
-  matrizes em `delivery/matrices/` para rastrear entregáveis por módulo.
-
-**Regras comerciais já codificadas** (AGENTS.md do repo): não prometer ROI,
-conformidade ou ausência de incidentes; não vender certificação/auditoria/
-independent assurance sem capacidade formalmente demonstrada; vendor mappings
-são opções de implementação, nunca requisito do método; cada oferta é pinada a
-uma release explícita do framework.
-
----
-
-## 5. Caso prático — "empresa fictícia Acme quer começar"
+## 4. Caso prático — "empresa fictícia Acme quer começar"
 
 Cenário: a Acme (nome fictício, setor financeiro) tem ~40 agentes de IA espalhados
 em copilotos e workflows, sem governança formal. Um sponsor executivo leu o brief.
@@ -216,7 +191,7 @@ O passo a passo abaixo mostra exatamente quais arquivos consumir e preencher.
 
 ---
 
-## 6. O que NÃO esperar
+## 5. O que NÃO esperar
 
 - **Não é um produto pronto** — é um framework verificável (44 controls com
   evidência declarada, contratos estruturados, validação automatizada), não um
@@ -232,7 +207,7 @@ O passo a passo abaixo mostra exatamente quais arquivos consumir e preencher.
 
 ---
 
-## 7. Mapa de arquivos mais usados
+## 6. Mapa de arquivos mais usados
 
 | Pergunta | Arquivo |
 |---|---|
@@ -243,4 +218,3 @@ O passo a passo abaixo mostra exatamente quais arquivos consumir e preencher.
 | "Quais schemas/contratos?" | [schemas](toolkit/schemas/README.md) |
 | "Exemplos de registros?" | [casos de referência](toolkit/examples/cases/README.md) |
 | "Como instanciar na minha org?" | repo `implementation-template` → `docs/01-initialization.md` |
-| "Como vender isso?" | repo `consulting` → `offerings/README.md` |

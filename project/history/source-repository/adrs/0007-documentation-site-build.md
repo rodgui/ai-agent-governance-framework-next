@@ -22,7 +22,7 @@ A [ADR-0003](../../../decisions/source-history/0003-single-canonical-source-and-
 
 Ninguém abre 122 arquivos. Um executivo, um comprador ou um aluno precisa de uma superfície de leitura contínua, com navegação e busca. O handbook define a ordem editorial, mas hoje é apenas um índice de links dentro do próprio repositório.
 
-Há um obstáculo técnico específico: o conteúdo canônico está distribuído entre `docs/`, `controls/`, `schemas/`, `templates/`, `examples/`, `references/`, `assessments/` e `consulting/`, e os links entre essas pastas são relativos e cruzam fronteiras (`../../controls/README.md`). Qualquer solução que publique apenas uma dessas pastas produz um site com links quebrados.
+Há um obstáculo técnico específico: o conteúdo canônico está distribuído entre `docs/`, `controls/`, `schemas/`, `templates/`, `examples/`, `references/` e `assessments/`, e os links entre essas pastas são relativos e cruzam fronteiras (`../../controls/README.md`). Qualquer solução que publique apenas uma dessas pastas produz um site com links quebrados.
 
 ## Forças e constraints
 

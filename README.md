@@ -6,7 +6,7 @@ patterns, templates e casos de referência fictícios. Escrito em PT-BR; contrat
 estruturados (schemas, IDs, enums) permanecem em inglês como contratos.
 
 > **Para consumir este repositório, leia o [Guia de Consumo](CONSUMO.md) primeiro.**
-> Ele explica os três repositórios do ecossistema (framework, consulting, template),
+> Ele explica os dois repositórios do ecossistema (framework e template),
 > as trilhas de estudo, o fluxo de implantação e um caso prático passo a passo.
 
 ## Portas de entrada
@@ -18,7 +18,6 @@ estruturados (schemas, IDs, enums) permanecem em inglês como contratos.
 | **Localizar um assunto** | [Índice por persona e objetivo](docs/index.md) |
 | **Entender o ecossistema completo** | [Guia de Consumo](CONSUMO.md) |
 | **Instanciar registros na sua org** | repo `ai-agent-governance-implementation-template` (pin `@1.1.0`) |
-| **Vender/entregar serviço** | repo `ai-agent-governance-consulting` (pin `@1.1.0`) |
 
 ## Estrutura
 

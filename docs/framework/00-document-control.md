@@ -152,8 +152,7 @@ Não integram a policy, salvo incorporação explícita e versionada:
 - exemplos fictícios em `examples/`;
 - roadmap, specs e experimentos;
 - calendários de 90 dias/24 semanas e o plano opcional de piloto;
-- mappings de fornecedores;
-- a camada comercial em `consulting/`.
+- mappings de fornecedores.
 
 Esses artefatos podem informar decisões, mas não criam dependência tecnológica nem requisito normativo por associação.
 

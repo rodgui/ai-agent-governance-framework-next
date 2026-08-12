@@ -40,7 +40,7 @@ O repositório tem o esqueleto normativo. O guia tem a camada de execução. A a
 - o guia não tem versionamento verificável: o arquivo entregue declara versão 3.4 na capa, 3.3 nos metadados de título e 3.2 na descrição, sem autoria ou data confiáveis;
 - a densidade normativa do repositório é sua principal força e não pode ser diluída por importação literal;
 - o ADR-0002 já estabelece policy modular, neutralidade de fornecedor e boundary comercial — a absorção não pode violar nenhum dos três;
-- a camada procedural é exatamente o que falta para propor implantação e sustentar consultoria.
+- a camada procedural é exatamente o que falta para propor implantação sustentada.
 
 ## Opções consideradas
 

@@ -89,7 +89,7 @@ class ProductBoundaryTests(unittest.TestCase):
         issues = validator.validate_product_boundaries(self.files + [legacy])
         self.assertTrue(any(issue.category == "boundary" and issue.path == str(legacy.relative_to(self.root)) for issue in issues))
 
-    def test_rejects_embedded_consulting_repository_tree(self) -> None:
+    def test_rejects_embedded_commercial_repository_tree(self) -> None:
         commercial = self.root / "consulting/README.md"
         commercial.parent.mkdir(parents=True)
         commercial.write_text("# Commercial repository leak\n", encoding="utf-8")

@@ -38,7 +38,7 @@ O Master Document define requisitos, decisions, authorities e evidence expectati
 
 - conteúdo de fornecedor permanece em pesquisa, caso, mapping ou histórico explicitamente identificado;
 - a Policy v1 permanece preservada em `project/history/` e não governa silenciosamente a release corrente;
-- consultoria e instanciação organizacional vivem em repositórios independentes;
+- instanciação organizacional vive em repositório independente do framework;
 - release do framework (`1.1.0`), catálogo (`1.2.0`) e schemas (`2.0`) têm versionamento distinto;
 - adoção exige authority organizacional; versionar o repositório não cria compliance nem aprovação.
 

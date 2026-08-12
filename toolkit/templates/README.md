@@ -53,7 +53,7 @@ Esta página lista os templates por finalidade. Para saber **quando** cada artef
 - [Study Note](study-note-template.md)
 - [Experiment](../../project/experiments/experiment-template.md)
 
-O template de proposta comercial pertence ao repositório independente `ai-agent-governance-consulting`; não integra o framework canônico.
+O template de proposta comercial não integra o framework canônico e é mantido fora deste repositório.
 
 ## Anexos históricos incorporados
 

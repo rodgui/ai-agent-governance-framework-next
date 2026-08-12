@@ -7,7 +7,6 @@ review_cycle: major-change
 supersedes: null
 superseded_by: 0002-modular-policy-vendor-neutrality-and-commercial-boundary.md
 related:
-  - ../specs/001-handbook-consulting-product/spec.md
   - ../../../../docs/index.md
   - ../../../../research/case-studies/microsoft-customer-zero-agent-governance.md
 ---
@@ -18,7 +17,7 @@ related:
 
 ## Contexto
 
-O framework precisa funcionar como policy, guia, handbook, catálogo de patterns e base de consultoria. A primeira consolidação usou cinco artigos Microsoft Customer Zero como evidência útil, mas um visual e uma narrativa centrados em Agent 365 podem ser interpretados como arquitetura universal ou dependência de fornecedor.
+O framework precisa funcionar como policy, guia, handbook e catálogo de patterns. A primeira consolidação usou cinco artigos Microsoft Customer Zero como evidência útil, mas um visual e uma narrativa centrados em Agent 365 podem ser interpretados como arquitetura universal ou dependência de fornecedor.
 
 Manter uma segunda versão monolítica para ebook criaria divergência editorial. Manter todos os detalhes no README prejudicaria navegação e revisão.
 
@@ -29,7 +28,7 @@ Manter uma segunda versão monolítica para ebook criaria divergência editorial
 3. Estudos de caso e mappings por fornecedor serão separados do núcleo normativo e arquitetural.
 4. O README funcionará como landing page e mapa; não como handbook completo.
 5. Uma futura publicação, quando priorizada, será derivada dos documentos canônicos e da ordem linear do handbook.
-6. A oferta de consultoria será derivada do mesmo método, control catalog, assessments, templates e critérios de aceite.
+6. Implementações derivadas serão construídas a partir do mesmo método, control catalog, assessments, templates e critérios de aceite.
 7. O visual principal será neutro; visuais de fornecedores serão rotulados como estudos de caso.
 
 ## Opções consideradas
@@ -56,7 +55,7 @@ Aceita. Preserva rastreabilidade, permite jornadas diferentes e sustenta múltip
 - separação clara entre normativo, explicativo, operacional e comercial;
 - documentação revisável por domínio;
 - ebook e assets reproduzíveis;
-- patterns, schemas e controles reutilizáveis em engagements de consultoria;
+- patterns, schemas e controles reutilizáveis em implantações organizacionais;
 - estudos de caso podem evoluir sem redefinir o framework.
 
 ## Consequências negativas
