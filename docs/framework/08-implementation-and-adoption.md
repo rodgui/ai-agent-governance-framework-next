@@ -2,7 +2,7 @@
 title: 08 — Implementação e adoção
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-12
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -10,581 +10,26 @@ source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 
 # 08 — Implementação e adoção
 
-Este capítulo integra a estrutura clean-room aprovada com o conteúdo substantivo do corpus autoritativo. Requisitos do framework são vendor-neutral; legislação externa, guidance, casos e histórico são identificados como tais. A implementação organizacional exige adoção formal pela authority competente e não decorre do versionamento deste repositório.
 
-## Contrato operacional do capítulo
+## Visão geral
 
-As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
+Este capítulo responde a pergunta prática que todos os outros preparam: **como uma organização sai do zero e chega à governança operando no dia a dia?**
 
-### 08.1 Princípios de implementação
+A resposta tem três camadas:
 
-**Decisão/ação obrigatória.** Para **princípios de implementação**, a organização deve entregar esta capacidade de implementação como workstream com owner, dependências e critérios de saída.
+1. **A jornada em 8 gates (G0–G7):** pontos de decisão com critérios, evidência e authority — o esqueleto da implantação.
+2. **Dois roadmaps de referência:** 90 dias (acelerado) e 24 semanas (programa completo) — formas de organizar o calendário sem virar SLA.
+3. **Adoção e suporte:** como cada papel aprende, usa e retroalimenta o sistema — porque governança que ninguém consegue executar não existe.
 
-**Registro e evidência.** O plano de implementação deve registrar baseline, alvo, owner, recursos, sequência, evidência de aceite, riscos, dependências e destinatário do handoff.
+O aviso que atravessa tudo: **gates são decisões registradas, não nomes de fase.** Nenhum gate é concluído porque o prazo terminou ou um documento foi produzido. E o risco mais caro de um programa: **comprar tecnologia para um problema que é, na verdade, ausência de processo, ownership, dados ou decision rights.**
 
-**Concluído quando.** A capacidade funciona em um caminho representativo, usuários e operadores conseguem executá-la, e o ownership permanente aceita o runbook e o backlog.
+## 1. A jornada em 8 gates
 
-### 08.2 Diagnóstico do estado atual
+### 1.1 O contrato comum dos decision gates
 
-**Decisão/ação obrigatória.** Para **diagnóstico do estado atual**, a organização deve estabelecer um baseline datado de ativos, capacidades, owners, controles, evidências e dores operacionais antes de desenhar o estado-alvo.
+Os gates são decisões registradas, não fases cronológicas. Workstreams podem avançar em paralelo, mas nenhum gate é concluído apenas porque o prazo terminou.
 
-**Registro e evidência.** Registrar escopo, método, população, amostra, evidência, confiança, lacunas, dependências e validação de stakeholders.
-
-**Concluído quando.** O baseline distingue capacidades ausentes, definidas e operantes e pode ser repetido com o mesmo método.
-
-### 08.3 Descoberta de ativos e baseline
-
-**Decisão/ação obrigatória.** Para **descoberta de ativos e baseline**, a organização deve descobrir ativos implantados, experimentais, embarcados e operados por fornecedores por meio de múltiplas fontes reconciliadas.
-
-**Registro e evidência.** Reter fonte de descoberta, última visualização, confiança, correspondência de owner, identidade não resolvida e status de remediação.
-
-**Concluído quando.** Ativos sem owner ou shadow entram em contenção e resolução de ownership em vez de serem silenciosamente aceitos no inventário.
-
-### 08.4 Avaliação de capacidade e lacunas
-
-**Decisão/ação obrigatória.** Para **avaliação de capacidade e lacunas**, a organização deve estabelecer um baseline datado de ativos, capacidades, owners, controles, evidências e dores operacionais antes de desenhar o estado-alvo.
-
-**Registro e evidência.** Registrar escopo, método, população, amostra, evidência, confiança, lacunas, dependências e validação de stakeholders.
-
-**Concluído quando.** O baseline distingue capacidades ausentes, definidas e operantes e pode ser repetido com o mesmo método.
-
-### 08.5 Sistema de governança-alvo
-
-**Decisão/ação obrigatória.** Para **sistema de governança-alvo**, a organização deve desenhar as capacidades-alvo de decisão, controle, assurance, registry e operação a partir do baseline e do contexto de risco.
-
-**Registro e evidência.** Reter capacidades-alvo, authority, interfaces, artefatos exigidos, sequenciamento, aceite e premissas de transição.
-
-**Concluído quando.** Toda capacidade-alvo fecha uma lacuna ou obrigação documentada e tem owner e critério de saída mensurável.
-
-### 08.6 Modelo operacional-alvo
-
-**Decisão/ação obrigatória.** Para **modelo operacional-alvo**, a organização deve selecionar e documentar a alocação centralizada, federada ou híbrida das atribuições de policy, plataforma, domínio e assurance.
-
-**Registro e evidência.** Reter princípios de design, mapa de papéis, fronteiras de serviço, decision rights, handoffs, níveis de serviço e rota de exceção.
-
-**Concluído quando.** Um caso representativo percorre do intake à operação sem decisão órfã nem fonte de verdade duplicada.
-
-### 08.7 Workstreams priorizados e dependências
-
-**Decisão/ação obrigatória.** Para **workstreams priorizados e dependências**, a organização deve sequenciar o trabalho por dependência bloqueante, redução de risco e capacidade utilizável em vez de categoria de documento.
-
-**Registro e evidência.** Registrar workstream, owner, pré-requisito, marco, entregável, aceite, risco, capacidade e caminho crítico.
-
-**Concluído quando.** Nenhuma onda promete uma capacidade cuja identidade, dados, authority, evidência ou dependência operacional esteja ausente.
-
-### 08.8 Financiamento, recursos e competências
-
-**Decisão/ação obrigatória.** Para **financiamento, recursos e competências**, a organização deve assegurar sponsor accountable, capacidade financiada e papéis nomeados tanto para a implementação quanto para a operação no business as usual.
-
-**Registro e evidência.** Registrar orçamento, capacidade, competências, autoridade de decisão, horizonte de financiamento, dependências e riscos não financiados.
-
-**Concluído quando.** Controles obrigatórios e deveres operacionais têm recursos antes de a coorte ou capacidade relacionada ser aprovada.
-
-### 08.9 Seleção de tecnologia e procurement
-
-**Decisão/ação obrigatória.** Para **seleção de tecnologia e procurement**, a organização deve definir contratos de capacidade e interfaces de extensão independentemente de um produto específico.
-
-**Registro e evidência.** Registrar comportamento exigido, interface, contrato de dados e identidade, teste de portabilidade, mapping de fornecedor e restrição de saída.
-
-**Concluído quando.** Um fornecedor pode ser substituído ou isolado sem redefinir a policy, os control IDs, os schemas ou os decision gates.
-
-### 08.10 Governança mínima viável para a primeira coorte
-
-**Decisão/ação obrigatória.** Para **governança mínima viável para a primeira coorte**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
-
-**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
-
-**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
-
-### 08.11 Fundações de policy, papéis e decisão
-
-**Decisão/ação obrigatória.** Para **fundações de policy, papéis e decisão**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
-
-**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
-
-**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
-
-### 08.12 Fundações de registry e intake
-
-**Decisão/ação obrigatória.** Para **fundações de registry e intake**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
-
-**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
-
-**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
-
-### 08.13 Fundações do processo de risco e impacto
-
-**Decisão/ação obrigatória.** Para **fundações do processo de risco e impacto**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
-
-**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
-
-**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
-
-### 08.14 Baseline mínimo de controles e evidências
-
-**Decisão/ação obrigatória.** Para **baseline mínimo de controles e evidências**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
-
-**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
-
-**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
-
-### 08.15 Fundações de plataforma e enforcement
-
-**Decisão/ação obrigatória.** Para **fundações de plataforma e enforcement**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
-
-**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
-
-**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
-
-### 08.16 Piloto representativo ou coorte de validação
-
-**Decisão/ação obrigatória.** Para **piloto representativo ou coorte de validação**, a organização deve selecionar uma coorte que exercite caminhos materiais de risco, dados, identidade, ferramentas, lifecycle e operação sem exposição não controlada.
-
-**Registro e evidência.** Registrar rationale da seleção, riscos excluídos, critérios de sucesso, salvaguardas, tamanho da coorte, rollback e perguntas de aprendizado.
-
-**Concluído quando.** A coorte valida o caminho completo de governança e não substitui um demo fácil por evidência representativa.
-
-### 08.17 Validação de ponta a ponta
-
-**Decisão/ação obrigatória.** Para **validação de ponta a ponta**, a organização deve exercitar intake, risco, design, build, avaliação, release, operação, incidente e aposentadoria como um fluxo rastreável.
-
-**Registro e evidência.** Reter timestamps, handoffs, decisões, artefatos, evidência de sistema, exceções, defeitos e remediação.
-
-**Concluído quando.** Todos os gates e owners trabalham no mesmo caso e defeitos de integração não resolvidos bloqueiam o rollout amplo.
-
-### 08.18 Release controlado e aprendizado
-
-**Decisão/ação obrigatória.** Para **release controlado e aprendizado**, a organização deve liberar por coortes ou estágios delimitados com critérios explícitos de promoção, pausa e rollback.
-
-**Registro e evidência.** Registrar coorte, exposição, telemetria, thresholds, aprovação, resultado observado, incidentes e decisão do próximo estágio.
-
-**Concluído quando.** A expansão ocorre somente após o estágio anterior atingir os critérios e um sinal adverso pode interromper ou reverter o rollout.
-
-### 08.19 Tratamento de agentes existentes e shadow
-
-**Decisão/ação obrigatória.** Para **tratamento de agentes existentes e shadow**, a organização deve triar ativos existentes em caminhos de registrar, restringir, remediar, migrar, suspender ou aposentar usando um plano datado.
-
-**Registro e evidência.** Registrar confiança da descoberta, owner, exposição atual, controle provisório, estado-alvo, prazo e authority.
-
-**Concluído quando.** Status legado não é isenção permanente e ativos de alto risco vencidos são contidos.
-
-### 08.20 Ondas de rollout
-
-**Decisão/ação obrigatória.** Para **ondas de rollout**, a organização deve liberar por coortes ou estágios delimitados com critérios explícitos de promoção, pausa e rollback.
-
-**Registro e evidência.** Registrar coorte, exposição, telemetria, thresholds, aprovação, resultado observado, incidentes e decisão do próximo estágio.
-
-**Concluído quando.** A expansão ocorre somente após o estágio anterior atingir os critérios e um sinal adverso pode interromper ou reverter o rollout.
-
-### 08.21 Paved road e self-service
-
-**Decisão/ação obrigatória.** Para **paved road e self-service**, a organização deve fornecer defaults conformes reutilizáveis, automação e orientação para padrões comuns preservando escalonamento para exceções.
-
-**Registro e evidência.** Registrar padrões suportados, controles embutidos, contrato do usuário, versão, telemetria, modelo de suporte e condições de escape.
-
-**Concluído quando.** Um time consegue completar o caminho padrão com menos esforço manual e não pode usar self-service para contornar revisão bloqueante.
-
-### 08.22 Treinamento baseado em papel
-
-**Decisão/ação obrigatória.** Para **treinamento baseado em papel**, a organização deve definir competências e treinamentos específicos por papel, vinculados a decisões e tarefas, em vez de conscientização genérica.
-
-**Registro e evidência.** Registrar papel, objetivo de aprendizado, método de avaliação, conclusão, expiração, remediação e owner da evidência.
-
-**Concluído quando.** Pessoal demonstra a tarefa ou decisão exigida e competência vencida é visível antes de acesso ou autoridade ser exercido.
-
-### 08.23 Comunicação e gestão de mudança
-
-**Decisão/ação obrigatória.** Para **comunicação e gestão de mudança**, a organização deve prover rotas de comunicação, suporte e feedback adequadas ao papel antes e durante o rollout.
-
-**Registro e evidência.** Registrar público, mensagem, canal, momento, owner, sinal de compreensão, feedback e ação resultante.
-
-**Concluído quando.** Usuários afetados conhecem a fronteira do sistema, a rota de reporte e a consequência do uso indevido, e o feedback chega a um owner accountable.
-
-### 08.24 Champions e canais de feedback
-
-**Decisão/ação obrigatória.** Para **champions e canais de feedback**, a organização deve prover rotas de comunicação, suporte e feedback adequadas ao papel antes e durante o rollout.
-
-**Registro e evidência.** Registrar público, mensagem, canal, momento, owner, sinal de compreensão, feedback e ação resultante.
-
-**Concluído quando.** Usuários afetados conhecem a fronteira do sistema, a rota de reporte e a consequência do uso indevido, e o feedback chega a um owner accountable.
-
-### 08.25 Prontidão de suporte e operação
-
-**Decisão/ação obrigatória.** Para **prontidão de suporte e operação**, a organização deve comprovar que owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog estão prontos antes do handoff.
-
-**Registro e evidência.** Reter aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento.
-
-**Concluído quando.** Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.
-
-### 08.26 Transferência para ownership permanente
-
-**Decisão/ação obrigatória.** Para **transferência para ownership permanente**, a organização deve comprovar que owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog estão prontos antes do handoff.
-
-**Registro e evidência.** Reter aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento.
-
-**Concluído quando.** Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.
-
-### 08.27 Critérios de saída para operação em regime permanente
-
-**Decisão/ação obrigatória.** Para **critérios de saída para operação em regime permanente**, a organização deve comprovar que owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog estão prontos antes do handoff.
-
-**Registro e evidência.** Reter aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento.
-
-**Concluído quando.** Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.
-
-
-## Conteúdo canônico incorporado
-
-A seção preserva integralmente as unidades atribuídas pela matriz de cobertura. Os marcadores HTML são provenance machine-readable e não alteram o significado normativo.
-
-### Fonte: `docs/adoption/README.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 1, "source_field": "title", "source_heading": "", "source_path": "docs/adoption/README.md", "start_line": "2", "transformation": "integrate-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Adoção, enablement e suporte
-
-<!-- source-unit {"classification": "adoption-implementation", "end_line": "16", "index": 2, "source_field": "", "source_heading": "Adoção, enablement e suporte", "source_path": "docs/adoption/README.md", "start_line": "15", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-### Adoção, enablement e suporte
-
-<!-- source-unit {"classification": "objective", "end_line": "22", "index": 3, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/adoption/README.md", "start_line": "17", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Preparar builders, usuários, líderes e suporte para criar, descobrir, usar e operar capacidades de IA com segurança e efetividade.
-
-Adoção não é comunicação de lançamento. É a capacidade organizacional de usar o sistema de forma correta, obter suporte, reportar falhas e incorporar feedback ao governance lifecycle.
-
-<!-- source-unit {"classification": "governance-role", "end_line": "35", "index": 4, "source_field": "", "source_heading": "Personas", "source_path": "docs/adoption/README.md", "start_line": "23", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Personas
-
-| Persona | Necessidade |
-|---|---|
-| sponsor | value, risco, decisões e accountability |
-| business owner | outcome, usuários, limites e attestation |
-| maker/engineer | paved road, controls, templates e feedback rápido |
-| end user | intended use, limitações, suporte e contestação |
-| administrator | policy, inventory, access e remediation |
-| support | triage, known issues, escalation e communication |
-| domain authority | evidências relevantes e decision rights |
-| auditor | acesso independente a records e rationale |
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "49", "index": 5, "source_field": "", "source_heading": "Discovery e catalog", "source_path": "docs/adoption/README.md", "start_line": "36", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Discovery e catalog
-
-Um catálogo útil permite:
-
-- encontrar capacidades aprovadas por tarefa e persona;
-- distinguir status, owner, versão e tier;
-- entender intended/prohibited use;
-- acessar support e feedback;
-- evitar duplicação;
-- ocultar ou bloquear itens em quarantine/sunset;
-- medir discovery separado de criação.
-
-Publicar sem discovery gera agentes invisíveis; discovery sem lifecycle promove itens inadequados.
-
-<!-- source-unit {"classification": "adoption-implementation", "end_line": "64", "index": 6, "source_field": "", "source_heading": "Paved road para builders", "source_path": "docs/adoption/README.md", "start_line": "50", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Paved road para builders
-
-- starter templates com identity, logging e policy hooks;
-- schemas e self-assessment proporcionais;
-- approved models, data connectors e tools;
-- automated checks com feedback acionável;
-- sandbox e test datasets;
-- design clinic e office hours;
-- exception process com owner e expiry;
-- documentação de examples e failure modes.
-
-O paved road deve ser mais simples que contornar a governança.
-
-A sequência que o builder percorre nesse caminho — do registro do caso de uso à retirada — está em [developer experience e paved road](08-implementation-and-adoption.md), com os building blocks e as métricas de fricção correspondentes.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "72", "index": 7, "source_field": "", "source_heading": "Suporte em camadas", "source_path": "docs/adoption/README.md", "start_line": "65", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Suporte em camadas
-
-1. **Self-service:** documentação, status, FAQ e runbooks.
-2. **AI-assisted:** busca e triage com handoff rastreável.
-3. **Platform/IT backstop:** incidentes, acesso e operação.
-4. **Domain SME:** security, privacy, RAI, legal, data ou negócio.
-5. **Authority escalation:** containment, risk acceptance e policy decision.
-
-<!-- source-unit {"classification": "lifecycle-state", "end_line": "84", "index": 8, "source_field": "", "source_heading": "Change e comunicação", "source_path": "docs/adoption/README.md", "start_line": "73", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Change e comunicação
-
-Mudanças materiais comunicam:
-
-- o que mudou e por quê;
-- quem é afetado;
-- novos limites ou ações;
-- data de vigência;
-- treinamento ou suporte necessário;
-- rollback/contingency;
-- canal de feedback e owner.
-
-<!-- source-unit {"classification": "adoption-implementation", "end_line": "99", "index": 9, "source_field": "", "source_heading": "Feedback loop", "source_path": "docs/adoption/README.md", "start_line": "85", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Feedback loop
-
-```mermaid
-flowchart LR
-    U[Uso] --> F[Feedback/sinal]
-    F --> T[Triage]
-    T --> B[Backlog]
-    B --> D[Decisão]
-    D --> C[Change]
-    C --> E[Evaluate]
-    E --> U
-```
-
-Feedback é evidência contextual, não prova isolada de valor ou segurança.
-
-<!-- source-unit {"classification": "procedure", "end_line": "112", "index": 10, "source_field": "", "source_heading": "Playbook de implantação", "source_path": "docs/adoption/README.md", "start_line": "100", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Playbook de implantação
-
-Governança só escala quando cada papel consegue executá-la sem depender do time central para cada decisão. Adoção transforma regra em competência prática, suporte e hábito.
-
-1. **Segmentar personas.** Citizen builder, desenvolvedor profissional, business owner, technical owner, reviewer, administrador de plataforma, operação de segurança, data owner, sponsor e usuário final. Cada persona tem objetivo de aprendizagem distinto.
-2. **Separar awareness de competência.** Awareness ensina a reconhecer a regra e pedir ajuda; competência exige executar a atividade e demonstrar resultado. **Não habilite um reviewer de impact assessment porque ele concluiu um treinamento introdutório.**
-3. **Montar currículo por papel e risco.** Builders precisam de registry, risco, dados, ferramentas, identidade e telemetria; owners precisam de accountability, valor e attestation; reviewers precisam de critérios e evidência; segurança precisa de contenção e forensics. Com laboratórios e casos calibrados.
-4. **Implantar rede de champions.** Escolher áreas por volume e risco, definir tempo alocado e **limite de autoridade**. O champion orienta a primeira linha e escala; não substitui as funções de controle nem aprova localmente o que exige authority.
-5. **Tornar o caminho governado o mais fácil.** Builders aprovados, templates, catálogos de fontes e ferramentas, office hours, policy gates self-service e exemplos. **Fricção desnecessária é o principal produtor de shadow AI.**
-6. **Calibrar reviewers com casos comuns.** Os mesmos 10 a 20 casos aplicados por reviewers diferentes. Divergência vira discussão de critério, não preferência individual. Versionar os exemplos quando o standard mudar.
-7. **Criar suporte e comunidade de prática.** Office hours, FAQ, canais de escalation e encontros regulares reduzem retrabalho. Perguntas recorrentes viram melhoria de documentação e automação.
-8. **Medir eficácia, não conclusão.** Taxa de conclusão de treinamento é métrica fraca isolada. Medir verificação de conhecimento, retrabalho de review, violações de policy, tickets de suporte, tempo até assessment, qualidade da evidência e padrões de shadow AI — e ajustar o currículo com esses sinais.
-
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "124", "index": 11, "source_field": "", "source_heading": "Evidências", "source_path": "docs/adoption/README.md", "start_line": "113", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Evidências
-
-- persona e stakeholder map;
-- adoption/support plan;
-- catalog entry e discovery analytics;
-- learning assets;
-- support model e escalation;
-- training/competence records;
-- feedback backlog e decisões;
-- change communication;
-- user research e accessibility findings.
-
-<!-- source-unit {"classification": "metric", "end_line": "135", "index": 12, "source_field": "", "source_heading": "Métricas", "source_path": "docs/adoption/README.md", "start_line": "125", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
-
-- discovery-to-use conversion;
-- active/recurring users por persona;
-- duplicate creation;
-- support demand e resolution time;
-- training completion e task competence;
-- misuse/incorrect-use reports;
-- feedback-to-decision time;
-- adoption com qualidade e outcome, não apenas login.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "146", "index": 13, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/adoption/README.md", "start_line": "136", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
-
-- medir sucesso por agentes criados;
-- publicar sem owner ou suporte;
-- treinamento único para todos;
-- champion network sem authority ou tempo;
-- usar feedback positivo como prova de ROI;
-- esconder limitation para aumentar adoção;
-- ignorar resistência como “falta de cultura”;
-- manter itens em discovery durante quarantine.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "149", "index": 14, "source_field": "", "source_heading": "Decision gate", "source_path": "docs/adoption/README.md", "start_line": "147", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Decision gate
-
-Release para audiência ampla exige catalog entry, intended use, limitations, support owner, escalation, communication e feedback channel.
-
-### Fonte: `docs/devex/README.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "adoption-implementation", "end_line": "4", "index": 15, "source_field": "", "source_heading": "Developer experience e paved road", "source_path": "docs/devex/README.md", "start_line": "1", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-### Developer experience e paved road
-
-Governança deve aparecer no fluxo de entrega, não apenas em documentos. O paved road reduz decisões repetitivas e preserva escalation para exceções.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "16", "index": 16, "source_field": "", "source_heading": "Golden path", "source_path": "docs/devex/README.md", "start_line": "5", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Golden path
-
-1. registrar use case, owner e prohibited use;
-2. criar registry record e blueprint;
-3. classificar risk tier e red flags;
-4. selecionar approved model, data e tool contracts;
-5. aplicar controls e evaluation strategy;
-6. produzir release evidence;
-7. obter decisão no gate aplicável;
-8. publicar com observability, containment e rollback;
-9. operar, regress, attest e sunset.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "26", "index": 17, "source_field": "", "source_heading": "Building blocks", "source_path": "docs/devex/README.md", "start_line": "17", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Building blocks
-
-- templates e examples versionados;
-- CI para schemas, controls e links;
-- identity e data patterns aprovados;
-- tool/MCP gateway;
-- evaluation harness e negative scenarios;
-- runtime event e evidence standards;
-- self-service com escalation claro.
-
-<!-- source-unit {"classification": "metric", "end_line": "36", "index": 18, "source_field": "", "source_heading": "Métricas", "source_path": "docs/devex/README.md", "start_line": "27", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Métricas
-
-- lead time por gate e tier;
-- rework causado por requirement tardio;
-- coverage do paved road;
-- exception rate e expiry;
-- evidence freshness;
-- containment/recovery readiness.
-
-Automation não deve esconder decision rights ou transformar falha de validação em aprovação implícita.
-
-### Fonte: `docs/governance/ai-agent-policy-and-governance-v1.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "procedure", "end_line": "284", "index": 19, "source_field": "", "source_heading": "17. Suggested Action Plan", "source_path": "docs/governance/ai-agent-policy-and-governance-v1.md", "start_line": "280", "transformation": "archive-verbatim-and-integrate-unique-content", "unit_type": "markdown-atx-heading"} -->
-#### 17. Suggested Action Plan
-0–30 days: Do’s & Don’ts + Self-Assessment + Approval Matrix + HITL Policy + Minimum Catalog; initial alignment with stakeholders.
-30–60 days: Complete agent policy; audit and observability playbook; pilots in 1–2 segments; review by the Digital Council (1 week).
-60–90 days: Corporate publication; training; progressive adoption (require Self-Assessment for new agents and migration of legacy ones to the catalog).
-
-### Fonte: `docs/guides/capability-map.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 20, "source_field": "title", "source_heading": "", "source_path": "docs/guides/capability-map.md", "start_line": "2", "transformation": "integrate-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Capability map — atual versus alvo
-
-<!-- source-unit {"classification": "definition", "end_line": "16", "index": 21, "source_field": "", "source_heading": "Capability map — atual versus alvo", "source_path": "docs/guides/capability-map.md", "start_line": "15", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-### Capability map — atual versus alvo
-
-<!-- source-unit {"classification": "objective", "end_line": "20", "index": 22, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/guides/capability-map.md", "start_line": "17", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Separar **o que a organização precisa saber fazer** de **qual ferramenta vai implementar**. O capability map existe para evitar o erro mais caro de um programa de governança: comprar tecnologia para um problema que é, na verdade, ausência de processo, ownership, dados ou decision rights.
-
-<!-- source-unit {"classification": "definition", "end_line": "28", "index": 23, "source_field": "", "source_heading": "O que é uma capability", "source_path": "docs/guides/capability-map.md", "start_line": "21", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### O que é uma capability
-
-Uma capacidade organizacional de produzir um resultado **de forma repetível**. Não é uma ferramenta, um time nem um projeto.
-
-"Agent registry" é uma capability quando a empresa consegue descobrir, registrar, manter e consultar agentes com qualidade conhecida. Uma plataforma pode implementar parte dela — não é ela.
-
-O teste: se você trocar o produto e a capacidade desaparecer, você comprou uma ferramenta e chamou de capability.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "50", "index": 24, "source_field": "", "source_heading": "As capacidades do framework", "source_path": "docs/guides/capability-map.md", "start_line": "29", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### As capacidades do framework
-
-Ponto de partida: os [domínios canônicos](06-architecture-and-technical-controls.md#domínios-canônicos-por-plano). Quebre uma capability em duas apenas quando a filha tiver owner, processo **ou** evidência diferentes.
-
-| Capacidade | Pergunta de diagnóstico | Sinal típico de estado inicial | Alvo comum |
-| --- | --- | --- | --- |
-| estratégia e governança | existe mandato, portfólio, funding e decisão clara? | política genérica de IA, sem charter ou priorização de agentes | charter aprovado, fóruns, decision rights, risk appetite e portfolio review |
-| estate inventory e registry | sabemos quais agentes existem, onde operam e quem responde? | planilhas por plataforma e baixa cobertura de shadow agents | discovery contínuo + registry corporativo reconciliável |
-| risco e Responsible AI | risco, admissibilidade e impacto roteiam controles? | mesma review para todos os casos | tiers, admissibilidade, escaladores e impact assessment por gatilho |
-| lifecycle e Agent SDLC | versões, estados e mudanças estão governados? | publicação ad hoc e approvals permanentes | stage/state, gates, transition history, attestation e retirada |
-| identidade e acesso | cada ação é atribuível e autorizada? | chaves e contas de serviço compartilhadas | identidade própria por agente, least privilege, JML e delegação quando aplicável |
-| dados e conhecimento | as fontes são classificadas, permitidas e AI-ready? | recuperação sobre qualquer pasta autorizada | catálogo de fontes certificadas com lineage, restrictions e recertification |
-| tools, APIs e MCP | as ações são catalogadas, limitadas e mediadas? | ferramentas embutidas por time | enterprise tool registry, gateway e autorização por ação/parâmetro |
-| modelos e provedores | combinações e versões possuem critérios de admissão e saída? | escolha por preferência do time | catálogo provider/model/version, evaluation binding, fallback e exit strategy |
-| runtime e plataforma | existem enforcement, isolamento, resiliência e rollback? | acesso direto a endpoints e configuração por agente | control plane, policy enforcement, budgets, containment e recovery patterns |
-| segurança e AgentSecOps | ameaças agentic entram em prevention, detection e response? | SOC vê apenas logs tradicionais | threat model agentic, red teaming, supply-chain controls e incident integration |
-| observabilidade e behavioral analytics | é possível reconstruir, detectar desvio e agir? | logs de aplicação sem correlation ou owner action | event envelope, traces, baselines, thresholds, runbooks e feedback loop |
-| FinOps | custo é atribuível a agente, tarefa e outcome? | custo por chave ou centro de custo agregado | budgets, unit economics, anomaly response e arquitetura guiada por custo/qualidade |
-| value realization | outcomes influenciam funding, expansão e sunset? | contagem de agentes e relatos de benefício | baseline, KPI, attribution caveats e portfolio decisions por evidência |
-| assurance e auditabilidade | controls e decisões podem ser testados por challenge apropriado? | evidence preparada manualmente para auditoria | continuous evidence, segregation, sampling, findings e assurance proporcional |
-| adoção, suporte e competências | cada papel consegue usar a rota governada corretamente? | treinamento pontual e suporte informal | currículo por papel, champions, support model e feedback incorporado aos standards |
-
-<!-- source-unit {"classification": "procedure", "end_line": "84", "index": 25, "source_field": "", "source_heading": "Procedimento", "source_path": "docs/guides/capability-map.md", "start_line": "75", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Procedimento
-
-1. **Listar as capacidades** necessárias ao operating model.
-2. **Escrever uma frase de outcome** para cada uma. Exemplo: *"toda ação material de agente é atribuível a uma identidade conhecida e autorizada"*.
-3. **Definir evidências observáveis do estado atual.** Evite "o controle de acesso é forte". Prefira: *"74% dos T2/T3 usam identidade dedicada; 26% usam chave compartilhada"*.
-4. **Atribuir maturidade com base em evidência** e registrar confidence. Evidência fraca produz nota provisória, não nota otimista.
-5. **Definir o alvo por horizonte e necessidade de negócio.** Nem toda capacidade precisa do nível máximo; nível 3 costuma bastar no primeiro ano.
-6. **Identificar dependências.** Behavioral analytics confiável depende de identidade própria e telemetria consistente — priorizá-la antes disso desperdiça o investimento.
-7. **Converter gaps materiais em iniciativas** do roadmap de maturidade.
-
-<!-- source-unit {"classification": "example", "end_line": "94", "index": 26, "source_field": "", "source_heading": "Exemplo", "source_path": "docs/guides/capability-map.md", "start_line": "85", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Exemplo
-
-| Capability | Estado atual observado | Alvo 12m | Gap concreto | Iniciativa |
-|---|---|---|---|---|
-| identidade | chaves compartilhadas; owner não rastreável em 30% dos agentes transacionais | 100% de T2/T3 com identidade própria, JML e rotação | atribuição, lifecycle e least privilege insuficientes | padrão de identidade + onboarding + automação de JML |
-| tools e MCP | ferramentas embutidas por time, sem catálogo nem classificação de ação | ferramentas críticas registradas, classificadas e mediadas | sem visão da capacidade executável nem do risco por ação | tool registry + broker + autorização por parâmetro |
-| observabilidade | logs de aplicação; custo por chave; sem correlação agente-tarefa-ferramenta | schema de telemetria e dashboards por decisão | impossível investigar um agente ou medir custo por resultado | schema + correlation IDs + pipeline |
-
-Repare no primeiro: o gap **não é "comprar IAM"**. É identidade não humana por agente, least privilege, lifecycle de owner, gestão de secrets e auditabilidade. Nenhum produto entrega isso sozinho.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "105", "index": 27, "source_field": "", "source_heading": "Perguntas de challenge", "source_path": "docs/guides/capability-map.md", "start_line": "95", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Perguntas de challenge
-
-Aplique antes de aprovar o alvo:
-
-- o alvo é necessário para o risco e o volume previstos, ou está sendo escolhido por ambição tecnológica?
-- existe dependência invisível em outra capacidade que pode bloquear a iniciativa?
-- o alvo pode ser demonstrado por evidência objetiva?
-- **existe owner capaz de sustentar a capacidade depois que o programa terminar?**
-
-A última derruba mais iniciativas que as outras três somadas.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "119", "index": 28, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/guides/capability-map.md", "start_line": "112", "transformation": "integrate-completely", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
-
-- mapear produtos e chamar de capacidades;
-- quebrar capacidades até virarem tarefas, perdendo o nível de decisão;
-- alvo máximo em tudo, ignorando dependência e capacidade operacional;
-- estado atual descrito por adjetivo em vez de medida;
-- ignorar que uma capacidade em nível baixo pode inutilizar outra em nível alto;
-- aprovar alvo sem owner que o sustente depois do programa.
-
-### Fonte: `docs/guides/framework-implementation-playbook.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 29, "source_field": "title", "source_heading": "", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "2", "transformation": "integrate-journey-and-cross-reference-chapters + preserve-complete-operational-method", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Implementation playbook do framework de governança
-
-<!-- source-unit {"classification": "procedure", "end_line": "16", "index": 30, "source_field": "", "source_heading": "Implementation playbook do framework de governança", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "15", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-### Implementation playbook do framework de governança
-
-<!-- source-unit {"classification": "objective", "end_line": "20", "index": 31, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "17", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Implantar um sistema de governança proporcional, federado e verificável. O playbook organiza outcomes, atividades, artefatos e decision gates; não prescreve produto, organograma ou prazo universal.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "30", "index": 32, "source_field": "", "source_heading": "Como usar", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "21", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Como usar
-
-1. Defina o mandato e o escopo organizacional.
-2. Faça baseline com evidência, sem preencher lacunas por suposição.
-3. Selecione os controls mínimos por risco e capacidade.
-4. Implemente governance como fluxo, não como documento isolado.
-5. Teste handoffs, enforcement, contenção e evidência.
-6. Meça operação e valor separadamente.
-7. Revise decisões quando contexto, risco ou evidência mudarem.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "42", "index": 33, "source_field": "", "source_heading": "Workstreams", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "31", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Workstreams
-
-- estratégia, portfólio e valor;
-- operating model e accountability;
-- registry, blueprint e lifecycle;
-- identidade e dados;
-- tools, APIs e MCP;
-- risco, Responsible AI e assurance;
-- evaluations e release;
-- adoção, suporte e change;
-- runtime, auditabilidade e resposta.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "46", "index": 34, "source_field": "", "source_heading": "Contrato comum dos decision gates", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "43", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Contrato comum dos decision gates
-
-Os gates são decisões registradas, não nomes de fase. Workstreams podem avançar em paralelo, mas nenhum gate é concluído apenas porque o prazo terminou ou um documento foi produzido.
-
-<!-- source-unit {"classification": "decision-authority", "end_line": "57", "index": 35, "source_field": "", "source_heading": "Estados de decisão", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "47", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Estados de decisão
+**Estados de decisão:**
 
 | Estado | Significado | Requisito de registro |
 |---|---|---|
@@ -593,28 +38,24 @@ Os gates são decisões registradas, não nomes de fase. Workstreams podem avan�
 | `hold` | decisão suspensa por evidência insuficiente ou remediação necessária | finding, owner, ação, evidência esperada e nova data |
 | `reject` | risco, desenho ou escopo não é aceitável no appetite vigente | rationale, authority, opções de redesign ou encerramento |
 
-Todo decision record deve identificar `gate_id`, escopo, versão, tier, authority, participantes, evidence refs, estado, rationale, condições, expiry e próxima revisão. `Missing evidence` nunca equivale a aprovação. A mesma pessoa não pode construir, aprovar e desafiar o próprio artefato quando segregation of duties for exigida pelo tier ou por obrigação aplicável.
+Todo decision record identifica: `gate_id`, escopo, versão, tier, authority, participantes, evidence refs, estado, rationale, condições, expiry e próxima revisão. **`Missing evidence` nunca equivale a aprovação.** A mesma pessoa não pode construir, aprovar e desafiar o próprio artefato quando segregação for exigida.
 
-<!-- source-unit {"classification": "requirement-control", "end_line": "70", "index": 36, "source_field": "", "source_heading": "Contratos por gate", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "58", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Contratos por gate
+### 1.2 Os 8 gates em uma tabela
 
 | Gate | Critérios de entrada | Evidência mínima | Authority da decisão | Critérios de saída | Falha e remediação |
 |---|---|---|---|---|---|
-| G0 — Mandato | sponsor candidato, problema e boundary inicial | draft de charter, scope, authorities e obligations map | sponsor executivo, com governance owner | mandato, scope, appetite, containment authority e regra de exceção aprovados | `hold` para esclarecer escopo/authority; não automatizar approvals |
-| G1 — Baseline | G0 aprovado e acesso às fontes e stakeholders | inventários com coverage, current-state map, gaps, limitações e confidence | governance owner, com domain owners; sponsor aceita limitações materiais | baseline separa observado de hipótese e todo gap crítico tem owner | `hold`; unknowns de alto impacto são restringidos ou isolados até avaliação |
-| G2 — Fundações | G1 aceito e população in-scope identificada | registry, blueprints, ownership, identity/data/tool records e testes de revogação | Design Authority e authorities de identity, data e tools | records mínimos validam, owners aceitam responsabilidade e acessos são revogáveis | bloquear onboarding, restringir connector/tool ou retornar para correção |
-| G3 — Operating model | G0 vigente, handoffs atuais conhecidos e G2 suficiente para atribuir responsabilidade | operating model, RACI, decision matrix, exception flow, SLAs e charters | sponsor/Governance Council, com aceite das domain authorities | cada decisão material possui accountable, receiver, prazo e escalation | `hold`; decisões não delegadas retornam à authority existente |
-| G4 — Controls e assurance | tiering proposto, G2/G3 aceitos e obligations map disponível | risk rationale, baseline por tier, assessments, evaluation plan, evidence index e residual-risk record | Design Authority e domain authorities; residual risk pela authority designada | controles bloqueantes possuem design, owner, teste e evidence requirement | `hold` ou `reject`; remediar, reduzir capability/escopo ou elevar authority |
-| G5 — Onboarding/release | G4 aprovado para o escopo e versão, suporte e operação preparados | blueprint versionado, checks, evidence package, conditions, run readiness e release record | release/Design Authority definida no operating model | release `approve`/`condition` registrado e catalog entry publicável | não liberar; corrigir, reclassificar, restringir ou rejeitar |
-| G6 — Operação | G5 válido e sistema instrumentado antes de exposição material | telemetry map, thresholds, runbooks, on-call, drills, rollback/quarantine e incident evidence | Run Authority, com domain escalation | sinais possuem owner/action e containment, recovery e reactivation foram exercitados | conter, fazer rollback ou suspender; reativação exige cause e regression evidence |
-| G7 — Valor e lifecycle | janela de operação definida, G6 aceito e baseline de outcome/custo disponível | owner attestation, use/quality/risk/value evidence, incidents, costs e sunset options | Business Owner; Governance Council para decisão de portfólio/material risk | decisão de manter, expandir, corrigir, restringir ou aposentar registrada | restringir/sunset ou abrir remediation; mudança normativa segue processo separado |
+| **G0 — Mandato** | sponsor candidato, problema e boundary inicial | draft de charter, scope, authorities e obligations map | sponsor executivo, com governance owner | mandato, scope, appetite, containment authority e regra de exceção aprovados | `hold` para esclarecer escopo/authority; não automatizar approvals |
+| **G1 — Baseline** | G0 aprovado e acesso às fontes e stakeholders | inventários com coverage, current-state map, gaps, limitações e confidence | governance owner, com domain owners; sponsor aceita limitações materiais | baseline separa observado de hipótese e todo gap crítico tem owner | `hold`; unknowns de alto impacto restringidos ou isolados |
+| **G2 — Fundações** | G1 aceito e população in-scope identificada | registry, blueprints, ownership, identity/data/tool records e testes de revogação | Design Authority e authorities de identity, data e tools | records mínimos validam, owners aceitam responsabilidade e acessos são revogáveis | bloquear onboarding, restringir connector/tool ou retornar |
+| **G3 — Operating model** | G0 vigente, handoffs atuais conhecidos e G2 suficiente para atribuir responsabilidade | operating model, RACI, decision matrix, exception flow, SLAs e charters | sponsor/Governance Council, com aceite das domain authorities | cada decisão material possui accountable, receiver, prazo e escalation | `hold`; decisões não delegadas retornam à authority existente |
+| **G4 — Controls e assurance** | tiering proposto, G2/G3 aceitos e obligations map disponível | risk rationale, baseline por tier, assessments, evaluation plan, evidence index e residual-risk record | Design Authority e domain authorities; residual risk pela authority designada | controles bloqueantes possuem design, owner, teste e evidence requirement | `hold` ou `reject`; remediar, reduzir capability/escopo ou elevar authority |
+| **G5 — Onboarding/release** | G4 aprovado para o escopo e versão, suporte e operação preparados | blueprint versionado, checks, evidence package, conditions, run readiness e release record | release/Design Authority definida no operating model | release `approve`/`condition` registrado e catalog entry publicável | não liberar; corrigir, reclassificar, restringir ou rejeitar |
+| **G6 — Operação** | G5 válido e sistema instrumentado antes de exposição material | telemetry map, thresholds, runbooks, on-call, drills, rollback/quarantine e incident evidence | Run Authority, com domain escalation | sinais possuem owner/action e containment, recovery e reactivation foram exercitados | conter, fazer rollback ou suspender; reativação exige cause e regression evidence |
+| **G7 — Valor e lifecycle** | janela de operação definida, G6 aceito e baseline de outcome/custo disponível | owner attestation, use/quality/risk/value evidence, incidents, costs e sunset options | Business Owner; Governance Council para portfólio/material risk | decisão de manter, expandir, corrigir, restringir ou aposentar registrada | restringir/sunset ou abrir remediation; mudança normativa segue processo separado |
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "91", "index": 37, "source_field": "", "source_heading": "A numeração não é um cronograma", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "71", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### A numeração não é um cronograma
+### 1.3 A numeração não é um cronograma
 
-**G0–G7 são pontos de decisão com dependência declarada, não etapas em ordem cronológica.** A numeração ajuda a referenciar; ela não diz em que semana cada gate acontece.
-
-A dependência real está na coluna de critérios de entrada acima:
+**G0–G7 são pontos de decisão com dependência declarada, não etapas em ordem cronológica.** A dependência real:
 
 | Gate | Depende de |
 |---|---|
@@ -627,358 +68,39 @@ A dependência real está na coluna de critérios de entrada acima:
 | G6 | G5 |
 | G7 | G6 |
 
-A consequência prática é que **G2 e G3 se sobrepõem**. Basta ter registry e ownership o bastante para saber a quem atribuir uma decisão; o resto das fundações continua sendo construído enquanto o operating model é aprovado. Por isso o [programa de 24 semanas](08-implementation-and-adoption.md) fecha G3 na fase F2 e completa G2 na F3 — não é inversão, é paralelismo legítimo.
+A consequência prática: **G2 e G3 se sobrepõem.** Basta ter registry e ownership o bastante para saber a quem atribuir uma decisão; o resto das fundações continua sendo construído enquanto o operating model é aprovado. Um cronograma que assume ordem numérica vai travar esperando um G2 completo que o G3 não exige.
 
-Um cronograma montado assumindo que a ordem numérica é a ordem de execução vai travar em F2 esperando um G2 completo que o G3 não exige.
+### 1.4 O que cada gate exige (detalhe por gate)
 
-<!-- source-unit {"classification": "requirement-control", "end_line": "93", "index": 38, "source_field": "", "source_heading": "Gate 0 — Mandato, escopo e sponsorship", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "92", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 0 — Mandato, escopo e sponsorship
+**G0 — Mandato, escopo e sponsorship.** Outcome: existe autoridade para definir requisitos, exigir evidências e conter sistemas fora do envelope aprovado. Atividades: nomear sponsor e governance owner; definir sistemas, unidades, regiões e ambientes cobertos; declarar risk appetite e red flags; mapear obrigações e authorities; definir o que permanece fora de escopo e por quanto tempo; estabelecer princípios e regra de versionamento. Entregáveis: governance charter, scope map, stakeholder/authority map, initial risk appetite, decision log, communication plan. **Gate questions:** quem pode aprovar, condicionar, conter e aposentar? O escopo inclui SaaS, low-code, shadow AI e adquiridos? Exceções têm authority e expiry? **Sem mandato, não automatize approvals nem prometa cobertura.**
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "97", "index": 39, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "94", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
+**G1 — Diagnóstico e baseline.** Outcome: a organização conhece sua situação atual, lacunas e limitações de evidência. Atividades: aplicar maturity assessment; reconciliar inventários e sources; entrevistar owners e domain authorities; mapear lifecycle real, approvals e handoffs; revisar incidentes, findings, exceções e métricas; identificar duplicidade, ownerless assets e high-risk unknowns. Entregáveis: maturity baseline, current-state map, preliminary inventory, gap/risk register, evidence quality statement, prioritized decisions. **Gate questions:** quais conclusões são observadas e quais são hipóteses? Quais lacunas críticas não possuem owner? Onde existe policy sem enforcement ou evidence?
 
-Existe autoridade para definir requisitos, exigir evidências e conter sistemas fora do envelope aprovado.
+**G2 — Fundações de dados, identidade e ownership.** Outcome: cada agente possui identidade, owner, finalidade, dados e capabilities rastreáveis. Atividades: aprovar schemas de registry e blueprint; escolher source of truth e reconciliation; registrar business/technical owner; definir workload identity e permission mapping; criar data contracts e connector gates; inventariar tools, APIs e MCP; definir material changes e lifecycle states. Entregáveis: registry operacional, agent blueprints, identity records, data contracts, tool/MCP registry, ownership e attestation rules. **Gate questions:** é possível responder o que existe e quem responde? Blueprint explica arquitetura e blast radius? Identidades, connectors e tools podem ser revogados?
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "106", "index": 40, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "98", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
+**G3 — Operating model e decision rights.** Outcome: decisões têm authority, handoffs, SLA e evidência. Atividades: instituir Council, Design Authority e Run Authority; definir domain authorities; criar RACI e decision matrix; separar build, approval, run e challenge conforme tier; desenhar exception e waiver process; definir forums e cadences. Entregáveis: target operating model, RACI/decision rights, forum charter, handoff map, exception process, service levels. **Gate questions:** accountability está em funções reais, não em "o time"? Run Authority pode conter sem depender de council? Exceção sem expiry é bloqueada?
 
-- nomear sponsor e governance owner;
-- definir sistemas, unidades, regiões e ambientes cobertos;
-- declarar risk appetite e red flags;
-- mapear obrigações e authorities existentes;
-- definir o que permanece fora de escopo e por quanto tempo;
-- estabelecer princípios e regra de versionamento.
+**G4 — Controls mínimos e assurance.** Outcome: risco é classificado e traduzido em controls, assessments, tests e residual-risk decisions. Atividades: aprovar tiers e red flags; mapear control catalog; definir triggers de assessments; criar evaluation strategy e evidence package; definir human oversight e transparency; testar negative paths, rollback e kill switch; estabelecer risk acceptance authority. Entregáveis: risk matrix, control baseline por tier, assessment suite, evaluation/release criteria, human oversight design, evidence package index. **Gate questions:** cada control tem owner e evidence? Ausência de evidência aparece como missing, não passed? Approval é proporcional com caminho de remediation?
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "115", "index": 41, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "107", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
+**G5 — Onboarding por tier.** Outcome: existe um paved road para registrar, avaliar, liberar e suportar agentes em cada tier. Atividades: integrar registry, blueprint, controls e release flow; criar starter templates e approved components; configurar automated checks onde policy está estável; publicar guidance, examples e support; validar experiência de maker, reviewer, owner e operator; impedir bypass de paths críticos. Entregáveis: onboarding workflow, release checklist, approved component catalog, builder guidance, support/escalation model, audit trail do gate. **Gate questions:** o paved road é mais simples que contornar a governança? O workflow diferencia risco e capability? Condições e findings chegam ao owner correto?
 
-- governance charter;
-- scope map;
-- stakeholder/authority map;
-- initial risk appetite;
-- decision log;
-- communication plan.
+**G6 — Operação, observabilidade e resposta.** Outcome: sinais geram decisões e ações de contenção, remediação e recuperação. Atividades: instrumentar agent, identity, data e tool chain; definir SLOs, thresholds e alerts; implementar quarantine, rollback e reactivation; executar drills; ligar support, SOC/SRE e domain escalation; preservar evidence e atualizar regression suite. Entregáveis: observability model, dashboards com owner/threshold/action, incident severity e runbooks, quarantine/rollback evidence, runtime control mapping, post-incident loop. **Gate questions:** o dashboard muda uma decisão? Containment funciona sem cooperação do agente? Reactivation exige cause e regression evidence?
 
-<!-- source-unit {"classification": "requirement-control", "end_line": "123", "index": 42, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "116", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
+**G7 — Valor, attestation e melhoria contínua.** Outcome: o portfólio é revisado por ownership, risco, qualidade, uso, outcome e custo. Atividades: separar criação, discovery, adoção, uso, qualidade e valor; revisar business case e baseline; executar attestation conforme tier; analisar concentração, duplicidade e inativos; decidir manter, expandir, corrigir, restringir ou aposentar; atualizar policy somente por processo versionado. Entregáveis: value review, attestation record, portfolio decisions, improvement backlog, sunset records, change proposal versionada. **Gate questions:** há outcome observável ou apenas uso? Custo inclui operação, suporte e assurance? Policy changes estão separadas de guidance?
 
-- quem pode aprovar, condicionar, conter e aposentar?
-- o escopo inclui SaaS, low-code, shadow AI e agentes adquiridos?
-- exceções têm authority e expiry?
+### 1.5 Definition of done da implantação
 
-Sem mandato, não automatize approvals nem prometa cobertura.
+A implantação está operacional quando: o inventário é reconciliável e possui owners; tier determina controls e authority; release evidence é recuperável; identities, data e tools são revogáveis; runtime signals acionam runbooks; quarantine, rollback e sunset foram exercitados; attestation e value review mudam o portfólio; exceptions vencem; policy e guidance são versionados separadamente.
 
-<!-- source-unit {"classification": "requirement-control", "end_line": "125", "index": 43, "source_field": "", "source_heading": "Gate 1 — Diagnóstico e baseline", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "124", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 1 — Diagnóstico e baseline
+### 1.6 O que o playbook não faz
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "129", "index": 44, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "126", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
+Não substitui análise jurídica ou regulatória; não define threshold universal; não seleciona produto; não comprova maturidade por documentação; não certifica conformidade; não promete resultado financeiro.
 
-A organização conhece sua situação atual, lacunas e limitações de evidência.
+## 2. Roadmap de 90 dias (referência acelerada)
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "138", "index": 45, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "130", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
+> **Referência acelerada, não SLA.** Os 90 dias ajudam equipes que precisam de uma sequência inicial. Adapte duração e sobreposição às dependências, ao estate e à capacidade. O calendário nunca substitui G0–G7 nem cria obrigação de piloto.
 
-- aplicar maturity assessment;
-- reconciliar inventários e sources;
-- entrevistar owners e domain authorities;
-- mapear lifecycle real, approvals e handoffs;
-- revisar incidentes, findings, exceções e métricas;
-- identificar duplicidade, ownerless assets e high-risk unknowns.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "147", "index": 46, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "139", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- maturity baseline;
-- current-state map;
-- preliminary inventory;
-- gap/risk register;
-- evidence quality statement;
-- prioritized decisions.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "153", "index": 47, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "148", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
-
-- quais conclusões são observadas e quais são hipóteses?
-- quais lacunas críticas não possuem owner?
-- onde a organização possui policy sem enforcement ou evidence?
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "155", "index": 48, "source_field": "", "source_heading": "Gate 2 — Fundações de dados, identidade e ownership", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "154", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 2 — Fundações de dados, identidade e ownership
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "159", "index": 49, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "156", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
-
-Cada agente possui identidade, owner, finalidade, dados e capabilities rastreáveis.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "169", "index": 50, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "160", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- aprovar schemas de registry e blueprint;
-- escolher source of truth e reconciliation strategy;
-- registrar business/technical owner;
-- definir workload identity e permission mapping;
-- criar data contracts e connector gates;
-- inventariar tools, APIs e MCP servers;
-- definir material changes e lifecycle states.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "178", "index": 51, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "170", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- registry operacional;
-- agent blueprints;
-- identity records;
-- data contracts;
-- tool/MCP registry;
-- ownership e attestation rules.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "184", "index": 52, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "179", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
-
-- é possível responder o que existe e quem responde?
-- blueprint explica arquitetura e blast radius?
-- identidades, connectors e tools podem ser revogados?
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "186", "index": 53, "source_field": "", "source_heading": "Gate 3 — Operating model e decision rights", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "185", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 3 — Operating model e decision rights
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "190", "index": 54, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "187", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
-
-Decisões têm authority, handoffs, SLA e evidência definidos.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "199", "index": 55, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "191", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- instituir Governance Council, Design Authority e Run Authority adequados ao contexto;
-- definir domain authorities;
-- criar RACI e decision matrix;
-- separar build, approval, run e challenge conforme tier; usar `independent assurance` somente quando segregation e conflict rules estiverem formalizadas;
-- desenhar exception e waiver process;
-- definir forums e cadences.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "208", "index": 56, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "200", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- target operating model;
-- RACI/decision rights;
-- forum charter;
-- handoff map;
-- exception process;
-- service levels.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "214", "index": 57, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "209", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
-
-- accountability está atribuída a funções reais, não a “o time”?
-- Run Authority pode conter sem depender de council?
-- exceção sem expiry é bloqueada?
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "216", "index": 58, "source_field": "", "source_heading": "Gate 4 — Controls mínimos e assurance", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "215", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 4 — Controls mínimos e assurance
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "220", "index": 59, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "217", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
-
-Risco é classificado e traduzido em controls, assessments, tests e residual-risk decisions.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "230", "index": 60, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "221", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- aprovar tiers e red flags;
-- mapear control catalog à policy e aos domínios;
-- definir triggers de impact, privacy, security e release assessments;
-- criar evaluation strategy e evidence package;
-- definir human oversight e transparency;
-- testar negative paths, rollback e kill switch;
-- estabelecer risk acceptance authority.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "239", "index": 61, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "231", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- risk matrix;
-- control baseline por tier;
-- assessment suite;
-- evaluation/release criteria;
-- human oversight design;
-- evidence package index.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "245", "index": 62, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "240", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
-
-- cada control tem owner e evidence?
-- ausência de evidência aparece como missing, não como passed?
-- approval é proporcional e possui caminho de remediation?
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "247", "index": 63, "source_field": "", "source_heading": "Gate 5 — Onboarding por tier de risco", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "246", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 5 — Onboarding por tier de risco
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "251", "index": 64, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "248", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
-
-Existe um paved road para registrar, avaliar, liberar e suportar agentes em cada tier.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "260", "index": 65, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "252", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- integrar registry, blueprint, controls e release flow;
-- criar starter templates e approved components;
-- configurar automated checks onde policy está estável;
-- publicar guidance, examples e support channels;
-- validar experience de maker, reviewer, owner e operator;
-- impedir bypass de paths críticos.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "269", "index": 66, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "261", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- onboarding workflow;
-- release checklist;
-- approved component catalog;
-- builder guidance;
-- support/escalation model;
-- audit trail do gate.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "275", "index": 67, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "270", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
-
-- o paved road é mais simples que contornar a governança?
-- o workflow diferencia risco e capability?
-- condições e findings chegam ao owner correto?
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "277", "index": 68, "source_field": "", "source_heading": "Gate 6 — Operação, observabilidade e resposta", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "276", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 6 — Operação, observabilidade e resposta
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "281", "index": 69, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "278", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
-
-Sinais geram decisões e ações de contenção, remediação e recuperação.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "290", "index": 70, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "282", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- instrumentar agent, identity, data e tool chain;
-- definir SLOs, thresholds e alerts;
-- implementar quarantine, rollback e reactivation;
-- executar incident e containment drills;
-- ligar support, SOC/SRE e domain escalation;
-- preservar evidence e update regression suite.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "299", "index": 71, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "291", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- observability model;
-- dashboards com owner/threshold/action;
-- incident severity e runbooks;
-- quarantine/rollback evidence;
-- runtime control mapping;
-- post-incident loop.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "305", "index": 72, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "300", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
-
-- o dashboard muda uma decisão?
-- containment funciona sem cooperação do agente?
-- reactivation exige cause e regression evidence?
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "307", "index": 73, "source_field": "", "source_heading": "Gate 7 — Valor, attestation e melhoria contínua", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "306", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Gate 7 — Valor, attestation e melhoria contínua
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "311", "index": 74, "source_field": "", "source_heading": "Outcome", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "308", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Outcome
-
-O portfólio é revisado por ownership, risco, qualidade, uso, outcome e custo.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "320", "index": 75, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "312", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- separar criação, discovery, adoção, uso, qualidade e valor;
-- revisar business case e baseline;
-- executar attestation conforme tier;
-- analisar concentração, duplicidade e agents inativos;
-- decidir manter, expandir, corrigir, restringir ou aposentar;
-- atualizar policy, controls e patterns somente por processo versionado.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "329", "index": 76, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "321", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- value review;
-- attestation record;
-- portfolio decisions;
-- improvement backlog;
-- sunset records;
-- change proposal versionada.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "335", "index": 77, "source_field": "", "source_heading": "Gate questions", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "330", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-##### Gate questions
-
-- há outcome observável ou apenas uso?
-- custo inclui operação, suporte e assurance?
-- policy changes estão separadas de guidance?
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "339", "index": 78, "source_field": "", "source_heading": "Sequenciamento", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "336", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Sequenciamento
-
-Os gates possuem dependências lógicas, mas workstreams podem avançar em paralelo. Não espere perfeição para começar; também não use urgência para pular ownership, identidade, risco ou containment.
-
-<!-- source-unit {"classification": "definition", "end_line": "353", "index": 79, "source_field": "", "source_heading": "Definition of done", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "340", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### Definition of done
-
-A implantação está operacional quando:
-
-- o inventário é reconciliável e possui owners;
-- tier determina controls e authority;
-- release evidence é recuperável;
-- identities, data e tools são revogáveis;
-- runtime signals acionam runbooks;
-- quarantine, rollback e sunset foram exercitados;
-- attestation e value review mudam o portfólio;
-- exceptions vencem;
-- policy e guidance são versionados separadamente.
-
-<!-- source-unit {"classification": "procedure", "end_line": "361", "index": 80, "source_field": "", "source_heading": "O que este playbook não faz", "source_path": "docs/guides/framework-implementation-playbook.md", "start_line": "354", "transformation": "integrate-journey-and-cross-reference-chapters", "unit_type": "markdown-atx-heading"} -->
-#### O que este playbook não faz
-
-- não substitui análise jurídica ou regulatória;
-- não define threshold universal;
-- não seleciona produto;
-- não comprova maturidade por documentação;
-- não certifica conformidade;
-- não promete resultado financeiro.
-
-### Fonte: `docs/guides/implementation-plan-90-days.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 81, "source_field": "title", "source_heading": "", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "2", "transformation": "integrate-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Roadmap de implantação — 90 dias
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "18", "index": 82, "source_field": "", "source_heading": "Roadmap de implantação — 90 dias", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "15", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-### Roadmap de implantação — 90 dias
-
-> **Referência acelerada, não SLA.** Os 90 dias ajudam equipes que precisam de uma sequência inicial. Adapte duração e sobreposição às dependências, ao estate e à capacidade da organização. O calendário nunca substitui G0–G7 nem cria obrigação de piloto.
-
-<!-- source-unit {"classification": "objective", "end_line": "24", "index": 83, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "19", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Estabelecer, em 90 dias, as fundações e os fluxos mínimos de um sistema de governança operável: mandato, baseline, registry, blueprint, tiers, decision rights, controls, release evidence, runtime response e roadmap priorizado.
-
-O resultado não é “governança concluída”. É uma capacidade inicial verificável que pode ser ampliada sem perder accountability ou rastreabilidade.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "34", "index": 84, "source_field": "", "source_heading": "Constraints", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "25", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Constraints
-
-- A policy modular é a fonte canônica; adoção organizacional requer release e authority explícitas.
-- Core e controls são multiplataforma.
-- Thresholds são aprovados no contexto da organização.
-- Dados, identidade, segurança, privacy, legal e RAI mantêm suas authorities.
-- Automação é aplicada somente a regras estáveis e testadas.
-- Lacuna de evidência permanece visível; não é preenchida por suposição.
-- Este roadmap não exige piloto: uma coorte de onboarding ou rollout controlado delimita o primeiro escopo operacional e usa os mesmos gates, controls e critérios de produção.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "50", "index": 85, "source_field": "", "source_heading": "Mapeamento entre calendário e gates", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "35", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Mapeamento entre calendário e gates
-
-Os períodos abaixo organizam trabalho; os gates continuam sendo decisões independentes. Chegar ao último dia de uma fase não autoriza avanço automático.
+Objetivo: estabelecer as fundações e fluxos mínimos de um sistema de governança operável. **O resultado não é "governança concluída" — é uma capacidade inicial verificável que pode ser ampliada sem perder accountability.**
 
 | Período | Gates preparados ou decididos | Decisão esperada |
 |---|---|---|
@@ -990,576 +112,208 @@ Os períodos abaixo organizam trabalho; os gates continuam sendo decisões indep
 | dias 71–85 | G5 e G6 | decidir release condicionado ao tier e aceitar operação/containment |
 | dias 86–90 | G7 | decidir continuidade, restrição, expansão, remediação ou sunset |
 
-O [contrato comum dos gates](08-implementation-and-adoption.md#contrato-comum-dos-decision-gates) define evidence mínima, authority, estados e caminho de falha. Uma decisão `hold` ou `reject` altera o plano; o calendário deve ser replanejado, não usado para contornar o gate.
+**Dias 0–10 (G0):** nomear sponsor, governance owner e authorities; aprovar escopo e ambientes; definir risk appetite, red flags e containment authority; mapear policies, processos e inventários; selecionar portfólio inicial. Entregáveis: charter, scope map, authority matrix, risk appetite v0.1, decision/risk log. **Exit:** sponsor e owners nominativos; escopo explícito; containment authority definida; nenhuma lacuna crítica sem owner.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "52", "index": 86, "source_field": "", "source_heading": "Dias 0–10 — Mandato e escopo", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "51", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Dias 0–10 — Mandato e escopo
+**Dias 11–25 (G1):** aplicar maturity assessment; reconciliar inventários; mapear lifecycle e handoffs; identificar ownerless, duplicados, inativos e high-risk unknowns; avaliar qualidade da evidência; priorizar gaps. Entregáveis: maturity baseline, current-state map, preliminary registry, gap/risk register, prioritized backlog. **Exit:** situação atual separa observado de hipótese; inventário com coverage declarado; gaps críticos com owner e prazo.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "61", "index": 87, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "53", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
+**Dias 26–40 (G2):** aprovar schemas mínimos; definir source of truth e reconciliation; registrar owners e lifecycle; preencher blueprints do portfólio inicial; mapear workload identities e permissions; criar data contracts e connector gates; inventariar tools, APIs e MCP. Entregáveis: registry e blueprints versionados, identity/permission matrix, data contracts, tool/MCP registry, material-change triggers. **Exit:** todos os itens do escopo inicial têm owner e status; identities, data e tools rastreáveis; gaps aparecem como missing evidence.
 
-- nomear sponsor, governance owner e authorities iniciais;
-- aprovar escopo organizacional e ambientes;
-- definir risk appetite, red flags e autoridade de containment;
-- mapear policies, processos, inventários e ferramentas existentes;
-- selecionar um portfólio inicial representativo para onboarding controlado;
-- registrar decisões e dependências.
+**Dias 41–55 (G3/G4):** formalizar Council, Design e Run Authority; definir RACI e decision rights por tier; aprovar tiers e red flags; mapear control catalog e evidence; definir exception/waiver e expiry; estabelecer forums, handoffs e SLAs. Entregáveis: target operating model, RACI, risk/control baseline, exception process, forum charter. **Exit:** cada decisão material possui accountable; segregação proporcional; exceções não permanentes por padrão.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "69", "index": 88, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "62", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
+**Dias 56–70 (G4/G5):** definir triggers de assessments; criar evaluation strategy e thresholds; documentar oversight e transparency; montar release evidence package; testar negative paths, rollback, quarantine e kill switch; registrar residual risk e conditions. Entregáveis: assessment suite, evaluation/release criteria, evidence package, run readiness checklist, drill records. **Exit:** controls aplicáveis com evidence; release authority consegue aprovar, condicionar ou negar; containment e rollback exercitados.
 
-- governance charter;
-- scope e stakeholder map;
-- authority matrix inicial;
-- risk appetite v0.1;
-- decision/risk log.
+**Dias 71–85 (G5/G6):** colocar onboarding em uso; configurar telemetry, dashboards e alerts; publicar catalog entries, guidance e support; ligar incident, support e domain escalation; medir fricção, gaps e bypass; corrigir controls pelo processo versionado. Entregáveis: onboarding operacional, observability e runbooks, catalog/discovery, support model, remediation backlog. **Exit:** cada signal com owner e action; state-changing actions com correlation; support e escalation ponta a ponta.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "76", "index": 89, "source_field": "", "source_heading": "Exit criteria", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "70", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Exit criteria
+**Dias 86–90 (G7):** executar primeira owner attestation; revisar criação, discovery, uso, qualidade e value separadamente; registrar decisões; atualizar maturity baseline; aprovar roadmap de expansão. Entregáveis: attestation records, portfolio/value review, maturity delta, roadmap 6–12 meses, executive decision memo. **Exit:** decisões ligadas a evidência; próximos increments com owner e acceptance criteria; nenhuma mudança normativa autoaprovada.
 
-- sponsor e owners nominativos;
-- scope explícito;
-- containment authority definida;
-- nenhuma lacuna crítica sem owner.
+**Riscos de execução:** burocracia uniforme → tiering e paved road; catálogo decorativo → reconciliation e actions; falso senso de coverage → declarar sources e confidence; centralização em silo → authorities distribuídas; automação prematura → manual first para regras instáveis; métricas de vaidade → separar criação, uso, qualidade e outcome; vendor lock-in → capabilities e schemas neutros; rollout sem containment → quarantine/rollback como exit criteria.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "78", "index": 90, "source_field": "", "source_heading": "Dias 11–25 — Diagnóstico e baseline", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "77", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Dias 11–25 — Diagnóstico e baseline
+## 3. Programa de 24 semanas (pattern de referência)
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "87", "index": 91, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "79", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
+> **Pattern de referência, não calendário normativo.** As 24 semanas oferecem um ponto de partida para equipes que ainda não sabem como organizar a implantação. Os únicos decision gates canônicos são G0–G7.
 
-- aplicar maturity assessment;
-- reconciliar inventários de plataformas;
-- mapear lifecycle e handoffs reais;
-- identificar ownerless, duplicados, inativos e high-risk unknowns;
-- avaliar qualidade da evidência;
-- priorizar gaps por impacto, dependência e reversibilidade.
+**Fases e gates:**
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "95", "index": 92, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "88", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- maturity baseline;
-- current-state map;
-- preliminary registry;
-- gap/risk register;
-- prioritized backlog.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "101", "index": 93, "source_field": "", "source_heading": "Exit criteria", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "96", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Exit criteria
-
-- situação atual separa observado de hipótese;
-- inventário possui coverage declarado;
-- gaps críticos e altos têm owner e prazo;
-
-<!-- source-unit {"classification": "architecture-runtime", "end_line": "103", "index": 94, "source_field": "", "source_heading": "Dias 26–40 — Registry, blueprint, dados e identidade", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "102", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Dias 26–40 — Registry, blueprint, dados e identidade
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "113", "index": 95, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "104", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- aprovar schemas mínimos;
-- definir source of truth e reconciliation;
-- registrar business/technical owners e lifecycle;
-- preencher blueprints do portfólio inicial;
-- mapear workload identities e permissions;
-- criar data contracts e connector gates;
-- inventariar tools, APIs e MCP servers.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "121", "index": 96, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "114", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- registry e blueprints versionados;
-- identity/permission matrix;
-- data contracts;
-- tool/MCP registry;
-- material-change triggers.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "127", "index": 97, "source_field": "", "source_heading": "Exit criteria", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "122", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Exit criteria
-
-- todos os itens do escopo inicial têm owner e status;
-- identities, data e tools são rastreáveis;
-- gaps aparecem como missing evidence.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "129", "index": 98, "source_field": "", "source_heading": "Dias 41–55 — Operating model e controls", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "128", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Dias 41–55 — Operating model e controls
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "138", "index": 99, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "130", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- formalizar Council, Design Authority e Run Authority;
-- definir RACI e decision rights por tier;
-- aprovar risk tiers e red flags;
-- mapear control catalog e evidence;
-- definir exception/waiver e expiry;
-- estabelecer forums, handoffs e SLAs.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "146", "index": 100, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "139", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- target operating model;
-- RACI e decision matrix;
-- risk/control baseline;
-- exception process;
-- forum charter.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "152", "index": 101, "source_field": "", "source_heading": "Exit criteria", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "147", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Exit criteria
-
-- cada decisão material possui accountable;
-- segregation of duties é proporcional;
-- exceções não podem ser permanentes por padrão.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "154", "index": 102, "source_field": "", "source_heading": "Dias 56–70 — Assurance, evaluations e release", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "153", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Dias 56–70 — Assurance, evaluations e release
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "163", "index": 103, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "155", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- definir triggers de assessments;
-- criar evaluation strategy e thresholds;
-- documentar human oversight e transparency;
-- montar release evidence package;
-- testar negative paths, rollback, quarantine e kill switch;
-- registrar residual risk e conditions.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "171", "index": 104, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "164", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- assessment suite;
-- evaluation/release criteria;
-- evidence package;
-- run readiness checklist;
-- drill records.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "177", "index": 105, "source_field": "", "source_heading": "Exit criteria", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "172", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Exit criteria
-
-- controls aplicáveis possuem evidence;
-- release authority consegue aprovar, condicionar ou negar;
-- containment e rollback foram exercitados.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "179", "index": 106, "source_field": "", "source_heading": "Dias 71–85 — Onboarding, operação e suporte", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "178", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Dias 71–85 — Onboarding, operação e suporte
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "188", "index": 107, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "180", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- colocar o workflow de onboarding em uso no escopo inicial;
-- configurar telemetry, dashboards e alerts;
-- publicar catalog entries, guidance e support paths;
-- ligar incident, support e domain escalation;
-- medir fricção, gaps e bypass attempts;
-- corrigir controls e templates pelo processo versionado da policy modular.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "196", "index": 108, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "189", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- onboarding workflow operacional;
-- observability e runbooks;
-- catalog/discovery;
-- support model;
-- remediation backlog.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "202", "index": 109, "source_field": "", "source_heading": "Exit criteria", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "197", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Exit criteria
-
-- cada signal possui owner e action;
-- ações state-changing têm correlation;
-- support e escalation funcionam ponta a ponta.
-
-<!-- source-unit {"classification": "lifecycle-state", "end_line": "204", "index": 110, "source_field": "", "source_heading": "Dias 86–90 — Attestation e roadmap", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "203", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Dias 86–90 — Attestation e roadmap
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "212", "index": 111, "source_field": "", "source_heading": "Atividades", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "205", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Atividades
-
-- executar primeira owner attestation do escopo;
-- revisar criação, discovery, uso, qualidade e value hypothesis separadamente;
-- registrar decisões de manter, corrigir, restringir ou aposentar;
-- atualizar maturity baseline com evidência;
-- aprovar roadmap de expansão e automation backlog.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "220", "index": 112, "source_field": "", "source_heading": "Entregáveis", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "213", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Entregáveis
-
-- attestation records;
-- portfolio/value review;
-- maturity delta com limitações;
-- roadmap 6–12 meses;
-- executive decision memo.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "226", "index": 113, "source_field": "", "source_heading": "Exit criteria", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "221", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Exit criteria
-
-- decisões ligadas a evidência;
-- próximos increments possuem owner, dependency e acceptance criteria;
-- nenhuma mudança normativa é autoaprovada.
-
-<!-- source-unit {"classification": "metric", "end_line": "228", "index": 114, "source_field": "", "source_heading": "Métricas dos 90 dias", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "227", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Métricas dos 90 dias
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "237", "index": 115, "source_field": "", "source_heading": "Cobertura e controle", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "229", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Cobertura e controle
-
-- coverage do registry;
-- owners e attestations válidos;
-- identities/connectors/tools classificados;
-- evidence packages completos por tier;
-- exceptions e findings vencidos;
-- containment e rollback drill pass rate.
-
-<!-- source-unit {"classification": "procedure", "end_line": "245", "index": 116, "source_field": "", "source_heading": "Fluxo", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "238", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Fluxo
-
-- cycle time por gate e tier;
-- devoluções por evidência incompleta;
-- time to decide/contain/remediate;
-- bypass attempts e causes;
-- suporte e escalation resolution time.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "254", "index": 117, "source_field": "", "source_heading": "Uso, qualidade e valor", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "246", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-##### Uso, qualidade e valor
-
-- discovery, adoption e use separados;
-- task success e erro por scenario;
-- safety/security signals;
-- support burden;
-- baseline e outcome evidence disponível;
-- custo de operação e assurance.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "267", "index": 118, "source_field": "", "source_heading": "Riscos de execução", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "255", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Riscos de execução
-
-| Risco | Mitigação |
-|---|---|
-| burocracia uniforme | tiering, paved road e forms proporcionais |
-| catálogo decorativo | reconciliation, owners, lifecycle e actions |
-| falso senso de coverage | declarar sources, missing evidence e confidence |
-| centralização em silo | authorities distribuídas e handoffs |
-| automação prematura | manual first para regras instáveis; automate after evidence |
-| métricas de vaidade | separar criação, uso, qualidade e outcome |
-| vendor lock-in | capabilities e schemas neutros; adapters separados |
-| rollout sem containment | quarantine/rollback como exit criteria |
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "270", "index": 119, "source_field": "", "source_heading": "Próximo passo após 90 dias", "source_path": "docs/guides/implementation-plan-90-days.md", "start_line": "268", "transformation": "integrate-completely-and-link-tailoring-guide", "unit_type": "markdown-atx-heading"} -->
-#### Próximo passo após 90 dias
-
-Expandir coverage, automatizar controles estáveis, aprofundar domains com maior residual risk e revisar o roadmap. Uma futura Policy v2, se necessária, deve seguir processo formal de mudança e não é consequência automática deste roadmap.
-
-### Fonte: `docs/guides/implementation-program-24-weeks.md`
-
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
-
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 120, "source_field": "title", "source_heading": "", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "2", "transformation": "synthesize-and-preserve", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Programa de implantação em 24 semanas
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "18", "index": 121, "source_field": "", "source_heading": "Programa de implantação em 24 semanas", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "15", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-### Programa de implantação em 24 semanas
-
-> **Pattern de referência, não calendário normativo.** As 24 semanas oferecem um ponto de partida para equipes que ainda não sabem como organizar a implantação. Adapte duração, sobreposição, ordem e nomenclatura ao contexto. Os únicos decision gates canônicos são G0–G7; nem este programa nem um piloto são requisitos universais.
-
-<!-- source-unit {"classification": "objective", "end_line": "24", "index": 122, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "19", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
-
-Dar forma de **programa** ao que o [implementation playbook](08-implementation-and-adoption.md) define como **decisões**. As fases organizam tempo, equipe e entregáveis; os gates G0–G7 continuam sendo o que autoriza avançar.
-
-Para uma organização que adote este pattern, uma fase pode terminar sem que o gate correspondente seja aprovado. Quando isso acontece, o escopo não avança: o gate manda, o calendário não.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "42", "index": 123, "source_field": "", "source_heading": "Fases e gates", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "25", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Fases e gates
-
-| Fase | Semanas | Objetivo | Entregáveis | Gate correspondente |
+| Fase | Semanas | Objetivo | Entregáveis | Gate |
 |---|---|---|---|---|
-| **F0 — Mobilizar** | 1–2 | mandato e escopo | charter, scope statement, decision principles, fóruns, time do programa | G0 |
-| **F1 — Descobrir** | 3–5 | baseline real | discovery do estate, forecast, gargalos manuais, capability map, maturity baseline | G1 |
-| **F2 — Desenhar** | 6–8 | target operating model | target de maturidade, tiers calibrados, triggers de RAI, operating model, patterns de referência | G3 e preparação de G4 |
-| **F3 — Construir** | 9–12 | controles de fundação | registry, padrões de identidade, catálogos de dados e tools, schema de telemetria, MPB, runbooks iniciais | G2 e G4 |
-| **F4 — Validar** | 13–16 | validar ponta a ponta | piloto opcional, cohort de onboarding ou estate existente; fluxo risco→RAI→publicação, observabilidade, tabletop e KPIs | G5 e G6 |
-| **F5 — Escalar** | 17–20 | automação e cobertura | automação de discovery, policy-as-code, JML, attestation, baselines de comportamento, FinOps, dashboards | G6 |
-| **F6 — Institucionalizar** | 21–24 | operação regular e assurance | evidência e assurance, enablement, handoff para BAU, cadência de governança, roadmap de 12 meses | G7 |
+| **F0 — Mobilizar** | 1–2 | mandato e escopo | charter, scope, decision principles, fóruns, time | G0 |
+| **F1 — Descobrir** | 3–5 | baseline real | discovery, forecast, gargalos, capability map, maturity | G1 |
+| **F2 — Desenhar** | 6–8 | target operating model | target de maturidade, tiers, triggers, operating model | G3 e preparação de G4 |
+| **F3 — Construir** | 9–12 | controles de fundação | registry, identidade, catálogos, telemetria, MPB | G2 e G4 |
+| **F4 — Validar** | 13–16 | validar ponta a ponta | piloto opcional ou cohort; fluxo completo, tabletop, KPIs | G5 e G6 |
+| **F5 — Escalar** | 17–20 | automação e cobertura | discovery automatizado, policy-as-code, JML, FinOps | G6 |
+| **F6 — Institucionalizar** | 21–24 | operação regular e assurance | evidência, enablement, handoff BAU, roadmap 12m | G7 |
 
-Repare que **F2 fecha G3 e F3 fecha G2** — a ordem numérica dos gates não é a ordem de execução. G3 exige apenas que G2 esteja *suficiente para atribuir responsabilidade*, não completo, então as duas frentes correm em paralelo. A [dependência real entre gates](08-implementation-and-adoption.md#a-numeração-não-é-um-cronograma) está declarada no playbook, e é ela que manda no cronograma.
+**Repare: F2 fecha G3 e F3 fecha G2** — a ordem numérica dos gates não é a ordem de execução. Os dois roadmaps (90 dias ≈ F0–F3 comprimidas; 24 semanas = versão detalhada) são guias adaptáveis do mesmo conjunto de gates, não métodos concorrentes nem prazos de compliance.
 
-A coluna "entregáveis" nomeia os artefatos por fase. O [catálogo de artefatos](../../toolkit/artifact-catalog.md) os detalha um a um, com propósito, owner típico e onde cada um está definido no corpus.
+**Workstreams:** trilhas paralelas dentro do mesmo roadmap — governança e risco; arquitetura e plataforma; identidade e segurança; dados e ferramentas; observabilidade e custo; adoção e valor. **Workstreams não podem otimizar localmente:** identidade pode declarar "entregue" enquanto o registry ainda não associa identidade a `agent_id`. **Milestones se definem por outcome cross-domain, não por entrega de trilha.**
 
-O [roadmap de 90 dias](../annexes/tailoring-guide.md) é uma referência acelerada — corresponde aproximadamente a F0–F3 comprimidas. Este programa é uma referência mais detalhada. Os dois são guias adaptáveis do mesmo conjunto de gates, não métodos concorrentes nem prazos de compliance.
+**Prioridade do backlog:** `P0` (obrigatório para a primeira release — charter, registry mínimo, tiers, blueprint, MPB, identidade T2/T3, catálogos, logging, gate, kill switch, evidência); `P1` (necessário para escalar — discovery automatizado, JML, attestation, SOC, behavioral analytics, FinOps, champions); `P2` (otimização avançada). **Um item de backlog de qualidade tem:** outcome, por quê, dependências, trabalho, evidência e critério de saída.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "52", "index": 124, "source_field": "", "source_heading": "F0 — Mobilizar (semanas 1–2)", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "43", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### F0 — Mobilizar (semanas 1–2)
+**Cadência:** semanal (workstream: entregas, dependências, bloqueios); quinzenal (revisão integrada de arquitetura e governança: outcomes cross-domain); mensal (sponsor e council: risco, prioridade, funding, exceções); trimestral (maturidade: alvo e roadmap).
 
-1. Entrevistar sponsors e validar problema e mandato.
-2. Produzir charter, scope statement e princípios de decisão.
-3. Definir fóruns de governança, presidências, decision rights e cadência.
-4. Nomear program manager e leads de domínio.
-5. Montar o corpus de referência e a baseline de standards aplicáveis.
+**Ciclo de melhoria contínua (trimestral):** revisar KPIs/KRIs; analisar incidentes e quase-incidentes; revisar exceções — **uma exceção que se repete não é exceção: é requisito que a policy não reconheceu ou controle que a operação não cumpre**; avaliar falsos positivos/negativos; revisar gargalos; atualizar standards com changelog; priorizar roadmap.
 
-**Critério de saída:** existe autoridade para definir requisitos, exigir evidência e conter sistemas fora do envelope aprovado. Sem isso, não automatize aprovações nem prometa cobertura.
+**Como usar sem virar teatro de programa:** fases podem se sobrepor, gates não; prazo cumprido com evidência ausente é `hold`, não `approve`; escopo reduzido é decisão legítima registrada; as semanas dimensionam esforço, não prometem maturidade.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "62", "index": 125, "source_field": "", "source_heading": "F1 — Descobrir (semanas 3–5)", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "53", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### F1 — Descobrir (semanas 3–5)
+## 4. Capability map: atual versus alvo
 
-1. Executar [discovery do estate](03-inventory-portfolio-and-value.md) em fontes técnicas e por entrevistas.
-2. Produzir forecast de 6, 12 e 24 meses com mix de risco.
-3. Mapear gargalos manuais e padrões de shadow AI.
-4. Executar capability map e [maturity assessment](../../toolkit/maturity/maturity-model.md) com evidência.
-5. Publicar baseline, principais riscos e nível de confiança.
+### 4.1 O que é uma capability
 
-**Critério de saída:** o baseline separa o observado da hipótese, tem data de corte e todo gap crítico tem owner.
+Uma capacidade organizacional de produzir um resultado **de forma repetível**. Não é uma ferramenta, um time nem um projeto. **O teste: se você trocar o produto e a capacidade desaparecer, você comprou uma ferramenta e chamou de capability.**
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "72", "index": 126, "source_field": "", "source_heading": "F2 — Desenhar (semanas 6–8)", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "63", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### F2 — Desenhar (semanas 6–8)
+### 4.2 As capacidades do framework
 
-1. Definir target de maturidade por capability — não nível máximo em tudo.
-2. Calibrar tiers, scoring e escaladores com casos reais.
-3. Desenhar operating model, RACI e handoff matrix.
-4. Definir a integração risco → impact trigger → RAI → domain reviews → gate de publicação.
-5. Aprovar arquitetura de referência e patterns por tier.
+Ponto de partida: os domínios canônicos. Quebre uma capability em duas apenas quando a filha tiver owner, processo **ou** evidência diferentes.
 
-**Critério de saída:** cada decisão material tem accountable, receptor, prazo e escalation.
+| Capacidade | Pergunta de diagnóstico | Sinal típico de estado inicial | Alvo comum |
+|---|---|---|---|
+| estratégia e governança | existe mandato, portfólio, funding e decisão clara? | política genérica, sem charter | charter, fóruns, decision rights, risk appetite |
+| estate inventory e registry | sabemos quais agentes existem, onde operam e quem responde? | planilhas por plataforma | discovery contínuo + registry reconciliável |
+| risco e Responsible AI | risco, admissibilidade e impacto roteiam controles? | mesma review para todos | tiers, admissibilidade, escaladores, impact assessment |
+| lifecycle e Agent SDLC | versões, estados e mudanças estão governados? | publicação ad hoc | stage/state, gates, attestation e retirada |
+| identidade e acesso | cada ação é atribuível e autorizada? | chaves compartilhadas | identidade própria, least privilege, JML |
+| dados e conhecimento | fontes são classificadas, permitidas e AI-ready? | recuperação sobre qualquer pasta | catálogo de fontes certificadas |
+| tools, APIs e MCP | ações são catalogadas, limitadas e mediadas? | ferramentas embutidas por time | tool registry, gateway, autorização por ação |
+| modelos e provedores | combinações e versões têm critérios de admissão? | escolha por preferência | catálogo, evaluation binding, fallback, exit |
+| runtime e plataforma | existem enforcement, isolamento, resiliência e rollback? | acesso direto a endpoints | control plane, budgets, containment |
+| segurança e AgentSecOps | ameaças agentic entram em prevention/detection/response? | SOC vê só logs tradicionais | threat model agentic, red teaming |
+| observabilidade | é possível reconstruir, detectar desvio e agir? | logs sem correlation | event envelope, baselines, runbooks |
+| FinOps | custo é atribuível a agente, tarefa e outcome? | custo por chave agregado | budgets, unit economics, anomaly response |
+| value realization | outcomes influenciam funding e sunset? | contagem de agentes | baseline, KPI, portfolio decisions |
+| assurance e auditabilidade | controls podem ser testados por challenge? | evidence manual para auditoria | continuous evidence, sampling, findings |
+| adoção e competências | cada papel usa a rota governada corretamente? | treinamento pontual | currículo por papel, champions, support |
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "82", "index": 127, "source_field": "", "source_heading": "F3 — Construir (semanas 9–12)", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "73", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### F3 — Construir (semanas 9–12)
+### 4.3 Procedimento
 
-1. Implementar o registry mínimo viável e os identificadores.
-2. Implementar padrões de identidade e remediar credenciais compartilhadas na primeira cohort selecionada.
-3. Criar o standard de dados AI-ready e o catálogo inicial de fontes certificadas.
-4. Criar o registro de tools e a mediação para ações de alto impacto.
-5. Implementar schema de telemetria, dashboards básicos, [MPB](../../toolkit/controls/minimum-production-bar.md) e repositório de evidência.
+1. Listar as capacidades necessárias ao operating model.
+2. Escrever uma frase de outcome para cada uma (ex.: *"toda ação material de agente é atribuível a uma identidade conhecida e autorizada"*).
+3. Definir evidências observáveis do estado atual — prefira *"74% dos T2/T3 usam identidade dedicada"* a "o controle de acesso é forte".
+4. Atribuir maturidade com base em evidência e registrar confidence. **Evidência fraca produz nota provisória, não nota otimista.**
+5. Definir o alvo por horizonte e necessidade — nível 3 costuma bastar no primeiro ano.
+6. Identificar dependências (behavioral analytics depende de registry + identidade + telemetria + runtime).
+7. Converter gaps materiais em iniciativas.
 
-**Critério de saída:** controles centrais demonstráveis em ambiente controlado ou por evidência operacional equivalente — não apresentados apenas em slide.
+**Perguntas de challenge antes de aprovar o alvo:** o alvo é necessário para o risco e o volume previstos, ou é ambição tecnológica? Existe dependência invisível? Pode ser demonstrado por evidência? **Existe owner capaz de sustentar a capacidade depois que o programa terminar?** — a última derruba mais iniciativas que as outras três somadas.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "94", "index": 128, "source_field": "", "source_heading": "F4 — Validar (semanas 13–16)", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "83", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### F4 — Validar (semanas 13–16)
+**Failure modes:** mapear produtos e chamar de capacidades; quebrar capacidades até virarem tarefas; alvo máximo em tudo; estado atual descrito por adjetivo; ignorar que capacidade em nível baixo inutiliza outra em nível alto; aprovar alvo sem owner pós-programa.
 
-Escolha uma rota de validação proporcional: piloto dedicado, cohort de onboarding, phased rollout ou avaliação retrospectiva de agentes já operacionais. O [plano de piloto](08-implementation-and-adoption.md) é um template útil quando a organização escolhe piloto; não é prerequisite deste programa.
+## 5. Adoção, enablement e suporte
 
-1. Selecionar de 8 a 15 agentes cobrindo T1 a T3 e padrões arquiteturais distintos.
-2. Executar o lifecycle completo de pelo menos um T2 e um T3.
-3. Testar contenção de incidente e kill switch de verdade.
-4. Rodar [behavioral analytics](09-operations-incidents-and-continuity.md) em monitor-only.
-5. Medir lead time, falsos positivos, fricção percebida e KPI de negócio.
+### 5.1 Adoção não é comunicação de lançamento
 
-**Critério de saída:** evidence suficiente para os gates G5/G6, controls ajustados e nenhum bloqueador crítico aberto. Se a rota escolhida for piloto, aplique também os critérios do [plano de piloto](08-implementation-and-adoption.md).
+É a capacidade organizacional de usar o sistema de forma correta, obter suporte, reportar falhas e incorporar feedback ao governance lifecycle.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "104", "index": 129, "source_field": "", "source_heading": "F5 — Escalar (semanas 17–20)", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "95", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### F5 — Escalar (semanas 17–20)
+**Personas:** sponsor (value, risco, decisões); business owner (outcome, usuários, limites, attestation); maker/engineer (paved road, controls, feedback rápido); end user (intended use, limitações, suporte, contestação); administrator (policy, inventory, acesso); support (triage, known issues, escalation); domain authority (evidências, decision rights); auditor (acesso independente a records).
 
-1. Automatizar discovery, registro e policy gates simples.
-2. Integrar JML, reatribuição de owner e workflow de dormancy.
-3. Expandir fontes certificadas, tools e identidades próprias.
-4. Calibrar detecções de comportamento e budgets de [FinOps](10-metrics-review-and-improvement.md).
-5. Expandir enablement e a rede de champions.
+### 5.2 Discovery e catalog
 
-**Critério de saída:** metas de cobertura atingidas e gargalos manuais mensuravelmente reduzidos.
+Um catálogo útil permite: encontrar capacidades por tarefa e persona; distinguir status, owner, versão e tier; entender intended/prohibited use; acessar support e feedback; evitar duplicação; ocultar itens em quarantine/sunset; medir discovery separado de criação. **Publicar sem discovery gera agentes invisíveis; discovery sem lifecycle promove itens inadequados.**
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "114", "index": 130, "source_field": "", "source_heading": "F6 — Institucionalizar (semanas 21–24)", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "105", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### F6 — Institucionalizar (semanas 21–24)
+### 5.3 Paved road para builders
 
-1. Executar a revisão de evidência e assurance da primeira onda.
-2. Transferir responsabilidades para a operação regular e documentar o modelo de suporte.
-3. Publicar o [governance dashboard](10-metrics-review-and-improvement.md) e a cadência de fóruns.
-4. Reavaliar maturidade e definir o target de 12 meses.
-5. Planejar a automação restante com base nos dados da rota de validação escolhida.
+Starter templates com identity, logging e policy hooks; schemas e self-assessment proporcionais; approved models, data connectors e tools; automated checks com feedback acionável; sandbox e test datasets; design clinic e office hours; exception process com owner e expiry; documentação de examples e failure modes. **O paved road deve ser mais simples que contornar a governança — fricção desnecessária é o principal produtor de shadow AI.**
 
-**Critério de saída:** owners de BAU nomeados, cadência funcionando e próximos targets acordados.
+O golden path do builder: registrar use case, owner e prohibited use → criar registry record e blueprint → classificar risk tier e red flags → selecionar approved model/data/tool contracts → aplicar controls e evaluation strategy → produzir release evidence → obter decisão no gate → publicar com observability, containment e rollback → operar, regress, attest e sunset.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "127", "index": 131, "source_field": "", "source_heading": "Workstreams", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "115", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Workstreams
+### 5.4 Suporte em camadas
 
-Workstream é trilha de execução paralela dentro do **mesmo** roadmap — não um segundo cronograma.
+1. **Self-service:** documentação, status, FAQ, runbooks.
+2. **AI-assisted:** busca e triage com handoff rastreável.
+3. **Platform/IT backstop:** incidentes, acesso e operação.
+4. **Domain SME:** security, privacy, RAI, legal, data ou negócio.
+5. **Authority escalation:** containment, risk acceptance e policy decision.
 
-| Workstream | Lead típico | F0–F2 | F3–F4 | F5–F6 |
-|---|---|---|---|---|
-| governança e risco | governança/risco | charter, tiers, triggers de RAI, operating model | workflow, evidência, reviews da primeira cohort | automação, assurance, exceções |
-| arquitetura e plataforma | arquitetura/plataforma | patterns de referência | integração registry, runtime e policy | escala, resiliência, APIs |
-| identidade e segurança | IAM/segurança | patterns e ameaças | identidade própria, controles, runbooks | JML, integração com SOC, tuning |
-| dados e ferramentas | dados/API | desenho de standards e catálogos | fontes certificadas, tool registry | cobertura, remediação, recertificação |
-| observabilidade e custo | SRE/FinOps | desenho da telemetria | dashboards, baseline, budget | automação de comportamento, unit economics |
-| adoção e valor | negócio/change | portfólio, personas | enablement da primeira cohort, KPI | champions, operação regular, value review |
+### 5.5 Change e comunicação
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "137", "index": 132, "source_field": "", "source_heading": "Prioridade do backlog", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "128", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### Prioridade do backlog
+Mudanças materiais comunicam: o que mudou e por quê; quem é afetado; novos limites ou ações; data de vigência; treinamento ou suporte necessário; rollback/contingency; canal de feedback e owner.
 
-`P0` · `P1` · `P2` é prioridade de backlog, **não** severidade nem fase paralela. Cada item continua vinculado a uma fase, a um workstream, a dependências e a um critério de saída.
+### 5.6 Feedback loop
 
-| Prioridade | Significado | Exemplos |
-|---|---|---|
-| **P0** | obrigatório para iniciar a primeira release/cohort com segurança e rastreabilidade — sem isso o programa não deve se declarar pronto | charter, registry mínimo, tiers, blueprint, MPB, identidade para T2/T3, catálogos de fontes e ferramentas, logging, gate de publicação, kill switch, repositório de evidência |
-| **P1** | necessário para escalar sem criar gargalo manual ou perda de controle | discovery automatizado, JML, automação de attestation, integração com SOC, behavioral analytics, dashboard de custo, policy-as-code, rede de champions |
-| **P2** | otimização e automação avançada; antecipável quando houver dependência ou risco específico | scoring assistido, routing de modelos, detecção de duplicidade, grafo entre agentes, atribuição avançada de valor, remediação automática |
+```mermaid
+flowchart LR
+    U[Uso] --> F[Feedback/sinal]
+    F --> T[Triage]
+    T --> B[Backlog]
+    B --> D[Decisão]
+    D --> C[Change]
+    C --> E[Evaluate]
+    E --> U
+```
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "148", "index": 133, "source_field": "", "source_heading": "Um item de backlog de qualidade", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "138", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### Um item de backlog de qualidade
+**Feedback é evidência contextual, não prova isolada de valor ou segurança.**
 
-| Campo | Exemplo |
-|---|---|
-| outcome | 100% dos T2/T3 com identidade própria correlacionada ao registry |
-| por quê | eliminar credencial compartilhada e habilitar atribuição e baseline de comportamento |
-| dependências | `agent_id` no registry, API de IAM, dados de owner, eventos de lifecycle |
-| trabalho | standard, workflow de provisionamento, migração, JML, enriquecimento de telemetria |
-| evidência | export de registry e IAM mostrando cobertura; teste de revogação |
-| critério de saída | zero credencial compartilhada em T2/T3 sem exceção; 100% com owner válido |
+### 5.7 Playbook de implantação da adoção
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "156", "index": 134, "source_field": "", "source_heading": "Dependências entre workstreams", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "149", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### Dependências entre workstreams
+1. **Segmentar personas** — cada uma com objetivo de aprendizagem distinto.
+2. **Separar awareness de competência** — awareness ensina a reconhecer a regra; competência exige executar a atividade e demonstrar resultado. **Não habilite um reviewer de impact assessment porque ele concluiu um treinamento introdutório.**
+3. **Montar currículo por papel e risco** — builders: registry, risco, dados, ferramentas, identidade, telemetria; owners: accountability, valor, attestation; reviewers: critérios e evidência; segurança: contenção e forensics.
+4. **Implantar rede de champions** — áreas por volume e risco, tempo alocado e **limite de autoridade**: o champion orienta e escala; não substitui funções de controle.
+5. **Tornar o caminho governado o mais fácil** — builders aprovados, templates, catálogos, office hours, policy gates self-service.
+6. **Calibrar reviewers com casos comuns** — os mesmos 10–20 casos por reviewers diferentes; divergência vira discussão de critério.
+7. **Criar suporte e comunidade de prática** — office hours, FAQ, canais de escalation; perguntas recorrentes viram melhoria de documentação.
+8. **Medir eficácia, não conclusão** — taxa de conclusão de treinamento é métrica fraca isolada; medir verificação de conhecimento, retrabalho, violações, tickets, tempo até assessment, qualidade da evidência.
 
-Workstreams distribuem execução, mas **não podem otimizar localmente**. Identidade pode declarar "entregue" enquanto o registry ainda não associa identidade a `agent_id`: tecnicamente há entrega, operacionalmente a capacidade continua incompleta.
+### 5.8 Prontidão de suporte e handoff
 
-Behavioral analytics depende de registry (identificar o ativo), identidade (atribuir a ação), telemetria (coletar as features) e runtime (responder ao desvio). Faltando qualquer uma, o backlog prioriza fundação — e essa relação precisa aparecer no plano integrado, não em listas separadas de cada time.
+Antes do handoff: owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog prontos. Reter: aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento. **Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.** O último item é o mais ignorado e o que mais derruba programas: sem owner de BAU aceito, o piloto vira ilha mantida pelo time do programa.
 
-**Milestones se definem por outcome cross-domain**, não por entrega de trilha.
+## 6. Tratamento de agentes existentes e shadow
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "165", "index": 135, "source_field": "", "source_heading": "Cadência", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "157", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### Cadência
+Triar ativos existentes em caminhos de **registrar, restringir, remediar, migrar, suspender ou aposentar** usando um plano datado: confiança da descoberta, owner, exposição atual, controle provisório, estado-alvo, prazo e authority. **Status legado não é isenção permanente; ativos de alto risco vencidos são contidos.**
 
-| Frequência | Fórum | O que decide |
-|---|---|---|
-| semanal | workstream | entregas, dependências e bloqueios |
-| quinzenal | revisão integrada de arquitetura e governança | outcomes cross-domain |
-| mensal | sponsor e council | risco, prioridade, funding e exceções |
-| trimestral | revisão de maturidade | alvo e ajuste do roadmap |
+## 7. Plano opcional de piloto
 
-<!-- source-unit {"classification": "reference", "end_line": "181", "index": 136, "source_field": "", "source_heading": "Depois do horizonte de referência — ciclo de melhoria contínua", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "166", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Depois do horizonte de referência — ciclo de melhoria contínua
+> **Uso opcional.** Cohort de onboarding, phased rollout ou evidência de agentes existentes podem cumprir o mesmo objetivo. G0–G7, MPB e evidence requirements continuam iguais em qualquer rota.
 
-O framework não pode ficar estático enquanto agentes, modelos e protocolos evoluem. Mudança de policy precisa ser **impulsionada por evidência**: incidentes, exceções, falsos positivos, novos padrões de ataque, anomalias de custo, lacunas de maturidade, feedback de builders e mudança regulatória.
-
-Ciclo trimestral:
+Quando escolhido, o piloto existe para **testar a governança, não para provar que um modelo funciona**. Se todos os casos forem de leitura, a organização não valida identidade própria, mediação, oversight, rollback, quarentena, evidence pack ou resposta a incidente — e conclui, erradamente, que está pronta.
 
-1. Revisar KPIs, KRIs e tendências do estate.
-2. Analisar principais incidentes, quase-incidentes e eventos de quarentena.
-3. Revisar exceções e verificar se viraram padrão legítimo ou dívida de governança.
-4. Avaliar falsos positivos e negativos das regras de comportamento e dos policy gates.
-5. Revisar gargalos manuais e oportunidades de automação.
-6. Atualizar standards com changelog e data de vigência.
-7. Priorizar as próximas capacidades no roadmap de maturidade.
+**Coorte:** selecione 3–4 casos que **forcem rotas diferentes**: T1 fast path (assistente pessoal), T1 revisado (Q&A de procedimentos), T2 (agente que abre chamados), T3 (agente que propõe mudança e executa após aprovação). **Não comece por T4** — primeiro demonstre fundações e containment; T4 não é sinônimo de `restricted`.
 
-O item 3 é o mais revelador: uma exceção que se repete não é exceção — é requisito que a policy ainda não reconheceu, ou controle que a operação não consegue cumprir. Os dois casos exigem mudança, não renovação.
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "190", "index": 137, "source_field": "", "source_heading": "Sinais de maturidade adaptativa", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "182", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-##### Sinais de maturidade adaptativa
+**Desenho:** selecionar coorte cobrindo leitura, transação e alto impacto; **congelar baseline** de processo, custo e qualidade antes do go-live; executar o fluxo completo; medir lead time e retrabalho **da governança**; executar um tabletop e um teste real de kill switch e quarentena; rodar behavioral analytics em monitor-only; coletar feedback separado de builder, reviewer, owner e operador; ajustar standards e thresholds **antes** de escalar.
 
-- mudanças de policy são baseadas em dados de runtime e resultados de risco;
-- novos agentes são descobertos e registrados automaticamente;
-- mudança material dispara reavaliação proporcional;
-- sinais de comportamento reduzem capacidade ou exigem step-up automaticamente, com override governado;
-- custo e valor orientam retirada e arquitetura;
-- **evidência é produzida continuamente, não preparada para a auditoria.**
+**O que medir:** fricção (lead time por etapa e tier; retrabalho de review); cobertura (completude do registry e evidence pack); contenção (tempo até quarentena; sucesso do rollback); detecção (falsos positivos); economia (custo por resultado contra baseline); resultado (KPI contra baseline congelada); experiência (percepção dos quatro papéis).
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "198", "index": 138, "source_field": "", "source_heading": "Como usar sem virar teatro de programa", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "191", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### Como usar sem virar teatro de programa
+**Critérios de expansão:** nenhum finding crítico aberto; lead time de T1 baixo o suficiente para que **contornar a governança não compense**; T2/T3 com identidade, evidência e telemetria completas; kill switch/quarentena/rollback funcionaram **no teste**; falsos positivos compreendidos; custo e resultado mensuráveis; **owners de operação regular aceitaram a responsabilidade, nominalmente.**
 
-- fases podem se sobrepor; gates não;
-- prazo cumprido com evidência ausente é `hold`, não `approve`;
-- escopo reduzido é decisão legítima e registrada, não fracasso silencioso;
-- as 24 semanas dimensionam esforço, não prometem maturidade — maturidade se demonstra por evidência de operação, conforme o [maturity model](../../toolkit/maturity/maturity-model.md).
-- encurtar, estender ou substituir fases é legítimo quando rationale, dependências e evidências permanecem explícitos.
+**Failure modes:** piloto só com leitura; medir apenas a performance do agente; go-live sem baseline congelada; kill switch testado em documento; ajustar standards depois de escalar; piloto sem owner de BAU; tratar ausência de incidente como prova de segurança.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "207", "index": 139, "source_field": "", "source_heading": "O que este programa não faz", "source_path": "docs/guides/implementation-program-24-weeks.md", "start_line": "199", "transformation": "synthesize-and-preserve", "unit_type": "markdown-atx-heading"} -->
-#### O que este programa não faz
+## 8. Referência normativa
 
-- não substitui análise jurídica ou regulatória;
-- não define threshold universal;
-- não seleciona produto;
-- não impõe calendário, piloto ou ordem universal;
-- não comprova maturidade por documentação;
-- não certifica conformidade;
-- não promete resultado financeiro.
+Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 1–7 explicam o porquê.
 
-### Fonte: `docs/guides/pilot-plan.md`
+| # | Obrigação | Evidência mínima | Concluído quando |
+|---|---|---|---|
+| R1 | Entregar a implementação como workstream com owner, dependências e critérios de saída | plano com baseline, alvo, owner, recursos, sequência, aceite, riscos, dependências, handoff | capacidade funciona em caminho representativo; ownership permanente aceita runbook e backlog |
+| R2 | Estabelecer baseline datado antes de desenhar o estado-alvo | escopo, método, população, amostra, evidência, confiança, lacunas, dependências, validação | baseline distingue ausente/definida/operante e é repetível |
+| R3 | Descobrir ativos por múltiplas fontes reconciliadas | fonte, última visualização, confiança, owner, identidade não resolvida, remediação | shadow/sem owner entram em contenção, não são aceitos silenciosamente |
+| R4 | Desenhar capacidades-alvo a partir do baseline e contexto de risco | capacidades-alvo, authority, interfaces, artefatos, sequenciamento, aceite, premissas | toda capability fecha lacuna documentada com owner e critério mensurável |
+| R5 | Selecionar e documentar modelo operacional centralizado/federado/híbrido | princípios, mapa de papéis, fronteiras, decision rights, handoffs, SLAs, exceção | caso representativo percorre do intake à operação sem decisão órfã |
+| R6 | Sequenciar workstreams por dependência bloqueante e redução de risco | workstream, owner, pré-requisito, marco, entregável, aceite, risco, caminho crítico | nenhuma onda promete capacidade com fundação ausente |
+| R7 | Assegurar sponsor accountable, capacidade financiada e papéis nomeados | orçamento, capacidade, competências, authority, horizonte, dependências, riscos | controles e deveres têm recursos antes da coorte ser aprovada |
+| R8 | Estabelecer a fundação nomeada antes da primeira coorte | artefatos mínimos, owners, estados de controle, lacunas, teste, authority de exceção, backlog | primeira coorte completa G0–G7 com decisões rastreáveis |
+| R9 | Selecionar coorte que exercite caminhos materiais sem exposição não controlada | rationale, riscos excluídos, critérios, salvaguardas, tamanho, rollback, perguntas | coorte valida o caminho completo; não substitui demo por evidência |
+| R10 | Exercitar intake, risco, design, build, avaliação, release, operação e aposentadoria | timestamps, handoffs, decisões, artefatos, evidência, exceções, defeitos, remediação | todos os gates trabalham no mesmo caso; defeitos de integração bloqueiam rollout |
+| R11 | Liberar por coortes com critérios de promoção, pausa e rollback | coorte, exposição, telemetria, thresholds, aprovação, resultado, incidentes, decisão | expansão só após critérios; sinal adverso interrompe ou reverte |
+| R12 | Triar ativos existentes em registrar/restringir/remediar/migrar/suspender/aposentar | confiança, owner, exposição, controle provisório, estado-alvo, prazo, authority | legado não é isenção; alto risco vencido é contido |
+| R13 | Fornecer defaults conformes reutilizáveis e automação preservando escalonamento | padrões, controles embutidos, contrato, versão, telemetria, suporte, escape | time completa caminho padrão com menos esforço; self-service não contorna revisão |
+| R14 | Definir competências e treinamento por papel vinculado a decisões | papel, objetivo, avaliação, conclusão, expiração, remediação, owner | pessoal demonstra tarefa; competência vencida visível antes do exercício |
+| R15 | Prover comunicação, suporte e feedback adequados ao papel | público, mensagem, canal, momento, owner, compreensão, feedback, ação | usuários conhecem fronteira, rota de reporte e consequência; feedback chega a owner |
+| R16 | Comprovar prontidão de suporte e operação antes do handoff | aceite de serviço, assinatura, suporte, SLO, runbook testado, dívida, treinamento | BAU resolve problema representativo sem dependência do projeto |
 
-Commit de origem: `5545d9227624400ab8bb707b6032b2f61329a36e`.
+## 9. Evidências, métricas e failure modes
 
-<!-- source-unit {"classification": "metadata-title", "end_line": "2", "index": 140, "source_field": "title", "source_heading": "", "source_path": "docs/guides/pilot-plan.md", "start_line": "2", "transformation": "integrate-completely", "unit_type": "frontmatter-title"} -->
-**Título controlado na origem:** Plano opcional de piloto e critérios de expansão
+**Evidências:** persona e stakeholder map; adoption/support plan; catalog entry e discovery analytics; learning assets; support model e escalation; training/competence records; feedback backlog e decisões; change communication; user research; decision records de cada gate (G0–G7); capability map com evidências observáveis; baseline com data de corte; relatório de piloto com decisão registrada.
 
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "18", "index": 141, "source_field": "", "source_heading": "Plano opcional de piloto e critérios de expansão", "source_path": "docs/guides/pilot-plan.md", "start_line": "15", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-### Plano opcional de piloto e critérios de expansão
+**Métricas:** discovery-to-use conversion; active/recurring users por persona; duplicate creation; support demand e resolution time; training completion **e task competence**; misuse reports; feedback-to-decision time; lead time por gate e tier; rework por requirement tardio; coverage do paved road; exception rate e expiry; evidence freshness; containment/recovery readiness; cycle time por gate; devoluções por evidência incompleta; time to decide/contain/remediate; bypass attempts; coverage do registry; owners e attestations válidos; evidence packages completos por tier; exceptions e findings vencidos; drill pass rate.
 
-> **Uso opcional.** Este documento é um template para organizações que escolhem um piloto porque precisam aprender em ambiente delimitado. Cohort de onboarding, phased rollout ou evidência de agentes existentes podem cumprir o mesmo objetivo. G0–G7, MPB e evidence requirements continuam iguais em qualquer rota.
+**Failure modes:** medir sucesso por agentes criados; publicar sem owner ou suporte; treinamento único para todos; champion sem authority ou tempo; feedback positivo como prova de ROI; esconder limitation para aumentar adoção; ignorar resistência como "falta de cultura"; manter itens em discovery durante quarantine; comprar tecnologia para problema de processo; mapear produtos e chamar de capacidades; aprovar alvo sem owner pós-programa; piloto só com leitura; go-live sem baseline congelada; kill switch testado em documento; ajustar standards depois de escalar; tratar ausência de incidente como prova de segurança; prazo cumprido com evidência ausente tratado como approve.
 
-<!-- source-unit {"classification": "objective", "end_line": "24", "index": 142, "source_field": "", "source_heading": "Objetivo", "source_path": "docs/guides/pilot-plan.md", "start_line": "19", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### Objetivo
+## Decision gates
 
-Quando escolhido, o piloto existe para **testar a governança**, não para provar que um modelo de linguagem funciona.
-
-Se todos os casos-piloto forem de leitura, a organização não valida identidade própria, mediação de ferramentas, oversight humano, rollback, quarentena, evidence pack ou resposta a incidente — e conclui, erradamente, que está pronta.
-
-<!-- source-unit {"classification": "example", "end_line": "37", "index": 143, "source_field": "", "source_heading": "Coorte", "source_path": "docs/guides/pilot-plan.md", "start_line": "25", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### Coorte
-
-Selecione de três a quatro casos que **forcem rotas diferentes** do framework.
-
-| Coorte | O que valida | Exemplo |
-|---|---|---|
-| T1 fast path | discovery, registro automático e rota self-service | assistente pessoal de conhecimento |
-| T1 revisado | ownership de time e fonte de dados certificada | perguntas e respostas sobre procedimentos de uma área |
-| T2 | transação e governança de ferramentas | agente que abre e atualiza chamados |
-| T3 | assurance completo e aprovação humana | agente que propõe mudança material e executa após aprovação |
-
-Como regra de aprendizagem, não comece por T4: primeiro demonstre fundações e containment em casos menos críticos. Exceções são legítimas quando o primeiro caso real já é T4 ou quando a criticidade exige validação imediata; nesse cenário, aplique authority e controls de T4 desde o início. T4 não é sinônimo de `restricted`.
-
-<!-- source-unit {"classification": "procedure", "end_line": "48", "index": 144, "source_field": "", "source_heading": "Desenho", "source_path": "docs/guides/pilot-plan.md", "start_line": "38", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### Desenho
-
-1. Selecionar a coorte cobrindo leitura, transação e alto impacto.
-2. **Congelar baseline** de processo, custo e qualidade antes do go-live — sem isso, não há como atribuir resultado depois.
-3. Executar o fluxo completo: intake → risco → blueprint → build → reviews → MPB → publicação → observação → attestation ou mudança → simulação de suspensão e retirada.
-4. Medir lead time e retrabalho **da governança**, além da performance do agente.
-5. Executar ao menos um tabletop de incidente e um teste real de kill switch e quarentena.
-6. Rodar behavioral analytics em monitor-only e FinOps por tarefa e resultado.
-7. Coletar feedback separado de builder, reviewer, owner e operador — os quatro enxergam fricções diferentes.
-8. Ajustar standards e thresholds **antes** de escalar, documentando o que mudou e por quê.
-
-<!-- source-unit {"classification": "metric", "end_line": "60", "index": 145, "source_field": "", "source_heading": "O que medir", "source_path": "docs/guides/pilot-plan.md", "start_line": "49", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### O que medir
-
-| Dimensão | Indicador |
-|---|---|
-| fricção | lead time por etapa e por tier; retrabalho de review |
-| cobertura | completude do registry e do evidence pack |
-| contenção | tempo até quarentena; sucesso do rollback |
-| detecção | falsos positivos das regras de comportamento |
-| economia | custo por resultado bem-sucedido contra baseline |
-| resultado | KPI de negócio do caso, contra baseline congelada |
-| experiência | percepção de builder, reviewer, owner e operador |
-
-<!-- source-unit {"classification": "concept-or-structure", "end_line": "74", "index": 146, "source_field": "", "source_heading": "Critérios de expansão quando a rota escolhida é piloto", "source_path": "docs/guides/pilot-plan.md", "start_line": "61", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### Critérios de expansão quando a rota escolhida é piloto
-
-Se a organização escolheu piloto, não escale a cohort antes de todos serem verdadeiros:
-
-- nenhum finding crítico aberto; findings altos apenas com residual risk aceito pela authority correta;
-- lead time de T1 baixo o suficiente para que **contornar a governança não compense**;
-- T2 e T3 com identidade, evidência e telemetria completas;
-- kill switch, quarentena e rollback funcionaram no teste — não em documentação;
-- falsos positivos das regras de comportamento compreendidos e ajustados;
-- custo e resultado efetivamente mensuráveis;
-- owners de operação regular aceitaram a responsabilidade operacional, nominalmente.
-
-O último item é o mais ignorado e o que mais derruba programas: sem owner de BAU aceito, o piloto vira uma ilha mantida pelo time do programa.
-
-<!-- source-unit {"classification": "evidence-artifact", "end_line": "78", "index": 147, "source_field": "", "source_heading": "Relatório de piloto", "source_path": "docs/guides/pilot-plan.md", "start_line": "75", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### Relatório de piloto
-
-O relatório fecha o ciclo e alimenta a decisão de expansão. Deve conter: objetivos; coorte; baseline congelada; controles efetivamente exercitados; gaps encontrados; lead time por etapa; exceções abertas; resultado do tabletop e do teste de contenção; achados de telemetria e comportamento; custo e valor; mudanças recomendadas nos standards; e a decisão registrada de `approve`, `condition` ou `hold` para a próxima onda.
-
-<!-- source-unit {"classification": "risk-failure-mode", "end_line": "88", "index": 148, "source_field": "", "source_heading": "Failure modes", "source_path": "docs/guides/pilot-plan.md", "start_line": "79", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### Failure modes
-
-- piloto só com casos de leitura, gerando falsa sensação de maturidade;
-- medir apenas a performance do agente e nunca a fricção da governança;
-- go-live sem baseline congelada — resultado sem atribuição possível;
-- kill switch testado em documento;
-- ajustar standards depois de escalar, quando o custo da mudança já multiplicou;
-- piloto sem owner de operação regular designado;
-- tratar ausência de incidente no piloto como prova de segurança.
-
-<!-- source-unit {"classification": "requirement-control", "end_line": "91", "index": 149, "source_field": "", "source_heading": "Decision gate", "source_path": "docs/guides/pilot-plan.md", "start_line": "89", "transformation": "integrate-completely-as-optional-route", "unit_type": "markdown-atx-heading"} -->
-#### Decision gate
-
-Quando houver piloto, a expansão para a próxima onda exige relatório com decisão registrada, critérios atendidos e mudanças de standard incorporadas e versionadas. Sem piloto, a organização precisa apresentar evidência equivalente da primeira cohort, phased rollout ou operação existente; o gate avalia a qualidade da evidência, não o nome da rota.
+- **Capability map:** uma capability não é declarada implantada sem sistema atribuído, source of truth e evidência. Cobertura prometida por roadmap não é cobertura.
+- **Piloto (quando houver):** a expansão exige relatório com decisão registrada e critérios atendidos. **Sem piloto, a organização apresenta evidência equivalente da primeira cohort — o gate avalia a qualidade da evidência, não o nome da rota.**
+- **Release amplo:** exige catalog entry, intended use, limitations, support owner, escalation, communication e feedback channel.
 
 ## Acceptance criteria
 
