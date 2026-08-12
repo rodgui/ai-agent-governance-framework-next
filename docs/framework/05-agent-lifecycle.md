@@ -120,7 +120,7 @@ O release é decidido somente a partir do pacote vinculado de evidências de ris
 
 O Publication Gate não refaz os reviews: verifica que as evidências requeridas pelo tier existem e que o residual risk foi aceito pela autoridade correta.
 
-> **Armadilha comum:** aprovação como reunião ritual para todo tier. Em T0/T1, o gate deve ser policy-driven; o humano entra onde o risco justifica.
+> **Armadilha comum:** aprovação como reunião ritual para todo tier. Em tiers baixos (T1), o gate deve ser policy-driven; o humano entra onde o risco justifica.
 
 ### 2.6 F6 — Publicação e operação
 

@@ -57,6 +57,8 @@ A policy canônica é formada por:
 
 O [handbook](../handbook/README.md) define a ordem editorial desses módulos, sem duplicá-los.
 
+**Sobre a extensão dos capítulos:** a profundidade varia pelo escopo natural de cada domínio — o capítulo de controle do documento (este) é deliberadamente curto, enquanto arquitetura (06) e implementação (08) são densos porque carregam playbooks e matrizes de decisão. O critério editorial é clareza e completude, não uniformidade de tamanho: nenhum capítulo é encurtado para caber num padrão, nem inflado para parecer completo.
+
 ### 1.4 O que NÃO é policy (conteúdo não normativo)
 
 Não integram a policy, salvo incorporação explícita e versionada:

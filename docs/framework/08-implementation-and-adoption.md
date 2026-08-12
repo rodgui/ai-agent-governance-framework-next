@@ -476,7 +476,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 
 **Atividades.**
 1. Marcar o agente como candidato a sunset no registry e notificar os interessados, com prazo de regularização ou confirmação.
-2. Confirmado o encerramento, seguir as fases padrão com prazos definidos — ex.: **Warning (T0), Quarantine (T+15), Deactivate (T+30)** — ajustadas à política.
+2. Confirmado o encerramento, seguir as fases padrão com prazos definidos — ex.: **Warning (Dia 0), Quarantine (D+15), Deactivate (D+30)** — ajustadas à política.
 3. Na quarentena: limitar ou desativar ações de escrita, reduzir escopo ou usuários, mantendo logs e evidências.
 4. Na desativação: remover acessos, desabilitar integrações, **revogar identidades técnicas** vinculadas e registrar o motivo.
 5. Registrar no registry: início do sunset, motivo, owner da decisão, plano de migração, evidência de comunicação aos usuários e política de retenção de logs.

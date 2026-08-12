@@ -71,6 +71,7 @@ Este vocabulário reduz ambiguidade entre policy, arquitetura, patterns, control
 | **Grace period** | Prazo entre o trigger de retirada e a revogação efetiva, para dependentes reagirem. | Adiamento indefinido. |
 | **Joiner/mover/leaver (JML)** | Processo que reatribui ou revoga ownership e acessos quando a pessoa responsável entra, muda de função ou sai. | Offboarding apenas de credencial humana. |
 | **Evidence cutoff** | Data até a qual evidências foram consideradas em assessment ou decisão. | Data de publicação. |
+| **Dossiê do agente** | Conjunto de artefatos vinculados por um único `agent_id` — intake, autoavaliação, risk record, registry entry, blueprint, impact assessment, evidence pack e registros operacionais. Não é um documento único. | Formulário ou PDF consolidado. |
 
 ## Risco, controles e assurance
 
@@ -85,6 +86,11 @@ Este vocabulário reduz ambiguidade entre policy, arquitetura, patterns, control
 | **Red flag** | Condição que impede fast path e eleva a criticidade mínima independentemente do score. | Falha automaticamente comprovada. |
 | **Escalador** | Red flag registrado na norma com criticidade mínima e efeito declarados. A lista normativa prevalece sobre o instrumento que a coleta. | Pergunta de questionário. |
 | **Fast path** | Rota automatizada de T1: elimina revisão manual caso a caso, não os controles nem a evidência. | Isenção de governança. |
+| **Scoring de risco** | Pontuação das sete dimensões de classificação (dados, autonomia, impacto, privilégio, alcance, conectividade, criticidade) que produz o risco base; red flags corrigem o que a soma esconde. | Admissibilidade. |
+| **Risk scoring worksheet** | Ferramenta que operacionaliza o pre-screen, as sete dimensões de scoring, os red flags e o impact trigger para produzir tier, admissibilidade e rota de reviews. | A norma em si (a lógica normativa vive no capítulo 04). |
+| **Mapa de decisão** | Encadeamento canônico da classificação: pre-screen → scoring → red flags → tier → impact trigger → RAI → domain reviews → publication gate, com a matriz de calor por tier. | Três aprovações concorrentes. |
+| **Impact trigger** | Condição que aciona o RAI impact assessment — influência sobre direitos, oportunidades, decisões sobre pessoas, segurança física, comunicação pública ou processo regulado. | Severidade técnica do caso. |
+| **Domain review** | Revisão especializada acionada por gatilho relevante (privacidade, segurança, dados, arquitetura, jurídico, comercial), não por regra fixa. | Fila permanente de revisores. |
 | **Minimum Production Bar (MPB)** | Piso de controles que precisam ser verdadeiros para um agente entrar **e permanecer** em produção, por tier. | Teto de controles ou gate de release completo. |
 | **Blast radius** | Extensão potencial do efeito por usuários, dados, sistemas, regiões e dependências. | Número de usuários apenas. |
 | **Reversibility** | Capacidade de desfazer efeito com custo, prazo e integridade aceitáveis. | Existência nominal de rollback. |
@@ -146,6 +152,8 @@ Este vocabulário reduz ambiguidade entre policy, arquitetura, patterns, control
 | **Unit economics** | Custo por resultado útil, não por token ou execução. | Custo total de plataforma. |
 | **Rollback** | Retorno verificável a versão/estado conhecido. | Restart. |
 | **Reactivation** | Retorno autorizado após evidence de correção e readiness. | Remover alerta. |
+| **Score de prontidão (agent assessment score)** | Pontuação da completeza e evidência do dossiê — cada campo obrigatório pontuado por peso, itens críticos bloqueadores, threshold mínimo por tier. Mede prontidão para decisão; não mede risco, qualidade nem maturidade. | Score de risco (que produz o tier) ou maturity organizacional. |
+| **Processos operacionais (P1–P8)** | Os oito processos do ciclo operacional do agente — criação/registro, avaliação/aprovação, publicação, operação rotineira, incidentes, mudanças, revisão/auditoria e sunset — com disparo, accountable, entradas, atividades e saídas. | Gates de implantação G0–G7 (que são a jornada do programa, não a rotina). |
 | **Adoption** | Uso sustentado por personas/escopos definidos. | Número de agents criados. |
 | **Discovery** | Usuário encontra opção existente adequada antes de criar outra. | Inventory técnico. |
 | **Quality** | Grau em que outputs/actions atendem critérios do contexto. | Satisfação apenas. |
