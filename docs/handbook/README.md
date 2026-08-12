@@ -27,13 +27,13 @@ Esta é a ordem editorial da edição em português. Os capítulos permanecem em
 
 ### Três níveis dentro de cada domínio
 
-Um domínio canônico é escrito para ser lido em três níveis. Um capítulo completo permite sair dele com algo **produzido, aprovado ou operacionalizado** — não apenas compreendido.
+Um capítulo canônico é escrito para ser lido em três níveis — e o formato atual implementa isso explicitamente: **narrativa primeiro** (o que é e por que importa), **seções didáticas com exemplos e armadilhas** (como decidir), e uma **tabela normativa R1–Rn no fim** (o que comprovar para concluir). Um capítulo completo permite sair dele com algo **produzido, aprovado ou operacionalizado** — não apenas compreendido.
 
 | Nível | Pergunta que responde | Onde aparece no capítulo |
 |---|---|---|
-| **entender** | o que é e por que existe? | objetivo, conceitos e distinções |
+| **entender** | o que é e por que existe? | visão geral, conceitos, distinções e armadilhas comuns |
 | **decidir** | qual opção aplicar e sob quais critérios? | tabelas de decisão, tiers, trade-offs e gatilhos |
-| **executar** | quais passos, evidências e entregáveis tornam a capacidade operacional? | playbook, artefatos, evidências e decision gate |
+| **executar** | quais passos, evidências e entregáveis tornam a capacidade operacional? | referência normativa R1–Rn, playbook, artefatos, evidências e decision gate |
 
 Um capítulo que só entrega o primeiro nível é material de leitura, não de implantação. O [catálogo de artefatos](../../toolkit/artifact-catalog.md) lista o que cada domínio deve produzir.
 
