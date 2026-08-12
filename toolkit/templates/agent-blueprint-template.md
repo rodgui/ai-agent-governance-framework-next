@@ -13,14 +13,14 @@
 - Admissibilidade:
 - Admissibility rationale:
 
-## 1. Intended architecture
+## 1. Arquitetura pretendida
 
 - Pattern: assistant / workflow-agent / tool-using-agent / multi-agent / embedded-ai / other
 - Descrição end-to-end:
 - Diagram:
 - Ambientes e regiões:
 
-### Trust boundaries
+### Fronteiras de confiança
 
 1.
 2.

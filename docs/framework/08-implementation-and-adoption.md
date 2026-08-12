@@ -16,221 +16,221 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 08.1 Implementation principles
+### 08.1 Princípios de implementação
 
-**Required decision/action.** For **implementation principles**, the organization must deliver this implementation capability as an owned workstream with dependencies and exit criteria.
+**Decisão/ação obrigatória.** Para **princípios de implementação**, a organização deve entregar esta capacidade de implementação como workstream com owner, dependências e critérios de saída.
 
-**Record and evidence.** The implementation plan must record baseline, target, owner, resources, sequence, acceptance evidence, risks, dependencies and handoff recipient.
+**Registro e evidência.** O plano de implementação deve registrar baseline, alvo, owner, recursos, sequência, evidência de aceite, riscos, dependências e destinatário do handoff.
 
-**Done when.** The capability works on a representative path, users and operators can execute it, and permanent ownership accepts the runbook and backlog.
+**Concluído quando.** A capacidade funciona em um caminho representativo, usuários e operadores conseguem executá-la, e o ownership permanente aceita o runbook e o backlog.
 
-### 08.2 Current-state diagnostic
+### 08.2 Diagnóstico do estado atual
 
-**Required decision/action.** For **current-state diagnostic**, the organization must establish a dated baseline of assets, capabilities, owners, controls, evidence and operating pain before designing target state.
+**Decisão/ação obrigatória.** Para **diagnóstico do estado atual**, a organização deve estabelecer um baseline datado de ativos, capacidades, owners, controles, evidências e dores operacionais antes de desenhar o estado-alvo.
 
-**Record and evidence.** Record scope, method, population, sample, evidence, confidence, gaps, dependencies and stakeholder validation.
+**Registro e evidência.** Registrar escopo, método, população, amostra, evidência, confiança, lacunas, dependências e validação de stakeholders.
 
-**Done when.** The baseline distinguishes absent, defined and operating capabilities and can be repeated with the same method.
+**Concluído quando.** O baseline distingue capacidades ausentes, definidas e operantes e pode ser repetido com o mesmo método.
 
-### 08.3 Asset discovery and baseline
+### 08.3 Descoberta de ativos e baseline
 
-**Required decision/action.** For **asset discovery and baseline**, the organization must discover deployed, experimental, embedded and supplier-operated assets through multiple reconciled sources.
+**Decisão/ação obrigatória.** Para **descoberta de ativos e baseline**, a organização deve descobrir ativos implantados, experimentais, embarcados e operados por fornecedores por meio de múltiplas fontes reconciliadas.
 
-**Record and evidence.** Retain discovery source, last seen, confidence, owner match, unresolved identity and remediation status.
+**Registro e evidência.** Reter fonte de descoberta, última visualização, confiança, correspondência de owner, identidade não resolvida e status de remediação.
 
-**Done when.** Unowned or shadow assets enter containment and ownership resolution instead of being silently accepted into inventory.
+**Concluído quando.** Ativos sem owner ou shadow entram em contenção e resolução de ownership em vez de serem silenciosamente aceitos no inventário.
 
-### 08.4 Capability and gap assessment
+### 08.4 Avaliação de capacidade e lacunas
 
-**Required decision/action.** For **capability and gap assessment**, the organization must establish a dated baseline of assets, capabilities, owners, controls, evidence and operating pain before designing target state.
+**Decisão/ação obrigatória.** Para **avaliação de capacidade e lacunas**, a organização deve estabelecer um baseline datado de ativos, capacidades, owners, controles, evidências e dores operacionais antes de desenhar o estado-alvo.
 
-**Record and evidence.** Record scope, method, population, sample, evidence, confidence, gaps, dependencies and stakeholder validation.
+**Registro e evidência.** Registrar escopo, método, população, amostra, evidência, confiança, lacunas, dependências e validação de stakeholders.
 
-**Done when.** The baseline distinguishes absent, defined and operating capabilities and can be repeated with the same method.
+**Concluído quando.** O baseline distingue capacidades ausentes, definidas e operantes e pode ser repetido com o mesmo método.
 
-### 08.5 Target governance system
+### 08.5 Sistema de governança-alvo
 
-**Required decision/action.** For **target governance system**, the organization must design the target decision, control, assurance, registry and operating capabilities from the baseline and risk context.
+**Decisão/ação obrigatória.** Para **sistema de governança-alvo**, a organização deve desenhar as capacidades-alvo de decisão, controle, assurance, registry e operação a partir do baseline e do contexto de risco.
 
-**Record and evidence.** Retain target capabilities, authority, interfaces, required artifacts, sequencing, acceptance and transition assumptions.
+**Registro e evidência.** Reter capacidades-alvo, authority, interfaces, artefatos exigidos, sequenciamento, aceite e premissas de transição.
 
-**Done when.** Every target capability closes a documented gap or obligation and has an owner and measurable exit criterion.
+**Concluído quando.** Toda capacidade-alvo fecha uma lacuna ou obrigação documentada e tem owner e critério de saída mensurável.
 
-### 08.6 Target operating model
+### 08.6 Modelo operacional-alvo
 
-**Required decision/action.** For **target operating model**, the organization must select and document the centralized, federated or hybrid allocation of policy, platform, domain and assurance duties.
+**Decisão/ação obrigatória.** Para **modelo operacional-alvo**, a organização deve selecionar e documentar a alocação centralizada, federada ou híbrida das atribuições de policy, plataforma, domínio e assurance.
 
-**Record and evidence.** Retain design principles, role map, service boundaries, decision rights, handoffs, service levels and exception route.
+**Registro e evidência.** Reter princípios de design, mapa de papéis, fronteiras de serviço, decision rights, handoffs, níveis de serviço e rota de exceção.
 
-**Done when.** A representative case moves from intake to operation with no orphan decision or duplicated source of truth.
+**Concluído quando.** Um caso representativo percorre do intake à operação sem decisão órfã nem fonte de verdade duplicada.
 
-### 08.7 Prioritized workstreams and dependencies
+### 08.7 Workstreams priorizados e dependências
 
-**Required decision/action.** For **prioritized workstreams and dependencies**, the organization must sequence work by blocking dependency, risk reduction and usable capability rather than document category.
+**Decisão/ação obrigatória.** Para **workstreams priorizados e dependências**, a organização deve sequenciar o trabalho por dependência bloqueante, redução de risco e capacidade utilizável em vez de categoria de documento.
 
-**Record and evidence.** Record workstream, owner, prerequisite, milestone, deliverable, acceptance, risk, capacity and critical path.
+**Registro e evidência.** Registrar workstream, owner, pré-requisito, marco, entregável, aceite, risco, capacidade e caminho crítico.
 
-**Done when.** No wave promises a capability whose identity, data, authority, evidence or operating dependency is missing.
+**Concluído quando.** Nenhuma onda promete uma capacidade cuja identidade, dados, authority, evidência ou dependência operacional esteja ausente.
 
-### 08.8 Funding, resources and skills
+### 08.8 Financiamento, recursos e competências
 
-**Required decision/action.** For **funding, resources and skills**, the organization must secure an accountable sponsor, funded capacity and named roles for both implementation and business-as-usual operation.
+**Decisão/ação obrigatória.** Para **financiamento, recursos e competências**, a organização deve assegurar sponsor accountable, capacidade financiada e papéis nomeados tanto para a implementação quanto para a operação no business as usual.
 
-**Record and evidence.** Record budget, capacity, competencies, decision authority, funding horizon, dependencies and unfunded risks.
+**Registro e evidência.** Registrar orçamento, capacidade, competências, autoridade de decisão, horizonte de financiamento, dependências e riscos não financiados.
 
-**Done when.** Mandatory controls and operating duties have resources before the related cohort or capability is approved.
+**Concluído quando.** Controles obrigatórios e deveres operacionais têm recursos antes de a coorte ou capacidade relacionada ser aprovada.
 
-### 08.9 Technology selection and procurement
+### 08.9 Seleção de tecnologia e procurement
 
-**Required decision/action.** For **technology selection and procurement**, the organization must define capability contracts and extension interfaces independently from a specific product.
+**Decisão/ação obrigatória.** Para **seleção de tecnologia e procurement**, a organização deve definir contratos de capacidade e interfaces de extensão independentemente de um produto específico.
 
-**Record and evidence.** Record required behavior, interface, data and identity contract, portability test, supplier mapping and exit constraint.
+**Registro e evidência.** Registrar comportamento exigido, interface, contrato de dados e identidade, teste de portabilidade, mapping de fornecedor e restrição de saída.
 
-**Done when.** A supplier can be replaced or isolated without redefining the policy, control IDs, schemas or decision gates.
+**Concluído quando.** Um fornecedor pode ser substituído ou isolado sem redefinir a policy, os control IDs, os schemas ou os decision gates.
 
-### 08.10 Minimum viable governance for the first cohort
+### 08.10 Governança mínima viável para a primeira coorte
 
-**Required decision/action.** For **minimum viable governance for the first cohort**, the organization must establish the named foundation before exposing the first representative cohort.
+**Decisão/ação obrigatória.** Para **governança mínima viável para a primeira coorte**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
 
-**Record and evidence.** Record minimum artifacts, owners, control states, blocked gaps, test evidence, exception authority and target hardening backlog.
+**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
 
-**Done when.** The first cohort can complete G0–G7 with traceable decisions and no missing blocking foundation.
+**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
 
-### 08.11 Policy, roles and decision foundations
+### 08.11 Fundações de policy, papéis e decisão
 
-**Required decision/action.** For **policy, roles and decision foundations**, the organization must establish the named foundation before exposing the first representative cohort.
+**Decisão/ação obrigatória.** Para **fundações de policy, papéis e decisão**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
 
-**Record and evidence.** Record minimum artifacts, owners, control states, blocked gaps, test evidence, exception authority and target hardening backlog.
+**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
 
-**Done when.** The first cohort can complete G0–G7 with traceable decisions and no missing blocking foundation.
+**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
 
-### 08.12 Registry and intake foundations
+### 08.12 Fundações de registry e intake
 
-**Required decision/action.** For **registry and intake foundations**, the organization must establish the named foundation before exposing the first representative cohort.
+**Decisão/ação obrigatória.** Para **fundações de registry e intake**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
 
-**Record and evidence.** Record minimum artifacts, owners, control states, blocked gaps, test evidence, exception authority and target hardening backlog.
+**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
 
-**Done when.** The first cohort can complete G0–G7 with traceable decisions and no missing blocking foundation.
+**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
 
-### 08.13 Risk and impact process foundations
+### 08.13 Fundações do processo de risco e impacto
 
-**Required decision/action.** For **risk and impact process foundations**, the organization must establish the named foundation before exposing the first representative cohort.
+**Decisão/ação obrigatória.** Para **fundações do processo de risco e impacto**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
 
-**Record and evidence.** Record minimum artifacts, owners, control states, blocked gaps, test evidence, exception authority and target hardening backlog.
+**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
 
-**Done when.** The first cohort can complete G0–G7 with traceable decisions and no missing blocking foundation.
+**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
 
-### 08.14 Minimum control and evidence baseline
+### 08.14 Baseline mínimo de controles e evidências
 
-**Required decision/action.** For **minimum control and evidence baseline**, the organization must establish the named foundation before exposing the first representative cohort.
+**Decisão/ação obrigatória.** Para **baseline mínimo de controles e evidências**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
 
-**Record and evidence.** Record minimum artifacts, owners, control states, blocked gaps, test evidence, exception authority and target hardening backlog.
+**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
 
-**Done when.** The first cohort can complete G0–G7 with traceable decisions and no missing blocking foundation.
+**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
 
-### 08.15 Platform and enforcement foundations
+### 08.15 Fundações de plataforma e enforcement
 
-**Required decision/action.** For **platform and enforcement foundations**, the organization must establish the named foundation before exposing the first representative cohort.
+**Decisão/ação obrigatória.** Para **fundações de plataforma e enforcement**, a organização deve estabelecer a fundação nomeada antes de expor a primeira coorte representativa.
 
-**Record and evidence.** Record minimum artifacts, owners, control states, blocked gaps, test evidence, exception authority and target hardening backlog.
+**Registro e evidência.** Registrar artefatos mínimos, owners, estados de controle, lacunas bloqueadas, evidência de teste, authority de exceção e backlog de hardening.
 
-**Done when.** The first cohort can complete G0–G7 with traceable decisions and no missing blocking foundation.
+**Concluído quando.** A primeira coorte consegue completar G0–G7 com decisões rastreáveis e nenhuma fundação bloqueante ausente.
 
-### 08.16 Representative pilot or validation cohort
+### 08.16 Piloto representativo ou coorte de validação
 
-**Required decision/action.** For **representative pilot or validation cohort**, the organization must select a cohort that exercises material risk, data, identity, tool, lifecycle and operating paths without uncontrolled exposure.
+**Decisão/ação obrigatória.** Para **piloto representativo ou coorte de validação**, a organização deve selecionar uma coorte que exercite caminhos materiais de risco, dados, identidade, ferramentas, lifecycle e operação sem exposição não controlada.
 
-**Record and evidence.** Record selection rationale, excluded risks, success criteria, safeguards, cohort size, rollback and learning questions.
+**Registro e evidência.** Registrar rationale da seleção, riscos excluídos, critérios de sucesso, salvaguardas, tamanho da coorte, rollback e perguntas de aprendizado.
 
-**Done when.** The cohort validates the full governance path and does not substitute an easy demo for representative evidence.
+**Concluído quando.** A coorte valida o caminho completo de governança e não substitui um demo fácil por evidência representativa.
 
-### 08.17 End-to-end validation
+### 08.17 Validação de ponta a ponta
 
-**Required decision/action.** For **end-to-end validation**, the organization must exercise intake, risk, design, build, evaluation, release, operation, incident and retirement as one traceable flow.
+**Decisão/ação obrigatória.** Para **validação de ponta a ponta**, a organização deve exercitar intake, risco, design, build, avaliação, release, operação, incidente e aposentadoria como um fluxo rastreável.
 
-**Record and evidence.** Retain timestamps, handoffs, decisions, artifacts, system evidence, exceptions, defects and remediation.
+**Registro e evidência.** Reter timestamps, handoffs, decisões, artefatos, evidência de sistema, exceções, defeitos e remediação.
 
-**Done when.** All gates and owners work on the same case and unresolved integration defects block broad rollout.
+**Concluído quando.** Todos os gates e owners trabalham no mesmo caso e defeitos de integração não resolvidos bloqueiam o rollout amplo.
 
-### 08.18 Controlled release and learning
+### 08.18 Release controlado e aprendizado
 
-**Required decision/action.** For **controlled release and learning**, the organization must release through bounded cohorts or stages with explicit promotion, pause and rollback criteria.
+**Decisão/ação obrigatória.** Para **release controlado e aprendizado**, a organização deve liberar por coortes ou estágios delimitados com critérios explícitos de promoção, pausa e rollback.
 
-**Record and evidence.** Record cohort, exposure, telemetry, thresholds, approval, observed result, incidents and next-stage decision.
+**Registro e evidência.** Registrar coorte, exposição, telemetria, thresholds, aprovação, resultado observado, incidentes e decisão do próximo estágio.
 
-**Done when.** Expansion occurs only after the prior stage meets criteria and an adverse signal can halt or reverse rollout.
+**Concluído quando.** A expansão ocorre somente após o estágio anterior atingir os critérios e um sinal adverso pode interromper ou reverter o rollout.
 
-### 08.19 Treatment of existing and shadow agents
+### 08.19 Tratamento de agentes existentes e shadow
 
-**Required decision/action.** For **treatment of existing and shadow agents**, the organization must triage existing assets into register, restrict, remediate, migrate, suspend or retire paths using a dated plan.
+**Decisão/ação obrigatória.** Para **tratamento de agentes existentes e shadow**, a organização deve triar ativos existentes em caminhos de registrar, restringir, remediar, migrar, suspender ou aposentar usando um plano datado.
 
-**Record and evidence.** Record discovery confidence, owner, current exposure, interim control, target state, deadline and authority.
+**Registro e evidência.** Registrar confiança da descoberta, owner, exposição atual, controle provisório, estado-alvo, prazo e authority.
 
-**Done when.** Legacy status is not a permanent exemption and overdue high-risk assets are contained.
+**Concluído quando.** Status legado não é isenção permanente e ativos de alto risco vencidos são contidos.
 
-### 08.20 Rollout waves
+### 08.20 Ondas de rollout
 
-**Required decision/action.** For **rollout waves**, the organization must release through bounded cohorts or stages with explicit promotion, pause and rollback criteria.
+**Decisão/ação obrigatória.** Para **ondas de rollout**, a organização deve liberar por coortes ou estágios delimitados com critérios explícitos de promoção, pausa e rollback.
 
-**Record and evidence.** Record cohort, exposure, telemetry, thresholds, approval, observed result, incidents and next-stage decision.
+**Registro e evidência.** Registrar coorte, exposição, telemetria, thresholds, aprovação, resultado observado, incidentes e decisão do próximo estágio.
 
-**Done when.** Expansion occurs only after the prior stage meets criteria and an adverse signal can halt or reverse rollout.
+**Concluído quando.** A expansão ocorre somente após o estágio anterior atingir os critérios e um sinal adverso pode interromper ou reverter o rollout.
 
-### 08.21 Paved road and self-service
+### 08.21 Paved road e self-service
 
-**Required decision/action.** For **paved road and self-service**, the organization must provide reusable compliant defaults, automation and guidance for common patterns while preserving escalation for exceptions.
+**Decisão/ação obrigatória.** Para **paved road e self-service**, a organização deve fornecer defaults conformes reutilizáveis, automação e orientação para padrões comuns preservando escalonamento para exceções.
 
-**Record and evidence.** Record supported patterns, built-in controls, user contract, version, telemetry, support model and escape conditions.
+**Registro e evidência.** Registrar padrões suportados, controles embutidos, contrato do usuário, versão, telemetria, modelo de suporte e condições de escape.
 
-**Done when.** A team can complete the standard path with less manual effort and cannot use self-service to bypass blocking review.
+**Concluído quando.** Um time consegue completar o caminho padrão com menos esforço manual e não pode usar self-service para contornar revisão bloqueante.
 
-### 08.22 Role-based training
+### 08.22 Treinamento baseado em papel
 
-**Required decision/action.** For **role-based training**, the organization must define role-specific competencies and training tied to decisions and tasks rather than generic awareness.
+**Decisão/ação obrigatória.** Para **treinamento baseado em papel**, a organização deve definir competências e treinamentos específicos por papel, vinculados a decisões e tarefas, em vez de conscientização genérica.
 
-**Record and evidence.** Record role, learning objective, assessment method, completion, expiry, remediation and evidence owner.
+**Registro e evidência.** Registrar papel, objetivo de aprendizado, método de avaliação, conclusão, expiração, remediação e owner da evidência.
 
-**Done when.** Personnel demonstrate the required task or decision and lapsed competency is visible before access or authority is exercised.
+**Concluído quando.** Pessoal demonstra a tarefa ou decisão exigida e competência vencida é visível antes de acesso ou autoridade ser exercido.
 
-### 08.23 Communication and change management
+### 08.23 Comunicação e gestão de mudança
 
-**Required decision/action.** For **communication and change management**, the organization must provide role-appropriate communication, support and feedback routes before and during rollout.
+**Decisão/ação obrigatória.** Para **comunicação e gestão de mudança**, a organização deve prover rotas de comunicação, suporte e feedback adequadas ao papel antes e durante o rollout.
 
-**Record and evidence.** Record audience, message, channel, timing, owner, comprehension signal, feedback and resulting action.
+**Registro e evidência.** Registrar público, mensagem, canal, momento, owner, sinal de compreensão, feedback e ação resultante.
 
-**Done when.** Affected users know the system boundary, reporting route and consequence of misuse, and feedback reaches an accountable owner.
+**Concluído quando.** Usuários afetados conhecem a fronteira do sistema, a rota de reporte e a consequência do uso indevido, e o feedback chega a um owner accountable.
 
-### 08.24 Champions and feedback channels
+### 08.24 Champions e canais de feedback
 
-**Required decision/action.** For **champions and feedback channels**, the organization must provide role-appropriate communication, support and feedback routes before and during rollout.
+**Decisão/ação obrigatória.** Para **champions e canais de feedback**, a organização deve prover rotas de comunicação, suporte e feedback adequadas ao papel antes e durante o rollout.
 
-**Record and evidence.** Record audience, message, channel, timing, owner, comprehension signal, feedback and resulting action.
+**Registro e evidência.** Registrar público, mensagem, canal, momento, owner, sinal de compreensão, feedback e ação resultante.
 
-**Done when.** Affected users know the system boundary, reporting route and consequence of misuse, and feedback reaches an accountable owner.
+**Concluído quando.** Usuários afetados conhecem a fronteira do sistema, a rota de reporte e a consequência do uso indevido, e o feedback chega a um owner accountable.
 
-### 08.25 Support and operating readiness
+### 08.25 Prontidão de suporte e operação
 
-**Required decision/action.** For **support and operating readiness**, the organization must prove that permanent owners, support tiers, runbooks, access, monitoring, capacity and backlog are ready before handoff.
+**Decisão/ação obrigatória.** Para **prontidão de suporte e operação**, a organização deve comprovar que owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog estão prontos antes do handoff.
 
-**Record and evidence.** Retain service acceptance, owner sign-off, support model, SLO, runbook test, known debt, training and escalation.
+**Registro e evidência.** Reter aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento.
 
-**Done when.** Business-as-usual teams resolve a representative issue and accept residual work without dependence on the implementation project.
+**Concluído quando.** Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.
 
-### 08.26 Transfer to permanent ownership
+### 08.26 Transferência para ownership permanente
 
-**Required decision/action.** For **transfer to permanent ownership**, the organization must prove that permanent owners, support tiers, runbooks, access, monitoring, capacity and backlog are ready before handoff.
+**Decisão/ação obrigatória.** Para **transferência para ownership permanente**, a organização deve comprovar que owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog estão prontos antes do handoff.
 
-**Record and evidence.** Retain service acceptance, owner sign-off, support model, SLO, runbook test, known debt, training and escalation.
+**Registro e evidência.** Reter aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento.
 
-**Done when.** Business-as-usual teams resolve a representative issue and accept residual work without dependence on the implementation project.
+**Concluído quando.** Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.
 
-### 08.27 Exit criteria for steady-state operation
+### 08.27 Critérios de saída para operação em regime permanente
 
-**Required decision/action.** For **exit criteria for steady-state operation**, the organization must prove that permanent owners, support tiers, runbooks, access, monitoring, capacity and backlog are ready before handoff.
+**Decisão/ação obrigatória.** Para **critérios de saída para operação em regime permanente**, a organização deve comprovar que owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog estão prontos antes do handoff.
 
-**Record and evidence.** Retain service acceptance, owner sign-off, support model, SLO, runbook test, known debt, training and escalation.
+**Registro e evidência.** Reter aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento.
 
-**Done when.** Business-as-usual teams resolve a representative issue and accept residual work without dependence on the implementation project.
+**Concluído quando.** Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.
 
 
 ## Conteúdo canônico incorporado

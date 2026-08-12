@@ -1,4 +1,4 @@
-# Template — Agent Registry Record
+# Template — Registro de Agent
 
 > Use para coleta e revisão humana. A versão machine-readable deve validar contra [`schemas/agent-registry.schema.json`](../schemas/agent-registry.schema.json).
 

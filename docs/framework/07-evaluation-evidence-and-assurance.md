@@ -16,213 +16,213 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 07.1 Evaluation governance and independence
+### 07.1 Governança da avaliação e independência
 
-**Required decision/action.** For **evaluation governance and independence**, the organization must define and execute this evaluation or assurance activity against pre-approved criteria.
+**Decisão/ação obrigatória.** Para **governança da avaliação e independência**, a organização deve definir e executar esta atividade de avaliação ou assurance contra critérios pré-aprovados.
 
-**Record and evidence.** The evaluation record must bind scope, version, dataset or sample, method, thresholds, results, limitations, reviewer and evidence lineage.
+**Registro e evidência.** O registro de avaliação deve vincular escopo, versão, dataset ou amostra, método, thresholds, resultados, limitações, revisor e linhagem de evidência.
 
-**Done when.** Results are reproducible, failed criteria block or condition release, and the conclusion does not exceed the tested scope or reviewer independence.
+**Concluído quando.** Resultados são reproduzíveis, critérios reprovados bloqueiam ou condicionam o release, e a conclusão não excede o escopo testado nem a independência do revisor.
 
-### 07.2 Evaluation strategy by risk and use case
+### 07.2 Estratégia de avaliação por risco e caso de uso
 
-**Required decision/action.** For **evaluation strategy by risk and use case**, the organization must approve test objectives, datasets, slices, abuse cases, thresholds and reviewer independence before seeing results.
+**Decisão/ação obrigatória.** Para **estratégia de avaliação por risco e caso de uso**, a organização deve aprovar objetivos de teste, datasets, fatias, casos de abuso, thresholds e independência do revisor antes de ver resultados.
 
-**Record and evidence.** The plan must bind use case, tier, versions, environments, methods, acceptance criteria and evidence owner.
+**Registro e evidência.** O plano deve vincular caso de uso, tier, versões, ambientes, métodos, critérios de aceite e owner da evidência.
 
-**Done when.** The plan covers material failure modes and cannot be relaxed after a failed result without a recorded change decision.
+**Concluído quando.** O plano cobre modos de falha materiais e não pode ser afrouxado após um resultado reprovado sem decisão de mudança registrada.
 
-### 07.3 Functional and task-success testing
+### 07.3 Teste funcional e de sucesso de tarefa
 
-**Required decision/action.** For **functional and task-success testing**, the organization must test representative tasks, state transitions and failure handling against user and system requirements.
+**Decisão/ação obrigatória.** Para **teste funcional e de sucesso de tarefa**, a organização deve testar tarefas representativas, transições de estado e tratamento de falhas contra requisitos de usuário e sistema.
 
-**Record and evidence.** Record scenario, precondition, expected outcome, actual outcome, version, environment, coverage and defect.
+**Registro e evidência.** Registrar cenário, pré-condição, resultado esperado, resultado real, versão, ambiente, cobertura e defeito.
 
-**Done when.** Critical tasks meet threshold and failed edge or exception paths cannot be hidden by aggregate success.
+**Concluído quando.** Tarefas críticas atingem o threshold e caminhos de borda ou exceção reprovados não podem ser escondidos por sucesso agregado.
 
-### 07.4 Quality and reliability testing
+### 07.4 Teste de qualidade e confiabilidade
 
-**Required decision/action.** For **quality and reliability testing**, the organization must measure repeatability, consistency and failure rate under representative load and input variation.
+**Decisão/ação obrigatória.** Para **teste de qualidade e confiabilidade**, a organização deve medir repetibilidade, consistência e taxa de falha sob carga representativa e variação de entrada.
 
-**Record and evidence.** Record sample, repetitions, variance, latency, failure modes, confidence interval or limitation and threshold.
+**Registro e evidência.** Registrar amostra, repetições, variância, latência, modos de falha, intervalo de confiança ou limitação e threshold.
 
-**Done when.** Results meet pre-approved reliability targets across material slices and reruns remain within tolerance.
+**Concluído quando.** Resultados atingem alvos de confiabilidade pré-aprovados nas fatias materiais e reexecuções permanecem dentro da tolerância.
 
-### 07.5 Accuracy, factuality and groundedness
+### 07.5 Precisão, factualidade e ancoragem
 
-**Required decision/action.** For **accuracy, factuality and groundedness**, the organization must define acceptable factuality, source quality and harmful-content limits for the use context.
+**Decisão/ação obrigatória.** Para **precisão, factualidade e ancoragem**, a organização deve definir factualidade aceitável, qualidade de fonte e limites de conteúdo prejudicial para o contexto de uso.
 
-**Record and evidence.** Record claim categories, authoritative sources, test set, citation checks, thresholds, failure examples and response.
+**Registro e evidência.** Registrar categorias de afirmação, fontes autoritativas, conjunto de teste, verificações de citação, thresholds, exemplos de falha e resposta.
 
-**Done when.** Unsupported material claims are detected or disclosed and failure above threshold blocks or constrains the use.
+**Concluído quando.** Alegações materiais sem suporte são detectadas ou divulgadas e falha acima do threshold bloqueia ou restringe o uso.
 
-### 07.6 Fairness and impact evaluation
+### 07.6 Avaliação de fairness e impacto
 
-**Required decision/action.** For **fairness and impact evaluation**, the organization must define context-specific fairness harms, relevant groups, slices and acceptable disparity before testing.
+**Decisão/ação obrigatória.** Para **avaliação de fairness e impacto**, a organização deve definir danos de fairness específicos do contexto, grupos relevantes, fatias e disparidade aceitável antes de testar.
 
-**Record and evidence.** Record group rationale, metrics, sample adequacy, thresholds, results, uncertainty, mitigations and residual impact.
+**Registro e evidência.** Registrar rationale do grupo, métricas, adequação da amostra, thresholds, resultados, incerteza, mitigações e impacto residual.
 
-**Done when.** Aggregate performance cannot hide a failed material slice and unresolved harm is escalated to the proper authority.
+**Concluído quando.** Desempenho agregado não pode esconder uma fatia material reprovada e dano não resolvido é escalonado à authority adequada.
 
-### 07.7 Privacy evaluation
+### 07.7 Avaliação de privacidade
 
-**Required decision/action.** For **privacy evaluation**, the organization must establish purpose, lawful authority, minimization, rights handling, retention and transfer constraints for personal data.
+**Decisão/ação obrigatória.** Para **avaliação de privacidade**, a organização deve estabelecer finalidade, base legal, minimização, tratamento de direitos, retenção e restrições de transferência para dados pessoais.
 
-**Record and evidence.** Retain data categories, subjects, source, processing purpose, access, flow, DPIA or equivalent, tests and deletion evidence.
+**Registro e evidência.** Reter categorias de dados, titulares, origem, finalidade de processamento, acesso, fluxo, DPIA ou equivalente, testes e evidência de exclusão.
 
-**Done when.** Unauthorized data paths fail testing, subject rights are operable and material processing change reopens assessment.
+**Concluído quando.** Caminhos de dados não autorizados falham em teste, direitos dos titulares são operáveis e mudança material de processamento reabre a avaliação.
 
-### 07.8 Security and adversarial testing
+### 07.8 Teste de segurança e adversarial
 
-**Required decision/action.** For **security and adversarial testing**, the organization must model threats across identity, prompt, data, tool, runtime and supply-chain boundaries and test material abuse paths.
+**Decisão/ação obrigatória.** Para **teste de segurança e adversarial**, a organização deve modelar ameaças através das fronteiras de identidade, prompt, dados, ferramenta, runtime e supply chain e testar caminhos materiais de abuso.
 
-**Record and evidence.** Retain threat model, scenarios, attack preconditions, test evidence, findings, mitigations, residual risk and retest result.
+**Registro e evidência.** Reter threat model, cenários, pré-condições de ataque, evidência de teste, descobertas, mitigações, risco residual e resultado de reteste.
 
-**Done when.** High-impact attack paths are prevented or contained and open blocking findings prevent release.
+**Concluído quando.** Caminhos de ataque de alto impacto são prevenidos ou contidos e descobertas bloqueantes abertas impedem o release.
 
-### 07.9 Prompt, context and tool abuse testing
+### 07.9 Teste de abuso de prompt, contexto e ferramentas
 
-**Required decision/action.** For **prompt, context and tool abuse testing**, the organization must identify plausible misuse, abuse, automation bias, scope expansion and emergent interaction before release.
+**Decisão/ação obrigatória.** Para **teste de abuso de prompt, contexto e ferramentas**, a organização deve identificar uso indevido plausível, abuso, viés de automação, expansão de escopo e interação emergente antes do release.
 
-**Record and evidence.** Record threat actor or user, scenario, precondition, impact, detection, preventive control, response and residual exposure.
+**Registro e evidência.** Registrar ator de ameaça ou usuário, cenário, pré-condição, impacto, detecção, controle preventivo, resposta e exposição residual.
 
-**Done when.** Material scenarios are tested or explicitly restricted and observed misuse feeds controls and reevaluation.
+**Concluído quando.** Cenários materiais são testados ou explicitamente restritos e uso indevido observado alimenta controles e reavaliação.
 
-### 07.10 Tool-call and action evaluation
+### 07.10 Avaliação de chamadas de ferramenta e ações
 
-**Required decision/action.** For **tool-call and action evaluation**, the organization must test tool selection, parameter construction, authorization, side effects, idempotency and refusal behavior.
+**Decisão/ação obrigatória.** Para **avaliação de chamadas de ferramenta e ações**, a organização deve testar seleção de ferramenta, construção de parâmetros, autorização, efeitos colaterais, idempotência e comportamento de recusa.
 
-**Record and evidence.** Record tool version, scenario, expected call, observed call, policy decision, side effect, rollback and evidence.
+**Registro e evidência.** Registrar versão da ferramenta, cenário, chamada esperada, chamada observada, decisão de policy, efeito colateral, rollback e evidência.
 
-**Done when.** Unauthorized or malformed calls are blocked and retries cannot duplicate a consequential action.
+**Concluído quando.** Chamadas não autorizadas ou malformadas são bloqueadas e retries não podem duplicar uma ação consequente.
 
-### 07.11 Human-oversight evaluation
+### 07.11 Avaliação de supervisão humana
 
-**Required decision/action.** For **human-oversight evaluation**, the organization must place a competent human at a decision point where intervention remains timely, informed and technically effective.
+**Decisão/ação obrigatória.** Para **avaliação de supervisão humana**, a organização deve posicionar um humano competente em um ponto de decisão onde a intervenção permaneça oportuna, informada e tecnicamente eficaz.
 
-**Record and evidence.** Record trigger, information presented, authority, response time, override path, workload, training and exercised test.
+**Registro e evidência.** Registrar gatilho, informações apresentadas, authority, tempo de resposta, caminho de override, carga de trabalho, treinamento e teste exercitado.
 
-**Done when.** The human can detect, stop, correct and escalate a representative failure rather than rubber-stamping an irreversible action.
+**Concluído quando.** O humano consegue detectar, interromper, corrigir e escalonar uma falha representativa em vez de carimbar uma ação irreversível.
 
-### 07.12 Robustness and out-of-distribution behavior
+### 07.12 Robustez e comportamento fora da distribuição
 
-**Required decision/action.** For **robustness and out-of-distribution behavior**, the organization must challenge the system with distribution shifts, ambiguity, missing context and dependency degradation.
+**Decisão/ação obrigatória.** Para **robustez e comportamento fora da distribuição**, a organização deve desafiar o sistema com deslocamentos de distribuição, ambiguidade, contexto ausente e degradação de dependências.
 
-**Record and evidence.** Record shift design, sample, expected safe behavior, observed behavior, uncertainty, threshold and mitigation.
+**Registro e evidência.** Registrar design do deslocamento, amostra, comportamento seguro esperado, comportamento observado, incerteza, threshold e mitigação.
 
-**Done when.** The system degrades, abstains or escalates within the approved boundary instead of acting confidently outside evidence.
+**Concluído quando.** O sistema degrada, abstém-se ou escalona dentro da fronteira aprovada em vez de agir com confiança fora da evidência.
 
-### 07.13 Failure, rollback and containment testing
+### 07.13 Teste de falha, rollback e contenção
 
-**Required decision/action.** For **failure, rollback and containment testing**, the organization must exercise failures of models, tools, data, policy, identity and infrastructure together with containment and rollback.
+**Decisão/ação obrigatória.** Para **teste de falha, rollback e contenção**, a organização deve exercitar falhas de modelos, ferramentas, dados, policy, identidade e infraestrutura juntamente com contenção e rollback.
 
-**Record and evidence.** Retain fault injected, blast radius, detection time, containment time, recovery, evidence preservation and findings.
+**Registro e evidência.** Reter falha injetada, blast radius, tempo de detecção, tempo de contenção, recuperação, preservação de evidências e descobertas.
 
-**Done when.** The tested failure remains within the approved blast radius and recovery meets its target.
+**Concluído quando.** A falha testada permanece dentro do blast radius aprovado e a recuperação atinge seu alvo.
 
-### 07.14 Third-party evidence and supplier claims
+### 07.14 Evidências de terceiros e alegações de fornecedores
 
-**Required decision/action.** For **third-party evidence and supplier claims**, the organization must classify supplier evidence by source, scope, freshness and independence before relying on it.
+**Decisão/ação obrigatória.** Para **evidências de terceiros e alegações de fornecedores**, a organização deve classificar evidências de fornecedor por fonte, escopo, atualidade e independência antes de confiar nelas.
 
-**Record and evidence.** Record claim, artifact, supplier version, assessed scope, corroboration, gaps, contractual right and reviewer.
+**Registro e evidência.** Registrar alegação, artefato, versão do fornecedor, escopo avaliado, corroboração, lacunas, direito contratual e revisor.
 
-**Done when.** Marketing or self-attestation cannot satisfy a control that requires observed, independent or organization-specific evidence.
+**Concluído quando.** Marketing ou auto-attestation não pode satisfazer um controle que exige evidência observada, independente ou específica da organização.
 
-### 07.15 Thresholds and acceptance criteria
+### 07.15 Thresholds e critérios de aceite
 
-**Required decision/action.** For **thresholds and acceptance criteria**, the organization must approve quantitative and qualitative pass, condition and fail criteria before running the evaluation.
+**Decisão/ação obrigatória.** Para **thresholds e critérios de aceite**, a organização deve aprovar critérios quantitativos e qualitativos de aprovação, condição e reprovação antes de executar a avaliação.
 
-**Record and evidence.** Record metric, population, slice, threshold, rationale, uncertainty, blocker status and change history.
+**Registro e evidência.** Registrar métrica, população, fatia, threshold, rationale, incerteza, status de bloqueio e histórico de mudanças.
 
-**Done when.** Failed blocking criteria cannot be averaged away or retrospectively relaxed without a new decision.
+**Concluído quando.** Critérios bloqueantes reprovados não podem ser diluídos por média nem afrouxados retroativamente sem nova decisão.
 
-### 07.16 Test datasets and representativeness
+### 07.16 Datasets de teste e representatividade
 
-**Required decision/action.** For **test datasets and representativeness**, the organization must construct and govern datasets that represent intended, affected, adverse and edge-case populations.
+**Decisão/ação obrigatória.** Para **datasets de teste e representatividade**, a organização deve construir e governar datasets que representem populações pretendidas, afetadas, adversas e de borda.
 
-**Record and evidence.** Record provenance, rights, time period, sampling, slices, leakage, quality, version and known exclusions.
+**Registro e evidência.** Registrar provenance, direitos, período, amostragem, fatias, vazamento (leakage), qualidade, versão e exclusões conhecidas.
 
-**Done when.** Coverage and limitations are explicit and test data cannot contaminate training or overstate real-world validity.
+**Concluído quando.** Cobertura e limitações são explícitas e dados de teste não podem contaminar treinamento nem exagerar validade no mundo real.
 
-### 07.17 Reproducibility and version binding
+### 07.17 Reproducibilidade e vínculo de versão
 
-**Required decision/action.** For **reproducibility and version binding**, the organization must bind every result to code, model, prompt, policy, data, tool, configuration and environment versions.
+**Decisão/ação obrigatória.** Para **reproducibilidade e vínculo de versão**, a organização deve vincular todo resultado a versões de código, modelo, prompt, policy, dados, ferramenta, configuração e ambiente.
 
-**Record and evidence.** Retain immutable identifiers or hashes, execution parameters, randomization controls, timestamp and rerun procedure.
+**Registro e evidência.** Reter identificadores imutáveis ou hashes, parâmetros de execução, controles de randomização, timestamp e procedimento de reexecução.
 
-**Done when.** An authorized reviewer can reproduce or explain variance in the material result from the retained package.
+**Concluído quando.** Um revisor autorizado consegue reproduzir ou explicar a variância no resultado material a partir do pacote retido.
 
-### 07.18 Evidence package and lineage
+### 07.18 Pacote de evidências e linhagem
 
-**Required decision/action.** For **evidence package and lineage**, the organization must collect decision-relevant evidence with stable identity, source, time, version, integrity and custody.
+**Decisão/ação obrigatória.** Para **pacote de evidências e linhagem**, a organização deve coletar evidências relevantes para a decisão com identidade, fonte, tempo, versão, integridade e custódia estáveis.
 
-**Record and evidence.** The evidence manifest must list artifacts, hashes, producer, environment, method, result, limitation and linked decision.
+**Registro e evidência.** O manifesto de evidências deve listar artefatos, hashes, produtor, ambiente, método, resultado, limitação e decisão vinculada.
 
-**Done when.** A reviewer can retrieve and reproduce the material claim and missing evidence is represented as a gap, not success.
+**Concluído quando.** Um revisor consegue recuperar e reproduzir a alegação material e evidência ausente é representada como lacuna, não como sucesso.
 
-### 07.19 Go, conditional-go and no-go decision
+### 07.19 Decisão go, conditional-go e no-go
 
-**Required decision/action.** For **go, conditional-go and no-go decision**, the organization must decide release only from the bound risk, evaluation, control and operational evidence package.
+**Decisão/ação obrigatória.** Para **decisão go, conditional-go e no-go**, a organização deve decidir o release somente a partir do pacote vinculado de evidências de risco, avaliação, controle e operação.
 
-**Record and evidence.** Record decision, authority, versions, passed and failed criteria, conditions, expiry, rollback target and unresolved findings.
+**Registro e evidência.** Registrar decisão, authority, versões, critérios aprovados e reprovados, condições, expiração, alvo de rollback e descobertas não resolvidas.
 
-**Done when.** Blocking controls cannot be waived by a conditional approval and expired conditions stop continued operation.
+**Concluído quando.** Controles bloqueantes não podem ser dispensados por aprovação condicional e condições expiradas interrompem a operação continuada.
 
-### 07.20 Continuous and runtime evaluation
+### 07.20 Avaliação contínua e em runtime
 
-**Required decision/action.** For **continuous and runtime evaluation**, the organization must monitor the production behavior and control outcomes that can invalidate approval.
+**Decisão/ação obrigatória.** Para **avaliação contínua e em runtime**, a organização deve monitorar o comportamento em produção e os resultados de controle que podem invalidar a aprovação.
 
-**Record and evidence.** Retain signal definitions, baselines, slices, thresholds, owner, alert route, investigation and linked lifecycle action.
+**Registro e evidência.** Reter definições de sinais, baselines, fatias, thresholds, owner, rota de alerta, investigação e ação de lifecycle vinculada.
 
-**Done when.** Material drift or threshold breach produces containment or reassessment rather than an informational alert with no owner.
+**Concluído quando.** Desvio material ou violação de threshold produz contenção ou reavaliação em vez de um alerta informativo sem owner.
 
-### 07.21 Regression testing after change
+### 07.21 Teste de regressão após mudança
 
-**Required decision/action.** For **regression testing after change**, the organization must retest affected requirements after incident, fix, dependency change or model/configuration update.
+**Decisão/ação obrigatória.** Para **teste de regressão após mudança**, a organização deve retestar requisitos afetados após incidente, correção, mudança de dependência ou atualização de modelo/configuração.
 
-**Record and evidence.** Bind prior and new versions, impacted scenarios, regression set, result, residual gaps and release disposition.
+**Registro e evidência.** Vincular versões anterior e nova, cenários impactados, conjunto de regressão, resultado, lacunas residuais e disposição de release.
 
-**Done when.** The change does not silently invalidate prior evidence and failed regression prevents reactivation or promotion.
+**Concluído quando.** A mudança não invalida silenciosamente evidências anteriores e regressão reprovada impede reativação ou promoção.
 
-### 07.22 Self-assessment
+### 07.22 Autoavaliação
 
-**Required decision/action.** For **self-assessment**, the organization must require owners to assess their implementation against defined criteria while declaring self-review limitations.
+**Decisão/ação obrigatória.** Para **autoavaliação**, a organização deve exigir que owners avaliem sua implementação contra critérios definidos enquanto declaram as limitações da auto-revisão.
 
-**Record and evidence.** Record assessor role, claims, evidence, gaps, confidence, conflicts, requested decision and reviewer challenge.
+**Registro e evidência.** Registrar papel do avaliador, alegações, evidências, lacunas, confiança, conflitos, decisão solicitada e challenge do revisor.
 
-**Done when.** Self-assessment routes material gaps for review and is never presented as independent assurance.
+**Concluído quando.** A autoavaliação encaminha lacunas materiais para revisão e nunca é apresentada como assurance independente.
 
-### 07.23 Peer challenge
+### 07.23 Challenge por pares
 
-**Required decision/action.** For **peer challenge**, the organization must assign a qualified peer outside the immediate work product to challenge evidence, rationale and missing scenarios.
+**Decisão/ação obrigatória.** Para **challenge por pares**, a organização deve designar um par qualificado fora do produto de trabalho imediato para desafiar evidências, rationale e cenários ausentes.
 
-**Record and evidence.** Record reviewer, conflicts, questions, evidence examined, disagreements, disposition and actions.
+**Registro e evidência.** Registrar revisor, conflitos, perguntas, evidências examinadas, discordâncias, disposição e ações.
 
-**Done when.** Disputed claims remain visible and closure requires evidence rather than consensus or hierarchy.
+**Concluído quando.** Alegações disputadas permanecem visíveis e o fechamento exige evidência em vez de consenso ou hierarquia.
 
-### 07.24 Independent assurance and audit
+### 07.24 Assurance independente e auditoria
 
-**Required decision/action.** For **independent assurance and audit**, the organization must define challenge scope and independence criteria before the reviewer evaluates work.
+**Decisão/ação obrigatória.** Para **assurance independente e auditoria**, a organização deve definir escopo do challenge e critérios de independência antes de o revisor avaliar o trabalho.
 
-**Record and evidence.** Record reporting line, conflicts, incompatible services, population, sample, criteria, limitations and form of conclusion.
+**Registro e evidência.** Registrar linha de reporte, conflitos, serviços incompatíveis, população, amostra, critérios, limitações e forma da conclusão.
 
-**Done when.** The reviewer does not conclude on work they designed or operated, and claims do not exceed the approved scope and evidence.
+**Concluído quando.** O revisor não conclui sobre trabalho que ele mesmo desenhou ou operou, e as alegações não excedem o escopo e a evidência aprovados.
 
-### 07.25 Findings, corrective action and closure evidence
+### 07.25 Descobertas, ação corretiva e evidência de fechamento
 
-**Required decision/action.** For **findings, corrective action and closure evidence**, the organization must assign each finding a root cause, risk-based priority, corrective action and closure criterion.
+**Decisão/ação obrigatória.** Para **descobertas, ação corretiva e evidência de fechamento**, a organização deve atribuir a cada descoberta uma causa raiz, prioridade baseada em risco, ação corretiva e critério de fechamento.
 
-**Record and evidence.** Record finding, evidence, owner, due date, interim control, root cause, remediation, retest and reviewer disposition.
+**Registro e evidência.** Registrar descoberta, evidência, owner, data de vencimento, controle provisório, causa raiz, remediação, reteste e disposição do revisor.
 
-**Done when.** Closure requires objective retest evidence; overdue material findings remain visible and affect approval.
+**Concluído quando.** O fechamento exige evidência objetiva de reteste; descobertas materiais vencidas permanecem visíveis e afetam a aprovação.
 
-### 07.26 Evidence retention and audit access
+### 07.26 Retenção de evidências e acesso de auditoria
 
-**Required decision/action.** For **evidence retention and audit access**, the organization must define who may read, change and retrieve the record, for how long and under which legal hold or deletion rule.
+**Decisão/ação obrigatória.** Para **retenção de evidências e acesso de auditoria**, a organização deve definir quem pode ler, alterar e recuperar o registro, por quanto tempo e sob qual regra de legal hold ou exclusão.
 
-**Record and evidence.** Record classification, access groups, custodian, retention trigger, minimum period, disposition and audit retrieval path.
+**Registro e evidência.** Registrar classificação, grupos de acesso, custodiano, gatilho de retenção, período mínimo, disposição e caminho de recuperação de auditoria.
 
-**Done when.** Authorized evidence is retrievable within the required time and expired data is disposed of without breaking required lineage.
+**Concluído quando.** Evidências autorizadas são recuperáveis no prazo exigido e dados expirados são descartados sem romper a linhagem exigida.
 
 
 ## Conteúdo canônico incorporado

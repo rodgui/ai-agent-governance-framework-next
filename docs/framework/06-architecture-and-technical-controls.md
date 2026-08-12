@@ -16,261 +16,261 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 06.1 Architecture principles and quality attributes
+### 06.1 Princípios de arquitetura e atributos de qualidade
 
-**Required decision/action.** For **architecture principles and quality attributes**, the organization must translate principles and quality attributes into decision questions, measurable requirements and explicit trade-offs.
+**Decisão/ação obrigatória.** Para **princípios de arquitetura e atributos de qualidade**, a organização deve traduzir princípios e atributos de qualidade em perguntas de decisão, requisitos mensuráveis e trade-offs explícitos.
 
-**Record and evidence.** Record applicable principle, scenario, threshold, design response, owner, test and unresolved trade-off.
+**Registro e evidência.** Registrar princípio aplicável, cenário, threshold, resposta de design, owner, teste e trade-off não resolvido.
 
-**Done when.** Architecture and release decisions show how conflicting qualities were balanced rather than merely citing principles.
+**Concluído quando.** Decisões de arquitetura e release mostram como qualidades conflitantes foram equilibradas em vez de apenas citar princípios.
 
-### 06.2 Reference architecture and system boundaries
+### 06.2 Arquitetura de referência e fronteiras do sistema
 
-**Required decision/action.** For **reference architecture and system boundaries**, the organization must document boundaries, trust assumptions, data and action flows, quality attributes, controls and failure behavior before build.
+**Decisão/ação obrigatória.** Para **arquitetura de referência e fronteiras do sistema**, a organização deve documentar fronteiras, premissas de confiança, fluxos de dados e ações, atributos de qualidade, controles e comportamento de falha antes do build.
 
-**Record and evidence.** Retain approved blueprint, diagrams, interface contracts, threat and impact links, alternatives and ADRs.
+**Registro e evidência.** Reter blueprint aprovado, diagramas, contratos de interface, vínculos de ameaça e impacto, alternativas e ADRs.
 
-**Done when.** Reviewers can trace each material requirement to an architecture element and testable enforcement point.
+**Concluído quando.** Revisores conseguem rastrear cada requisito material a um elemento de arquitetura e a um ponto de enforcement testável.
 
-### 06.3 Separation of governance management and runtime enforcement
+### 06.3 Separação entre gestão de governança e enforcement em runtime
 
-**Required decision/action.** For **separation of governance management and runtime enforcement**, the organization must separate policy authoring, decision, distribution and runtime enforcement while preserving traceable linkage.
+**Decisão/ação obrigatória.** Para **separação entre gestão de governança e enforcement em runtime**, a organização deve separar autoria, decisão, distribuição e enforcement em runtime de policy preservando vínculo rastreável.
 
-**Record and evidence.** The architecture record must identify policy source, decision point, enforcement point, version propagation, fail mode and telemetry.
+**Registro e evidência.** O registro de arquitetura deve identificar fonte de policy, ponto de decisão, ponto de enforcement, propagação de versão, modo de falha e telemetria.
 
-**Done when.** A policy change reaches enforcement predictably and failure cannot silently fall back to an unrestricted path.
+**Concluído quando.** Uma mudança de policy chega ao enforcement de forma previsível e a falha não pode recuar silenciosamente para um caminho irrestrito.
 
-### 06.4 Enterprise inventory and registry integration
+### 06.4 Integração com inventário empresarial e registry
 
-**Required decision/action.** For **enterprise inventory and registry integration**, the organization must operate the registry as the authoritative identity and lifecycle index for every in-scope agent.
+**Decisão/ação obrigatória.** Para **integração com inventário empresarial e registry**, a organização deve operar o registry como o índice autoritativo de identidade e lifecycle de todo agente em escopo.
 
-**Record and evidence.** Validate stable ID, owner, purpose, tier, admissibility, version, environment, state, dependencies and last-attested date.
+**Registro e evidência.** Validar ID estável, owner, finalidade, tier, admissibilidade, versão, ambiente, estado, dependências e data do último attestation.
 
-**Done when.** Automated and manual reconciliation detects missing, stale, duplicate and invalid records and blocks required transitions.
+**Concluído quando.** Reconciliação automatizada e manual detecta registros ausentes, obsoletos, duplicados e inválidos e bloqueia transições exigidas.
 
-### 06.5 Agent identity
+### 06.5 Identidade do agente
 
-**Required decision/action.** For **agent identity**, the organization must assign a unique non-human identity per agent or bounded runtime instance with a named owner.
+**Decisão/ação obrigatória.** Para **identidade do agente**, a organização deve atribuir uma identidade não humana única por agente ou instância de runtime delimitada com owner nomeado.
 
-**Record and evidence.** Record identity ID, issuer, owner, environment, authentication mode, entitlements, credential age and lifecycle state.
+**Registro e evidência.** Registrar ID da identidade, emissor, owner, ambiente, modo de autenticação, entitlements, idade da credencial e estado de lifecycle.
 
-**Done when.** Shared human credentials are absent and disablement of the registry identity revokes the agent's effective access.
+**Concluído quando.** Credenciais humanas compartilhadas estão ausentes e a desativação da identidade no registry revoga o acesso efetivo do agente.
 
-### 06.6 User identity and delegated context
+### 06.6 Identidade do usuário e contexto delegado
 
-**Required decision/action.** For **user identity and delegated context**, the organization must preserve the initiating user's identity, consent and delegated authority across the agent's action chain.
+**Decisão/ação obrigatória.** Para **identidade do usuário e contexto delegado**, a organização deve preservar a identidade, o consentimento e a authority delegada do usuário iniciador ao longo da cadeia de ações do agente.
 
-**Record and evidence.** Record user, session, delegation scope, purpose, expiry, downstream propagation and audit correlation.
+**Registro e evidência.** Registrar usuário, sessão, escopo de delegação, finalidade, expiração, propagação a jusante e correlação de auditoria.
 
-**Done when.** The agent cannot expand delegated authority and every consequential action is attributable to both agent and initiating context.
+**Concluído quando.** O agente não pode expandir authority delegada e toda ação consequente é atribuível ao agente e ao contexto iniciador.
 
-### 06.7 Authentication
+### 06.7 Autenticação
 
-**Required decision/action.** For **authentication**, the organization must use approved workload authentication with rotation, audience restriction and revocation.
+**Decisão/ação obrigatória.** Para **autenticação**, a organização deve usar autenticação de workload aprovada com rotação, restrição de audiência e revogação.
 
-**Record and evidence.** Retain issuer, credential type, storage, rotation, expiry, audience, failure alerts and test evidence.
+**Registro e evidência.** Reter emissor, tipo de credencial, armazenamento, rotação, expiração, audiência, alertas de falha e evidência de teste.
 
-**Done when.** Expired, replayed or wrong-audience credentials fail and no secret is embedded in source, prompt or configuration.
+**Concluído quando.** Credenciais expiradas, reutilizadas ou de audiência errada falham e nenhum segredo está embutido em fonte, prompt ou configuração.
 
-### 06.8 Authorization and policy decision
+### 06.8 Autorização e decisão de policy
 
-**Required decision/action.** For **authorization and policy decision**, the organization must evaluate each sensitive action and material parameter against current subject, resource, context and purpose.
+**Decisão/ação obrigatória.** Para **autorização e decisão de policy**, a organização deve avaliar cada ação sensível e parâmetro material contra sujeito, recurso, contexto e finalidade atuais.
 
-**Record and evidence.** Record policy version, input attributes, decision, reason, enforcement result, override and correlation ID.
+**Registro e evidência.** Registrar versão da policy, atributos de entrada, decisão, motivo, resultado do enforcement, override e ID de correlação.
 
-**Done when.** Negative tests deny out-of-scope actions and delegated or multi-step execution cannot bypass the same policy.
+**Concluído quando.** Testes negativos negam ações fora do escopo e execução delegada ou em múltiplas etapas não pode contornar a mesma policy.
 
-### 06.9 Least privilege and just-in-time access
+### 06.9 Privilégio mínimo e acesso just-in-time
 
-**Required decision/action.** For **least privilege and just-in-time access**, the organization must grant the minimum action, resource, environment and duration needed for the approved purpose.
+**Decisão/ação obrigatória.** Para **privilégio mínimo e acesso just-in-time**, a organização deve conceder a ação, o recurso, o ambiente e a duração mínimos necessários para a finalidade aprovada.
 
-**Record and evidence.** Record entitlement rationale, approver, activation, expiry, use, attestation and revocation evidence.
+**Registro e evidência.** Registrar rationale do entitlement, aprovador, ativação, expiração, uso, attestation e evidência de revogação.
 
-**Done when.** Unused or expired privilege is removed automatically and access expansion reopens authorization review.
+**Concluído quando.** Privilégio não utilizado ou expirado é removido automaticamente e expansão de acesso reabre a revisão de autorização.
 
-### 06.10 Secrets and credential lifecycle
+### 06.10 Ciclo de vida de segredos e credenciais
 
-**Required decision/action.** For **secrets and credential lifecycle**, the organization must issue, store, rotate, monitor and revoke secrets through an approved secrets service.
+**Decisão/ação obrigatória.** Para **ciclo de vida de segredos e credenciais**, a organização deve emitir, armazenar, rotacionar, monitorar e revogar segredos por meio de um serviço de segredos aprovado.
 
-**Record and evidence.** Record secret owner, consumer identity, store reference, rotation target, last use, exposure response and deletion.
+**Registro e evidência.** Registrar owner do segredo, identidade do consumidor, referência do store, alvo de rotação, último uso, resposta a exposição e exclusão.
 
-**Done when.** Scans find no embedded secret and rotation or revocation can occur without rebuilding unrelated components.
+**Concluído quando.** Varreduras não encontram segredo embutido e rotação ou revogação pode ocorrer sem reconstruir componentes não relacionados.
 
-### 06.11 Data classification and authorization
+### 06.11 Classificação de dados e autorização
 
-**Required decision/action.** For **data classification and authorization**, the organization must authorize each data source and field class for the stated purpose, identity and environment.
+**Decisão/ação obrigatória.** Para **classificação de dados e autorização**, a organização deve autorizar cada fonte de dados e classe de campo para a finalidade, identidade e ambiente declarados.
 
-**Record and evidence.** Record classification, owner, purpose, allowed operations, jurisdiction, retention, DLP controls and access test.
+**Registro e evidência.** Registrar classificação, owner, finalidade, operações permitidas, jurisdição, retenção, controles de DLP e teste de acesso.
 
-**Done when.** Unauthorized data and cross-purpose reuse are denied at the boundary and logged with attributable context.
+**Concluído quando.** Dados não autorizados e reuso entre finalidades são negados na fronteira e registrados com contexto atribuível.
 
-### 06.12 Data minimization, provenance, quality and retention
+### 06.12 Minimização, provenance, qualidade e retenção de dados
 
-**Required decision/action.** For **data minimization, provenance, quality and retention**, the organization must limit data to what is necessary and trace its source, transformations, quality and disposition.
+**Decisão/ação obrigatória.** Para **minimização, provenance, qualidade e retenção de dados**, a organização deve limitar os dados ao necessário e rastrear sua origem, transformações, qualidade e disposição.
 
-**Record and evidence.** Record source owner, lineage, quality rules, filters, retention, deletion, derived-data handling and known gaps.
+**Registro e evidência.** Registrar owner da fonte, linhagem, regras de qualidade, filtros, retenção, exclusão, tratamento de dados derivados e lacunas conhecidas.
 
-**Done when.** Stale, low-quality or untraceable data is excluded or disclosed and retention expiry is technically enforced.
+**Concluído quando.** Dados obsoletos, de baixa qualidade ou não rastreáveis são excluídos ou divulgados e a expiração de retenção é tecnicamente aplicada.
 
-### 06.13 Knowledge bases, retrieval and grounded generation
+### 06.13 Bases de conhecimento, recuperação e geração ancorada
 
-**Required decision/action.** For **knowledge bases, retrieval and grounded generation**, the organization must govern retrieval sources, indexing, access filtering, freshness and citation for the use context.
+**Decisão/ação obrigatória.** Para **bases de conhecimento, recuperação e geração ancorada**, a organização deve governar fontes de recuperação, indexação, filtragem de acesso, atualidade e citação para o contexto de uso.
 
-**Record and evidence.** Record source catalog, ingestion version, permission model, chunking, freshness SLA, retrieval tests and citation evidence.
+**Registro e evidência.** Registrar catálogo de fontes, versão de ingestão, modelo de permissão, chunking, SLA de atualidade, testes de recuperação e evidência de citação.
 
-**Done when.** Retrieval respects source permissions and material answers can be traced to current authorized evidence.
+**Concluído quando.** A recuperação respeita permissões de fonte e respostas materiais podem ser rastreadas a evidência autorizada atual.
 
-### 06.14 Model and provider selection
+### 06.14 Seleção de modelo e provedor
 
-**Required decision/action.** For **model and provider selection**, the organization must select approved model-provider combinations against task, data, risk, portability and fallback requirements.
+**Decisão/ação obrigatória.** Para **seleção de modelo e provedor**, a organização deve selecionar combinações aprovadas de modelo-provedor contra requisitos de tarefa, dados, risco, portabilidade e fallback.
 
-**Record and evidence.** Record model and provider version, evaluation, data restrictions, region, terms, fallback, change notice and exit test.
+**Registro e evidência.** Registrar versão de modelo e provedor, avaliação, restrições de dados, região, termos, fallback, aviso de mudança e teste de saída.
 
-**Done when.** Unapproved substitution is blocked and fallback does not silently weaken data, safety or evaluation requirements.
+**Concluído quando.** Substituição não aprovada é bloqueada e o fallback não enfraquece silenciosamente requisitos de dados, segurança ou avaliação.
 
-### 06.15 Model versions, fallback and portability
+### 06.15 Versões de modelo, fallback e portabilidade
 
-**Required decision/action.** For **model versions, fallback and portability**, the organization must select approved model-provider combinations against task, data, risk, portability and fallback requirements.
+**Decisão/ação obrigatória.** Para **versões de modelo, fallback e portabilidade**, a organização deve selecionar combinações aprovadas de modelo-provedor contra requisitos de tarefa, dados, risco, portabilidade e fallback.
 
-**Record and evidence.** Record model and provider version, evaluation, data restrictions, region, terms, fallback, change notice and exit test.
+**Registro e evidência.** Registrar versão de modelo e provedor, avaliação, restrições de dados, região, termos, fallback, aviso de mudança e teste de saída.
 
-**Done when.** Unapproved substitution is blocked and fallback does not silently weaken data, safety or evaluation requirements.
+**Concluído quando.** Substituição não aprovada é bloqueada e o fallback não enfraquece silenciosamente requisitos de dados, segurança ou avaliação.
 
-### 06.16 Tools, APIs, plugins and Model Context Protocol
+### 06.16 Ferramentas, APIs, plugins e Model Context Protocol
 
-**Required decision/action.** For **tools, apis, plugins and model context protocol**, the organization must register each callable tool with owner, source, action class, scopes, side effects and approved versions.
+**Decisão/ação obrigatória.** Para **ferramentas, APIs, plugins e Model Context Protocol**, a organização deve registrar cada ferramenta chamável com owner, fonte, classe de ação, escopos, efeitos colaterais e versões aprovadas.
 
-**Record and evidence.** Retain tool ID, provenance, interface hash, parameters, permissions, data classes, rate limits, sandbox and review date.
+**Registro e evidência.** Reter ID da ferramenta, provenance, hash de interface, parâmetros, permissões, classes de dados, limites de taxa, sandbox e data de revisão.
 
-**Done when.** Unknown or incompatible tools cannot be invoked and version change triggers impact and negative testing.
+**Concluído quando.** Ferramentas desconhecidas ou incompatíveis não podem ser invocadas e mudança de versão dispara teste de impacto e negativo.
 
-### 06.17 Tool registry and provenance
+### 06.17 Registry de ferramentas e provenance
 
-**Required decision/action.** For **tool registry and provenance**, the organization must register each callable tool with owner, source, action class, scopes, side effects and approved versions.
+**Decisão/ação obrigatória.** Para **registry de ferramentas e provenance**, a organização deve registrar cada ferramenta chamável com owner, fonte, classe de ação, escopos, efeitos colaterais e versões aprovadas.
 
-**Record and evidence.** Retain tool ID, provenance, interface hash, parameters, permissions, data classes, rate limits, sandbox and review date.
+**Registro e evidência.** Reter ID da ferramenta, provenance, hash de interface, parâmetros, permissões, classes de dados, limites de taxa, sandbox e data de revisão.
 
-**Done when.** Unknown or incompatible tools cannot be invoked and version change triggers impact and negative testing.
+**Concluído quando.** Ferramentas desconhecidas ou incompatíveis não podem ser invocadas e mudança de versão dispara teste de impacto e negativo.
 
-### 06.18 Action-level and parameter-level authorization
+### 06.18 Autorização em nível de ação e de parâmetro
 
-**Required decision/action.** For **action-level and parameter-level authorization**, the organization must evaluate each sensitive action and material parameter against current subject, resource, context and purpose.
+**Decisão/ação obrigatória.** Para **autorização em nível de ação e de parâmetro**, a organização deve avaliar cada ação sensível e parâmetro material contra sujeito, recurso, contexto e finalidade atuais.
 
-**Record and evidence.** Record policy version, input attributes, decision, reason, enforcement result, override and correlation ID.
+**Registro e evidência.** Registrar versão da policy, atributos de entrada, decisão, motivo, resultado do enforcement, override e ID de correlação.
 
-**Done when.** Negative tests deny out-of-scope actions and delegated or multi-step execution cannot bypass the same policy.
+**Concluído quando.** Testes negativos negam ações fora do escopo e execução delegada ou em múltiplas etapas não pode contornar a mesma policy.
 
-### 06.19 Human approval for consequential actions
+### 06.19 Aprovação humana para ações consequentes
 
-**Required decision/action.** For **human approval for consequential actions**, the organization must place a competent human at a decision point where intervention remains timely, informed and technically effective.
+**Decisão/ação obrigatória.** Para **aprovação humana para ações consequentes**, a organização deve posicionar um humano competente em um ponto de decisão onde a intervenção permaneça oportuna, informada e tecnicamente eficaz.
 
-**Record and evidence.** Record trigger, information presented, authority, response time, override path, workload, training and exercised test.
+**Registro e evidência.** Registrar gatilho, informações apresentadas, authority, tempo de resposta, caminho de override, carga de trabalho, treinamento e teste exercitado.
 
-**Done when.** The human can detect, stop, correct and escalate a representative failure rather than rubber-stamping an irreversible action.
+**Concluído quando.** O humano consegue detectar, interromper, corrigir e escalonar uma falha representativa em vez de carimbar uma ação irreversível.
 
-### 06.20 Memory, persistence and deletion
+### 06.20 Memória, persistência e exclusão
 
-**Required decision/action.** For **memory, persistence and deletion**, the organization must define what state may persist, who can access it, its purpose, isolation, retention and deletion behavior.
+**Decisão/ação obrigatória.** Para **memória, persistência e exclusão**, a organização deve definir qual estado pode persistir, quem pode acessá-lo, sua finalidade, isolamento, retenção e comportamento de exclusão.
 
-**Record and evidence.** Record memory class, keying, data categories, owner, encryption, retention, user controls and deletion test.
+**Registro e evidência.** Registrar classe de memória, chaveamento, categorias de dados, owner, criptografia, retenção, controles do usuário e teste de exclusão.
 
-**Done when.** State does not leak across users or purposes and deletion removes active and derived copies within the target.
+**Concluído quando.** Estado não vaza entre usuários ou finalidades e a exclusão remove cópias ativas e derivadas dentro do alvo.
 
-### 06.21 Multi-agent delegation and inherited authority
+### 06.21 Delegação multi-agente e authority herdada
 
-**Required decision/action.** For **multi-agent delegation and inherited authority**, the organization must constrain delegation depth, task, budget, identity and permissions at every agent-to-agent handoff.
+**Decisão/ação obrigatória.** Para **delegação multi-agente e authority herdada**, a organização deve restringir profundidade de delegação, tarefa, orçamento, identidade e permissões em cada handoff entre agentes.
 
-**Record and evidence.** Record delegator, delegate, task, inherited and reduced scopes, expiry, chain ID, result and revocation.
+**Registro e evidência.** Registrar delegador, delegado, tarefa, escopos herdados e reduzidos, expiração, ID da cadeia, resultado e revogação.
 
-**Done when.** The chain cannot amplify authority and operators can stop and attribute every delegated action.
+**Concluído quando.** A cadeia não pode ampliar authority e operadores conseguem interromper e atribuir toda ação delegada.
 
-### 06.22 Code execution and sandboxing
+### 06.22 Execução de código e sandboxing
 
-**Required decision/action.** For **code execution and sandboxing**, the organization must execute generated or supplied code only in an isolated, least-privileged and disposable environment.
+**Decisão/ação obrigatória.** Para **execução de código e sandboxing**, a organização deve executar código gerado ou fornecido somente em ambiente isolado, de privilégio mínimo e descartável.
 
-**Record and evidence.** Record image or runtime hash, allowed resources, filesystem, network, timeout, inputs, outputs, scan and cleanup.
+**Registro e evidência.** Registrar hash de imagem ou runtime, recursos permitidos, filesystem, rede, timeout, entradas, saídas, varredura e limpeza.
 
-**Done when.** Escape, persistence, secret access and unauthorized egress tests fail safely and the sandbox is destroyed after use.
+**Concluído quando.** Testes de escape, persistência, acesso a segredos e egress não autorizado falham com segurança e o sandbox é destruído após o uso.
 
-### 06.23 Network boundaries, egress and isolation
+### 06.23 Fronteiras de rede, egress e isolamento
 
-**Required decision/action.** For **network boundaries, egress and isolation**, the organization must restrict network paths to approved destinations, protocols, identities and data purposes.
+**Decisão/ação obrigatória.** Para **fronteiras de rede, egress e isolamento**, a organização deve restringir caminhos de rede a destinos, protocolos, identidades e finalidades de dados aprovados.
 
-**Record and evidence.** Record segment, allowlist, proxy or gateway policy, DNS and egress logs, inspection, exception and test evidence.
+**Registro e evidência.** Registrar segmento, allowlist, policy de proxy ou gateway, logs de DNS e egress, inspeção, exceção e evidência de teste.
 
-**Done when.** Unapproved egress and lateral movement are denied and a boundary failure triggers containment.
+**Concluído quando.** Egress não aprovado e movimento lateral são negados e uma falha de fronteira dispara contenção.
 
-### 06.24 Software, model, data and tool supply chain
+### 06.24 Supply chain de software, modelo, dados e ferramentas
 
-**Required decision/action.** For **software, model, data and tool supply chain**, the organization must inventory and verify software, model, data and tool dependencies from source through deployment.
+**Decisão/ação obrigatória.** Para **supply chain de software, modelo, dados e ferramentas**, a organização deve inventariar e verificar dependências de software, modelo, dados e ferramentas da origem até a implantação.
 
-**Record and evidence.** Retain provenance, version, license, integrity signature or hash, vulnerability status, owner, update and recall path.
+**Registro e evidência.** Reter provenance, versão, licença, assinatura de integridade ou hash, status de vulnerabilidade, owner, atualização e caminho de recall.
 
-**Done when.** Unverifiable or blocked components cannot promote and a compromised dependency can be located and replaced.
+**Concluído quando.** Componentes não verificáveis ou bloqueados não podem promover e uma dependência comprometida pode ser localizada e substituída.
 
-### 06.25 Input, context and output controls
+### 06.25 Controles de entrada, contexto e saída
 
-**Required decision/action.** For **input, context and output controls**, the organization must validate and bound inputs, system context, retrieved content and outputs according to data and action risk.
+**Decisão/ação obrigatória.** Para **controles de entrada, contexto e saída**, a organização deve validar e limitar entradas, contexto do sistema, conteúdo recuperado e saídas conforme o risco de dados e ações.
 
-**Record and evidence.** Record validation rules, size and type limits, sanitization, policy checks, output handling, failures and test corpus.
+**Registro e evidência.** Registrar regras de validação, limites de tamanho e tipo, sanitização, verificações de policy, tratamento de saídas, falhas e corpus de teste.
 
-**Done when.** Malformed, injected or disallowed content cannot cross the boundary or trigger an unauthorized action.
+**Concluído quando.** Conteúdo malformado, injetado ou não permitido não pode cruzar a fronteira nem disparar ação não autorizada.
 
-### 06.26 Logging, correlation and evidence integrity
+### 06.26 Logging, correlação e integridade de evidências
 
-**Required decision/action.** For **logging, correlation and evidence integrity**, the organization must emit attributable events that correlate user, agent, version, task, model, tool, policy decision and outcome.
+**Decisão/ação obrigatória.** Para **logging, correlação e integridade de evidências**, a organização deve emitir eventos atribuíveis que correlacionem usuário, agente, versão, tarefa, modelo, ferramenta, decisão de policy e resultado.
 
-**Record and evidence.** Define event schema, IDs, timestamps, integrity control, retention, access, clock assumptions and coverage tests.
+**Registro e evidência.** Definir schema de evento, IDs, timestamps, controle de integridade, retenção, acesso, premissas de relógio e testes de cobertura.
 
-**Done when.** A representative action chain can be reconstructed without exposing prohibited prompt, secret or personal data.
+**Concluído quando.** Uma cadeia de ações representativa pode ser reconstruída sem expor prompt, segredo ou dados pessoais proibidos.
 
-### 06.27 Observability and behavioral signals
+### 06.27 Observabilidade e sinais comportamentais
 
-**Required decision/action.** For **observability and behavioral signals**, the organization must establish baselines and signals for behavior, quality, safety, security, cost and dependency change.
+**Decisão/ação obrigatória.** Para **observabilidade e sinais comportamentais**, a organização deve estabelecer baselines e sinais para mudança de comportamento, qualidade, segurança, custo e dependências.
 
-**Record and evidence.** Record signal definition, population, baseline window, threshold, confidence, owner, response ladder and calibration history.
+**Registro e evidência.** Registrar definição do sinal, população, janela de baseline, threshold, confiança, owner, escada de resposta e histórico de calibração.
 
-**Done when.** Alerts are calibrated against real behavior and lead to investigation, throttling, quarantine or reassessment.
+**Concluído quando.** Alertas são calibrados contra comportamento real e levam a investigação, throttling, quarentena ou reavaliação.
 
-### 06.28 Rate, spend and resource limits
+### 06.28 Limites de taxa, gasto e recursos
 
-**Required decision/action.** For **rate, spend and resource limits**, the organization must enforce per-agent and per-owner limits for rate, concurrency, spend, tokens, storage and high-impact actions.
+**Decisão/ação obrigatória.** Para **limites de taxa, gasto e recursos**, a organização deve impor limites por agente e por owner para taxa, concorrência, gasto, tokens, armazenamento e ações de alto impacto.
 
-**Record and evidence.** Record limit, scope, rationale, warning and hard thresholds, override authority, telemetry and test.
+**Registro e evidência.** Registrar limite, escopo, rationale, thresholds de aviso e rígidos, authority de override, telemetria e teste.
 
-**Done when.** Limit breach throttles or stops safely and an agent cannot evade limits through delegation or retries.
+**Concluído quando.** Violação de limite faz throttling ou interrompe com segurança e um agente não pode contornar limites por delegação ou retries.
 
-### 06.29 Kill switch, circuit breaker and containment
+### 06.29 Kill switch, circuit breaker e contenção
 
-**Required decision/action.** For **kill switch, circuit breaker and containment**, the organization must implement authority and technical paths to stop actions, isolate dependencies and preserve evidence.
+**Decisão/ação obrigatória.** Para **kill switch, circuit breaker e contenção**, a organização deve implementar caminhos de authority e técnicos para interromper ações, isolar dependências e preservar evidências.
 
-**Record and evidence.** Record trigger, command path, scope, expected state, operator, test cadence, result and recovery prerequisites.
+**Registro e evidência.** Registrar gatilho, caminho de comando, escopo, estado esperado, operador, cadência de teste, resultado e pré-requisitos de recuperação.
 
-**Done when.** A drill contains a representative failure within the target without relying on the failing agent itself.
+**Concluído quando.** Um exercício (drill) contém uma falha representativa dentro do alvo sem depender do próprio agente com falha.
 
-### 06.30 Fail-safe behavior, rollback and recovery
+### 06.30 Comportamento fail-safe, rollback e recuperação
 
-**Required decision/action.** For **fail-safe behavior, rollback and recovery**, the organization must define the safer state, rollback target and recovery sequence for control, dependency and model failures.
+**Decisão/ação obrigatória.** Para **comportamento fail-safe, rollback e recuperação**, a organização deve definir o estado mais seguro, o alvo de rollback e a sequência de recuperação para falhas de controle, dependência e modelo.
 
-**Record and evidence.** Retain failure modes, trigger, rollback artifact, data reconciliation, operator authority, RTO/RPO and exercise result.
+**Registro e evidência.** Reter modos de falha, gatilho, artefato de rollback, reconciliação de dados, authority do operador, RTO/RPO e resultado do exercício.
 
-**Done when.** A representative failure restores a known-good bounded service without losing required evidence or duplicating actions.
+**Concluído quando.** Uma falha representativa restaura um serviço delimitado em estado bom conhecido sem perder evidência exigida nem duplicar ações.
 
-### 06.31 Resilience, continuity and exit strategy
+### 06.31 Resiliência, continuidade e estratégia de saída
 
-**Required decision/action.** For **resilience, continuity and exit strategy**, the organization must define approved degraded modes, dependency fallbacks, continuity priorities and exit from critical suppliers.
+**Decisão/ação obrigatória.** Para **resiliência, continuidade e estratégia de saída**, a organização deve definir modos degradados aprovados, fallbacks de dependência, prioridades de continuidade e saída de fornecedores críticos.
 
-**Record and evidence.** Record critical paths, tolerances, RTO/RPO, fallback capability, manual procedure, data reconciliation and exercise.
+**Registro e evidência.** Registrar caminhos críticos, tolerâncias, RTO/RPO, capacidade de fallback, procedimento manual, reconciliação de dados e exercício.
 
-**Done when.** The service meets the approved recovery target without silently bypassing risk, data or authorization controls.
+**Concluído quando.** O serviço atinge o alvo de recuperação aprovado sem contornar silenciosamente controles de risco, dados ou autorização.
 
-### 06.32 Platform integration and vendor-neutral extension points
+### 06.32 Integração de plataforma e pontos de extensão vendor-neutral
 
-**Required decision/action.** For **platform integration and vendor-neutral extension points**, the organization must define capability contracts and extension interfaces independently from a specific product.
+**Decisão/ação obrigatória.** Para **integração de plataforma e pontos de extensão vendor-neutral**, a organização deve definir contratos de capacidade e interfaces de extensão independentemente de um produto específico.
 
-**Record and evidence.** Record required behavior, interface, data and identity contract, portability test, supplier mapping and exit constraint.
+**Registro e evidência.** Registrar comportamento exigido, interface, contrato de dados e identidade, teste de portabilidade, mapping de fornecedor e restrição de saída.
 
-**Done when.** A supplier can be replaced or isolated without redefining the policy, control IDs, schemas or decision gates.
+**Concluído quando.** Um fornecedor pode ser substituído ou isolado sem redefinir a policy, os control IDs, os schemas ou os decision gates.
 
 
 ## Conteúdo canônico incorporado

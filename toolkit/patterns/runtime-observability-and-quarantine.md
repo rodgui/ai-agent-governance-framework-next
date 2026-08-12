@@ -13,7 +13,7 @@ related:
 
 # Pattern — Runtime Observability and Quarantine
 
-## Intent
+## Intenção
 
 Conectar signals a decisões e a containment verificável no menor blast radius possível.
 

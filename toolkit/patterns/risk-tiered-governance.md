@@ -13,7 +13,7 @@ related:
 
 # Pattern — Risk-Tiered Governance
 
-## Intent
+## Intenção
 
 Ajustar controls, evidence e decision authority ao risco e à capacidade real do agente.
 

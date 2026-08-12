@@ -13,7 +13,7 @@ related:
 
 # Pattern — AI-Ready Data Gate
 
-## Intent
+## Intenção
 
 Permitir connector, retrieval, memory ou training somente quando a fonte é adequada à finalidade e possui owner, provenance, acesso e lifecycle.
 
