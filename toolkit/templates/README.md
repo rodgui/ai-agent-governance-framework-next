@@ -33,6 +33,7 @@ Esta página lista os templates por finalidade. Para saber **quando** cada artef
 - [Intake de caso de uso](use-case-intake.md)
 - [Agent Use-Case Portfolio](use-case-portfolio.md)
 - [Risk pre-screen](risk-pre-screen.md)
+- [Ferramenta de classificação de risco](risk-scoring-worksheet.md)
 - [Agent Risk Record](agent-risk-record.md)
 - [Autoavaliação de agente](self-assessment-form.md)
 - [Exemplo de autoavaliação](../examples/self-assessment.example.md)

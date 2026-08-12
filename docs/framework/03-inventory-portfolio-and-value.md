@@ -96,6 +96,22 @@ Backlog dos pontos onde a governança depende de trabalho humano repetitivo — 
 
 **A leitura correta: automatizar a preparação da evidência é quase sempre seguro; automatizar a decisão só quando a policy está estável.**
 
+### 1.7 Sequência de execução: da descoberta ao inventário governado
+
+As subseções anteriores explicam os conceitos. Esta é a ordem prática de quem vai executar, do primeiro dia à rotina:
+
+1. **Declarar o escopo da descoberta.** Quais plataformas, unidades, ambientes e tipos de agente entram na primeira passada? Registre também o que fica fora e por quê — cobertura declarada vale mais que cobertura presumida.
+2. **Reunir as fontes.** Identidade/SSO, logs de plataformas aprovadas, SaaS contratado, budgets de nuvem, builds/CI, entrevistas com os times. Cada fonte entra no inventário com data de última leitura e confiança.
+3. **Consolidar e deduplicar.** Um agente pode aparecer em três fontes com três nomes. A consolidação produz candidatos únicos; a deduplicação decide quais são o mesmo ativo — registre os critérios usados.
+4. **Atribuir estado de confirmação.** `confirmed` só com observação direta; `reported` para o que veio de entrevista; `unresolved` para o que ninguém confirma. **Nunca reporte um inventário sem a coluna de confiança.**
+5. **Vincular owners.** Todo ativo confirmado recebe business owner e technical owner ativos. O que não tem owner entra na fila de triagem — não desaparece do relatório.
+6. **Classificar pelo mínimo.** Para cada ativo: taxonomia (dimensões do estate), tier preliminar e admissibilidade. A classificação fina de casos complexos espera o processo do [cap. 04](04-risk-impact-and-compliance.md); o inventário precisa ao menos separar o que é alto risco do que não é.
+7. **Reconciliar contra o registry.** O que existe no registry e não existe mais no estate → candidato a sunset. O que existe no estate e não está no registry → candidato a registro ou contenção. **Reconciliação é o teste de honestidade do inventário.**
+8. **Publicar baseline com limitações.** Números com fonte, data de corte e lacunas declaradas. A primeira passada nunca é completa — e declarar isso abertamente é o que permite medir a segunda.
+9. **Instalar a rotina.** Descoberta não é projeto pontual: fontes são relidas em cadência, novas plataformas entram no escopo, e cada novo agente nasce já dentro do registry (processo P1 do [cap. 08](08-implementation-and-adoption.md)).
+
+**Armadilhas da primeira passada:** tentar cobrir tudo de uma vez (a descoberta parcial publicada vale mais que a perfeita adiada); aceitar "não tem nenhum agente aqui" sem conferir a fonte (shadow AI vive exatamente onde ninguém olhou); tratar o inventário como fim em vez de meio — o objetivo é o controle, e o inventário é o primeiro passo dele.
+
 ## 2. Registry: a fonte corporativa de verdade
 
 ### 2.1 Quatro objetos distintos (não confundir)
@@ -182,6 +198,39 @@ Como implementar: defina primeiro o contrato lógico e apenas campos com consumi
 ### 2.6 Ownership e accountability
 
 Cada ativo é vinculado a owners **ativos** de negócio, técnico e operacional, com regra de sucessão: identificadores de papel, data de aceite, delegados, unidade organizacional, status e evidência de detecção de órfãos. **Saída ou inatividade do owner dispara redesignação, suspensão ou aposentadoria antes de o registro tornar-se órfão.**
+
+### 2.7 O dossiê do agente: os artefatos que o acompanham
+
+Até aqui, cada seção apresentou uma peça. Esta seção mostra o conjunto — porque a pergunta que mais importa na prática é simples: **"o que preciso juntar para governar UM agente?"**
+
+**Dossiê do agente** é o nome que damos ao conjunto de artefatos vinculados por um único `agent_id`, do primeiro registro ao sunset. Não é um documento novo: é o agrupamento explícito do que o framework já define em capítulos e arquivos separados. Um leitor que percorre o framework capítulo a capítulo descobre cada peça; o dossiê é a visão "um agente, um pacote" que torna isso concreto.
+
+| # | Artefato | Nasce quando | O que prova | Onde está definido |
+|---|---|---|---|---|
+| 1 | **Use-case intake** | ideia/demanda | o problema, por que agente, sinais de risco, duplicidade | [template](../../toolkit/templates/use-case-intake.md), seção 3 |
+| 2 | **Autoavaliação** | antes da primeira aprovação | objetivo, dados, autonomia, controles e testes declarados | [template](../../toolkit/templates/self-assessment-form.md) |
+| 3 | **Risk record** | classificação | tier, red flags, admissibilidade, residual risk aceito | [template](../../toolkit/templates/agent-risk-record.md), cap. 04 |
+| 4 | **Registry entry** | primeiro registro | identidade, owners, lifecycle, tier, blueprint atual | [schema](../../toolkit/schemas/agent-registry.schema.json), seção 2 |
+| 5 | **Blueprint** | design aprovado | contrato técnico da versão: architecture, models, data, identity, tools, runtime, governance | [schema](../../toolkit/schemas/agent-blueprint.schema.json), seção 2.5 |
+| 6 | **RAI impact assessment** | quando o impact trigger dispara | impacto sobre pessoas, mitigação, residual impact | cap. 04, seção 2 |
+| 7 | **Release evidence pack** | no gate de publicação | testes, MPB, evidências recuperáveis, decisão | [schema](../../toolkit/schemas/release-evidence-manifest.schema.json), cap. 07 |
+| 8 | **Registros de vida operacional** | em operação | mudanças, attestations, incidentes, sunset | cap. 09 e cap. 05 |
+
+**Como as peças se conectam:** o `agent_id` é o elo. O blueprint carrega `assessmentRefs`, `controlIds` e `releaseEvidenceRef`; o registry carrega `currentBlueprint` e `evidenceLinks`; o risk record referencia o pre-screen e a decisão. **Nada no dossiê flutua solto: todo artefato referencia o agente, e os artefatos entre si.**
+
+**Por que isso importa:**
+
+- **Para o owner:** uma lista de pendências com nomes. "Falta o risk record e o evidence pack" é uma instrução executável; "a governança está incompleta" não é.
+- **Para o auditor:** um mapa do que deveria existir para cada agente — a ausência de qualquer peça é um finding com nome.
+- **Para a automação:** o que é referenciável é verificável. O [score de prontidão](07-evaluation-evidence-and-assurance.md) do cap. 07 pontua exatamente este conjunto — completeza por peça, com itens críticos bloqueadores.
+- **Para o legacy:** agente herdado que não tem dossiê começa a ser reconstruído pelo mesmo caminho (processo P1 do cap. 08), peça a peça, com `missing` explícito onde a evidência não existe.
+
+**Armadilhas comuns:**
+
+- **Confundir dossiê com um formulário único.** Não existe "o documento do agente" — existe o pacote vinculado. Fundir tudo num PDF mata a referenciabilidade e a automação.
+- **Dossiê completo com peças contraditórias.** Registry diz T1, blueprint diz T3: o dossiê não está pronto — está inconsistente. A reconciliação entre peças é parte do gate.
+- **Reconstruir evidência para o dossiê.** As peças nascem dos processos (o eval gera o relatório, o gate gera o decision record). Montar evidência depois, para satisfazer auditoria, custa mais e vale menos.
+- **Dossiê que nunca fecha.** Peças pendentes com owner e prazo são operação normal; peças pendentes sem prazo são dívida de governança acumulando.
 
 ## 3. Decidir o que construir: intake e adequação
 

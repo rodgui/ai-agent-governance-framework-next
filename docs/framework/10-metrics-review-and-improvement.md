@@ -32,53 +32,61 @@ O princípio que atravessa tudo: **métrica sem owner, threshold e ação não e
 
 Toda métrica tem finalidade de decisão, owner e consumidor accountable **antes da coleta**. O dicionário de métricas define: fórmula, população, fonte, qualidade, corte, segmentação, alvo e aviso de uso indevido. **Dois analistas reproduzem o valor; a authority consumidora declara qual decisão um threshold pode alterar.**
 
-### 1.2 Cobertura de governança e completude do inventário
+### 1.2 A taxonomia das métricas: cada uma mede um objeto
+
+Métricas de governança não formam uma lista plana — formam **camadas**, cada uma respondendo a uma pergunta diferente. Misturá-las no mesmo dashboard é a causa mais comum de "painel cheio e nenhuma decisão". A tabela é o mapa; as subseções seguintes detalham cada camada.
+
+| Camada | Pergunta que responde | Exemplos | Quem consome |
+|---|---|---|---|
+| **Inventário e estate** | o que existe e está governado? | cobertura do registry, % com owner, % com tier atribuído | governance owner |
+| **Agente individual** | este agente é seguro, bom e usado? | task success, erros, custo por resultado, adoção real | owners técnicos/de negócio |
+| **Capability e maturidade** | a organização sabe governar? | maturity por dimensão (0–4) | governance owner, sponsor |
+| **Processo de governança** | o processo é rápido e não bloqueia? | lead time por gate, retrabalho, gargalos | Run Authority |
+| **Risco e compliance** | quanto risco estamos carregando? | residual risk, incidentes, exceções vencidas | CRO, compliance, auditoria |
+| **Valor e portfólio** | o investimento compensa? | custo por resultado, KPI de negócio, agentes sem valor | business owners, sponsor |
+
+**A regra de navegação:** comece pela camada que responde à decisão da vez. Pedir métricas de inventário para decidir portfólio é usar o mapa errado — e o erro se repete em todo fórum que não declara qual camada está discutindo.
+
+### 1.3 Inventário e estate
 
 Medir a população declarada contra registros governados, registrados, com owner e atuais: fonte do denominador, data de reconciliação, ativos sem correspondência, confiança, exclusões e owner da remediação. **A cobertura não pode melhorar encolhendo um denominador não declarado; ativos de alto risco ausentes permanecem visíveis.**
 
-### 1.3 Desempenho de processo e latência de decisão
+Indicadores típicos: cobertura do registry; % de agentes com business e technical owner válidos; % com tier e admissibilidade atribuídos; % com blueprint vigente; agentes dormantes por período; shadow AI estimado × descoberto; idade média da última reconciliação. A fonte de cada um é o [inventário](03-inventory-portfolio-and-value.md) — sem inventário honesto, nenhuma métrica desta camada significa nada.
+
+### 1.4 Agente individual
+
+**Qualidade, segurança, fairness, privacidade e proteção.** Indicadores leading e lagging para o resultado nomeado: fórmula, população, fatias, threshold, baseline, confiança, qualidade da fonte e owner da resposta. **O indicador detecta deterioração significativa sem mascarar fatias reprovadas nem tratar ausência de telemetria como sucesso.** Métricas técnicas mínimas por agente (acurácia, tempo de resposta, taxa de erro, satisfação) são definidas pelo technical owner e monitoradas continuamente — a telemetria de runtime do [cap. 09](09-operations-incidents-and-continuity.md) é a fonte.
+
+**Adoção e comportamento do usuário.** Medir adoção pretendida, uso significativo e workaround inseguro por população-alvo: população elegível, uso ativo, conclusão, abandono, suporte, feedback e limitações de amostragem. **Usuários ativos medem frequência e retenção, não valor** — um agente pode ter uso mensal alto porque virou etapa obrigatória de um fluxo e ainda assim piorar o cycle time. Adoção só significa algo junto de qualidade e outcome.
+
+**Prontidão do dossiê.** O [score de prontidão](07-evaluation-evidence-and-assurance.md#score-de-prontidão-do-dossiê) por agente e a distribuição da população — quantos agentes estão no threshold do tier, quantos têm bloqueadores ativos, tempo médio até o dossiê fechar. **Score baixo generalizado é sintoma de processo doente, não de equipe preguiçosa.**
+
+### 1.5 Capability e maturidade
+
+Pontuar a capacidade organizacional **somente a partir de operação observada**, declarando separadamente confiança e cobertura da evidência: dimensão, critérios, evidência, pontuação 0–4, rationale, confiança, cobertura, revisor e alvo. **A pontuação não pode exceder o critério demonstrado mais baixo; a comparação usa escopo e método compatíveis.** Evidência fraca produz nota provisória, não nota otimista. O instrumento é o [maturity model](../../toolkit/maturity/maturity-model.md); o alvo por dimensão vem do [capability map](08-implementation-and-adoption.md).
+
+### 1.6 Processo de governança
 
 Medir fila, tempo de ciclo, atraso de handoff, retrabalho e envelhecimento de decisão por tier e resultado: timestamps, população, alvo de serviço, gargalo, exceção, demanda e premissas de capacidade. **Redução de latência não ignora evidência exigida; gargalos persistentes recebem owner e decisão de redesign.**
 
-### 1.4 Exposição a risco e risco residual
+Duas medidas desta camada merecem destaque por serem as mais falsificadas:
 
-O risco residual após tratamento verificado é apresentado à authority empoderada: risco inerente, evidência de tratamento, classificação residual, incerteza, condições de aceite, aprovador e expiração. **O time de entrega não pode auto-aceitar risco residual material; o aceite não sobrepõe admissibilidade ou lei** (ver [cap. 04](04-risk-impact-and-compliance.md)).
+- **Implementação de controle versus eficácia.** Reportar design, implementação, cobertura operacional e eficácia observada como **estados separados**: control ID, owner, população aplicável, evidência de implementação, método de teste, resultado, lacunas e data de reteste. **Um controle configurado não é chamado de eficaz sem evidência de resultado; eficácia reprovada muda risco ou aprovação.**
+- **Completude e qualidade das evidências.** Medir se a evidência exigida existe, é atual, atribuível, íntegra e relevante: requisito de evidência, população, status presente/ausente/obsoleta, integridade, revisor e remediação. **Evidência ausente ou de baixa qualidade reduz a confiança e não pode ser contada como controle aprovado.**
 
-### 1.5 Indicadores de qualidade, segurança, fairness, privacidade e proteção
+### 1.7 Risco e compliance
 
-Indicadores leading e lagging para o resultado nomeado: fórmula, população, fatias, threshold, baseline, confiança, qualidade da fonte e owner da resposta. **O indicador detecta deterioração significativa sem mascarar fatias reprovadas nem tratar ausência de telemetria como sucesso.**
+**Exposição a risco e risco residual.** O risco residual após tratamento verificado é apresentado à authority empoderada: risco inerente, evidência de tratamento, classificação residual, incerteza, condições de aceite, aprovador e expiração. **O time de entrega não pode auto-aceitar risco residual material; o aceite não sobrepõe admissibilidade ou lei** (ver [cap. 04](04-risk-impact-and-compliance.md)).
 
-### 1.6 Tendências de incidentes, exceções e remediação
+**Tendências de incidentes, exceções e remediação.** Analisar recorrência, envelhecimento, severidade, causa raiz e qualidade de fechamento: taxonomia comparável, período, população, reaberturas, itens vencidos, causas sistêmicas e ação da gestão. **A revisão distingue mais detecção de mais dano** — um aumento de incidentes pode significar piora ou melhor visibilidade; a análise decide qual. A revisão de exceções é a mais reveladora: **exceção que se repete não é exceção — é requisito que a policy não reconheceu ou controle que a operação não cumpre.**
 
-Analisar recorrência, envelhecimento, severidade, causa raiz e qualidade de fechamento: taxonomia comparável, período, população, reaberturas, itens vencidos, causas sistêmicas e ação da gestão. **A revisão distingue mais detecção de mais dano** — um aumento de incidentes pode significar piora ou melhor visibilidade; a análise decide qual.
+### 1.8 Valor e portfólio
 
-### 1.7 Implementação de controle versus eficácia
+**Resultado e realização de valor.** Resultado falseável, baseline pré-mudança e contrafactual crível com corte de evidências: owner da métrica, população, fórmula, alvo, fonte, confounders, custo e threshold. **A authority distingue criação, adoção, qualidade e resultado e interrompe o trabalho quando a evidência não suporta expansão.**
 
-Reportar design, implementação, cobertura operacional e eficácia observada como **estados separados**: control ID, owner, população aplicável, evidência de implementação, método de teste, resultado, lacunas e data de reteste. **Um controle configurado não é chamado de eficaz sem evidência de resultado; eficácia reprovada muda risco ou aprovação.**
+**Custo e eficiência (FinOps).** Atribuir consumo e custo total a agente, owner, ambiente e resultado (ver seção 3): custo unitário, orçamento, quota, previsão, variância, alocação compartilhada, anomalia e decisão de otimização. **Violação de threshold dispara throttling ou revisão; custo permanece separado de valor.**
 
-### 1.8 Completude e qualidade das evidências
-
-Medir se a evidência exigida existe, é atual, atribuível, íntegra e relevante: requisito de evidência, população, status presente/ausente/obsoleta, integridade, revisor e remediação. **Evidência ausente ou de baixa qualidade reduz a confiança e não pode ser contada como controle aprovado.**
-
-### 1.9 Adoção e comportamento do usuário
-
-Medir adoção pretendida, uso significativo e workaround inseguro por população-alvo: população elegível, uso ativo, conclusão, abandono, suporte, feedback e limitações de amostragem. **Usuários ativos medem frequência e retenção, não valor** — um agente pode ter uso mensal alto porque virou etapa obrigatória de um fluxo e ainda assim piorar o cycle time. Adoção só significa algo junto de qualidade e outcome.
-
-### 1.10 Custo e eficiência (FinOps)
-
-Atribuir consumo e custo total a agente, owner, ambiente e resultado (ver seção 3): custo unitário, orçamento, quota, previsão, variância, alocação compartilhada, anomalia e decisão de otimização. **Violação de threshold dispara throttling ou revisão; custo permanece separado de valor.**
-
-### 1.11 Resultado e realização de valor
-
-Resultado falseável, baseline pré-mudança e contrafactual crível com corte de evidências: owner da métrica, população, fórmula, alvo, fonte, confounders, custo e threshold. **A authority distingue criação, adoção, qualidade e resultado e interrompe o trabalho quando a evidência não suporta expansão.**
-
-### 1.12 Desempenho de fornecedores
-
-Fornecedores governados por due diligence, contrato, monitoramento e saída: serviço, owner, criticidade, evidência, obrigações, concentração, incidentes, subprocessadores, fallback e teste de saída. **Falha do fornecedor dispara contenção/fallback; a accountability permanece com a organização.**
-
-### 1.13 Avaliação de maturidade e confiança
-
-Pontuar a capacidade organizacional **somente a partir de operação observada**, declarando separadamente confiança e cobertura da evidência: dimensão, critérios, evidência, pontuação 0–4, rationale, confiança, cobertura, revisor e alvo. **A pontuação não pode exceder o critério demonstrado mais baixo; a comparação usa escopo e método compatíveis.** Evidência fraca produz nota provisória, não nota otimista.
+**Desempenho de fornecedores.** Fornecedores governados por due diligence, contrato, monitoramento e saída: serviço, owner, criticidade, evidência, obrigações, concentração, incidentes, subprocessadores, fallback e teste de saída. **Falha do fornecedor dispara contenção/fallback; a accountability permanece com a organização.**
 
 ## 2. KPIs, KRIs e governance dashboard
 
