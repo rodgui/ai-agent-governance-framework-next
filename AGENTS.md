@@ -7,7 +7,7 @@ Manter o framework de governança canônico e vendor-neutral para agentes de IA.
 ## Fronteiras canônicas
 
 - Este repositório é a autoridade para o framework, o catálogo de controles, os padrões de design, os templates reutilizáveis, os schemas, os exemplos fictícios, os crosswalks de pesquisa e os registros de manutenção do framework.
-- Não adicionar pricing de consultoria, material de vendas, playbooks de entrega específicos de clientes ou evidências organizacionais reais.
+- Não adicionar material comercial, de vendas ou de entrega específico de clientes, nem evidências organizacionais reais.
 - Não adicionar dados de clientes, do empregador ou de usuários. Exemplos devem ser comprovadamente fictícios.
 - Implementações de fornecedores podem aparecer somente como exemplos ou mappings não normativos; requisitos normativos devem permanecer vendor-neutral.
 
