@@ -26,7 +26,7 @@ CONTENT_DIRS = (
     "tools",
     "tests",
 )
-CONTENT_FILES = ("README.md", "CHANGELOG.md", "ROADMAP.md", "LICENSE", "CONTRIBUTING.md")
+CONTENT_FILES = ("README.md", "CONSUMO.md", "CHANGELOG.md", "ROADMAP.md", "LICENSE", "CONTRIBUTING.md")
 
 # Extensões copiadas para a área de staging. Schemas e exemplos são publicados como
 # fonte para que o leitor possa inspecionar o contrato, não apenas sua descrição.
