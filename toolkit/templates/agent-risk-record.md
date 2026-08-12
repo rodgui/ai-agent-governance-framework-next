@@ -91,7 +91,7 @@ Tier e admissibilidade são decisões separadas. Não use T4 como sinônimo de `
 - [ ] legal obligation or risk appetite
 - [ ] admissibility, condition or exception expiry
 
-## Decision
+## Decisão
 
 | Campo | Valor |
 | --- | --- |
@@ -102,6 +102,6 @@ Tier e admissibilidade são decisões separadas. Não use T4 como sinônimo de `
 | MPB/evidence pack refs | |
 | decision record ref | |
 
-**Decision rationale:**
+**Rationale da decisão:**
 
-**Missing evidence — nunca preencher por suposição:**
+**Evidência ausente — nunca preencher por suposição:**

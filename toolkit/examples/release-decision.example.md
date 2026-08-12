@@ -1,38 +1,38 @@
-# Example release decision — Service Desk Knowledge Agent
+# Exemplo de decisão de release — Service Desk Knowledge Agent
 
-> Fictitious and sanitized. This record does not authorize a real deployment.
+> Fictício e sanitizado. Este registro não autoriza uma implantação real.
 
-## Decision record
+## Registro de decisão
 
 - Gate: G5 — Onboarding/release
-- Scope: internal service-desk analysts
+- Escopo: analistas internos de service desk
 - Blueprint: 1.0
 - Tier: T2
-- Decision: `condition`
-- Authority: Example Design Authority
-- Date: 2026-08-01
-- Expiry: 2026-11-01
+- Decisão: `condition`
+- Autoridade: Example Design Authority
+- Data: 2026-08-01
+- Expiração: 2026-11-01
 
-## Evidence accepted
+## Evidências aceitas
 
-- [Architecture](architecture.example.md)
-- [Risk assessment](risk-assessment.example.md)
-- [Evaluation report](evaluation-report.example.md)
-- [Support runbook](support-runbook.example.md)
+- [Arquitetura](architecture.example.md)
+- [Avaliação de risco](risk-assessment.example.md)
+- [Relatório de avaliação](evaluation-report.example.md)
+- [Runbook de suporte](support-runbook.example.md)
 - [SLO](slo.example.md)
 
-## Conditions
+## Condições
 
-1. external responses require human review;
-2. personal data and credentials remain prohibited;
-3. any new connector or state-changing tool returns to G4/G5;
-4. quarantine and rollback must be exercised before reactivation after incident.
+1. respostas externas exigem revisão humana;
+2. dados pessoais e credenciais permanecem proibidos;
+3. qualquer novo conector ou ferramenta que altere estado retorna a G4/G5;
+4. quarentena e rollback devem ser exercitados antes da reativação após incidente.
 
-These four conditions are carried in machine-readable form by
-[`release-evidence-manifest.example.json`](release-evidence-manifest.example.json), each with an
-owner and a stated verification method. A condition that exists only in prose cannot be checked
-at the next gate.
+Estas quatro condições são transportadas em forma legível por máquina por
+[`release-evidence-manifest.example.json`](release-evidence-manifest.example.json), cada uma com um
+owner e um método de verificação declarado. Uma condição que existe apenas em prosa não pode ser verificada
+no próximo gate.
 
 ## Rationale
 
-The limited read-and-draft scope, evidence package and revocation path support conditional release. The decision does not cover new populations, tools, data classes or model versions.
+O escopo limitado de leitura e rascunho, o pacote de evidências e o caminho de revogação suportam release condicional. A decisão não cobre novas populações, ferramentas, classes de dados ou versões de modelo.

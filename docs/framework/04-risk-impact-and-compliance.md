@@ -20,213 +20,213 @@ Risco e admissibilidade são dimensões distintas e devem ser decididos separada
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 04.1 Risk-management methodology
+### 04.1 Metodologia de gestão de risco
 
-**Required decision/action.** For **risk-management methodology**, the organization must approve one repeatable method for context, identification, analysis, treatment, residual risk and review.
+**Decisão/ação obrigatória.** Para **metodologia de gestão de risco**, a organização deve aprovar um método repetível para contexto, identificação, análise, tratamento, risco residual e revisão.
 
-**Record and evidence.** The method must define scales, tiering, admissibility, evidence quality, authority, uncertainty and re-evaluation triggers.
+**Registro e evidência.** O método deve definir escalas, tiering, admissibilidade, qualidade de evidência, authority, incerteza e gatilhos de reavaliação.
 
-**Done when.** Two qualified assessors reach defensibly consistent outcomes and missing evidence cannot be interpreted as low risk.
+**Concluído quando.** Dois avaliadores qualificados alcançam resultados defensavelmente consistentes e evidência ausente não pode ser interpretada como risco baixo.
 
-### 04.2 Context and intended-use analysis
+### 04.2 Análise de contexto e uso pretendido
 
-**Required decision/action.** For **context and intended-use analysis**, the organization must analyze the real decision context, users, affected persons, scale, autonomy, environment and non-AI alternative.
+**Decisão/ação obrigatória.** Para **análise de contexto e uso pretendido**, a organização deve analisar o contexto real de decisão, usuários, pessoas afetadas, escala, autonomia, ambiente e a alternativa não-IA.
 
-**Record and evidence.** Retain intended and excluded uses, assumptions, dependencies, affected groups, failure consequences and evidence cutoff.
+**Registro e evidência.** Reter usos pretendidos e excluídos, premissas, dependências, grupos afetados, consequências de falha e corte de evidências.
 
-**Done when.** Risk, evaluation and oversight are based on the operating context rather than a generic model description.
+**Concluído quando.** Risco, avaliação e supervisão baseiam-se no contexto operacional em vez de uma descrição genérica de modelo.
 
-### 04.3 Foreseeable misuse and unintended use
+### 04.3 Uso indevido previsível e uso não intencional
 
-**Required decision/action.** For **foreseeable misuse and unintended use**, the organization must identify plausible misuse, abuse, automation bias, scope expansion and emergent interaction before release.
+**Decisão/ação obrigatória.** Para **uso indevido previsível e uso não intencional**, a organização deve identificar uso indevido plausível, abuso, viés de automação, expansão de escopo e interação emergente antes do release.
 
-**Record and evidence.** Record threat actor or user, scenario, precondition, impact, detection, preventive control, response and residual exposure.
+**Registro e evidência.** Registrar ator de ameaça ou usuário, cenário, pré-condição, impacto, detecção, controle preventivo, resposta e exposição residual.
 
-**Done when.** Material scenarios are tested or explicitly restricted and observed misuse feeds controls and reevaluation.
+**Concluído quando.** Cenários materiais são testados ou explicitamente restritos e uso indevido observado alimenta controles e reavaliação.
 
-### 04.4 Proportional classification
+### 04.4 Classificação proporcional
 
-**Required decision/action.** For **proportional classification**, the organization must classify the case using approved criteria, mandatory escalators and the most severe applicable outcome.
+**Decisão/ação obrigatória.** Para **classificação proporcional**, a organização deve classificar o caso usando critérios aprovados, escaladores obrigatórios e o resultado aplicável mais severo.
 
-**Record and evidence.** Record criterion results, red flags, rationale, confidence, reviewer and resulting route or response target.
+**Registro e evidência.** Registrar resultados por critério, red flags, rationale, confiança, revisor e rota resultante ou alvo de resposta.
 
-**Done when.** The same evidence yields consistent routing and under-classification is detected by review or reconciliation.
+**Concluído quando.** A mesma evidência produz encaminhamento consistente e sub-classificação é detectada por revisão ou reconciliação.
 
-### 04.5 Escalation and red-flag triggers
+### 04.5 Escalonamento e gatilhos de red flag
 
-**Required decision/action.** For **escalation and red-flag triggers**, the organization must define non-discretionary red flags that elevate review, controls or authority regardless of initial score.
+**Decisão/ação obrigatória.** Para **escalonamento e gatilhos de red flag**, a organização deve definir red flags não discricionárias que elevem revisão, controles ou authority independentemente da pontuação inicial.
 
-**Record and evidence.** Record trigger definition, detection source, minimum tier, required reviewers, blocked actions and disposition.
+**Registro e evidência.** Registrar definição do gatilho, fonte de detecção, tier mínimo, revisores exigidos, ações bloqueadas e disposição.
 
-**Done when.** A triggered flag cannot be waived by the requester and remains open until an authorized disposition is evidenced.
+**Concluído quando.** Uma flag acionada não pode ser dispensada pelo solicitante e permanece aberta até uma disposição autorizada ser evidenciada.
 
-### 04.6 Permitted, conditional and prohibited use
+### 04.6 Uso permitted, conditional e prohibited
 
-**Required decision/action.** For **permitted, conditional and prohibited use**, the organization must classify uses as permitted, conditional, restricted or prohibited independently from the risk score.
+**Decisão/ação obrigatória.** Para **uso permitted, conditional e prohibited**, a organização deve classificar usos como permitted, conditional, restricted ou prohibited independentemente da pontuação de risco.
 
-**Record and evidence.** Record rule source, conditions, affected use, rationale, authority, expiry and prohibited workarounds.
+**Registro e evidência.** Registrar origem da regra, condições, uso afetado, rationale, authority, expiração e workarounds proibidos.
 
-**Done when.** A prohibited use cannot proceed through compensating controls and a conditional use cannot operate after its conditions expire.
+**Concluído quando.** Um uso proibido não pode prosseguir por meio de compensating controls e um uso condicional não pode operar após a expiração das condições.
 
-### 04.7 AI impact assessment
+### 04.7 Avaliação de impacto de IA
 
-**Required decision/action.** For **ai impact assessment**, the organization must assess plausible beneficial and adverse effects on each relevant person, group, right and environment across the lifecycle.
+**Decisão/ação obrigatória.** Para **avaliação de impacto de IA**, a organização deve avaliar efeitos benéficos e adversos plausíveis sobre cada pessoa, grupo, direito e ambiente relevantes ao longo do lifecycle.
 
-**Record and evidence.** Record affected population, pathway, severity, likelihood, distribution, mitigation, residual impact, consultation and owner.
+**Registro e evidência.** Registrar população afetada, via de impacto, severidade, probabilidade, distribuição, mitigação, impacto residual, consulta e owner.
 
-**Done when.** Material impacts are tested with affected-context evidence and unresolved unacceptable impact blocks deployment or expansion.
+**Concluído quando.** Impactos materiais são testados com evidência do contexto afetado e impacto inaceitável não resolvido bloqueia implantação ou expansão.
 
-### 04.8 Effects on legal position and life opportunities
+### 04.8 Efeitos sobre posição legal e oportunidades de vida
 
-**Required decision/action.** For **effects on legal position and life opportunities**, the organization must assess plausible beneficial and adverse effects on each relevant person, group, right and environment across the lifecycle.
+**Decisão/ação obrigatória.** Para **efeitos sobre posição legal e oportunidades de vida**, a organização deve avaliar efeitos benéficos e adversos plausíveis sobre cada pessoa, grupo, direito e ambiente relevantes ao longo do lifecycle.
 
-**Record and evidence.** Record affected population, pathway, severity, likelihood, distribution, mitigation, residual impact, consultation and owner.
+**Registro e evidência.** Registrar população afetada, via de impacto, severidade, probabilidade, distribuição, mitigação, impacto residual, consulta e owner.
 
-**Done when.** Material impacts are tested with affected-context evidence and unresolved unacceptable impact blocks deployment or expansion.
+**Concluído quando.** Impactos materiais são testados com evidência do contexto afetado e impacto inaceitável não resolvido bloqueia implantação ou expansão.
 
-### 04.9 Physical and psychological safety
+### 04.9 Segurança física e psicológica
 
-**Required decision/action.** For **physical and psychological safety**, the organization must assess plausible beneficial and adverse effects on each relevant person, group, right and environment across the lifecycle.
+**Decisão/ação obrigatória.** Para **segurança física e psicológica**, a organização deve avaliar efeitos benéficos e adversos plausíveis sobre cada pessoa, grupo, direito e ambiente relevantes ao longo do lifecycle.
 
-**Record and evidence.** Record affected population, pathway, severity, likelihood, distribution, mitigation, residual impact, consultation and owner.
+**Registro e evidência.** Registrar população afetada, via de impacto, severidade, probabilidade, distribuição, mitigação, impacto residual, consulta e owner.
 
-**Done when.** Material impacts are tested with affected-context evidence and unresolved unacceptable impact blocks deployment or expansion.
+**Concluído quando.** Impactos materiais são testados com evidência do contexto afetado e impacto inaceitável não resolvido bloqueia implantação ou expansão.
 
-### 04.10 Human rights and fundamental rights
+### 04.10 Direitos humanos e direitos fundamentais
 
-**Required decision/action.** For **human rights and fundamental rights**, the organization must assess plausible beneficial and adverse effects on each relevant person, group, right and environment across the lifecycle.
+**Decisão/ação obrigatória.** Para **direitos humanos e direitos fundamentais**, a organização deve avaliar efeitos benéficos e adversos plausíveis sobre cada pessoa, grupo, direito e ambiente relevantes ao longo do lifecycle.
 
-**Record and evidence.** Record affected population, pathway, severity, likelihood, distribution, mitigation, residual impact, consultation and owner.
+**Registro e evidência.** Registrar população afetada, via de impacto, severidade, probabilidade, distribuição, mitigação, impacto residual, consulta e owner.
 
-**Done when.** Material impacts are tested with affected-context evidence and unresolved unacceptable impact blocks deployment or expansion.
+**Concluído quando.** Impactos materiais são testados com evidência do contexto afetado e impacto inaceitável não resolvido bloqueia implantação ou expansão.
 
-### 04.11 Societal and environmental effects
+### 04.11 Efeitos sociais e ambientais
 
-**Required decision/action.** For **societal and environmental effects**, the organization must assess plausible beneficial and adverse effects on each relevant person, group, right and environment across the lifecycle.
+**Decisão/ação obrigatória.** Para **efeitos sociais e ambientais**, a organização deve avaliar efeitos benéficos e adversos plausíveis sobre cada pessoa, grupo, direito e ambiente relevantes ao longo do lifecycle.
 
-**Record and evidence.** Record affected population, pathway, severity, likelihood, distribution, mitigation, residual impact, consultation and owner.
+**Registro e evidência.** Registrar população afetada, via de impacto, severidade, probabilidade, distribuição, mitigação, impacto residual, consulta e owner.
 
-**Done when.** Material impacts are tested with affected-context evidence and unresolved unacceptable impact blocks deployment or expansion.
+**Concluído quando.** Impactos materiais são testados com evidência do contexto afetado e impacto inaceitável não resolvido bloqueia implantação ou expansão.
 
-### 04.12 Privacy and data protection
+### 04.12 Privacidade e proteção de dados
 
-**Required decision/action.** For **privacy and data protection**, the organization must establish purpose, lawful authority, minimization, rights handling, retention and transfer constraints for personal data.
+**Decisão/ação obrigatória.** Para **privacidade e proteção de dados**, a organização deve estabelecer finalidade, base legal, minimização, tratamento de direitos, retenção e restrições de transferência para dados pessoais.
 
-**Record and evidence.** Retain data categories, subjects, source, processing purpose, access, flow, DPIA or equivalent, tests and deletion evidence.
+**Registro e evidência.** Reter categorias de dados, titulares, origem, finalidade de processamento, acesso, fluxo, DPIA ou equivalente, testes e evidência de exclusão.
 
-**Done when.** Unauthorized data paths fail testing, subject rights are operable and material processing change reopens assessment.
+**Concluído quando.** Caminhos de dados não autorizados falham em teste, direitos dos titulares são operáveis e mudança material de processamento reabre a avaliação.
 
-### 04.13 Fairness definitions and harmful bias
+### 04.13 Definições de fairness e viés prejudicial
 
-**Required decision/action.** For **fairness definitions and harmful bias**, the organization must define context-specific fairness harms, relevant groups, slices and acceptable disparity before testing.
+**Decisão/ação obrigatória.** Para **definições de fairness e viés prejudicial**, a organização deve definir danos de fairness específicos do contexto, grupos relevantes, fatias e disparidade aceitável antes de testar.
 
-**Record and evidence.** Record group rationale, metrics, sample adequacy, thresholds, results, uncertainty, mitigations and residual impact.
+**Registro e evidência.** Registrar rationale do grupo, métricas, adequação da amostra, thresholds, resultados, incerteza, mitigações e impacto residual.
 
-**Done when.** Aggregate performance cannot hide a failed material slice and unresolved harm is escalated to the proper authority.
+**Concluído quando.** Desempenho agregado não pode esconder uma fatia material reprovada e dano não resolvido é escalonado à authority adequada.
 
-### 04.14 Transparency, notice and disclosure
+### 04.14 Transparência, aviso e divulgação
 
-**Required decision/action.** For **transparency, notice and disclosure**, the organization must provide timely notice of AI involvement, material limitations, accountable owner and a usable contest or remedy route.
+**Decisão/ação obrigatória.** Para **transparência, aviso e divulgação**, a organização deve fornecer aviso oportuno do envolvimento de IA, limitações materiais, owner accountable e uma rota utilizável de contestação ou reparação.
 
-**Record and evidence.** Retain approved notice, audience, channel, decision explanation, complaint SLA, escalation, outcome and remediation evidence.
+**Registro e evidência.** Reter aviso aprovado, público, canal, explicação da decisão, SLA de reclamação, escalonamento, resultado e evidência de remediação.
 
-**Done when.** Affected persons can identify the interaction, reach a responsible human and obtain review or redress within the target.
+**Concluído quando.** Pessoas afetadas conseguem identificar a interação, alcançar um humano responsável e obter revisão ou reparação dentro do alvo.
 
-### 04.15 Explainability appropriate to context
+### 04.15 Explainability adequada ao contexto
 
-**Required decision/action.** For **explainability appropriate to context**, the organization must define the explanation needed by users, affected persons, operators and reviewers for the actual decision context.
+**Decisão/ação obrigatória.** Para **explainability adequada ao contexto**, a organização deve definir a explicação necessária para usuários, pessoas afetadas, operadores e revisores no contexto real de decisão.
 
-**Record and evidence.** Record audience, decision, explanation content, method, fidelity limits, timing and comprehension evidence.
+**Registro e evidência.** Registrar público, decisão, conteúdo da explicação, método, limites de fidelidade, momento e evidência de compreensão.
 
-**Done when.** The explanation supports the required action or contest without revealing protected information or overstating model certainty.
+**Concluído quando.** A explicação suporta a ação ou contestação exigida sem revelar informação protegida nem exagerar a certeza do modelo.
 
-### 04.16 Human oversight and meaningful intervention
+### 04.16 Supervisão humana e intervenção significativa
 
-**Required decision/action.** For **human oversight and meaningful intervention**, the organization must place a competent human at a decision point where intervention remains timely, informed and technically effective.
+**Decisão/ação obrigatória.** Para **supervisão humana e intervenção significativa**, a organização deve posicionar um humano competente em um ponto de decisão onde a intervenção permaneça oportuna, informada e tecnicamente eficaz.
 
-**Record and evidence.** Record trigger, information presented, authority, response time, override path, workload, training and exercised test.
+**Registro e evidência.** Registrar gatilho, informações apresentadas, authority, tempo de resposta, caminho de override, carga de trabalho, treinamento e teste exercitado.
 
-**Done when.** The human can detect, stop, correct and escalate a representative failure rather than rubber-stamping an irreversible action.
+**Concluído quando.** O humano consegue detectar, interromper, corrigir e escalonar uma falha representativa em vez de carimbar uma ação irreversível.
 
-### 04.17 Accessibility and vulnerable populations
+### 04.17 Acessibilidade e populações vulneráveis
 
-**Required decision/action.** For **accessibility and vulnerable populations**, the organization must assess plausible beneficial and adverse effects on each relevant person, group, right and environment across the lifecycle.
+**Decisão/ação obrigatória.** Para **acessibilidade e populações vulneráveis**, a organização deve avaliar efeitos benéficos e adversos plausíveis sobre cada pessoa, grupo, direito e ambiente relevantes ao longo do lifecycle.
 
-**Record and evidence.** Record affected population, pathway, severity, likelihood, distribution, mitigation, residual impact, consultation and owner.
+**Registro e evidência.** Registrar população afetada, via de impacto, severidade, probabilidade, distribuição, mitigação, impacto residual, consulta e owner.
 
-**Done when.** Material impacts are tested with affected-context evidence and unresolved unacceptable impact blocks deployment or expansion.
+**Concluído quando.** Impactos materiais são testados com evidência do contexto afetado e impacto inaceitável não resolvido bloqueia implantação ou expansão.
 
-### 04.18 Intellectual property and content rights
+### 04.18 Propriedade intelectual e direitos de conteúdo
 
-**Required decision/action.** For **intellectual property and content rights**, the organization must verify rights and restrictions for training, retrieval, prompts, outputs, code and generated content.
+**Decisão/ação obrigatória.** Para **propriedade intelectual e direitos de conteúdo**, a organização deve verificar direitos e restrições para treinamento, recuperação, prompts, saídas, código e conteúdo gerado.
 
-**Record and evidence.** Record source license, permission, attribution, usage restriction, takedown route, filter or control and unresolved claim.
+**Registro e evidência.** Registrar licença da fonte, permissão, atribuição, restrição de uso, rota de takedown, filtro ou controle e alegação não resolvida.
 
-**Done when.** Unlicensed or incompatible content is blocked or removed and downstream obligations remain traceable.
+**Concluído quando.** Conteúdo sem licença ou incompatível é bloqueado ou removido e obrigações a jusante permanecem rastreáveis.
 
-### 04.19 Information integrity and harmful content
+### 04.19 Integridade da informação e conteúdo prejudicial
 
-**Required decision/action.** For **information integrity and harmful content**, the organization must define acceptable factuality, source quality and harmful-content limits for the use context.
+**Decisão/ação obrigatória.** Para **integridade da informação e conteúdo prejudicial**, a organização deve definir factualidade aceitável, qualidade de fonte e limites de conteúdo prejudicial para o contexto de uso.
 
-**Record and evidence.** Record claim categories, authoritative sources, test set, citation checks, thresholds, failure examples and response.
+**Registro e evidência.** Registrar categorias de afirmação, fontes autoritativas, conjunto de teste, verificações de citação, thresholds, exemplos de falha e resposta.
 
-**Done when.** Unsupported material claims are detected or disclosed and failure above threshold blocks or constrains the use.
+**Concluído quando.** Alegações materiais sem suporte são detectadas ou divulgadas e falha acima do threshold bloqueia ou restringe o uso.
 
-### 04.20 Security and abuse risk
+### 04.20 Segurança e risco de abuso
 
-**Required decision/action.** For **security and abuse risk**, the organization must model threats across identity, prompt, data, tool, runtime and supply-chain boundaries and test material abuse paths.
+**Decisão/ação obrigatória.** Para **segurança e risco de abuso**, a organização deve modelar ameaças através das fronteiras de identidade, prompt, dados, ferramenta, runtime e supply chain e testar caminhos materiais de abuso.
 
-**Record and evidence.** Retain threat model, scenarios, attack preconditions, test evidence, findings, mitigations, residual risk and retest result.
+**Registro e evidência.** Reter threat model, cenários, pré-condições de ataque, evidência de teste, descobertas, mitigações, risco residual e resultado de reteste.
 
-**Done when.** High-impact attack paths are prevented or contained and open blocking findings prevent release.
+**Concluído quando.** Caminhos de ataque de alto impacto são prevenidos ou contidos e descobertas bloqueantes abertas impedem o release.
 
-### 04.21 Third-party and value-chain risk
+### 04.21 Risco de terceiros e cadeia de valor
 
-**Required decision/action.** For **third-party and value-chain risk**, the organization must govern supplier and downstream dependencies through due diligence, contract, monitoring and exit planning.
+**Decisão/ação obrigatória.** Para **risco de terceiros e cadeia de valor**, a organização deve governar fornecedores e dependências a jusante por due diligence, contrato, monitoramento e planejamento de saída.
 
-**Record and evidence.** Record service, owner, criticality, evidence, obligations, concentration, incidents, sub-processors, fallback and exit test.
+**Registro e evidência.** Registrar serviço, owner, criticidade, evidência, obrigações, concentração, incidentes, subprocessadores, fallback e teste de saída.
 
-**Done when.** Supplier failure triggers the agreed containment or fallback and accountability remains with the organization.
+**Concluído quando.** Falha do fornecedor dispara a contenção ou fallback acordado e a accountability permanece com a organização.
 
-### 04.22 Risk treatment and compensating controls
+### 04.22 Tratamento de risco e compensating controls
 
-**Required decision/action.** For **risk treatment and compensating controls**, the organization must select treatments that reduce identified risk and document why residual exposure is acceptable or remains blocked.
+**Decisão/ação obrigatória.** Para **tratamento de risco e compensating controls**, a organização deve selecionar tratamentos que reduzam o risco identificado e documentar por que a exposição residual é aceitável ou permanece bloqueada.
 
-**Record and evidence.** Record risk-control linkage, control owner, implementation state, effectiveness test, compensating limit and residual rating.
+**Registro e evidência.** Registrar vínculo risco-controle, owner do controle, estado de implementação, teste de eficácia, limite compensatório e classificação residual.
 
-**Done when.** The treatment passes its effectiveness test and a compensating control expires with the condition that justified it.
+**Concluído quando.** O tratamento passa no teste de eficácia e um controle compensatório expira junto com a condição que o justificava.
 
-### 04.23 Residual-risk decision
+### 04.23 Decisão de risco residual
 
-**Required decision/action.** For **residual-risk decision**, the organization must present residual risk after verified treatment to the authority empowered for that exposure.
+**Decisão/ação obrigatória.** Para **decisão de risco residual**, a organização deve apresentar o risco residual após tratamento verificado à authority empoderada para aquela exposição.
 
-**Record and evidence.** Record inherent risk, treatment evidence, residual rating, uncertainty, acceptance conditions, approver and expiry.
+**Registro e evidência.** Registrar risco inerente, evidência de tratamento, classificação residual, incerteza, condições de aceite, aprovador e expiração.
 
-**Done when.** The delivery team cannot self-accept material residual risk and acceptance does not override admissibility or law.
+**Concluído quando.** O time de entrega não pode auto-aceitar risco residual material e o aceite não sobrepõe admissibilidade ou lei.
 
-### 04.24 Communication, contestability and redress
+### 04.24 Comunicação, contestabilidade e reparação
 
-**Required decision/action.** For **communication, contestability and redress**, the organization must provide timely notice of AI involvement, material limitations, accountable owner and a usable contest or remedy route.
+**Decisão/ação obrigatória.** Para **comunicação, contestabilidade e reparação**, a organização deve fornecer aviso oportuno do envolvimento de IA, limitações materiais, owner accountable e uma rota utilizável de contestação ou reparação.
 
-**Record and evidence.** Retain approved notice, audience, channel, decision explanation, complaint SLA, escalation, outcome and remediation evidence.
+**Registro e evidência.** Reter aviso aprovado, público, canal, explicação da decisão, SLA de reclamação, escalonamento, resultado e evidência de remediação.
 
-**Done when.** Affected persons can identify the interaction, reach a responsible human and obtain review or redress within the target.
+**Concluído quando.** Pessoas afetadas conseguem identificar a interação, alcançar um humano responsável e obter revisão ou reparação dentro do alvo.
 
-### 04.25 Regulatory and standards crosswalk
+### 04.25 Crosswalk regulatório e de normas
 
-**Required decision/action.** For **regulatory and standards crosswalk**, the organization must map obligations and standards only where a primary or properly attributed source supports the relationship.
+**Decisão/ação obrigatória.** Para **crosswalk regulatório e de normas**, a organização deve mapear obrigações e normas somente onde uma fonte primária ou adequadamente atribuída suporta a relação.
 
-**Record and evidence.** Record source, version, clause or provision, mapped artifact, relation type, coverage, caveat and reviewer.
+**Registro e evidência.** Registrar fonte, versão, cláusula ou disposição, artefato mapeado, tipo de relação, cobertura, ressalva e revisor.
 
-**Done when.** The crosswalk distinguishes alignment from compliance and does not invent mappings to inaccessible proprietary text.
+**Concluído quando.** O crosswalk distingue alinhamento de compliance e não inventa mapeamentos para texto proprietário inacessível.
 
-### 04.26 Review triggers and continuous reassessment
+### 04.26 Gatilhos de revisão e reavaliação contínua
 
-**Required decision/action.** For **review triggers and continuous reassessment**, the organization must define material changes and external events that reopen risk, approval, evaluation or contract compatibility.
+**Decisão/ação obrigatória.** Para **gatilhos de revisão e reavaliação contínua**, a organização deve definir mudanças materiais e eventos externos que reabram risco, aprovação, avaliação ou compatibilidade contratual.
 
-**Record and evidence.** Record trigger, detection source, impacted assets and evidence, interim control, owner, due date and disposition.
+**Registro e evidência.** Registrar gatilho, fonte de detecção, ativos e evidências impactados, controle provisório, owner, data de vencimento e disposição.
 
-**Done when.** Triggered assets cannot rely indefinitely on prior approval and the new decision is linked to the changed version.
+**Concluído quando.** Ativos acionados não podem depender indefinidamente de aprovação anterior e a nova decisão é vinculada à versão alterada.
 
 
 ## Conteúdo canônico incorporado

@@ -1,40 +1,40 @@
 # AGENTS.md — AI Agent Governance Framework Next
 
-## Mission
+## Missão
 
-Maintain the canonical, vendor-neutral governance framework for AI agents. The repository must explain the complete path from no formal governance to sustained business-as-usual operation and must keep policy, controls, evidence and implementation guidance traceable.
+Manter o framework de governança canônico e vendor-neutral para agentes de IA. O repositório deve explicar o caminho completo desde a ausência de governança formal até a operação sustentada no business as usual e deve manter policy, controles, evidências e orientação de implementação rastreáveis.
 
-## Canonical boundaries
+## Fronteiras canônicas
 
-- This repository is the authority for the framework, control catalog, design patterns, reusable templates, schemas, fictional examples, research crosswalks and framework-maintenance records.
-- Do not add consulting pricing, sales collateral, client-specific delivery playbooks or real organizational evidence.
-- Do not add client, employer or customer data. Examples must be demonstrably fictional.
-- Vendor implementations may appear only as non-normative examples or mappings; normative requirements must remain vendor-neutral.
+- Este repositório é a autoridade para o framework, o catálogo de controles, os padrões de design, os templates reutilizáveis, os schemas, os exemplos fictícios, os crosswalks de pesquisa e os registros de manutenção do framework.
+- Não adicionar pricing de consultoria, material de vendas, playbooks de entrega específicos de clientes ou evidências organizacionais reais.
+- Não adicionar dados de clientes, do empregador ou de usuários. Exemplos devem ser comprovadamente fictícios.
+- Implementações de fornecedores podem aparecer somente como exemplos ou mappings não normativos; requisitos normativos devem permanecer vendor-neutral.
 
-## Documentation rules
+## Regras de documentação
 
-- Preserve definitions, rationale, conditions, exceptions, procedures, controls, evidence and examples. Do not replace detailed material with generic summaries.
-- Define specialized terms and expand abbreviations on first use.
-- Every normative requirement must identify applicability, accountable role, expected evidence and validation method, directly or by an unambiguous link.
-- Link chapters to controls, patterns, templates, schemas and examples rather than duplicating diverging copies.
-- Cite primary sources. Label legal interpretation, normative requirements, guidance and case-study observations distinctly.
+- Preservar definições, rationale, condições, exceções, procedimentos, controles, evidências e exemplos. Não substituir material detalhado por resumos genéricos.
+- Definir termos especializados e expandir abreviações no primeiro uso.
+- Todo requisito normativo deve identificar aplicabilidade, papel responsável, evidência esperada e método de validação, diretamente ou por um link inequívoco.
+- Vincular capítulos a controles, padrões, templates, schemas e exemplos em vez de duplicar cópias divergentes.
+- Citar fontes primárias. Rotular distintamente interpretação legal, requisitos normativos, orientação e observações de estudo de caso.
 
-## Change discipline
+## Disciplina de mudanças
 
-1. Identify affected requirements, controls, artifacts and crosswalks.
-2. Update the canonical content and every dependent reference in the same change.
-3. Add or update tests when a schema, control ID, validation rule or generator changes.
-4. Update `CHANGELOG.md` for user-visible changes.
-5. Record material architectural or governance decisions in `project/decisions/`.
-6. Never rewrite migration provenance or historical decisions silently.
+1. Identificar requisitos, controles, artefatos e crosswalks afetados.
+2. Atualizar o conteúdo canônico e toda referência dependente na mesma mudança.
+3. Adicionar ou atualizar testes quando um schema, control ID, regra de validação ou gerador mudar.
+4. Atualizar `CHANGELOG.md` para mudanças visíveis ao usuário.
+5. Registrar decisões arquiteturais ou de governança materiais em `project/decisions/`.
+6. Nunca reescrever provenance de migração ou decisões históricas silenciosamente.
 
-## Required validation
+## Validação obrigatória
 
-Before committing, run the repository validation entry point documented in `README.md`. At minimum validate Markdown structure, internal links, MkDocs build, JSON schemas, examples, IDs, cross-references, Python tests, secret scanning and fictional-data constraints.
+Antes de commitar, execute o ponto de entrada de validação do repositório documentado em `README.md`. No mínimo, valide estrutura Markdown, links internos, build MkDocs, schemas JSON, exemplos, IDs, referências cruzadas, testes Python, varredura de segredos e restrições de dados fictícios.
 
-## Prohibited actions
+## Ações proibidas
 
-- Do not modify `/Users/rodgui/Nox/Projects/ai-agent-governance-framework`.
-- Do not publish, create remotes or push without Rodgui's explicit approval.
-- Do not introduce credentials, tokens, personal data or confidential corporate information.
-- Do not resolve a material contradiction or delete substantive content without a recorded decision.
+- Não modificar `/Users/rodgui/Nox/Projects/ai-agent-governance-framework`.
+- Não publicar, criar remotes ou fazer push sem aprovação explícita de Rodgui.
+- Não introduzir credenciais, tokens, dados pessoais ou informações corporativas confidenciais.
+- Não resolver contradição material nem excluir conteúdo substantivo sem decisão registrada.

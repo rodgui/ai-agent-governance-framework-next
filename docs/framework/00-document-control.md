@@ -16,85 +16,85 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 00.1 Identification and purpose
+### 00.1 Identificação e finalidade
 
-**Required decision/action.** For **identification and purpose**, the organization must assign a stable document identifier and state the decision problem, audience and intended use.
+**Decisão/ação obrigatória.** Para **identificação e finalidade**, a organização deve atribuir um identificador de documento estável e declarar o problema de decisão, o público e o uso pretendido.
 
-**Record and evidence.** Record identifier, title, purpose, audience, normative status and repository location in document control.
+**Registro e evidência.** Registrar identificador, título, finalidade, público, status normativo e localização no repositório no controle do documento.
 
-**Done when.** A reader can distinguish this framework, its dependent products and its non-goals without relying on tribal knowledge.
+**Concluído quando.** Um leitor consegue distinguir este framework, seus produtos dependentes e seus não-objetivos sem depender de conhecimento tribal.
 
-### 00.2 Document owner and accountable authority
+### 00.2 Owner do documento e autoridade responsável
 
-**Required decision/action.** For **document owner and accountable authority**, the organization must name one accountable authority and one operational custodian for the document.
+**Decisão/ação obrigatória.** Para **owner do documento e autoridade responsável**, a organização deve nomear uma autoridade responsável e um custodiano operacional para o documento.
 
-**Record and evidence.** Record role, named delegate where applicable, authority source, contact route and succession rule.
+**Registro e evidência.** Registrar papel, delegado nomeado quando aplicável, fonte de autoridade, rota de contato e regra de sucessão.
 
-**Done when.** Approval, interpretation, scheduled review and emergency change each have an unambiguous decision maker.
+**Concluído quando.** Aprovação, interpretação, revisão programada e mudança emergencial têm cada uma um tomador de decisão inequívoco.
 
-### 00.3 Approval status and normative force
+### 00.3 Status de aprovação e força normativa
 
-**Required decision/action.** For **approval status and normative force**, the organization must declare whether the artifact is draft, approved, historical, informative or deprecated and what that status permits.
+**Decisão/ação obrigatória.** Para **status de aprovação e força normativa**, a organização deve declarar se o artefato é draft, aprovado, histórico, informativo ou descontinuado e o que esse status permite.
 
-**Record and evidence.** Retain approval decision, approver, date, conditions, effective date and evidence of adoption.
+**Registro e evidência.** Reter decisão de aprovação, aprovador, data, condições, data de efetividade e evidência de adoção.
 
-**Done when.** No draft, case study or historical source can be mistaken for a current organizational requirement.
+**Concluído quando.** Nenhum draft, estudo de caso ou fonte histórica pode ser confundido com um requisito organizacional vigente.
 
-### 00.4 Version, effective date and review cycle
+### 00.4 Versão, data de efetividade e ciclo de revisão
 
-**Required decision/action.** For **version, effective date and review cycle**, the organization must version every material change and bind it to effective, review and supersession dates.
+**Decisão/ação obrigatória.** Para **versão, data de efetividade e ciclo de revisão**, a organização deve versionar toda mudança material e vinculá-la a datas de efetividade, revisão e supersessão.
 
-**Record and evidence.** Retain change description, author, approver, impacted contracts, migration action and prior-version reference.
+**Registro e evidência.** Reter descrição da mudança, autor, aprovador, contratos impactados, ação de migração e referência à versão anterior.
 
-**Done when.** Consumers can identify the applicable version and incompatible records are migrated, rejected or explicitly grandfathered.
+**Concluído quando.** Consumidores identificam a versão aplicável e registros incompatíveis são migrados, rejeitados ou explicitamente grandfather.
 
-### 00.5 Scope of application
+### 00.5 Escopo de aplicação
 
-**Required decision/action.** For **scope of application**, the organization must enumerate inclusions, exclusions, jurisdictions, lifecycle stages, organizational units and affected stakeholder classes.
+**Decisão/ação obrigatória.** Para **escopo de aplicação**, a organização deve enumerar inclusões, exclusões, jurisdições, estágios de lifecycle, unidades organizacionais e classes de stakeholders afetados.
 
-**Record and evidence.** Retain a scope statement with boundary rationale, external obligations, delegated local standards and expiry for exclusions.
+**Registro e evidência.** Reter declaração de escopo com rationale de fronteira, obrigações externas, padrões locais delegados e expiração de exclusões.
 
-**Done when.** Intake can route every candidate as in scope, out of scope or decision required, with no implicit exemption.
+**Concluído quando.** O intake consegue encaminhar cada candidato como dentro do escopo, fora do escopo ou exigindo decisão, sem isenção implícita.
 
-### 00.6 Related policies, standards and records
+### 00.6 Políticas, padrões e registros relacionados
 
-**Required decision/action.** For **related policies, standards and records**, the organization must map this framework to superior policies, subordinate standards and local procedures without creating a second canonical source.
+**Decisão/ação obrigatória.** Para **políticas, padrões e registros relacionados**, a organização deve mapear este framework para políticas superiores, padrões subordinados e procedimentos locais sem criar uma segunda fonte canônica.
 
-**Record and evidence.** Record relationship type, owner, version, conflict rule and the exact requirement or decision linked.
+**Registro e evidência.** Registrar tipo de relacionamento, owner, versão, regra de conflito e o requisito ou decisão exata vinculada.
 
-**Done when.** A conflict resolves through an approved precedence rule and downstream artifacts can be impact-assessed on change.
+**Concluído quando.** Um conflito resolve-se por regra de precedência aprovada e artefatos a jusante podem ser avaliados por impacto em caso de mudança.
 
-### 00.7 Change, consultation and approval process
+### 00.7 Processo de mudança, consulta e aprovação
 
-**Required decision/action.** For **change, consultation and approval process**, the organization must route material changes through impact analysis, affected-function consultation and approval.
+**Decisão/ação obrigatória.** Para **processo de mudança, consulta e aprovação**, a organização deve encaminhar mudanças materiais por análise de impacto, consulta às funções afetadas e aprovação.
 
-**Record and evidence.** Retain proposal, rationale, consulted roles, objections, compatibility result, decision and migration plan.
+**Registro e evidência.** Reter proposta, rationale, papéis consultados, objeções, resultado de compatibilidade, decisão e plano de migração.
 
-**Done when.** Accepted decisions are superseded rather than silently rewritten and affected dependents receive a traceable update.
+**Concluído quando.** Decisões aceitas são superseded em vez de reescritas silenciosamente e dependentes afetados recebem atualização rastreável.
 
-### 00.8 Distribution, access and retention
+### 00.8 Distribuição, acesso e retenção
 
-**Required decision/action.** For **distribution, access and retention**, the organization must define who may read, change and retrieve the record, for how long and under which legal hold or deletion rule.
+**Decisão/ação obrigatória.** Para **distribuição, acesso e retenção**, a organização deve definir quem pode ler, alterar e recuperar o registro, por quanto tempo e sob qual regra de legal hold ou exclusão.
 
-**Record and evidence.** Record classification, access groups, custodian, retention trigger, minimum period, disposition and audit retrieval path.
+**Registro e evidência.** Registrar classificação, grupos de acesso, custodiano, gatilho de retenção, período mínimo, disposição e caminho de recuperação de auditoria.
 
-**Done when.** Authorized evidence is retrievable within the required time and expired data is disposed of without breaking required lineage.
+**Concluído quando.** Evidências autorizadas são recuperáveis no prazo exigido e dados expirados são descartados sem romper a linhagem exigida.
 
-### 00.9 Interpretation and conflict resolution
+### 00.9 Interpretação e resolução de conflitos
 
-**Required decision/action.** For **interpretation and conflict resolution**, the organization must define the authority and escalation route for ambiguous, conflicting or locally inapplicable requirements.
+**Decisão/ação obrigatória.** Para **interpretação e resolução de conflitos**, a organização deve definir a autoridade e a rota de escalonamento para requisitos ambíguos, conflitantes ou localmente inaplicáveis.
 
-**Record and evidence.** Retain question, competing interpretations, consulted authorities, interim restriction and final disposition.
+**Registro e evidência.** Reter pergunta, interpretações concorrentes, autoridades consultadas, restrição provisória e disposição final.
 
-**Done when.** Delivery teams do not resolve material ambiguity by convenience and the ruling is propagated to affected records.
+**Concluído quando.** Times de entrega não resolvem ambiguidade material por conveniência e a decisão é propagada aos registros afetados.
 
-### 00.10 Revision history
+### 00.10 Histórico de revisões
 
-**Required decision/action.** For **revision history**, the organization must version every material change and bind it to effective, review and supersession dates.
+**Decisão/ação obrigatória.** Para **histórico de revisões**, a organização deve versionar toda mudança material e vinculá-la a datas de efetividade, revisão e supersessão.
 
-**Record and evidence.** Retain change description, author, approver, impacted contracts, migration action and prior-version reference.
+**Registro e evidência.** Reter descrição da mudança, autor, aprovador, contratos impactados, ação de migração e referência à versão anterior.
 
-**Done when.** Consumers can identify the applicable version and incompatible records are migrated, rejected or explicitly grandfathered.
+**Concluído quando.** Consumidores identificam a versão aplicável e registros incompatíveis são migrados, rejeitados ou explicitamente grandfather.
 
 
 ## Conteúdo canônico incorporado

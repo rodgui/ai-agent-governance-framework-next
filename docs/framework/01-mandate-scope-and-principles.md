@@ -16,149 +16,149 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 01.1 Executive purpose and business problem
+### 01.1 Finalidade executiva e problema de negócio
 
-**Required decision/action.** For **executive purpose and business problem**, the organization must state the business problem, unacceptable failure modes and governance outcomes before selecting controls or technology.
+**Decisão/ação obrigatória.** Para **finalidade executiva e problema de negócio**, a organização deve declarar o problema de negócio, os modos de falha inaceitáveis e os resultados de governança antes de selecionar controles ou tecnologia.
 
-**Record and evidence.** Record sponsor, baseline condition, affected stakeholders, desired outcomes, constraints and evidence date.
+**Registro e evidência.** Registrar sponsor, condição de baseline, stakeholders afetados, resultados desejados, restrições e data da evidência.
 
-**Done when.** The mandate can be tested against outcomes and cannot be reduced to producing documents or buying a platform.
+**Concluído quando.** O mandato pode ser testado contra resultados e não pode ser reduzido a produzir documentos ou comprar uma plataforma.
 
-### 01.2 Intended governance outcomes
+### 01.2 Resultados de governança pretendidos
 
-**Required decision/action.** For **intended governance outcomes**, the organization must state the business problem, unacceptable failure modes and governance outcomes before selecting controls or technology.
+**Decisão/ação obrigatória.** Para **resultados de governança pretendidos**, a organização deve declarar o problema de negócio, os modos de falha inaceitáveis e os resultados de governança antes de selecionar controles ou tecnologia.
 
-**Record and evidence.** Record sponsor, baseline condition, affected stakeholders, desired outcomes, constraints and evidence date.
+**Registro e evidência.** Registrar sponsor, condição de baseline, stakeholders afetados, resultados desejados, restrições e data da evidência.
 
-**Done when.** The mandate can be tested against outcomes and cannot be reduced to producing documents or buying a platform.
+**Concluído quando.** O mandato pode ser testado contra resultados e não pode ser reduzido a produzir documentos ou comprar uma plataforma.
 
-### 01.3 Definition of AI system
+### 01.3 Definição de sistema de IA (AI system)
 
-**Required decision/action.** For **definition of ai system**, the organization must adopt a testable definition with inclusion, exclusion and boundary examples.
+**Decisão/ação obrigatória.** Para **definição de sistema de IA**, a organização deve adotar uma definição testável com exemplos de inclusão, exclusão e fronteira.
 
-**Record and evidence.** Publish the term, distinguishing criteria, related terms, examples and authority in the controlled glossary or policy.
+**Registro e evidência.** Publicar o termo, os critérios distintivos, os termos relacionados, os exemplos e a authority no glossário controlado ou na policy.
 
-**Done when.** Independent reviewers classify representative cases consistently and ambiguous cases follow the interpretation route.
+**Concluído quando.** Revisores independentes classificam casos representativos de forma consistente e casos ambíguos seguem a rota de interpretação.
 
-### 01.4 Definition of AI agent
+### 01.4 Definição de agente de IA (AI agent)
 
-**Required decision/action.** For **definition of ai agent**, the organization must adopt a testable definition with inclusion, exclusion and boundary examples.
+**Decisão/ação obrigatória.** Para **definição de agente de IA**, a organização deve adotar uma definição testável com exemplos de inclusão, exclusão e fronteira.
 
-**Record and evidence.** Publish the term, distinguishing criteria, related terms, examples and authority in the controlled glossary or policy.
+**Registro e evidência.** Publicar o termo, os critérios distintivos, os termos relacionados, os exemplos e a authority no glossário controlado ou na policy.
 
-**Done when.** Independent reviewers classify representative cases consistently and ambiguous cases follow the interpretation route.
+**Concluído quando.** Revisores independentes classificam casos representativos de forma consistente e casos ambíguos seguem a rota de interpretação.
 
-### 01.5 Distinction from model, assistant, workflow and deterministic automation
+### 01.5 Distinção de modelo, assistente, workflow e automação determinística
 
-**Required decision/action.** For **distinction from model, assistant, workflow and deterministic automation**, the organization must adopt a testable definition with inclusion, exclusion and boundary examples.
+**Decisão/ação obrigatória.** Para **distinção de modelo, assistente, workflow e automação determinística**, a organização deve adotar uma definição testável com exemplos de inclusão, exclusão e fronteira.
 
-**Record and evidence.** Publish the term, distinguishing criteria, related terms, examples and authority in the controlled glossary or policy.
+**Registro e evidência.** Publicar o termo, os critérios distintivos, os termos relacionados, os exemplos e a authority no glossário controlado ou na policy.
 
-**Done when.** Independent reviewers classify representative cases consistently and ambiguous cases follow the interpretation route.
+**Concluído quando.** Revisores independentes classificam casos representativos de forma consistente e casos ambíguos seguem a rota de interpretação.
 
-### 01.6 Organizational scope
+### 01.6 Escopo organizacional
 
-**Required decision/action.** For **organizational scope**, the organization must enumerate inclusions, exclusions, jurisdictions, lifecycle stages, organizational units and affected stakeholder classes.
+**Decisão/ação obrigatória.** Para **escopo organizacional**, a organização deve enumerar inclusões, exclusões, jurisdições, estágios de lifecycle, unidades organizacionais e classes de stakeholders afetados.
 
-**Record and evidence.** Retain a scope statement with boundary rationale, external obligations, delegated local standards and expiry for exclusions.
+**Registro e evidência.** Reter declaração de escopo com rationale de fronteira, obrigações externas, padrões locais delegados e expiração de exclusões.
 
-**Done when.** Intake can route every candidate as in scope, out of scope or decision required, with no implicit exemption.
+**Concluído quando.** O intake consegue encaminhar cada candidato como dentro do escopo, fora do escopo ou exigindo decisão, sem isenção implícita.
 
-### 01.7 Geographic and regulatory scope
+### 01.7 Escopo geográfico e regulatório
 
-**Required decision/action.** For **geographic and regulatory scope**, the organization must enumerate inclusions, exclusions, jurisdictions, lifecycle stages, organizational units and affected stakeholder classes.
+**Decisão/ação obrigatória.** Para **escopo geográfico e regulatório**, a organização deve enumerar inclusões, exclusões, jurisdições, estágios de lifecycle, unidades organizacionais e classes de stakeholders afetados.
 
-**Record and evidence.** Retain a scope statement with boundary rationale, external obligations, delegated local standards and expiry for exclusions.
+**Registro e evidência.** Reter declaração de escopo com rationale de fronteira, obrigações externas, padrões locais delegados e expiração de exclusões.
 
-**Done when.** Intake can route every candidate as in scope, out of scope or decision required, with no implicit exemption.
+**Concluído quando.** O intake consegue encaminhar cada candidato como dentro do escopo, fora do escopo ou exigindo decisão, sem isenção implícita.
 
-### 01.8 Lifecycle scope
+### 01.8 Escopo de lifecycle
 
-**Required decision/action.** For **lifecycle scope**, the organization must enumerate inclusions, exclusions, jurisdictions, lifecycle stages, organizational units and affected stakeholder classes.
+**Decisão/ação obrigatória.** Para **escopo de lifecycle**, a organização deve enumerar inclusões, exclusões, jurisdições, estágios de lifecycle, unidades organizacionais e classes de stakeholders afetados.
 
-**Record and evidence.** Retain a scope statement with boundary rationale, external obligations, delegated local standards and expiry for exclusions.
+**Registro e evidência.** Reter declaração de escopo com rationale de fronteira, obrigações externas, padrões locais delegados e expiração de exclusões.
 
-**Done when.** Intake can route every candidate as in scope, out of scope or decision required, with no implicit exemption.
+**Concluído quando.** O intake consegue encaminhar cada candidato como dentro do escopo, fora do escopo ou exigindo decisão, sem isenção implícita.
 
-### 01.9 Build, buy, configure, SaaS, low-code and third-party scope
+### 01.9 Escopo build, buy, configure, SaaS, low-code e terceiros
 
-**Required decision/action.** For **build, buy, configure, saas, low-code and third-party scope**, the organization must apply equivalent governance to built, bought, configured, SaaS, low-code and supplier-operated agents.
+**Decisão/ação obrigatória.** Para **escopo build, buy, configure, SaaS, low-code e terceiros**, a organização deve aplicar governança equivalente a agentes construídos, comprados, configurados, SaaS, low-code e operados por fornecedores.
 
-**Record and evidence.** Record supplier, service boundary, contractual duties, evidence supplied, sub-processors, exit rights, owner and unresolved gaps.
+**Registro e evidência.** Registrar fornecedor, fronteira de serviço, deveres contratuais, evidências fornecidas, subprocessadores, direitos de saída, owner e lacunas não resolvidas.
 
-**Done when.** Outsourcing does not remove accountability and an unevidenced supplier claim cannot satisfy a blocking control.
+**Concluído quando.** A terceirização não remove a accountability e uma alegação de fornecedor sem evidência não pode satisfazer um controle bloqueante.
 
-### 01.10 Users, affected persons and stakeholder scope
+### 01.10 Escopo de usuários, pessoas afetadas e stakeholders
 
-**Required decision/action.** For **users, affected persons and stakeholder scope**, the organization must enumerate inclusions, exclusions, jurisdictions, lifecycle stages, organizational units and affected stakeholder classes.
+**Decisão/ação obrigatória.** Para **escopo de usuários, pessoas afetadas e stakeholders**, a organização deve enumerar inclusões, exclusões, jurisdições, estágios de lifecycle, unidades organizacionais e classes de stakeholders afetados.
 
-**Record and evidence.** Retain a scope statement with boundary rationale, external obligations, delegated local standards and expiry for exclusions.
+**Registro e evidência.** Reter declaração de escopo com rationale de fronteira, obrigações externas, padrões locais delegados e expiração de exclusões.
 
-**Done when.** Intake can route every candidate as in scope, out of scope or decision required, with no implicit exemption.
+**Concluído quando.** O intake consegue encaminhar cada candidato como dentro do escopo, fora do escopo ou exigindo decisão, sem isenção implícita.
 
-### 01.11 Responsible AI principles
+### 01.11 Princípios de IA responsável (Responsible AI)
 
-**Required decision/action.** For **responsible ai principles**, the organization must translate principles and quality attributes into decision questions, measurable requirements and explicit trade-offs.
+**Decisão/ação obrigatória.** Para **princípios de IA responsável**, a organização deve traduzir princípios e atributos de qualidade em perguntas de decisão, requisitos mensuráveis e trade-offs explícitos.
 
-**Record and evidence.** Record applicable principle, scenario, threshold, design response, owner, test and unresolved trade-off.
+**Registro e evidência.** Registrar princípio aplicável, cenário, threshold, resposta de design, owner, teste e trade-off não resolvido.
 
-**Done when.** Architecture and release decisions show how conflicting qualities were balanced rather than merely citing principles.
+**Concluído quando.** Decisões de arquitetura e release mostram como qualidades conflitantes foram equilibradas em vez de apenas citar princípios.
 
-### 01.12 Trustworthiness characteristics
+### 01.12 Características de confiabilidade (trustworthiness)
 
-**Required decision/action.** For **trustworthiness characteristics**, the organization must translate principles and quality attributes into decision questions, measurable requirements and explicit trade-offs.
+**Decisão/ação obrigatória.** Para **características de confiabilidade**, a organização deve traduzir princípios e atributos de qualidade em perguntas de decisão, requisitos mensuráveis e trade-offs explícitos.
 
-**Record and evidence.** Record applicable principle, scenario, threshold, design response, owner, test and unresolved trade-off.
+**Registro e evidência.** Registrar princípio aplicável, cenário, threshold, resposta de design, owner, teste e trade-off não resolvido.
 
-**Done when.** Architecture and release decisions show how conflicting qualities were balanced rather than merely citing principles.
+**Concluído quando.** Decisões de arquitetura e release mostram como qualidades conflitantes foram equilibradas em vez de apenas citar princípios.
 
-### 01.13 Risk appetite and risk tolerance
+### 01.13 Risk appetite e tolerância a risco
 
-**Required decision/action.** For **risk appetite and risk tolerance**, the organization must approve risk appetite and tolerances by impact class, autonomy, affected population and criticality.
+**Decisão/ação obrigatória.** Para **risk appetite e tolerância a risco**, a organização deve aprovar apetite e tolerâncias por classe de impacto, autonomia, população afetada e criticidade.
 
-**Record and evidence.** Record prohibited exposure, quantitative or qualitative tolerance, escalation threshold, authority and review trigger.
+**Registro e evidência.** Registrar exposição proibida, tolerância quantitativa ou qualitativa, threshold de escalonamento, authority e gatilho de revisão.
 
-**Done when.** Tiering and residual-risk decisions are constrained by the approved appetite and cannot be self-approved by the delivery team.
+**Concluído quando.** Decisões de tiering e risco residual são limitadas pelo apetite aprovado e não podem ser auto-aprovadas pelo time de entrega.
 
-### 01.14 Initially prohibited or restricted uses
+### 01.14 Usos inicialmente proibidos ou restritos
 
-**Required decision/action.** For **initially prohibited or restricted uses**, the organization must classify uses as permitted, conditional, restricted or prohibited independently from the risk score.
+**Decisão/ação obrigatória.** Para **usos inicialmente proibidos ou restritos**, a organização deve classificar usos como permitted, conditional, restricted ou prohibited independentemente da pontuação de risco.
 
-**Record and evidence.** Record rule source, conditions, affected use, rationale, authority, expiry and prohibited workarounds.
+**Registro e evidência.** Registrar origem da regra, condições, uso afetado, rationale, authority, expiração e workarounds proibidos.
 
-**Done when.** A prohibited use cannot proceed through compensating controls and a conditional use cannot operate after its conditions expire.
+**Concluído quando.** Um uso proibido não pode prosseguir por meio de compensating controls e um uso condicional não pode operar após a expiração das condições.
 
-### 01.15 Relationship to enterprise risk, security, privacy, data and compliance
+### 01.15 Relação com risco empresarial, segurança, privacidade, dados e compliance
 
-**Required decision/action.** For **relationship to enterprise risk, security, privacy, data and compliance**, the organization must adopt this mandate or boundary as an explicit governance decision.
+**Decisão/ação obrigatória.** Para **relação com risco empresarial, segurança, privacidade, dados e compliance**, a organização deve adotar este mandato ou fronteira como decisão explícita de governança.
 
-**Record and evidence.** The approved charter or policy entry must state inclusions, exclusions, accountable authority, rationale and external obligations.
+**Registro e evidência.** O charter ou entrada de policy aprovada deve declarar inclusões, exclusões, autoridade responsável, rationale e obrigações externas.
 
-**Done when.** Intake, design and review teams apply the same boundary and unresolved interpretation is escalated rather than assumed.
+**Concluído quando.** Times de intake, design e revisão aplicam a mesma fronteira e interpretação não resolvida é escalonada em vez de assumida.
 
-### 01.16 Executive sponsorship and funding mandate
+### 01.16 Sponsorship executivo e mandato de financiamento
 
-**Required decision/action.** For **executive sponsorship and funding mandate**, the organization must secure an accountable sponsor, funded capacity and named roles for both implementation and business-as-usual operation.
+**Decisão/ação obrigatória.** Para **sponsorship executivo e mandato de financiamento**, a organização deve assegurar sponsor accountable, capacidade financiada e papéis nomeados tanto para a implementação quanto para a operação no business as usual.
 
-**Record and evidence.** Record budget, capacity, competencies, decision authority, funding horizon, dependencies and unfunded risks.
+**Registro e evidência.** Registrar orçamento, capacidade, competências, autoridade de decisão, horizonte de financiamento, dependências e riscos não financiados.
 
-**Done when.** Mandatory controls and operating duties have resources before the related cohort or capability is approved.
+**Concluído quando.** Controles obrigatórios e deveres operacionais têm recursos antes de a coorte ou capacidade relacionada ser aprovada.
 
-### 01.17 Definition of implemented governance
+### 01.17 Definição de governança implementada
 
-**Required decision/action.** For **definition of implemented governance**, the organization must adopt a testable definition with inclusion, exclusion and boundary examples.
+**Decisão/ação obrigatória.** Para **definição de governança implementada**, a organização deve adotar uma definição testável com exemplos de inclusão, exclusão e fronteira.
 
-**Record and evidence.** Publish the term, distinguishing criteria, related terms, examples and authority in the controlled glossary or policy.
+**Registro e evidência.** Publicar o termo, os critérios distintivos, os termos relacionados, os exemplos e a authority no glossário controlado ou na policy.
 
-**Done when.** Independent reviewers classify representative cases consistently and ambiguous cases follow the interpretation route.
+**Concluído quando.** Revisores independentes classificam casos representativos de forma consistente e casos ambíguos seguem a rota de interpretação.
 
-### 01.18 Success criteria and evidence date
+### 01.18 Critérios de sucesso e data da evidência
 
-**Required decision/action.** For **success criteria and evidence date**, the organization must define a falsifiable outcome, pre-change baseline and credible counterfactual with an evidence cutoff.
+**Decisão/ação obrigatória.** Para **critérios de sucesso e data da evidência**, a organização deve definir um resultado falseável, baseline pré-mudança e contrafactual crível com corte de evidências.
 
-**Record and evidence.** Record metric owner, population, formula, target, source, confounders, cost and decision threshold.
+**Registro e evidência.** Registrar owner da métrica, população, fórmula, alvo, fonte, confounders, custo e threshold de decisão.
 
-**Done when.** The authority can distinguish creation, adoption, quality and outcome and can stop work when evidence does not support expansion.
+**Concluído quando.** A autoridade consegue distinguir criação, adoção, qualidade e resultado e pode interromper o trabalho quando a evidência não suporta expansão.
 
 
 ## Conteúdo canônico incorporado

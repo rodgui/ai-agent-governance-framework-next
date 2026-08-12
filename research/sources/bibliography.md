@@ -1,12 +1,12 @@
 ---
-title: Bibliography
+title: Bibliografia
 status: maintained
 last_reviewed: 2026-08-11
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
 
-# Bibliography
+# Bibliografia
 
 Este artefato consolida fontes validadas segundo a estratégia registrada no plano de migração. A união preserva conteúdo único e registra a origem de cada bloco.
 
@@ -14,11 +14,11 @@ Este artefato consolida fontes validadas segundo a estratégia registrada no pla
 
 > **Provenance:** migrated from `references/bibliography.md` at authoritative commit `5545d9227624400ab8bb707b6032b2f61329a36e`. Content is adapted only for repository boundaries and links.
 
-### Bibliography
+### Bibliografia
 
 A data de acesso, classificação da fonte e finalidade são mantidas no [registro de fontes](bibliography.md).
 
-#### Frameworks, standards e regulation
+#### Frameworks, normas e regulação
 
 - European Union. *Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence*. 2024.
 - ISO/IEC. *ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system*. 2023.
@@ -28,13 +28,13 @@ A data de acesso, classificação da fonte e finalidade são mantidas no [regist
 - NIST. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. NIST AI 600-1, 2024.
 - OECD. *OECD AI Principles*. Atualizados em 2024.
 
-#### Security
+#### Segurança
 
 - MITRE. *Adversarial Threat Landscape for Artificial-Intelligence Systems (ATLAS)*.
 - OWASP GenAI Security Project. *Agentic AI — Threats and Mitigations*.
 - OWASP GenAI Security Project. *Top 10 for Large Language Model Applications*.
 
-#### Microsoft Customer Zero series
+#### Série Microsoft Customer Zero
 
 - Microsoft. *Implementing Agent 365: How we’re governing and managing AI agents at Microsoft*. 2026.
 - Microsoft. *Deploying Microsoft Agent 365: How we’re extending our infrastructure to manage agents at Microsoft*. 2025.
@@ -55,7 +55,7 @@ A data de acesso, classificação da fonte e finalidade são mantidas no [regist
 
 > **Provenance:** migrated from `references/sources.md` at authoritative commit `5545d9227624400ab8bb707b6032b2f61329a36e`. Content is adapted only for repository boundaries and links.
 
-### Sources
+### Fontes
 
 Registro de fontes primárias usadas pelo framework. Claims temporais devem registrar data de acesso/revisão e ser revalidados conforme o ciclo do artefato.
 
@@ -83,7 +83,7 @@ Registro de fontes primárias usadas pelo framework. Claims temporais devem regi
 | MITRE-001 | MITRE ATLAS | Knowledge base pública | <https://atlas.mitre.org/> | 2026-08-09 | Threat-informed defense e adversarial techniques |
 | CSA-001 | Cloud Security Alliance AI Controls Matrix (AICM) v1.1 | Framework aberto de controles | <https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1> | 2026-08-10 | Objetivos de controle por domínio e mappings para frameworks de IA |
 
-#### Microsoft Customer Zero — application evidence
+#### Microsoft Customer Zero — evidência de aplicação
 
 | ID | Fonte | Tipo | URL | Acesso | Uso relacionado |
 |---|---|---|---|---:|---|

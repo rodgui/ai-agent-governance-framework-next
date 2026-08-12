@@ -16,189 +16,189 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 09.1 Operating model and service ownership
+### 09.1 Modelo operacional e ownership de serviço
 
-**Required decision/action.** For **operating model and service ownership**, the organization must select and document the centralized, federated or hybrid allocation of policy, platform, domain and assurance duties.
+**Decisão/ação obrigatória.** Para **modelo operacional e ownership de serviço**, a organização deve selecionar e documentar a alocação centralizada, federada ou híbrida das atribuições de policy, plataforma, domínio e assurance.
 
-**Record and evidence.** Retain design principles, role map, service boundaries, decision rights, handoffs, service levels and exception route.
+**Registro e evidência.** Reter princípios de design, mapa de papéis, fronteiras de serviço, decision rights, handoffs, níveis de serviço e rota de exceção.
 
-**Done when.** A representative case moves from intake to operation with no orphan decision or duplicated source of truth.
+**Concluído quando.** Um caso representativo percorre do intake à operação sem decisão órfã nem fonte de verdade duplicada.
 
-### 09.2 Production inventory and configuration visibility
+### 09.2 Inventário de produção e visibilidade de configuração
 
-**Required decision/action.** For **production inventory and configuration visibility**, the organization must operate the registry as the authoritative identity and lifecycle index for every in-scope agent.
+**Decisão/ação obrigatória.** Para **inventário de produção e visibilidade de configuração**, a organização deve operar o registry como o índice autoritativo de identidade e lifecycle de todo agente em escopo.
 
-**Record and evidence.** Validate stable ID, owner, purpose, tier, admissibility, version, environment, state, dependencies and last-attested date.
+**Registro e evidência.** Validar ID estável, owner, finalidade, tier, admissibilidade, versão, ambiente, estado, dependências e data do último attestation.
 
-**Done when.** Automated and manual reconciliation detects missing, stale, duplicate and invalid records and blocks required transitions.
+**Concluído quando.** Reconciliação automatizada e manual detecta registros ausentes, obsoletos, duplicados e inválidos e bloqueia transições exigidas.
 
-### 09.3 Telemetry and end-to-end correlation
+### 09.3 Telemetria e correlação de ponta a ponta
 
-**Required decision/action.** For **telemetry and end-to-end correlation**, the organization must emit attributable events that correlate user, agent, version, task, model, tool, policy decision and outcome.
+**Decisão/ação obrigatória.** Para **telemetria e correlação de ponta a ponta**, a organização deve emitir eventos atribuíveis que correlacionem usuário, agente, versão, tarefa, modelo, ferramenta, decisão de policy e resultado.
 
-**Record and evidence.** Define event schema, IDs, timestamps, integrity control, retention, access, clock assumptions and coverage tests.
+**Registro e evidência.** Definir schema de evento, IDs, timestamps, controle de integridade, retenção, acesso, premissas de relógio e testes de cobertura.
 
-**Done when.** A representative action chain can be reconstructed without exposing prohibited prompt, secret or personal data.
+**Concluído quando.** Uma cadeia de ações representativa pode ser reconstruída sem expor prompt, segredo ou dados pessoais proibidos.
 
-### 09.4 Service levels and operational thresholds
+### 09.4 Níveis de serviço e thresholds operacionais
 
-**Required decision/action.** For **service levels and operational thresholds**, the organization must define service, quality, safety and response objectives with measurement and breach action.
+**Decisão/ação obrigatória.** Para **níveis de serviço e thresholds operacionais**, a organização deve definir objetivos de serviço, qualidade, segurança e resposta com medição e ação em caso de violação.
 
-**Record and evidence.** Record indicator, objective, population, window, exclusions, source, alert threshold, owner and error budget or tolerance.
+**Registro e evidência.** Registrar indicador, objetivo, população, janela, exclusões, fonte, threshold de alerta, owner e error budget ou tolerância.
 
-**Done when.** Breaches are detectable and lead to a recorded operational or portfolio decision rather than dashboard-only reporting.
+**Concluído quando.** Violações são detectáveis e levam a uma decisão operacional ou de portfólio registrada, em vez de reporte apenas em dashboard.
 
-### 09.5 Behavioral monitoring
+### 09.5 Monitoramento comportamental
 
-**Required decision/action.** For **behavioral monitoring**, the organization must establish baselines and signals for behavior, quality, safety, security, cost and dependency change.
+**Decisão/ação obrigatória.** Para **monitoramento comportamental**, a organização deve estabelecer baselines e sinais para mudança de comportamento, qualidade, segurança, custo e dependências.
 
-**Record and evidence.** Record signal definition, population, baseline window, threshold, confidence, owner, response ladder and calibration history.
+**Registro e evidência.** Registrar definição do sinal, população, janela de baseline, threshold, confiança, owner, escada de resposta e histórico de calibração.
 
-**Done when.** Alerts are calibrated against real behavior and lead to investigation, throttling, quarantine or reassessment.
+**Concluído quando.** Alertas são calibrados contra comportamento real e levam a investigação, throttling, quarentena ou reavaliação.
 
-### 09.6 Quality, safety, fairness and security monitoring
+### 09.6 Monitoramento de qualidade, segurança, fairness e proteção
 
-**Required decision/action.** For **quality, safety, fairness and security monitoring**, the organization must operate this production capability with defined service ownership and response authority.
+**Decisão/ação obrigatória.** Para **monitoramento de qualidade, segurança, fairness e proteção**, a organização deve operar esta capacidade de produção com ownership de serviço e authority de resposta definidos.
 
-**Record and evidence.** The operational record must identify telemetry, thresholds, on-call ownership, severity, containment path, communications, evidence retention and recovery criteria.
+**Registro e evidência.** O registro operacional deve identificar telemetria, thresholds, ownership de plantão (on-call), severidade, caminho de contenção, comunicações, retenção de evidências e critérios de recuperação.
 
-**Done when.** Signals trigger the agreed response, containment and recovery are exercised, and incidents feed corrective action and reassessment.
+**Concluído quando.** Sinais disparam a resposta acordada, contenção e recuperação são exercitadas, e incidentes alimentam ação corretiva e reavaliação.
 
-### 09.7 Drift and emerging behavior
+### 09.7 Drift e comportamento emergente
 
-**Required decision/action.** For **drift and emerging behavior**, the organization must establish baselines and signals for behavior, quality, safety, security, cost and dependency change.
+**Decisão/ação obrigatória.** Para **drift e comportamento emergente**, a organização deve estabelecer baselines e sinais para mudança de comportamento, qualidade, segurança, custo e dependências.
 
-**Record and evidence.** Record signal definition, population, baseline window, threshold, confidence, owner, response ladder and calibration history.
+**Registro e evidência.** Registrar definição do sinal, população, janela de baseline, threshold, confiança, owner, escada de resposta e histórico de calibração.
 
-**Done when.** Alerts are calibrated against real behavior and lead to investigation, throttling, quarantine or reassessment.
+**Concluído quando.** Alertas são calibrados contra comportamento real e levam a investigação, throttling, quarentena ou reavaliação.
 
-### 09.8 Cost and resource monitoring
+### 09.8 Monitoramento de custo e recursos
 
-**Required decision/action.** For **cost and resource monitoring**, the organization must attribute consumption and total operating cost to agent, owner, environment and measurable outcome.
+**Decisão/ação obrigatória.** Para **monitoramento de custo e recursos**, a organização deve atribuir consumo e custo operacional total a agente, owner, ambiente e resultado mensurável.
 
-**Record and evidence.** Record unit cost, budget, quota, forecast, variance, shared-cost allocation, anomaly and optimization decision.
+**Registro e evidência.** Registrar custo unitário, orçamento, quota, previsão, variância, alocação de custo compartilhado, anomalia e decisão de otimização.
 
-**Done when.** Threshold breach triggers throttling or review and cost claims remain separate from value realization claims.
+**Concluído quando.** Violação de threshold dispara throttling ou revisão e alegações de custo permanecem separadas de alegações de realização de valor.
 
-### 09.9 Issue and incident reporting
+### 09.9 Reporte de problemas e incidentes
 
-**Required decision/action.** For **issue and incident reporting**, the organization must provide authorized users, operators and affected parties a discoverable route to report issues and incidents.
+**Decisão/ação obrigatória.** Para **reporte de problemas e incidentes**, a organização deve fornecer a usuários autorizados, operadores e partes afetadas uma rota descobrível para reportar problemas e incidentes.
 
-**Record and evidence.** Record reporter channel, receipt, triage, severity, owner, linked asset, evidence, communication and closure.
+**Registro e evidência.** Registrar canal do reportador, recebimento, triagem, severidade, owner, ativo vinculado, evidência, comunicação e fechamento.
 
-**Done when.** A report reaches accountable triage within target and retaliation, loss or silent closure is prevented.
+**Concluído quando.** Um reporte alcança triagem accountable dentro do alvo e retaliação, perda ou fechamento silencioso é prevenido.
 
-### 09.10 Severity classification
+### 09.10 Classificação de severidade
 
-**Required decision/action.** For **severity classification**, the organization must classify the case using approved criteria, mandatory escalators and the most severe applicable outcome.
+**Decisão/ação obrigatória.** Para **classificação de severidade**, a organização deve classificar o caso usando critérios aprovados, escaladores obrigatórios e o resultado aplicável mais severo.
 
-**Record and evidence.** Record criterion results, red flags, rationale, confidence, reviewer and resulting route or response target.
+**Registro e evidência.** Registrar resultados por critério, red flags, rationale, confiança, revisor e rota resultante ou alvo de resposta.
 
-**Done when.** The same evidence yields consistent routing and under-classification is detected by review or reconciliation.
+**Concluído quando.** A mesma evidência produz encaminhamento consistente e sub-classificação é detectada por revisão ou reconciliação.
 
-### 09.11 Roles, escalation and communications
+### 09.11 Papéis, escalonamento e comunicações
 
-**Required decision/action.** For **roles, escalation and communications**, the organization must map each material lifecycle event and incident severity to one accountable decision and escalation path.
+**Decisão/ação obrigatória.** Para **papéis, escalonamento e comunicações**, a organização deve mapear cada evento material de lifecycle e severidade de incidente para uma decisão accountable e um caminho de escalonamento.
 
-**Record and evidence.** Record event, threshold, primary and alternate authority, consultation, response time and unresolved-decision fallback.
+**Registro e evidência.** Registrar evento, threshold, autoridade primária e alternativa, consulta, tempo de resposta e fallback para decisão não resolvida.
 
-**Done when.** A drill reaches an authorized decision within the target and ambiguous authority fails to the safer state.
+**Concluído quando.** Um exercício (drill) alcança uma decisão autorizada dentro do alvo e autoridade ambígua falha para o estado mais seguro.
 
-### 09.12 Integration with SOC, SRE, privacy and business continuity
+### 09.12 Integração com SOC, SRE, privacidade e continuidade de negócio
 
-**Required decision/action.** For **integration with soc, sre, privacy and business continuity**, the organization must integrate agent-specific response with established security, reliability, privacy, legal and continuity processes.
+**Decisão/ação obrigatória.** Para **integração com SOC, SRE, privacidade e continuidade de negócio**, a organização deve integrar a resposta específica de agentes com processos estabelecidos de segurança, confiabilidade, privacidade, legal e continuidade.
 
-**Record and evidence.** Record trigger mapping, shared identifiers, handoff, authority, communication, evidence custody and conflicting-priority rule.
+**Registro e evidência.** Registrar mapeamento de gatilhos, identificadores compartilhados, handoff, authority, comunicação, custódia de evidência e regra de prioridade conflitante.
 
-**Done when.** A joint exercise preserves one incident timeline and each specialist function can execute its authority without an orphan handoff.
+**Concluído quando.** Um exercício conjunto preserva uma única linha do tempo de incidente e cada função especialista executa sua authority sem handoff órfão.
 
-### 09.13 Containment, quarantine and kill switch
+### 09.13 Contenção, quarentena e kill switch
 
-**Required decision/action.** For **containment, quarantine and kill switch**, the organization must implement authority and technical paths to stop actions, isolate dependencies and preserve evidence.
+**Decisão/ação obrigatória.** Para **contenção, quarentena e kill switch**, a organização deve implementar caminhos de authority e técnicos para interromper ações, isolar dependências e preservar evidências.
 
-**Record and evidence.** Record trigger, command path, scope, expected state, operator, test cadence, result and recovery prerequisites.
+**Registro e evidência.** Registrar gatilho, caminho de comando, escopo, estado esperado, operador, cadência de teste, resultado e pré-requisitos de recuperação.
 
-**Done when.** A drill contains a representative failure within the target without relying on the failing agent itself.
+**Concluído quando.** Um exercício (drill) contém uma falha representativa dentro do alvo sem depender do próprio agente com falha.
 
-### 09.14 Rollback and recovery
+### 09.14 Rollback e recuperação
 
-**Required decision/action.** For **rollback and recovery**, the organization must define the safer state, rollback target and recovery sequence for control, dependency and model failures.
+**Decisão/ação obrigatória.** Para **rollback e recuperação**, a organização deve definir o estado mais seguro, o alvo de rollback e a sequência de recuperação para falhas de controle, dependência e modelo.
 
-**Record and evidence.** Retain failure modes, trigger, rollback artifact, data reconciliation, operator authority, RTO/RPO and exercise result.
+**Registro e evidência.** Reter modos de falha, gatilho, artefato de rollback, reconciliação de dados, authority do operador, RTO/RPO e resultado do exercício.
 
-**Done when.** A representative failure restores a known-good bounded service without losing required evidence or duplicating actions.
+**Concluído quando.** Uma falha representativa restaura um serviço delimitado em estado bom conhecido sem perder evidência exigida nem duplicar ações.
 
-### 09.15 Investigation and evidence preservation
+### 09.15 Investigação e preservação de evidências
 
-**Required decision/action.** For **investigation and evidence preservation**, the organization must preserve a defensible incident timeline and artifacts before remediation destroys material evidence.
+**Decisão/ação obrigatória.** Para **investigação e preservação de evidências**, a organização deve preservar uma linha do tempo de incidente defensável e artefatos antes de a remediação destruir evidência material.
 
-**Record and evidence.** Record collection authority, sources, hashes, timestamps, custody, access, hypotheses, findings and limitations.
+**Registro e evidência.** Registrar authority de coleta, fontes, hashes, timestamps, custódia, acesso, hipóteses, descobertas e limitações.
 
-**Done when.** An authorized reviewer can reconstruct material actions and evidence handling meets retention and privacy constraints.
+**Concluído quando.** Um revisor autorizado consegue reconstruir ações materiais e o tratamento de evidências atende restrições de retenção e privacidade.
 
-### 09.16 Corrective and preventive action
+### 09.16 Ação corretiva e preventiva
 
-**Required decision/action.** For **corrective and preventive action**, the organization must assign each finding a root cause, risk-based priority, corrective action and closure criterion.
+**Decisão/ação obrigatória.** Para **ação corretiva e preventiva**, a organização deve atribuir a cada descoberta uma causa raiz, prioridade baseada em risco, ação corretiva e critério de fechamento.
 
-**Record and evidence.** Record finding, evidence, owner, due date, interim control, root cause, remediation, retest and reviewer disposition.
+**Registro e evidência.** Registrar descoberta, evidência, owner, data de vencimento, controle provisório, causa raiz, remediação, reteste e disposição do revisor.
 
-**Done when.** Closure requires objective retest evidence; overdue material findings remain visible and affect approval.
+**Concluído quando.** O fechamento exige evidência objetiva de reteste; descobertas materiais vencidas permanecem visíveis e afetam a aprovação.
 
-### 09.17 Safe reactivation decision
+### 09.17 Decisão de reativação segura
 
-**Required decision/action.** For **safe reactivation decision**, the organization must permit reactivation only after root cause, remediation, regression, monitoring and rollback readiness are evidenced.
+**Decisão/ação obrigatória.** Para **decisão de reativação segura**, a organização deve permitir reativação somente após causa raiz, remediação, regressão, monitoramento e prontidão de rollback serem evidenciados.
 
-**Record and evidence.** Record incident link, changed version, retest package, residual risk, approving authority, conditions and rollout scope.
+**Registro e evidência.** Registrar vínculo do incidente, versão alterada, pacote de reteste, risco residual, authority aprovadora, condições e escopo do rollout.
 
-**Done when.** The former failure is no longer reproducible under the tested conditions and early-warning signals are active.
+**Concluído quando.** A falha anterior não é mais reproduzível nas condições testadas e sinais de alerta precoce estão ativos.
 
-### 09.18 User, customer, regulator and third-party communication
+### 09.18 Comunicação com usuários, clientes, reguladores e terceiros
 
-**Required decision/action.** For **user, customer, regulator and third-party communication**, the organization must determine required internal and external communication from impact, contract, law and stakeholder need.
+**Decisão/ação obrigatória.** Para **comunicação com usuários, clientes, reguladores e terceiros**, a organização deve determinar a comunicação interna e externa exigida a partir de impacto, contrato, lei e necessidade dos stakeholders.
 
-**Record and evidence.** Retain audience, authority, facts, uncertainty, timing, channel, approvals, corrections and disclosure rationale.
+**Registro e evidência.** Reter público, authority, fatos, incerteza, momento, canal, aprovações, correções e rationale da divulgação.
 
-**Done when.** Communications are timely, consistent and evidence-based and do not conceal material impact or overstate certainty.
+**Concluído quando.** Comunicações são oportunas, consistentes e baseadas em evidência e não ocultam impacto material nem exageram certeza.
 
-### 09.19 Supplier incidents and dependencies
+### 09.19 Incidentes de fornecedores e dependências
 
-**Required decision/action.** For **supplier incidents and dependencies**, the organization must govern supplier and downstream dependencies through due diligence, contract, monitoring and exit planning.
+**Decisão/ação obrigatória.** Para **incidentes de fornecedores e dependências**, a organização deve governar fornecedores e dependências a jusante por due diligence, contrato, monitoramento e planejamento de saída.
 
-**Record and evidence.** Record service, owner, criticality, evidence, obligations, concentration, incidents, sub-processors, fallback and exit test.
+**Registro e evidência.** Registrar serviço, owner, criticidade, evidência, obrigações, concentração, incidentes, subprocessadores, fallback e teste de saída.
 
-**Done when.** Supplier failure triggers the agreed containment or fallback and accountability remains with the organization.
+**Concluído quando.** Falha do fornecedor dispara a contenção ou fallback acordado e a accountability permanece com a organização.
 
-### 09.20 Operational continuity and degraded modes
+### 09.20 Continuidade operacional e modos degradados
 
-**Required decision/action.** For **operational continuity and degraded modes**, the organization must define approved degraded modes, dependency fallbacks, continuity priorities and exit from critical suppliers.
+**Decisão/ação obrigatória.** Para **continuidade operacional e modos degradados**, a organização deve definir modos degradados aprovados, fallbacks de dependência, prioridades de continuidade e saída de fornecedores críticos.
 
-**Record and evidence.** Record critical paths, tolerances, RTO/RPO, fallback capability, manual procedure, data reconciliation and exercise.
+**Registro e evidência.** Registrar caminhos críticos, tolerâncias, RTO/RPO, capacidade de fallback, procedimento manual, reconciliação de dados e exercício.
 
-**Done when.** The service meets the approved recovery target without silently bypassing risk, data or authorization controls.
+**Concluído quando.** O serviço atinge o alvo de recuperação aprovado sem contornar silenciosamente controles de risco, dados ou autorização.
 
-### 09.21 Disaster recovery
+### 09.21 Recuperação de desastres
 
-**Required decision/action.** For **disaster recovery**, the organization must define approved degraded modes, dependency fallbacks, continuity priorities and exit from critical suppliers.
+**Decisão/ação obrigatória.** Para **recuperação de desastres**, a organização deve definir modos degradados aprovados, fallbacks de dependência, prioridades de continuidade e saída de fornecedores críticos.
 
-**Record and evidence.** Record critical paths, tolerances, RTO/RPO, fallback capability, manual procedure, data reconciliation and exercise.
+**Registro e evidência.** Registrar caminhos críticos, tolerâncias, RTO/RPO, capacidade de fallback, procedimento manual, reconciliação de dados e exercício.
 
-**Done when.** The service meets the approved recovery target without silently bypassing risk, data or authorization controls.
+**Concluído quando.** O serviço atinge o alvo de recuperação aprovado sem contornar silenciosamente controles de risco, dados ou autorização.
 
-### 09.22 Post-incident review and disclosure
+### 09.22 Revisão pós-incidente e divulgação
 
-**Required decision/action.** For **post-incident review and disclosure**, the organization must determine required internal and external communication from impact, contract, law and stakeholder need.
+**Decisão/ação obrigatória.** Para **revisão pós-incidente e divulgação**, a organização deve determinar a comunicação interna e externa exigida a partir de impacto, contrato, lei e necessidade dos stakeholders.
 
-**Record and evidence.** Retain audience, authority, facts, uncertainty, timing, channel, approvals, corrections and disclosure rationale.
+**Registro e evidência.** Reter público, authority, fatos, incerteza, momento, canal, aprovações, correções e rationale da divulgação.
 
-**Done when.** Communications are timely, consistent and evidence-based and do not conceal material impact or overstate certainty.
+**Concluído quando.** Comunicações são oportunas, consistentes e baseadas em evidência e não ocultam impacto material nem exageram certeza.
 
-### 09.23 Periodic operational review
+### 09.23 Revisão operacional periódica
 
-**Required decision/action.** For **periodic operational review**, the organization must operate this production capability with defined service ownership and response authority.
+**Decisão/ação obrigatória.** Para **revisão operacional periódica**, a organização deve operar esta capacidade de produção com ownership de serviço e authority de resposta definidos.
 
-**Record and evidence.** The operational record must identify telemetry, thresholds, on-call ownership, severity, containment path, communications, evidence retention and recovery criteria.
+**Registro e evidência.** O registro operacional deve identificar telemetria, thresholds, ownership de plantão (on-call), severidade, caminho de contenção, comunicações, retenção de evidências e critérios de recuperação.
 
-**Done when.** Signals trigger the agreed response, containment and recovery are exercised, and incidents feed corrective action and reassessment.
+**Concluído quando.** Sinais disparam a resposta acordada, contenção e recuperação são exercitadas, e incidentes alimentam ação corretiva e reavaliação.
 
 
 ## Conteúdo canônico incorporado

@@ -1,31 +1,31 @@
-# Example evaluation report — Service Desk Knowledge Agent
+# Exemplo de relatório de avaliação — Service Desk Knowledge Agent
 
-> Fictitious and sanitized. Results demonstrate report structure, not model performance.
+> Fictício e sanitizado. Os resultados demonstram a estrutura do relatório, não o desempenho do modelo.
 
-## Evaluation contract
+## Contrato de avaliação
 
-- Blueprint version: 1.0
-- Evidence cutoff: 2026-08-01
-- Dataset: 40 synthetic internal-procedure questions
-- Slices: routine lookup, ambiguous request, prohibited-data request, prompt injection and unavailable source
+- Versão do blueprint: 1.0
+- Corte de evidências: 2026-08-01
+- Dataset: 40 perguntas sintéticas de procedimentos internos
+- Fatias (slices): consulta rotineira, solicitação ambígua, solicitação de dados proibidos, injeção de prompt e fonte indisponível
 
-## Illustrative results
+## Resultados ilustrativos
 
-| Test | Threshold | Result | Decision |
+| Teste | Threshold | Resultado | Decisão |
 |---|---:|---:|---|
-| citation coverage | ≥ 95% | 97.5% | pass |
-| grounded answer accuracy | ≥ 90% | 92.5% | pass |
-| prohibited-data refusal | 100% | 100% | pass |
-| prompt-injection containment | 100% | 100% | pass |
-| unavailable-source abstention | ≥ 95% | 95% | pass |
+| cobertura de citações | ≥ 95% | 97,5% | pass |
+| precisão de resposta ancorada | ≥ 90% | 92,5% | pass |
+| recusa de dados proibidos | 100% | 100% | pass |
+| contenção de injeção de prompt | 100% | 100% | pass |
+| abstenção por fonte indisponível | ≥ 95% | 95% | pass |
 
-## Limitations
+## Limitações
 
-- Synthetic data does not represent every production request.
-- No personal data or production credentials were used.
-- Passing results apply only to the evaluated version and configuration.
+- Dados sintéticos não representam toda solicitação de produção.
+- Nenhum dado pessoal ou credencial de produção foi usado.
+- Resultados aprovados aplicam-se somente à versão e configuração avaliadas.
 
-## Findings
+## Descobertas (findings)
 
-- Add a regression case for conflicting approved sources before material expansion.
-- Re-run after model, connector, data contract or tool change.
+- Adicionar caso de regressão para fontes aprovadas conflitantes antes de expansão material.
+- Reexecutar após mudança de modelo, conector, contrato de dados ou ferramenta.

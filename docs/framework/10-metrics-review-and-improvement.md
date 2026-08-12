@@ -16,165 +16,165 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 10.1 Measurement principles and metric ownership
+### 10.1 Princípios de medição e ownership de métricas
 
-**Required decision/action.** For **measurement principles and metric ownership**, the organization must assign every metric a decision purpose, owner and accountable consumer before collection.
+**Decisão/ação obrigatória.** Para **princípios de medição e ownership de métricas**, a organização deve atribuir a cada métrica uma finalidade de decisão, owner e consumidor accountable antes da coleta.
 
-**Record and evidence.** The metric dictionary must define formula, population, source, quality, cutoff, segmentation, target and misuse warning.
+**Registro e evidência.** O dicionário de métricas deve definir fórmula, população, fonte, qualidade, corte, segmentação, alvo e aviso de uso indevido.
 
-**Done when.** Two analysts reproduce the value and the consuming authority states what decision a threshold can change.
+**Concluído quando.** Dois analistas reproduzem o valor e a authority consumidora declara qual decisão um threshold pode alterar.
 
-### 10.2 Governance coverage
+### 10.2 Cobertura de governança
 
-**Required decision/action.** For **governance coverage**, the organization must measure the declared population against governed, registered, owned and current records.
+**Decisão/ação obrigatória.** Para **cobertura de governança**, a organização deve medir a população declarada contra registros governados, registrados, com owner e atuais.
 
-**Record and evidence.** Retain denominator source, reconciliation date, unmatched assets, confidence, exclusions and remediation owner.
+**Registro e evidência.** Reter fonte do denominador, data de reconciliação, ativos sem correspondência, confiança, exclusões e owner da remediação.
 
-**Done when.** Coverage cannot improve by shrinking an undeclared denominator and missing high-risk assets remain visible.
+**Concluído quando.** A cobertura não pode melhorar encolhendo um denominador não declarado e ativos de alto risco ausentes permanecem visíveis.
 
-### 10.3 Inventory completeness and ownership quality
+### 10.3 Completude do inventário e qualidade do ownership
 
-**Required decision/action.** For **inventory completeness and ownership quality**, the organization must measure the declared population against governed, registered, owned and current records.
+**Decisão/ação obrigatória.** Para **completude do inventário e qualidade do ownership**, a organização deve medir a população declarada contra registros governados, registrados, com owner e atuais.
 
-**Record and evidence.** Retain denominator source, reconciliation date, unmatched assets, confidence, exclusions and remediation owner.
+**Registro e evidência.** Reter fonte do denominador, data de reconciliação, ativos sem correspondência, confiança, exclusões e owner da remediação.
 
-**Done when.** Coverage cannot improve by shrinking an undeclared denominator and missing high-risk assets remain visible.
+**Concluído quando.** A cobertura não pode melhorar encolhendo um denominador não declarado e ativos de alto risco ausentes permanecem visíveis.
 
-### 10.4 Process performance and decision latency
+### 10.4 Desempenho de processo e latência de decisão
 
-**Required decision/action.** For **process performance and decision latency**, the organization must measure queue, cycle time, handoff delay, rework and decision aging by tier and outcome.
+**Decisão/ação obrigatória.** Para **desempenho de processo e latência de decisão**, a organização deve medir fila, tempo de ciclo, atraso de handoff, retrabalho e envelhecimento de decisão por tier e resultado.
 
-**Record and evidence.** Record timestamps, population, service target, bottleneck, exception, demand and capacity assumptions.
+**Registro e evidência.** Registrar timestamps, população, alvo de serviço, gargalo, exceção, demanda e premissas de capacidade.
 
-**Done when.** Latency reduction does not bypass required evidence and persistent bottlenecks receive an owner and redesign decision.
+**Concluído quando.** Redução de latência não ignora evidência exigida e gargalos persistentes recebem um owner e uma decisão de redesign.
 
-### 10.5 Risk exposure and residual risk
+### 10.5 Exposição a risco e risco residual
 
-**Required decision/action.** For **risk exposure and residual risk**, the organization must present residual risk after verified treatment to the authority empowered for that exposure.
+**Decisão/ação obrigatória.** Para **exposição a risco e risco residual**, a organização deve apresentar o risco residual após tratamento verificado à authority empoderada para aquela exposição.
 
-**Record and evidence.** Record inherent risk, treatment evidence, residual rating, uncertainty, acceptance conditions, approver and expiry.
+**Registro e evidência.** Registrar risco inerente, evidência de tratamento, classificação residual, incerteza, condições de aceite, aprovador e expiração.
 
-**Done when.** The delivery team cannot self-accept material residual risk and acceptance does not override admissibility or law.
+**Concluído quando.** O time de entrega não pode auto-aceitar risco residual material e o aceite não sobrepõe admissibilidade ou lei.
 
-### 10.6 Quality, safety, fairness, privacy and security indicators
+### 10.6 Indicadores de qualidade, segurança, fairness, privacidade e proteção
 
-**Required decision/action.** For **quality, safety, fairness, privacy and security indicators**, the organization must define leading and lagging indicators for the named quality, impact or control outcome.
+**Decisão/ação obrigatória.** Para **indicadores de qualidade, segurança, fairness, privacidade e proteção**, a organização deve definir indicadores leading e lagging para o resultado nomeado de qualidade, impacto ou controle.
 
-**Record and evidence.** Record formula, population, slices, threshold, baseline, confidence, source quality and response owner.
+**Registro e evidência.** Registrar fórmula, população, fatias, threshold, baseline, confiança, qualidade da fonte e owner da resposta.
 
-**Done when.** The indicator detects meaningful deterioration without masking failed slices or treating absence of telemetry as success.
+**Concluído quando.** O indicador detecta deterioração significativa sem mascarar fatias reprovadas nem tratar ausência de telemetria como sucesso.
 
-### 10.7 Incident, exception and remediation trends
+### 10.7 Tendências de incidentes, exceções e remediação
 
-**Required decision/action.** For **incident, exception and remediation trends**, the organization must analyze recurrence, aging, severity, root cause and closure quality across incidents and exceptions.
+**Decisão/ação obrigatória.** Para **tendências de incidentes, exceções e remediação**, a organização deve analisar recorrência, envelhecimento, severidade, causa raiz e qualidade de fechamento em incidentes e exceções.
 
-**Record and evidence.** Record comparable taxonomy, period, population, reopenings, overdue items, systemic causes and management action.
+**Registro e evidência.** Registrar taxonomia comparável, período, população, reaberturas, itens vencidos, causas sistêmicas e ação da gestão.
 
-**Done when.** Trend review distinguishes more detection from more harm and leads to prevention or control redesign where warranted.
+**Concluído quando.** A revisão de tendências distingue mais detecção de mais dano e leva a prevenção ou redesign de controle quando justificado.
 
-### 10.8 Control implementation versus effectiveness
+### 10.8 Implementação de controle versus eficácia
 
-**Required decision/action.** For **control implementation versus effectiveness**, the organization must report design, implementation, operating coverage and observed effectiveness as separate states.
+**Decisão/ação obrigatória.** Para **implementação de controle versus eficácia**, a organização deve reportar design, implementação, cobertura operacional e eficácia observada como estados separados.
 
-**Record and evidence.** Record control ID, owner, applicable population, implementation evidence, test method, result, gaps and retest date.
+**Registro e evidência.** Registrar control ID, owner, população aplicável, evidência de implementação, método de teste, resultado, lacunas e data de reteste.
 
-**Done when.** A configured control is not called effective without outcome evidence and failed effectiveness changes risk or approval.
+**Concluído quando.** Um controle configurado não é chamado de eficaz sem evidência de resultado e eficácia reprovada muda risco ou aprovação.
 
-### 10.9 Evidence completeness and quality
+### 10.9 Completude e qualidade das evidências
 
-**Required decision/action.** For **evidence completeness and quality**, the organization must measure whether required evidence exists, is current, attributable, intact and decision-relevant.
+**Decisão/ação obrigatória.** Para **completude e qualidade das evidências**, a organização deve medir se a evidência exigida existe, é atual, atribuível, íntegra e relevante para a decisão.
 
-**Record and evidence.** Record evidence requirement, population, present/missing/stale status, integrity, reviewer and remediation.
+**Registro e evidência.** Registrar requisito de evidência, população, status presente/ausente/obsoleta, integridade, revisor e remediação.
 
-**Done when.** Missing or low-quality evidence lowers confidence and cannot be counted as a passed control.
+**Concluído quando.** Evidência ausente ou de baixa qualidade reduz a confiança e não pode ser contada como controle aprovado.
 
-### 10.10 Adoption and user behavior
+### 10.10 Adoção e comportamento do usuário
 
-**Required decision/action.** For **adoption and user behavior**, the organization must measure intended adoption, meaningful use and unsafe workaround behavior by target population.
+**Decisão/ação obrigatória.** Para **adoção e comportamento do usuário**, a organização deve medir adoção pretendida, uso significativo e comportamento de workaround inseguro por população-alvo.
 
-**Record and evidence.** Record eligible population, active use, task completion, abandonment, support demand, feedback and sampling limitations.
+**Registro e evidência.** Registrar população elegível, uso ativo, conclusão de tarefa, abandono, demanda de suporte, feedback e limitações de amostragem.
 
-**Done when.** The owner can distinguish availability from useful adoption and can change training, design or rollout based on evidence.
+**Concluído quando.** O owner consegue distinguir disponibilidade de adoção útil e pode mudar treinamento, design ou rollout com base em evidência.
 
-### 10.11 Cost and efficiency
+### 10.11 Custo e eficiência
 
-**Required decision/action.** For **cost and efficiency**, the organization must attribute consumption and total operating cost to agent, owner, environment and measurable outcome.
+**Decisão/ação obrigatória.** Para **custo e eficiência**, a organização deve atribuir consumo e custo operacional total a agente, owner, ambiente e resultado mensurável.
 
-**Record and evidence.** Record unit cost, budget, quota, forecast, variance, shared-cost allocation, anomaly and optimization decision.
+**Registro e evidência.** Registrar custo unitário, orçamento, quota, previsão, variância, alocação de custo compartilhado, anomalia e decisão de otimização.
 
-**Done when.** Threshold breach triggers throttling or review and cost claims remain separate from value realization claims.
+**Concluído quando.** Violação de threshold dispara throttling ou revisão e alegações de custo permanecem separadas de alegações de realização de valor.
 
-### 10.12 Outcome and value realization
+### 10.12 Resultado e realização de valor
 
-**Required decision/action.** For **outcome and value realization**, the organization must define a falsifiable outcome, pre-change baseline and credible counterfactual with an evidence cutoff.
+**Decisão/ação obrigatória.** Para **resultado e realização de valor**, a organização deve definir um resultado falseável, baseline pré-mudança e contrafactual crível com corte de evidências.
 
-**Record and evidence.** Record metric owner, population, formula, target, source, confounders, cost and decision threshold.
+**Registro e evidência.** Registrar owner da métrica, população, fórmula, alvo, fonte, confounders, custo e threshold de decisão.
 
-**Done when.** The authority can distinguish creation, adoption, quality and outcome and can stop work when evidence does not support expansion.
+**Concluído quando.** A authority consegue distinguir criação, adoção, qualidade e resultado e pode interromper o trabalho quando a evidência não suporta expansão.
 
-### 10.13 Supplier performance
+### 10.13 Desempenho de fornecedores
 
-**Required decision/action.** For **supplier performance**, the organization must govern supplier and downstream dependencies through due diligence, contract, monitoring and exit planning.
+**Decisão/ação obrigatória.** Para **desempenho de fornecedores**, a organização deve governar fornecedores e dependências a jusante por due diligence, contrato, monitoramento e planejamento de saída.
 
-**Record and evidence.** Record service, owner, criticality, evidence, obligations, concentration, incidents, sub-processors, fallback and exit test.
+**Registro e evidência.** Registrar serviço, owner, criticidade, evidência, obrigações, concentração, incidentes, subprocessadores, fallback e teste de saída.
 
-**Done when.** Supplier failure triggers the agreed containment or fallback and accountability remains with the organization.
+**Concluído quando.** Falha do fornecedor dispara a contenção ou fallback acordado e a accountability permanece com a organização.
 
-### 10.14 Maturity assessment and confidence
+### 10.14 Avaliação de maturidade e confiança
 
-**Required decision/action.** For **maturity assessment and confidence**, the organization must score organizational capability only from observed operation and separately state evidence confidence and coverage.
+**Decisão/ação obrigatória.** Para **avaliação de maturidade e confiança**, a organização deve pontuar a capacidade organizacional somente a partir de operação observada e declarar separadamente confiança e cobertura da evidência.
 
-**Record and evidence.** Record dimension, criteria, evidence, score 0–4, rationale, confidence, coverage, reviewer and target.
+**Registro e evidência.** Registrar dimensão, critérios, evidência, pontuação 0–4, rationale, confiança, cobertura, revisor e alvo.
 
-**Done when.** The score cannot exceed the lowest demonstrated criterion and comparison uses compatible scope and method.
+**Concluído quando.** A pontuação não pode exceder o critério demonstrado mais baixo e a comparação usa escopo e método compatíveis.
 
-### 10.15 Portfolio review cadence
+### 10.15 Cadência de revisão de portfólio
 
-**Required decision/action.** For **portfolio review cadence**, the organization must set a risk-based review cadence and event-driven triggers rather than relying only on a calendar.
+**Decisão/ação obrigatória.** Para **cadência de revisão de portfólio**, a organização deve definir cadência de revisão baseada em risco e gatilhos orientados a eventos em vez de depender apenas de calendário.
 
-**Record and evidence.** Record last review, next review, trigger, reviewer, evidence cutoff, decision and open actions.
+**Registro e evidência.** Registrar última revisão, próxima revisão, gatilho, revisor, corte de evidências, decisão e ações abertas.
 
-**Done when.** Overdue or trigger-affected artifacts are visible and cannot remain silently approved.
+**Concluído quando.** Artefatos vencidos ou afetados por gatilho são visíveis e não podem permanecer aprovados silenciosamente.
 
-### 10.16 Policy, control and standard review
+### 10.16 Revisão de policy, controles e normas
 
-**Required decision/action.** For **policy, control and standard review**, the organization must review requirements against incidents, exceptions, tests, external change and implementation experience.
+**Decisão/ação obrigatória.** Para **revisão de policy, controles e normas**, a organização deve revisar requisitos contra incidentes, exceções, testes, mudança externa e experiência de implementação.
 
-**Record and evidence.** Record artifact version, evidence considered, gaps, proposed change, consultation, decision and migration impact.
+**Registro e evidência.** Registrar versão do artefato, evidências consideradas, lacunas, mudança proposta, consulta, decisão e impacto de migração.
 
-**Done when.** Obsolete or ineffective requirements are revised or superseded without erasing historical decisions.
+**Concluído quando.** Requisitos obsoletos ou ineficazes são revisados ou superseded sem apagar decisões históricas.
 
-### 10.17 Regulatory, threat and technology change
+### 10.17 Mudança regulatória, de ameaças e de tecnologia
 
-**Required decision/action.** For **regulatory, threat and technology change**, the organization must define material changes and external events that reopen risk, approval, evaluation or contract compatibility.
+**Decisão/ação obrigatória.** Para **mudança regulatória, de ameaças e de tecnologia**, a organização deve definir mudanças materiais e eventos externos que reabram risco, aprovação, avaliação ou compatibilidade contratual.
 
-**Record and evidence.** Record trigger, detection source, impacted assets and evidence, interim control, owner, due date and disposition.
+**Registro e evidência.** Registrar gatilho, fonte de detecção, ativos e evidências impactados, controle provisório, owner, data de vencimento e disposição.
 
-**Done when.** Triggered assets cannot rely indefinitely on prior approval and the new decision is linked to the changed version.
+**Concluído quando.** Ativos acionados não podem depender indefinidamente de aprovação anterior e a nova decisão é vinculada à versão alterada.
 
-### 10.18 Improvement backlog and prioritization
+### 10.18 Backlog de melhorias e priorização
 
-**Required decision/action.** For **improvement backlog and prioritization**, the organization must maintain one risk- and dependency-aware backlog for control, platform, process and evidence improvements.
+**Decisão/ação obrigatória.** Para **backlog de melhorias e priorização**, a organização deve manter um único backlog ciente de risco e dependências para melhorias de controle, plataforma, processo e evidência.
 
-**Record and evidence.** Record finding source, severity, benefit, owner, dependency, effort, due date, status and acceptance criterion.
+**Registro e evidência.** Registrar origem da descoberta, severidade, benefício, owner, dependência, esforço, data de vencimento, status e critério de aceite.
 
-**Done when.** Priority changes are explicit and overdue material items influence risk, funding or operating decisions.
+**Concluído quando.** Mudanças de prioridade são explícitas e itens materiais vencidos influenciam decisões de risco, financiamento ou operação.
 
-### 10.19 Maintain, expand, restrict, redesign or retire decisions
+### 10.19 Decisões de manter, expandir, restringir, redesenhar ou aposentar
 
-**Required decision/action.** For **maintain, expand, restrict, redesign or retire decisions**, the organization must select one portfolio disposition from current outcome, risk, cost, adoption and evidence.
+**Decisão/ação obrigatória.** Para **decisões de manter, expandir, restringir, redesenhar ou aposentar**, a organização deve selecionar uma disposição de portfólio a partir de resultado atual, risco, custo, adoção e evidência.
 
-**Record and evidence.** Record alternatives, evidence cutoff, decision, authority, conditions, affected assets and implementation owner.
+**Registro e evidência.** Registrar alternativas, corte de evidências, decisão, authority, condições, ativos afetados e owner da implementação.
 
-**Done when.** The disposition changes funding, exposure or lifecycle state and is not merely a recommendation with no owner.
+**Concluído quando.** A disposição muda financiamento, exposição ou estado de lifecycle e não é meramente uma recomendação sem owner.
 
-### 10.20 Management review and accountability reporting
+### 10.20 Revisão da gestão e reporte de accountability
 
-**Required decision/action.** For **management review and accountability reporting**, the organization must present an integrated view of outcomes, risk, control effectiveness, incidents, exceptions, resources and decisions to accountable management.
+**Decisão/ação obrigatória.** Para **revisão da gestão e reporte de accountability**, a organização deve apresentar à gestão accountable uma visão integrada de resultados, risco, eficácia de controles, incidentes, exceções, recursos e decisões.
 
-**Record and evidence.** Retain agenda, evidence cutoff, material limitations, challenged assumptions, decisions, owners, dates and follow-up.
+**Registro e evidência.** Reter pauta, corte de evidências, limitações materiais, premissas desafiadas, decisões, owners, datas e acompanhamento.
 
-**Done when.** Management records explicit maintain, improve, restrict, fund or retire decisions and tracks them to closure.
+**Concluído quando.** A gestão registra decisões explícitas de manter, melhorar, restringir, financiar ou aposentar e as acompanha até o fechamento.
 
 
 ## Conteúdo canônico incorporado
