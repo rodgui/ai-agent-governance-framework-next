@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "releaseId": "REL-MEETING-NOTES-001",
+  "agentId": "meeting-notes-summarizer",
+  "blueprintVersion": "1.0",
+  "decision": "approved",
+  "riskTier": "T1",
+  "admissibility": "permitted",
+  "createdAt": "2026-06-20T10:00:00Z",
+  "approvers": [
+    {
+      "role": "Policy Gate",
+      "authority": "Example Automated Policy Gate",
+      "decisionAt": "2026-06-20T10:00:00Z"
+    }
+  ],
+  "controlEvidence": [
+    {
+      "controlId": "AGF-REG-001",
+      "status": "pass",
+      "evidenceRefs": [
+        "toolkit/examples/cases/meeting-notes-summarizer/registry.json"
+      ]
+    },
+    {
+      "controlId": "AGF-IDN-001",
+      "status": "pass",
+      "evidenceRefs": [
+        "toolkit/examples/cases/meeting-notes-summarizer/blueprint.json"
+      ]
+    },
+    {
+      "controlId": "AGF-DAT-001",
+      "status": "pass",
+      "evidenceRefs": [
+        "toolkit/examples/cases/meeting-notes-summarizer/blueprint.json"
+      ]
+    },
+    {
+      "controlId": "AGF-OPS-001",
+      "status": "pass",
+      "evidenceRefs": [
+        "toolkit/examples/cases/meeting-notes-summarizer/blueprint.json"
+      ]
+    }
+  ],
+  "evaluationRefs": [
+    "toolkit/examples/cases/meeting-notes-summarizer/blueprint.json"
+  ],
+  "exceptionRefs": [],
+  "artifactHashes": [
+    {
+      "path": "toolkit/examples/cases/meeting-notes-summarizer/blueprint.json",
+      "sha256": "e03013e93825f8fc15e17f9a6aedd01e0bf5ee2918fde939f816674120b57b50"
+    }
+  ]
+}
