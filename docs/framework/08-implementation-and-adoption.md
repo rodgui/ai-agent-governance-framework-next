@@ -258,11 +258,245 @@ flowchart LR
 
 Antes do handoff: owners permanentes, níveis de suporte, runbooks, acesso, monitoramento, capacidade e backlog prontos. Reter: aceite de serviço, assinatura do owner, modelo de suporte, SLO, teste de runbook, dívida conhecida, treinamento e escalonamento. **Times do business as usual resolvem um problema representativo e aceitam o trabalho residual sem dependência do projeto de implementação.** O último item é o mais ignorado e o que mais derruba programas: sem owner de BAU aceito, o piloto vira ilha mantida pelo time do programa.
 
-## 6. Tratamento de agentes existentes e shadow
+## 6. Do programa à rotina: oito processos operacionais
+
+A implantação termina quando os gates G0–G7 decidem que existe governança operável. A partir daí, o que mantém o sistema vivo **não é mais o programa** — é a rotina: o mesmo conjunto de processos que cada agente atravessa repetidamente, dia após dia, da ideia ao encerramento.
+
+Esta seção apresenta esses processos no formato de quem vai executá-los: **o que é, quando dispara, quem responde, o que entra, o que se faz, o que sai e onde errar**. O detalhe normativo de cada tema continua nos capítulos donos (indicados em cada processo); aqui eles aparecem na sequência em que a operação realmente acontece.
+
+**O mapa, para orientação:**
+
+| # | Processo | Capítulo dono | Gate relacionado | Fase do lifecycle |
+|---|---|---|---|---|
+| P1 | Criação e registro | 03 (registry) e 05 (F1–F2) | G2 | IDEA → REGISTER |
+| P2 | Avaliação e aprovação | 04 (risco) e 05 (F5) | G3/G4/G5 | CLASSIFY → APPROVE |
+| P3 | Publicação | 07 (evidência) e 05 (F6) | G5 | RELEASE |
+| P4 | Operação rotineira | 09 (§1) e 10 (métricas) | G6 | PRODUCTION |
+| P5 | Incidentes | 09 (§2) | G6 | CONTAIN → REACTIVATE |
+| P6 | Mudanças | 09 (§4.3) e 05 (F7) | gates reabertos | CHANGE |
+| P7 | Revisão e auditoria | 10 (§4) e 09 (§4.4) | G7 | ATTESTATION |
+| P8 | Sunset | 09 (§4.5) e 05 (F8) | G7 | RETIRE |
+
+A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de ouro que atravessa todos: **nenhum deles conclui sem registro.** Se o passo não deixou rastro recuperável, ele não aconteceu para a governança.
+
+### 6.1 P1 — Criação e registro inicial
+
+**O que é e por que importa.** É a porta de entrada: nenhum agente é criado, adquirido ou adotado sem owners nomeados, avaliação inicial de risco e um registro mínimo no registry. Sem este processo, o estate acumula agentes invisíveis — criados em plataformas de citizen development, ativados em PoCs que nunca morrem, legados sem dono — e toda a governança posterior opera às cegas, porque o [inventário](03-inventory-portfolio-and-value.md) nunca nasceu.
+
+**Quando dispara.** Uma ideia ou demanda de novo agente em qualquer unidade; ou a necessidade de formalizar um agente já existente (legado) que nunca passou pelo processo.
+
+**Quem responde.** O **business owner**, com apoio do technical owner e da Run Authority. O proponente participa; a responsabilidade de registrar corretamente é do owner.
+
+**Entradas.** A demanda ou caso de uso priorizado; o [use-case intake](../../toolkit/templates/use-case-intake.md) preenchido; acesso ao registry (ferramenta ou modelo corporativo).
+
+**Atividades.**
+1. O proponente discute o caso de uso com os owners para validar objetivo, dados, escopo e se **agente é o mecanismo certo** — a pergunta de adequação do [cap. 03](03-inventory-portfolio-and-value.md#decidir-o-que-construir-intake-e-adequação) vem antes de qualquer tecnologia.
+2. Business e technical owner preenchem a [autoavaliação](../../toolkit/templates/self-assessment-form.md) com, no mínimo: objetivo, dados e owners, permissões, integrações, autonomia/HITL, usuários, impacto, riscos e controles previstos.
+3. A Run Authority apoia no enquadramento inicial de risco (blast radius) usando as dimensões do [cap. 04](04-risk-impact-and-compliance.md).
+4. Cria-se o registro preliminar no registry com agent ID, nome, owners, ambiente previsto e estado `registered` — não "aprovado", não "em produção": **o estado reflete consequência operacional real**.
+5. Se houver agente similar no registry, a Run Authority sinaliza a possível duplicidade e registra a avaliação no próprio registro.
+
+**Saídas.** Autoavaliação preenchida; registro inicial no registry com owners e estado; indicação explícita de duplicidade ou reuso.
+
+**Armadilhas comuns.**
+- Registrar como `approved` o que ainda é só uma ideia — o estado no registry é a verdade para automação e auditoria; inflá-lo destrói a confiança em todos os outros processos.
+- Aceitar "não sei" silenciosamente na autoavaliação: **`não sei` é um gap com owner e prazo**, não uma resposta.
+- Pular a pergunta de adequação: um workflow determinístico disfarçado de agente herda custo e risco de governança sem trazer a capacidade que a justifica.
+
+**Onde está a profundidade.** Descoberta, fontes e taxonomia em [cap. 03](03-inventory-portfolio-and-value.md); lifecycle F1–F2 em [cap. 05](05-agent-lifecycle.md).
+
+### 6.2 P2 — Avaliação e aprovação
+
+**O que é e por que importa.** É onde a classificação vira decisão: o pre-screen coleta fatos, o scoring e os red flags produzem o tier, o impact trigger decide se entra Responsible AI, os domain reviews tratam controles especializados, e a autoridade competente aprova, condiciona ou rejeita. Sem este processo, cada caso é decidido pelo critério de quem estiver na sala — exatamente o cenário que a governança existe para eliminar.
+
+**Quando dispara.** Autoavaliação preenchida e registro inicial criado; planejamento de PoC, piloto ou promoção para produção; qualquer demanda de reavaliação após mudança material.
+
+**Quem responde.** A **Run Authority** coordena; as autoridades de aprovação são as definidas pelo tier e pela admissibilidade no [operating model](02-governance-and-accountability.md).
+
+**Entradas.** Autoavaliação; [risk pre-screen](../../toolkit/templates/risk-pre-screen.md); informações sobre dados sensíveis, sistemas críticos e obrigações aplicáveis.
+
+**Atividades.**
+1. Aplicar o [pre-screen](../../toolkit/templates/risk-pre-screen.md) — perguntas objetivas sobre dados, autonomia, ações irreversíveis, pessoas afetadas e alcance.
+2. Calcular o risco base e aplicar os **red flags** — eles corrigem o que um score médio esconde: um caso com dez respostas benignas e uma destrutiva não é um caso médio (ver [cap. 04](04-risk-impact-and-compliance.md)).
+3. Definir **tier (T1–T4) e admissibilidade** (permitted/conditional/restricted/prohibited). Tier determina proporcionalidade de controle; admissibilidade determina se o uso é aceitável em primeiro lugar.
+4. Aplicar o **impact trigger screen**: o agente influencia direitos, oportunidades, decisões sobre pessoas ou segurança? Se sim, executar o impact assessment formal **mesmo em caso tecnicamente simples**.
+5. Acionar **domain reviews** apenas quando houver gatilho relevante — privacidade por dados pessoais, segurança por privilégio, arquitetura por mudança de pattern. Review acionada por regra fixa vira fila e morre.
+6. Registrar a decisão com autoridade, evidências aceitas, condições e expiry — conforme o [contrato comum dos gates](#contrato-comum-dos-decision-gates). Se reprovado, o estado vira `rejected` ou `pending-changes`, com o que falta explícito.
+
+**Saídas.** Decisão formal registrada (approve/condition/hold/reject); evidências vinculadas ao registro; tier, admissibilidade e controles obrigatórios definidos; conditions e expiry quando aplicável.
+
+**Armadilhas comuns.**
+- Deixar o score sozinho decidir: red flags são **piso, não teto** — nunca diluídos por média.
+- Tratar "PoC" como sinônimo de baixo risco: um agente para 5 usuários que executa pagamentos é mais crítico que um para 5.000 que resume documentos.
+- Aprovar sem residual risk explícito: **nenhuma aprovação existe sem residual risk aceito pela autoridade compatível com o tier.**
+
+**Onde está a profundidade.** Classificação completa em [cap. 04](04-risk-impact-and-compliance.md); matriz de decisão tier×mecanismo na seção 1 do cap. 04; gates em [cap. 05](05-agent-lifecycle.md) e na [seção 1 deste capítulo](#a-jornada-em-8-gates).
+
+### 6.3 P3 — Publicação em produção
+
+**O que é e por que importa.** É o portão final antes da exposição real: nada entra em produção sem cumprir o [Minimum Production Bar](../../toolkit/controls/minimum-production-bar.md), com HITL, logging, contenção e custo configurados. É aqui que a governança verifica que **a evidência existe e é recuperável** — não que alguém disse que os testes passaram.
+
+**Quando dispara.** Agente aprovado para produção; desenvolvimento e testes concluídos pelo technical owner.
+
+**Quem responde.** A autoridade de release definida no operating model (perfil publisher ou equivalente), em conjunto com technical e business owner.
+
+**Entradas.** [Release evidence manifest](../../toolkit/templates/release-evidence-manifest.md); agente configurado em homologação; plano de rollback quando aplicável; evidência dos testes mínimos (prompt injection, exfiltração, safety, tool-use).
+
+**Atividades.**
+1. O technical owner executa os testes mínimos exigidos e registra evidências com resultado observável — "recusou", "bloqueou", "pediu aprovação".
+2. Owners preenchem e validam o checklist de publicação: owners, dados e permissões, HITL, logs, cap/alertas de custo, testes, documentação e rollback.
+3. A autoridade de release confere o checklist, valida o registro no registry e **que o evidence pack do tier está completo** (ver [cap. 07](07-evaluation-evidence-and-assurance.md)).
+4. Executa-se a promoção com segregação de funções quando aplicável — quem constrói não é quem aprova a própria publicação.
+5. Ativam-se dashboards e alertas de consumo e logs **antes** de liberar usuários.
+
+**Saídas.** Agente ativo em produção no escopo aprovado; checklist concluído e arquivado; registry atualizado com estado `production` e monitoramento configurado; usuários comunicados do canal oficial e do escopo suportado.
+
+**Armadilhas comuns.**
+- Kill switch testado em documento, nunca exercitado: o teste real do kill switch é parte do evidence pack de T2+.
+- Publicar antes de ativar alertas de custo: um agente sem cap em produção é uma superfície de custo aberta (denial-of-wallet).
+- Comunicar usuários depois do problema: o anúncio do escopo suportado e do canal de reporte é parte da publicação, não do incidente.
+
+**Onde está a profundidade.** Evidência e assurance em [cap. 07](07-evaluation-evidence-and-assurance.md); lifecycle F6 em [cap. 05](05-agent-lifecycle.md); MPB em [toolkit](../../toolkit/controls/minimum-production-bar.md).
+
+### 6.4 P4 — Operação rotineira
+
+**O que é e por que importa.** É o coração do dia a dia: monitorar consumo contra cap, acompanhar logs e erros, revisar KPIs de valor e manter o registry refletindo a situação atual. Um agente publicado não é um ativo congelado — é um sistema dinâmico que deriva; a operação rotineira é o que detecta a deriva cedo, quando ainda é ajuste e não incidente.
+
+**Quando dispara.** Continuamente, enquanto houver agentes em produção; em cadência definida para revisões de valor (ex.: mensal/trimestral por tier).
+
+**Quem responde.** **Run Authority** pelo monitoramento e pelo registry; business owner pelos KPIs de valor; technical owner pelas melhorias técnicas.
+
+**Entradas.** Registry com campos de consumo, cap e próximos marcos; dashboards de consumo, logs e erros; relatórios de uso.
+
+**Atividades.**
+1. Monitorar consumo dos agentes versus cap, atuando sobre alertas em patamares (ex.: 70% e 90% do orçamento).
+2. Acompanhar logs de uso e erros para identificar comportamentos anômalos, incidentes potenciais ou violação de policy.
+3. O business owner revisa periodicamente os KPIs de valor e decide ajustes de escopo ou usuários.
+4. O technical owner avalia melhorias: otimização de prompts/modelos, ajustes de permissão, dívida técnica.
+5. Atualizar o registry com consumo, incidentes relevantes e ações corretivas — **o registry é o retrato atual, não um formulário de entrada.**
+
+**Saídas.** Operação contínua com visibilidade de consumo, performance e conformidade; alertas tratados e ajustes documentados; registry refletindo a situação atual de cada agente.
+
+**Armadilhas comuns.**
+- Dashboard sem owner, threshold e ação: visualização não é governança (ver [cap. 10](10-metrics-review-and-improvement.md)).
+- Tratar pico de custo só como tema financeiro: loop descontrolado é custo **e** sinal de segurança ao mesmo tempo.
+- Registry desatualizado entre revisões: a próxima decisão de portfólio será tomada sobre um retrato errado.
+
+**Onde está a profundidade.** Modelo de observabilidade e playbook em [cap. 09](09-operations-incidents-and-continuity.md); FinOps em [cap. 10](10-metrics-review-and-improvement.md).
+
+### 6.5 P5 — Gestão de incidentes
+
+**O que é e por que importa.** É a resposta a violações reais ou suspeitas — vazamento de dados, comportamento inadequado, consumo anômalo, falha crítica. A velocidade e a ordem importam mais que a burocracia: conter primeiro, entender depois, revalidar antes de reativar. **A contenção não pode depender do próprio agente com falha.**
+
+**Quando dispara.** Detecção via alerta, reporte de usuário, auditoria ou ferramenta de segurança; indícios de violação de policy, privacidade ou risco operacional relevante.
+
+**Quem responde.** **Run Authority**, coordenando technical owner, business owner, segurança e compliance conforme severidade.
+
+**Entradas.** Registro do agente (owners, integrações, dados); logs com histórico recente; procedimentos de resposta corporativos; [severity matrix](09-operations-incidents-and-continuity.md) e [runbooks](09-operations-incidents-and-continuity.md).
+
+**Atividades.**
+1. **Conter primeiro.** Kill switch imediato para risco severo; quarentena quando o risco permitir (limitar escopo, desabilitar escrita, reduzir usuários). Escolher o menor passo da [escada de contenção](09-operations-incidents-and-continuity.md) que controla o risco.
+2. **Preservar evidência antes de remediação** — a investigação morre se a resposta destruir o rastro.
+3. Analisar logs e reproduzir o cenário para causa raiz; avaliar blast radius real.
+4. Segurança/compliance avaliam impacto regulatório e necessidade de comunicação.
+5. O business owner decide, com as áreas de controle, entre corrigir e retomar ou iniciar sunset.
+6. Registrar incidente, ações e decisão final; atualizar o registry; alimentar a regression suite.
+
+**Saídas.** Incidente contido com kill switch/quarentena quando aplicável; registro formal com plano de ação; decisão de continuidade, ajuste ou sunset documentada.
+
+**Armadilhas comuns.**
+- Reativar antes de regression test: a reativação exige causa, remediação, reteste e sinais precoces ativos.
+- Quarentena que não revoga tool access: quarentena de fachada é falsa sensação de controle.
+- Ausência de incidente tratada como prova de segurança: ausência pode ser sub-detecção, não ausência de dano.
+
+**Onde está a profundidade.** Incident lifecycle, containment ladder, quarentena e reativação em [cap. 09](09-operations-incidents-and-continuity.md).
+
+### 6.6 P6 — Gestão de mudanças
+
+**O que é e por que importa.** Agentes mudam constantemente — novo prompt, nova tool, nova fonte de dados, nova autonomia. Cada mudança pode alterar risco, impacto ou comportamento, e a pergunta da governança é sempre a mesma: **esta mudança reabre qual gate?** O processo existe para que mudança material nunca passe despercebida e mudança trivial nunca pague o custo de uma reavaliação integral.
+
+**Quando dispara.** Solicitação de mudança em agente existente; identificação de aumento de risco (dados sensíveis novos, sistemas críticos novos, ampliação de autonomia ou usuários).
+
+**Quem responde.** **Business e technical owner** descrevem; a Run Authority verifica impacto de classificação e roteia.
+
+**Entradas.** Situação atual no registry; autoavaliação anterior; tier e admissibilidade vigentes; lista de [material change triggers](05-agent-lifecycle.md) do agente.
+
+**Atividades.**
+1. Owners descrevem a mudança proposta (escopo, dados, integrações, autonomia, usuários) e reavaliam a autoavaliação.
+2. A Run Authority verifica se a mudança altera tier, admissibilidade ou controles obrigatórios.
+3. Se o risco sobe (dados pessoais novos, autonomia maior, público muito maior), reabrir a avaliação e a aprovação na autoridade competente — **o reassessment recomeça do ponto afetado, não do zero**.
+4. Após aprovação, implementar em ambiente controlado com plano de rollback.
+5. Atualizar registry e blueprint versionados; manter o histórico da versão anterior — **mudar o blueprint não pode apagar a evidência de releases anteriores**.
+6. Mudanças emergenciais seguem break-glass com revisão posterior obrigatória.
+
+**Saídas.** Mudança implementada com aprovação adequada e rastreabilidade; registry e blueprint atualizados e versionados; autoavaliação atualizada com histórico preservado.
+
+**Armadilhas comuns.**
+- Alterar prompt em produção sem version: impossível explicar depois por que o comportamento mudou.
+- Tratar toda mudança como material (reavaliação integral por padrão é cara — e o que é caro deixa de ser feito) ou nenhuma como material (perde o controle).
+- Aprovar a mudança "rapidinho" fora do processo: cada bypass é uma exceção não registrada esperando para virar incidente.
+
+**Onde está a profundidade.** Material change em [cap. 05](05-agent-lifecycle.md) e [cap. 09](09-operations-incidents-and-continuity.md#gestão-de-mudanças).
+
+### 6.7 P7 — Revisão periódica e auditoria
+
+**O que é e por que importa.** É a revalidação calendarizada de que o agente continua necessário, seguro, aderente e com owners vivos. Agentes não envelhecem sozinhos: perdem uso, perdem owner, acumulam permissões obsoletas. A revisão periódica — a attestation — é o processo que decide **manter, corrigir, restringir ou aposentar** com base em evidência atual, não em fé.
+
+**Quando dispara.** Passagem do período definido por tier (ex.: mais curto para T3/T4); planejamento de auditorias internas ou externas; evento material que antecipe a revisão.
+
+**Quem responde.** **Run Authority** coordena; business e technical owners participam; compliance e auditoria quando necessário.
+
+**Entradas.** Registry com datas de próxima revisão; relatórios de consumo, incidentes e mudanças do período; policy e controles vigentes.
+
+**Atividades.**
+1. Gerar a lista de agentes com revisão vencida ou próxima e agendar com os owners.
+2. Para cada agente, avaliar com evidência: uso efetivo, valor de negócio, incidentes, consumo, aderência a HITL, permissões e dados ainda necessários.
+3. Identificar candidatos a otimização, redução de escopo, ajuste de cap ou sunset.
+4. Registrar conclusões no registry: nova data de revisão, ações corretivas e, se aplicável, decisão de sunset.
+5. Em auditorias, fornecer o pacote: autoavaliação, aprovações, checklists, incidentes e revisões — **a evidência é produzida continuamente, não preparada para a auditoria**.
+
+**Saídas.** Revisões executadas e documentadas; ajustes ou sunsets disparados; evidências prontas para auditoria; owners reconfirmados nominalmente.
+
+**Armadilhas comuns.**
+- Attestation como assinatura sem evidência: confirmar "sim, continua ok" sem olhar dados é teatro de compliance.
+- Revisão que nunca gera ação: uma revisão que termina sempre em "manter" não está examinando — está carimbando.
+- Owner que saiu da empresa e registro intacto: **saída ou inatividade do owner dispara redesignação, suspensão ou aposentadoria** antes de o registro virar órfão.
+
+**Onde está a profundidade.** Attestation em [cap. 09](09-operations-incidents-and-continuity.md); cadência e revisão de portfólio em [cap. 10](10-metrics-review-and-improvement.md).
+
+### 6.8 P8 — Sunset
+
+**O que é e por que importa.** É o encerramento controlado: sem owner, sem uso, duplicado, em plataforma não aprovada ou com incidente grave não corrigido — o agente sai de cena sem acessos residuais, com evidências preservadas e com a decisão registrada. O sunset bem-feito é o que impede o estate de acumular zumbis que custam e expõem.
+
+**Quando dispara.** Agente sem owner, sem uso por período definido, duplicado, em plataforma não aprovada ou com incidente grave não resolvido no prazo; decisão de substituir ou descontinuar.
+
+**Quem responde.** **Run Authority**, em conjunto com business e technical owner.
+
+**Entradas.** Registry com status de uso, owners e incidentes; [plano de sunset](../../toolkit/templates/sunset-plan.md); informação de migração/substituição quando houver.
+
+**Atividades.**
+1. Marcar o agente como candidato a sunset no registry e notificar os interessados, com prazo de regularização ou confirmação.
+2. Confirmado o encerramento, seguir as fases padrão com prazos definidos — ex.: **Warning (T0), Quarantine (T+15), Deactivate (T+30)** — ajustadas à política.
+3. Na quarentena: limitar ou desativar ações de escrita, reduzir escopo ou usuários, mantendo logs e evidências.
+4. Na desativação: remover acessos, desabilitar integrações, **revogar identidades técnicas** vinculadas e registrar o motivo.
+5. Registrar no registry: início do sunset, motivo, owner da decisão, plano de migração, evidência de comunicação aos usuários e política de retenção de logs.
+6. Opcionalmente, arquivar configurações por período definido para rollback justificado.
+7. Verificar órfãos e dependências downstream — encerrar a UI e deixar integrações ativas é o erro clássico.
+
+**Saídas.** Agente desativado sem acessos residuais; registry com estado `retired` e documentação completa; custos encerrados; risco de zumbis eliminado.
+
+**Armadilhas comuns.**
+- Manter agente sem uso por medo de sunset: agente parado ainda custa e ainda expõe.
+- Encerrar a interface e deixar conectores ativos: o agente continua operando invisível.
+- Sunset sem registro do motivo e da decisão: o próximo auditor não saberá por que saiu — e o próximo proponente recriará o mesmo agente.
+
+**Onde está a profundidade.** Sunset em [cap. 09](09-operations-incidents-and-continuity.md) e lifecycle F8 em [cap. 05](05-agent-lifecycle.md).
+
+## 7. Tratamento de agentes existentes e shadow
 
 Triar ativos existentes em caminhos de **registrar, restringir, remediar, migrar, suspender ou aposentar** usando um plano datado: confiança da descoberta, owner, exposição atual, controle provisório, estado-alvo, prazo e authority. **Status legado não é isenção permanente; ativos de alto risco vencidos são contidos.**
 
-## 7. Plano opcional de piloto
+## 8. Plano opcional de piloto
 
 > **Uso opcional.** Cohort de onboarding, phased rollout ou evidência de agentes existentes podem cumprir o mesmo objetivo. G0–G7, MPB e evidence requirements continuam iguais em qualquer rota.
 
@@ -278,7 +512,7 @@ Quando escolhido, o piloto existe para **testar a governança, não para provar 
 
 **Failure modes:** piloto só com leitura; medir apenas a performance do agente; go-live sem baseline congelada; kill switch testado em documento; ajustar standards depois de escalar; piloto sem owner de BAU; tratar ausência de incidente como prova de segurança.
 
-## 8. Referência normativa
+## 9. Referência normativa
 
 Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 1–7 explicam o porquê.
 
@@ -300,8 +534,9 @@ Condições mínimas que devem ser verdadeiras. Use como checklist; as seções 
 | R14 | Definir competências e treinamento por papel vinculado a decisões | papel, objetivo, avaliação, conclusão, expiração, remediação, owner | pessoal demonstra tarefa; competência vencida visível antes do exercício |
 | R15 | Prover comunicação, suporte e feedback adequados ao papel | público, mensagem, canal, momento, owner, compreensão, feedback, ação | usuários conhecem fronteira, rota de reporte e consequência; feedback chega a owner |
 | R16 | Comprovar prontidão de suporte e operação antes do handoff | aceite de serviço, assinatura, suporte, SLO, runbook testado, dívida, treinamento | BAU resolve problema representativo sem dependência do projeto |
+| R17 | Operar os oito processos do ciclo (P1–P8) como rotina registrada | registros de criação, decisão, release, operação, incidente, mudança, attestation e sunset | cada processo deixa rastro recuperável; nenhum estado avança sem registro e sem authority |
 
-## 9. Evidências, métricas e failure modes
+## 10. Evidências, métricas e failure modes
 
 **Evidências:** persona e stakeholder map; adoption/support plan; catalog entry e discovery analytics; learning assets; support model e escalation; training/competence records; feedback backlog e decisões; change communication; user research; decision records de cada gate (G0–G7); capability map com evidências observáveis; baseline com data de corte; relatório de piloto com decisão registrada.
 

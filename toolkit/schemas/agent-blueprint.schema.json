@@ -754,6 +754,46 @@
         "exceptionExpiresAt": {
           "type": "string",
           "format": "date"
+        },
+        "assessmentScore": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Score de prontidão do dossiê (completude do assessment, não risco). Regra normativa: capítulo 07, seção 7.",
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "tierThreshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "blockers": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 3
+              }
+            },
+            "assessedBy": {
+              "type": "string",
+              "minLength": 3
+            },
+            "assessedAt": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "required": [
+            "value",
+            "tierThreshold",
+            "blockers",
+            "assessedBy",
+            "assessedAt"
+          ]
         }
       }
     }
