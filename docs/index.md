@@ -111,7 +111,7 @@ Os únicos gates canônicos são G0–G7. O [programa de 24 semanas](framework/0
 
 **Decisões esperadas:** suficiência de evidência, grau de segregação/independência quando aplicável, findings, prazo de remediação e attestation.
 
-### Consultor ou líder de transformação
+### Líder de transformação
 
 **Objetivo:** conduzir diagnóstico, target state, roadmap e transferência de capacidade.
 
@@ -171,8 +171,6 @@ Esses índices existem para navegação de pasta e não constituem uma segunda o
 - **Explicativo:** rationale, casos, mappings e referências.
 
 Um documento de guidance não altera a policy. Um estudo de caso não comprova eficácia causal. Um mapping de fornecedor não redefine o núcleo.
-
-A produtificação comercial pessoal está separada em [`consulting/`](../project/decisions/0001-canonical-source-and-product-boundaries.md). Ela reutiliza o conhecimento canônico, mas não integra estas camadas nem redefine a policy.
 
 ## Leitura completa
 

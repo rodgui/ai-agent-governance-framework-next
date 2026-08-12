@@ -1268,9 +1268,9 @@ def validate_commercial_boundary(files: list[Path] | None = None) -> list[Issue]
     issues: list[Issue] = []
     forbidden = {
         "consulting": "commercial repository content must not be embedded in the canonical framework",
-        "offerings": "commercial offering definitions belong in the consulting repository",
-        "delivery": "commercial delivery playbooks belong in the consulting repository",
-        "templates/commercial": "commercial templates belong in the consulting repository",
+        "offerings": "commercial offering definitions must not be embedded in the canonical framework",
+        "delivery": "commercial delivery playbooks must not be embedded in the canonical framework",
+        "templates/commercial": "commercial templates must not be embedded in the canonical framework",
     }
     for item, message in forbidden.items():
         if (ROOT / item).exists():
@@ -1286,7 +1286,7 @@ def validate_commercial_boundary(files: list[Path] | None = None) -> list[Issue]
                 Issue(
                     "boundary",
                     rel,
-                    "legacy commercial content belongs in the independent consulting repository",
+                    "legacy commercial content must not be embedded in the canonical framework",
                 )
             )
     return issues

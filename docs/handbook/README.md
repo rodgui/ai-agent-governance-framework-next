@@ -100,7 +100,7 @@ Um capítulo que só entrega o primeiro nível é material de leitura, não de i
 - [Microsoft Customer Zero — caso de estudo](../../research/case-studies/microsoft-customer-zero-agent-governance.md)
 - [Crosswalk histórico Microsoft × Policy v1](../../project/history/assessments/microsoft-case-study-framework-crosswalk.md)
 
-Casos e mappings ajudam a interpretar implementações, mas não são capítulos necessários, componentes da solução ou requisitos do framework. A camada comercial também permanece fora do handbook, em [`consulting/`](../../project/decisions/0001-canonical-source-and-product-boundaries.md).
+Casos e mappings ajudam a interpretar implementações, mas não são capítulos necessários, componentes da solução ou requisitos do framework.
 
 ## Artefatos de manutenção do repositório
 

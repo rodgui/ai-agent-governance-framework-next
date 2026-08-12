@@ -16,22 +16,22 @@ related:
 
 ## Contexto
 
-A primeira consolidação tratou a Policy v1 como baseline normativa, usou referências Microsoft para acelerar a arquitetura e colocou o modelo de consultoria dentro da área executiva. Essa estrutura foi útil para iniciar o framework, mas cria três ambiguidades: a policy histórica parece ser fonte permanente, referências de fornecedor podem parecer componentes da solução e a camada comercial pode ser confundida com conhecimento canônico.
+A primeira consolidação tratou a Policy v1 como baseline normativa, usou referências Microsoft para acelerar a arquitetura e colocou material comercial dentro da área executiva. Essa estrutura foi útil para iniciar o framework, mas cria três ambiguidades: a policy histórica parece ser fonte permanente, referências de fornecedor podem parecer componentes da solução e o conteúdo comercial pode ser confundido com conhecimento canônico.
 
-O objetivo atualizado é que o corpus modular evolua para constituir a policy final, mantendo neutralidade real de fornecedor e separando a oferta pessoal de consultoria do framework público.
+O objetivo atualizado é que o corpus modular evolua para constituir a policy final, mantendo neutralidade real de fornecedor e mantendo o conteúdo comercial fora do framework público.
 
 ## Forças e constraints
 
 - preservar a rastreabilidade da Policy v1 sem mantê-la como dependência normativa;
 - evitar uma policy monolítica divergente dos módulos canônicos;
 - permitir referências e mappings sem lock-in conceitual ou técnico;
-- reutilizar o conhecimento em consultoria sem misturar conteúdo público, normativo e comercial;
+- reutilizar o conhecimento sem misturar conteúdo público, normativo e comercial;
 - manter handbook e futuras publicações derivados da mesma fonte;
 - adiar ebook até decisão posterior.
 
 ## Opções consideradas
 
-### Opção A — Manter Policy v1 como baseline e consultoria em `docs/executive/`
+### Opção A — Manter Policy v1 como baseline e material comercial em `docs/executive/`
 
 **Vantagens:** menor mudança estrutural e narrativa normativa simples.
 
@@ -43,7 +43,7 @@ O objetivo atualizado é que o corpus modular evolua para constituir a policy fi
 
 **Desvantagens:** duplica controls, arquitetura e playbooks; mappings podem contaminar o desenho canônico; manutenção tende a divergir.
 
-### Opção C — Policy modular canônica, vendors opcionais e consultoria separada
+### Opção C — Policy modular canônica, vendors opcionais e conteúdo comercial fora do repositório
 
 **Vantagens:** uma única fonte de verdade, portabilidade, evolução versionada e boundary comercial explícito.
 
@@ -57,8 +57,8 @@ Adotar a opção C:
 2. A Policy v1 é preservada byte a byte e indexada como origem histórica, sem ser citada repetidamente como fonte corrente.
 3. O núcleo define capabilities, outcomes, controls, evidências e boundaries sem exigir Microsoft, Agent 365, Cloudflare ou qualquer fornecedor.
 4. Conteúdo de fornecedor fica limitado a fontes, estudos de caso, assessments e mappings opcionais e removíveis.
-5. `consulting/` é uma camada comercial pessoal separada da policy, do handbook e de `docs/executive/`.
-6. A oferta comercial usa três pacotes compostos pelos nove módulos existentes.
+5. Conteúdo comercial é mantido fora do repositório público, separado da policy, do handbook e de `docs/executive/`.
+6. Publicações derivadas usam os módulos canônicos existentes.
 7. Ebook/PDF permanece adiado; publicação futura será derivada dos módulos canônicos.
 
 ## Consequências positivas
@@ -82,7 +82,7 @@ Adotar a opção C:
 |---|---|
 | modularidade diluir a força normativa | entrada única de policy, statuses e release versionada |
 | vendor retornar ao núcleo por exemplos | quality gate e revisão de paths/linguagem |
-| consultoria redefinir o framework | boundary explícito e links unidirecionais para o conteúdo canônico |
+| conteúdo comercial redefinir o framework | boundary explícito e links unidirecionais para o conteúdo canônico |
 | v1 ser apagada ou reescrita | arquivo histórico protegido por hash |
 
 ## Critérios de validação

@@ -115,7 +115,7 @@ Primeira release adotada do framework modular ([ADR-0006](docs/architecture/deci
 - 24-week implementation program mapped to the existing decision gates, plus a pilot plan with expansion criteria.
 - Risk pre-screen template with explicit reading rules for escalators and impact triggers.
 - Canonical modular policy entry point and explicit normative boundaries.
-- Separate personal consulting product with three packages and nine delivery modules.
+- Separate personal commercial product from the public framework.
 - ADR-0002 for policy evolution, strict vendor neutrality and commercial separation.
 - Microsoft Customer Zero case study based on five Inside Track articles.
 - Crosswalk between the Microsoft operating model and Policy v1.
