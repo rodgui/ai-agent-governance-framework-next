@@ -1,0 +1,15 @@
+.DS_Store
+*.swp
+*.tmp
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+site/
+site_src/
+uv.lock
+build/
+dist/

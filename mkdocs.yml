@@ -1,0 +1,64 @@
+site_name: AI Agent Governance Framework
+site_description: Framework vendor-neutral para governar sistemas de IA e agentes do mandato executivo ao runtime.
+site_author: AI Agent Governance Framework Maintainers
+copyright: CC BY 4.0 — provenance preserved in the repository
+
+docs_dir: site_src
+site_dir: site
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+plugins:
+  - search:
+      lang:
+        - pt
+        - en
+
+nav:
+  - Início: README.md
+  - Comece aqui: docs/start-here.md
+  - Índice: docs/index.md
+  - Master Document:
+      - Visão geral: docs/framework/README.md
+      - 00 — Controle do documento: docs/framework/00-document-control.md
+      - 01 — Mandato, escopo e princípios: docs/framework/01-mandate-scope-and-principles.md
+      - 02 — Governança e accountability: docs/framework/02-governance-and-accountability.md
+      - 03 — Inventário, portfólio e valor: docs/framework/03-inventory-portfolio-and-value.md
+      - 04 — Risco, impacto e compliance: docs/framework/04-risk-impact-and-compliance.md
+      - 05 — Lifecycle de agentes: docs/framework/05-agent-lifecycle.md
+      - 06 — Arquitetura e controles técnicos: docs/framework/06-architecture-and-technical-controls.md
+      - 07 — Avaliação, evidência e assurance: docs/framework/07-evaluation-evidence-and-assurance.md
+      - 08 — Implementação e adoção: docs/framework/08-implementation-and-adoption.md
+      - 09 — Operações, incidentes e continuidade: docs/framework/09-operations-incidents-and-continuity.md
+      - 10 — Métricas, revisão e melhoria: docs/framework/10-metrics-review-and-improvement.md
+  - Referência executiva: docs/executive/governing-agents-at-scale.md
+  - Patterns: docs/patterns/README.md
+  - Toolkit:
+      - Visão geral: toolkit/README.md
+      - Controles: toolkit/controls/README.md
+      - Schemas: toolkit/schemas/README.md
+      - Templates: toolkit/templates/README.md
+      - Exemplos: toolkit/examples/README.md
+  - Referências: research/README.md
+  - Decisões: docs/architecture/decision-log.md
+  - Migração e provenance: project/migration/README.md
