@@ -1,32 +1,32 @@
-# Sunset Plan — Controlled Agent Decommissioning
+# Sunset Plan — Descomissionamento Controlado de Agentes
 
-Use when an agent is flagged for decommissioning.
+Use quando um agente for sinalizado para descomissionamento.
 
 ---
 
-Appendix D – Sunset Plan (controlled agent decommissioning)
-Objective: avoid “zombies” (agents without an owner, duplicates, unused) and reduce risk/cost.
-When an agent enters Sunset
-No Business Owner or Technical Owner defined
-Not in the Catalog
-No minimum logs/telemetry
-No usage for N days (e.g., 90)
-Duplicate agent / replaced by an official version
-Platform is no longer approved
-Severe incident not remediated within the deadline
-Standard process (3 phases)
-Warning (D0): agent marked as a “Sunset Candidate”
-Notifies owners + Run Authority
-Defines a remediation deadline (e.g., 15 days)
-Quarantine (D+15): limitations
-Disables write actions, reduces scope, limits users
-Keeps logs and evidence
-Deactivate (D+30): deactivation
-Removes access, disables integrations, revokes identity
-Records the reason and artifacts in the Catalog
-(Optional) archives configurations for X days for rollback
-Mandatory items in Sunset
-Sunset start date, reason, responsible owner
-Migration plan (if there is a replacement)
-Evidence of communication to users
-Log retention after deactivation (per risk)
+Appendix D – Sunset Plan (descomissionamento controlado de agentes)
+Objetivo: evitar "zumbis" (agentes sem owner, duplicados, não utilizados) e reduzir risco/custo.
+Quando um agente entra em Sunset
+Nenhum Business Owner ou Technical Owner definido
+Não está no Catálogo
+Sem logs/telemetria mínimos
+Sem uso por N dias (ex.: 90)
+Agente duplicado / substituído por uma versão oficial
+Plataforma não é mais aprovada
+Incidente grave não remediado dentro do prazo
+Processo padrão (3 fases)
+Aviso (D0): agente marcado como "Sunset Candidate"
+Notifica owners + Run Authority
+Define prazo de remediação (ex.: 15 dias)
+Quarentena (D+15): limitações
+Desabilita ações de escrita, reduz escopo, limita usuários
+Mantém logs e evidências
+Desativação (D+30): desativa
+Remove acesso, desabilita integrações, revoga identidade
+Registra o motivo e artefatos no Catálogo
+(Opcional) arquiva configurações por X dias para rollback
+Itens obrigatórios no Sunset
+Data de início do sunset, motivo, owner responsável
+Plano de migração (se houver substituto)
+Evidência de comunicação aos usuários
+Retenção de logs após a desativação (por risco)

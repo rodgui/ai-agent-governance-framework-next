@@ -16,205 +16,205 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 05.1 Lifecycle principles and states
+### 05.1 Princípios e estados de lifecycle
 
-**Required decision/action.** For **lifecycle principles and states**, the organization must define allowed states, transition authorities, entry/exit criteria and terminal outcomes for every agent.
+**Decisão/ação obrigatória.** Para **princípios e estados de lifecycle**, a organização deve definir estados permitidos, authorities de transição, critérios de entrada/saída e resultados terminais para todo agente.
 
-**Record and evidence.** Publish the state machine with required records, gates G0–G7, exceptions and event-triggered re-entry.
+**Registro e evidência.** Publicar a máquina de estados com registros exigidos, gates G0–G7, exceções e reentrada disparada por evento.
 
-**Done when.** Invalid transitions are rejected and observed runtime state reconciles with the authoritative registry.
+**Concluído quando.** Transições inválidas são rejeitadas e o estado observado em runtime reconcilia com o registry autoritativo.
 
-### 05.2 Idea and demand intake
+### 05.2 Intake de ideia e demanda
 
-**Required decision/action.** For **idea and demand intake**, the organization must capture the problem, proposed mechanism, owner and decision need before design work begins.
+**Decisão/ação obrigatória.** Para **intake de ideia e demanda**, a organização deve capturar o problema, o mecanismo proposto, o owner e a necessidade de decisão antes de iniciar o trabalho de design.
 
-**Record and evidence.** The intake record must include purpose, baseline, users, affected persons, data, actions, alternatives and urgency.
+**Registro e evidência.** O registro de intake deve incluir finalidade, baseline, usuários, pessoas afetadas, dados, ações, alternativas e urgência.
 
-**Done when.** The request is routed to appropriateness, risk and portfolio decisions without bypassing ownership or scope checks.
+**Concluído quando.** A solicitação é encaminhada às decisões de adequação, risco e portfólio sem ignorar verificações de ownership ou escopo.
 
-### 05.3 Appropriateness decision
+### 05.3 Decisão de adequação
 
-**Required decision/action.** For **appropriateness decision**, the organization must compare an agent with deterministic automation, workflow, search, analytics and non-technical alternatives.
+**Decisão/ação obrigatória.** Para **decisão de adequação**, a organização deve comparar um agente com automação determinística, workflow, busca, analytics e alternativas não técnicas.
 
-**Record and evidence.** Record alternatives, need for autonomy, uncertainty, expected benefit, failure cost and architectural decision.
+**Registro e evidência.** Registrar alternativas, necessidade de autonomia, incerteza, benefício esperado, custo de falha e decisão arquitetural.
 
-**Done when.** An agent proceeds only when its distinctive capability is necessary and the additional governance burden is accepted.
+**Concluído quando.** Um agente prossegue somente quando sua capacidade distintiva é necessária e o ônus adicional de governança é aceito.
 
-### 05.4 Initial registration and ownership
+### 05.4 Registro inicial e ownership
 
-**Required decision/action.** For **initial registration and ownership**, the organization must create or update the stable registry identity before work or operation reaches the corresponding state.
+**Decisão/ação obrigatória.** Para **registro inicial e ownership**, a organização deve criar ou atualizar a identidade estável no registry antes de o trabalho ou a operação alcançar o estado correspondente.
 
-**Record and evidence.** Record owner, purpose, tier, version, environment, dependencies, approval and discoverability metadata.
+**Registro e evidência.** Registrar owner, finalidade, tier, versão, ambiente, dependências, aprovação e metadados de descobribilidade.
 
-**Done when.** The asset is discoverable by authorized stakeholders and missing mandatory metadata blocks the transition.
+**Concluído quando.** O ativo é descobrível por stakeholders autorizados e metadados obrigatórios ausentes bloqueiam a transição.
 
-### 05.5 Classification and routing
+### 05.5 Classificação e encaminhamento
 
-**Required decision/action.** For **classification and routing**, the organization must classify the case using approved criteria, mandatory escalators and the most severe applicable outcome.
+**Decisão/ação obrigatória.** Para **classificação e encaminhamento**, a organização deve classificar o caso usando critérios aprovados, escaladores obrigatórios e o resultado aplicável mais severo.
 
-**Record and evidence.** Record criterion results, red flags, rationale, confidence, reviewer and resulting route or response target.
+**Registro e evidência.** Registrar resultados por critério, red flags, rationale, confiança, revisor e rota resultante ou alvo de resposta.
 
-**Done when.** The same evidence yields consistent routing and under-classification is detected by review or reconciliation.
+**Concluído quando.** A mesma evidência produz encaminhamento consistente e sub-classificação é detectada por revisão ou reconciliação.
 
-### 05.6 Design requirements
+### 05.6 Requisitos de design
 
-**Required decision/action.** For **design requirements**, the organization must document boundaries, trust assumptions, data and action flows, quality attributes, controls and failure behavior before build.
+**Decisão/ação obrigatória.** Para **requisitos de design**, a organização deve documentar fronteiras, premissas de confiança, fluxos de dados e ações, atributos de qualidade, controles e comportamento de falha antes do build.
 
-**Record and evidence.** Retain approved blueprint, diagrams, interface contracts, threat and impact links, alternatives and ADRs.
+**Registro e evidência.** Reter blueprint aprovado, diagramas, contratos de interface, vínculos de ameaça e impacto, alternativas e ADRs.
 
-**Done when.** Reviewers can trace each material requirement to an architecture element and testable enforcement point.
+**Concluído quando.** Revisores conseguem rastrear cada requisito material a um elemento de arquitetura e a um ponto de enforcement testável.
 
-### 05.7 Design documentation and system record
+### 05.7 Documentação de design e registro do sistema
 
-**Required decision/action.** For **design documentation and system record**, the organization must document boundaries, trust assumptions, data and action flows, quality attributes, controls and failure behavior before build.
+**Decisão/ação obrigatória.** Para **documentação de design e registro do sistema**, a organização deve documentar fronteiras, premissas de confiança, fluxos de dados e ações, atributos de qualidade, controles e comportamento de falha antes do build.
 
-**Record and evidence.** Retain approved blueprint, diagrams, interface contracts, threat and impact links, alternatives and ADRs.
+**Registro e evidência.** Reter blueprint aprovado, diagramas, contratos de interface, vínculos de ameaça e impacto, alternativas e ADRs.
 
-**Done when.** Reviewers can trace each material requirement to an architecture element and testable enforcement point.
+**Concluído quando.** Revisores conseguem rastrear cada requisito material a um elemento de arquitetura e a um ponto de enforcement testável.
 
-### 05.8 Build, acquisition or configuration
+### 05.8 Build, aquisição ou configuração
 
-**Required decision/action.** For **build, acquisition or configuration**, the organization must produce or acquire only approved components and configuration under traceable change control.
+**Decisão/ação obrigatória.** Para **build, aquisição ou configuração**, a organização deve produzir ou adquirir somente componentes e configuração aprovados sob controle de mudança rastreável.
 
-**Record and evidence.** Record source, version, license, supplier, build configuration, dependency inventory, scans and approval conditions.
+**Registro e evidência.** Registrar fonte, versão, licença, fornecedor, configuração de build, inventário de dependências, varreduras e condições de aprovação.
 
-**Done when.** The resulting artifact is reproducible or attestable and no unapproved dependency enters promotion.
+**Concluído quando.** O artefato resultante é reproduzível ou atestável e nenhuma dependência não aprovada entra na promoção.
 
-### 05.9 Development environments and separation
+### 05.9 Ambientes de desenvolvimento e separação
 
-**Required decision/action.** For **development environments and separation**, the organization must separate development, test and production identities, data, credentials, networks and deployment authority.
+**Decisão/ação obrigatória.** Para **ambientes de desenvolvimento e separação**, a organização deve separar identidades, dados, credenciais, redes e autoridade de implantação de desenvolvimento, teste e produção.
 
-**Record and evidence.** Retain environment inventory, access policy, data classification, promotion path and negative-test evidence.
+**Registro e evidência.** Reter inventário de ambientes, policy de acesso, classificação de dados, caminho de promoção e evidência de teste negativo.
 
-**Done when.** Test access cannot mutate production and production secrets or personal data are not copied into lower environments without authority.
+**Concluído quando.** Acesso de teste não pode mutar produção e segredos ou dados pessoais de produção não são copiados para ambientes inferiores sem authority.
 
-### 05.10 Testing and evaluation planning
+### 05.10 Planejamento de testes e avaliação
 
-**Required decision/action.** For **testing and evaluation planning**, the organization must approve test objectives, datasets, slices, abuse cases, thresholds and reviewer independence before seeing results.
+**Decisão/ação obrigatória.** Para **planejamento de testes e avaliação**, a organização deve aprovar objetivos de teste, datasets, fatias, casos de abuso, thresholds e independência do revisor antes de ver resultados.
 
-**Record and evidence.** The plan must bind use case, tier, versions, environments, methods, acceptance criteria and evidence owner.
+**Registro e evidência.** O plano deve vincular caso de uso, tier, versões, ambientes, métodos, critérios de aceite e owner da evidência.
 
-**Done when.** The plan covers material failure modes and cannot be relaxed after a failed result without a recorded change decision.
+**Concluído quando.** O plano cobre modos de falha materiais e não pode ser afrouxado após um resultado reprovado sem decisão de mudança registrada.
 
-### 05.11 Evidence collection
+### 05.11 Coleta de evidências
 
-**Required decision/action.** For **evidence collection**, the organization must collect decision-relevant evidence with stable identity, source, time, version, integrity and custody.
+**Decisão/ação obrigatória.** Para **coleta de evidências**, a organização deve coletar evidências relevantes para a decisão com identidade, fonte, tempo, versão, integridade e custódia estáveis.
 
-**Record and evidence.** The evidence manifest must list artifacts, hashes, producer, environment, method, result, limitation and linked decision.
+**Registro e evidência.** O manifesto de evidências deve listar artefatos, hashes, produtor, ambiente, método, resultado, limitação e decisão vinculada.
 
-**Done when.** A reviewer can retrieve and reproduce the material claim and missing evidence is represented as a gap, not success.
+**Concluído quando.** Um revisor consegue recuperar e reproduzir a alegação material e evidência ausente é representada como lacuna, não como sucesso.
 
-### 05.12 Release review
+### 05.12 Revisão de release
 
-**Required decision/action.** For **release review**, the organization must decide release only from the bound risk, evaluation, control and operational evidence package.
+**Decisão/ação obrigatória.** Para **revisão de release**, a organização deve decidir o release somente a partir do pacote vinculado de evidências de risco, avaliação, controle e operação.
 
-**Record and evidence.** Record decision, authority, versions, passed and failed criteria, conditions, expiry, rollback target and unresolved findings.
+**Registro e evidência.** Registrar decisão, authority, versões, critérios aprovados e reprovados, condições, expiração, alvo de rollback e descobertas não resolvidas.
 
-**Done when.** Blocking controls cannot be waived by a conditional approval and expired conditions stop continued operation.
+**Concluído quando.** Controles bloqueantes não podem ser dispensados por aprovação condicional e condições expiradas interrompem a operação continuada.
 
-### 05.13 Approval, conditional approval or rejection
+### 05.13 Aprovação, aprovação condicional ou rejeição
 
-**Required decision/action.** For **approval, conditional approval or rejection**, the organization must decide release only from the bound risk, evaluation, control and operational evidence package.
+**Decisão/ação obrigatória.** Para **aprovação, aprovação condicional ou rejeição**, a organização deve decidir o release somente a partir do pacote vinculado de evidências de risco, avaliação, controle e operação.
 
-**Record and evidence.** Record decision, authority, versions, passed and failed criteria, conditions, expiry, rollback target and unresolved findings.
+**Registro e evidência.** Registrar decisão, authority, versões, critérios aprovados e reprovados, condições, expiração, alvo de rollback e descobertas não resolvidas.
 
-**Done when.** Blocking controls cannot be waived by a conditional approval and expired conditions stop continued operation.
+**Concluído quando.** Controles bloqueantes não podem ser dispensados por aprovação condicional e condições expiradas interrompem a operação continuada.
 
-### 05.14 Deployment and progressive rollout
+### 05.14 Implantação e rollout progressivo
 
-**Required decision/action.** For **deployment and progressive rollout**, the organization must release through bounded cohorts or stages with explicit promotion, pause and rollback criteria.
+**Decisão/ação obrigatória.** Para **implantação e rollout progressivo**, a organização deve liberar por coortes ou estágios delimitados com critérios explícitos de promoção, pausa e rollback.
 
-**Record and evidence.** Record cohort, exposure, telemetry, thresholds, approval, observed result, incidents and next-stage decision.
+**Registro e evidência.** Registrar coorte, exposição, telemetria, thresholds, aprovação, resultado observado, incidentes e decisão do próximo estágio.
 
-**Done when.** Expansion occurs only after the prior stage meets criteria and an adverse signal can halt or reverse rollout.
+**Concluído quando.** A expansão ocorre somente após o estágio anterior atingir os critérios e um sinal adverso pode interromper ou reverter o rollout.
 
-### 05.15 Production registration and discoverability
+### 05.15 Registro em produção e descobribilidade
 
-**Required decision/action.** For **production registration and discoverability**, the organization must create or update the stable registry identity before work or operation reaches the corresponding state.
+**Decisão/ação obrigatória.** Para **registro em produção e descobribilidade**, a organização deve criar ou atualizar a identidade estável no registry antes de o trabalho ou a operação alcançar o estado correspondente.
 
-**Record and evidence.** Record owner, purpose, tier, version, environment, dependencies, approval and discoverability metadata.
+**Registro e evidência.** Registrar owner, finalidade, tier, versão, ambiente, dependências, aprovação e metadados de descobribilidade.
 
-**Done when.** The asset is discoverable by authorized stakeholders and missing mandatory metadata blocks the transition.
+**Concluído quando.** O ativo é descobrível por stakeholders autorizados e metadados obrigatórios ausentes bloqueiam a transição.
 
-### 05.16 Operation and monitoring
+### 05.16 Operação e monitoramento
 
-**Required decision/action.** For **operation and monitoring**, the organization must monitor the production behavior and control outcomes that can invalidate approval.
+**Decisão/ação obrigatória.** Para **operação e monitoramento**, a organização deve monitorar o comportamento em produção e os resultados de controle que podem invalidar a aprovação.
 
-**Record and evidence.** Retain signal definitions, baselines, slices, thresholds, owner, alert route, investigation and linked lifecycle action.
+**Registro e evidência.** Reter definições de sinais, baselines, fatias, thresholds, owner, rota de alerta, investigação e ação de lifecycle vinculada.
 
-**Done when.** Material drift or threshold breach produces containment or reassessment rather than an informational alert with no owner.
+**Concluído quando.** Desvio material ou violação de threshold produz contenção ou reavaliação em vez de um alerta informativo sem owner.
 
-### 05.17 Incident-triggered review
+### 05.17 Revisão disparada por incidente
 
-**Required decision/action.** For **incident-triggered review**, the organization must retest affected requirements after incident, fix, dependency change or model/configuration update.
+**Decisão/ação obrigatória.** Para **revisão disparada por incidente**, a organização deve retestar requisitos afetados após incidente, correção, mudança de dependência ou atualização de modelo/configuração.
 
-**Record and evidence.** Bind prior and new versions, impacted scenarios, regression set, result, residual gaps and release disposition.
+**Registro e evidência.** Vincular versões anterior e nova, cenários impactados, conjunto de regressão, resultado, lacunas residuais e disposição de release.
 
-**Done when.** The change does not silently invalidate prior evidence and failed regression prevents reactivation or promotion.
+**Concluído quando.** A mudança não invalida silenciosamente evidências anteriores e regressão reprovada impede reativação ou promoção.
 
-### 05.18 Material change definition
+### 05.18 Definição de mudança material
 
-**Required decision/action.** For **material change definition**, the organization must define material changes and external events that reopen risk, approval, evaluation or contract compatibility.
+**Decisão/ação obrigatória.** Para **definição de mudança material**, a organização deve definir mudanças materiais e eventos externos que reabram risco, aprovação, avaliação ou compatibilidade contratual.
 
-**Record and evidence.** Record trigger, detection source, impacted assets and evidence, interim control, owner, due date and disposition.
+**Registro e evidência.** Registrar gatilho, fonte de detecção, ativos e evidências impactados, controle provisório, owner, data de vencimento e disposição.
 
-**Done when.** Triggered assets cannot rely indefinitely on prior approval and the new decision is linked to the changed version.
+**Concluído quando.** Ativos acionados não podem depender indefinidamente de aprovação anterior e a nova decisão é vinculada à versão alterada.
 
-### 05.19 Versioning and change control
+### 05.19 Versionamento e controle de mudança
 
-**Required decision/action.** For **versioning and change control**, the organization must version every material change and bind it to effective, review and supersession dates.
+**Decisão/ação obrigatória.** Para **versionamento e controle de mudança**, a organização deve versionar toda mudança material e vinculá-la a datas de efetividade, revisão e supersessão.
 
-**Record and evidence.** Retain change description, author, approver, impacted contracts, migration action and prior-version reference.
+**Registro e evidência.** Reter descrição da mudança, autor, aprovador, contratos impactados, ação de migração e referência à versão anterior.
 
-**Done when.** Consumers can identify the applicable version and incompatible records are migrated, rejected or explicitly grandfathered.
+**Concluído quando.** Consumidores identificam a versão aplicável e registros incompatíveis são migrados, rejeitados ou explicitamente grandfather.
 
-### 05.20 Periodic reassessment and attestation
+### 05.20 Reavaliação periódica e attestation
 
-**Required decision/action.** For **periodic reassessment and attestation**, the organization must require owners to re-attest purpose, ownership, dependencies, risk, controls and continued need on a risk-based cycle.
+**Decisão/ação obrigatória.** Para **reavaliação periódica e attestation**, a organização deve exigir que owners reatestem finalidade, ownership, dependências, risco, controles e necessidade contínua em ciclo baseado em risco.
 
-**Record and evidence.** Record attestor, evidence cutoff, changed facts, exceptions, stale dependencies, decision and next review.
+**Registro e evidência.** Registrar atestante, corte de evidências, fatos alterados, exceções, dependências obsoletas, decisão e próxima revisão.
 
-**Done when.** Non-response or unsupported attestation triggers restriction, suspension or retirement rather than automatic renewal.
+**Concluído quando.** Não resposta ou attestation sem suporte dispara restrição, suspensão ou aposentadoria em vez de renovação automática.
 
-### 05.21 Suspension and quarantine
+### 05.21 Suspensão e quarentena
 
-**Required decision/action.** For **suspension and quarantine**, the organization must implement authority and technical paths to stop actions, isolate dependencies and preserve evidence.
+**Decisão/ação obrigatória.** Para **suspensão e quarentena**, a organização deve implementar caminhos de authority e técnicos para interromper ações, isolar dependências e preservar evidências.
 
-**Record and evidence.** Record trigger, command path, scope, expected state, operator, test cadence, result and recovery prerequisites.
+**Registro e evidência.** Registrar gatilho, caminho de comando, escopo, estado esperado, operador, cadência de teste, resultado e pré-requisitos de recuperação.
 
-**Done when.** A drill contains a representative failure within the target without relying on the failing agent itself.
+**Concluído quando.** Um exercício (drill) contém uma falha representativa dentro do alvo sem depender do próprio agente com falha.
 
-### 05.22 Corrective action
+### 05.22 Ação corretiva
 
-**Required decision/action.** For **corrective action**, the organization must assign each finding a root cause, risk-based priority, corrective action and closure criterion.
+**Decisão/ação obrigatória.** Para **ação corretiva**, a organização deve atribuir a cada descoberta uma causa raiz, prioridade baseada em risco, ação corretiva e critério de fechamento.
 
-**Record and evidence.** Record finding, evidence, owner, due date, interim control, root cause, remediation, retest and reviewer disposition.
+**Registro e evidência.** Registrar descoberta, evidência, owner, data de vencimento, controle provisório, causa raiz, remediação, reteste e disposição do revisor.
 
-**Done when.** Closure requires objective retest evidence; overdue material findings remain visible and affect approval.
+**Concluído quando.** O fechamento exige evidência objetiva de reteste; descobertas materiais vencidas permanecem visíveis e afetam a aprovação.
 
-### 05.23 Safe reactivation
+### 05.23 Reativação segura
 
-**Required decision/action.** For **safe reactivation**, the organization must permit reactivation only after root cause, remediation, regression, monitoring and rollback readiness are evidenced.
+**Decisão/ação obrigatória.** Para **reativação segura**, a organização deve permitir reativação somente após causa raiz, remediação, regressão, monitoramento e prontidão de rollback serem evidenciados.
 
-**Record and evidence.** Record incident link, changed version, retest package, residual risk, approving authority, conditions and rollout scope.
+**Registro e evidência.** Registrar vínculo do incidente, versão alterada, pacote de reteste, risco residual, authority aprovadora, condições e escopo do rollout.
 
-**Done when.** The former failure is no longer reproducible under the tested conditions and early-warning signals are active.
+**Concluído quando.** A falha anterior não é mais reproduzível nas condições testadas e sinais de alerta precoce estão ativos.
 
-### 05.24 Retirement and decommissioning
+### 05.24 Aposentadoria e descomissionamento
 
-**Required decision/action.** For **retirement and decommissioning**, the organization must retire the agent through an approved state transition that removes authority and resolves data and dependency obligations.
+**Decisão/ação obrigatória.** Para **aposentadoria e descomissionamento**, a organização deve aposentar o agente por transição de estado aprovada que remova authority e resolva obrigações de dados e dependências.
 
-**Record and evidence.** Record final owner decision, user notice, traffic stop, access revocation, data disposition, archive, dependency owner and completion evidence.
+**Registro e evidência.** Registrar decisão final do owner, aviso ao usuário, parada de tráfego, revogação de acesso, disposição de dados, arquivo, owner da dependência e evidência de conclusão.
 
-**Done when.** The agent can no longer act or consume resources and retained records remain accessible for their approved period.
+**Concluído quando.** O agente não pode mais agir ou consumir recursos e registros retidos permanecem acessíveis pelo período aprovado.
 
-### 05.25 Records retention, access revocation and dependency cleanup
+### 05.25 Retenção de registros, revogação de acesso e limpeza de dependências
 
-**Required decision/action.** For **records retention, access revocation and dependency cleanup**, the organization must define who may read, change and retrieve the record, for how long and under which legal hold or deletion rule.
+**Decisão/ação obrigatória.** Para **retenção de registros, revogação de acesso e limpeza de dependências**, a organização deve definir quem pode ler, alterar e recuperar o registro, por quanto tempo e sob qual regra de legal hold ou exclusão.
 
-**Record and evidence.** Record classification, access groups, custodian, retention trigger, minimum period, disposition and audit retrieval path.
+**Registro e evidência.** Registrar classificação, grupos de acesso, custodiano, gatilho de retenção, período mínimo, disposição e caminho de recuperação de auditoria.
 
-**Done when.** Authorized evidence is retrievable within the required time and expired data is disposed of without breaking required lineage.
+**Concluído quando.** Evidências autorizadas são recuperáveis no prazo exigido e dados expirados são descartados sem romper a linhagem exigida.
 
 
 ## Conteúdo canônico incorporado

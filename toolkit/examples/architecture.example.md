@@ -1,26 +1,26 @@
-# Example architecture — Service Desk Knowledge Agent
+# Exemplo de arquitetura — Service Desk Knowledge Agent
 
-> Fictitious and sanitized. No production system or real organization is represented.
+> Fictício e sanitizado. Nenhum sistema de produção ou organização real é representado.
 
 ```mermaid
 flowchart LR
-    U[Internal analyst] --> A[Knowledge agent]
-    A --> G[Approved tool gateway]
-    G --> R[Authorized retrieval service]
-    R --> K[Approved knowledge index]
-    A --> D[Draft response]
-    D --> H[Human review]
+    U[Analista interno] --> A[Knowledge agent]
+    A --> G[Gateway de ferramentas aprovado]
+    G --> R[Serviço de recuperação autorizado]
+    R --> K[Índice de conhecimento aprovado]
+    A --> D[Resposta em rascunho]
+    D --> H[Revisão humana]
 ```
 
-## Trust boundaries
+## Fronteiras de confiança
 
-1. authenticated internal channel to agent runtime;
-2. runtime to gateway with workload identity;
-3. gateway to retrieval service with pre-retrieval authorization;
-4. human review before any external response.
+1. canal interno autenticado até o runtime do agente;
+2. runtime até o gateway com identidade de workload;
+3. gateway até o serviço de recuperação com autorização pré-recuperação;
+4. revisão humana antes de qualquer resposta externa.
 
-## Failure boundaries
+## Fronteiras de falha
 
-- The gateway can revoke both tools without the agent's cooperation.
-- Quarantine blocks new sessions.
-- Rollback restores the last approved blueprint and prompt version.
+- O gateway pode revogar ambas as ferramentas sem cooperação do agente.
+- A quarentena bloqueia novas sessões.
+- O rollback restaura o último blueprint e versão de prompt aprovados.

@@ -1,31 +1,31 @@
-# Example support runbook — Service Desk Knowledge Agent
+# Exemplo de runbook de suporte — Service Desk Knowledge Agent
 
-> Fictitious and sanitized.
+> Fictício e sanitizado.
 
-## Ownership
+## Responsabilidades (ownership)
 
 - Business owner: Example Business Owner
 - Technical owner: Example Technical Owner
 - Run owner: Example Run Owner
 
-## Signals and actions
+## Sinais e ações
 
-| Signal | First action | Escalation |
+| Sinal | Primeira ação | Escalonamento |
 |---|---|---|
-| unavailable approved source | stop grounded response and inform analyst | Knowledge Owner |
-| prohibited-data request | refuse and record security signal | Security and Data Owner |
-| repeated unsupported answer | quarantine affected version | Run Authority |
-| unexpected tool call | gateway deny, quarantine and preserve evidence | Security and Run Authority |
+| fonte aprovada indisponível | interromper resposta ancorada e informar o analista | Knowledge Owner |
+| solicitação de dados proibidos | recusar e registrar sinal de segurança | Security and Data Owner |
+| resposta não suportada repetida | colocar a versão afetada em quarentena | Run Authority |
+| chamada de ferramenta inesperada | gateway nega, quarentena e preserva evidência | Security and Run Authority |
 
-## Recovery
+## Recuperação
 
-1. record version, session correlation and affected scope;
-2. revoke tool access or block new sessions;
-3. preserve authorized evidence with sensitive payload redacted;
-4. identify cause and corrective action;
-5. run the regression suite;
-6. require Run and Design Authority evidence before reactivation.
+1. registrar versão, correlação de sessão e escopo afetado;
+2. revogar acesso às ferramentas ou bloquear novas sessões;
+3. preservar evidências autorizadas com payload sensível redigido;
+4. identificar causa e ação corretiva;
+5. executar a suíte de regressão;
+6. exigir evidência da Run e Design Authority antes da reativação.
 
-## Boundaries
+## Fronteiras
 
-This runbook is illustrative and does not replace an organization's incident process, on-call model or legal obligations.
+Este runbook é ilustrativo e não substitui o processo de incidentes da organização, o modelo de plantão (on-call) ou obrigações legais.

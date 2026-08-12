@@ -16,205 +16,205 @@ Este capítulo integra a estrutura clean-room aprovada com o conteúdo substanti
 
 As subseções seguintes formam um contrato executável de completude. Cada uma especifica a decisão ou ação requerida, o record/evidence mínimo e uma condição observável de conclusão para levar a governança do zero ao business as usual.
 
-### 02.1 Governance-system design
+### 02.1 Design do sistema de governança
 
-**Required decision/action.** For **governance-system design**, the organization must select and document the centralized, federated or hybrid allocation of policy, platform, domain and assurance duties.
+**Decisão/ação obrigatória.** Para **design do sistema de governança**, a organização deve selecionar e documentar a alocação centralizada, federada ou híbrida das atribuições de policy, plataforma, domínio e assurance.
 
-**Record and evidence.** Retain design principles, role map, service boundaries, decision rights, handoffs, service levels and exception route.
+**Registro e evidência.** Reter princípios de design, mapa de papéis, fronteiras de serviço, decision rights, handoffs, níveis de serviço e rota de exceção.
 
-**Done when.** A representative case moves from intake to operation with no orphan decision or duplicated source of truth.
+**Concluído quando.** Um caso representativo percorre do intake à operação sem decisão órfã nem fonte de verdade duplicada.
 
-### 02.2 Centralized, federated or hybrid operating model
+### 02.2 Modelo operacional centralizado, federado ou híbrido
 
-**Required decision/action.** For **centralized, federated or hybrid operating model**, the organization must select and document the centralized, federated or hybrid allocation of policy, platform, domain and assurance duties.
+**Decisão/ação obrigatória.** Para **modelo operacional centralizado, federado ou híbrido**, a organização deve selecionar e documentar a alocação centralizada, federada ou híbrida das atribuições de policy, plataforma, domínio e assurance.
 
-**Record and evidence.** Retain design principles, role map, service boundaries, decision rights, handoffs, service levels and exception route.
+**Registro e evidência.** Reter princípios de design, mapa de papéis, fronteiras de serviço, decision rights, handoffs, níveis de serviço e rota de exceção.
 
-**Done when.** A representative case moves from intake to operation with no orphan decision or duplicated source of truth.
+**Concluído quando.** Um caso representativo percorre do intake à operação sem decisão órfã nem fonte de verdade duplicada.
 
-### 02.3 Executive accountability
+### 02.3 Accountability executiva
 
-**Required decision/action.** For **executive accountability**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **accountability executiva**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
 ### 02.4 Governance owner
 
-**Required decision/action.** For **governance owner**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **governance owner**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
 ### 02.5 Business ownership
 
-**Required decision/action.** For **business ownership**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **business ownership**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
 ### 02.6 Technical ownership
 
-**Required decision/action.** For **technical ownership**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **technical ownership**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
 ### 02.7 Product ownership
 
-**Required decision/action.** For **product ownership**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **product ownership**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.8 Risk-management responsibilities
+### 02.8 Responsabilidades de gestão de risco
 
-**Required decision/action.** For **risk-management responsibilities**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **responsabilidades de gestão de risco**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.9 Legal and regulatory responsibilities
+### 02.9 Responsabilidades legais e regulatórias
 
-**Required decision/action.** For **legal and regulatory responsibilities**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **responsabilidades legais e regulatórias**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.10 Privacy and data-protection responsibilities
+### 02.10 Responsabilidades de privacidade e proteção de dados
 
-**Required decision/action.** For **privacy and data-protection responsibilities**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **responsabilidades de privacidade e proteção de dados**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.11 Information-security responsibilities
+### 02.11 Responsabilidades de segurança da informação
 
-**Required decision/action.** For **information-security responsibilities**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **responsabilidades de segurança da informação**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.12 Data-governance responsibilities
+### 02.12 Responsabilidades de governança de dados
 
-**Required decision/action.** For **data-governance responsibilities**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **responsabilidades de governança de dados**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.13 Responsible AI responsibilities
+### 02.13 Responsabilidades de IA responsável
 
-**Required decision/action.** For **responsible ai responsibilities**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **responsabilidades de IA responsável**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.14 Operations, SRE, SOC and support responsibilities
+### 02.14 Responsabilidades de operações, SRE, SOC e suporte
 
-**Required decision/action.** For **operations, sre, soc and support responsibilities**, the organization must assign the named role one accountable outcome, explicit authority and non-delegable decisions.
+**Decisão/ação obrigatória.** Para **responsabilidades de operações, SRE, SOC e suporte**, a organização deve atribuir ao papel nomeado um resultado accountable, autoridade explícita e decisões indelegáveis.
 
-**Record and evidence.** The RACI and role charter must state duties, required evidence, handoffs, escalation, delegate rules and competency.
+**Registro e evidência.** O RACI e o charter do papel devem declarar deveres, evidências exigidas, handoffs, escalonamento, regras de delegação e competência.
 
-**Done when.** The role accepts a representative record and accountability remains clear when delivery is delegated to another team or supplier.
+**Concluído quando.** O papel aceita um registro representativo e a accountability permanece clara quando a entrega é delegada a outro time ou fornecedor.
 
-### 02.15 Internal audit and independent challenge
+### 02.15 Auditoria interna e challenge independente
 
-**Required decision/action.** For **internal audit and independent challenge**, the organization must define challenge scope and independence criteria before the reviewer evaluates work.
+**Decisão/ação obrigatória.** Para **auditoria interna e challenge independente**, a organização deve definir escopo do challenge e critérios de independência antes de o revisor avaliar o trabalho.
 
-**Record and evidence.** Record reporting line, conflicts, incompatible services, population, sample, criteria, limitations and form of conclusion.
+**Registro e evidência.** Registrar linha de reporte, conflitos, serviços incompatíveis, população, amostra, critérios, limitações e forma da conclusão.
 
-**Done when.** The reviewer does not conclude on work they designed or operated, and claims do not exceed the approved scope and evidence.
+**Concluído quando.** O revisor não conclui sobre trabalho que ele mesmo desenhou ou operou, e as alegações não excedem o escopo e a evidência aprovados.
 
-### 02.16 Governance forums and terms of reference
+### 02.16 Fóruns de governança e termos de referência
 
-**Required decision/action.** For **governance forums and terms of reference**, the organization must charter each forum with decisions it may take, quorum, membership, inputs, outputs and escalation.
+**Decisão/ação obrigatória.** Para **fóruns de governança e termos de referência**, a organização deve constituir cada fórum com as decisões que pode tomar, quórum, composição, entradas, saídas e escalonamento.
 
-**Record and evidence.** Retain terms of reference, agenda, decision log, conflicts, attendance, conditions and action owners.
+**Registro e evidência.** Reter termos de referência, pauta, registro de decisões, conflitos, presença, condições e owners das ações.
 
-**Done when.** Forum outcomes are enforceable and do not substitute discussion for a named accountable decision.
+**Concluído quando.** Resultados do fórum são exequíveis e não substituem discussão por uma decisão accountable nomeada.
 
-### 02.17 Decision rights by lifecycle event
+### 02.17 Decision rights por evento de lifecycle
 
-**Required decision/action.** For **decision rights by lifecycle event**, the organization must map each material lifecycle event and incident severity to one accountable decision and escalation path.
+**Decisão/ação obrigatória.** Para **decision rights por evento de lifecycle**, a organização deve mapear cada evento material de lifecycle e severidade de incidente para uma decisão accountable e um caminho de escalonamento.
 
-**Record and evidence.** Record event, threshold, primary and alternate authority, consultation, response time and unresolved-decision fallback.
+**Registro e evidência.** Registrar evento, threshold, autoridade primária e alternativa, consulta, tempo de resposta e fallback para decisão não resolvida.
 
-**Done when.** A drill reaches an authorized decision within the target and ambiguous authority fails to the safer state.
+**Concluído quando.** Um exercício (drill) alcança uma decisão autorizada dentro do alvo e autoridade ambígua falha para o estado mais seguro.
 
-### 02.18 Escalation paths
+### 02.18 Caminhos de escalonamento
 
-**Required decision/action.** For **escalation paths**, the organization must map each material lifecycle event and incident severity to one accountable decision and escalation path.
+**Decisão/ação obrigatória.** Para **caminhos de escalonamento**, a organização deve mapear cada evento material de lifecycle e severidade de incidente para uma decisão accountable e um caminho de escalonamento.
 
-**Record and evidence.** Record event, threshold, primary and alternate authority, consultation, response time and unresolved-decision fallback.
+**Registro e evidência.** Registrar evento, threshold, autoridade primária e alternativa, consulta, tempo de resposta e fallback para decisão não resolvida.
 
-**Done when.** A drill reaches an authorized decision within the target and ambiguous authority fails to the safer state.
+**Concluído quando.** Um exercício (drill) alcança uma decisão autorizada dentro do alvo e autoridade ambígua falha para o estado mais seguro.
 
-### 02.19 Segregation of duties and conflicts of interest
+### 02.19 Segregação de funções e conflitos de interesse
 
-**Required decision/action.** For **segregation of duties and conflicts of interest**, the organization must separate build, operation, approval and assurance where self-review would create material bias.
+**Decisão/ação obrigatória.** Para **segregação de funções e conflitos de interesse**, a organização deve separar construção, operação, aprovação e assurance onde a auto-revisão criaria viés material.
 
-**Record and evidence.** Record incompatible duties, conflict declarations, technical separation, recusal and compensating review.
+**Registro e evidência.** Registrar deveres incompatíveis, declarações de conflito, separação técnica, impedimento (recusal) e revisão compensatória.
 
-**Done when.** No person can both create and independently approve the same material evidence without an authorized exception.
+**Concluído quando.** Nenhuma pessoa pode criar e aprovar independentemente a mesma evidência material sem exceção autorizada.
 
-### 02.20 Policy hierarchy and local standards
+### 02.20 Hierarquia de policy e padrões locais
 
-**Required decision/action.** For **policy hierarchy and local standards**, the organization must map this framework to superior policies, subordinate standards and local procedures without creating a second canonical source.
+**Decisão/ação obrigatória.** Para **hierarquia de policy e padrões locais**, a organização deve mapear este framework para políticas superiores, padrões subordinados e procedimentos locais sem criar uma segunda fonte canônica.
 
-**Record and evidence.** Record relationship type, owner, version, conflict rule and the exact requirement or decision linked.
+**Registro e evidência.** Registrar tipo de relacionamento, owner, versão, regra de conflito e o requisito ou decisão exata vinculada.
 
-**Done when.** A conflict resolves through an approved precedence rule and downstream artifacts can be impact-assessed on change.
+**Concluído quando.** Um conflito resolve-se por regra de precedência aprovada e artefatos a jusante podem ser avaliados por impacto em caso de mudança.
 
-### 02.21 Exception, waiver and risk-acceptance process
+### 02.21 Processo de exceção, waiver e risk acceptance
 
-**Required decision/action.** For **exception, waiver and risk-acceptance process**, the organization must allow exceptions only for a bounded requirement, period and asset after alternatives are assessed.
+**Decisão/ação obrigatória.** Para **processo de exceção, waiver e risk acceptance**, a organização deve permitir exceções somente para requisito, período e ativo delimitados após avaliação de alternativas.
 
-**Record and evidence.** Record requirement, scope, rationale, compensating controls, owner, residual risk, approver, expiry and review trigger.
+**Registro e evidência.** Registrar requisito, escopo, rationale, compensating controls, owner, risco residual, aprovador, expiração e gatilho de revisão.
 
-**Done when.** Expired exceptions block continued reliance and an exception never overrides a legally or policy-prohibited use.
+**Concluído quando.** Exceções expiradas bloqueiam a continuidade da dependência e uma exceção nunca sobrepõe um uso proibido por lei ou por policy.
 
-### 02.22 Competence requirements
+### 02.22 Requisitos de competência
 
-**Required decision/action.** For **competence requirements**, the organization must define role-specific competencies and training tied to decisions and tasks rather than generic awareness.
+**Decisão/ação obrigatória.** Para **requisitos de competência**, a organização deve definir competências e treinamentos específicos por papel, vinculados a decisões e tarefas, em vez de conscientização genérica.
 
-**Record and evidence.** Record role, learning objective, assessment method, completion, expiry, remediation and evidence owner.
+**Registro e evidência.** Registrar papel, objetivo de aprendizado, método de avaliação, conclusão, expiração, remediação e owner da evidência.
 
-**Done when.** Personnel demonstrate the required task or decision and lapsed competency is visible before access or authority is exercised.
+**Concluído quando.** Pessoal demonstra a tarefa ou decisão exigida e competência vencida é visível antes de acesso ou autoridade ser exercido.
 
-### 02.23 Role-based training
+### 02.23 Treinamento baseado em papel
 
-**Required decision/action.** For **role-based training**, the organization must define role-specific competencies and training tied to decisions and tasks rather than generic awareness.
+**Decisão/ação obrigatória.** Para **treinamento baseado em papel**, a organização deve definir competências e treinamentos específicos por papel, vinculados a decisões e tarefas, em vez de conscientização genérica.
 
-**Record and evidence.** Record role, learning objective, assessment method, completion, expiry, remediation and evidence owner.
+**Registro e evidência.** Registrar papel, objetivo de aprendizado, método de avaliação, conclusão, expiração, remediação e owner da evidência.
 
-**Done when.** Personnel demonstrate the required task or decision and lapsed competency is visible before access or authority is exercised.
+**Concluído quando.** Pessoal demonstra a tarefa ou decisão exigida e competência vencida é visível antes de acesso ou autoridade ser exercido.
 
-### 02.24 Internal communication and awareness
+### 02.24 Comunicação e conscientização internas
 
-**Required decision/action.** For **internal communication and awareness**, the organization must provide role-appropriate communication, support and feedback routes before and during rollout.
+**Decisão/ação obrigatória.** Para **comunicação e conscientização internas**, a organização deve prover rotas de comunicação, suporte e feedback adequadas ao papel antes e durante o rollout.
 
-**Record and evidence.** Record audience, message, channel, timing, owner, comprehension signal, feedback and resulting action.
+**Registro e evidência.** Registrar público, mensagem, canal, momento, owner, sinal de compreensão, feedback e ação resultante.
 
-**Done when.** Affected users know the system boundary, reporting route and consequence of misuse, and feedback reaches an accountable owner.
+**Concluído quando.** Usuários afetados conhecem a fronteira do sistema, a rota de reporte e a consequência do uso indevido, e o feedback chega a um owner accountable.
 
-### 02.25 Governance-document review and change
+### 02.25 Revisão e mudança de documentos de governança
 
-**Required decision/action.** For **governance-document review and change**, the organization must route material changes through impact analysis, affected-function consultation and approval.
+**Decisão/ação obrigatória.** Para **revisão e mudança de documentos de governança**, a organização deve encaminhar mudanças materiais por análise de impacto, consulta às funções afetadas e aprovação.
 
-**Record and evidence.** Retain proposal, rationale, consulted roles, objections, compatibility result, decision and migration plan.
+**Registro e evidência.** Reter proposta, rationale, papéis consultados, objeções, resultado de compatibilidade, decisão e plano de migração.
 
-**Done when.** Accepted decisions are superseded rather than silently rewritten and affected dependents receive a traceable update.
+**Concluído quando.** Decisões aceitas são superseded em vez de reescritas silenciosamente e dependentes afetados recebem atualização rastreável.
 
 
 ## Conteúdo canônico incorporado

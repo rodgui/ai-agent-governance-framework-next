@@ -1,18 +1,18 @@
-# Example SLO — Service Desk Knowledge Agent
+# Exemplo de SLO — Service Desk Knowledge Agent
 
-> Fictitious and sanitized. Thresholds are illustrative, not universal recommendations.
+> Fictício e sanitizado. Os thresholds são ilustrativos, não recomendações universais.
 
-## Service objectives
+## Objetivos de serviço
 
-| Indicator | Illustrative objective | Window | Owner action on breach |
+| Indicador | Objetivo ilustrativo | Janela | Ação do owner em violação |
 |---|---:|---|---|
-| successful approved-source retrieval | ≥ 99% | 30 days | investigate connector and source health |
-| p95 response latency | ≤ 8 seconds | 7 days | review model, retrieval and gateway latency |
-| prohibited tool execution | 0 | continuous | quarantine and escalate immediately |
-| support acknowledgment for severity high | ≤ 30 minutes | per incident | escalate to Run Authority |
+| recuperação bem-sucedida de fonte aprovada | ≥ 99% | 30 dias | investigar saúde do conector e da fonte |
+| latência p95 de resposta | ≤ 8 segundos | 7 dias | revisar latência de modelo, recuperação e gateway |
+| execução de ferramenta proibida | 0 | contínuo | quarentena e escalonamento imediato |
+| reconhecimento de suporte para severidade alta | ≤ 30 minutos | por incidente | escalonar para a Run Authority |
 
-## Error budget and review
+## Error budget e revisão
 
-- Availability objectives do not override safety or authorization controls.
-- Safety/security signals can trigger containment before an SLO breach.
-- Thresholds must be reapproved after material scope or architecture change.
+- Objetivos de disponibilidade não se sobrepõem a controles de segurança ou autorização.
+- Sinais de segurança podem disparar contenção antes de uma violação de SLO.
+- Thresholds devem ser reaprovados após mudança material de escopo ou arquitetura.

@@ -1,27 +1,27 @@
-# Example risk assessment — Service Desk Knowledge Agent
+# Exemplo de avaliação de risco — Service Desk Knowledge Agent
 
-> Fictitious and sanitized. This is not a legal opinion, certification or real risk acceptance.
+> Fictício e sanitizado. Não é opinião legal, certificação ou aceite de risco real.
 
-## Scope
+## Escopo
 
-- Version: 1.0
-- Intended users: internal service-desk analysts
-- Capabilities: approved retrieval and draft creation
-- Prohibited: system changes, personal data, credentials and unreviewed external responses
+- Versão: 1.0
+- Usuários pretendidos: analistas internos de service desk
+- Capacidades: recuperação aprovada e criação de rascunho
+- Proibido: mudanças de sistema, dados pessoais, credenciais e respostas externas não revisadas
 
-## Classification
+## Classificação
 
-| Dimension | Observation | Rating |
+| Dimensão | Observação | Classificação |
 |---|---|---|
-| Data | internal approved knowledge; no personal data intended | moderate |
-| Action capability | read and draft only; no system mutation | low |
-| Reach | internal analysts in one operating unit | moderate |
-| Reversibility | sessions can be blocked and blueprint rolled back | high |
-| Interconnectivity | one gateway and one retrieval service | moderate |
+| Dados | conhecimento interno aprovado; sem dados pessoais pretendidos | moderada |
+| Capacidade de ação | somente leitura e rascunho; sem mutação de sistema | baixa |
+| Alcance | analistas internos de uma unidade operacional | moderado |
+| Reversibilidade | sessões podem ser bloqueadas e o blueprint revertido | alta |
+| Interconectividade | um gateway e um serviço de recuperação | moderada |
 
-**Illustrative tier:** T2.
+**Tier ilustrativo:** T2.
 
-## Required controls
+## Controles obrigatórios
 
 - `AGF-REG-001`
 - `AGF-IDN-001`
@@ -29,8 +29,8 @@
 - `AGF-EVA-001`
 - `AGF-OPS-001`
 
-## Residual gaps and decision
+## Lacunas residuais e decisão
 
-- Connector authorization must be re-tested after a data-source change.
-- Any state-changing tool or external-user expansion triggers reassessment.
-- Residual risk: moderate, accepted only for this fictitious scope and evidence cutoff.
+- A autorização do conector deve ser retestada após mudança de fonte de dados.
+- Qualquer ferramenta que altere estado ou expansão de usuários externos dispara reavaliação.
+- Risco residual: moderado, aceito somente para este escopo fictício e corte de evidências.
