@@ -1,177 +1,152 @@
 ---
-title: Índice e jornadas de leitura
+title: Índice por persona e objetivo
 status: maintained
 owner: Rodrigo Garcia Guimarães
-last_reviewed: 2026-08-10
+last_reviewed: 2026-08-13
 review_cycle: quarterly
-supersedes: null
 related:
+  - start-here.md
   - handbook/README.md
   - ../README.md
 ---
 
-# Índice e jornadas de leitura
+# Índice por persona e objetivo
 
-O repositório usa documentos modulares como fonte canônica. Escolha uma jornada; não é necessário ler tudo em sequência.
+Esta página é uma **referência de localização**, não uma segunda ordem de implantação. Se você precisa colocar o programa em movimento, use [Comece aqui](start-here.md). Se quer estudar o corpus de forma linear, use o [handbook](handbook/README.md). Volte a este índice quando já souber a pergunta que precisa responder.
 
-> **Vai implantar?** Use as [trilhas de leitura](start-here.md), que dão uma ordem só e terminam em decisões. Esta página é referência para localizar assuntos — ela oferece muitos caminhos de propósito, e isso atrapalha quem precisa de um.
+## Como usar este índice
 
-## Por onde começar, conforme o estágio da organização
+Escolha primeiro o objetivo ou a persona. Leia somente os documentos necessários para a decisão corrente e abra os templates, schemas, controls e exemplos indicados no ponto de execução. Não é necessário seguir todas as jornadas nem ler todos os capítulos.
 
-As jornadas por persona respondem "o que eu leio". Esta tabela responde antes: **por onde a organização entra**.
+## Por estágio da organização
 
-| Estágio | Entrada recomendada | Por quê |
+| Situação atual | Próxima pergunta | Documentos principais |
 |---|---|---|
-| **sem programa formal** | [brief executivo](executive/governing-agents-at-scale.md) → [decisão arquitetural](framework/03-inventory-portfolio-and-value.md) → [descoberta do estate](framework/03-inventory-portfolio-and-value.md) → [capability map](framework/08-implementation-and-adoption.md) | não comece comprando ferramenta; comece por escopo, estate e mandato |
-| **com pilotos em andamento** | [maturity model](../toolkit/maturity/maturity-model.md) → [gestão de riscos](framework/04-risk-impact-and-compliance.md) → [Minimum Production Bar](../toolkit/controls/minimum-production-bar.md) | descubra os gaps e defina o piso de controles antes de escalar o que já existe |
-| **já operando em escala** | [control catalog](../toolkit/controls/README.md) → [evidence pack por tier](framework/07-evaluation-evidence-and-assurance.md) → [catálogo de artefatos](../toolkit/artifact-catalog.md) | use os domínios como modelo de auditoria e o catálogo como índice de completude |
+| **Ainda não há programa formal** | Quem tem autoridade para começar e qual é o boundary? | [Brief executivo](executive/governing-agents-at-scale.md) → [Mandato](framework/01-mandate-scope-and-principles.md) → [Comece aqui](start-here.md) |
+| **Há pilotos ou agentes dispersos** | O que existe, qual é o risco e quais fundações faltam? | [Baseline e capability map](framework/08-implementation-and-adoption.md) → [Inventário](framework/03-inventory-portfolio-and-value.md) → [Risco](framework/04-risk-impact-and-compliance.md) |
+| **Há operação em escala** | A evidência, o runtime e o valor continuam dentro do envelope aprovado? | [Control catalog](../toolkit/controls/README.md) → [Assurance](framework/07-evaluation-evidence-and-assurance.md) → [Operações](framework/09-operations-incidents-and-continuity.md) → [Métricas](framework/10-metrics-review-and-improvement.md) |
 
-Os únicos gates canônicos são G0–G7. O [programa de 24 semanas](framework/08-implementation-and-adoption.md), o roadmap de 90 dias e o plano de piloto são recortes adaptáveis do mesmo conjunto de gates — não programas concorrentes nem prazos de compliance.
+## Por persona
 
-## Jornada por persona
+### Sponsor, conselho ou executivo
 
-### Conselho, executivo ou sponsor
-
-**Objetivo:** decidir mandato, apetite a risco, funding e accountability.
+**Decisão:** patrocinar, definir escopo, nomear governance owner, aprovar appetite e autoridade de contenção.
 
 1. [Brief executivo](executive/governing-agents-at-scale.md)
-2. [Fundamentos](framework/01-mandate-scope-and-principles.md)
-3. [Estratégia e valor](framework/03-inventory-portfolio-and-value.md)
-4. [Operating model](framework/02-governance-and-accountability.md)
-5. [Maturity model](../toolkit/maturity/maturity-model.md)
+2. [Mandato, escopo e princípios](framework/01-mandate-scope-and-principles.md)
+3. [Governança e accountability](framework/02-governance-and-accountability.md)
+4. [Estratégia, inventário e valor](framework/03-inventory-portfolio-and-value.md)
+5. [Comece aqui — Trilha 0](start-here.md)
 
-**Decisões esperadas:** sponsor, escopo, risk appetite, autoridade de contenção e critérios de valor.
+> **Template recomendado:** [Governance Charter](../toolkit/templates/governance-charter-template.md), com [exemplo](../toolkit/examples/governance-charter.example.md).
 
-### CISO, DPO, jurídico, compliance ou Responsible AI
+### Governance owner, transformação ou programa
 
-**Objetivo:** definir controles, assurance, exceções e evidências.
+**Decisão:** definir baseline, target maturity, workstreams, backlog, gates e critérios de completude.
+
+1. [Implementation playbook](framework/08-implementation-and-adoption.md)
+2. [Catálogo de artefatos](../toolkit/artifact-catalog.md)
+3. [Maturity model](../toolkit/maturity/maturity-model.md)
+4. [Capability assessment worksheet](../toolkit/templates/capability-assessment-worksheet.md)
+5. [Handbook](handbook/README.md), para aprofundamento linear
+
+> **Templates recomendados:** [Maturity Assessment](../toolkit/templates/maturity-assessment-template.md), [RACI](../toolkit/templates/governance-raci-template.md) e [Handoff Matrix](../toolkit/examples/handoff-matrix.example.md).
+
+### Risco, Responsible AI, privacy, jurídico ou compliance
+
+**Decisão:** classificar risco, separar admissibilidade, acionar impact assessment, definir reviews e aceitar residual risk.
 
 1. [Policy modular](framework/00-document-control.md)
-2. [Gestão de riscos](framework/04-risk-impact-and-compliance.md)
-3. [Segurança](framework/06-architecture-and-technical-controls.md)
-4. [Responsible AI](framework/04-risk-impact-and-compliance.md)
-5. [Human oversight](framework/02-governance-and-accountability.md)
-6. [Auditabilidade](framework/07-evaluation-evidence-and-assurance.md)
-7. [Control catalog](../toolkit/controls/README.md)
+2. [Risco, impacto e compliance](framework/04-risk-impact-and-compliance.md)
+3. [Governança e accountability](framework/02-governance-and-accountability.md)
+4. [Avaliação, evidência e assurance](framework/07-evaluation-evidence-and-assurance.md)
+5. [Control catalog](../toolkit/controls/README.md)
 
-**Decisões esperadas:** triggers de assessment, risk acceptance, human approval, retenção, monitoramento e waiver.
+> **Regra de leitura:** `T1–T4` responde à criticidade; `permitted`, `conditional`, `restricted` e `prohibited` respondem à admissibilidade. Consulte a [ADR-0009](architecture/decisions/0009-risk-tier-and-admissibility.md).
+>
+> **Templates recomendados:** [Risk pre-screen](../toolkit/templates/risk-pre-screen.md), [Risk Scoring Worksheet](../toolkit/templates/risk-scoring-worksheet.md), [Agent Risk Record](../toolkit/templates/agent-risk-record.md) e [Impact Assessment](../toolkit/templates/assessment-template.md).
 
-### Arquitetura e plataforma
+### Arquitetura, plataforma, IAM, dados ou segurança
 
-**Objetivo:** construir o control plane e integrar os sistemas especializados.
+**Decisão:** definir control plane, source of truth, identity, data, tools, model/provider, enforcement e runtime.
 
-1. [Arquitetura de referência](framework/06-architecture-and-technical-controls.md)
+1. [Arquitetura e controles técnicos](framework/06-architecture-and-technical-controls.md)
 2. [Design patterns](patterns/README.md)
-3. [Estate, registry e taxonomia](../toolkit/registry/README.md)
-4. [Identidade](framework/06-architecture-and-technical-controls.md)
-5. [Dados](framework/06-architecture-and-technical-controls.md)
-6. [Tools e MCP](framework/06-architecture-and-technical-controls.md)
-7. [Modelos e provedores](framework/06-architecture-and-technical-controls.md)
-8. [Schemas](../toolkit/schemas/README.md)
+3. [Registry](../toolkit/registry/README.md)
+4. [Schemas](../toolkit/schemas/README.md)
+5. [Casos de referência](../toolkit/examples/cases/README.md)
 
-**Decisões esperadas:** source of truth, blueprint, workload identity, gateways, enforcement points e adapters por plataforma.
+> **Templates e contratos recomendados:** [Agent Registry](../toolkit/templates/agent-registry-template.md), [Agent Blueprint](../toolkit/templates/agent-blueprint-template.md), [registry schema](../toolkit/schemas/agent-registry.schema.json) e [blueprint schema](../toolkit/schemas/agent-blueprint.schema.json).
 
 ### Product owner, maker ou engenharia
 
-**Objetivo:** levar um agente da hipótese à operação com evidência suficiente.
+**Decisão:** decidir se um agente é o mecanismo certo, classificar o caso, criar blueprint, avaliar, liberar e operar.
 
-1. [Implementation playbook](framework/08-implementation-and-adoption.md)
-2. [Roadmap sugestivo de 90 dias](framework/08-implementation-and-adoption.md)
-3. [Risk pre-screen](../toolkit/templates/risk-pre-screen.md)
-4. [Evaluations](framework/07-evaluation-evidence-and-assurance.md)
-5. [Adoção e suporte](framework/08-implementation-and-adoption.md)
-6. [Templates](../toolkit/templates/README.md)
-7. [Examples](../toolkit/examples/README.md)
-8. [Publication checklist](../toolkit/templates/release-decision-checklist.md)
+1. [Comece aqui — Trilha 3](start-here.md)
+2. [Inventário, portfólio e valor](framework/03-inventory-portfolio-and-value.md)
+3. [Risco, impacto e compliance](framework/04-risk-impact-and-compliance.md)
+4. [Arquitetura e controles técnicos](framework/06-architecture-and-technical-controls.md)
+5. [Avaliação, evidência e assurance](framework/07-evaluation-evidence-and-assurance.md)
+6. [Adoção e suporte](framework/08-implementation-and-adoption.md)
 
-**Decisões esperadas:** escopo, risco, dados, tools, evals, release, rollback e sunset.
+> **Templates recomendados:** [Use-case intake](../toolkit/templates/use-case-intake.md), [Self-assessment](../toolkit/templates/self-assessment-form.md), [Agent Blueprint](../toolkit/templates/agent-blueprint-template.md) e [Release Evidence Manifest](../toolkit/templates/release-evidence-manifest.md).
 
 ### Operações, SOC, suporte ou SRE
 
-**Objetivo:** observar comportamento e executar resposta proporcional.
+**Decisão:** observar, conter, investigar, reativar, mudar ou aposentar com evidência.
 
-1. [Operações](framework/09-operations-incidents-and-continuity.md)
-2. [Auditabilidade](framework/07-evaluation-evidence-and-assurance.md)
-3. [Lifecycle, mudança material e retirement](framework/05-agent-lifecycle.md)
-4. [Runtime observability and quarantine pattern](../toolkit/patterns/runtime-observability-and-quarantine.md)
-5. [Lifecycle attestation and sunset pattern](patterns/lifecycle-attestation-and-sunset.md)
-6. [Sunset plan](../toolkit/templates/sunset-plan.md)
+1. [Operações, incidentes e continuidade](framework/09-operations-incidents-and-continuity.md)
+2. [Arquitetura e controles técnicos](framework/06-architecture-and-technical-controls.md), especialmente runtime e containment
+3. [Lifecycle de agentes](framework/05-agent-lifecycle.md)
+4. [Avaliação, evidência e assurance](framework/07-evaluation-evidence-and-assurance.md)
+5. [Métricas, revisão e melhoria](framework/10-metrics-review-and-improvement.md)
 
-**Decisões esperadas:** SLOs, alertas, incident severity, quarantine, reactivation, attestation e retirement.
+> **Templates recomendados:** [Support Runbook](../toolkit/examples/support-runbook.example.md), [SLO](../toolkit/examples/slo.example.md), [Attestation and Sunset Record](../toolkit/templates/attestation-sunset-record.md) e [Sunset Plan](../toolkit/templates/sunset-plan.md).
 
-### Auditoria, assurance e challenge
+### Auditoria, assurance ou challenge
 
-**Objetivo:** verificar design, operação e evidência sem assumir o papel do owner nem presumir independência não demonstrada.
+**Decisão:** verificar design, operação, evidence, segregação, findings e remediação sem assumir o papel do owner.
 
 1. [Control catalog](../toolkit/controls/README.md)
-2. [Maturity model](../toolkit/maturity/maturity-model.md)
-3. [Auditabilidade](framework/07-evaluation-evidence-and-assurance.md)
-4. [Assessment templates](../toolkit/templates/README.md)
+2. [Avaliação, evidência e assurance](framework/07-evaluation-evidence-and-assurance.md)
+3. [Schemas](../toolkit/schemas/README.md)
+4. [Maturity model](../toolkit/maturity/maturity-model.md)
 5. [Fontes e limitações](../research/sources/bibliography.md)
 
-**Decisões esperadas:** suficiência de evidência, grau de segregação/independência quando aplicável, findings, prazo de remediação e attestation.
+> **Templates recomendados:** [Control Implementation Record](../toolkit/templates/control-implementation-record-template.md), [Evaluation Report](../toolkit/examples/evaluation-report.example.md) e [Release Decision](../toolkit/examples/release-decision.example.md).
 
-### Líder de transformação
+## Por objetivo
 
-**Objetivo:** conduzir diagnóstico, target state, roadmap e transferência de capacidade.
-
-1. [Handbook](handbook/README.md)
-2. [Implementation playbook](framework/08-implementation-and-adoption.md)
-3. [Programa sugestivo de 24 semanas](framework/08-implementation-and-adoption.md)
-4. [Plano opcional de piloto](framework/08-implementation-and-adoption.md)
-5. [Maturity model](../toolkit/maturity/maturity-model.md)
-6. [Design patterns](patterns/README.md)
-7. [Toolkit](../toolkit/templates/README.md)
-
-**Decisões esperadas:** baseline, gaps, target operating model, backlog priorizado, entregáveis e critérios de aceite.
-
-## Jornada por objetivo
-
-| Objetivo | Documentos principais |
+| Objetivo | Rota curta |
 |---|---|
-| definir policy e accountability | [Policy modular](framework/00-document-control.md) + [operating model](framework/02-governance-and-accountability.md) |
-| inventariar agentes | [Estate e registry](../toolkit/registry/README.md) + [descoberta e forecast](framework/03-inventory-portfolio-and-value.md) + [schemas](../toolkit/schemas/README.md) |
-| decidir se o caso pede um agente | [Decisão arquitetural](framework/03-inventory-portfolio-and-value.md) + [intake](../toolkit/templates/use-case-intake.md) |
-| mapear capacidades atuais e alvo | [Capability map](framework/08-implementation-and-adoption.md) + [maturity model](../toolkit/maturity/maturity-model.md) |
-| planejar artefatos, owners e fases | [Catálogo de artefatos](../toolkit/artifact-catalog.md) + [programa de 24 semanas](framework/08-implementation-and-adoption.md) |
-| classificar risco e admissibilidade | [Risk-tiered governance](../toolkit/patterns/risk-tiered-governance.md) + [risk management](framework/04-risk-impact-and-compliance.md) + [Agent Risk Record](../toolkit/templates/agent-risk-record.md) |
-| governar identidade e dados | [Identity](framework/06-architecture-and-technical-controls.md) + [data access](framework/06-architecture-and-technical-controls.md) |
-| governar tools e MCP | [Tool governance](framework/06-architecture-and-technical-controls.md) + [MCP gateway pattern](patterns/tool-and-mcp-gateway.md) |
-| governar modelos e provedores | [Model governance](framework/06-architecture-and-technical-controls.md) + [evaluations](framework/07-evaluation-evidence-and-assurance.md) |
-| governar mudança e retirement | [Lifecycle](framework/05-agent-lifecycle.md) + [lifecycle pattern](patterns/lifecycle-attestation-and-sunset.md) |
-| publicar com evidência | [Evaluations](framework/07-evaluation-evidence-and-assurance.md) + [control catalog](../toolkit/controls/README.md) + [release manifest](../toolkit/templates/release-evidence-manifest.md) |
-| operar e conter | [Operations](framework/09-operations-incidents-and-continuity.md) + [runtime pattern](../toolkit/patterns/runtime-observability-and-quarantine.md) |
-| medir maturidade | [Maturity model](../toolkit/maturity/maturity-model.md) + [assessment example](../toolkit/examples/maturity-assessment.example.json) |
-| medir portfólio e valor | [Strategy and value](framework/03-inventory-portfolio-and-value.md) + [lifecycle pattern](patterns/lifecycle-attestation-and-sunset.md) |
-| estruturar adoção e suporte | [Adoption](framework/08-implementation-and-adoption.md) + [operations](framework/09-operations-incidents-and-continuity.md) |
-| estudar um caso Microsoft opcional | [Customer Zero case](../research/case-studies/microsoft-customer-zero-agent-governance.md) + [crosswalk histórico](../project/history/assessments/microsoft-case-study-framework-crosswalk.md) |
-| ver o framework aplicado ponta a ponta | [Casos de referência](../toolkit/examples/cases/README.md) + [implementation playbook](framework/08-implementation-and-adoption.md) |
-| seguir uma leitura linear | [Handbook](handbook/README.md) |
-
-## Navegação por pasta
-
-O handbook e as jornadas acima são a leitura orientada. Quem prefere navegar a estrutura direto no repositório encontra um índice curto em cada pasta:
-
-| Pasta | Índice |
-|---|---|
-| arquitetura | [`docs/architecture/`](architecture/README.md) — visão, princípios, atributos de qualidade, riscos, diagramas e decision log |
-| executivo | [`docs/executive/`](executive/README.md) — conteúdo orientado a decisão |
-| governança | [`docs/governance/`](framework/00-document-control.md) — policy modular e operating model |
-| guias | [`docs/guides/`](journey/README.md) — playbook, roadmaps e piloto |
-| referência técnica | [`docs/reference/`](reference/README.md) — glossário, catálogo de artefatos e checklist de autossuficiência |
-| fontes | [`references/`](../research/README.md) — regras de proveniência, ledger de fontes e bibliografia |
-
-Esses índices existem para navegação de pasta e não constituem uma segunda ordem editorial. A ordem canônica é a do [handbook](handbook/README.md).
+| Definir policy, mandate e accountability | [Controle do documento](framework/00-document-control.md) → [Governança](framework/02-governance-and-accountability.md) → [Governance Charter](../toolkit/templates/governance-charter-template.md) |
+| Decidir se o caso precisa de agente | [Inventário e valor](framework/03-inventory-portfolio-and-value.md) → [Use-case intake](../toolkit/templates/use-case-intake.md) |
+| Inventariar agentes e resolver ownership | [Descoberta e registry](framework/03-inventory-portfolio-and-value.md) → [Registry](../toolkit/registry/README.md) → [Registry schema](../toolkit/schemas/agent-registry.schema.json) |
+| Classificar risco e admissibilidade | [Risco](framework/04-risk-impact-and-compliance.md) → [Risk Scoring Worksheet](../toolkit/templates/risk-scoring-worksheet.md) → [Agent Risk Record](../toolkit/templates/agent-risk-record.md) |
+| Avaliar impacto e Responsible AI | [Impact assessment](framework/04-risk-impact-and-compliance.md#2-avaliacao-de-impacto-responsible-ai) → [Assessment template](../toolkit/templates/assessment-template.md) |
+| Definir arquitetura e enforcement | [Arquitetura técnica](framework/06-architecture-and-technical-controls.md) → [Patterns](patterns/README.md) → [Blueprint schema](../toolkit/schemas/agent-blueprint.schema.json) |
+| Governar identidade, dados e tools/MCP | [Arquitetura técnica](framework/06-architecture-and-technical-controls.md) → [Control catalog](../toolkit/controls/README.md) |
+| Liberar com evidência | [Assurance](framework/07-evaluation-evidence-and-assurance.md) → [Minimum Production Bar](../toolkit/controls/minimum-production-bar.md) → [Release Evidence Manifest](../toolkit/templates/release-evidence-manifest.md) |
+| Operar, conter e recuperar | [Operações](framework/09-operations-incidents-and-continuity.md) → [Runtime pattern](../toolkit/patterns/runtime-observability-and-quarantine.md) |
+| Revisar valor, custo e continuidade | [Métricas](framework/10-metrics-review-and-improvement.md) → [Portfolio](../toolkit/templates/use-case-portfolio.md) → [Sunset Plan](../toolkit/templates/sunset-plan.md) |
+| Estudar um caso completo | [Casos de referência](../toolkit/examples/cases/README.md) → [P1–P8 no playbook](framework/08-implementation-and-adoption.md) |
 
 ## Camadas do conhecimento
 
-- **Normativo:** policy modular e decisões formalmente aprovadas.
-- **Arquitetural:** princípios, operating model, boundaries e patterns.
-- **Operacional:** playbooks, controls, schemas, templates e checklists.
-- **Explicativo:** rationale, casos, mappings e referências.
+O repositório distingue quatro camadas. A camada **normativa** contém policy, standards, controls e decisões aprovadas. A camada **arquitetural** descreve capabilities, boundaries, operating model e patterns. A camada **operacional** fornece procedures, schemas, templates, checklists e evidence packages. A camada **explicativa** apresenta rationale, exemplos, estudos de caso e fontes.
 
-Um documento de guidance não altera a policy. Um estudo de caso não comprova eficácia causal. Um mapping de fornecedor não redefine o núcleo.
+Um guidance não altera a policy. Um template acelera a produção do artefato, mas não aprova o caso. Um exemplo fictício demonstra coerência do método, mas não comprova eficácia. Um mapping externo registra alinhamento direcional, não conformidade.
 
-## Leitura completa
+## Navegação por áreas
 
-Para leitura linear, use o [handbook](handbook/README.md). A geração de uma publicação fica para uma etapa futura, quando o conteúdo estiver maduro.
+| Área | Índice |
+|---|---|
+| Arquitetura e decisões | [`docs/architecture/`](architecture/README.md) |
+| Executivo | [`docs/executive/`](executive/README.md) |
+| Handbook | [`docs/handbook/`](handbook/README.md) |
+| Patterns | [`docs/patterns/`](patterns/README.md) |
+| Referência | [`docs/reference/`](reference/README.md) |
+| Research | [`research/`](../research/README.md) |
+| Toolkit | [`toolkit/`](../toolkit/README.md) |
+
+A ordem canônica de estudo permanece no [handbook](handbook/README.md); esta página existe para localizar e agir.
