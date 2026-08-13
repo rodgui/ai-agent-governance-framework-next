@@ -71,9 +71,26 @@ Ativos sem owner ou shadow (criados fora dos processos corporativos) **entram em
 
 > **Armadilha comum:** tratar o baseline como conclusão em vez de ponto de partida, ou contar versões e instâncias como agentes distintos (o que infla o número real do estate).
 
-### 1.5 Forecast do estate: dimensionar governança, não prometer números
+### 1.5 Como executar a descoberta e publicar o baseline
 
-O forecast serve para **dimensionar a governança futura**, não para prometer número exato. Passos:
+As subseções anteriores explicam os conceitos. Esta seção trata somente da execução da descoberta e da publicação do baseline. A classificação normativa de risco, o desenho do agente e a decisão de portfólio acontecem nos processos seguintes e nos capítulos relacionados.
+
+1. **Declarar o escopo da descoberta.** Quais plataformas, unidades, ambientes e tipos de agente entram na primeira passada? Registre também o que fica fora e por quê — cobertura declarada vale mais que cobertura presumida.
+2. **Reunir as fontes.** Identidade/SSO, logs de plataformas aprovadas, SaaS contratado, budgets de nuvem, builds/CI, entrevistas com os times. Cada fonte entra no inventário com data de última leitura e confiança.
+3. **Consolidar e deduplicar.** Um agente pode aparecer em três fontes com três nomes. A consolidação produz candidatos únicos; a deduplicação decide quais são o mesmo ativo — registre os critérios usados.
+4. **Atribuir estado de confirmação.** `confirmed` só com observação direta; `reported` para o que veio de entrevista; `unresolved` para o que ninguém confirma. **Nunca reporte um inventário sem a coluna de confiança.**
+5. **Vincular owners.** Todo ativo confirmado recebe business owner e technical owner ativos. O que não tem owner entra na fila de triagem — não desaparece do relatório.
+6. **Classificar pelo mínimo.** Para cada ativo: taxonomia e tier preliminar. Registre a admissibilidade somente quando houver fundamento e authority; a classificação fina de casos complexos segue o [cap. 04](04-risk-impact-and-compliance.md). O inventário precisa ao menos separar sinais de maior criticidade dos demais.
+7. **Reconciliar contra o registry.** O que existe no registry e não existe mais no estate → candidato a sunset. O que existe no estate e não está no registry → candidato a registro ou contenção. **Reconciliação é o teste de honestidade do inventário.**
+8. **Publicar baseline com limitações.** Números com fonte, data de corte e lacunas declaradas. A primeira passada nunca é completa — e declarar isso abertamente é o que permite medir a segunda.
+9. **Instalar a rotina.** Descoberta não é projeto pontual: fontes são relidas em cadência, novas plataformas entram no escopo, e cada novo agente nasce já dentro do registry (processo P1 do [cap. 08](08-implementation-and-adoption.md)).
+
+**Armadilhas da primeira passada:** tentar cobrir tudo de uma vez (a descoberta parcial publicada vale mais que a perfeita adiada); aceitar "não tem nenhum agente aqui" sem conferir a fonte (shadow AI vive exatamente onde ninguém olhou); tratar o inventário como fim em vez de meio — o objetivo é o controle, e o inventário é o primeiro passo dele.
+
+
+### 1.6 Forecast do estate: dimensionar governança, não prometer números
+
+O forecast serve para **dimensionar a governança futura**, não para prometer número exato. Use T1–T4 somente como classificação preliminar do mix de criticidade. A definição normativa do risk tier, os red flags e a relação com admissibilidade estão no [capítulo 04](04-risk-impact-and-compliance.md); o forecast não substitui o risk assessment de cada agente. Passos:
 
 1. Definir baseline por população: agentes pessoais, de time, de processo, embarcados e de terceiros.
 2. Identificar drivers: usuários habilitados, builders disponíveis, templates, iniciativas estratégicas, novos SaaS e automações previstas.
@@ -84,9 +101,10 @@ O forecast serve para **dimensionar a governança futura**, não para prometer n
 
 > Exemplo de dimensionamento: se 5.000 usuários habilitados podem criar agentes e apenas 10% criarem 2 agentes cada, o estate potencial já ultrapassa 1.000 agentes — antes de qualquer iniciativa corporativa.
 
-### 1.6 Registro de gargalos manuais
 
-Backlog dos pontos onde a governança depende de trabalho humano repetitivo — insumo direto da decisão sobre o que virar policy-as-code:
+### 1.7 Registro de gargalos manuais
+
+Depois que a descoberta e o baseline estiverem publicados, registre os pontos onde a governança depende de trabalho humano repetitivo. Esse backlog alimenta a decisão sobre o que virar policy-as-code:
 
 | Atividade manual | Volume/mês | Lead time | Risco de automatizar | Decisão inicial |
 |---|---|---|---|---|
@@ -96,21 +114,6 @@ Backlog dos pontos onde a governança depende de trabalho humano repetitivo — 
 
 **A leitura correta: automatizar a preparação da evidência é quase sempre seguro; automatizar a decisão só quando a policy está estável.**
 
-### 1.7 Sequência de execução: da descoberta ao inventário governado
-
-As subseções anteriores explicam os conceitos. Esta é a ordem prática de quem vai executar, do primeiro dia à rotina:
-
-1. **Declarar o escopo da descoberta.** Quais plataformas, unidades, ambientes e tipos de agente entram na primeira passada? Registre também o que fica fora e por quê — cobertura declarada vale mais que cobertura presumida.
-2. **Reunir as fontes.** Identidade/SSO, logs de plataformas aprovadas, SaaS contratado, budgets de nuvem, builds/CI, entrevistas com os times. Cada fonte entra no inventário com data de última leitura e confiança.
-3. **Consolidar e deduplicar.** Um agente pode aparecer em três fontes com três nomes. A consolidação produz candidatos únicos; a deduplicação decide quais são o mesmo ativo — registre os critérios usados.
-4. **Atribuir estado de confirmação.** `confirmed` só com observação direta; `reported` para o que veio de entrevista; `unresolved` para o que ninguém confirma. **Nunca reporte um inventário sem a coluna de confiança.**
-5. **Vincular owners.** Todo ativo confirmado recebe business owner e technical owner ativos. O que não tem owner entra na fila de triagem — não desaparece do relatório.
-6. **Classificar pelo mínimo.** Para cada ativo: taxonomia (dimensões do estate), tier preliminar e admissibilidade. A classificação fina de casos complexos espera o processo do [cap. 04](04-risk-impact-and-compliance.md); o inventário precisa ao menos separar o que é alto risco do que não é.
-7. **Reconciliar contra o registry.** O que existe no registry e não existe mais no estate → candidato a sunset. O que existe no estate e não está no registry → candidato a registro ou contenção. **Reconciliação é o teste de honestidade do inventário.**
-8. **Publicar baseline com limitações.** Números com fonte, data de corte e lacunas declaradas. A primeira passada nunca é completa — e declarar isso abertamente é o que permite medir a segunda.
-9. **Instalar a rotina.** Descoberta não é projeto pontual: fontes são relidas em cadência, novas plataformas entram no escopo, e cada novo agente nasce já dentro do registry (processo P1 do [cap. 08](08-implementation-and-adoption.md)).
-
-**Armadilhas da primeira passada:** tentar cobrir tudo de uma vez (a descoberta parcial publicada vale mais que a perfeita adiada); aceitar "não tem nenhum agente aqui" sem conferir a fonte (shadow AI vive exatamente onde ninguém olhou); tratar o inventário como fim em vez de meio — o objetivo é o controle, e o inventário é o primeiro passo dele.
 
 ## 2. Registry: a fonte corporativa de verdade
 
@@ -145,7 +148,15 @@ Taxonomia é a linguagem de classificação do estate: características relativa
 
 **Evite taxonomia baseada em produto** ("agente da plataforma X"). O produto informa onde o agente foi construído, não o que ele pode fazer — e a taxonomia precisa sobreviver à troca de builder.
 
-Como implementar: colete amostra representativa (citizen-built, SaaS, custom, ao menos um com execução de ferramentas); escolha **apenas** dimensões que alteram decisão, controle, métrica ou lifecycle; defina códigos canônicos com critério operacional (não percepção do builder); crie regras de normalização por plataforma; defina obrigatoriedade por tier (fast path de T1 deve minimizar input manual); classifique 20–30 casos e meça concordância entre avaliadores (divergência sistemática indica definição fraca, não avaliador fraco); implemente no registry, pre-screen, dashboards e blueprint — **taxonomia que vive só em documento não gera governança**.
+Para implementar a taxonomia, siga esta sequência:
+
+1. **Selecione uma amostra representativa.** Inclua agentes citizen-built, SaaS, custom e pelo menos um agente com execução de ferramentas.
+2. **Escolha somente dimensões que mudam uma decisão.** Uma dimensão só entra se alterar control, métrica, owner ou lifecycle.
+3. **Defina códigos canônicos.** O critério deve ser operacional e independente da percepção do builder.
+4. **Normalize por plataforma.** Documente como cada plataforma traduz seus campos para a taxonomia comum.
+5. **Defina a obrigatoriedade por criticidade.** A classificação normativa T1–T4 está no [capítulo 04](04-risk-impact-and-compliance.md); o fast path de T1 reduz trabalho manual, mas não elimina registro, owner ou evidência.
+6. **Calibre com casos reais.** Classifique 20–30 casos e meça concordância entre avaliadores. Divergência sistemática indica definição fraca, não avaliador fraco.
+7. **Implemente nos consumidores.** Registry, pre-screen, dashboards e blueprint devem usar os mesmos códigos. **Taxonomia que vive somente em documento não gera governança.**
 
 ### 2.3 Registry: capacidades mínimas e campos obrigatórios
 
@@ -193,7 +204,15 @@ O registry só é controle quando detecta continuamente que deixou de representa
 
 O blueprint é o contrato entre design, desenvolvimento, governança, CI/CD e runtime. Machine-readable significa que os campos relevantes podem ser interpretados por automação para gerar policy checks, verificar o baseline do tier e comparar drift entre configuração aprovada e runtime. Isso não exige que toda a governança esteja em YAML: decisões narrativas, impact assessments e risk acceptance continuam como evidências **referenciadas** pelo blueprint. Os contratos canônicos são o [Agent Registry schema](../../toolkit/schemas/agent-registry.schema.json) e o [Agent Blueprint schema](../../toolkit/schemas/agent-blueprint.schema.json).
 
-Como implementar: defina primeiro o contrato lógico e apenas campos com consumidor real (schema grande sem consumidor é dívida); use formato versionável com validação por schema; associe o blueprint a `agent_id` + versão (**alterar o blueprint não pode sobrescrever silenciosamente a evidência de releases anteriores**); valide em build/release que IDs de fontes, tools e modelos existem em catálogos aprovados; use o blueprint para gerar ou verificar configuração; compare desired state com runtime observado (drift material produz finding e, se altera risco, reassessment); comece com dois ou três patterns e evolua o schema só com caso real.
+Para implementar o blueprint machine-readable, siga esta sequência:
+
+1. **Defina o contrato lógico.** Inclua somente campos que tenham consumidor real; schema grande sem consumidor é dívida.
+2. **Versione e valide.** Use um formato versionável e valide contra o [Agent Blueprint schema](../../toolkit/schemas/agent-blueprint.schema.json).
+3. **Vincule identidade e versão.** Associe o blueprint a `agent_id` e versão. Alterar o blueprint não pode sobrescrever silenciosamente a evidência de releases anteriores.
+4. **Valide dependências.** Em build ou release, confirme que IDs de fontes, tools e modelos existem nos catálogos aprovados.
+5. **Gere ou verifique configuração.** Use o blueprint para comparar o desired state com a configuração implantada, sem transformá-lo em substituto de decisões narrativas.
+6. **Compare com o runtime.** Drift material produz finding e, se alterar risco ou admissibilidade, reassessment.
+7. **Evolua por caso real.** Comece com dois ou três patterns e só amplie o schema quando houver consumidor e evidência de necessidade.
 
 ### 2.6 Ownership e accountability
 
@@ -232,6 +251,8 @@ Até aqui, cada seção apresentou uma peça. Esta seção mostra o conjunto —
 - **Reconstruir evidência para o dossiê.** As peças nascem dos processos (o eval gera o relatório, o gate gera o decision record). Montar evidência depois, para satisfazer auditoria, custa mais e vale menos.
 - **Dossiê que nunca fecha.** Peças pendentes com owner e prazo são operação normal; peças pendentes sem prazo são dívida de governança acumulando.
 
+> **Artefatos para produzir agora — inventário, registry e blueprint.** Comece pelo [template de registry](../../toolkit/templates/agent-registry-template.md) e seu [schema](../../toolkit/schemas/agent-registry.schema.json) para registrar existência, owner, lifecycle e confidence. Quando o agente estiver suficientemente definido, use o [template de blueprint](../../toolkit/templates/agent-blueprint-template.md) e seu [schema](../../toolkit/schemas/agent-blueprint.schema.json) para descrever a configuração desejada. Os [casos fictícios](../../toolkit/examples/cases/README.md) mostram como essas peças se relacionam; o [catálogo de artefatos](../../toolkit/artifact-catalog.md) mostra quando cada uma precisa existir.
+
 ## 3. Decidir o que construir: intake e adequação
 
 ### 3.1 Intake de nova demanda
@@ -263,7 +284,7 @@ Isso decide identidade delegada versus [identidade própria](06-architecture-and
 Classifique **cada ação**. O tier do agente não substitui a classificação da ferramenta.
 
 **7. O uso afeta pessoas, direitos, oportunidades, segurança física, processo regulado ou comunicação pública?**
-Aciona o impact trigger screen e, quando aplicável, o [impact assessment](04-risk-impact-and-compliance.md#impact-assessment).
+Aciona o impact trigger screen e, quando aplicável, o [impact assessment](04-risk-impact-and-compliance.md#2-avaliacao-de-impacto-responsible-ai).
 
 **8. Onde cada controle vai residir?**
 Management plane, gateway de runtime, broker de ferramentas, IAM, plataforma de dados, aplicação ou processo humano. **Não concentre controle no prompt** — prompt é instrução, não enforcement.

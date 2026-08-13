@@ -23,6 +23,8 @@ A resposta tem três camadas:
 
 O aviso que atravessa tudo: **gates são decisões registradas, não nomes de fase.** Nenhum gate é concluído porque o prazo terminou ou um documento foi produzido. E o risco mais caro de um programa: **comprar tecnologia para um problema que é, na verdade, ausência de processo, ownership, dados ou decision rights.**
 
+> **Artefatos para produzir agora — de acordo com o gate.** Use o [catálogo de artefatos](../../toolkit/artifact-catalog.md) como índice de completude. Para G0, comece pelo [Governance Charter](../../toolkit/templates/governance-charter-template.md); para G1, pelo [Capability Assessment Worksheet](../../toolkit/templates/capability-assessment-worksheet.md) e [Maturity Assessment](../../toolkit/templates/maturity-assessment-template.md); para G2, pelo [Registry](../../toolkit/templates/agent-registry-template.md) e [Blueprint](../../toolkit/templates/agent-blueprint-template.md); para G4/G5, pelo [Release Decision Checklist](../../toolkit/templates/release-decision-checklist.md) e [Release Evidence Manifest](../../toolkit/templates/release-evidence-manifest.md); para G7, pelo [Attestation and Sunset Record](../../toolkit/templates/attestation-sunset-record.md). O gate só existe quando a decisão, o owner e a evidência estão registrados.
+
 ## 1. A jornada em 8 gates
 
 ### 1.1 O contrato comum dos decision gates
@@ -290,7 +292,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** A demanda ou caso de uso priorizado; o [use-case intake](../../toolkit/templates/use-case-intake.md) preenchido; acesso ao registry (ferramenta ou modelo corporativo).
 
 **Atividades.**
-1. O proponente discute o caso de uso com os owners para validar objetivo, dados, escopo e se **agente é o mecanismo certo** — a pergunta de adequação do [cap. 03](03-inventory-portfolio-and-value.md#decidir-o-que-construir-intake-e-adequação) vem antes de qualquer tecnologia.
+1. O proponente discute o caso de uso com os owners para validar objetivo, dados, escopo e se **agente é o mecanismo certo** — a pergunta de adequação do [cap. 03](03-inventory-portfolio-and-value.md#3-decidir-o-que-construir-intake-e-adequacao) vem antes de qualquer tecnologia.
 2. Business e technical owner preenchem a [autoavaliação](../../toolkit/templates/self-assessment-form.md) com, no mínimo: objetivo, dados e owners, permissões, integrações, autonomia/HITL, usuários, impacto, riscos e controles previstos.
 3. A Run Authority apoia no enquadramento inicial de risco (blast radius) usando as dimensões do [cap. 04](04-risk-impact-and-compliance.md).
 4. Cria-se o registro preliminar no registry com agent ID, nome, owners, ambiente previsto e estado `registered` — não "aprovado", não "em produção": **o estado reflete consequência operacional real**.
@@ -436,7 +438,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 - Tratar toda mudança como material (reavaliação integral por padrão é cara — e o que é caro deixa de ser feito) ou nenhuma como material (perde o controle).
 - Aprovar a mudança "rapidinho" fora do processo: cada bypass é uma exceção não registrada esperando para virar incidente.
 
-**Onde está a profundidade.** Material change em [cap. 05](05-agent-lifecycle.md) e [cap. 09](09-operations-incidents-and-continuity.md#gestão-de-mudanças).
+**Onde está a profundidade.** Material change em [cap. 05](05-agent-lifecycle.md) e [cap. 09](09-operations-incidents-and-continuity.md#43-gestao-de-mudancas).
 
 ### 6.7 P7 — Revisão periódica e auditoria
 

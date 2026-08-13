@@ -135,9 +135,9 @@ Uma etapa não substitui a anterior, e nem todas exigem trabalho manual. A matri
 | **Domain reviews** | por trigger | formais por trigger | multidisciplinares | autoridade máxima + especialistas |
 | **Publication gate** | owner + policy gate (automatizável) | formal evidence gate | formal + assurance | sem rota normal de publicação |
 
-Legenda: **T1** = leve/automatizável · **T2** = obrigatório ou condicional · **T3** = formal/enhanced · **T4** = restrito/default deny.
+Legenda: **T1** = leve/automatizável · **T2** = obrigatório ou condicional · **T3** = formal/enhanced · **T4** = crítico.
 
-**T4 representa default deny**: não existe rota normal de publicação. Se a organização admitir exceção, a rota é explícita, executiva e altamente controlada — com authority máxima, registro da exceção, expiry e monitoramento contínuo.
+**T4 não representa, por si só, default deny.** T4 define criticidade e exige assurance, authority, containment e evidência proporcionais. `restricted` e `prohibited` pertencem à dimensão independente de admissibilidade. Um caso T4 pode ser `conditional` ou `permitted` quando a finalidade, a authority e os controls aprovados sustentarem essa decisão; um caso T1 também pode ser `restricted` ou `prohibited` por finalidade, obrigação ou desenho. Os red flags que determinam `restricted` por padrão continuam exigindo exceção explícita, authority, expiry e monitoramento contínuo.
 
 A [ferramenta de classificação](../../toolkit/templates/risk-scoring-worksheet.md) operacionaliza este mapa: ela aplica as sete dimensões de scoring, os red flags e o impact trigger para produzir tier, admissibilidade e a lista de reviews acionadas. A lógica normativa vive aqui; a ferramenta executa e registra.
 
@@ -155,6 +155,8 @@ Risk tier responde **quão severo pode ser o impacto**. Admissibilidade responde
 Tier e admissibilidade são registrados juntos no [Agent Risk Record](../../toolkit/templates/agent-risk-record.md), no Registry, no Blueprint e no release evidence manifest. **Mudança em qualquer dimensão é mudança material.**
 
 O piso de controles exigido por tier para entrar e permanecer em produção está no [Minimum Production Bar](../../toolkit/controls/minimum-production-bar.md).
+
+> **Artefatos para produzir agora — classificação e admissibilidade.** Use o [Risk pre-screen](../../toolkit/templates/risk-pre-screen.md) para coletar fatos e acionar escaladores; use o [Risk Scoring Worksheet](../../toolkit/templates/risk-scoring-worksheet.md) para calcular o risco base, aplicar red flags e produzir a rota de review; registre a decisão no [Agent Risk Record](../../toolkit/templates/agent-risk-record.md). O template operacionaliza a norma, mas não substitui o rationale, a authority ou a decisão deste capítulo.
 
 ### 1.7 Regras de uso: o que é permitido, o que exige aprovação, o que é proibido
 
