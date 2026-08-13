@@ -2,7 +2,7 @@
 title: 10 — Métricas, revisão e melhoria contínua
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -25,6 +25,8 @@ Este capítulo cobre:
 4. **Como melhorar:** backlog único, decisões de disposição, reporte à gestão accountable.
 
 O princípio que atravessa tudo: **métrica sem owner, threshold e ação não entra em um fórum de governança.** E o complemento financeiro: **sair de "custo por token" para custo por resultado** — porque um modelo mais caro por token pode ser economicamente melhor se reduzir retries e retrabalho humano.
+
+> **Artefatos para produzir agora — decisão baseada em métricas.** Use o [Use-Case Portfolio](../../toolkit/templates/use-case-portfolio.md) para conectar caso, baseline, custo, outcome e disposição; o [Capability Assessment Worksheet](../../toolkit/templates/capability-assessment-worksheet.md) para medir gaps de capacidade; e o [Maturity Assessment](../../toolkit/templates/maturity-assessment-template.md) para registrar score, confidence e target. Métrica informa a decisão; não substitui o owner nem transforma correlação em causalidade.
 
 ## 1. O que medir
 

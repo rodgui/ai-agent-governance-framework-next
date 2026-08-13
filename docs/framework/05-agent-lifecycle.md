@@ -2,7 +2,7 @@
 title: 05 — Lifecycle de agentes
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -19,6 +19,17 @@ Sem lifecycle explícito, o estate acumula agentes publicados que mantêm permis
 **Resultado esperado:** qualquer agente em produção possui estado conhecido, owner válido, próxima attestation, regras de mudança material e um caminho testado para suspensão, quarentena e retirada.
 
 Este capítulo responde a três perguntas em sequência: *o que governar* (conceitos), *como um agente percorre o ciclo* (fases), e *quais obrigações normativas se aplicam* (referência). Leia as seções 1 e 2 para entender; use a seção 3 como checklist de implementação e auditoria.
+
+## Antes de seguir: fases, gates e processos são objetos diferentes
+
+| Objeto | Pergunta | Uso neste capítulo |
+|---|---|---|
+| **F1–F8** | Em que fase do lifecycle está o agente? | Organiza o caminho do ativo, do intake ao sunset. |
+| **G0–G7** | Qual decisão do programa precisa autorizar avanço? | Estrutura a implantação organizacional no [capítulo 08](08-implementation-and-adoption.md). |
+| **P1–P8** | Qual processo recorrente o agente atravessa? | Executa registro, mudança, operação, incidentes, attestation e retirada. |
+| **Stage/state** | Qual é a posição formal e o estado técnico atual? | Registra o histórico e permite contenção sem apagar o lifecycle. |
+
+> **Artefatos para produzir agora — lifecycle.** Use o [Agent Registry Record](../../toolkit/templates/agent-registry-template.md) para identidade, owner e estado; o [Agent Blueprint](../../toolkit/templates/agent-blueprint-template.md) para a versão técnica; o [Attestation and Sunset Record](../../toolkit/templates/attestation-sunset-record.md) para revalidação; e o [Sunset Plan](../../toolkit/templates/sunset-plan.md) para retirada. Os templates registram as decisões deste capítulo; não as substituem.
 
 ## 1. Conceitos essenciais
 
@@ -49,10 +60,10 @@ Os níveis padronizam o que significa "autonomia" e reduzem ambiguidade na decis
 
 | Nível | Descrição (capacidade do agente) | Aprovação mínima |
 |---|---|---|
-| **L0 — Assistivo/Informativo** | sem tool-use; consulta/geração de conteúdo; sem escrita em sistemas | segue Matriz conforme ambiente e nº de usuários |
-| **L1 — Semi-autônomo** | tool-use em escopo limitado; ações reversíveis (ex.: abrir ticket, atualizar registro não crítico); HITL para ações com impacto relevante | Teste/PoC: mínimo Compliance + IT local; Produção: segue Matriz por nº de usuários |
-| **L2 — Delegado** | pode acionar sistemas críticos, mas ações críticas exigem HITL e evidências (auditoria, SoD, rollback); requer hardening e validação de segurança | sempre coluna de Produção da Matriz + revisão de Cyber/ITGC |
-| **L3 — Autônomo restrito** | execução autônoma de ações executivas; em geral não permitido para domínios SOX/ITGC e alto impacto; exceções apenas em domínios controlados com kill-switch e auditoria reforçada | somente via waiver e aprovação do Digital Council, independente do nº de usuários |
+| **L0 — Assistivo/Informativo** | sem tool-use; consulta/geração de conteúdo; sem escrita em sistemas | rota proporcional ao tier, ao ambiente e ao alcance, preferencialmente policy-driven quando o risco for baixo |
+| **L1 — Semi-autônomo** | tool-use em escopo limitado; ações reversíveis (ex.: abrir ticket, atualizar registro não crítico); HITL para ações com impacto relevante | em Test/PoC, owner, ambiente e autoavaliação; em produção, decision gate proporcional ao tier e ao alcance |
+| **L2 — Delegado** | pode acionar sistemas críticos, mas ações críticas exigem HITL e evidências (auditoria, SoD, rollback); requer hardening e validação de segurança | rota formal de produção, com review de segurança/controles críticos e segregação aplicável |
+| **L3 — Autônomo restrito** | execução autônoma de ações executivas; em geral não permitido para domínios SOX/ITGC e alto impacto; exceções apenas em domínios controlados com kill-switch e auditoria reforçada | somente por exceção explícita, temporária e aprovada pela authority executiva definida para o tier, independente do número de usuários |
 
 Mudanças de modelo ou de regras de decisão que afetem o comportamento autônomo do agente exigem nova validação de segurança, testes mínimos e reavaliação do nível de autonomia.
 
