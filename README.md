@@ -1,78 +1,76 @@
-# AI Agent Governance Framework — Next
+---
+title: Framework de governança de agentes de IA
+status: maintained
+owner: framework-maintainers
+last_reviewed: 2026-08-13
+review_cycle: quarterly
+---
 
-Framework canônico e **vendor-neutral** para governança de agentes de IA: policy
-modular, 11 capítulos de domínio, 44 controles verificáveis, schemas estruturados,
-patterns, templates e casos de referência fictícios. Escrito em PT-BR; contratos
-estruturados (schemas, IDs, enums) permanecem em inglês como contratos.
+# Framework de governança de agentes de IA
 
-> **Formato dos capítulos — Manual/Bíblia, não documento de auditoria.** Cada
-> capítulo (00–10) abre com narrativa ("por que importa"), explica conceitos com
-> exemplos e armadilhas comuns, e fecha com uma **tabela normativa R1–Rn** — o
-> contrato condensado para implementar. Quem lê não precisa conhecer o assunto
-> antes de começar.
+Framework canônico e **vendor-neutral** para governar sistemas de IA e agentes desde o conceito até a operação sustentada. O repositório combina policy modular, capítulos didáticos, controles verificáveis, schemas estruturados, patterns, templates e casos de referência fictícios.
 
-> **Para consumir este repositório, leia o [Guia de Consumo](CONSUMO.md) primeiro.**
-> Ele explica os dois repositórios do ecossistema (framework e template),
-> as trilhas de estudo, o fluxo de implantação e um caso prático passo a passo.
+O objetivo não é produzir mais um documento de princípios. É ajudar uma organização a responder, com autoridade e evidência: **o que existe, quem responde, qual risco é aceitável, como o agente deve funcionar, o que precisa ser comprovado para liberá-lo, como contê-lo em operação e quando mantê-lo, corrigí-lo ou aposentá-lo**.
 
-## Portas de entrada
+> **Para uma organização que vai implantar governança, a rota principal é [Comece aqui](docs/start-here.md).** Essa página explica a ordem de decisão e leva ao playbook de implementação. Não é necessário ler todo o repositório antes de começar.
 
-| Sua intenção | Onde ir |
-|---|---|
-| **Implantar na organização** | [Comece aqui — trilhas de leitura](docs/start-here.md) |
-| **Estudar na ordem editorial** | [Handbook](docs/handbook/README.md) |
-| **Localizar um assunto** | [Índice por persona e objetivo](docs/index.md) |
-| **Entender o ecossistema completo** | [Guia de Consumo](CONSUMO.md) |
-| **Instanciar registros na sua org** | repo `ai-agent-governance-implementation-template` (pin `@1.1.0`) |
+## Escolha sua rota
 
-## Estrutura
+| O que você precisa fazer | Comece por | Resultado esperado |
+|---|---|---|
+| **Implantar governança na organização** | [Comece aqui — rota de implantação](docs/start-here.md) | Escopo, baseline, fases, owners, gates e primeiro caso ponta a ponta. |
+| **Entender como o framework funciona** | [Handbook — leitura linear](docs/handbook/README.md) | Compreensão progressiva dos fundamentos, domínios, método e toolkit. |
+| **Localizar um tema ou artefato** | [Índice por persona e objetivo](docs/index.md) | Documento, template, schema, control ou pattern relevante para uma pergunta específica. |
+| **Entender framework e template** | [Guia de consumo](CONSUMO.md) | Distinção entre conhecimento canônico e registros da organização. |
+| **Instanciar registros reais** | Repositório [`ai-agent-governance-implementation-template`](https://github.com/rodgui/ai-agent-governance-implementation-template) | Workspace separado para preencher dados e evidências da organização. |
+
+O **framework-next** é a fonte de conhecimento. O **implementation-template** é o esqueleto para uma organização preencher seus próprios registros. O template referencia IDs e versões do framework; não copia policy, controls ou templates canônicos.
+
+## O que o framework contém
 
 | Área | Conteúdo |
 |---|---|
-| `docs/framework/` | 11 capítulos canônicos (00–10): policy, operação, risco, lifecycle, arquitetura, avaliação, implementação |
-| `docs/executive/` | brief executivo e comunicação para C-level |
-| `docs/patterns/` | design patterns de implementação |
-| `toolkit/controls/` | catálogo de 44 controles com evidência declarada |
-| `toolkit/schemas/` | contratos JSON (blueprint, registry, audit event, manifests) |
-| `toolkit/templates/` | templates reutilizáveis (blueprint, risk record, RACI, charter) |
-| `toolkit/examples/cases/` | casos de referência fictícios (prova de coerência do método) |
-| `toolkit/maturity/` | maturity model |
-| `research/` | fontes, bibliografia e crosswalks com frameworks externos |
-| `project/` | decisões, histórico preservado byte a byte e migração |
+| `docs/framework/` | 11 capítulos canônicos, do controle do documento a métricas e melhoria contínua. |
+| `docs/handbook/` | Ordem editorial de estudo em cinco partes: fundamentos; policy, operating model e risco; domínios; método e toolkit; fontes. |
+| `docs/start-here.md` | Rota prescritiva de implantação, com quatro trilhas e decisões esperadas. |
+| `toolkit/controls/` | Catálogo de 44 controls, cada um com owner, tiers, verificação, evidência e indicação de bloqueio. |
+| `toolkit/schemas/` | Contratos JSON para registry, blueprint, catalogs, evidence manifests e audit events. |
+| `toolkit/templates/` | Templates reutilizáveis para charter, RACI, intake, risco, assessments, release, attestation e sunset. |
+| `toolkit/examples/` | Exemplos e casos de referência fictícios para demonstrar a coerência do método. |
+| `toolkit/patterns/` | Patterns para control/assurance planes, registry/blueprint, risco, observabilidade, quarentena e governance federada. |
+| `research/` | Fontes, bibliografia, limitações e crosswalks externos; mappings não equivalem a conformidade. |
+| `project/` | Decisões, migrações e histórico preservado; decisões materiais devem sobreviver à troca de pessoas. |
 
-## Validação
+## Modelo mental em uma frase
 
-A validação local verifica estrutura, links, JSON/YAML, pin de versão, ausência de
-segredos e boundary de dados. Findings devem ser corrigidos ou aceitos explicitamente
-antes da adoção organizacional. Executar antes de cada commit:
+> **A organização define mandato e authority; o registry torna o estate visível; o risco define proporcionalidade; a arquitetura coloca controles fora do modelo; a evidência sustenta o release; o runtime gera sinais e ações; o valor e o lifecycle decidem continuidade.**
 
-```bash
-uv run --no-project --with jsonschema --with pyyaml --with pillow python3 tools/scripts/validate-repository.py
-uv run --no-project --with jsonschema --with pyyaml --with pillow python3 -m unittest tools.scripts.test_validate_repository
-```
+O framework separa deliberadamente conceitos que costumam ser confundidos:
 
-Build do site de documentação:
+| Conceito | Pergunta que responde |
+|---|---|
+| **Risk tier T1–T4** | Quão severa pode ser a exposição se o agente falhar ou for abusado? |
+| **Admissibilidade** | Este uso pode operar, sob quais condições, ou deve ser proibido? |
+| **Gate G0–G7** | Qual decisão do programa autoriza, condiciona, bloqueia ou encerra o avanço? |
+| **Processo P1–P8** | Qual rotina recorrente o agente atravessa, da criação ao sunset? |
+| **Template/schema** | Qual artefato deve ser produzido e qual contrato estruturado o valida? |
 
-```bash
-uv run --no-project --with mkdocs-material python3 tools/build-docs-site.py
-```
+T1–T4 mede criticidade; `permitted`, `conditional`, `restricted` e `prohibited` medem admissibilidade. **T4 não é sinônimo automático de `restricted` ou `prohibited`.**
 
-## Regras operacionais
+## Maturidade e limites
 
-- cada record identifica owner, status, framework release, evidência e próxima revisão;
-- campos ausentes permanecem explicitamente `missing`; não são inferidos;
-- decisões registram authority, rationale, condições, expiry e residual risk quando aplicável;
-- segredos, dados pessoais e evidência de produção não pertencem a este repositório;
-- exemplos usam apenas identidades e organizações fictícias.
+O release atual do framework é `1.1.0`. Os 44 controls, schemas e exemplos foram validados localmente, mas nenhum control foi exercitado contra um estate real. Os casos de referência são fictícios e demonstram coerência do método, não eficácia. Thresholds, tiers, prazos, authorities e mappings precisam ser calibrados pela organização adotante com dados e obrigações do próprio contexto.
 
-## Aviso de maturidade
+O framework não é um produto pronto, não certifica conformidade, não substitui análise jurídica ou regulatória e não seleciona um fornecedor. Produtos e plataformas podem aparecer como exemplos ou mappings; requisitos normativos permanecem independentes de fornecedor.
 
-Nenhum control foi exercitado contra um estate real — os casos de referência são
-fictícios e provam coerência do método, não eficácia. Thresholds, tiers e prazos
-precisam ser recalibrados com dados da organização adotante.
+## Regras de consumo
 
-## Dependência e pin
+Para preservar a qualidade do framework, cada requisito normativo deve ser ligado à sua aplicabilidade, owner, evidência e método de validação. Campos ausentes permanecem explicitamente `missing`; não são inferidos. Decisions e exceptions precisam preservar authority, rationale, condições, expiry e residual risk quando aplicável. Segredos, dados pessoais, evidência de produção e informações corporativas confidenciais não pertencem a este repositório.
 
-- Framework release: `1.1.0` — fonte `5545d9227624400ab8bb707b6032b2f61329a36e`
-- Ver [CHANGELOG.md](CHANGELOG.md) e [ROADMAP.md](ROADMAP.md)
-- Licença: [CC BY 4.0](LICENSE)
+As instruções detalhadas de contribuição, provenance, validação e build ficam na documentação de [contribuição e manutenção](CONTRIBUTING.md). Elas não fazem parte da rota de implantação organizacional.
+
+## Estado e referências
+
+- Framework release: `1.1.0` — source `5545d9227624400ab8bb707b6032b2f61329a36e`.
+- Consulte o [CHANGELOG](CHANGELOG.md) para mudanças visíveis e o [handbook](docs/handbook/README.md) para a ordem editorial.
+- Licença: [CC BY 4.0](LICENSE).
