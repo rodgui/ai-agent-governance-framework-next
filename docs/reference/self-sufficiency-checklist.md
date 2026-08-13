@@ -51,7 +51,7 @@ Aplicar o checklist a si mesmo é parte de usá-lo honestamente. O resultado aba
 | 6 | atende | três [casos de referência](../../toolkit/examples/cases/README.md) — T1, T2 e T3 — percorrem G0–G7 com registry, blueprint e manifesto validados pelo CI. A construção deles encontrou quatro defeitos que a leitura por domínio não encontrava |
 | 7 | atende, com divergência declarada | o repositório trata roadmaps como patterns adaptáveis e mantém G0–G7 como únicos gates canônicos, em vez de um cronograma oficial único |
 | 8 | atende | arquitetura agnóstica por [ADR-0002](../../project/decisions/0001-canonical-source-and-product-boundaries.md); [mapeamento para tecnologia](../framework/06-architecture-and-technical-controls.md) em documento separado |
-| 9 | atende | o [fast path de T1](../framework/04-risk-impact-and-compliance.md#fast-path-de-t1) existe exatamente para não criar fila central em baixo risco |
+| 9 | atende | o [fast path de T1](../framework/04-risk-impact-and-compliance.md#14-fast-path-de-t1-automatizar-o-simples-sem-eliminar-controle) existe exatamente para não criar fila central em baixo risco |
 | 10 | **não verificado** | o mecanismo está desenhado e documentado; nenhum control foi exercitado contra um estate real |
 | 11 | atende | [unit economics](../framework/10-metrics-review-and-improvement.md) e value review; o corpus afirma explicitamente que adoção não é proxy de resultado |
 

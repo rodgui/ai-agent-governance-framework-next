@@ -17,19 +17,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STAGING = ROOT / "site_src"
 
-# Pastas cujo conteúdo é publicado. Todo o resto fica fora do site.
+# Pastas de conteúdo editorial publicadas. Tooling, testes e regras de maintainer
+# permanecem no repositório, mas não entram na jornada pública do site.
 CONTENT_DIRS = (
     "docs",
     "toolkit",
     "research",
     "project",
-    "tools",
-    "tests",
 )
 CONTENT_FILES = ("README.md", "CONSUMO.md", "CHANGELOG.md", "ROADMAP.md", "LICENSE", "CONTRIBUTING.md")
 
 # Extensões copiadas para a área de staging. Schemas e exemplos são publicados como
 # fonte para que o leitor possa inspecionar o contrato, não apenas sua descrição.
+# Arquivos de manutenção são publicados somente quando declarados em CONTENT_FILES.
 PUBLISHED_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".py"}
 
 # O histórico de fonte preservado byte a byte retém intencionalmente referências da era da

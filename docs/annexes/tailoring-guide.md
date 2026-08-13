@@ -30,7 +30,7 @@ O teste: se você trocar o produto e a capacidade desaparecer, você comprou uma
 
 #### As capacidades do framework
 
-Ponto de partida: os [domínios canônicos](../framework/06-architecture-and-technical-controls.md#domínios-canônicos-por-plano). Quebre uma capability em duas apenas quando a filha tiver owner, processo **ou** evidência diferentes.
+Ponto de partida: os [domínios canônicos](../framework/06-architecture-and-technical-controls.md#1-a-arquitetura-de-referencia-cinco-planos). Quebre uma capability em duas apenas quando a filha tiver owner, processo **ou** evidência diferentes.
 
 | Capacidade | Pergunta de diagnóstico | Sinal típico de estado inicial | Alvo comum |
 | --- | --- | --- | --- |
@@ -159,7 +159,7 @@ Os períodos abaixo organizam trabalho; os gates continuam sendo decisões indep
 | dias 71–85 | G5 e G6 | decidir release condicionado ao tier e aceitar operação/containment |
 | dias 86–90 | G7 | decidir continuidade, restrição, expansão, remediação ou sunset |
 
-O [contrato comum dos gates](../framework/08-implementation-and-adoption.md#contrato-comum-dos-decision-gates) define evidence mínima, authority, estados e caminho de falha. Uma decisão `hold` ou `reject` altera o plano; o calendário deve ser replanejado, não usado para contornar o gate.
+O [contrato comum dos gates](../framework/08-implementation-and-adoption.md#11-o-contrato-comum-dos-decision-gates) define evidence mínima, authority, estados e caminho de falha. Uma decisão `hold` ou `reject` altera o plano; o calendário deve ser replanejado, não usado para contornar o gate.
 
 #### Dias 0–10 — Mandato e escopo
 

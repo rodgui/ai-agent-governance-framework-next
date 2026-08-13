@@ -22,7 +22,7 @@ A leitura útil não é "automatizar o que tem mais volume". É esta:
 
 Repare em `aprovar fonte fora do catálogo` e `revisar ferramenta privilegiada`: volume baixo, lead time alto, risco alto. Automatizar a decisão nesses dois casos economizaria treze aprovações por mês e criaria exposição desproporcional. Mas montar a evidência que o revisor precisa — hoje manual — é puro desperdício e sai da conta sem custo de risco.
 
-O oposto está em `aprovar agente T1 somente leitura`: 400 casos por mês a dois dias cada. Esse é o item que, se continuar manual, faz a organização contornar a governança — e o [fast path de T1](../../docs/framework/04-risk-impact-and-compliance.md#fast-path-de-t1) existe exatamente para ele.
+O oposto está em `aprovar agente T1 somente leitura`: 400 casos por mês a dois dias cada. Esse é o item que, se continuar manual, faz a organização contornar a governança — e o [fast path de T1](../../docs/framework/04-risk-impact-and-compliance.md#14-fast-path-de-t1-automatizar-o-simples-sem-eliminar-controle) existe exatamente para ele.
 
 `Montar evidence pack` merece atenção separada: 45 ocorrências por mês de trabalho que **não deveria existir**. Evidence pack montado à mão é sintoma de processo não instrumentado, não de equipe indisciplinada.
 

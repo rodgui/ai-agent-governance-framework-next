@@ -59,7 +59,7 @@ Indicadores típicos: cobertura do registry; % de agentes com business e technic
 
 **Adoção e comportamento do usuário.** Medir adoção pretendida, uso significativo e workaround inseguro por população-alvo: população elegível, uso ativo, conclusão, abandono, suporte, feedback e limitações de amostragem. **Usuários ativos medem frequência e retenção, não valor** — um agente pode ter uso mensal alto porque virou etapa obrigatória de um fluxo e ainda assim piorar o cycle time. Adoção só significa algo junto de qualidade e outcome.
 
-**Prontidão do dossiê.** O [score de prontidão](07-evaluation-evidence-and-assurance.md#score-de-prontidão-do-dossiê) por agente e a distribuição da população — quantos agentes estão no threshold do tier, quantos têm bloqueadores ativos, tempo médio até o dossiê fechar. **Score baixo generalizado é sintoma de processo doente, não de equipe preguiçosa.**
+**Prontidão do dossiê.** O [score de prontidão](07-evaluation-evidence-and-assurance.md#7-score-de-prontidao-do-dossie) por agente e a distribuição da população — quantos agentes estão no threshold do tier, quantos têm bloqueadores ativos, tempo médio até o dossiê fechar. **Score baixo generalizado é sintoma de processo doente, não de equipe preguiçosa.**
 
 ### 1.5 Capability e maturidade
 

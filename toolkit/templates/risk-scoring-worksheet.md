@@ -100,4 +100,4 @@ Marque apenas as que têm gatilho — review acionada por regra fixa vira fila e
 
 ## 9. Registro
 
-Este worksheet é evidência: arquive com data, responsável e versão do modelo de risco. O resultado final (tier, admissibilidade, decisão) entra no [Agent Risk Record](agent-risk-record.md), no registry e no blueprint — conforme o [mapa de decisão](../../docs/framework/04-risk-impact-and-compliance.md#o-mapa-de-decisão-como-risco-rai-e-aprovação-se-encadeiam).
+Este worksheet é evidência: arquive com data, responsável e versão do modelo de risco. O resultado final (tier, admissibilidade, decisão) entra no [Agent Risk Record](agent-risk-record.md), no registry e no blueprint — conforme o [mapa de decisão](../../docs/framework/04-risk-impact-and-compliance.md#15-o-mapa-de-decisao-como-risco-rai-e-aprovacao-se-encadeiam).

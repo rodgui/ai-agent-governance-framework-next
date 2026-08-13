@@ -32,7 +32,7 @@ A ausência de capacidade de escrita em sistema é o que mantém o caso em T2. E
 
 ## Por que este caso
 
-T2 é o tier onde a governança realmente começa a custar. Abaixo dele o [fast path](../framework/04-risk-impact-and-compliance.md#fast-path-de-t1) automatiza; acima dele quase tudo é obviamente necessário. T2 é onde alguém precisa julgar quanto é suficiente — e é por isso que ele serve como primeiro caso.
+T2 é o tier onde a governança realmente começa a custar. Abaixo dele o [fast path](../framework/04-risk-impact-and-compliance.md#14-fast-path-de-t1-automatizar-o-simples-sem-eliminar-controle) automatiza; acima dele quase tudo é obviamente necessário. T2 é onde alguém precisa julgar quanto é suficiente — e é por isso que ele serve como primeiro caso.
 
 ## Percurso pelos gates
 
@@ -74,7 +74,7 @@ Handoffs e decision rights vêm do programa, não do caso. O que o caso consome 
 
 ### G4 — Controls e assurance
 
-A classificação combina dados internos, ação limitada a rascunho, alcance de uma unidade e alta reversibilidade → **T2**. Nenhum red flag disparou; se algum tivesse disparado, a [tabela de escaladores](../framework/04-risk-impact-and-compliance.md#red-flags-e-escaladores) imporia a criticidade mínima independentemente do score.
+A classificação combina dados internos, ação limitada a rascunho, alcance de uma unidade e alta reversibilidade → **T2**. Nenhum red flag disparou; se algum tivesse disparado, a [tabela de escaladores](../framework/04-risk-impact-and-compliance.md#13-red-flags-e-escaladores-o-fator-critico-nao-pode-ser-diluido) imporia a criticidade mínima independentemente do score.
 
 O risk assessment lista cinco controls; o blueprint declara seis, acrescentando `AGF-RSK-004` para admissibilidade. O residual risk foi aceito **para este escopo e esta data de corte** — não em geral.
 

@@ -72,6 +72,6 @@ Evidence refs:
 - Expiry da decisão:
 - Próxima revisão:
 
-Os quatro estados são os do [contrato comum dos decision gates](../../docs/framework/08-implementation-and-adoption.md#estados-de-decisão). `expired` não é uma disposição: é o estado que uma decisão `approve` ou `condition` assume quando ultrapassa o expiry sem revalidação, e exige nova decisão antes da continuidade.
+Os quatro estados são os do [contrato comum dos decision gates](../../docs/framework/08-implementation-and-adoption.md#estados-de-decisao). `expired` não é uma disposição: é o estado que uma decisão `approve` ou `condition` assume quando ultrapassa o expiry sem revalidação, e exige nova decisão antes da continuidade.
 
 A decisão deve seguir a [policy modular](../../docs/framework/00-document-control.md), o [operating model](../../docs/framework/02-governance-and-accountability.md) e os [decision gates](../../docs/framework/08-implementation-and-adoption.md). Este checklist não constitui aprovação automática.

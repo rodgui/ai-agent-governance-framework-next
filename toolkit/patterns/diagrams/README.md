@@ -12,8 +12,4 @@ Visuais específicos de fornecedor ficam junto ao estudo correspondente. O caso 
 
 ## Reprodução
 
-Ambas as variantes são geradas por [`tools/scripts/render-agent-governance-infographic.py`](../../../tools/render-agent-governance-infographic.py).
-
-```bash
-python3 tools/scripts/render-agent-governance-infographic.py --variant framework
-```
+Ambas as variantes são geradas por um renderer versionado mantido na área de tooling do repositório. A implementação pode ser consultada no [script de renderização](https://github.com/rodgui/ai-agent-governance-framework-next/blob/main/tools/scripts/render-agent-governance-infographic.py); esta reprodução é uma instrução de manutenção, não uma etapa de implantação do framework.

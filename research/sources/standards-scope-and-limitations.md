@@ -51,7 +51,7 @@ Catálogo oficial: <https://www.iso.org/standard/77304.html>
 
 **O que cobre, em linhas gerais.** Como identificar onde o sistema pode causar dano ou consequência não pretendida; como analisar severidade, probabilidade e natureza do impacto; quando reexecutar a avaliação; e como documentá-la de forma recuperável.
 
-**Relação com este framework.** Corresponde diretamente ao [impact assessment de Responsible AI](../../docs/framework/04-risk-impact-and-compliance.md#impact-assessment) e ao control `AGF-RAI-001`.
+**Relação com este framework.** Corresponde diretamente ao [impact assessment de Responsible AI](../../docs/framework/04-risk-impact-and-compliance.md#2-avaliacao-de-impacto-responsible-ai) e ao control `AGF-RAI-001`.
 
 **Limite.** É a norma que este framework mais se beneficiaria de mapear, porque o objeto é quase idêntico. Permanece não mapeada pelo mesmo motivo das demais.
 
