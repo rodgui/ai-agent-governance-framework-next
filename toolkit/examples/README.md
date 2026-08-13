@@ -1,7 +1,7 @@
 ---
 title: Examples
 status: maintained
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
@@ -16,6 +16,8 @@ Este artefato consolida fontes validadas segundo a estratégia registrada no pla
 ### Examples
 
 Exemplos fictícios e sanitizados que demonstram o uso dos schemas e templates.
+
+> **Como ler.** Comece pelo exemplo que corresponde ao artefato que você precisa preencher, depois abra o schema ou template correspondente e, por fim, compare o caso completo. Um exemplo ilustra coerência de estrutura; não aprova um caso real, não define threshold universal e não substitui evidência operacional.
 
 #### Records estruturados
 
@@ -60,11 +62,7 @@ Records agrupados por caso em [`cases/`](cases/), validados pelos mesmos schemas
 
 #### Validação
 
-Os exemplos são testados automaticamente contra os schemas em [`schemas/`](../schemas/README.md).
-
-```bash
-uv run --with-requirements requirements-ci.txt python3 tools/scripts/validate-repository.py
-```
+Os exemplos são testados automaticamente contra os schemas em [`schemas/`](../schemas/README.md). As instruções de manutenção e execução de validação pertencem à documentação de contribuição; elas não são uma etapa de adoção organizacional.
 
 #### Limites
 

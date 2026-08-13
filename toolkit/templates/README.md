@@ -1,7 +1,7 @@
 ---
 title: Templates
 status: maintained
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 related:
@@ -14,6 +14,20 @@ related:
 Templates para coleta, decisão, evidence e comunicação. Quando houver schema correspondente, o documento humano deve ser convertido para um record estruturado e validado.
 
 Esta página lista os templates por finalidade. Para saber **quando** cada artefato precisa existir e sob responsabilidade de quem, use o [catálogo de artefatos](../artifact-catalog.md).
+
+## Escolha pelo gatilho de decisão
+
+| Use quando precisa... | Template principal | Owner típico | Saída e relação |
+|---|---|---|---|
+| declarar mandato, authorities e scope | [Governance Charter](governance-charter-template.md) | sponsor + governance owner | charter aprovado; complementa RACI e forum TOR |
+| distribuir accountability e handoffs | [Governance RACI](governance-raci-template.md) | governance owner | papéis e handoffs; complementa decision rights |
+| registrar o que existe e quem responde | [Agent Registry Record](agent-registry-template.md) | business + technical owner | registry record; valide no schema correspondente |
+| descrever desired state e bindings técnicos | [Agent Blueprint](agent-blueprint-template.md) | technical owner | blueprint versionado; valide no schema correspondente |
+| decidir se o caso deve avançar | [Intake de caso de uso](use-case-intake.md) | product/business owner | adequação, alternativas e baseline |
+| classificar risco e admissibilidade | [Risk pre-screen](risk-pre-screen.md) + [Ferramenta de classificação](risk-scoring-worksheet.md) | risk/design authority | tier, red flags, rota de review e risk record |
+| liberar ou condicionar produção | [Release Evidence Manifest](release-evidence-manifest.md) + [Checklist de decisão](release-decision-checklist.md) | release authority | evidence package e decision record |
+| revalidar, restringir ou aposentar | [Attestation and Sunset Record](attestation-sunset-record.md) + [Sunset Plan](sunset-plan.md) | business owner + run authority | attestation, decisão de continuidade e retirada |
+| calibrar comportamento em runtime | [Behavioral Analytics Use Case](behavioral-analytics-use-case.md) | run authority | hipótese, baseline, response contract e sunset da regra |
 
 ## Governança e arquitetura
 
@@ -56,7 +70,7 @@ Esta página lista os templates por finalidade. Para saber **quando** cada artef
 
 O template de proposta comercial não integra o framework canônico e é mantido fora deste repositório.
 
-## Anexos históricos incorporados
+## Relação com a policy histórica
 
 A Policy v1 listava quatro anexos que permanecem cobertos pelos artefatos atuais:
 

@@ -2,7 +2,7 @@
 title: Estate, registry, ownership e taxonomia
 status: maintained
 owner: Rodrigo Garcia Guimarães
-last_reviewed: 2026-08-10
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 supersedes: null
 related:
@@ -20,6 +20,8 @@ related:
 Criar a fonte corporativa de verdade sobre quais agentes existem, quem responde por cada um e o que cada um pode fazer — em linguagem comum, estável e independente da plataforma onde o agente foi construído.
 
 Sem essa camada, todas as outras falham por falta de sujeito: não há como aplicar tier, evidência, contenção ou sunset a um ativo que a organização não sabe que existe.
+
+> **Boundary desta página.** O [capítulo 03](../../docs/framework/03-inventory-portfolio-and-value.md) explica por que descobrir o estate, decidir adequação e gerir portfólio. Este manual explica como materializar registry, taxonomia, blueprint e quality checks. Use o capítulo para a decisão; use esta página para produzir e validar os objetos operacionais.
 
 ## Quatro objetos distintos
 
@@ -54,7 +56,9 @@ Taxonomia é a linguagem de classificação do estate: características relativa
 
 Evite taxonomia baseada em produto ("agente da plataforma X"). O produto informa onde o agente foi construído, não o que ele pode fazer — e a taxonomia precisa sobreviver à troca de builder.
 
-### Como implementar
+### Como materializar a taxonomia
+
+**Entrada:** amostra de agentes, plataformas, fontes de descoberta e owners. **Saída:** dicionário canônico, regras de normalização e campos consumidos por registry, pre-screen, dashboards e blueprint. **Concluído quando:** avaliadores independentes classificam casos representativos com concordância suficiente e cada categoria altera uma decisão, control, métrica ou lifecycle.
 
 1. Colete amostra representativa incluindo citizen-built, SaaS, custom e ao menos um caso com execução de ferramentas.
 2. Escolha **apenas** dimensões que alteram decisão, controle, métrica ou lifecycle. Categoria que não muda nada não deve ser obrigatória.
@@ -110,7 +114,9 @@ O blueprint é o contrato entre design, desenvolvimento, governança, CI/CD e ru
 
 Isso não exige que toda a governança esteja em YAML: decisões narrativas, impact assessments e risk acceptance continuam como evidências **referenciadas** pelo blueprint. Os contratos canônicos são o [Agent Registry 2.0](../schemas/agent-registry.schema.json) e o [Agent Blueprint 2.0](../schemas/agent-blueprint.schema.json).
 
-### Como implementar
+### Como materializar o blueprint machine-readable
+
+**Entrada:** `agent_id`, tier/admissibilidade, dependências aprovadas e decisions de arquitetura. **Saída:** blueprint versionado e validado, com bindings que possam ser verificados no build e no runtime. **Concluído quando:** o desired state pode ser correlacionado com configuração e runtime sem sobrescrever a evidência de releases anteriores.
 
 1. Defina primeiro o contrato lógico e apenas os campos que têm consumidor real. Schema grande sem consumidor é dívida.
 2. Use formato versionável com validação por schema; campos críticos com enum, formato e obrigatoriedade por tier.
