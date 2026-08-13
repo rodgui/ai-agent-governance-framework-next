@@ -1,7 +1,7 @@
 ---
 title: Controls
 status: maintained
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
@@ -16,6 +16,8 @@ Este artefato consolida fontes validadas segundo a estratégia registrada no pla
 ### Control catalog de governança de IA e agentes
 
 O catálogo 1.2.0 traduz policy e princípios em requirements verificáveis. A fonte estruturada é [`control-catalog.json`](control-catalog.json), validada pelo [`control-catalog.schema.json`](../schemas/control-catalog.schema.json) 2.0. Consulte a [migração dos contratos](../../docs/migration/governance-contracts-1x-to-2x.md).
+
+> **Quando abrir este catálogo.** Use-o depois de classificar tier e admissibilidade para saber quais requirements se aplicam, quem responde, qual evidência precisa existir e como o resultado será verificado. Use o [Minimum Production Bar](minimum-production-bar.md) para a baseline operacional de release e o [catálogo de artefatos](../artifact-catalog.md) para localizar templates, schemas e exemplos. Um control define o resultado exigido; não escolhe o produto nem substitui uma decisão de risco.
 
 #### Estrutura de um control
 

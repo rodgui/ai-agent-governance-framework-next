@@ -1,7 +1,7 @@
 ---
 title: Schemas
 status: maintained
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
@@ -16,6 +16,16 @@ Este artefato consolida fontes validadas segundo a estratégia registrada no pla
 ### Schemas
 
 Schemas JSON Draft 2020-12 para artefatos estruturados de governança.
+
+> **Quando abrir este diretório.** Use schemas quando uma decisão, configuração ou evidência precisa ser interpretada por automação ou validada de forma consistente. O capítulo explica a decisão; o [catálogo de artefatos](../artifact-catalog.md) explica quando ela precisa existir; o schema define o contrato estrutural. Não use um schema para inferir owner, risco, admissibilidade ou evidência ausente.
+
+| Necessidade | Schema inicial |
+|---|---|
+| registrar existência, ownership e lifecycle | `agent-registry.schema.json` |
+| descrever desired state e bindings técnicos | `agent-blueprint.schema.json` |
+| provar release por control e evidência | `release-evidence-manifest.schema.json` |
+| correlacionar evento runtime sem payload sensível | `audit-event.schema.json` |
+| governar dependência de modelos, fontes e tools | `model-provider`, `certified-source` e `enterprise-tool-registry` |
 
 #### Schemas canônicos
 

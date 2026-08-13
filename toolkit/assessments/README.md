@@ -1,7 +1,7 @@
 ---
 title: Assessments
 status: maintained
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
@@ -16,6 +16,15 @@ Este artefato consolida fontes validadas segundo a estratégia registrada no pla
 ### Assessments
 
 Avaliações comparativas, de risco, maturidade, tecnologia e control effectiveness.
+
+> **Quando usar uma avaliação.** Use assessment para pedir uma decisão contextual — priorizar capability, classificar risco, comparar alternativa, verificar effectiveness ou aceitar uma lacuna. Assessment é evidência organizacional com escopo, corte e limitações; não é policy, não substitui controls e não converte um score em conformidade.
+
+| Pergunta | Artefato inicial |
+|---|---|
+| Quão madura está a capability? | [Maturity model](../maturity/maturity-model.md) + [Maturity Assessment](../templates/maturity-assessment-template.md) |
+| O caso tem risco ou impacto aceitável? | [Risk record](../templates/agent-risk-record.md) + assessment aplicável |
+| A tecnologia ou fornecedor atende ao contexto? | [Assessment template](../templates/assessment-template.md) + cláusulas/controles aplicáveis |
+| O control opera com eficácia no escopo? | evidence package, verification method e peer/independent challenge |
 
 #### Artefatos
 

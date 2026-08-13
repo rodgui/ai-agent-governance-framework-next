@@ -2,6 +2,14 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-13 — Segunda onda de revisão editorial ampla
+
+- Capítulos de controle documental, mandato, accountability, risco, lifecycle, operações e métricas passaram a explicitar hierarquia de artefatos, fronteiras entre fases/gates/processos, decisões, owners, templates e critérios de conclusão.
+- Nomes de approval matrix, perfis de plataforma e fóruns organizacionais foram reclassificados como adapters ou contexto histórico; as authorities canônicas continuam em decision rights e decision gates.
+- O toolkit tornou-se uma porta de execução por decisão, com índices de patterns, templates, schemas, controls, registry, assessments e examples orientados por gatilho, saída e limite de interpretação.
+- Research sources e crosswalks deixaram de se apresentar como scaffolds e agora distinguem fonte para claim, provenance histórica, mapping direcional e limitação.
+- Esta entrada descreve alterações locais pendentes de revisão e publicação; não altera, por si só, a release ou a baseline publicada.
+
 ## 2026-08-13 — Reestruturação editorial da entrada e da sequência de leitura
 
 - README, Guia de Consumo, `start-here`, índice e navegação MkDocs agora distinguem rota de implantação, estudo linear, referência por objetivo, toolkit e manutenção.
