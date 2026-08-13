@@ -332,7 +332,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 - Tratar "PoC" como sinônimo de baixo risco: um agente para 5 usuários que executa pagamentos é mais crítico que um para 5.000 que resume documentos.
 - Aprovar sem residual risk explícito: **nenhuma aprovação existe sem residual risk aceito pela autoridade compatível com o tier.**
 
-**Onde está a profundidade.** Classificação completa em [cap. 04](04-risk-impact-and-compliance.md); matriz de decisão tier×mecanismo na seção 1 do cap. 04; gates em [cap. 05](05-agent-lifecycle.md) e na [seção 1 deste capítulo](#a-jornada-em-8-gates).
+**Onde está a profundidade.** Classificação completa em [cap. 04](04-risk-impact-and-compliance.md); matriz de decisão tier×mecanismo na seção 1 do cap. 04; gates em [cap. 05](05-agent-lifecycle.md) e na [seção 1 deste capítulo](#1-a-jornada-em-8-gates).
 
 ### 6.3 P3 — Publicação em produção
 
