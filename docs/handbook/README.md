@@ -44,7 +44,7 @@ Um capítulo que entrega somente narrativa é material de estudo, não de implan
 1. [Governar agentes em escala — brief executivo](../executive/governing-agents-at-scale.md)
 2. [Fundamentos de governança de IA e agentes](../framework/01-mandate-scope-and-principles.md)
 3. [Vocabulário canônico](../annexes/glossary.md)
-4. [Decisão arquitetural: agente é o mecanismo certo?](../framework/03-inventory-portfolio-and-value.md#32-adequação-agente-é-o-mecanismo-certo)
+4. [Decisão arquitetural: agente é o mecanismo certo?](../framework/03-inventory-portfolio-and-value.md#32-adequacao-agente-e-o-mecanismo-certo)
 
 Esta parte explica o problema, o vocabulário e a decisão anterior à tecnologia: quando autonomia, interpretação ou uso de tools justificam um agente em vez de workflow ou automação determinística.
 

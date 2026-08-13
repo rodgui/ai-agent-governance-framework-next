@@ -2,7 +2,7 @@
 
 > Fictício e sanitizado. Pré-condições, evidências e SLAs são ilustrativos.
 
-Demonstra os [handoffs obrigatórios](../../docs/framework/02-governance-and-accountability.md#handoffs-obrigatórios). A regra: **um handoff sem owner receptor e sem evidência não está concluído** — está apenas anunciado.
+Demonstra os [handoffs obrigatórios](../../docs/framework/02-governance-and-accountability.md#33-handoffs-obrigatorios). A regra: **um handoff sem owner receptor e sem evidência não está concluído** — está apenas anunciado.
 
 | Transição | De | Para | Pré-condições | Evidência transferida | SLA |
 |---|---|---|---|---|---|

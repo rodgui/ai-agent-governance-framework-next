@@ -2,7 +2,7 @@
 title: 09 — Operações, incidentes e continuidade
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -65,7 +65,11 @@ Baselines e sinais para mudança de comportamento, qualidade, segurança, custo 
 
 Atribuir consumo e custo operacional total a agente, owner, ambiente e resultado mensurável: custo unitário, orçamento, quota, previsão, variância, alocação compartilhada, anomalia e decisão de otimização. **Violação de threshold dispara throttling ou revisão; alegações de custo permanecem separadas de alegações de realização de valor.**
 
-### 1.7 Playbook de implantação da observabilidade
+### 1.7 Como implantar observabilidade orientada à decisão
+
+**Entrada:** registry e blueprint do agente, risk tier/admissibilidade, dependências, SLOs de serviço e owners ativos. **Authority típica:** Run Authority, com Technical Owner e domain authorities aplicáveis. **Saída:** contrato de telemetria, baseline, dashboards por decisão, alert-to-action e evidence de run readiness. **Critério de conclusão:** cada sinal crítico possui source, threshold, owner, severidade, ação e caminho de contenção recuperável.
+
+> **Artefatos para produzir agora — observabilidade.** Use o [AI Agent Audit Event schema](../../toolkit/schemas/audit-event.schema.json) para o envelope mínimo de correlação, o [SLO example](../../toolkit/examples/slo.example.md) como referência de objetivo e o [Support Runbook](../../toolkit/examples/support-runbook.example.md) para transformar alerta em ação. O dashboard é uma visualização; o contrato, o runbook e o decision record são os artefatos governados.
 
 1. **Definir o schema canônico de telemetria.** `agent_id`, versão, tarefa e sessão, usuário ou gatilho, modelo e provedor, ferramenta, ação, alvo, resultado da policy, tokens e custo, latência, erro e outcome. Os campos podem vir de produtos diferentes; **precisam ser correlacionáveis**.
 2. **Medir estate e lifecycle.** Total conhecido versus estimado, novos agentes, mix de tiers, sem owner, dormentes, attestation vencida e candidatos a retirada.
@@ -76,6 +80,8 @@ Atribuir consumo e custo operacional total a agente, owner, ambiente e resultado
 7. **Conectar uso a valor de negócio.** Usuários ativos mostram frequência; valor exige outcome. **Um agente popular pode não gerar valor.**
 8. **Construir dashboards por decisão.** Executivo: estate, risco e valor; segurança: comportamento e incidentes; plataforma: runtime e custo; owner: adoção, outcome e attestation. **Um painel único serve a ninguém.**
 9. **Definir alert-to-action e tuning.** Toda regra crítica tem owner, severidade, threshold contextualizado e ação: observar, abrir ticket, throttle, exigir step-up ou quarentena. Revisar baselines após mudança material.
+
+**Concluído quando:** um drill reconstrói uma cadeia representativa de eventos, alcança a Run Authority dentro do alvo e executa a ação prevista sem depender de pesquisa manual em dashboards desconectados.
 
 ## 2. Responder
 
@@ -218,7 +224,9 @@ Um desvio isolado pode ser perfeitamente legítimo. Enriqueça o sinal com: tier
 
 **Comece com resposta humana para casos novos. Só automatize contenção depois de medir precisão e falsos positivos em casos de alta confiança.**
 
-### 5.7 Procedimento
+### 5.7 Como introduzir behavioral analytics com segurança
+
+**Entrada:** um caso de uso observável, telemetria correlacionável, tier, owner, privacy boundary e resposta possível. **Authority típica:** Run Authority define a operação; Security, Data ou Privacy participam quando o sinal tocar seus domínios. **Saída:** hipótese versionada, baseline, regra, response contract e decisão de monitor-only ou enforcement. **Critério de conclusão:** a regra demonstra utilidade, falso positivo mensurado e resposta proporcional antes de qualquer contenção automática.
 
 1. Escolher um caso observável e útil — runaway loop, pico de custo, primeira ferramenta privilegiada ou acesso a alvo incomum.
 2. Definir as features e a unidade de comportamento.
@@ -230,7 +238,7 @@ Um desvio isolado pode ser perfeitamente legítimo. Enriqueça o sinal com: tier
 8. Medir taxa de falso positivo e incidentes não detectados; ajustar.
 9. **Versionar regra e baseline — o incidente precisa indicar qual lógica gerou a decisão.**
 
-Use o [Behavioral Analytics Use Case](../../toolkit/templates/behavioral-analytics-use-case.md) para registrar hipótese, features, privacy boundaries, thresholds, response contract, calibração e sunset.
+> **Artefato para produzir agora — Behavioral Analytics Use Case.** Use o [Behavioral Analytics Use Case](../../toolkit/templates/behavioral-analytics-use-case.md) para registrar hipótese, features, privacy boundaries, thresholds, response contract, calibração e sunset. Anexe a baseline e a versão da regra ao evidence package; uma anomalia não deve virar finding ou contenção sem esse contexto.
 
 ## 6. Referência normativa
 
