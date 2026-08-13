@@ -24,6 +24,8 @@ Este capítulo é o maior do framework porque cobre os **seis domínios técnico
 
 A ideia central, expressa em dois princípios:
 
+> **Artefatos para produzir agora — arquitetura e bindings.** Comece pelo [exemplo de arquitetura](../../toolkit/examples/architecture.example.md) para desenhar os planos e pontos de enforcement; depois use o [Agent Blueprint schema](../../toolkit/schemas/agent-blueprint.schema.json) e o [template de blueprint](../../toolkit/templates/agent-blueprint-template.md) para registrar a configuração desejada. Para dependências, consulte os schemas de [fontes certificadas](../../toolkit/schemas/certified-source-catalog.schema.json), [tools corporativas](../../toolkit/schemas/enterprise-tool-registry.schema.json) e [model/provider catalog](../../toolkit/schemas/model-provider-catalog.schema.json). O mapeamento de capability para tecnologia é um artefato da organização, não um requisito preenchido neste repositório.
+
 1. **Capability antes de produto.** A arquitetura define capabilities e boundaries independentes de plataforma; qualquer produto é uma implementação substituível. Troca-se o mapeamento, nunca se reescreve a arquitetura.
 2. **Controle fora do modelo.** O modelo propõe; a plataforma decide. Identity, policy, mediação de ferramentas, egress, rate limit, logging e contenção acontecem em pontos de enforcement conhecidos — nunca "no prompt".
 

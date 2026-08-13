@@ -23,6 +23,8 @@ Este capítulo é a ponte entre "desenhamos os controles" (cap. 06) e "liberamos
 
 O princípio que amarra tudo: **a força da conclusão não pode exceder a força da evidência.** E o complemento que evita burocracia: **evidência é produto do processo** — o eval gera o relatório, o gate gera o decision record, o deploy gera o baseline. Evidence pack montado depois, para satisfazer auditoria, custa mais e vale menos.
 
+> **Artefatos para produzir agora — avaliação e release evidence.** Defina a estratégia no [template de assessment](../../toolkit/templates/assessment-template.md), registre o pacote no [Release Evidence Manifest](../../toolkit/templates/release-evidence-manifest.md) e use o [release decision checklist](../../toolkit/templates/release-decision-checklist.md) para verificar se a authority pode aprovar, condicionar ou bloquear. O [schema do manifest](../../toolkit/schemas/release-evidence-manifest.schema.json) torna a lineage verificável; o template não substitui o teste nem a decisão.
+
 ## 1. Estratégia de avaliação
 
 ### 1.1 A estratégia declara antes de testar

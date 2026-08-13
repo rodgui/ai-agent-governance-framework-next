@@ -75,6 +75,21 @@ Este vocabulário reduz ambiguidade entre policy, arquitetura, patterns, control
 
 ## Risco, controles e assurance
 
+### Classificações que não devem ser misturadas
+
+| Classificação | Pergunta | Valores ou forma | Efeito |
+|---|---|---|---|
+| **Risk tier** | Quão severa pode ser a exposição? | T1–T4 | Define rigor mínimo de controls, evidence e authority. |
+| **Admissibilidade** | Este uso pode operar? | `permitted`, `conditional`, `restricted`, `prohibited` | Permite, condiciona, exige exceção ou proíbe operação. |
+| **Risk score** | Quais fatores produzem o risco base? | Sete dimensões + red flags | Alimenta a classificação; não decide sozinho. |
+| **Readiness score** | O dossiê está pronto para decisão? | Completeza e força da evidência | Mede prontidão; não mede risco, qualidade ou maturidade. |
+| **Maturity** | Quão desenvolvida está a capability organizacional? | Níveis do maturity model | Define baseline, target e roadmap organizacional. |
+| **Lifecycle stage/state** | Em que momento e estado operacional está o agente? | Estados e transições canônicos | Controla promoção, operação, mudança e sunset. |
+| **Gate** | Qual decisão do programa precisa ocorrer? | G0–G7 | Autoriza, condiciona, suspende, rejeita ou encerra avanço. |
+| **Processo operacional** | Qual rotina recorrente o agente atravessa? | P1–P8 | Executa e registra criação, release, operação e retirement. |
+
+**T4 é criticidade, não admissibilidade.** Um T1 pode ser `restricted` ou `prohibited` por finalidade, obrigação ou desenho; um T4 pode ser `permitted` ou `conditional` quando a authority, os controls e as evidências sustentarem a decisão.
+
 | Termo | Definição neste framework | Não confundir com |
 |---|---|---|
 | **Risk** | Efeito da incerteza sobre objetivos, pessoas, direitos, sistemas ou organização. | Finding confirmado. |
