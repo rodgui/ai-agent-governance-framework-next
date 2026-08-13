@@ -2,6 +2,16 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-13 — Reestruturação editorial da entrada e da sequência de leitura
+
+- README, Guia de Consumo, `start-here`, índice e navegação MkDocs agora distinguem rota de implantação, estudo linear, referência por objetivo, toolkit e manutenção.
+- O handbook foi reorganizado para explicitar dependências entre mandato, escolha do mecanismo, estate, risco, arquitetura, assurance, operação e toolkit.
+- O capítulo 03 reposicionou a execução da descoberta antes de forecast e gargalos e passou a separar classificação preliminar de decisão normativa de risco.
+- Corrigida a regressão editorial que tratava T4 como `default deny`; a separação entre risk tier e admissibilidade da ADR-0009 foi restaurada.
+- Templates, schemas, examples e catálogo de artefatos ganharam destaque contextual nos capítulos de inventário, risco, arquitetura, assurance e implementação.
+- A árvore pública do site deixou de publicar `tools/` e `tests/`; os artefatos permanecem no repositório para maintainers.
+- Fontes externas indicadas para a análise foram registradas na bibliografia com tipo, uso e limitações.
+
 ## 2026-08-12 — Capítulos 06–10 reescritos no formato Manual/Bíblia
 
 - Cap. 06 (Arquitetura): 1569→583 linhas; 32 blocos → 25 obrigações; 3 duplicatas consolidadas;

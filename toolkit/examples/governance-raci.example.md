@@ -35,5 +35,5 @@ Demonstra o [operating model e decision rights](../../docs/framework/02-governan
 
 - não define os papéis corporativos — apenas as funções de decisão;
 - SLAs são ilustrativos e devem sair do baseline real de capacidade;
-- um RACI não substitui o [contrato de decision gates](../../docs/framework/08-implementation-and-adoption.md#contrato-comum-dos-decision-gates): ele diz quem decide, não o que a decisão precisa registrar;
+- um RACI não substitui o [contrato de decision gates](../../docs/framework/08-implementation-and-adoption.md#11-o-contrato-comum-dos-decision-gates): ele diz quem decide, não o que a decisão precisa registrar;
 - em organizações pequenas, papéis podem se acumular na mesma pessoa — desde que a segregação exigida pelo tier seja preservada e a acumulação seja declarada.

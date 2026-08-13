@@ -93,6 +93,17 @@ Registro de fontes primárias usadas pelo framework. Claims temporais devem regi
 | MS-004 | Becoming a Frontier Firm: A guide for deploying AI agents based on our experience at Microsoft | Guia oficial / Customer Zero | <https://www.microsoft.com/insidetrack/blog/becoming-a-frontier-firm-a-guide-for-deploying-ai-agents-based-on-our-experience-at-microsoft/> | 2026-08-09 | Maturidade, adoção, suporte e medição de valor |
 | MS-005 | Governing AI agents at scale: Lessons from our journey at Microsoft | Guia oficial / Customer Zero | <https://www.microsoft.com/insidetrack/blog/governing-ai-agents-at-scale-lessons-from-our-journey-at-microsoft/> | 2026-08-09 | Dados AI-ready, matriz de risco, MCP e métricas |
 
+#### Agent governance e adoção
+
+| ID | Fonte | Tipo | URL | Acesso | Uso relacionado |
+|---|---|---|---|---:|---|
+| IBM-001 | AI agent governance: Big challenges, big opportunities | Artigo institucional | <https://www.ibm.com/think/insights/ai-agent-governance> | 2026-08-13 | Linguagem executiva, portfolio, confiança e lifecycle; conteúdo disponível é majoritariamente editorial e direciona a recursos IBM. |
+| MS-006 | Govern and secure AI agents across the organization | Documentação oficial de fornecedor | <https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/governance-security-across-organization> | 2026-08-13 | Control plane, registry, identity, policy, observability e cost; exemplos Microsoft não são dependências normativas. |
+| MS-007 | Manage AI agents across your organization | Documentação oficial de fornecedor | <https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/integrate-manage-operate> | 2026-08-13 | Sequência plan → govern/secure → build → manage; rollout, operação, manutenção e retirement. |
+| MS-008 | Guidance to set your organization's responsible AI policies | Documentação oficial de fornecedor | <https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/responsible-ai-policies> | 2026-08-13 | Standards, ownership, oversight, templates, audit, incident response e contestability. |
+| PAN-001 | A Complete Guide to Agentic AI Governance | Guia técnico de fornecedor | <https://www.paloaltonetworks.com/cyberpedia/what-is-agentic-ai-governance> | 2026-08-13 | Autoridade delegada, risco de ação, tools, privilege escalation, drift e accountability. |
+| IAPS-001 | AI Agent Governance: A Field Guide | Field guide independente | <https://static1.squarespace.com/static/64edf8e7f2b10d716b5ba0e1/t/6801438c58c2692374995db0/1744913293841/Agent+Governance_+A+Field+Guide.pdf> | 2026-08-13 | Literatura e taxonomy de intervenções: alignment, control, visibility, security/robustness e societal integration. Propostas são exploratórias e não comprovam eficácia. |
+
 #### Hierarquia de evidência
 
 1. legislação, norma e documentação oficial;

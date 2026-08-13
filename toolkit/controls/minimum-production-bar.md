@@ -24,7 +24,7 @@ O MPB define o **piso, não o teto**. Controles adicionais disparados por risco,
 
 ## Como ler a tabela
 
-- T1 inclui a rota automatizada do [fast path](README.md#fast-path-de-t1): os itens continuam obrigatórios, mas são verificados por policy em vez de revisão manual.
+- T1 inclui a rota automatizada do [fast path](../../docs/framework/04-risk-impact-and-compliance.md#14-fast-path-de-t1-automatizar-o-simples-sem-eliminar-controle): os itens continuam obrigatórios, mas são verificados por policy em vez de revisão manual.
 - T4 é o tier de risco crítico. `restricted` e `prohibited` pertencem à dimensão separada de admissibilidade; não são sinônimos de T4.
 - Leia primeiro a baseline de risco e depois o gate de admissibilidade. As duas condições precisam ser satisfeitas.
 
@@ -71,7 +71,7 @@ O MPB é a **entrada** do gate de release (G5), não o gate inteiro. O gate veri
 
 Um agente T2 passa quando: registry, owner e tier estão válidos; a identidade própria foi provisionada; as fontes de dados constam no catálogo certificado; as ferramentas estão registradas com escopo; o rollback foi testado; a telemetria chega ao pipeline; existe budget; e o evidence pack contém as reviews que foram acionadas.
 
-O gate **não** pede que segurança "reavalie tudo". Ele verifica que a evidência exigida pelo tier existe, é recuperável e foi aceita pela authority correta — conforme o [contrato comum dos decision gates](../../docs/framework/08-implementation-and-adoption.md#contrato-comum-dos-decision-gates).
+O gate **não** pede que segurança "reavalie tudo". Ele verifica que a evidência exigida pelo tier existe, é recuperável e foi aceita pela authority correta — conforme o [contrato comum dos decision gates](../../docs/framework/08-implementation-and-adoption.md#11-o-contrato-comum-dos-decision-gates).
 
 ## Artefatos
 

@@ -39,7 +39,7 @@ Responda `sim`, `não` ou `não sei`. **`Não sei` não é `não`** — é um ga
 
 ## Leitura do resultado
 
-- **Escaladores.** As perguntas 3, 5, 6, 7, 8, 9 e 10 mapeiam uma a uma para [escaladores](../../docs/framework/04-risk-impact-and-compliance.md#red-flags-e-escaladores). Duas exigem combinação: `2` com `3` (transação financeira material) e `4` com `14` (comunicação pública autônoma em escala). Qualquer escalador acionado retira o caso do fast path e aplica a criticidade mínima da tabela normativa, independentemente do score.
+- **Escaladores.** As perguntas 3, 5, 6, 7, 8, 9 e 10 mapeiam uma a uma para [escaladores](../../docs/framework/04-risk-impact-and-compliance.md#13-red-flags-e-escaladores-o-fator-critico-nao-pode-ser-diluido). Duas exigem combinação: `2` com `3` (transação financeira material) e `4` com `14` (comunicação pública autônoma em escala). Qualquer escalador acionado retira o caso do fast path e aplica a criticidade mínima da tabela normativa, independentemente do score.
 - **A pergunta 1 configura o escalador de criticidade T4 apenas quando o dado restrito é enviado a provedor externo.** Registre o destino na coluna de evidência; dado restrito processado internamente é outro caso.
 - A tabela de escaladores é a norma. Este questionário é o instrumento que a coleta — se divergirem, corrija o questionário.
 - **Qualquer `sim` na pergunta 6** aciona o impact trigger screen de Responsible AI, mesmo em caso tecnicamente simples.
@@ -57,4 +57,4 @@ Responda `sim`, `não` ou `não sei`. **`Não sei` não é `não`** — é um ga
 - Gaps com owner e prazo:
 - Rationale da rota:
 
-O pre-screen é evidência: registre-o com data, responsável e versão do modelo de risco. A classificação e a admissibilidade finais, com suas authorities, são registradas conforme o [contrato de decision gates](../../docs/framework/08-implementation-and-adoption.md#contrato-comum-dos-decision-gates).
+O pre-screen é evidência: registre-o com data, responsável e versão do modelo de risco. A classificação e a admissibilidade finais, com suas authorities, são registradas conforme o [contrato de decision gates](../../docs/framework/08-implementation-and-adoption.md#11-o-contrato-comum-dos-decision-gates).

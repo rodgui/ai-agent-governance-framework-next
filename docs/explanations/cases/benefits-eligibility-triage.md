@@ -30,7 +30,7 @@ Um agente que reúne a regra vigente e prepara uma recomendação de elegibilida
 
 ## Por que T3 não foi uma escolha
 
-O pre-screen disparou o escalador **decisão sobre emprego, crédito, elegibilidade ou acesso a serviço** (pergunta 6). Pela [tabela de escaladores](../../framework/04-risk-impact-and-compliance.md#red-flags-e-escaladores), isso impõe criticidade mínima T3 e impact assessment formal obrigatório — **independentemente do score**, e mesmo que o caso seja tecnicamente simples.
+O pre-screen disparou o escalador **decisão sobre emprego, crédito, elegibilidade ou acesso a serviço** (pergunta 6). Pela [tabela de escaladores](../../framework/04-risk-impact-and-compliance.md#13-red-flags-e-escaladores-o-fator-critico-nao-pode-ser-diluido), isso impõe criticidade mínima T3 e impact assessment formal obrigatório — **independentemente do score**, e mesmo que o caso seja tecnicamente simples.
 
 E ele é tecnicamente simples: uma fonte, uma tool, um modelo. Se a classificação dependesse só de complexidade técnica, este agente seria T1. É exatamente por isso que o escalador existe.
 

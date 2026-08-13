@@ -30,7 +30,7 @@ Um agente interno que resume notas de reunião já registradas — somente leitu
 
 ## Por que este caso existe
 
-Um estate real tem centenas de casos assim. Se cada um exigir revisão humana, a governança vira gargalo e a organização passa a contorná-la — que é o failure mode que o [fast path](../../../../docs/framework/04-risk-impact-and-compliance.md#fast-path-de-t1) existe para evitar.
+Um estate real tem centenas de casos assim. Se cada um exigir revisão humana, a governança vira gargalo e a organização passa a contorná-la — que é o failure mode que o [fast path](../../../../docs/framework/04-risk-impact-and-compliance.md#14-fast-path-de-t1-automatizar-o-simples-sem-eliminar-controle) existe para evitar.
 
 O que este caso demonstra, e nenhum outro demonstra: **o fast path não dispensa evidência, ele a gera automaticamente.**
 

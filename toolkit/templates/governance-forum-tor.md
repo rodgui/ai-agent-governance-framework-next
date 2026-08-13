@@ -64,7 +64,7 @@ Toda decisão registra, no mínimo:
 - expiry;
 - próxima revisão.
 
-Conforme o [contrato comum dos decision gates](../../docs/framework/08-implementation-and-adoption.md#contrato-comum-dos-decision-gates). Divergência registrada permanece registrada — não é apagada por consenso posterior.
+Conforme o [contrato comum dos decision gates](../../docs/framework/08-implementation-and-adoption.md#11-o-contrato-comum-dos-decision-gates). Divergência registrada permanece registrada — não é apagada por consenso posterior.
 
 ## 7. Escalation
 
