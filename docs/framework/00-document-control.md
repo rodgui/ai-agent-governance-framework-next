@@ -2,7 +2,7 @@
 title: 00 — Controle do documento
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -24,6 +24,20 @@ Este capítulo é o **contrato de governo do próprio framework**. Ele responde:
 
 Uma leitura atenta deste capítulo evita os dois erros mais caros de qualquer política: **tratar referência técnica como norma vigente** e **reescrever decisões em vez de superá-las**.
 
+## Antes de usar este capítulo: a hierarquia de artefatos
+
+| Objeto | Pergunta que responde | Força normativa | Saída típica |
+|---|---|---|---|
+| **Policy** | Que resultado, boundary e princípio a organização exige? | Obrigatória quando adotada pela authority competente. | Mandato, escopo, decision rights e obrigações. |
+| **Standard** | Qual regra mínima torna a policy aplicável? | Obrigatório no escopo declarado. | Estados, critérios, thresholds, controles e condições de uso. |
+| **Procedure ou guidance** | Como executar a regra em um contexto? | Adaptável; não pode enfraquecer policy ou standard. | Passos, runbooks, cadência e handoffs. |
+| **Control** | O que deve prevenir, detectar, responder ou corrigir? | Exigível quando aplicável ao tier e ao escopo. | Owner, método de verificação, evidência e finding. |
+| **Schema e template** | Como registrar a decisão ou configuração de forma consistente? | Contrato técnico ou acelerador; não decide sozinho. | Record estruturado, formulário ou manifest. |
+| **Evidence** | O que demonstra que a regra foi atendida? | Necessária para sustentar a decisão. | Log, teste, decisão, configuração, relatório ou attestation. |
+| **Example, pattern, case study e research** | Como interpretar, comparar ou aprender? | Não normativo, salvo incorporação explícita. | Rationale, opção de desenho, fonte ou demonstração fictícia. |
+
+> **Regra de precedência:** policy define o resultado; standard fixa o mínimo; procedure explica a execução; control torna o mínimo verificável; evidence sustenta a decisão. Templates, schemas, examples, patterns e research ajudam a aplicar ou interpretar, mas não criam obrigação por associação.
+
 ## 1. O que este framework é
 
 ### 1.1 Identificação e finalidade
@@ -36,7 +50,7 @@ A policy não é um documento monolítico nem depende de plataforma: é composta
 
 ### 1.2 Dois níveis de adoção (não confundir)
 
-A **release 1.0 deste framework está `adopted`** desde 2026-08-10. Isso significa que esta versão é a baseline canônica estável e que mudança normativa exige proposta, rationale, authority, changelog e release versionada.
+A **release atual do framework é a baseline canônica mantida**. Isso significa que mudanças normativas exigem proposta, rationale, authority, changelog e release versionada. O status de uma release descreve a governança deste corpus; não declara adoção automática por qualquer organização.
 
 Isso **não** significa que qualquer organização adotou esta policy. A adoção organizacional é uma decisão separada: cada organização declara esta baseline como sua política interna pela sua própria authority competente, com escopo, exceções e obrigações próprias. Enquanto essa decisão não existir, o conteúdo é **referência técnica canônica do framework — não a política vigente daquela organização**.
 

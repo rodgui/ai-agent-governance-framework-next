@@ -2,7 +2,7 @@
 title: 01 — Mandato, escopo e princípios
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -153,7 +153,24 @@ Alguns princípios se opõem em casos concretos, e é aí que a authority decide
 
 **Quando dois princípios colidem, a decisão é registrada com rationale — não resolvida por preferência de quem estava na sala.**
 
-### 3.4 Os 10 princípios fundamentais (reforço)
+### 3.4 A síntese transversal dos princípios
+
+Os **13 princípios da seção 3.1** são a taxonomia operacional: cada um traz uma pergunta de decisão, uma aplicação e um antipattern. Os **10 princípios abaixo não formam uma segunda taxonomia**; são uma síntese para charter, onboarding, checklist executivo e revisão transversal. Quando houver dúvida, prevalece o princípio detalhado da seção 3.1 e a obrigação normativa aplicável.
+
+| Síntese transversal | Princípios operacionais mais diretamente relacionados |
+|---|---|
+| Mandato antes de automação | Human-led, Value-linked, Evidence before automation |
+| Proporcionalidade | Proportional by risk, Explicit capability |
+| Least privilege | Identity first, Explicit capability |
+| Separation of duties | Human-led, Federated with common controls |
+| Human accountability | Human-led, Federated with common controls |
+| Evidence by design | Evidence before automation, Visibility first |
+| Runtime matters | Observable and remediable, Lifecycle-aware |
+| Reversibilidade | Observable and remediable, Explicit capability |
+| Governança federada | Federated with common controls, Platform-agnostic |
+| Neutralidade de plataforma | Platform-agnostic, Embedded by default |
+
+Use a síntese transversal para verificar que toda decisão material declara **resposta de design, owner e evidência**. O detalhe de cada princípio permanece na seção 3.1.
 
 Os princípios fundamentais que atravessam todos os capítulos:
 

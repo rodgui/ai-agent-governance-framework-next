@@ -2,7 +2,7 @@
 title: 04 — Risco, impacto e compliance
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -270,7 +270,7 @@ Para cada categoria, registre: população afetada, via de impacto, severidade, 
 
 ### 2.9 Self-assessment obrigatório
 
-Para escalar agentes com segurança, **todo agente** passa por avaliação padronizada antes de ser liberado, expandido ou significativamente alterado. O Self-Assessment é um formulário de 1 página, obrigatório antes de criar/publicar um agente, que funciona como triagem e registro de accountability — e como gatilho de escalonamento: quando há red flags, a aprovação segue níveis mais altos conforme a Matriz de Aprovação.
+Para escalar agentes com segurança, **todo agente** passa por avaliação padronizada antes de ser liberado, expandido ou significativamente alterado. O Self-Assessment é um formulário de 1 página, obrigatório antes de criar/publicar um agente, que funciona como triagem e registro de accountability — e como gatilho de escalonamento: quando há red flags, a rota segue para o tier, a admissibilidade, as domain reviews e a authority definidos nos [decision rights](02-governance-and-accountability.md) e nos [decision gates](08-implementation-and-adoption.md).
 
 Campos mínimos: objetivo e casos de uso; justificativa do uso de IA; dados (tipos/sensibilidade, bases, owners); permissões e escopo de ação; autonomia e HITL (pontos de controle); interconexões (sistemas/APIs); AI Impact Assessment (para alto risco); usuários/alcance (número e perfis); impacto em KPIs; riscos (privacidade, SOX, reputação etc.); controles (auditoria, rate-limit, budget cap); evidência de feedback do usuário (quando aplicável); owners e plano de sunset.
 

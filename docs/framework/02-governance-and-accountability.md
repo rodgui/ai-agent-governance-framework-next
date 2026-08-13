@@ -2,7 +2,7 @@
 title: 02 — Governança e accountability
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-13
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -111,15 +111,17 @@ A matriz de papéis (o que antes eram 12 blocos repetidos):
 | Responsible AI | impacto, fairness, transparência, safety e human oversight |
 | plataforma | capabilities, enforcement points, adapters e service health |
 
-### 2.3 Right to create e publish
+> **Artefatos para produzir agora — authority e decisão.** Use o [Governance Charter](../../toolkit/templates/governance-charter-template.md) para mandato e authorities; o [Governance RACI](../../toolkit/templates/governance-raci-template.md) para accountability e handoffs; o [Terms of Reference](../../toolkit/templates/governance-forum-tor.md) para fóruns; e o [Release Decision Checklist](../../toolkit/templates/release-decision-checklist.md) para registrar a decisão de publicação. O nome local de um fórum, perfil ou workflow é um adapter organizacional, não requisito universal.
 
-**Criação (Test/PoC):** permitida somente em plataformas aprovadas e ambientes não-produtivos; exige Self-Assessment completo e Owners designados (Business + Technical) antes do primeiro uso. O criador precisa de licença e perfil de acesso concedidos formalmente (papel Agent Creator), com treinamento mínimo e aceitação das regras de uso.
+### 2.3 Direito de criar e publicar: capability, não perfil universal
 
-**Publicação/Promoção para produção:** somente após aprovação conforme a Matriz de Aprovação, registro no Catálogo e conclusão da Publication Checklist. A promoção é executada por um perfil Agent Publisher (Run Authority ou delegado formal), garantindo segregação de funções quando aplicável (SOX/ITGC).
+**Criação em Test/PoC.** Permitida somente em plataformas aprovadas e ambientes não produtivos. Exige autoavaliação, Business Owner e Technical Owner designados antes do primeiro uso, além de treinamento, aceite das regras e concessão formal da capability de criação. Uma organização pode chamar essa capability de `Agent Creator` ou usar outro perfil; o requisito canônico é a combinação de competência, identidade, ambiente e accountability.
 
-**Concessão de acessos e permissões:** solicitada pelo Business Owner; validada pelo Technical Owner; aprovada pelo Data Owner/DPO quando envolve dados pessoais/sensíveis e por Cyber/ITGC quando envolve sistemas críticos. Run Authority implementa e mantém evidência (RBAC/ABAC, trilhas de auditoria).
+**Publicação ou promoção para produção.** Ocorre somente após decisão de release proporcional ao tier, registry atualizado e evidence package completo. A execução é feita pela Run Authority ou por delegado formal que possua permissão de implantação e não viole a segregação de funções aplicável. Uma “Matriz de Aprovação” local pode implementar esta regra, mas a fonte canônica de authority e evidência são os [decision rights](#32-decision-rights-por-evento-de-lifecycle) e os [decision gates](08-implementation-and-adoption.md).
 
-**Access review:** revisões periódicas (ex.: semestrais) para agentes em produção e sempre que houver mudança de escopo, dados, integrações ou nível de autonomia.
+**Concessão de acessos e permissões.** É solicitada pelo Business Owner, tecnicamente validada pelo Technical Owner e aprovada pelas domain authorities aplicáveis — dados, privacidade, segurança ou controles críticos. A Run Authority ou plataforma implementa o acesso e retém a evidência de RBAC/ABAC, scope, expiry e trilha de auditoria.
+
+**Revisão de acessos.** Deve ocorrer em cadência proporcional ao tier e sempre que houver mudança de escopo, dados, integrações, owner ou autonomia. O prazo local pode ser semestral, trimestral ou outro; o requisito é que revisão, decisão e evidência estejam recuperáveis.
 
 ### 2.4 Representação no organograma (quando aplicável)
 
