@@ -2,6 +2,20 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-17 — Terceira onda local Gartner: observabilidade AI-native
+
+- Adicionadas a ADR-0014, o pattern de profile AI-native, o template de profile e o exemplo fictício de cadeia task/delegation/tool/policy/containment.
+- O profile organiza correlation, provenance, redaction, retention, access, export, cardinality, cost e value sem obrigar OpenTelemetry, fornecedor ou backend específico.
+- O `audit-event.schema.json` permanece inalterado; o profile é guidance opcional e não transforma cobertura de telemetry em assurance de eficácia.
+- Esta entrada descreve alterações locais pendentes de validação, revisão e publicação; não altera, por si só, a release ou a baseline publicada.
+
+## 2026-08-17 — Segunda onda local Gartner: delegação multiagente
+
+- Adicionadas a ADR-0013, o pattern de governança de delegação, o template de contrato e o exemplo fictício supervisor/worker.
+- O contrato registra topology, nodes, delegation edges, authority attenuation, identity, delegated subject, input/output validation, depth, fan-out, budget, expiry, revocation e failure propagation.
+- A implementação permanece guidance/template em `draft`; o blueprint schema e novos controls não foram alterados antes do walkthrough G2.
+- Esta entrada descreve alterações locais pendentes de validação, revisão e publicação; não altera, por si só, a release ou a baseline publicada.
+
 ## 2026-08-17 — Primeira onda Gartner: control planes e orchestrator decision record
 
 - Adicionada a ADR-0011 e o pattern de governança multi-control-plane, com precedência, authority, source of truth, correlation, conflict path e fail-safe.

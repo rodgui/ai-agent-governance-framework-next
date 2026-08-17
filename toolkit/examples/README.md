@@ -42,6 +42,8 @@ Records agrupados por caso em [`cases/`](cases/), validados pelos mesmos schemas
 
 - [`architecture.example.md`](architecture.example.md) — arquitetura, trust boundaries e failure boundaries.
 - [`multi-control-plane-conflict.example.md`](multi-control-plane-conflict.example.md) — conflito fictício entre identity, registry, data/policy, tool gateway e assurance.
+- [`supervisor-worker-delegation.example.md`](supervisor-worker-delegation.example.md) — topologia fictícia com delegação permitida, privilege escalation negada e falha state-changing contida.
+- [`ai-native-observability.example.md`](ai-native-observability.example.md) — cadeia fictícia de task, delegation, retrieval, policy, tool, human intervention, containment, cost e outcome.
 - [`orchestrator-decision-exit-record.example.md`](orchestrator-decision-exit-record.example.md) — comparação fictícia de topologia, capabilities, authority, lock-in, portability, resilience e exit.
 - [`risk-assessment.example.md`](risk-assessment.example.md) — classificação e residual gaps ilustrativos.
 - [`evaluation-report.example.md`](evaluation-report.example.md) — evaluation contract, slices, thresholds e limitações.
