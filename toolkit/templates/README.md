@@ -24,6 +24,8 @@ Esta página lista os templates por finalidade. Para saber **quando** cada artef
 | registrar o que existe e quem responde | [Agent Registry Record](agent-registry-template.md) | business + technical owner | registry record; valide no schema correspondente |
 | descrever desired state e bindings técnicos | [Agent Blueprint](agent-blueprint-template.md) | technical owner | blueprint versionado; valide no schema correspondente |
 | comparar, aprovar ou substituir um orchestrator | [Orchestrator Decision and Exit Record](orchestrator-decision-exit-record.md) | design authority + platform owner | topology, capabilities, authority, lock-in, portability, resilience e exit |
+| governar delegação entre agentes | [Agent Delegation Contract](agent-delegation-contract.md) | design authority + security + platform owner | topology, edges, authority attenuation, limits, expiry, revocation e failure propagation |
+| definir observabilidade AI-native | [AI-Native Observability Profile](ai-native-observability-profile.md) | run authority + observability + privacy | task, delegation, model, retrieval, policy, tool, memory, containment, cost e evidence |
 | decidir se o caso deve avançar | [Intake de caso de uso](use-case-intake.md) | product/business owner | adequação, alternativas e baseline |
 | classificar risco e admissibilidade | [Risk pre-screen](risk-pre-screen.md) + [Ferramenta de classificação](risk-scoring-worksheet.md) | risk/design authority | tier, red flags, rota de review e risk record |
 | liberar ou condicionar produção | [Release Evidence Manifest](release-evidence-manifest.md) + [Checklist de decisão](release-decision-checklist.md) | release authority | evidence package e decision record |
@@ -38,6 +40,8 @@ Esta página lista os templates por finalidade. Para saber **quando** cada artef
 - [Dicionário de taxonomia e metadados](agent-taxonomy-dictionary.md)
 - [Agent Registry Record](agent-registry-template.md)
 - [Agent Blueprint](agent-blueprint-template.md)
+- [Agent Delegation Contract](agent-delegation-contract.md)
+- [AI-Native Observability Profile](ai-native-observability-profile.md)
 - [Orchestrator Decision and Exit Record](orchestrator-decision-exit-record.md)
 - [ADR](adr-template.md)
 - [Control Implementation Record](control-implementation-record-template.md)

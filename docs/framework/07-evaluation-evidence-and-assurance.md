@@ -199,6 +199,10 @@ Runtime events/incidents
 Attestation/value/sunset decision
 ```
 
+Para sistemas AI-native, o [profile opcional de observabilidade](../../toolkit/patterns/ai-native-observability-profile.md) detalha a semântica de `agent.task`, `agent.delegation`, `model.call`, `retrieval`, `tool.request/result`, `policy.decision`, `human.intervention`, `agent.memory/state`, `containment` e `value.cost`. O profile complementa o envelope mínimo; não cria assurance por si só, não autoriza captura de payload sensível e não substitui a verificação de eficácia dos controls.
+
+A cobertura deve ser demonstrada por um drill de reconstrução, não por quantidade de eventos. Registre o [template de profile](../../toolkit/templates/ai-native-observability-profile.md), as limitações de correlação, redaction, retention, access, export e cardinalidade e o [exemplo fictício](../../toolkit/examples/ai-native-observability.example.md) como referência de estrutura, nunca como evidência de produção.
+
 ### 4.3 Evidence package
 
 Um package de release ou attestation deve ser: versionado; immutable ou tamper-evident; ligado a agent/version; completo segundo tier; acessível somente a roles autorizados; retido conforme policy; exportável para review; capaz de distinguir **missing, not-applicable e passed**. **"Sem evidência" não significa "controle passou".** Use o [Release Evidence Manifest schema](../../toolkit/schemas/release-evidence-manifest.schema.json) e o [template humano](../../toolkit/templates/release-evidence-manifest.md).
