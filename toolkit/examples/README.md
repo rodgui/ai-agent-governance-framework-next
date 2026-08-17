@@ -41,6 +41,8 @@ Records agrupados por caso em [`cases/`](cases/), validados pelos mesmos schemas
 #### Evidence package operacional
 
 - [`architecture.example.md`](architecture.example.md) — arquitetura, trust boundaries e failure boundaries.
+- [`multi-control-plane-conflict.example.md`](multi-control-plane-conflict.example.md) — conflito fictício entre identity, registry, data/policy, tool gateway e assurance.
+- [`orchestrator-decision-exit-record.example.md`](orchestrator-decision-exit-record.example.md) — comparação fictícia de topologia, capabilities, authority, lock-in, portability, resilience e exit.
 - [`risk-assessment.example.md`](risk-assessment.example.md) — classificação e residual gaps ilustrativos.
 - [`evaluation-report.example.md`](evaluation-report.example.md) — evaluation contract, slices, thresholds e limitações.
 - [`release-decision.example.md`](release-decision.example.md) — decisão G5 condicionada e evidence refs.
