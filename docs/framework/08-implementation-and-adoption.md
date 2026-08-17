@@ -245,7 +245,7 @@ flowchart LR
 
 **Feedback é evidência contextual, não prova isolada de valor ou segurança.**
 
-### 5.7 Playbook de implantação da adoção
+### 5.7 Plano de implantação — adoção, enablement e suporte
 
 1. **Segmentar personas** — cada uma com objetivo de aprendizagem distinto.
 2. **Separar awareness de competência** — awareness ensina a reconhecer a regra; competência exige executar a atividade e demonstrar resultado. **Não habilite um reviewer de impact assessment porque ele concluiu um treinamento introdutório.**

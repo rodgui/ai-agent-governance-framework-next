@@ -262,7 +262,7 @@ Regras estruturais:
 | `retirement-review` / qualquer | owner confirma desuso | `retired` / `disabled` | owner + plataforma | remover acessos e secrets; arquivar evidência |
 | `retired` / `disabled` | retenção concluída | `archived` / `disabled` | Records Authority | preservar somente evidência exigida |
 
-## 5. Playbook de implantação
+## 5. Plano de implantação — lifecycle do agente
 
 Para levar o lifecycle do zero à operação, na primeira implantação execute em ordem; em evoluções posteriores, mudanças materiais podem exigir apenas os passos afetados.
 

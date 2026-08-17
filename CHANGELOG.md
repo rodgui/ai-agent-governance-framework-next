@@ -2,6 +2,16 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-17 — Primeira onda Gartner: control planes e orchestrator decision record
+
+- Adicionada a ADR-0011 e o pattern de governança multi-control-plane, com precedência, authority, source of truth, correlation, conflict path e fail-safe.
+- O capítulo 02 passou a definir o tratamento de conflitos entre control planes; o capítulo 06 passou a ligar a arquitetura e o capability mapping à arbitragem cross-plane.
+- Adicionado o `Orchestrator Decision and Exit Record`, com exemplo fictício para comparar topology, capabilities, enforcement, portability, lock-in, resilience e exit sem prescrever fornecedor.
+- O capítulo 07 passou a tratar claims de orchestrator como alegações avaliáveis; o capítulo 09 passou a exigir matriz cross-plane, degraded mode, exit trigger e recovery evidence no run readiness.
+- Os planos de implantação foram renomeados para explicitar seu escopo: planos específicos permanecem subordinados ao domínio correspondente, enquanto planos integrados permanecem no nível do capítulo.
+- A decisão estrutural foi formalizada na [ADR-0012 — Hierarquia dos planos de implantação](docs/architecture/decisions/0012-implementation-plan-hierarchy.md).
+- Esta entrada descreve alterações locais pendentes de revisão e publicação; não altera, por si só, a release ou a baseline publicada.
+
 ## 2026-08-13 — Segunda onda de revisão editorial ampla
 
 - Capítulos de controle documental, mandato, accountability, risco, lifecycle, operações e métricas passaram a explicitar hierarquia de artefatos, fronteiras entre fases/gates/processos, decisões, owners, templates e critérios de conclusão.

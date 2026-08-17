@@ -331,7 +331,7 @@ Condições mínimas que devem ser verdadeiras em cada ponto do fluxo de risco. 
 | R19 | Mapear obrigações e normas somente com fonte primária ou atribuída | fonte, versão, cláusula, artefato mapeado, tipo de relação, cobertura, ressalva, revisor | crosswalk distingue alinhamento de compliance; não inventa mapeamentos |
 | R20 | Definir mudanças materiais e eventos que reabrem risco | gatilho, fonte de detecção, ativos/evidências impactados, controle provisório, owner, vencimento, disposição | ativos acionados não dependem indefinidamente de aprovação anterior |
 
-## 5. Playbook: fluxo risco → impacto → aprovação
+## 5. Plano de implantação — risco, impacto e aprovação
 
 Classificação, impact assessment e aprovação **não são três aprovações concorrentes**. Resolvem problemas diferentes e operam em sequência:
 
