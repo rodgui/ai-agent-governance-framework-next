@@ -145,6 +145,14 @@ Cada evento material e severidade mapeia para uma decisão accountable e um cami
 
 Reativação somente após causa raiz, remediação, regressão, monitoramento e prontidão de rollback evidenciados: vínculo do incidente, versão alterada, pacote de reteste, risco residual, authority aprovadora, condições e escopo do rollout. **A falha anterior não é mais reproduzível nas condições testadas e sinais de alerta precoce estão ativos.**
 
+### 2.8 Contenção de topologia multiagente
+
+Quando um incidente envolver supervisor, worker, reviewer ou router, a contenção deve identificar a topologia, a versão, a delegation edge, o parent, o child e os descendants afetados. O menor blast radius seguro pode ser a edge, a capability, o child, o parent ou toda a topologia; a disposição precisa ser decidida pela Run Authority conforme tier e failure boundary, sem depender do agente comprometido.
+
+Preserve a linha do tempo com o mesmo `correlationId`, incluindo iniciador, supervisor, worker, delegated subject, policy decisions, inputs/outputs validados, tools, budget/depth checks e outcome. Não permita retry ou replay após expiry, revocation, quarantine ou policy denial. Reativação exige evidência de contenção, análise de propagação para descendants e memória compartilhada quando aplicável, regression evidence e decisão explícita sobre a topologia.
+
+Use o [pattern de governança de delegação multiagente](../../toolkit/patterns/multi-agent-delegation-governance.md) e o [Agent Delegation Contract](../../toolkit/templates/agent-delegation-contract.md) para registrar a failure boundary e a disposição da edge.
+
 ## 3. Aprender
 
 ### 3.1 Investigação e preservação de evidências
@@ -241,6 +249,10 @@ Um desvio isolado pode ser perfeitamente legítimo. Enriqueça o sinal com: tier
 9. **Versionar regra e baseline — o incidente precisa indicar qual lógica gerou a decisão.**
 
 > **Artefato para produzir agora — Behavioral Analytics Use Case.** Use o [Behavioral Analytics Use Case](../../toolkit/templates/behavioral-analytics-use-case.md) para registrar hipótese, features, privacy boundaries, thresholds, response contract, calibração e sunset. Anexe a baseline e a versão da regra ao evidence package; uma anomalia não deve virar finding ou contenção sem esse contexto.
+
+Para uma topologia AI-native, complemente esse caso de behavioral analytics com o [profile opcional de observabilidade AI-native](../../toolkit/patterns/ai-native-observability-profile.md). O profile organiza sinais de task, delegation, model, retrieval, policy, tool, memory/state, human intervention, containment e value/cost; não substitui os controles R1–R18, não autoriza captura de payload e não transforma cobertura de telemetry em eficácia de control.
+
+**Critério operacional adicional:** um drill deve reconstruir uma cadeia task → delegation → model/retrieval → policy → tool → outcome e alcançar a authority de resposta dentro do alvo, preservando evidence e respeitando redaction, retention, access, export e cardinality limits.
 
 ## 6. Referência normativa
 

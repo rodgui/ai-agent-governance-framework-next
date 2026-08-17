@@ -251,6 +251,8 @@ Permissões em produção são testadas com casos positivos e negativos. **Least
 
 Quando um agente atua em nome de um usuário: a interface deixa claro qual ação será executada; o consentimento cobre objeto, destino e efeito; o token não amplia privilégios do usuário; a decisão distingue recomendação, preparação e execução; ações irreversíveis exigem confirmação compatível com o risco; logs preservam usuário, agente, tool e resultado. **A delegação não transfere accountability do sistema para o usuário final.**
 
+Quando a delegação ocorre entre agentes, registre a topologia e cada delegation edge com parent, child, finalidade, tarefa, scopes, data classes, depth, fan-out, budget, expiry, revocation e correlation. O child recebe autoridade atenuada, nunca herda implicitamente o envelope do supervisor. Use a [ADR-0013 — Contrato de delegação multiagente](../architecture/decisions/0013-multi-agent-delegation-contract.md), o [pattern de governança de delegação](../../toolkit/patterns/multi-agent-delegation-governance.md) e o [template de contrato](../../toolkit/templates/agent-delegation-contract.md) para o desenho inicial; a extensão do blueprint schema permanece pendente de walkthrough.
+
 ### 3.6 Controles por tier
 
 | Tier | Controle adicional |
