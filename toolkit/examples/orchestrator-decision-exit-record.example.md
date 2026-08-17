@@ -5,7 +5,7 @@ maturity: illustrative
 last_reviewed: 2026-08-17
 related:
   - ../templates/orchestrator-decision-exit-record.md
-  - ../../docs/architecture/decisions/0011-multi-control-plane-arbitration.md
+  - ../../docs/architecture/decisions/0015-multi-control-plane-arbitration.md
   - ../patterns/multi-control-plane-governance.md
 ---
 
@@ -34,9 +34,20 @@ A organização fictícia possui agentes de atendimento criados em uma plataform
 
 O piloto cobre leitura de tickets, preparação de drafts e atualização de prioridade mediante step-up. Não cobre pagamentos, deleções, concessão de acesso ou decisões sobre pessoas.
 
-## 3. Topologia
+## 3. Topologia e padrão de orchestration
 
 A topologia é **coordinated/federated** no vocabulário externo; no vocabulário canônico do framework, é uma combinação de runtime orchestration com governance federada e control/assurance planes separados.
+
+| Campo | Valor fictício |
+|---|---|
+| `workAttributes` | `determinism: moderate`; `governanceConstraints: high`; `humanOversight: high`; `iterativeNeed: moderate`; `eventDrivenCoordination: low` |
+| `primaryOrchestrationPattern` | `workflow` |
+| `secondaryOrchestrationPattern` | `supervisory-multi-agent` |
+| `patternRationale` | O atendimento segue sequência, approval e SLA; agentes especializados ajudam em reconciliação e preparação de drafts, mas não substituem o workflow nem o step-up humano. |
+| `patternEvidenceRefs` | casos fictícios de service desk, teste de approval e matriz de interaction cross-plane |
+| `patternConfidence` | `medium` |
+| `missingPatternEvidence` | dados de operação real, volume de exceções e teste longitudinal de escalations |
+| `iterationPolicy` | `maxIterations=2`; retry/refinement budget de 1; terminar após draft validado, approval humano ou `policy deny`; escalation para Design/Run Authority; owner `fictitious-agent-platform`; evidence: decision timeline e negative tests |
 
 | Plano | Capability | Boundary |
 |---|---|---|

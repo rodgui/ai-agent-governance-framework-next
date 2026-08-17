@@ -98,7 +98,7 @@ A autorização de uma ação material é composta: todos os enforcement points 
 
 Divergência entre owner, tier, admissibility, lifecycle, identity, tool scope ou policy status é finding — não é resolvida escolhendo o timestamp mais recente. Para ações críticas, a indisponibilidade de identity, policy gateway, tool broker, authority ou evidence obrigatória resulta em `fail-closed`, `restricted` ou `quarantined`, conforme o risco e o comportamento explicitamente aprovado no blueprint.
 
-Use o [ADR-0011 — Arbitragem entre múltiplos control planes](../architecture/decisions/0011-multi-control-plane-arbitration.md) para a decisão e o pattern [Multi-Control-Plane Governance](../../toolkit/patterns/multi-control-plane-governance.md) para a aplicação. A matriz de interação deve tornar visíveis plano, capability, authority, source of truth, enforcement, correlation, fallback, evidence e conflict path.
+Use o [ADR-0015 — Arbitragem entre múltiplos control planes](../architecture/decisions/0015-multi-control-plane-arbitration.md) para a decisão e o pattern [Multi-Control-Plane Governance](../../toolkit/patterns/multi-control-plane-governance.md) para a aplicação. A matriz de interação deve tornar visíveis plano, capability, authority, source of truth, enforcement, correlation, fallback, evidence e conflict path.
 
 ### 1.5 Princípios arquiteturais
 

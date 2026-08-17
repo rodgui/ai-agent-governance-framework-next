@@ -1,7 +1,7 @@
 ---
 title: Bibliografia
 status: maintained
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-17
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
@@ -103,6 +103,9 @@ Registro de fontes primárias usadas pelo framework. Claims temporais devem regi
 | MS-008 | Guidance to set your organization's responsible AI policies | Documentação oficial de fornecedor | <https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/responsible-ai-policies> | 2026-08-13 | Standards, ownership, oversight, templates, audit, incident response e contestability. |
 | PAN-001 | A Complete Guide to Agentic AI Governance | Guia técnico de fornecedor | <https://www.paloaltonetworks.com/cyberpedia/what-is-agentic-ai-governance> | 2026-08-13 | Autoridade delegada, risco de ação, tools, privilege escalation, drift e accountability. |
 | IAPS-001 | AI Agent Governance: A Field Guide | Field guide independente | <https://static1.squarespace.com/static/64edf8e7f2b10d716b5ba0e1/t/6801438c58c2692374995db0/1744913293841/Agent+Governance_+A+Field+Guide.pdf> | 2026-08-13 | Literatura e taxonomy de intervenções: alignment, control, visibility, security/robustness e societal integration. Propostas são exploratórias e não comprovam eficácia. |
+| YT-Gj1h4zipmHA | Who Do You Trust to Orchestrate Your AI Agents? — webinar Gartner e transcrição fornecida pelo usuário | Webinar on-demand + transcript | <https://www.youtube.com/watch?v=Gj1h4zipmHA> · <https://www.gartner.com/en/webinar/914828/1916099-who-do-you-trust-to-orchestrate-your-ai-agents> | 2026-08-17 | Observações e guidance sobre workflow, iterative reasoning, supervisory multi-agent, primary/secondary pattern, control-plane placement, AIR e capability scoring. Não é policy, control, especificação ou evidência de eficácia. A transcrição é a fonte primária dos locators usados nesta revisão e possui limitações de reconhecimento de fala. |
+
+A chave `YT-Gj1h4zipmHA` é um locator determinístico derivado da URL do vídeo fornecido; não representa um research-note ID nem uma classificação de autoridade metodológica. O claim oral de aproximadamente 85% de decisões corretas e 15% incorretas/alucinadas não é usado como threshold, baseline ou requisito porque a fonte disponível não informa metodologia, população, período ou definição operacional.
 
 #### Hierarquia de evidência
 

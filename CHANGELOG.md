@@ -2,6 +2,24 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-17 — Walkthrough G1/G2/G3/G4: pattern fit e iteration policy
+
+- Dois casos fictícios foram exercitados: `workflow` primary com `supervisory-multi-agent` secondary e `iterative-reasoning` primary com `workflow` secondary.
+- O walkthrough confirmou cobertura suficiente para architecture pattern versus orchestration pattern, delegation attenuation, cross-plane arbitration, AI-native observability e exit/missing evidence.
+- O G3 recebeu `iterationPolicy` para registrar max iterations, retry/refinement budget, loop termination, escalation trigger, owner e evidence quando `iterative-reasoning` estiver presente.
+- O blueprint schema, controls, risk tiers, MPB, registry e release não foram alterados. Substitution, replay, deletion e cardinality/cost drills permanecem evidence gaps.
+- Esta entrada descreve alterações locais pendentes de validação, revisão e publicação; não altera, por si só, a release ou a baseline publicada.
+
+## 2026-08-17 — Segunda revisão crítica Gartner: pattern fit e integridade arquitetural
+
+- Corrigida a colisão de namespace: a ADR G1 foi renumerada de `0011` para `0015`; a ADR-0011 histórica de adoção da release 1.1.0 permanece preservada e explicitamente marcada como histórica no decision log.
+- Normalizados os corpos das ADRs G1/G2/G4 para usar `draft` de forma coerente com seu estado de rascunho.
+- Registrada a proveniência do webinar e da transcrição em `research/sources/bibliography.md`, com evidence cutoff, conceitos utilizados e limitações; claims orais sem metodologia não foram importados como thresholds.
+- A página 03 agora distingue architecture pattern de orchestration pattern e registra um work profile não normativo para pattern fit, sem alterar T1–T4, admissibility, risk score, MPB, impact assessment ou schema.
+- O G3 passou a registrar pattern primário/secundário, work attributes, rationale, evidence, confidence e missing evidence; criado assessment vendor-neutral de technology evaluation para orchestrators.
+- AIR e consolidated/coordinated/federated permanecem crosswalk externo; não foram promovidos a arquitetura, placement ou control normativo.
+- Esta entrada descreve alterações locais pendentes de validação, revisão e publicação; não altera, por si só, a release ou a baseline publicada.
+
 ## 2026-08-17 — Terceira onda local Gartner: observabilidade AI-native
 
 - Adicionadas a ADR-0014, o pattern de profile AI-native, o template de profile e o exemplo fictício de cadeia task/delegation/tool/policy/containment.
@@ -18,12 +36,13 @@ Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o s
 
 ## 2026-08-17 — Primeira onda Gartner: control planes e orchestrator decision record
 
-- Adicionada a ADR-0011 e o pattern de governança multi-control-plane, com precedência, authority, source of truth, correlation, conflict path e fail-safe.
+- Adicionada a ADR-0015 e o pattern de governança multi-control-plane, com precedência, authority, source of truth, correlation, conflict path e fail-safe.
 - O capítulo 02 passou a definir o tratamento de conflitos entre control planes; o capítulo 06 passou a ligar a arquitetura e o capability mapping à arbitragem cross-plane.
 - Adicionado o `Orchestrator Decision and Exit Record`, com exemplo fictício para comparar topology, capabilities, enforcement, portability, lock-in, resilience e exit sem prescrever fornecedor.
 - O capítulo 07 passou a tratar claims de orchestrator como alegações avaliáveis; o capítulo 09 passou a exigir matriz cross-plane, degraded mode, exit trigger e recovery evidence no run readiness.
 - Os planos de implantação foram renomeados para explicitar seu escopo: planos específicos permanecem subordinados ao domínio correspondente, enquanto planos integrados permanecem no nível do capítulo.
 - A decisão estrutural foi formalizada na [ADR-0012 — Hierarquia dos planos de implantação](docs/architecture/decisions/0012-implementation-plan-hierarchy.md).
+- A decisão G1 foi renumerada de ADR-0011 para ADR-0015 porque ADR-0011 já identifica a adoção aceita da release 1.1.0 no histórico preservado.
 - Esta entrada descreve alterações locais pendentes de revisão e publicação; não altera, por si só, a release ou a baseline publicada.
 
 ## 2026-08-13 — Segunda onda de revisão editorial ampla

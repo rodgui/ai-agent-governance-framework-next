@@ -7,7 +7,7 @@ last_reviewed: 2026-08-17
 review_cycle: quarterly
 owners: [architecture, governance, platform]
 related:
-  - ../../docs/architecture/decisions/0011-multi-control-plane-arbitration.md
+  - ../../docs/architecture/decisions/0015-multi-control-plane-arbitration.md
   - ../../docs/framework/06-architecture-and-technical-controls.md
   - ../../docs/framework/07-evaluation-evidence-and-assurance.md
   - ../../docs/framework/09-operations-incidents-and-continuity.md
@@ -64,6 +64,16 @@ related:
 | `failureBoundaries` | blast radius e containment boundary |
 | `correlationModel` | correlation IDs, event lineage e evidence references |
 | `authorityModel` | authorities por capability, tier e decisão |
+| `workAttributes` | `determinism`, `governanceConstraints`, `humanOversight`, `iterativeNeed` e `eventDrivenCoordination`, cada um como `low`, `moderate` ou `high`, com rationale |
+| `primaryOrchestrationPattern` | `workflow`, `iterative-reasoning` ou `supervisory-multi-agent` |
+| `secondaryOrchestrationPattern` | pattern complementar, ou `none` quando não houver |
+| `patternRationale` | por que o pattern primário/secundário corresponde à natureza do trabalho |
+| `patternEvidenceRefs` | evidências, casos, testes ou observações que sustentam o fit |
+| `patternConfidence` | `low`, `medium` ou `high`, com limitações declaradas |
+| `missingPatternEvidence` | evidência ainda ausente; nunca preencher como zero silencioso |
+| `iterationPolicy` | `maxIterations`, retry/refinement budget, loop termination, escalation trigger, owner e evidence quando `iterative-reasoning` estiver presente |
+
+> `workAttributes` e os campos de pattern são guidance para seleção arquitetural. Não alteram diretamente architecture pattern, T1–T4, admissibility, risk score, readiness score, MPB ou impact assessment.
 
 **Diagrama ou referência de arquitetura:**
 
@@ -204,6 +214,8 @@ related:
 ## 10. Checklist de conclusão
 
 - [ ] topology e boundaries estão descritas;
+- [ ] work profile e pattern primário/secundário têm rationale, evidence, confidence e missing evidence;
+- [ ] quando aplicável, `iterationPolicy` define limite, budget, terminação, escalation, owner e evidence;
 - [ ] capabilities necessárias foram comparadas com evidência;
 - [ ] authority e source of truth foram definidos por atributo;
 - [ ] enforcement points e fallbacks são conhecidos;
