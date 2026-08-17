@@ -2,6 +2,14 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-17 — Unreleased: substitution/replay e G4 operational drill
+
+- Executado teste determinístico e vendor-neutral de substitution/replay: export canônico preservado, lineage/correlation mantidos, escrita crítica negada e retry pós-expiry negado em duas implementações abstratas.
+- Executado G4 operational drill fictício: payload/prompt/secret redacted ou omitidos, deletion de memory/state em primary/cache/index/backup, evidence hold separado e cardinalidade/custo dentro de envelope ilustrativo.
+- Adicionados os exemplos `orchestrator-substitution-replay.example.md` e `ai-native-observability-operational-drill.example.md`, com links nos templates e catálogo de artefatos.
+- O schema de audit event, blueprint schema, controls, risk tiers, MPB, registry, ADR status e release permanecem inalterados. Os resultados são evidência de desenho/teste determinístico e não equivalem a aprovação de produção.
+- Esta entrada permanece `Unreleased` e não altera a release `1.1.0`.
+
 ## 2026-08-17 — Walkthrough G1/G2/G3/G4: pattern fit e iteration policy
 
 - Dois casos fictícios foram exercitados: `workflow` primary com `supervisory-multi-agent` secondary e `iterative-reasoning` primary com `workflow` secondary.

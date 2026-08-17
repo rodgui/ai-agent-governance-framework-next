@@ -12,6 +12,7 @@ related:
   - ../../docs/framework/07-evaluation-evidence-and-assurance.md
   - ../../docs/framework/09-operations-incidents-and-continuity.md
   - ../patterns/multi-control-plane-governance.md
+  - ../examples/orchestrator-substitution-replay.example.md
 ---
 
 # Orchestrator Decision and Exit Record

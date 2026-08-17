@@ -12,6 +12,7 @@ related:
   - ../schemas/audit-event.schema.json
   - ../../docs/framework/07-evaluation-evidence-and-assurance.md
   - ../../docs/framework/09-operations-incidents-and-continuity.md
+  - ../examples/ai-native-observability-operational-drill.example.md
 ---
 
 # AI-Native Observability Profile
