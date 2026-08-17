@@ -20,7 +20,7 @@ A arquitetura responde a uma pergunta que determina se todo o framework funciona
 - Se a identidade é uma service account compartilhada, nenhuma ação é atribuível.
 - Se a ferramenta é mais crítica que o modelo, a discussão sobre qual modelo usar é secundária.
 
-Este capítulo é o maior do framework porque cobre os **seis domínios técnicos** onde a governança se torna enforcement: arquitetura e capability map, identidade e acesso, dados e AI-ready, modelos e provedores, tools/APIs/MCP, e segurança. Cada domínio segue o mesmo padrão: o que é, o que decidir, como implantar (playbook), e o que bloqueia o release (decision gate).
+Este capítulo é o maior do framework porque cobre os **seis domínios técnicos** onde a governança se torna enforcement: arquitetura e capability map, identidade e acesso, dados e AI-ready, modelos e provedores, tools/APIs/MCP, e segurança. Cada domínio segue o mesmo padrão hierárquico: o que é, o que decidir, um plano de implantação subordinado ao próprio domínio, e o que bloqueia o release (decision gate).
 
 A ideia central, expressa em dois princípios:
 
@@ -90,6 +90,16 @@ O grau de governança aumenta quando cresce qualquer uma destas dimensões: alca
 
 **O control plane não deve:** substituir sistemas de identidade ou DLP; decidir sozinho risco residual; transformar telemetria incompleta em falsa certeza; centralizar toda responsabilidade em um único time; confundir uso com valor.
 
+### 1.4.1 Governança de múltiplos control planes
+
+Múltiplos control planes, gateways, brokers e plataformas de workflow podem coexistir. O que não pode coexistir é **autoridade implícita e não reconciliada**. Cada capability deve declarar authority, source of truth por atributo, enforcement point, fallback, correlation key e evidence reference. Um orchestrator coordena e aciona; não se torna autoridade normativa apenas por executar routing ou policy local.
+
+A autorização de uma ação material é composta: todos os enforcement points obrigatórios para o tier precisam produzir decisões compatíveis. Para identity, data, privacy, admissibility, security e state-changing actions, a decisão mais restritiva prevalece, salvo exceção formal com escopo, compensating controls, expiry e residual-risk authority. Um `deny`, `restricted`, `quarantined` ou `missing` crítico não pode ser convertido silenciosamente em `allow` por outro plano.
+
+Divergência entre owner, tier, admissibility, lifecycle, identity, tool scope ou policy status é finding — não é resolvida escolhendo o timestamp mais recente. Para ações críticas, a indisponibilidade de identity, policy gateway, tool broker, authority ou evidence obrigatória resulta em `fail-closed`, `restricted` ou `quarantined`, conforme o risco e o comportamento explicitamente aprovado no blueprint.
+
+Use o [ADR-0011 — Arbitragem entre múltiplos control planes](../architecture/decisions/0011-multi-control-plane-arbitration.md) para a decisão e o pattern [Multi-Control-Plane Governance](../../toolkit/patterns/multi-control-plane-governance.md) para a aplicação. A matriz de interação deve tornar visíveis plano, capability, authority, source of truth, enforcement, correlation, fallback, evidence e conflict path.
+
 ### 1.5 Princípios arquiteturais
 
 1. **Proporcional:** controles crescem com risco e capacidade.
@@ -100,7 +110,7 @@ O grau de governança aumenta quando cresce qualquer uma destas dimensões: alca
 6. **Lifecycle-aware:** criação, mudança, attestation e sunset são partes do mesmo sistema.
 7. **Platform-agnostic:** a policy é comum; adapters e evidências variam por plataforma.
 
-### 1.6 Playbook do runtime control plane
+### 1.6 Plano de implantação — runtime e control plane
 
 O control plane transforma os standards dos domínios em enforcement técnico. A arquitetura precisa deixar explícito **onde** autenticação, policy, acesso a modelo, mediação de ferramentas, egress, rate limit, logging e contenção realmente acontecem:
 
@@ -160,6 +170,8 @@ A arquitetura de referência e a policy são agnósticas de produto por decisão
 3. **Defina contrato de integração e source of truth por atributo.** Não por sistema — por atributo. Owner de negócio pode vir do RH, tier do registro de risco, estado operacional da plataforma de execução. Duplicar ownership do mesmo atributo em cinco sistemas é como se perde a rastreabilidade.
 4. **Só então avalie produtos para os gaps remanescentes.** Um produto pode cobrir várias capabilities; isso é vantagem operacional, não razão para o framework depender do nome dele.
 5. **Registre um ADR para toda decisão que cria lock-in, centraliza enforcement ou altera trust boundary.** Essas três são reversíveis apenas com custo alto, e a justificativa precisa sobreviver à saída de quem decidiu.
+
+Quando a decisão envolve um orchestrator ou control plane, use também o [Orchestrator Decision and Exit Record](../../toolkit/templates/orchestrator-decision-exit-record.md). O registro reúne topology, capabilities, authority, enforcement, portability, proprietary dependencies, degraded mode, substitution test e exit trigger; ele complementa o ADR e não o substitui.
 
 > Invertida — produto primeiro, capability depois — a organização passa a chamar de governança aquilo que a ferramenta comprada faz.
 
@@ -248,7 +260,7 @@ Quando um agente atua em nome de um usuário: a interface deixa claro qual açã
 | T3 — alto | JIT, dual control para privilégio, session recording quando cabível |
 | T4 — crítico | isolamento dedicado, autorização por transação e monitoramento contínuo |
 
-### 3.7 Playbook de implantação
+### 3.7 Plano de implantação — identidade e acesso
 
 1. **Classificar os modos de atuação.** Existe usuário presente? A ação ocorre no escopo dele? O agente executa assíncrono ou para múltiplos usuários? Identidade delegada só quando a sessão humana e o escopo são reais; identidade própria quando o agente age por conta própria.
 2. **Inventariar e remediar credenciais.** Descobrir chaves de API, service accounts, tokens pessoais e secrets em builders, CI/CD e runtimes. Classificar como aprovada, transitória ou proibida, com owner e prazo. **Credencial compartilhada em T2/T3 é finding, não detalhe técnico.**
@@ -311,7 +323,7 @@ O gate existe no ponto de criação do connector e na mudança material de sourc
 9. Outputs que alteram records passam por validação compatível com o risco.
 10. Incidentes de dados acionam contenção e análise de blast radius.
 
-### 4.6 Playbook de implantação
+### 4.6 Plano de implantação — dados e AI-ready data
 
 1. **Inventariar fontes candidatas.** Começar pelos casos prioritários ou uma cohort representativa; registrar owner, sistema de origem e consumidores atuais.
 2. **Classificar e confirmar a authority do owner.** Validar classificação, dados pessoais/restritos, residency, retenção e quem pode autorizar uso por IA. **Fonte sem owner ou classificação confiável vai para remediação, não para produção.**
@@ -369,7 +381,7 @@ Documente as abstrações que isolam o agente do provedor; mantenha prompts, eva
 
 Defina antecipadamente como tratar incidente do provedor, security advisory, retirada de modelo e bloqueio emergencial. O registry e os blueprints precisam responder em minutos: **quais agentes dependem da combinação afetada?**
 
-### 5.8 Playbook de implantação
+### 5.8 Plano de implantação — modelos e provedores
 
 1. Definir critérios de entrada no catálogo por tier e classe de dados.
 2. Criar evaluation baseline por use case, antes de aprovar qualquer versão.
@@ -419,7 +431,7 @@ Cada tool, API ou MCP server registra: owner e fornecedor/origem; versão e prov
 
 **Prompt instructions não substituem enforcement técnico.**
 
-### 6.5 Playbook de implantação
+### 6.5 Plano de implantação — tools, APIs e MCP
 
 1. **Descobrir e registrar tools e servidores MCP.** Descoberta automática ajuda; ownership e autorização precisam ser confirmados por pessoa.
 2. **Classificar ações, não produtos.** Uma API contém operações de riscos distintos. Separar leitura, criação, atualização, exclusão, execução, privilegiada, financeira e safety-critical.
@@ -487,7 +499,7 @@ O threat model declara: assets e impactos; trust boundaries; adversários e misu
 
 Identificar agent, version, user, tool e affected assets; conter identidade, tool, connector ou agente no menor blast radius; preservar evidências; avaliar propagação para memórias, indexes e downstream systems; corrigir causa, não apenas prompt; executar regression e reauthorization; comunicar conforme severidade; atualizar threat model e control catalog.
 
-### 7.6 Playbook AgentSecOps
+### 7.6 Plano de implantação — AgentSecOps
 
 1. **Modelar ameaças por fluxo e trust boundary.** **Incluir abuso legítimo de permissões**, não apenas atacante externo.
 2. **Construir catálogo de abuse cases.** Injeção que leva a uso indevido de ferramenta; envenenamento de memória; MCP comprometido; loop descontrolado; identidade usada fora do runtime.
