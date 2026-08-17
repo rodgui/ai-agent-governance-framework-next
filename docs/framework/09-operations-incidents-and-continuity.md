@@ -24,6 +24,8 @@ Este capítulo cobre a operação no dia a dia em quatro blocos:
 
 O princípio que atravessa tudo: **sinais geram decisões e ações — não dashboards decorativos.** Um alerta sem owner, sem runbook e sem ação não é governança, é ruído. E o complemento: **a contenção não pode depender do próprio agente com falha.**
 
+Quando a operação depende de mais de um control plane ou orchestrator, o run readiness deve incluir a [matriz de interação cross-plane](../../toolkit/patterns/multi-control-plane-governance.md), o comportamento fail-safe de cada enforcement point e a autoridade de arbitragem para conflitos. Quando houver dependência crítica de um orchestrator, o [Orchestrator Decision and Exit Record](../../toolkit/templates/orchestrator-decision-exit-record.md) deve registrar modo degradado, exit trigger, export, substitution test e recovery evidence. A continuidade não está completa quando apenas o serviço retorna; registry, identity, policy, telemetry e evidence também precisam ser reconciliáveis.
+
 ## 1. Operar
 
 ### 1.1 Run readiness: o que precisa existir antes do release
@@ -65,7 +67,7 @@ Baselines e sinais para mudança de comportamento, qualidade, segurança, custo 
 
 Atribuir consumo e custo operacional total a agente, owner, ambiente e resultado mensurável: custo unitário, orçamento, quota, previsão, variância, alocação compartilhada, anomalia e decisão de otimização. **Violação de threshold dispara throttling ou revisão; alegações de custo permanecem separadas de alegações de realização de valor.**
 
-### 1.7 Como implantar observabilidade orientada à decisão
+### 1.7 Plano de implantação — observabilidade orientada à decisão
 
 **Entrada:** registry e blueprint do agente, risk tier/admissibilidade, dependências, SLOs de serviço e owners ativos. **Authority típica:** Run Authority, com Technical Owner e domain authorities aplicáveis. **Saída:** contrato de telemetria, baseline, dashboards por decisão, alert-to-action e evidence de run readiness. **Critério de conclusão:** cada sinal crítico possui source, threshold, owner, severidade, ação e caminho de contenção recuperável.
 

@@ -25,6 +25,8 @@ O princípio que amarra tudo: **a força da conclusão não pode exceder a forç
 
 > **Artefatos para produzir agora — avaliação e release evidence.** Defina a estratégia no [template de assessment](../../toolkit/templates/assessment-template.md), registre o pacote no [Release Evidence Manifest](../../toolkit/templates/release-evidence-manifest.md) e use o [release decision checklist](../../toolkit/templates/release-decision-checklist.md) para verificar se a authority pode aprovar, condicionar ou bloquear. O [schema do manifest](../../toolkit/schemas/release-evidence-manifest.schema.json) torna a lineage verificável; o template não substitui o teste nem a decisão.
 
+Quando a decisão envolve um orchestrator ou control plane, claims de capability, modularity, neutrality, observability, enforcement, portability, resilience e exit devem ser tratados como alegações avaliáveis, não como cobertura presumida pela marca ou pelo fornecedor. Use o [Orchestrator Decision and Exit Record](../../toolkit/templates/orchestrator-decision-exit-record.md) para vincular cada claim a evidence, limitation, test ou status `missing`/`conditional`. A assurance deve desafiar a decisão de plataforma sem assumir a responsabilidade operacional do runtime.
+
 ## 1. Estratégia de avaliação
 
 ### 1.1 A estratégia declara antes de testar
