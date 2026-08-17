@@ -1,7 +1,7 @@
 ---
 title: Examples
 status: maintained
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-17
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
@@ -45,6 +45,8 @@ Records agrupados por caso em [`cases/`](cases/), validados pelos mesmos schemas
 - [`supervisor-worker-delegation.example.md`](supervisor-worker-delegation.example.md) — topologia fictícia com delegação permitida, privilege escalation negada e falha state-changing contida.
 - [`ai-native-observability.example.md`](ai-native-observability.example.md) — cadeia fictícia de task, delegation, retrieval, policy, tool, human intervention, containment, cost e outcome.
 - [`orchestrator-decision-exit-record.example.md`](orchestrator-decision-exit-record.example.md) — comparação fictícia de topologia, capabilities, authority, lock-in, portability, resilience e exit.
+- [`orchestrator-substitution-replay.example.md`](orchestrator-substitution-replay.example.md) — drill fictício de export canônico, substitution e replay sem side effect.
+- [`ai-native-observability-operational-drill.example.md`](ai-native-observability-operational-drill.example.md) — drill fictício de redaction, deletion, cardinalidade e custo de telemetry.
 - [`risk-assessment.example.md`](risk-assessment.example.md) — classificação e residual gaps ilustrativos.
 - [`evaluation-report.example.md`](evaluation-report.example.md) — evaluation contract, slices, thresholds e limitações.
 - [`release-decision.example.md`](release-decision.example.md) — decisão G5 condicionada e evidence refs.
