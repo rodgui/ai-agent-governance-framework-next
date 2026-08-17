@@ -2,7 +2,7 @@
 title: Patterns de governança de agentes
 status: maintained
 owner: framework-maintainers
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-17
 review_cycle: quarterly
 related:
   - ../artifact-catalog.md
@@ -18,7 +18,7 @@ Patterns são soluções recorrentes para problemas de desenho. Eles mostram con
 | Pattern | Use quando | Saída principal | Capítulo ou decisão relacionada | Trade-off central |
 |---|---|---|---|---|
 | [Control and Assurance Planes](control-and-assurance-planes.md) | control plane e assurance plane estão misturados ou sem owner claro | boundaries, owners, evidence flow e enforcement points | Cap. 06–07; G2–G5 | centralização de controles versus autonomia de domínio |
-| [Multi-Control-Plane Governance](multi-control-plane-governance.md) | múltiplos control planes, gateways ou systems of record participam da mesma decisão | authority matrix, precedence, correlation, conflict path e fail-safe | ADR-0011; Cap. 02 e 06 | interoperabilidade versus precedência e disponibilidade |
+| [Multi-Control-Plane Governance](multi-control-plane-governance.md) | múltiplos control planes, gateways ou systems of record participam da mesma decisão | authority matrix, precedence, correlation, conflict path e fail-safe | ADR-0015; Cap. 02 e 06 | interoperabilidade versus precedência e disponibilidade |
 | [Multi-Agent Delegation Governance](multi-agent-delegation-governance.md) | agentes coordenam ou delegam tarefas entre supervisor, worker, reviewer ou router | topology, delegation edges, authority attenuation, limits e failure propagation | ADR-0013; Cap. 06 e 09 | autonomia e escala versus transitive trust e blast radius |
 | [AI-Native Observability Profile](ai-native-observability-profile.md) | task, model, retrieval, tool, policy, memory e delegation precisam ser reconstruíveis | correlation, provenance, redaction, alert-to-action, containment e value/cost separation | ADR-0014; Cap. 07 e 09 | cobertura e interoperabilidade versus cardinalidade, custo e privacidade |
 | [Evidence Package as Code](evidence-package-as-code.md) | evidence precisa ser recuperável, versionada e verificável em escala | manifest, lineage, checks e resultado de validação | Cap. 07; release e attestation | automação versus completude e custo de manutenção |

@@ -24,6 +24,21 @@ Este vocabulário reduz ambiguidade entre policy, arquitetura, patterns, control
 | **State-changing action** | Ação que cria, modifica, executa, aprova, deleta ou delega algo fora da resposta do model. | Geração de texto sem side effect. |
 | **Prohibited use** | Uso que não pode ser autorizado no scope atual. | Exception pendente. |
 
+## Vocabulário externo de orchestration
+
+Os termos abaixo são usados como **crosswalk explicativo**, não como nova taxonomia normativa nem como valores adicionais do `agent-blueprint.schema.json`.
+
+| Termo | Uso nesta revisão | Não confundir com |
+|---|---|---|
+| **Architecture pattern** | Responde “que tipo de sistema é este?”; usa a taxonomia canônica do blueprint, como `workflow-agent`, `tool-using-agent` ou `multi-agent`. | Orchestration pattern. |
+| **Orchestration pattern** | Responde “como o trabalho é coordenado durante a execução?”; o vocabulário Gartner distingue workflow, iterative reasoning e supervisory multi-agent orchestration. | Architecture pattern, risk tier ou admissibility. |
+| **Orchestration work profile** | Guidance não normativo que classifica `determinism`, constraints de governance/regulação, human oversight, iterative need e event-driven coordination como `low`, `moderate` ou `high` para orientar pattern fit. | Risk score, readiness score, MPB ou impact assessment. |
+| **Primary/secondary orchestration pattern** | O pattern dominante e, quando necessário, o pattern complementar de um use case; ambos exigem rationale e evidence suficiente para a decisão. | `primary_orchestrator` universal. |
+| **Consolidated/coordinated/federated placement** | Vocabulário externo para discutir onde control-plane e orchestration authority ficam distribuídos. | `Federated Governance Operating Model`, que trata decision rights e authorities organizacionais. |
+| **AIR — Action, Intelligence, Record** | Crosswalk externo para raciocinar sobre execution/tools, model/reasoning e systems of record/source of truth. | Os cinco planos da arquitetura canônica. |
+
+A classificação de orchestration pattern ocorre depois da decisão “agente é o mecanismo certo?” e antes de decidir topology/control-plane e avaliar technology fit. Ela não altera diretamente T1–T4, admissibility, risk score, MPB ou impact assessment.
+
 ## Autonomia e humanos
 
 | Termo | Definição neste framework | Não confundir com |

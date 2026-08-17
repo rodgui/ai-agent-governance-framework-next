@@ -14,7 +14,11 @@ Decisões arquiteturais estáveis, com contexto, alternativas e consequências.
 | [ADR-0008](../../project/decisions/0002-derived-documentation-build-and-publication.md) | accepted | Build verificável e publicação manual do site |
 | [ADR-0009](decisions/0009-risk-tier-and-admissibility.md) | accepted | Separação entre risk tier e admissibilidade |
 | [ADR-0010](decisions/0010-structured-governance-contracts-2.0.md) | accepted | Contratos estruturados de governança 2.0 |
-| [ADR-0011](../../project/decisions/source-history/0011-framework-release-1.1-adoption.md) | accepted | Adoção da release 1.1.0 após quality gates e release |
+| [ADR-0011 — histórico](../../project/decisions/source-history/0011-framework-release-1.1-adoption.md) | accepted | Adoção da release 1.1.0 após quality gates e release |
+| [ADR-0012](decisions/0012-implementation-plan-hierarchy.md) | accepted | Hierarquia dos planos de implantação |
+| [ADR-0013](decisions/0013-multi-agent-delegation-contract.md) | draft | Contrato de delegação multiagente |
+| [ADR-0014](decisions/0014-ai-native-observability-profile.md) | draft | Profile opcional de observabilidade AI-native |
+| [ADR-0015](decisions/0015-multi-control-plane-arbitration.md) | draft | Arbitragem entre múltiplos control planes |
 
 ## Convenções
 

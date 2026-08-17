@@ -4,7 +4,7 @@ status: example
 maturity: illustrative
 last_reviewed: 2026-08-17
 related:
-  - ../../docs/architecture/decisions/0011-multi-control-plane-arbitration.md
+  - ../../docs/architecture/decisions/0015-multi-control-plane-arbitration.md
   - ../patterns/multi-control-plane-governance.md
   - ../../docs/framework/02-governance-and-accountability.md
   - ../../docs/framework/06-architecture-and-technical-controls.md

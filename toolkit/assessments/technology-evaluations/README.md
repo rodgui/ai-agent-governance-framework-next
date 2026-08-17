@@ -2,6 +2,10 @@
 
 Avaliações de tecnologia verificam se uma alternativa implementa capabilities requeridas sem transformar produto, fornecedor ou serviço em requisito do framework.
 
+## Assessments disponíveis
+
+- [Orchestrator Technology Evaluation](orchestrator-evaluation.md) — comparação contextual de pattern fit, placement/authority, capabilities, operability e economics/exit para alimentar o G3.
+
 ## Contrato mínimo
 
 Cada avaliação declara:
@@ -14,6 +18,6 @@ Cada avaliação declara:
 - riscos residuais, owner e decision authority;
 - conclusão condicionada ao escopo, nunca endosso geral.
 
-Use uma matriz comparativa em [`../comparison-matrices/`](../comparison-matrices/) quando houver mais de uma alternativa. Evidência de laboratório não prova prontidão de produção; claim do fornecedor não substitui teste.
+Use uma matriz comparativa em [`../comparison-matrices/README.md`](../comparison-matrices/README.md) quando houver mais de uma alternativa. Evidência de laboratório não prova prontidão de produção; claim do fornecedor não substitui teste.
 
 > **Migration note:** a origem continha apenas `assessments/technology-evaluations/.gitkeep`; este documento é scaffold operacional novo.

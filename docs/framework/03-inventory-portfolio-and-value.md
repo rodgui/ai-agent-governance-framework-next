@@ -2,7 +2,7 @@
 title: 03 — Inventário, portfólio e valor
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-17
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -302,7 +302,37 @@ O último caso é o mais instrutivo: quando a ferramenta é privilegiada, a disc
 
 **Onde registrar:** a decisão vai no intake do caso de uso e, quando arquiteturalmente relevante, num ADR. Se a resposta for "não precisamos de agente", **registre assim mesmo** — decisão de não construir é a mais barata do portfólio e a que menos costuma ser documentada, o que faz a mesma discussão voltar seis meses depois.
 
-### 3.3 Procurement e terceiros
+### 3.3 Work profile e orchestration pattern
+
+Depois de decidir que o agente é o mecanismo adequado, classifique a **natureza do trabalho** antes de escolher topology, control-plane arrangement ou tecnologia. O `architecture pattern` responde “que tipo de sistema é este?” e continua usando a taxonomia canônica do blueprint (`assistant`, `workflow-agent`, `tool-using-agent`, `multi-agent`, `embedded-ai` ou `other`). O `orchestration pattern` responde “como o trabalho é coordenado durante a execução?” e pode combinar `workflow`, `iterative-reasoning` e `supervisory-multi-agent`.
+
+Um mesmo sistema `multi-agent` pode ter workflow orchestration dominante. Um `workflow-agent` pode usar iterative reasoning internamente. Um `tool-using-agent` pode combinar workflow e supervisory orchestration. Portanto, não derive o orchestration pattern diretamente do campo `Pattern` do blueprint.
+
+| Atributo do trabalho | `low` | `moderate` | `high` |
+|---|---|---|---|
+| `determinism` | problema aberto ou variável | sequência parcialmente conhecida | processo previsível, repetitivo e sequencial |
+| `governanceConstraints` | checkpoints limitados | approvals e traceability relevantes | explicabilidade, policy enforcement e auditabilidade críticas |
+| `humanOversight` | intervenção excepcional | revisão ou escalation recorrente | approval, override ou decisão humana frequente |
+| `iterativeNeed` | execução direta | algum retry, retrieval ou refinement | plan/execute/verify/refine/retry central ao trabalho |
+| `eventDrivenCoordination` | gatilho simples | eventos alteram parte do fluxo | eventos ativam agentes, arbitration ou respostas dinâmicas |
+
+Esses atributos são **guidance de seleção arquitetural**, não uma nova camada de risco. Não alteram diretamente T1–T4, admissibility, risk score, readiness score, MPB ou impact assessment. Registre-os com rationale, evidence cutoff, confidence e missing evidence no [Orchestrator Decision and Exit Record](../../toolkit/templates/orchestrator-decision-exit-record.md), usando o [Orchestrator Technology Evaluation](../../toolkit/assessments/technology-evaluations/orchestrator-evaluation.md) quando houver alternativas a comparar.
+
+O fluxo recomendado é:
+
+```text
+use case
+  → agent-or-not decision
+  → work profile
+  → primary/secondary orchestration pattern
+  → runtime/control-plane topology
+  → technology evaluation
+  → orchestrator decision and exit record
+```
+
+A escolha do pattern deve ser explicável pela natureza do trabalho. Não force multi-agent, iterative reasoning ou um único orchestrator quando o caso não exigir. A ausência de evidência permanece `missing` ou `unknown`, não zero silencioso.
+
+### 3.4 Procurement e terceiros
 
 Aplicar governança **equivalente** a agentes construídos, comprados, configurados, SaaS, low-code e operados por fornecedores: fornecedor, fronteira de serviço, deveres contratuais, evidências fornecidas, subprocessadores, direitos de saída, owner e lacunas não resolvidas. **A terceirização não remove a accountability**, e uma alegação de fornecedor sem evidência não pode satisfazer um controle bloqueante.
 

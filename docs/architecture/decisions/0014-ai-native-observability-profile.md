@@ -19,7 +19,7 @@ related:
 
 ## Status e escopo
 
-Esta é uma **proposta de decisão arquitetural** da frente G4. Define um profile semântico opcional para tornar observáveis tarefas, delegações, chamadas de modelo, retrieval, tools, policy decisions, intervenções humanas, memória/estado, contenção e valor/custo em sistemas de IA e topologias multiagente.
+Esta é uma **decisão arquitetural em rascunho** da frente G4. Define um profile semântico opcional para tornar observáveis tarefas, delegações, chamadas de modelo, retrieval, tools, policy decisions, intervenções humanas, memória/estado, contenção e valor/custo em sistemas de IA e topologias multiagente.
 
 O profile complementa o envelope existente do [AI Agent Audit Event schema](../../../toolkit/schemas/audit-event.schema.json). Não altera o schema `1.0`, não cria um novo control, não obriga OpenTelemetry, não exige uma plataforma de observability específica e não autoriza capturar prompts, payloads, segredos ou dados pessoais sem finalidade, classificação, minimização e retenção aprovadas.
 

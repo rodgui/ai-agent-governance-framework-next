@@ -6,7 +6,7 @@ last_reviewed: 2026-08-17
 review_cycle: quarterly
 related:
   - README.md
-  - ../../docs/architecture/decisions/0011-multi-control-plane-arbitration.md
+  - ../../docs/architecture/decisions/0015-multi-control-plane-arbitration.md
   - ../../docs/framework/02-governance-and-accountability.md
   - ../../docs/framework/06-architecture-and-technical-controls.md
   - ../../docs/framework/09-operations-incidents-and-continuity.md

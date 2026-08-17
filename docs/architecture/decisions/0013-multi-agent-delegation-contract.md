@@ -19,7 +19,7 @@ related:
 
 ## Status e escopo
 
-Esta é uma **proposta de decisão arquitetural** da frente G2. Ela materializa a topologia e o envelope de delegação entre agentes, especialmente em modelos supervisor/worker, sem criar automaticamente novos controls nem alterar o `agent-blueprint.schema.json` nesta etapa.
+Esta é uma **decisão arquitetural em rascunho** da frente G2. Ela materializa a topologia e o envelope de delegação entre agentes, especialmente em modelos supervisor/worker, sem criar automaticamente novos controls nem alterar o `agent-blueprint.schema.json` nesta etapa.
 
 A decisão permanece `draft` até ser exercitada com um caso fictício e um caso organizacional autorizado, e aprovada pela Design Authority, Governance Owner, Security/IAM Authority, Data/Privacy Authority e Run Authority quando houver efeito operacional. O contrato conceitual deve ser validado antes de qualquer extensão machine-readable obrigatória.
 

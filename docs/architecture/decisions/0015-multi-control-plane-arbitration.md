@@ -1,5 +1,5 @@
 ---
-title: ADR-0011 — Arbitragem entre múltiplos control planes
+title: ADR-0015 — Arbitragem entre múltiplos control planes
 status: draft
 owner: framework-maintainers
 last_reviewed: 2026-08-17
@@ -14,13 +14,13 @@ related:
   - ../../../toolkit/patterns/control-and-assurance-planes.md
 ---
 
-# ADR-0011 — Arbitragem entre múltiplos control planes
+# ADR-0015 — Arbitragem entre múltiplos control planes
 
 ## Status e escopo
 
-Esta é uma **proposta de decisão arquitetural** da primeira onda G1. Ela não cria um novo control nem prescreve produto. Define como o framework deve tratar fluxos em que mais de um control plane, gateway, broker, plataforma de workflow ou sistema de assurance participa da mesma decisão ou ação.
+Esta é uma **decisão arquitetural em rascunho** da primeira onda G1. Ela não cria um novo control nem prescreve produto. Define como o framework deve tratar fluxos em que mais de um control plane, gateway, broker, plataforma de workflow ou sistema de assurance participa da mesma decisão ou ação.
 
-A decisão permanece `proposed` até ser exercitada com um caso organizacional e aprovada pela Design Authority, pelas authorities de segurança/identidade e pela Run Authority quando houver efeito em produção.
+A decisão permanece `draft` até ser exercitada com um caso organizacional e aprovada pela Design Authority, pelas authorities de segurança/identidade e pela Run Authority quando houver efeito em produção.
 
 ## Contexto
 

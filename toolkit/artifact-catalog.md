@@ -2,7 +2,7 @@
 title: Catálogo de artefatos do programa
 status: maintained
 owner: Rodrigo Garcia Guimarães
-last_reviewed: 2026-08-10
+last_reviewed: 2026-08-17
 review_cycle: quarterly
 supersedes: null
 related:
@@ -71,11 +71,12 @@ Duas ressalvas sobre a coluna de fase. Ela referencia as fases F0–F6 do [progr
 | Model e provider governance standard | critérios, versão, fallback e saída | plataforma de IA | F3 | [modelos e provedores](../docs/framework/06-architecture-and-technical-controls.md) |
 | Approved model/provider catalog | combinações permitidas por classe de dados | plataforma de IA | F3 | [schema](schemas/model-provider-catalog.schema.json) · [exemplo](examples/model-provider-catalog.example.json) |
 | Reference architecture | planos, fluxos e pontos de enforcement | arquitetura corporativa | F2 | [arquitetura de referência](../docs/framework/06-architecture-and-technical-controls.md) · [exemplo](examples/architecture.example.md) |
-| Multi-control-plane arbitration ADR | precedence, authority, conflict path, correlation e fail-safe entre planos | arquitetura + governança | F2/F3 | [ADR-0011](../docs/architecture/decisions/0011-multi-control-plane-arbitration.md) · [pattern](patterns/multi-control-plane-governance.md) |
+| Multi-control-plane arbitration ADR | precedence, authority, conflict path, correlation e fail-safe entre planos | arquitetura + governança | F2/F3 | [ADR-0015](../docs/architecture/decisions/0015-multi-control-plane-arbitration.md) · [pattern](patterns/multi-control-plane-governance.md) |
 | Multi-agent delegation contract ADR | topologia, delegation edges, authority attenuation, limits, expiry, revocation e failure propagation | arquitetura + segurança + plataforma | F2/F3 | [ADR-0013](../docs/architecture/decisions/0013-multi-agent-delegation-contract.md) · [pattern](patterns/multi-agent-delegation-governance.md) · [template](templates/agent-delegation-contract.md) · [exemplo](examples/supervisor-worker-delegation.example.md) |
 | AI-native observability profile ADR | task, delegation, model, retrieval, policy, tool, memory, containment, cost, value e privacy | operação + observabilidade + assurance | F2/F3 | [ADR-0014](../docs/architecture/decisions/0014-ai-native-observability-profile.md) · [pattern](patterns/ai-native-observability-profile.md) · [template](templates/ai-native-observability-profile.md) · [exemplo](examples/ai-native-observability.example.md) |
 | Implementation-plan hierarchy ADR | classificação entre plano de domínio, plano integrado de capítulo e roadmap de programa | governança editorial + arquitetura | F2 | [ADR-0012](../docs/architecture/decisions/0012-implementation-plan-hierarchy.md) |
 | Control-plane interaction matrix | capability, source of truth, enforcement, fallback e evidence por plano | arquitetura + plataforma | F3 | [pattern](patterns/multi-control-plane-governance.md) · [exemplo](examples/multi-control-plane-conflict.example.md) |
+| Orchestrator Technology Evaluation | pattern fit, placement/authority, capabilities, operability, economics, evidence e exit risk | arquitetura + governança + plataforma | F2/F3 | [assessment](assessments/technology-evaluations/orchestrator-evaluation.md) |
 | Orchestrator Decision and Exit Record | topologia, capabilities, authority, lock-in, portability, resilience e saída | arquitetura + governança + plataforma | F2/F3 | [template](templates/orchestrator-decision-exit-record.md) · [exemplo](examples/orchestrator-decision-exit-record.example.md) |
 | Capability-to-technology mapping | qual sistema existente responde por cada capability, com source of truth por atributo | arquitetura corporativa | F2/F3 | [método de mapeamento](../docs/framework/06-architecture-and-technical-controls.md) |
 | Decisão arquitetural por caso | agente é o mecanismo certo? | arquitetura | F2 | [árvore de decisão](../docs/framework/03-inventory-portfolio-and-value.md) |
