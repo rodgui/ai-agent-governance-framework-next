@@ -19,10 +19,10 @@ related:
 
 ## 1. Decision status e escopo
 
-**Decision status:** `accepted` com conditions.  
-**Decision mode:** `SIMULATED_OWNER_AUTHORIZED_REVIEW`.  
-**Decision scope:** camada canônica de guidance, patterns e templates do framework vendor-neutral.  
-**Operational validation:** `missing`; não é alterada por este record.  
+**Decision status:** `accepted` com conditions.
+**Decision mode:** `SIMULATED_OWNER_AUTHORIZED_REVIEW`.
+**Decision scope:** camada canônica de guidance, patterns e templates do framework vendor-neutral.
+**Operational validation:** `missing`; não é alterada por este record.
 **Production approval:** não concedida.
 
 Este record registra a decisão do maintainer sobre a coerência e aplicabilidade arquitetural das ADRs 0013, 0014 e 0015 no próprio framework. A decisão não representa sign-off de uma organização consumidora, não nomeia authorities reais e não converte aliases sintéticos em pessoas ou approvals.
