@@ -2,6 +2,13 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-18 — Unreleased: ADR promotion readiness
+
+- Criado o assessment `adr-promotion-readiness-0013-0014-0015.md`, separando evidência determinística, missing authorized evidence e sign-off necessário para as ADRs 0013, 0014 e 0015.
+- Adicionado teste determinístico `test_adr_walkthrough_evidence.py` para proteger a integridade dos critérios dos exemplos G1, G2, G4 e substitution/replay.
+- As três ADRs permanecem `draft`; não foram alterados schemas, controls, risk tiers, MPB, Registry, release ou taxonomias externas.
+- Esta entrada permanece `Unreleased` e não altera a release `1.1.0`.
+
 ## 2026-08-17 — Unreleased: substitution/replay e G4 operational drill
 
 - Executado teste determinístico e vendor-neutral de substitution/replay: export canônico preservado, lineage/correlation mantidos, escrita crítica negada e retry pós-expiry negado em duas implementações abstratas.
