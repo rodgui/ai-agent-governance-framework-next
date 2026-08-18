@@ -52,5 +52,5 @@ A proteção remota é state externo ao repositório e deve ser auditada novamen
 ## References
 
 - [GitHub REST API — Update branch protection](https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection)
-- [GitHub Actions — quality-gates.yml](../../.github/workflows/quality-gates.yml)
+- Workflow observado: `.github/workflows/quality-gates.yml`.
 - [T22 CHANGELOG evidence](../../CHANGELOG.md)
