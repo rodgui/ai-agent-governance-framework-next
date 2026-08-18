@@ -2,14 +2,13 @@
 title: 10 — Métricas, revisão e melhoria contínua
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
 
 # 10 — Métricas, revisão e melhoria contínua
-
 
 ## Visão geral
 
@@ -101,9 +100,11 @@ Duas medidas desta camada merecem destaque por serem as mais falsificadas:
 | **operacional** | capacidade do processo | lead time da security review | ajustar intake, automação ou capacidade |
 | **valor** | economia e resultado real | custo por caso bem-sucedido + cycle time | escalar, redesenhar ou aposentar |
 
-### 2.2 Indicadores de referência (pontos de partida, não SLA universal)
+### 2.2 Indicadores de referência — baseline ilustrativo, não SLA
 
-A regra: **metas de higiene e accountability podem ser absolutas; métricas de adoção, custo, falso positivo e lead time partem do baseline e do perfil operacional.**
+> **ILLUSTRATIVE · NON-NORMATIVE · RECALIBRATE WITH LOCAL BASELINE.** Os valores desta seção mostram como uma organização pode estruturar indicadores e decisões; não são thresholds universais, SLA do framework ou promessa de maturidade. A authority local deve recalibrar cada número usando baseline observado, tier, risk appetite, população, distribuição, capacidade operacional, evidence cutoff, owner, action e review trigger.
+
+A regra: **metas de higiene e accountability podem ser absolutas; métricas de adoção, custo, falso positivo e lead time partem do baseline e do perfil operacional.** Mesmo valores absolutos precisam declarar população, escopo, enforcement, exceção e autoridade.
 
 | Tipo | Indicador | Referência inicial |
 |---|---|---|
@@ -119,7 +120,7 @@ A regra: **metas de higiene e accountability podem ser absolutas; métricas de a
 | Valor | melhoria do KPI de negócio | alvo específico do caso; **adoção não é proxy de resultado** |
 | Adoção | usuários ativos diários/semanais/mensais | sem alvo universal; tendência e frequência esperada |
 
-**Registre a justificativa de cada threshold e a data de revisão. Revise após o primeiro ciclo com dados reais.**
+**Registre a justificativa de cada threshold e a data de revisão. Revise após o primeiro ciclo com dados reais.** Se o baseline ainda não existir, registre o valor como hipótese de calibração e não como target aprovado.
 
 ### 2.3 Dashboard executivo mínimo
 

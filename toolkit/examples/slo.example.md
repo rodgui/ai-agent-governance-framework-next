@@ -1,6 +1,6 @@
 # Exemplo de SLO — Service Desk Knowledge Agent
 
-> Fictício e sanitizado. Os thresholds são ilustrativos, não recomendações universais.
+> **Fictício e sanitizado. ILLUSTRATIVE · NON-NORMATIVE · RECALIBRATE WITH LOCAL BASELINE.** Os thresholds mostram uma forma de estruturar SLOs; não são recomendações universais, SLA do framework ou target de produção.
 
 ## Objetivos de serviço
 

@@ -102,5 +102,31 @@ class SemanticHardeningTests(unittest.TestCase):
         self.assertIn("audit-event schema", pattern)
 
 
+    def test_thresholds_are_explicitly_non_normative(self) -> None:
+        metrics = self.read("docs/framework/10-metrics-review-and-improvement.md")
+        slo_example = self.read("toolkit/examples/slo.example.md")
+        for label in ("ILLUSTRATIVE", "NON-NORMATIVE", "RECALIBRATE WITH LOCAL BASELINE"):
+            self.assertIn(label, metrics)
+            self.assertIn(label, slo_example)
+        self.assertIn("não são thresholds universais", metrics)
+
+    def test_case_scope_and_roadmap_are_explicit(self) -> None:
+        cases = self.read("toolkit/examples/cases/README.md")
+        roadmap = self.read("ROADMAP.md")
+        mkdocs = self.read("mkdocs.yml")
+        self.assertIn("T4 não significa `prohibited`", cases)
+        self.assertIn("não cria uma nova fixture", cases)
+        self.assertIn("BLOCKED_BY_AUTHORIZED_EVIDENCE", roadmap)
+        self.assertIn("Dependency security", roadmap)
+        self.assertIn("Readiness das ADRs", mkdocs)
+
+    def test_readiness_preserves_draft_and_records_hardening_delta(self) -> None:
+        readiness = self.read("toolkit/assessments/adr-promotion-readiness-0013-0014-0015.md")
+        self.assertIn("T01–T13", readiness)
+        self.assertIn("Semantic hardening: 8 tests — OK", readiness)
+        self.assertIn("manter `draft` até aprovação", readiness)
+        self.assertIn("não é evidência de produção", readiness)
+
+
 if __name__ == "__main__":
     unittest.main()
