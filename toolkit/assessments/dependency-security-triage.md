@@ -42,6 +42,12 @@ Em 2026-08-18, a tentativa autorizada pelo endpoint REST `dependabot/alerts` ret
 
 O owner deve fornecer um export autorizado da página Security/Dependabot ou uma resposta de API com, para cada alert: package, ecosystem, GHSA/CVE, severity, state, direct/transitive, affected version, fixed version, dependency path, manifest, usage no repositório, exposição em CI/build/runtime, exploitability/relevance, remediation e residual risk. Até esse export, nenhum alert pode ser declarado corrigido ou fechado por inferência de PR de version update.
 
+### 3.2 Resultado da tentativa T38
+
+Em 2026-08-18, a nova tentativa autorizada confirmou o mesmo `HTTP 403 Resource not accessible by integration` no REST. Também foi executada uma consulta GraphQL corrigida, limitada a campos válidos de `vulnerabilityAlerts`, `securityVulnerability`, `package`, `severity`, `vulnerableVersionRange`, `firstPatchedVersion`, `advisory.summary` e `advisory.identifiers`. A resposta foi tecnicamente bem-sucedida e retornou `nodes: []`.
+
+O resultado GraphQL vazio **não é classificado como `NO_ALERTS`**. Ele pode refletir autorização, visibilidade, escopo do campo ou a diferença entre a conexão GraphQL e o inventário REST; além disso, não reconcilia o aggregate histórico de 18 vulnerabilidades. O estado de T38 permanece `BLOCKED_BY_AUTHORIZED_EVIDENCE`/`NOT_CONFIRMED`, e a evidência requerida continua sendo um export autorizado alert-by-alert.
+
 | Item exigido pelo plano | Estado | Owner | Próxima evidência |
 |---|---|---|---|
 | Package/ecosystem | `NOT_CONFIRMED` | repository maintainers | export Dependabot autorizado |
