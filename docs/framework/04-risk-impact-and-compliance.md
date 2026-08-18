@@ -2,7 +2,7 @@
 title: 04 — Risco, impacto e compliance
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -160,22 +160,25 @@ O piso de controles exigido por tier para entrar e permanecer em produção est�
 
 ### 1.7 Regras de uso: o que é permitido, o que exige aprovação, o que é proibido
 
-As regras abaixo são simples e objetivas, aplicáveis em todos os níveis (Grupo/Segmento/Local) e a qualquer plataforma aprovada. Elas servem de referência para self-assessment e auditoria. Fornecedores e parceiros que desenvolvem ou operam agentes em nome da empresa devem cumprir integralmente esta política e seus anexos.
+As regras abaixo são simples e objetivas, aplicáveis ao escopo organizacional declarado e às implementações aprovadas. Elas servem de referência para self-assessment e auditoria. Fornecedores e parceiros que desenvolvem ou operam agentes em nome da organização devem cumprir a policy, os standards aplicáveis e as condições registradas para o escopo.
 
 **Permitido (sempre):**
+
 - usar apenas dados e sistemas com autorização explícita;
-- operar com HITL nos pontos de decisão;
-- registrar as ações do agente em log imutável;
-- exibir identificação visível ("Governed Agent").
+- operar com human oversight proporcional ao tier, à action class, ao impacto, à reversibilidade e aos decision rights;
+- registrar as ações do agente em log íntegro e recuperável;
+- manter identificação e provenance suficientes para distinguir a execução governada, quando exigido pelo standard ou operating model aplicável.
 
 **Exige aprovação:**
+
 - acesso a dados pessoais/sensíveis (DPIA quando aplicável);
 - integração com sistemas críticos;
-- uso em decisões que impactam KPIs críticos (produção, segurança, qualidade, OWCR etc.).
+- uso em decisões que impactam resultados críticos de produção, segurança, qualidade ou outros outcomes de negócio definidos no scope.
 
 **Proibido:**
+
 - agentes sem owner designado;
-- ações irreversíveis sem HITL;
+- ações irreversíveis de alto impacto sem confirmação humana explícita, authority e evidence conforme o tier e o action class;
 - armazenar dados pessoais fora de repositórios aprovados;
 - contornar controles de segurança, jailbreaks ou uso não autorizado de dados;
 - usar plataformas, modelos ou ferramentas de IA de terceiros sem aprovação formal da plataforma e aderência total a esta política.
@@ -289,6 +292,7 @@ Selecione tratamentos que **reduzam o risco identificado** e documente por que a
 O risco residual após tratamento verificado deve ser apresentado à **authority empoderada** para aquela exposição: risco inerente, evidência de tratamento, classificação residual, incerteza, condições de aceite, aprovador e expiração.
 
 Regras duras:
+
 - **o time de entrega não pode auto-aceitar risco residual material;**
 - o aceite não sobrepõe admissibilidade ou lei;
 - risco não pode ser "aceito" pelo technical owner se o impacto pertence ao negócio, a pessoas ou a obrigação de outro domínio;
@@ -356,6 +360,7 @@ Classificação, impact assessment e aprovação **não são três aprovações 
 **Métricas:** riscos sem owner ou due date; findings e exceptions vencidos; tier changes após incidentes; controls sem evidence de eficácia; tempo entre trigger e reavaliação; residual risks sem authority adequada; concentração por provider, modelo ou tool; incidentes por categoria e recurrence.
 
 **Antipatterns:**
+
 - score único sem narrativa;
 - classificar risco apenas pelo número de usuários;
 - usar "PoC" como sinônimo de baixo risco;

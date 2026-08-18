@@ -66,6 +66,9 @@ STAGED_HISTORICAL_LINK_REWRITES = {
             "../../../../docs/architecture/decisions/0010-structured-governance-contracts-2.0.md"
         ),
     },
+    "project/history/ai-agent-policy-and-governance-v1.md": {
+        "../../templates/": "../../toolkit/templates/README.md",
+    },
 }
 
 

@@ -10,7 +10,6 @@ source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 
 # 00 — Controle do documento
 
-
 ## Visão geral
 
 Todo framework precisa de um "manual do manual": as regras que dizem o que este documento é, quem o aprova, como ele muda e como resolver conflitos quando as regras se chocam. Sem isso, o framework envelhece mal — versões se confundem, ninguém sabe se um texto é norma vigente ou rascunho, e cada time interpreta ambiguidade do seu jeito.
@@ -107,9 +106,11 @@ O framework nomeia uma **autoridade responsável** (quem aprova, interpreta e re
 
 ### 2.2 Status de aprovação e força normativa
 
-Todo artefato declara seu status — `draft`, `approved`, `histórico`, `informativo` ou `descontinuado` — e o que esse status permite: decisão de aprovação, aprovador, data, condições, data de efetividade e evidência de adoção.
+Todo artefato declara metadata suficiente para separar quatro perguntas: estado documental/editorial, estado da decisão, maturidade/evidence e tipo de artefato. O campo front matter `status` permanece compatível com o corpus atual: `maintained`, `draft`, `under-review`, `deprecated` e valores históricos contextuais. Em decisões, `accepted`, `superseded` e `rejected` expressam a disposição da decisão; `approved` também pode aparecer como estado legado ou de lifecycle. `maturity` expressa a força da evidence, como `illustrative`, `observed` ou `validated`; `type` diferencia `assessment`, `example`, `pattern`, `template` e `research`.
 
-**Concluído quando:** nenhum draft, estudo de caso ou fonte histórica pode ser confundido com um requisito organizacional vigente.
+Essas dimensões não são intercambiáveis: `maintained` não significa `accepted`, `draft` não significa `illustrative` e `example` não significa `operationally-validated`. Uma migração futura de metadata deve preservar aliases e ser versionada; esta rodada não altera em massa os front matters existentes.
+
+**Concluído quando:** nenhum draft, estudo de caso, fonte histórica ou example pode ser confundido com um requisito organizacional vigente ou com evidence operacional.
 
 ### 2.3 Interpretação e resolução de conflitos
 

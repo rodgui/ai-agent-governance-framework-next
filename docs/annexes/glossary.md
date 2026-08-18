@@ -98,12 +98,25 @@ A classificação de orchestration pattern ocorre depois da decisão “agente �
 | **Admissibilidade** | Este uso pode operar? | `permitted`, `conditional`, `restricted`, `prohibited` | Permite, condiciona, exige exceção ou proíbe operação. |
 | **Risk score** | Quais fatores produzem o risco base? | Sete dimensões + red flags | Alimenta a classificação; não decide sozinho. |
 | **Readiness score** | O dossiê está pronto para decisão? | Completeza e força da evidência | Mede prontidão; não mede risco, qualidade ou maturidade. |
+| **Discovery status** | Quão confirmada está a existência e o contexto do agente? | `confirmed`, `probable`, `suspected` | Orienta reconciliação e investigação; `reported` e `unresolved` não são valores deste campo. |
 | **Maturity** | Quão desenvolvida está a capability organizacional? | Níveis do maturity model | Define baseline, target e roadmap organizacional. |
 | **Lifecycle stage/state** | Em que momento e estado operacional está o agente? | Estados e transições canônicos | Controla promoção, operação, mudança e sunset. |
 | **Gate** | Qual decisão do programa precisa ocorrer? | G0–G7 | Autoriza, condiciona, suspende, rejeita ou encerra avanço. |
+| **Implementation wave** | Qual agrupamento de planejamento ajuda a organizar uma implantação? | W0–W6 | Guidance de execução; não é gate nem lifecycle phase. |
 | **Processo operacional** | Qual rotina recorrente o agente atravessa? | P1–P8 | Executa e registra criação, release, operação e retirement. |
 
 **T4 é criticidade, não admissibilidade.** Um T1 pode ser `restricted` ou `prohibited` por finalidade, obrigação ou desenho; um T4 pode ser `permitted` ou `conditional` quando a authority, os controls e as evidências sustentarem a decisão.
+
+### Status de artefatos, decisões e evidência
+
+| Dimensão | Pergunta | Vocabulário atual | Regra de interpretação |
+|---|---|---|---|
+| **Document/editorial status** | O artefato está sendo mantido, elaborado ou retirado? | `maintained`, `draft`, `deprecated`; `review` e `under-review` indicam revisão em curso. | Não implica aprovação normativa nem maturidade operacional. |
+| **Decision status** | Qual foi a disposição da decisão? | `proposed`, `accepted`, `superseded`, `rejected`; `approved` pode aparecer como estado legado ou de lifecycle. | ADRs e decisões aceitas precisam de authority, data, rationale e evidence. |
+| **Maturity/evidence status** | Qual é a força da evidência do artefato? | `hypothesis`, `illustrative`, `observed`, `validated`, `operationally-validated`. | `operationally-validated` exige execução autorizada; example fictício não satisfaz esse estado. |
+| **Artifact type** | Que tipo de objeto é este? | `assessment`, `example`, `pattern`, `template`, `research`, entre outros. | Tipo não é status e não deve ser usado para inferir aprovação ou eficácia. |
+
+Até uma eventual migração explícita de metadata, o campo front matter `status` deve ser interpretado conforme o tipo e o uso do artefato; não se deve inferir decision status ou maturity apenas de `maintained`, `draft` ou `under-review`.
 
 | Termo | Definição neste framework | Não confundir com |
 |---|---|---|
