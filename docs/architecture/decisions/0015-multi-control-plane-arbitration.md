@@ -12,6 +12,7 @@ related:
   - ../../framework/09-operations-incidents-and-continuity.md
   - ../../../toolkit/patterns/multi-control-plane-governance.md
   - ../../../toolkit/patterns/control-and-assurance-planes.md
+  - ../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md
 ---
 
 # ADR-0015 — Arbitragem entre múltiplos control planes
@@ -99,4 +100,4 @@ Esta ADR não escolhe produtos, não define uma topologia universal, não cria u
 
 ## Evidência e aprovação
 
-A decisão precisa ser aprovada após walkthrough com Design Authority, Governance Owner, Security/IAM Authority, Data/Privacy Authority e Run Authority. A aprovação deve registrar o caso exercitado, as divergências encontradas, os controles compensatórios, as limitações e a data de revisão.
+O [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md) acrescenta `demonstrated-synthetic` para matrix cross-plane, conflict, precedence, fail-safe, recovery e substitution/exit integrados; não prova enforcement operacional, effectiveness, accountability organizacional ou production readiness. A decisão precisa ser aprovada após walkthrough com Design Authority, Governance Owner, Security/IAM Authority, Data/Privacy Authority e Run Authority. A aprovação deve registrar o caso exercitado, as divergências encontradas, os controles compensatórios, as limitações e a data de revisão.
