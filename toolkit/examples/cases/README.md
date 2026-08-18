@@ -2,13 +2,12 @@
 title: Casos de referência
 status: maintained
 owner: Rodrigo Garcia Guimarães
-last_reviewed: 2026-08-10
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 supersedes: null
 related:
   - ../README.md
   - ../../../docs/framework/08-implementation-and-adoption.md
-  - ../README.md
 ---
 
 # Casos de referência
@@ -34,6 +33,14 @@ A terceira já se pagou. Escrever o percurso do primeiro caso revelou que o regi
 | [Benefits Eligibility Triage](../../../docs/explanations/cases/benefits-eligibility-triage.md) | T3 | `conditional` | criticidade e admissibilidade divergindo, veto de Responsible AI e suspensão automática por condição violada |
 
 Os casos usam a mesma organização fictícia, para que se leia um portfólio e não três exemplos desconexos. Uma implantação real convive com tiers diferentes sob o mesmo operating model, e é isso que precisa aparecer.
+
+## Cobertura e extensões planejadas
+
+A cobertura publicada hoje percorre T1, T2 e T3. Um futuro caso T4 deve demonstrar explicitamente que **T4 não significa `prohibited`**: risk tier e admissibility continuam dimensões independentes, com rationale e authority próprios.
+
+A extensão multi-agent T3/T4 deve exercitar supervisor, worker, delegation edge, authority attenuation, depth, fan-out, budget, expiry, revocation, múltiplos control planes, state-changing tool, policy deny, observabilidade AI-native, containment, replay/retry denial, recovery, reactivation e evidence lineage. O pattern e os exemplos fictícios existentes já fornecem parte dos cenários; esta rodada não cria uma nova fixture nem declara cobertura de estate.
+
+A estrutura permanece intencional: `toolkit/examples/cases/<case>/` contém records estruturados e fixtures; narrativas humanas permanecem em `docs/cases/` ou `docs/explanations/cases/`. Os casos são integration tests do framework, não production evidence.
 
 ## Como ler
 
