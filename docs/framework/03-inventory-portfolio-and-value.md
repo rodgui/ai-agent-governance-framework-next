@@ -2,14 +2,13 @@
 title: 03 — Inventário, portfólio e valor
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
 
 # 03 — Inventário, portfólio e valor
-
 
 ## Visão geral
 
@@ -78,7 +77,7 @@ As subseções anteriores explicam os conceitos. Esta seção trata somente da e
 1. **Declarar o escopo da descoberta.** Quais plataformas, unidades, ambientes e tipos de agente entram na primeira passada? Registre também o que fica fora e por quê — cobertura declarada vale mais que cobertura presumida.
 2. **Reunir as fontes.** Identidade/SSO, logs de plataformas aprovadas, SaaS contratado, budgets de nuvem, builds/CI, entrevistas com os times. Cada fonte entra no inventário com data de última leitura e confiança.
 3. **Consolidar e deduplicar.** Um agente pode aparecer em três fontes com três nomes. A consolidação produz candidatos únicos; a deduplicação decide quais são o mesmo ativo — registre os critérios usados.
-4. **Atribuir estado de confirmação.** `confirmed` só com observação direta; `reported` para o que veio de entrevista; `unresolved` para o que ninguém confirma. **Nunca reporte um inventário sem a coluna de confiança.**
+4. **Atribuir o status de confirmação.** Use somente `confirmed` para evidência direta do agente e do seu contexto, `probable` quando múltiplos sinais apontam para uso agentic sem confirmação direta, e `suspected` para indício isolado que merece verificação. A origem da informação deve ser registrada em `signals[].signalType` e `evidenceRef`; `reported` e `unresolved` não são valores de `discovery.status`. **Nunca reporte um inventário sem a coluna de confiança.**
 5. **Vincular owners.** Todo ativo confirmado recebe business owner e technical owner ativos. O que não tem owner entra na fila de triagem — não desaparece do relatório.
 6. **Classificar pelo mínimo.** Para cada ativo: taxonomia e tier preliminar. Registre a admissibilidade somente quando houver fundamento e authority; a classificação fina de casos complexos segue o [cap. 04](04-risk-impact-and-compliance.md). O inventário precisa ao menos separar sinais de maior criticidade dos demais.
 7. **Reconciliar contra o registry.** O que existe no registry e não existe mais no estate → candidato a sunset. O que existe no estate e não está no registry → candidato a registro ou contenção. **Reconciliação é o teste de honestidade do inventário.**
@@ -86,7 +85,6 @@ As subseções anteriores explicam os conceitos. Esta seção trata somente da e
 9. **Instalar a rotina.** Descoberta não é projeto pontual: fontes são relidas em cadência, novas plataformas entram no escopo, e cada novo agente nasce já dentro do registry (processo P1 do [cap. 08](08-implementation-and-adoption.md)).
 
 **Armadilhas da primeira passada:** tentar cobrir tudo de uma vez (a descoberta parcial publicada vale mais que a perfeita adiada); aceitar "não tem nenhum agente aqui" sem conferir a fonte (shadow AI vive exatamente onde ninguém olhou); tratar o inventário como fim em vez de meio — o objetivo é o controle, e o inventário é o primeiro passo dele.
-
 
 ### 1.6 Forecast do estate: dimensionar governança, não prometer números
 
@@ -101,7 +99,6 @@ O forecast serve para **dimensionar a governança futura**, não para prometer n
 
 > Exemplo de dimensionamento: se 5.000 usuários habilitados podem criar agentes e apenas 10% criarem 2 agentes cada, o estate potencial já ultrapassa 1.000 agentes — antes de qualquer iniciativa corporativa.
 
-
 ### 1.7 Registro de gargalos manuais
 
 Depois que a descoberta e o baseline estiverem publicados, registre os pontos onde a governança depende de trabalho humano repetitivo. Esse backlog alimenta a decisão sobre o que virar policy-as-code:
@@ -113,7 +110,6 @@ Depois que a descoberta e o baseline estiverem publicados, registre os pontos on
 | revisar ferramenta privilegiada T3 | 5 | 5 dias | alto | manter decisão humana; automatizar o preparo da evidência |
 
 **A leitura correta: automatizar a preparação da evidência é quase sempre seguro; automatizar a decisão só quando a policy está estável.**
-
 
 ## 2. Registry: a fonte corporativa de verdade
 
@@ -447,7 +443,8 @@ Condições mínimas que devem ser verdadeiras em cada ponto. Use como checklist
 
 ## 7. Artefatos, evidências, métricas e failure modes
 
-**Artefatos**
+### Artefatos
+
 - Agent Estate Inventory com confiança e data de corte;
 - [Agent Registry schema](../../toolkit/schemas/agent-registry.schema.json) e [exemplo estruturado](../../toolkit/examples/agent-registry.example.json);
 - [Agent Blueprint schema](../../toolkit/schemas/agent-blueprint.schema.json) e [exemplo estruturado](../../toolkit/examples/agent-blueprint.example.json);
@@ -456,7 +453,8 @@ Condições mínimas que devem ser verdadeiras em cada ponto. Use como checklist
 - Manual Bottleneck Register priorizado;
 - [Agent Use-Case Portfolio](../../toolkit/templates/use-case-portfolio.md).
 
-**Evidências**
+### Evidências
+
 - registro autoritativo com owners, tier e estado por agente;
 - histórico de reconciliação entre registry e plataformas de origem;
 - baseline com data de corte e distribuição de confiança;
@@ -466,7 +464,8 @@ Condições mínimas que devem ser verdadeiras em cada ponto. Use como checklist
 - business case, metric definitions, cost model;
 - adoption/quality/outcome reports e portfolio decisions.
 
-**Métricas**
+### Métricas
+
 - agentes descobertos sem owner (`unmanaged`) e tempo até remediação;
 - cobertura do registry contra fontes independentes;
 - campos obrigatórios vazios por tier; referências quebradas;
@@ -477,7 +476,8 @@ Condições mínimas que devem ser verdadeiras em cada ponto. Use como checklist
 - itens sem business owner ou baseline; duplicated capabilities;
 - custo por outcome e por tier; time-to-decision para corrigir ou aposentar.
 
-**Failure modes**
+### Failure modes
+
 - registry como planilha mestre que ninguém reconcilia;
 - taxonomia derivada de produto em vez de comportamento;
 - inventário completo sem quality rules — lista bonita, controle zero;

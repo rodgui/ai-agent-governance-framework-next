@@ -2,14 +2,13 @@
 title: 08 — Implementação e adoção
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-12
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
 
 # 08 — Implementação e adoção
-
 
 ## Visão geral
 
@@ -132,21 +131,21 @@ Objetivo: estabelecer as fundações e fluxos mínimos de um sistema de governan
 
 ## 3. Programa de 24 semanas (pattern de referência)
 
-> **Pattern de referência, não calendário normativo.** As 24 semanas oferecem um ponto de partida para equipes que ainda não sabem como organizar a implantação. Os únicos decision gates canônicos são G0–G7.
+> **Pattern de referência, não calendário normativo.** As 24 semanas oferecem um ponto de partida para equipes que ainda não sabem como organizar a implantação. As Implementation Waves W0–W6 são guidance de planejamento; os únicos decision gates canônicos são G0–G7, e as lifecycle phases F1–F8 continuam descrevendo o ativo.
 
-**Fases e gates:**
+**Implementation Waves e gates:**
 
-| Fase | Semanas | Objetivo | Entregáveis | Gate |
+| Implementation wave | Semanas | Objetivo | Entregáveis | Gate |
 |---|---|---|---|---|
-| **F0 — Mobilizar** | 1–2 | mandato e escopo | charter, scope, decision principles, fóruns, time | G0 |
-| **F1 — Descobrir** | 3–5 | baseline real | discovery, forecast, gargalos, capability map, maturity | G1 |
-| **F2 — Desenhar** | 6–8 | target operating model | target de maturidade, tiers, triggers, operating model | G3 e preparação de G4 |
-| **F3 — Construir** | 9–12 | controles de fundação | registry, identidade, catálogos, telemetria, MPB | G2 e G4 |
-| **F4 — Validar** | 13–16 | validar ponta a ponta | piloto opcional ou cohort; fluxo completo, tabletop, KPIs | G5 e G6 |
-| **F5 — Escalar** | 17–20 | automação e cobertura | discovery automatizado, policy-as-code, JML, FinOps | G6 |
-| **F6 — Institucionalizar** | 21–24 | operação regular e assurance | evidência, enablement, handoff BAU, roadmap 12m | G7 |
+| **W0 — Mobilizar** | 1–2 | mandato e escopo | charter, scope, decision principles, fóruns, time | G0 |
+| **W1 — Descobrir** | 3–5 | baseline real | discovery, forecast, gargalos, capability map, maturity | G1 |
+| **W2 — Desenhar** | 6–8 | target operating model | target de maturidade, tiers, triggers, operating model | G3 e preparação de G4 |
+| **W3 — Construir** | 9–12 | controles de fundação | registry, identidade, catálogos, telemetria, MPB | G2 e G4 |
+| **W4 — Validar** | 13–16 | validar ponta a ponta | piloto opcional ou cohort; fluxo completo, tabletop, KPIs | G5 e G6 |
+| **W5 — Escalar** | 17–20 | automação e cobertura | discovery automatizado, policy-as-code, JML, FinOps | G6 |
+| **W6 — Institucionalizar** | 21–24 | operação regular e assurance | evidência, enablement, handoff BAU, roadmap 12m | G7 |
 
-**Repare: F2 fecha G3 e F3 fecha G2** — a ordem numérica dos gates não é a ordem de execução. Os dois roadmaps (90 dias ≈ F0–F3 comprimidas; 24 semanas = versão detalhada) são guias adaptáveis do mesmo conjunto de gates, não métodos concorrentes nem prazos de compliance.
+**Repare: W2 fecha G3 e W3 fecha G2** — a ordem numérica dos gates não é a ordem de execução. Os dois roadmaps (90 dias ≈ W0–W3 comprimidas; 24 semanas = versão detalhada) são guias adaptáveis do mesmo conjunto de gates, não métodos concorrentes nem prazos de compliance.
 
 **Workstreams:** trilhas paralelas dentro do mesmo roadmap — governança e risco; arquitetura e plataforma; identidade e segurança; dados e ferramentas; observabilidade e custo; adoção e valor. **Workstreams não podem otimizar localmente:** identidade pode declarar "entregue" enquanto o registry ainda não associa identidade a `agent_id`. **Milestones se definem por outcome cross-domain, não por entrega de trilha.**
 
@@ -292,6 +291,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** A demanda ou caso de uso priorizado; o [use-case intake](../../toolkit/templates/use-case-intake.md) preenchido; acesso ao registry (ferramenta ou modelo corporativo).
 
 **Atividades.**
+
 1. O proponente discute o caso de uso com os owners para validar objetivo, dados, escopo e se **agente é o mecanismo certo** — a pergunta de adequação do [cap. 03](03-inventory-portfolio-and-value.md#3-decidir-o-que-construir-intake-e-adequacao) vem antes de qualquer tecnologia.
 2. Business e technical owner preenchem a [autoavaliação](../../toolkit/templates/self-assessment-form.md) com, no mínimo: objetivo, dados e owners, permissões, integrações, autonomia/HITL, usuários, impacto, riscos e controles previstos.
 3. A Run Authority apoia no enquadramento inicial de risco (blast radius) usando as dimensões do [cap. 04](04-risk-impact-and-compliance.md).
@@ -301,6 +301,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Saídas.** Autoavaliação preenchida; registro inicial no registry com owners e estado; indicação explícita de duplicidade ou reuso.
 
 **Armadilhas comuns.**
+
 - Registrar como `approved` o que ainda é só uma ideia — o estado no registry é a verdade para automação e auditoria; inflá-lo destrói a confiança em todos os outros processos.
 - Aceitar "não sei" silenciosamente na autoavaliação: **`não sei` é um gap com owner e prazo**, não uma resposta.
 - Pular a pergunta de adequação: um workflow determinístico disfarçado de agente herda custo e risco de governança sem trazer a capacidade que a justifica.
@@ -318,16 +319,18 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** Autoavaliação; [risk pre-screen](../../toolkit/templates/risk-pre-screen.md); informações sobre dados sensíveis, sistemas críticos e obrigações aplicáveis.
 
 **Atividades.**
+
 1. Aplicar o [pre-screen](../../toolkit/templates/risk-pre-screen.md) — perguntas objetivas sobre dados, autonomia, ações irreversíveis, pessoas afetadas e alcance.
 2. Calcular o risco base e aplicar os **red flags** — eles corrigem o que um score médio esconde: um caso com dez respostas benignas e uma destrutiva não é um caso médio (ver [cap. 04](04-risk-impact-and-compliance.md)).
 3. Definir **tier (T1–T4) e admissibilidade** (permitted/conditional/restricted/prohibited). Tier determina proporcionalidade de controle; admissibilidade determina se o uso é aceitável em primeiro lugar.
 4. Aplicar o **impact trigger screen**: o agente influencia direitos, oportunidades, decisões sobre pessoas ou segurança? Se sim, executar o impact assessment formal **mesmo em caso tecnicamente simples**.
 5. Acionar **domain reviews** apenas quando houver gatilho relevante — privacidade por dados pessoais, segurança por privilégio, arquitetura por mudança de pattern. Review acionada por regra fixa vira fila e morre.
-6. Registrar a decisão com autoridade, evidências aceitas, condições e expiry — conforme o [contrato comum dos gates](#contrato-comum-dos-decision-gates). Se reprovado, o estado vira `rejected` ou `pending-changes`, com o que falta explícito.
+6. Registrar a decisão com autoridade, evidências aceitas, condições e expiry — conforme o [contrato comum dos gates](#11-o-contrato-comum-dos-decision-gates). Se reprovado, o estado vira `rejected` ou `pending-changes`, com o que falta explícito.
 
 **Saídas.** Decisão formal registrada (approve/condition/hold/reject); evidências vinculadas ao registro; tier, admissibilidade e controles obrigatórios definidos; conditions e expiry quando aplicável.
 
 **Armadilhas comuns.**
+
 - Deixar o score sozinho decidir: red flags são **piso, não teto** — nunca diluídos por média.
 - Tratar "PoC" como sinônimo de baixo risco: um agente para 5 usuários que executa pagamentos é mais crítico que um para 5.000 que resume documentos.
 - Aprovar sem residual risk explícito: **nenhuma aprovação existe sem residual risk aceito pela autoridade compatível com o tier.**
@@ -345,6 +348,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** [Release evidence manifest](../../toolkit/templates/release-evidence-manifest.md); agente configurado em homologação; plano de rollback quando aplicável; evidência dos testes mínimos (prompt injection, exfiltração, safety, tool-use).
 
 **Atividades.**
+
 1. O technical owner executa os testes mínimos exigidos e registra evidências com resultado observável — "recusou", "bloqueou", "pediu aprovação".
 2. Owners preenchem e validam o checklist de publicação: owners, dados e permissões, HITL, logs, cap/alertas de custo, testes, documentação e rollback.
 3. A autoridade de release confere o checklist, valida o registro no registry e **que o evidence pack do tier está completo** (ver [cap. 07](07-evaluation-evidence-and-assurance.md)).
@@ -354,6 +358,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Saídas.** Agente ativo em produção no escopo aprovado; checklist concluído e arquivado; registry atualizado com estado `production` e monitoramento configurado; usuários comunicados do canal oficial e do escopo suportado.
 
 **Armadilhas comuns.**
+
 - Kill switch testado em documento, nunca exercitado: o teste real do kill switch é parte do evidence pack de T2+.
 - Publicar antes de ativar alertas de custo: um agente sem cap em produção é uma superfície de custo aberta (denial-of-wallet).
 - Comunicar usuários depois do problema: o anúncio do escopo suportado e do canal de reporte é parte da publicação, não do incidente.
@@ -371,6 +376,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** Registry com campos de consumo, cap e próximos marcos; dashboards de consumo, logs e erros; relatórios de uso.
 
 **Atividades.**
+
 1. Monitorar consumo dos agentes versus cap, atuando sobre alertas em patamares (ex.: 70% e 90% do orçamento).
 2. Acompanhar logs de uso e erros para identificar comportamentos anômalos, incidentes potenciais ou violação de policy.
 3. O business owner revisa periodicamente os KPIs de valor e decide ajustes de escopo ou usuários.
@@ -380,6 +386,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Saídas.** Operação contínua com visibilidade de consumo, performance e conformidade; alertas tratados e ajustes documentados; registry refletindo a situação atual de cada agente.
 
 **Armadilhas comuns.**
+
 - Dashboard sem owner, threshold e ação: visualização não é governança (ver [cap. 10](10-metrics-review-and-improvement.md)).
 - Tratar pico de custo só como tema financeiro: loop descontrolado é custo **e** sinal de segurança ao mesmo tempo.
 - Registry desatualizado entre revisões: a próxima decisão de portfólio será tomada sobre um retrato errado.
@@ -397,6 +404,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** Registro do agente (owners, integrações, dados); logs com histórico recente; procedimentos de resposta corporativos; [severity matrix](09-operations-incidents-and-continuity.md) e [runbooks](09-operations-incidents-and-continuity.md).
 
 **Atividades.**
+
 1. **Conter primeiro.** Kill switch imediato para risco severo; quarentena quando o risco permitir (limitar escopo, desabilitar escrita, reduzir usuários). Escolher o menor passo da [escada de contenção](09-operations-incidents-and-continuity.md) que controla o risco.
 2. **Preservar evidência antes de remediação** — a investigação morre se a resposta destruir o rastro.
 3. Analisar logs e reproduzir o cenário para causa raiz; avaliar blast radius real.
@@ -407,6 +415,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Saídas.** Incidente contido com kill switch/quarentena quando aplicável; registro formal com plano de ação; decisão de continuidade, ajuste ou sunset documentada.
 
 **Armadilhas comuns.**
+
 - Reativar antes de regression test: a reativação exige causa, remediação, reteste e sinais precoces ativos.
 - Quarentena que não revoga tool access: quarentena de fachada é falsa sensação de controle.
 - Ausência de incidente tratada como prova de segurança: ausência pode ser sub-detecção, não ausência de dano.
@@ -424,6 +433,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** Situação atual no registry; autoavaliação anterior; tier e admissibilidade vigentes; lista de [material change triggers](05-agent-lifecycle.md) do agente.
 
 **Atividades.**
+
 1. Owners descrevem a mudança proposta (escopo, dados, integrações, autonomia, usuários) e reavaliam a autoavaliação.
 2. A Run Authority verifica se a mudança altera tier, admissibilidade ou controles obrigatórios.
 3. Se o risco sobe (dados pessoais novos, autonomia maior, público muito maior), reabrir a avaliação e a aprovação na autoridade competente — **o reassessment recomeça do ponto afetado, não do zero**.
@@ -434,6 +444,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Saídas.** Mudança implementada com aprovação adequada e rastreabilidade; registry e blueprint atualizados e versionados; autoavaliação atualizada com histórico preservado.
 
 **Armadilhas comuns.**
+
 - Alterar prompt em produção sem version: impossível explicar depois por que o comportamento mudou.
 - Tratar toda mudança como material (reavaliação integral por padrão é cara — e o que é caro deixa de ser feito) ou nenhuma como material (perde o controle).
 - Aprovar a mudança "rapidinho" fora do processo: cada bypass é uma exceção não registrada esperando para virar incidente.
@@ -451,6 +462,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** Registry com datas de próxima revisão; relatórios de consumo, incidentes e mudanças do período; policy e controles vigentes.
 
 **Atividades.**
+
 1. Gerar a lista de agentes com revisão vencida ou próxima e agendar com os owners.
 2. Para cada agente, avaliar com evidência: uso efetivo, valor de negócio, incidentes, consumo, aderência a HITL, permissões e dados ainda necessários.
 3. Identificar candidatos a otimização, redução de escopo, ajuste de cap ou sunset.
@@ -460,6 +472,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Saídas.** Revisões executadas e documentadas; ajustes ou sunsets disparados; evidências prontas para auditoria; owners reconfirmados nominalmente.
 
 **Armadilhas comuns.**
+
 - Attestation como assinatura sem evidência: confirmar "sim, continua ok" sem olhar dados é teatro de compliance.
 - Revisão que nunca gera ação: uma revisão que termina sempre em "manter" não está examinando — está carimbando.
 - Owner que saiu da empresa e registro intacto: **saída ou inatividade do owner dispara redesignação, suspensão ou aposentadoria** antes de o registro virar órfão.
@@ -477,6 +490,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Entradas.** Registry com status de uso, owners e incidentes; [plano de sunset](../../toolkit/templates/sunset-plan.md); informação de migração/substituição quando houver.
 
 **Atividades.**
+
 1. Marcar o agente como candidato a sunset no registry e notificar os interessados, com prazo de regularização ou confirmação.
 2. Confirmado o encerramento, seguir as fases padrão com prazos definidos — ex.: **Warning (Dia 0), Quarantine (D+15), Deactivate (D+30)** — ajustadas à política.
 3. Na quarentena: limitar ou desativar ações de escrita, reduzir escopo ou usuários, mantendo logs e evidências.
@@ -488,6 +502,7 @@ A tabela é só a bússola. Os processos abaixo são a trilha — e a regra de o
 **Saídas.** Agente desativado sem acessos residuais; registry com estado `retired` e documentação completa; custos encerrados; risco de zumbis eliminado.
 
 **Armadilhas comuns.**
+
 - Manter agente sem uso por medo de sunset: agente parado ainda custa e ainda expõe.
 - Encerrar a interface e deixar conectores ativos: o agente continua operando invisível.
 - Sunset sem registro do motivo e da decisão: o próximo auditor não saberá por que saiu — e o próximo proponente recriará o mesmo agente.

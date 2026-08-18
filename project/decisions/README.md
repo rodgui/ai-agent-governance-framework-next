@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-Este diretório registra decisões arquiteturais do repositório reconstruído. Decisões históricas continuam em [`source-history/`](source-history/) e não governam automaticamente a árvore normalizada.
+Este diretório registra decisões arquiteturais do repositório reconstruído. Decisões históricas continuam no [índice de `source-history`](source-history/README.md) e não governam automaticamente a árvore normalizada.
 
 ## Decisões correntes
 

@@ -91,6 +91,8 @@
 - First seen:
 - Last seen:
 
+> `discovery.status` descreve a disposição de confirmação do agente. `reported` e `unresolved` não são valores desse campo; registre a origem e a qualidade do sinal na tabela abaixo e em suas referências de evidência.
+
 | Source system | Signal type | Observed at | Evidence ref |
 | --- | --- | --- | --- |
 | | | | |
