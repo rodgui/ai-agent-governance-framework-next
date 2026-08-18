@@ -12,6 +12,7 @@ related:
   - ../../../toolkit/patterns/multi-agent-delegation-governance.md
   - ../../../toolkit/templates/agent-delegation-contract.md
   - ../../../toolkit/examples/supervisor-worker-delegation.example.md
+  - ../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md
   - ../../../toolkit/schemas/agent-blueprint.schema.json
 ---
 
@@ -93,4 +94,4 @@ Esta ADR não define um schema JSON obrigatório, não altera os enums existente
 
 ## Evidência e aprovação
 
-A decisão precisa ser exercitada com o [template de contrato de delegação](../../../toolkit/templates/agent-delegation-contract.md), o [pattern de governança de delegação](../../../toolkit/patterns/multi-agent-delegation-governance.md) e o [exemplo supervisor/worker](../../../toolkit/examples/supervisor-worker-delegation.example.md). A aprovação deve registrar cenários testados, falhas encontradas, controles reutilizados, limitações, decisão sobre schema e data de revisão.
+A decisão precisa ser exercitada com o [template de contrato de delegação](../../../toolkit/templates/agent-delegation-contract.md), o [pattern de governança de delegação](../../../toolkit/patterns/multi-agent-delegation-governance.md) e o [exemplo supervisor/worker](../../../toolkit/examples/supervisor-worker-delegation.example.md). O [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md) acrescenta `demonstrated-synthetic` para integration coherence, negative scenarios, lineage, recovery e substitution/exit; não é evidence operacional autorizada. A aprovação deve registrar cenários testados, falhas encontradas, controles reutilizados, limitações, decisão sobre schema e data de revisão.

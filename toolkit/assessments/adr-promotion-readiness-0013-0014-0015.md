@@ -17,6 +17,7 @@ related:
   - ../examples/ai-native-observability.example.md
   - ../examples/ai-native-observability-operational-drill.example.md
   - ../examples/orchestrator-substitution-replay.example.md
+  - ../examples/cases/adr-promotion-synthetic-validation/README.md
   - ../templates/agent-delegation-contract.md
   - ../templates/ai-native-observability-profile.md
   - ../templates/orchestrator-decision-exit-record.md
@@ -45,9 +46,28 @@ O escopo inclui o contrato de delegação multiagente, o profile opcional de obs
 | `demonstrated-deterministic` | Critério demonstrado em exemplo ou teste local determinístico com fixtures fictícios. |
 | `missing-authorized-evidence` | Evidência que exige ambiente autorizado, privacy review, authority ou caso organizacional. |
 | `promotion-ready-after-signoff` | Estrutura técnica suficiente para decisão, sem significar que a decisão já foi tomada. |
+| `demonstrated-synthetic` | Case fictício end-to-end demonstra integração, aplicabilidade contratual e cenários negativos, sem provar eficácia operacional. |
+| `operationally-validated` | Evidência de implementação/execução autorizada demonstra comportamento operacional no escopo observado; não é inferida de examples ou testes sintéticos. |
 | `hold` | Não promover enquanto o gap indicado permanecer sem owner e evidence. |
 
-## 4. Resultado executivo
+## 4. Decision status versus evidence maturity — T32
+
+**Classificação do finding:** `PARTIALLY_CONFIRMED`.
+
+O capítulo 00 já separa `status` documental/editorial, disposição da decisão, `maturity`/evidence e `type`. O ADR histórico de adoção da release 1.1.0 também mostra que `accepted` dependeu de aprovação do owner e de critérios técnicos/release verificáveis, mas declarou explicitamente que a adoção do repositório não era adoção organizacional, certificação ou assurance externa. A tensão aparece porque as ADRs 0013–0015 dizem que permanecem `draft` até haver evidência autorizada, o que pode ser lido como se `accepted` significasse simultaneamente decisão arquitetural aceita e eficácia operacional comprovada.
+
+A recomendação é aplicar o **Modelo A — separação**: `accepted` significa que a authority competente aceitou a decisão arquitetural, possivelmente com conditions registradas; `maturity`/evidence permanece uma dimensão independente, com os estados já usados no corpus, incluindo `demonstrated-deterministic`, `demonstrated-synthetic`, `missing-authorized-evidence` e `operationally-validated`. `accepted` não autoriza production use automaticamente e não transforma evidence sintética em evidence operacional.
+
+Para as ADRs 0013–0015, o estado atual continua `draft` porque ainda não existe decisão humana registrada pela authority competente. A ausência de authorized evidence continua bloqueando a classificação `operationally-validated` e qualquer claim de production readiness, mas não deve ser tratada como definição universal do que `accepted` significa. Não é necessário criar enum, schema, control ou nova taxonomia.
+
+| Dimensão | Responde a | Estado observado neste assessment |
+|---|---|---|
+| `status` documental | O artefato está em draft, maintained ou outro estado editorial? | ADRs 0013–0015: `draft` |
+| Decision status | A authority aceitou, rejeitou ou superseded a decisão? | Nenhuma aceitação humana registrada; promoção permanece `hold` |
+| Maturity/evidence | Que força tem a evidence disponível? | `demonstrated-deterministic` + `demonstrated-synthetic`; `missing-authorized-evidence` para operação |
+| Artifact type | Que tipo de objeto é este? | ADR/decision, assessment, example e evidence são objetos distintos |
+
+## 5. Resultado executivo
 
 | ADR | Estrutura técnica | Pendência | Disposição recomendada |
 |---|---|---|---|
@@ -55,7 +75,7 @@ O escopo inclui o contrato de delegação multiagente, o profile opcional de obs
 | ADR-0014 — observabilidade AI-native | Cobre correlation, provenance, privacy, deletion, cardinality, cost, containment e export guidance. | Privacy/export/retention review e validação em implementação autorizada. | `promotion-ready-after-signoff`; manter `draft` até aprovação. |
 | ADR-0015 — arbitragem cross-plane | Cobre authority, source of truth, enforcement, precedence, conflict, fail-safe e substitution material change. | Walkthrough formal pelas authorities e caso organizacional. | `promotion-ready-after-signoff`; manter `draft` até aprovação. |
 
-## 5. ADR-0013 — contrato de delegação multiagente
+## 6. ADR-0013 — contrato de delegação multiagente
 
 ### Evidência revisada
 
@@ -68,6 +88,7 @@ O escopo inclui o contrato de delegação multiagente, o profile opcional de obs
 | Depth, fan-out, budget, expiry e revocation | Contrato e checklist do exemplo | `demonstrated-deterministic` |
 | Falha state-changing e containment | Cenário 3 do exemplo | `demonstrated-deterministic` |
 | Retry/replay pós-expiry ou revocation | Regra da ADR e substitution/replay drill relacionado | `demonstrated-deterministic` |
+| Integration coherence, negative scenarios, lineage, recovery e substitution/exit | [Synthetic ADR promotion validation case](../examples/cases/adr-promotion-synthetic-validation/README.md) | `demonstrated-synthetic` |
 | Caso organizacional autorizado | Não disponível; os casos publicados são fictícios | `missing-authorized-evidence` |
 | Eficácia operacional | Fora do escopo do repositório canônico | `missing-authorized-evidence` |
 
@@ -85,7 +106,7 @@ O escopo inclui o contrato de delegação multiagente, o profile opcional de obs
 
 Promover somente após concluir os três cenários exigidos pela ADR, registrar divergências e compensating controls e obter confirmação dos reviewers aplicáveis. Nenhuma extensão obrigatória do `agent-blueprint.schema.json` é justificada por este assessment.
 
-## 6. ADR-0014 — profile opcional de observabilidade AI-native
+## 7. ADR-0014 — profile opcional de observabilidade AI-native
 
 ### Evidência revisada
 
@@ -98,6 +119,7 @@ Promover somente após concluir os três cenários exigidos pela ADR, registrar 
 | Deletion em primary/cache/index/backup | Operational drill fictício | `demonstrated-deterministic` |
 | Evidence hold separado do state | Operational drill fictício | `demonstrated-deterministic` |
 | Cardinalidade e custo | Envelope ilustrativo com owner e action | `demonstrated-deterministic` |
+| Correlation/provenance, redaction, retention/deletion, export, cardinality/cost e alert-to-action em fluxo integrado | [Synthetic ADR promotion validation case](../examples/cases/adr-promotion-synthetic-validation/README.md) | `demonstrated-synthetic` |
 | Export sem dashboard proprietário | Guidance documentada; implementação não exercitada | `missing-authorized-evidence` |
 | Privacy review, retention e deletion decision | Ainda não executados por authority real | `missing-authorized-evidence` |
 | Evidência longitudinal de qualidade | Ainda inexistente | `missing-authorized-evidence` |
@@ -116,7 +138,7 @@ Promover somente após concluir os três cenários exigidos pela ADR, registrar 
 
 Promover somente após privacy review, cardinality/cost review, export test e retention/deletion decision em implementação autorizada. O `audit-event.schema.json` permanece inalterado, pois o assessment não demonstra necessidade machine-readable.
 
-## 7. ADR-0015 — arbitragem entre múltiplos control planes
+## 8. ADR-0015 — arbitragem entre múltiplos control planes
 
 ### Evidência revisada
 
@@ -130,6 +152,7 @@ Promover somente após privacy review, cardinality/cost review, export test e re
 | Divergência vira finding | Finding explícito no exemplo | `demonstrated-deterministic` |
 | Assurance independente | ADR e pattern G1 | `demonstrated-deterministic` |
 | Substituição material reconhecida | Exit record e substitution/replay drill | `demonstrated-deterministic` |
+| Matrix cross-plane, conflict, precedence, fail-safe, recovery e substitution/exit em fluxo integrado | [Synthetic ADR promotion validation case](../examples/cases/adr-promotion-synthetic-validation/README.md) | `demonstrated-synthetic` |
 | Caso organizacional e walkthrough formal | Ainda não executados | `missing-authorized-evidence` |
 
 ### Walkthrough requerido
@@ -146,7 +169,22 @@ Promover somente após privacy review, cardinality/cost review, export test e re
 
 Promover somente após walkthrough formal com o caso organizacional, matriz cross-plane, conflito determinístico, fail-safe compatível com o tier e registro de divergências. A ADR não cria taxonomia `consolidated/coordinated/federated` nem `primary_orchestrator` universal.
 
-## 8. Testes determinísticos protegidos
+## 9. Evidence crosswalk — T39
+
+A matriz abaixo reconcilia as formas de evidence já usadas pelo framework. Ela não cria uma nova assurance architecture: explicita o que cada tipo de evidence pode sustentar e onde a decisão precisa parar.
+
+| Evidence type | What it proves | What it does **not** prove | Applicable artifacts | Decision impact |
+|---|---|---|---|---|
+| Documentary evidence | Que a policy, ADR, guidance, template, schema, rationale ou limitation foi registrada e é rastreável | Que o control foi implementado, eficaz ou aprovado por uma authority | ADRs 0013–0015, assessments, templates, CHANGELOG, ROADMAP | Sustenta compreensão, traceability e preparação; não muda sozinho decision status nem operational readiness |
+| Deterministic test evidence | Que fixtures e contratos documentais produziram os resultados esperados em testes reproduzíveis | Que a implementação real, privacy boundary, organization ou runtime longitudinal se comportam igual | `test_adr_walkthrough_evidence.py`, `test_semantic_hardening.py`, validator e gates locais | Sustenta `demonstrated-deterministic` e regression confidence; não sustenta `operationally-validated` |
+| Synthetic integration evidence | Que o case fictício exercita integração, aplicabilidade contratual, negative scenarios, lineage, recovery e substitution/exit | Eficácia operacional, privacy compliance real, control effectiveness, accountability organizacional ou production readiness | [Synthetic ADR promotion validation case](../examples/cases/adr-promotion-synthetic-validation/README.md) | Sustenta `demonstrated-synthetic`; mantém `missing-authorized-evidence` para claims operacionais |
+| Authorized implementation evidence | Que uma implementação delimitada foi exercitada em ambiente, data boundary e authority autorizados, com evidence recuperável | Que o resultado generaliza para todo o estate ou prova eficácia longitudinal | [Authorized operational validation plan](authorized-operational-validation-plan.md), evidence package e release manifest | Pode sustentar `operationally-validated` somente no escopo observado; habilita decisão condicional conforme authority |
+| Operational longitudinal evidence | Que comportamento, incidents, recovery, cost, ownership e control signals foram observados ao longo do tempo no escopo declarado | Que o framework certifica organizações ou garante eficácia fora da população observada | Estate validation, run records, SLO/incident evidence e improvement records | Informa maturity, review cadence, residual risk e continuidade; não substitui decision authority |
+| Human sign-off | Que a authority competente tomou uma decisão explícita, com conditions, objections, expiry e residual uncertainty registrados | Que a decisão é prova de effectiveness ou autorização universal de produção | [Human sign-off package](adr-human-signoff-package-0013-0014-0015.md), ADR/decision record e release checklist | Pode alterar `decision status`; não altera automaticamente `maturity/evidence` nem converte `draft` em operational approval sem os critérios aplicáveis |
+
+A regra operacional resultante é: **test passed** demonstra um resultado do teste; **control effective** exige evidence de implementação/eficácia no escopo; **ADR accepted** exige decisão da authority; e **production approved** exige o processo de release e evidence aplicáveis. Nenhuma dessas expressões deve ser usada como sinônimo das demais.
+
+## 10. Testes determinísticos protegidos
 
 O teste `tools/scripts/test_adr_walkthrough_evidence.py` confirma que os exemplos canônicos continuam contendo os critérios essenciais das ADRs G1, G2 e G4, além dos limites do substitution/replay drill. O teste adicional `tools/scripts/test_semantic_hardening.py` protege as correções T02–T10 de discovery status, waves, metadata, gate flow, technology evaluation e observability crosswalk.
 
@@ -157,9 +195,9 @@ ADR walkthrough evidence: 4 tests — OK
 Semantic hardening: 8 tests — OK
 ```
 
-Este teste é **verification** da integridade documental. Não é evidence de eficácia, não é aprovação humana e não é evidência de produção.
+Este teste é **verification** da integridade documental. O synthetic case acrescenta `demonstrated-synthetic` para integração end-to-end, cobertura de cenários negativos, lineage, recovery e substitution/exit. Nenhum dos dois é aprovação humana, evidence operacional autorizada, compliance evidence ou evidence de produção.
 
-## 9. Decisão solicitada
+## 11. Decisão solicitada
 
 **Decisão atual recomendada:** `hold` para promoção automática; `promotion-ready-after-signoff` para os três pacotes técnicos.
 
@@ -175,11 +213,11 @@ Este teste é **verification** da integridade documental. Não é evidence de ef
 
 **Próxima revisão:** após o walkthrough formal, quando um caso organizacional autorizado estiver disponível ou após a execução autorizada dos drills T15/T16.
 
-## 10. Limitações
+## 12. Limitações
 
 Os casos e drills do repositório são fictícios e vendor-neutral. Os resultados não provam interoperabilidade universal, eficácia de controls, qualidade longitudinal, conformidade, segurança do modelo, justiça do outcome ou prontidão de produção. Valores de cardinalidade e custo são ilustrativos e não são thresholds universais.
 
-## 11. Referências internas
+## 13. Referências internas
 
 - [ADR-0013 — Contrato de delegação multiagente](../../docs/architecture/decisions/0013-multi-agent-delegation-contract.md)
 - [ADR-0014 — Profile opcional de observabilidade AI-native](../../docs/architecture/decisions/0014-ai-native-observability-profile.md)
@@ -189,3 +227,5 @@ Os casos e drills do repositório são fictícios e vendor-neutral. Os resultado
 - [Exemplo G4 — Observabilidade AI-native](../examples/ai-native-observability.example.md)
 - [Operational drill G4](../examples/ai-native-observability-operational-drill.example.md)
 - [Substitution/replay drill](../examples/orchestrator-substitution-replay.example.md)
+- [Synthetic ADR promotion validation case](../examples/cases/adr-promotion-synthetic-validation/README.md)
+- [ADR-0011 — Adoção da release 1.1.0](../../project/decisions/source-history/0011-framework-release-1.1-adoption.md)
