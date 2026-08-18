@@ -2,7 +2,7 @@
 title: Comece aqui — rota de implantação
 status: maintained
 owner: Rodrigo Garcia Guimarães
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 supersedes: null
 related:
@@ -23,14 +23,25 @@ Se o objetivo é estudar o framework capítulo a capítulo, use o [handbook](han
 
 O [capítulo 08 — Implementação e adoção](framework/08-implementation-and-adoption.md) é o playbook da implantação. Ele explica os gates, as dependências, os roadmaps de referência, o capability map, a adoção e os processos operacionais. Isso não significa que todos precisam ler o capítulo inteiro imediatamente. Significa que ele é a referência da ordem; os demais capítulos fornecem o conteúdo de cada decisão.
 
-A jornada é:
+A relação decisória é:
 
 ```text
-mandato → baseline → desenho → fundações → caso real → operação → escala
-   G0         G1        G3/G4        G2         G5/G6       G7
+G0
+ ↓
+G1
+ ↓
+G2 ↔ G3
+ ↓
+G4
+ ↓
+G5
+ ↓
+G6
+ ↓
+G7
 ```
 
-A numeração dos gates não é um cronograma. **G2 e G3 se sobrepõem:** basta haver registry e ownership suficientes para atribuir responsabilidades enquanto as fundações continuam sendo construídas.
+G2 e G3 podem se sobrepor: G2 estabelece as fundações de inventário, identidade, dados e ferramentas; G3 estabelece operating model e decision rights. G4 depende das capabilities e das evidências necessárias de G2 e G3, ainda que a execução das workstreams possa ocorrer em paralelo. A numeração dos gates não é um cronograma e não cria uma ordem alternativa.
 
 ## Escolha uma trilha
 

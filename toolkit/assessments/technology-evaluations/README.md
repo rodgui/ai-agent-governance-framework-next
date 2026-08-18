@@ -4,7 +4,7 @@ Avaliações de tecnologia verificam se uma alternativa implementa capabilities 
 
 ## Assessments disponíveis
 
-- [Orchestrator Technology Evaluation](orchestrator-evaluation.md) — comparação contextual de pattern fit, placement/authority, capabilities, operability e economics/exit para alimentar o G3.
+- [Orchestrator Technology Evaluation](orchestrator-evaluation.md) — comparação contextual de pattern fit, placement/authority, capabilities, operability e economics/exit para alimentar a decisão arquitetural, de plataforma ou de orchestrator relacionada; o contexto de gate é opcional.
 
 ## Contrato mínimo
 

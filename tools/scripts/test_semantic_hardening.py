@@ -73,6 +73,34 @@ class SemanticHardeningTests(unittest.TestCase):
         self.assertIn("decision rights", core)
         self.assertIn("exception authority", core)
 
+    def test_gate_flow_and_editorial_boundary_are_explicit(self) -> None:
+        start_here = self.read("docs/start-here.md")
+        implementation = self.read("docs/framework/08-implementation-and-adoption.md")
+        self.assertIn("G2 ↔ G3", start_here)
+        self.assertIn("G4 depende das capabilities e das evidências necessárias de G2 e G3", start_here)
+        self.assertIn("source of truth canônico para G0–G7", implementation)
+        self.assertIn("roadmap de 90 dias, o programa de 24 semanas e o pilot são guidance/patterns não normativos", implementation)
+
+    def test_orchestrator_evaluation_has_contextual_relationships(self) -> None:
+        assessment = self.read("toolkit/assessments/technology-evaluations/orchestrator-evaluation.md")
+        index = self.read("toolkit/assessments/technology-evaluations/README.md")
+        self.assertIn("relatedArchitectureDecision", assessment)
+        self.assertIn("relatedPlatformDecision", assessment)
+        self.assertIn("relatedOrchestratorDecisionExitRecord", assessment)
+        self.assertIn("governanceGateContext", assessment)
+        self.assertNotIn("relatedDecisionRecord` | referência ao G3", assessment)
+        self.assertNotIn("Conclusão para o G3", assessment)
+        self.assertIn("contexto de gate é opcional", index)
+
+    def test_observability_perspectives_are_crosswalked(self) -> None:
+        chapter = self.read("docs/framework/09-operations-incidents-and-continuity.md")
+        pattern = self.read("toolkit/patterns/ai-native-observability-profile.md")
+        for text in ("WHAT", "HOW", "MINIMUM"):
+            self.assertIn(text, chapter)
+            self.assertIn(text, pattern)
+        self.assertIn("não formam um quarto modelo", chapter)
+        self.assertIn("audit-event schema", pattern)
+
 
 if __name__ == "__main__":
     unittest.main()
