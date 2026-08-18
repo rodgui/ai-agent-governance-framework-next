@@ -17,6 +17,7 @@ related:
   - authorized-operational-validation-plan.md
   - dependency-security-triage.md
   - repository-quality-gate-and-protection.md
+  - ../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md
 ---
 
 # Release readiness — framework 1.1.0
@@ -35,7 +36,7 @@ A decisão solicitada é escolher entre manter o conteúdo sob a release `1.1.0`
 |---|---|---|---|
 | Conteúdo e provenance | Validator local, links, Markdownlint incremental, MkDocs e histórico preservado; T29–T41 adiciona somente assessments, crosswalks e documentação de decisão | `READY_FOR_REVIEW` | Não exige patch/minor bump por si só; requer revisão editorial final |
 | CI e repository governance | `main` protegido; required status context `Canonical repository quality gate`; PR #7 merged com check success; run de `main` `32175176730` success | `OBSERVED_SUCCESS` | Evidência de enforcement e regressão do repositório; não é assurance absoluta da plataforma |
-| ADRs 0013–0015 | Synthetic case `demonstrated-synthetic`; deterministic tests; human sign-off package; ADRs permanecem `draft` | `CONDITIONAL` | Não promover ADRs nem declarar production approval; release pode carregar guidance claramente rotulada |
+| ADRs 0013–0015 | Synthetic case `demonstrated-synthetic`; deterministic tests; decision record; guidance aceita com conditions; operational evidence de consumidores permanece missing | `CONDITIONAL` | Aceitação é limitada ao framework; não declarar operational validation ou production approval de consumidores |
 | Dependabot e alert inventory | PRs #8–#14 reavaliados; #11 failure; REST alerts 403; GraphQL corrigido retornou nodes vazios sem reconciliar aggregate histórico | `BLOCKED_BY_AUTHORIZED_EVIDENCE` | Não declarar security remediation; não aceitar updates por inferência |
 | Actions/Node 24 | Fontes oficiais tornam v7 tecnicamente plausível; PRs #8–#10 tiveram CI success nos heads | `PARTIALLY_CONFIRMED` | Não atualizar Actions automaticamente nesta release; decisão individual permanece pendente |
 | T15/T16/T17 e estate | Execution package permanece `BLOCKED_BY_AUTHORIZED_EVIDENCE`/`PLANNED`; nenhum ambiente ou authority real foi fornecido | `NOT_OPERATIONALLY_VALIDATED` | Não bloquear a publicação documental por claim inexistente; bloquear qualquer claim de effectiveness/production readiness |
@@ -45,7 +46,7 @@ A decisão solicitada é escolher entre manter o conteúdo sob a release `1.1.0`
 
 A recomendação é **KEEP `1.1.0`**, mantendo o conjunto como `Unreleased` até que a release authority faça a revisão final. Não há fundamento para `PATCH 1.1.x` porque não foi identificado um bugfix de release isolado; também não há necessidade demonstrada de `MINOR 1.2.0`, pois a rodada não altera schema, controls, risk tiers, package contract ou machine-readable enums.
 
-Esta recomendação trata de **framework release readiness**. Ela não significa que uma organização pode operar agentes em produção, que os controls são effective, que as ADRs foram aceitas ou que o framework certifica compliance. Esses claims continuam dependentes de authorities, evidence autorizada e do processo de release do consumidor.
+Esta recomendação trata de **framework release readiness**. Ela não significa que uma organização pode operar agentes em produção, que os controls são effective, que as ADRs foram aceitas por uma organização consumidora ou que o framework certifica compliance. As ADRs foram aceitas somente como guidance do framework, com conditions; claims de consumidor continuam dependentes de authorities, evidence autorizada e do processo de release do consumidor.
 
 ## 4. Release decision checklist crosswalk
 
@@ -73,4 +74,4 @@ Até esse momento, T15/T16 permanecem `BLOCKED_BY_AUTHORIZED_EVIDENCE` e T17 per
 
 Este assessment não contém nomes, assinaturas, secrets, dados pessoais ou evidence de produção. Os runs remotos citados são evidence observada do repositório e do workflow nos heads indicados, não validação longitudinal do framework.
 
-A próxima decisão humana deve confirmar a recomendação `KEEP 1.1.0`, revisar os PRs Dependabot abertos individualmente, decidir o status das ADRs sem misturar decision acceptance e evidence maturity e, se necessário, autorizar a execução T15/T16/T17 em ambiente real.
+A próxima decisão humana deve confirmar a recomendação `KEEP 1.1.0`, revisar os PRs Dependabot abertos individualmente, revisar as conditions da aceitação de guidance sem misturar decision acceptance e evidence maturity e, se necessário, autorizar a execução T15/T16/T17 em ambiente real.

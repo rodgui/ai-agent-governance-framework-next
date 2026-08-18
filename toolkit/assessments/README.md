@@ -29,8 +29,8 @@ Avaliações comparativas, de risco, maturidade, tecnologia e control effectiven
 
 #### Artefatos
 
-- [ADR promotion readiness — 0013, 0014 e 0015](adr-promotion-readiness-0013-0014-0015.md) — assessment de readiness técnica para walkthrough e eventual promoção; não é aprovação.
-- [Human sign-off package — ADRs 0013, 0014 e 0015](adr-human-signoff-package-0013-0014-0015.md) — pacote de decisão humana sem nomes ou assinaturas inventados; recomenda `KEEP_DRAFT` até authority review.
+- [ADR promotion readiness — 0013, 0014 e 0015](adr-promotion-readiness-0013-0014-0015.md) — assessment criterial da aceitação simulada das ADRs como guidance do framework; não é operational validation de consumidores.
+- [Human sign-off package — ADRs 0013, 0014 e 0015](adr-human-signoff-package-0013-0014-0015.md) — pacote de decisão para consumidores, sem nomes ou assinaturas inventados; registra `ACCEPT_WITH_CONDITIONS` simulado no framework e mantém `KEEP_DRAFT` para consumer sign-off.
 - [Plano de validação operacional autorizada](authorized-operational-validation-plan.md) — execution package para substitution/replay, observabilidade AI-native e estate validation; permanece `BLOCKED_BY_AUTHORIZED_EVIDENCE` até haver organization, authority e environment aprovados.
 - [Dependency security triage](dependency-security-triage.md) — inventário de ecosystems, estratégia Dependabot e bloqueios para triagem alert-by-alert; permanece `NOT_CONFIRMED` sem export autorizado.
 - [Dependabot PR triage](dependabot-pr-triage.md) — disposition dos PRs Dependabot, lower bounds, compatibilidade e condições para reavaliação; nenhum merge automático.

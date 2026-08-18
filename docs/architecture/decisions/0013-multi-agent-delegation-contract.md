@@ -1,8 +1,8 @@
 ---
 title: ADR-0013 — Contrato de delegação multiagente
-status: draft
+status: accepted
 owner: framework-maintainers
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: major-change
 supersedes: null
 related:
@@ -13,6 +13,7 @@ related:
   - ../../../toolkit/templates/agent-delegation-contract.md
   - ../../../toolkit/examples/supervisor-worker-delegation.example.md
   - ../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md
+  - ../../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md
   - ../../../toolkit/schemas/agent-blueprint.schema.json
 ---
 
@@ -20,9 +21,9 @@ related:
 
 ## Status e escopo
 
-Esta é uma **decisão arquitetural em rascunho** da frente G2. Ela materializa a topologia e o envelope de delegação entre agentes, especialmente em modelos supervisor/worker, sem criar automaticamente novos controls nem alterar o `agent-blueprint.schema.json` nesta etapa.
+Esta é uma **decisão arquitetural aceita com conditions** da frente G2. Ela materializa a topologia e o envelope de delegação entre agentes, especialmente em modelos supervisor/worker, sem criar automaticamente novos controls nem alterar o `agent-blueprint.schema.json` nesta etapa.
 
-A decisão permanece `draft` até ser exercitada com um caso fictício e um caso organizacional autorizado, e aprovada pela Design Authority, Governance Owner, Security/IAM Authority, Data/Privacy Authority e Run Authority quando houver efeito operacional. O contrato conceitual deve ser validado antes de qualquer extensão machine-readable obrigatória.
+A aceitação é limitada à camada canônica de guidance, patterns e templates do framework e foi registrada em `SIMULATED_OWNER_AUTHORIZED_REVIEW`. Ela não é sign-off de uma organização consumidora, não prova operational validation e não autoriza production use. Cada implementação consumidora deve repetir os cenários e produzir authorities, identities, policy/tool enforcement, recovery e evidence próprios antes de qualquer claim de effectiveness.
 
 ## Contexto
 
@@ -94,4 +95,4 @@ Esta ADR não define um schema JSON obrigatório, não altera os enums existente
 
 ## Evidência e aprovação
 
-A decisão precisa ser exercitada com o [template de contrato de delegação](../../../toolkit/templates/agent-delegation-contract.md), o [pattern de governança de delegação](../../../toolkit/patterns/multi-agent-delegation-governance.md) e o [exemplo supervisor/worker](../../../toolkit/examples/supervisor-worker-delegation.example.md). O [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md) acrescenta `demonstrated-synthetic` para integration coherence, negative scenarios, lineage, recovery e substitution/exit; não é evidence operacional autorizada. A aprovação deve registrar cenários testados, falhas encontradas, controles reutilizados, limitações, decisão sobre schema e data de revisão.
+A decisão foi revisada com o [template de contrato de delegação](../../../toolkit/templates/agent-delegation-contract.md), o [pattern de governança de delegação](../../../toolkit/patterns/multi-agent-delegation-governance.md), o [exemplo supervisor/worker](../../../toolkit/examples/supervisor-worker-delegation.example.md), os testes determinísticos e o [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md). O conjunto demonstra `demonstrated-deterministic` + `demonstrated-synthetic` para integration coherence, negative scenarios, lineage, recovery e substitution/exit. A decisão é `accepted` com conditions no escopo do framework; `missing-authorized-evidence` permanece para implementation, operational effectiveness e produção. A provenance completa está no [decision record](../../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md).

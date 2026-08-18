@@ -6,13 +6,21 @@ Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o s
 
 - Adicionado o case fictício `toolkit/examples/cases/adr-promotion-synthetic-validation/`, exercitando delegation, observabilidade AI-native e arbitragem entre control planes de ponta a ponta.
 - O pacote inclui denies, privilege escalation, expiry/revocation, containment, recovery, deletion, export, cardinality/cost, correlation failure, fail-safe, substitution/exit e decision records sintéticos.
-- A simulação é classificada como `SIMULATED_SYNTHETIC_EVIDENCE`: demonstra aplicabilidade e coerência do framework, mas não é production evidence, não promove as ADRs a `accepted` e não altera schemas, controls, risk tiers, release ou status `draft`.
+- A simulação é classificada como `SIMULATED_SYNTHETIC_EVIDENCE`: demonstra aplicabilidade e coerência do framework, mas, naquela decisão sintética, não era production evidence, não promovia as ADRs a `accepted` e não alterava schemas, controls, risk tiers, release ou status `draft`.
 - O case é um exemplo transversal de delivery para futuras implementações e serviços; cada consumidor deve substituir aliases, fixtures e evidence sintéticos por authorities, ambientes e records próprios.
+
+## 2026-08-18 — Unreleased: aceitação simulada das ADRs 0013–0015 como guidance do framework
+
+- Executada revisão criterial das ADRs 0013, 0014 e 0015 contra seus contratos, patterns, templates, examples, testes determinísticos, drills e synthetic validation case. Nenhum finding conceitual bloqueante foi demonstrado no escopo de guidance do framework.
+- Criado `project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md`, registrando `SIMULATED_OWNER_AUTHORIZED_REVIEW` e `accepted` com conditions para a camada canônica de guidance, patterns e templates. O decision record não representa sign-off de organização consumidora e não inventa reviewers, pessoas ou assinaturas.
+- As ADRs 0013–0015 e o decision log passaram de `draft` para `accepted` no escopo do framework. A evidence maturity permanece `demonstrated-deterministic` + `demonstrated-synthetic`; `missing-authorized-evidence` permanece para implementation, operational validation, effectiveness e production readiness de consumidores.
+- As conditions preservam human gating de publish/approve e exigem, por consumidor, authorities, identities, policy/tool enforcement, privacy/security review, export, retention/deletion, fallback, recovery, substitution e evidence próprios conforme a ADR.
+- Esta decisão não altera schemas, controls, risk tiers, MPB, Registry, machine-readable enums, vendor ranking ou a release `1.1.0`; não cria nova simulação e não converte synthetic evidence em operational evidence.
 
 ## 2026-08-18 — Unreleased: rodada estruturada de hardening T29–T41
 
 - T29 atualizou o assessment de quality gate com a evidência observada do PR #7 (`head 86149945`, run `32175015315`, conclusão `success`) e separou o display da UI (`Quality gates / Canonical repository quality gate`) do required status context técnico (`Canonical repository quality gate`). T30 registrou no `ROADMAP.md` a progressão PR #5 failure → PR #6 closeout success → PR #7 protected success → `main` `d72e756`.
-- T31 integrou o synthetic validation case ao ADR promotion readiness e às ADRs 0013–0015; T32 separou decision status de evidence maturity sem criar nova taxonomia; T33 criou o human sign-off package sem nomes ou assinaturas inventados. As três ADRs permanecem `draft`.
+- T31 integrou o synthetic validation case ao ADR promotion readiness e às ADRs 0013–0015; T32 separou decision status de evidence maturity sem criar nova taxonomia; T33 criou o human sign-off package sem nomes ou assinaturas inventados. No fechamento daquela rodada, as três ADRs permaneciam `draft`; uma decisão simulada posterior registra a aceitação de guidance no escopo do framework.
 - T34–T36 atualizaram o inventory e a decision matrix dos PRs Dependabot #1 e #8–#14, mantendo #1 como `DUPLICATE_CANDIDATE`, #11 como `BLOCKED_BY_CI_FAILURE`, #12 em compatibility review e #13/#14 em contract review; nenhum merge foi executado.
 - T35 documentou as três superfícies do contrato Python — runtime/package, CI/tooling e workflow/runtime — e preservou a regra de não elevar lower bounds sem requisito demonstrável. T37 registrou a análise oficial de Actions/Node 24; PRs #8–#10 continuam `REVIEW_COMPATIBILITY` apesar de CI success observado nos heads.
 - T38 repetiu a tentativa autorizada de inventário de security alerts: REST retornou `403` e a consulta GraphQL corrigida retornou `nodes: []`; o resultado não foi interpretado como ausência de alerts. O estado permanece `BLOCKED_BY_AUTHORIZED_EVIDENCE`/`NOT_CONFIRMED`.
