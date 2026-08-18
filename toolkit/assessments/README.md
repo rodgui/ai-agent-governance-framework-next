@@ -1,12 +1,13 @@
 ---
 title: Assessments
 status: maintained
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
 
 # Assessments
+
 Este artefato consolida fontes validadas segundo a estratégia registrada no plano de migração. A união preserva conteúdo único e registra a origem de cada bloco.
 
 ## Fonte: `assessments/README.md`
@@ -28,6 +29,7 @@ Avaliações comparativas, de risco, maturidade, tecnologia e control effectiven
 
 #### Artefatos
 
+- [ADR promotion readiness — 0013, 0014 e 0015](adr-promotion-readiness-0013-0014-0015.md) — assessment de readiness técnica para walkthrough e eventual promoção; não é aprovação.
 - [Crosswalk histórico Microsoft Customer Zero × Policy v1](../../project/history/assessments/microsoft-case-study-framework-crosswalk.md) — registro depreciado da primeira consolidação; não é fonte normativa corrente.
 - [Maturity model](../maturity/maturity-model.md) — escala e dimensões.
 - [Maturity assessment example](../examples/maturity-assessment.example.json) — record fictício validado.

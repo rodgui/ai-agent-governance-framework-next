@@ -2,7 +2,7 @@
 title: Catálogo de artefatos do programa
 status: maintained
 owner: Rodrigo Garcia Guimarães
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 supersedes: null
 related:
@@ -77,6 +77,7 @@ Duas ressalvas sobre a coluna de fase. Ela referencia as fases F0–F6 do [progr
 | Implementation-plan hierarchy ADR | classificação entre plano de domínio, plano integrado de capítulo e roadmap de programa | governança editorial + arquitetura | F2 | [ADR-0012](../docs/architecture/decisions/0012-implementation-plan-hierarchy.md) |
 | Control-plane interaction matrix | capability, source of truth, enforcement, fallback e evidence por plano | arquitetura + plataforma | F3 | [pattern](patterns/multi-control-plane-governance.md) · [exemplo](examples/multi-control-plane-conflict.example.md) |
 | Orchestrator Technology Evaluation | pattern fit, placement/authority, capabilities, operability, economics, evidence e exit risk | arquitetura + governança + plataforma | F2/F3 | [assessment](assessments/technology-evaluations/orchestrator-evaluation.md) |
+| ADR promotion readiness assessment | readiness técnica, gaps de evidência e reviewers para promoção das ADRs 0013, 0014 e 0015 | arquitetura + governança + assurance | F2/F3 | [assessment](assessments/adr-promotion-readiness-0013-0014-0015.md) |
 | Orchestrator Decision and Exit Record | topologia, capabilities, authority, lock-in, portability, resilience e saída | arquitetura + governança + plataforma | F2/F3 | [template](templates/orchestrator-decision-exit-record.md) · [exemplo](examples/orchestrator-decision-exit-record.example.md) · [substitution/replay](examples/orchestrator-substitution-replay.example.md) |
 | Capability-to-technology mapping | qual sistema existente responde por cada capability, com source of truth por atributo | arquitetura corporativa | F2/F3 | [método de mapeamento](../docs/framework/06-architecture-and-technical-controls.md) |
 | Decisão arquitetural por caso | agente é o mecanismo certo? | arquitetura | F2 | [árvore de decisão](../docs/framework/03-inventory-portfolio-and-value.md) |
