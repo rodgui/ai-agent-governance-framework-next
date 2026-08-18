@@ -2,6 +2,15 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-18 — Unreleased: closeout técnico T20–T28
+
+- T20 corrigiu R3 para referenciar explicitamente as quatro dimensões canônicas de metadata; T21 removeu `uv.lock` como dependência documental fictícia; T22 reconciliou ROADMAP e CHANGELOG com a evidência local e remota.
+- T23 consolidou `.github/workflows/quality-gates.yml` como fonte única e renomeou o check para `Quality gates / Canonical repository quality gate`; T24 passou a agrupar somente minor/patch no Dependabot, mantendo major updates individuais e sem automerge.
+- T25 registrou a disposition dos PRs Dependabot #1, #3 e #4 sem merge ou close automático. T26 tentou REST e GraphQL autorizados; o REST retornou `HTTP 403` e o resultado GraphQL vazio não foi interpretado como ausência de alerts. O inventário alert-by-alert permanece `BLOCKED_BY_AUTHORIZED_EVIDENCE`.
+- T27 aplicou proteção remota em `main`: PR obrigatório, check canônico obrigatório, strict status checks, enforce admins, sem force-push, sem deletion e com conversation resolution; required reviewer count permanece `0` para não criar deadlock de owner único.
+- No clean checkout do commit `3478233`, os gates locais passaram: validator, 81 testes, Ruff, `py_compile`, Markdownlint dos arquivos alterados, MkDocs strict, rendering determinístico e `git diff --check`. O PR #6 executou o run `32165595605` com conclusão `success` no check `Quality gates / Canonical repository quality gate`.
+- T15–T17 continuam `BLOCKED_BY_AUTHORIZED_EVIDENCE`/`PLANNED`, ADRs 0013–0015 continuam `draft`, estate validation não foi executada e a release `1.1.0` permanece inalterada. O remote alert inventory e os upgrades dos PRs Dependabot não foram tratados como concluídos por inferência.
+
 ## 2026-08-18 — Unreleased: rodada estruturada de hardening T00–T19
 
 - Aplicado hardening semântico e editorial no vocabulário canônico, nos estados de discovery, nas implementation waves, nas dimensões de metadata, no fluxo G0→G7, na avaliação de orchestrator e no crosswalk de observabilidade.
