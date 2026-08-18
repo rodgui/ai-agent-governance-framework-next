@@ -55,6 +55,26 @@ class SemanticHardeningTests(unittest.TestCase):
         self.assertIn("**Maturity/evidence status**", glossary)
         self.assertIn("**Artifact type**", glossary)
 
+    def test_r3_uses_canonical_metadata_dimensions(self) -> None:
+        document_control = self.read("docs/framework/00-document-control.md")
+        r3 = next(
+            line for line in document_control.splitlines() if line.startswith("| R3 |")
+        )
+        for dimension in (
+            "estado documental/editorial",
+            "disposição da decisão",
+            "maturidade/evidence",
+            "tipo de artefato",
+        ):
+            self.assertIn(dimension, r3)
+        self.assertIn("aliases históricos", r3)
+        for competing_taxonomy in (
+            "draft/aprovado/histórico/informativo/descontinuado",
+            "draft/aprovado",
+            "histórico/informativo",
+        ):
+            self.assertNotIn(competing_taxonomy, r3)
+
     def test_gate_anchor_and_navigation_target_are_consistent(self) -> None:
         implementation = self.read("docs/framework/08-implementation-and-adoption.md")
         self.assertIn("[contrato comum dos gates](#11-o-contrato-comum-dos-decision-gates)", implementation)
@@ -116,8 +136,16 @@ class SemanticHardeningTests(unittest.TestCase):
         mkdocs = self.read("mkdocs.yml")
         self.assertIn("T4 não significa `prohibited`", cases)
         self.assertIn("não cria uma nova fixture", cases)
+        changelog = self.read("CHANGELOG.md")
         self.assertIn("BLOCKED_BY_AUTHORIZED_EVIDENCE", roadmap)
         self.assertIn("Dependency security", roadmap)
+        self.assertIn("T17 planning artifact", roadmap)
+        self.assertIn("PLANNED", roadmap)
+        self.assertIn("T4 fictício não exige ambiente autorizado", roadmap)
+        self.assertNotIn("aguardando regressão integral", roadmap)
+        self.assertIn("REMOTE_CI_FAILURE", changelog)
+        self.assertIn("validação local pós-merge", changelog)
+        self.assertNotIn("A validação pós-merge passou", changelog)
         self.assertIn("Readiness das ADRs", mkdocs)
 
     def test_readiness_preserves_draft_and_records_hardening_delta(self) -> None:
@@ -141,9 +169,20 @@ class SemanticHardeningTests(unittest.TestCase):
         triage = self.read("toolkit/assessments/dependency-security-triage.md")
         self.assertIn("package-ecosystem: pip", dependabot)
         self.assertIn("package-ecosystem: github-actions", dependabot)
+        self.assertIn("python-minor-patch", dependabot)
+        self.assertIn("github-actions-minor-patch", dependabot)
+        self.assertEqual(dependabot.count("update-types:"), 2)
+        self.assertNotIn("automerge", dependabot)
         self.assertIn("NOT_CONFIRMED", triage)
         self.assertIn("HTTP 403", triage)
         self.assertIn("minimum safe upgrade", triage)
+        self.assertNotIn("uv.lock", triage)
+        for manifest in (
+            "pyproject.toml",
+            "requirements-ci.txt",
+            "requirements-docs.txt",
+        ):
+            self.assertIn(manifest, triage)
         self.assertFalse((ROOT / "tools/tests/test_validate_repository.py").exists())
         self.assertTrue((ROOT / "tools/tests/test_validate_repository.md").exists())
 
