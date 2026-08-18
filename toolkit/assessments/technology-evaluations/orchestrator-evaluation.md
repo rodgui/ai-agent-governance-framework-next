@@ -3,7 +3,7 @@ title: Orchestrator Technology Evaluation
 type: assessment
 status: draft
 maturity: illustrative
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: major-change
 owners: [architecture, governance, platform]
 related:
@@ -28,7 +28,10 @@ related:
 | `alternatives` | alternativas comparadas; podem ser plataforma, assembly of tools ou opção de não adoção |
 | `decisionAuthority` | authority competente para a decisão |
 | `reviewer` | reviewer independente ou challenge quando aplicável |
-| `relatedDecisionRecord` | referência ao G3 que receberá a conclusão |
+| `relatedArchitectureDecision` | ADR ou decisão de arquitetura suportada por esta avaliação |
+| `relatedPlatformDecision` | decisão de plataforma/capability suportada, quando aplicável |
+| `relatedOrchestratorDecisionExitRecord` | decision/exit record que consolida a decisão de orchestrator, quando aplicável |
+| `governanceGateContext` | contexto opcional de G2, G3, G4 ou outro gate relevante; não cria gate nem determina a disposição |
 | `excludedClaims` | claims que não serão tratados como evidência nesta avaliação |
 
 Antes de pontuar, registre o work profile do caso: `determinism`, `governanceConstraints`, `humanOversight`, `iterativeNeed` e `eventDrivenCoordination`, cada um como `low`, `moderate` ou `high`, com rationale e evidence. Registre também `primaryOrchestrationPattern` e `secondaryOrchestrationPattern`, quando houver.
@@ -114,9 +117,9 @@ Lista de evidence ausente ou não verificável:
 |---|---|---|---|---|
 |  |  |  |  | `unknown`, `conditional`, `hold` ou `not-applicable` com rationale |
 
-## 7. Conclusão para o G3
+## 7. Conclusão e integração da decisão
 
-A conclusão deve alimentar o G3 com uma disposição condicionada ao escopo:
+A conclusão deve alimentar o decision record ou platform decision correspondente, com uma disposição condicionada ao escopo. O contexto de gate é opcional: uma avaliação pode apoiar G2, G3, G4 ou uma decisão arquitetural/plataforma fora de um gate, sem mudar a definição dos gates canônicos.
 
 | Campo | Preencher |
 |---|---|
@@ -128,6 +131,10 @@ A conclusão deve alimentar o G3 com uma disposição condicionada ao escopo:
 | `conditions` | conditions, owner e expiry |
 | `confidence` | `low`, `medium` ou `high` |
 | `exitDependencies` | testes e capacidades necessários para substituição |
+| `relatedArchitectureDecision` | decisão arquitetural relacionada |
+| `relatedPlatformDecision` | decisão de plataforma relacionada |
+| `relatedOrchestratorDecisionExitRecord` | record de decisão e saída relacionado |
+| `governanceGateContext` | gate contextual opcional e rationale |
 
 O decision record continua sendo a fonte da decisão final, das authorities, do risco residual, das conditions, da portabilidade e da saída. Este assessment apenas torna comparável a evidência usada para chegar à decisão.
 
@@ -137,4 +144,4 @@ Este artefato não altera risk tier, admissibility, risk score, readiness score,
 
 ## Critério de conclusão
 
-A avaliação está concluída quando um reviewer consegue reconstruir o work profile, verificar o fit do pattern primário/secundário, comparar alternativas com evidence e confidence, identificar knockout conditions e missing evidence, reproduzir a sensitivity analysis material e localizar a disposição correspondente no G3.
+A avaliação está concluída quando um reviewer consegue reconstruir o work profile, verificar o fit do pattern primário/secundário, comparar alternativas com evidence e confidence, identificar knockout conditions e missing evidence, reproduzir a sensitivity analysis material e localizar a disposição no decision record, platform decision ou Orchestrator Decision and Exit Record relacionado.

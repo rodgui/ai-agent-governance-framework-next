@@ -2,7 +2,7 @@
 title: Pattern — AI-Native Observability Profile
 status: draft
 owner: framework-maintainers
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 related:
   - README.md
@@ -18,6 +18,8 @@ related:
 ## Intenção
 
 Tornar reconstruível a cadeia de uma execução AI-native, de uma task ou delegation até model, retrieval, policy, tool, human intervention, containment, outcome e value/cost, sem exigir um dashboard ou fornecedor único.
+
+> **Crosswalk de observabilidade.** O modelo em 8 camadas do [capítulo 09](../../docs/framework/09-operations-incidents-and-continuity.md) define **WHAT** precisa ser observável. Este profile define **HOW** uma execução agentic material é correlacionada semanticamente. O [audit-event schema](../schemas/audit-event.schema.json) define o **MINIMUM** machine-readable event envelope; ele não representa sozinho toda a semântica do profile.
 
 ## Problema
 
