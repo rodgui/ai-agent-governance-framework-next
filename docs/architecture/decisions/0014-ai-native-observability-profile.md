@@ -13,6 +13,7 @@ related:
   - ../../../toolkit/patterns/ai-native-observability-profile.md
   - ../../../toolkit/templates/ai-native-observability-profile.md
   - ../../../toolkit/examples/ai-native-observability.example.md
+  - ../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md
 ---
 
 # ADR-0014 — Profile opcional de observabilidade AI-native
@@ -111,4 +112,4 @@ Instrumentação adicional aumenta custo, cardinalidade, volume de dados, risco 
 
 ## Evidência e aprovação
 
-A decisão precisa ser exercitada com o [profile de observabilidade AI-native](../../../toolkit/patterns/ai-native-observability-profile.md), o [template](../../../toolkit/templates/ai-native-observability-profile.md) e o [exemplo fictício](../../../toolkit/examples/ai-native-observability.example.md). A aprovação deve registrar cobertura, limitações, privacy review, custo/cardinality review, export test, retention decision e data de revisão.
+A decisão precisa ser exercitada com o [profile de observabilidade AI-native](../../../toolkit/patterns/ai-native-observability-profile.md), o [template](../../../toolkit/templates/ai-native-observability-profile.md) e o [exemplo fictício](../../../toolkit/examples/ai-native-observability.example.md). O [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md) acrescenta `demonstrated-synthetic` para correlation/provenance, redaction, retention/deletion, export, cardinality/cost e alert-to-action integrados; não prova privacy compliance, control effectiveness, longitudinal quality ou production readiness. A aprovação deve registrar cobertura, limitações, privacy review, custo/cardinality review, export test, retention decision e data de revisão.
