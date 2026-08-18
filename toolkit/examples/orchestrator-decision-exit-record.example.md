@@ -2,7 +2,7 @@
 title: Exemplo — Orchestrator Decision and Exit Record
 status: example
 maturity: illustrative
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 related:
   - ../templates/orchestrator-decision-exit-record.md
   - ../../docs/architecture/decisions/0015-multi-control-plane-arbitration.md
@@ -27,6 +27,9 @@ related:
 | `relatedAgentIds` | `service-desk-supervisor`, `service-desk-worker` |
 | `relatedBlueprintRefs` | `blueprint/service-desk-supervisor/0.4`, `blueprint/service-desk-worker/0.4` |
 | `relatedRiskRefs` | `risk/fictitious-service-desk/0.4` |
+| `relatedArchitectureDecision` | `ADR-0015` — relação arquitetural fictícia |
+| `relatedPlatformDecision` | `platform/fictitious-agent-platform/0.4` |
+| `governanceGateContext` | `G2/G3/G4` — contexto de governança, não destino obrigatório |
 
 ## 2. Problema e contexto
 

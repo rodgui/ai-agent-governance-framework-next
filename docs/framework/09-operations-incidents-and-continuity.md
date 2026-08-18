@@ -2,14 +2,13 @@
 title: 09 — Operações, incidentes e continuidade
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
 
 # 09 — Operações, incidentes e continuidade
-
 
 ## Visão geral
 
@@ -46,6 +45,18 @@ Antes do release, deve existir: Run Authority e technical owner; SLOs e error bu
 | governance | exception, finding, attestation, lifecycle stage e operational state |
 
 **Dashboards precisam de owner, threshold e action; caso contrário são visualização, não governança.**
+
+#### Como as três perspectivas se relacionam
+
+As três perspectivas são complementares e não formam um quarto modelo:
+
+| Perspectiva | Papel | Artefato de referência |
+|---|---|---|
+| **Modelo em 8 camadas** | **WHAT** precisa ser observável: experiência, modelo, retrieval/data, agent, tool, identity, business e governance. | Esta seção e seus sinais por domínio. |
+| **AI-Native Observability Profile** | **HOW** uma execução agentic material é semanticamente correlacionada por task, delegation, model, retrieval, policy, tool, memory/state, containment, cost e outcome. | [Profile G4](../../toolkit/patterns/ai-native-observability-profile.md) e [template](../../toolkit/templates/ai-native-observability-profile.md). |
+| **Audit-event schema** | **MINIMUM** machine-readable event envelope para identidade, correlação, timestamps, action, policy, resultado e integridade. | [Audit-event schema](../../toolkit/schemas/audit-event.schema.json). |
+
+O profile não substitui o modelo em camadas e o schema não pretende representar toda a semântica do profile. A implementação deve mapear sinais das camadas para eventos mínimos e, quando a execução for material, para a correlação semântica do profile.
 
 ### 1.3 Telemetria e correlação de ponta a ponta
 

@@ -30,6 +30,8 @@ related:
 
 As ADRs `0013`, `0014` e `0015` foram implementadas como guidance, patterns, templates e exemplos vendor-neutral. O conteúdo técnico foi exercitado em casos fictícios e em drills determinísticos, mas cada ADR exige walkthrough por authorities antes de sair de `draft`.
 
+A rodada T01–T13 adicionou semantic e editorial hardening sem alterar schemas, controls, risk tiers, MPB, Registry ou release: `discovery.status` foi alinhado ao enum canônico; as waves de implementação passaram a W0–W6; document status, decision status, maturity e artifact type foram separados; o fluxo G2↔G3 foi explicitado; technology evaluation deixou de ter G3 como destino rígido; e o crosswalk WHAT/HOW/MINIMUM de observabilidade foi registrado.
+
 A pergunta deste assessment é: **a estrutura técnica está pronta para revisão final e eventual promoção de status, e quais evidências ainda impedem essa decisão?**
 
 ## 2. Escopo e exclusões
@@ -144,15 +146,15 @@ Promover somente após privacy review, cardinality/cost review, export test e re
 
 Promover somente após walkthrough formal com o caso organizacional, matriz cross-plane, conflito determinístico, fail-safe compatível com o tier e registro de divergências. A ADR não cria taxonomia `consolidated/coordinated/federated` nem `primary_orchestrator` universal.
 
-## 8. Teste determinístico protegido
+## 8. Testes determinísticos protegidos
 
-Foi adicionado localmente `tools/scripts/test_adr_walkthrough_evidence.py`. O teste confirma que os exemplos canônicos continuam contendo os critérios essenciais das ADRs G1, G2 e G4, além dos limites do substitution/replay drill.
+O teste `tools/scripts/test_adr_walkthrough_evidence.py` confirma que os exemplos canônicos continuam contendo os critérios essenciais das ADRs G1, G2 e G4, além dos limites do substitution/replay drill. O teste adicional `tools/scripts/test_semantic_hardening.py` protege as correções T02–T10 de discovery status, waves, metadata, gate flow, technology evaluation e observability crosswalk.
 
 Resultado atual:
 
 ```text
-Ran 4 tests
-OK
+ADR walkthrough evidence: 4 tests — OK
+Semantic hardening: 8 tests — OK
 ```
 
 Este teste é **verification** da integridade documental. Não é evidence de eficácia, não é aprovação humana e não é evidência de produção.
@@ -171,7 +173,7 @@ Este teste é **verification** da integridade documental. Não é evidence de ef
 - Run Authority: validar falha, contenção, recovery e reativação;
 - Platform/Observability Owner: produzir export, cardinality/cost e deletion evidence.
 
-**Próxima revisão:** após o walkthrough formal ou quando um caso organizacional autorizado estiver disponível.
+**Próxima revisão:** após o walkthrough formal, quando um caso organizacional autorizado estiver disponível ou após a execução autorizada dos drills T15/T16.
 
 ## 10. Limitações
 

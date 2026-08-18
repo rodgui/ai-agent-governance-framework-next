@@ -2,20 +2,19 @@
 title: Governar agentes em escala — da policy ao sistema operacional
 status: maintained
 owner: Rodrigo Garcia Guimarães
-last_reviewed: 2026-08-09
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 supersedes: null
 related:
   - ../framework/00-document-control.md
   - ../framework/02-governance-and-accountability.md
   - ../framework/08-implementation-and-adoption.md
-  - ../framework/08-implementation-and-adoption.md
   - ../framework/06-architecture-and-technical-controls.md
 ---
 
 # Governar agentes em escala — da policy ao sistema operacional
 
-## Decision requested
+## Decisão solicitada
 
 Autorizar a implantação de um sistema federado de governança para o portfólio de IA e agentes, com:
 
@@ -43,7 +42,7 @@ O gap tratado pelo framework é transformar intenção de governança em um sist
 6. quem pode liberar, conter, reativar e aposentar;
 7. se uso, qualidade e valor justificam continuidade.
 
-## Why now
+## Por que agora
 
 Agentes não apenas produzem conteúdo. Eles podem recuperar dados, usar credenciais, chamar tools, escrever em sistemas e orquestrar workflows. Autonomia, alcance e interconectividade tornam inadequados tanto o laissez-faire quanto um único approval flow para tudo.
 
@@ -69,7 +68,7 @@ Adotar cinco planos conectados:
 
 O framework é vendor-neutral. Produtos podem implementar partes do control plane ou do assurance plane, mas nenhum produto substitui operating model, accountability e controles especializados de dados, identidade, segurança, privacy e operação.
 
-## Operating model proposto
+## Modelo operacional proposto
 
 | Autoridade | Accountability principal |
 |---|---|
@@ -97,7 +96,7 @@ Decision rights são definidos no [operating model](../framework/02-governance-a
 
 Mudanças normativas são propostas, revisadas e versionadas no próprio corpus modular. Casos de estudo, mappings e roadmap não alteram a policy por implicação.
 
-## Outcomes esperados
+## Resultados esperados
 
 ### Governança
 
@@ -146,7 +145,7 @@ Esses outcomes são objetivos do sistema; não constituem garantia de ROI, compl
 
 Detalhes: [implementation playbook](../framework/08-implementation-and-adoption.md) e [roadmap de 90 dias](../framework/08-implementation-and-adoption.md).
 
-## Success criteria
+## Critérios de sucesso
 
 - scope e authorities aprovados;
 - registry reconciliado para o portfolio in-scope;

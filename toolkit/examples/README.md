@@ -1,12 +1,12 @@
 ---
-title: Examples
+title: Exemplos
 status: maintained
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 ---
 
-# Examples
+# Exemplos
 
 Este artefato consolida fontes validadas segundo a estratégia registrada no plano de migração. A união preserva conteúdo único e registra a origem de cada bloco.
 
@@ -14,7 +14,7 @@ Este artefato consolida fontes validadas segundo a estratégia registrada no pla
 
 > **Provenance:** migrated from `examples/README.md` at authoritative commit `5545d9227624400ab8bb707b6032b2f61329a36e`. Content is adapted only for repository boundaries and links.
 
-### Examples
+### Exemplos
 
 Exemplos fictícios e sanitizados que demonstram o uso dos schemas e templates.
 
@@ -34,10 +34,10 @@ Exemplos fictícios e sanitizados que demonstram o uso dos schemas e templates.
 
 #### Casos de referência
 
-Records agrupados por caso em [`cases/`](cases/), validados pelos mesmos schemas e invariantes dos exemplos da raiz. Cada caso tem a narrativa correspondente em [`docs/explanations/cases/`](cases/README.md).
+Records agrupados por caso em [`cases/`](cases/README.md), validados pelos mesmos schemas e invariants dos exemplos da raiz. As narrativas humanas correspondentes ficam em [`docs/cases/`](../../docs/cases/service-desk-knowledge-agent.md) e [`docs/explanations/cases/`](../../docs/explanations/cases/benefits-eligibility-triage.md), conforme o caso.
 
-- [`cases/meeting-notes-summarizer/`](cases/meeting-notes-summarizer/) — T1 na rota rápida, somente leitura.
-- [`cases/benefits-eligibility-triage/`](cases/benefits-eligibility-triage/) — T3 com impacto sobre pessoas e admissibilidade `conditional`.
+- [`cases/meeting-notes-summarizer/`](cases/meeting-notes-summarizer/README.md) — T1 na rota rápida, somente leitura.
+- [`cases/benefits-eligibility-triage/`](cases/benefits-eligibility-triage/registry.json) — T3 com impacto sobre pessoas e admissibilidade `conditional`.
 
 #### Evidence package operacional
 

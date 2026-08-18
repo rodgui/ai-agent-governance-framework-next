@@ -1,7 +1,7 @@
 ---
-title: Master Document and governance framework
+title: Documento mestre e framework de governança
 status: maintained
-last_reviewed: 2026-08-11
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
 related:
@@ -10,7 +10,7 @@ related:
   - ../../toolkit/README.md
 ---
 
-# Master Document and governance framework
+# Documento mestre e framework de governança
 
 Este diretório é a **fonte canônica normativa e operacional** da release `1.1.0`. Os capítulos 00–10 consolidam integralmente o corpus aprovado e definem o caminho do mandato inicial ao business as usual.
 
