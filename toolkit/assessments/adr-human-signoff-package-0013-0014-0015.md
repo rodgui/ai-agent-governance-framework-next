@@ -15,11 +15,12 @@ related:
   - ../../docs/architecture/decisions/0013-multi-agent-delegation-contract.md
   - ../../docs/architecture/decisions/0014-ai-native-observability-profile.md
   - ../../docs/architecture/decisions/0015-multi-control-plane-arbitration.md
+  - ../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md
 ---
 
 # Human sign-off package — ADRs 0013, 0014 e 0015
 
-> Este pacote prepara uma decisão humana. Ele não contém nomes, assinaturas ou aprovações inventadas. A simulação disponível é `SIMULATED_SYNTHETIC_EVIDENCE`; não é evidence operacional autorizada, compliance evidence, real authority sign-off ou production readiness.
+> Este pacote preserva os campos para uma decisão de consumidor. A decisão do framework foi registrada separadamente como `SIMULATED_OWNER_AUTHORIZED_REVIEW`; este pacote não contém nomes, assinaturas ou aprovações inventadas. A simulação disponível é `SIMULATED_SYNTHETIC_EVIDENCE`; não é evidence operacional autorizada, compliance evidence, real authority sign-off de consumidor ou production readiness.
 
 ## 1. Objetivo e decisão solicitada
 
@@ -35,7 +36,7 @@ As opções disponíveis são:
 | `REJECT` | Rejeitar a decisão proposta com rationale, impacto e alternativa ou condição de encerramento. |
 | `SUPERSEDE` | Substituir uma decisão anterior por outra decisão versionada, preservando provenance e referência ao documento superseded. |
 
-**Recomendação atual para as três ADRs:** `KEEP_DRAFT`. A estrutura está `promotion-ready-after-signoff`, mas não há decisão humana registrada neste pacote.
+**Decisão simulada atual para as três ADRs:** `ACCEPT_WITH_CONDITIONS`; status canônico `accepted` no escopo de guidance do framework. A estrutura está `accepted` para uso como guidance, enquanto implementation/operational evidence do consumidor permanece `missing`.
 
 ## 2. Evidence comum e limites
 
@@ -62,7 +63,7 @@ O case sintético é comum às três ADRs, mas seu peso é limitado. Ele demonst
 | **Residual uncertainty** | A implementação pode interpretar delegated subject, revocation, retry/replay ou blast radius de forma incompatível com o contrato. |
 | **Reversibility** | Alta no nível de guidance/ADR; a decisão pode ser superseded. Baixa para efeitos runtime já implantados sem rollback e recovery testados. |
 | **Operational dependency** | Identity/IAM, policy enforcement, tool gateway, evidence store, runtime containment, owner de operação e mecanismo de revocation. |
-| **Recommended disposition** | `KEEP_DRAFT` até decision record humano e walkthrough aplicável. |
+| **Recommended disposition** | `ACCEPT_WITH_CONDITIONS` no escopo de guidance do framework; `operational validation` permanece `missing` para o consumidor. |
 
 **Reviewers/roles requeridos:** Design Authority, Governance Owner, Security/IAM Authority, Data/Privacy Authority quando houver data classes relevantes e Run Authority. Nenhuma pessoa foi nomeada neste pacote.
 
@@ -80,7 +81,7 @@ O case sintético é comum às três ADRs, mas seu peso é limitado. Ele demonst
 | **Residual uncertainty** | O profile pode aumentar cardinality, custo ou exposição; adapters podem perder provenance; deletion e export podem divergir entre stores. |
 | **Reversibility** | Alta no nível semântico enquanto o audit-event schema permanece inalterado; instrumentação já implantada exige rollback, retention e deletion plan. |
 | **Operational dependency** | Observability platform, audit-event envelope, storage/index/cache/backup, privacy owner, access control, incident response e runbook de containment. |
-| **Recommended disposition** | `KEEP_DRAFT` até privacy/export/retention review e decision record humano. |
+| **Recommended disposition** | `ACCEPT_WITH_CONDITIONS` no escopo de guidance do framework; privacy/export/retention evidence do consumidor permanece `missing`. |
 
 **Reviewers/roles requeridos:** Data/Privacy Authority, Observability Owner, Security, Run Authority e Platform Owner. Nenhuma pessoa foi nomeada neste pacote.
 
@@ -98,13 +99,13 @@ O case sintético é comum às três ADRs, mas seu peso é limitado. Ele demonst
 | **Residual uncertainty** | Componentes podem declarar posture incompatível, perder correlation, aceitar fallback permissivo ou fragmentar evidence durante indisponibilidade. |
 | **Reversibility** | A decisão arquitetural é supersedable; alterações de enforcement, trust boundary, identity, source of truth ou evidence podem ser materialmente difíceis de reverter. |
 | **Operational dependency** | Identity, policy gateway, tool broker, registry, orchestration/runtime, assurance plane, evidence store, recovery e owners por capability. |
-| **Recommended disposition** | `KEEP_DRAFT` até walkthrough formal e decisão humana registrada. |
+| **Recommended disposition** | `ACCEPT_WITH_CONDITIONS` no escopo de guidance do framework; enforcement/fallback/recovery evidence do consumidor permanece `missing`. |
 
 **Reviewers/roles requeridos:** Design Authority, Governance Owner, Security/IAM Authority, Data/Privacy Authority e Run Authority. Nenhuma pessoa foi nomeada neste pacote.
 
 ## 6. Registro de decisão a completar
 
-A authority deve preencher um registro por ADR com os campos abaixo. Um PR com este pacote não substitui esse registro.
+Para uma organização consumidora, a authority deve preencher um registro por ADR com os campos abaixo. O decision record simulado do framework não substitui esse registro.
 
 | Campo | Valor a preencher |
 |---|---|
@@ -124,9 +125,9 @@ A authority deve preencher um registro por ADR com os campos abaixo. Um PR com e
 
 ## 7. Limites de aprovação
 
-A aceitação arquitetural não é production approval. Mesmo uma futura decisão `accepted` deve manter maturity/evidence independente e não pode converter `demonstrated-synthetic` em `operationally-validated`. Sem authority e decision record, a disposição permanece `KEEP_DRAFT`.
+A aceitação arquitetural não é production approval. A decisão `accepted` do framework mantém maturity/evidence independente e não converte `demonstrated-synthetic` em `operationally-validated`. Para um consumidor, sem authority e decision record próprios, a disposição continua `KEEP_DRAFT`.
 
-O pacote não cria pessoas, signatures, controls, schemas, risk tiers, registry fields, vendors, architecture patterns ou claims de compliance. O próximo salto de maturidade requer decisão humana e, depois, execução autorizada real; não requer outra simulação.
+O pacote não cria pessoas, signatures, controls, schemas, risk tiers, registry fields, vendors, architecture patterns ou claims de compliance. O próximo salto de maturidade de um consumidor requer decisão humana própria e, depois, execução autorizada real; não requer outra simulação do framework.
 
 ## 8. Referências
 
@@ -137,3 +138,4 @@ O pacote não cria pessoas, signatures, controls, schemas, risk tiers, registry 
 - [ADR-0015](../../docs/architecture/decisions/0015-multi-control-plane-arbitration.md)
 - [Plano de validação operacional autorizada](authorized-operational-validation-plan.md)
 - [Capítulo 00 — Controle do documento](../../docs/framework/00-document-control.md)
+- [Decision record — aceitação condicional das ADRs 0013–0015](../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md)

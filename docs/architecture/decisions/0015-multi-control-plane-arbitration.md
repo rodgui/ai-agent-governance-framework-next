@@ -1,8 +1,8 @@
 ---
 title: ADR-0015 — Arbitragem entre múltiplos control planes
-status: draft
+status: accepted
 owner: framework-maintainers
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: major-change
 supersedes: null
 related:
@@ -13,15 +13,16 @@ related:
   - ../../../toolkit/patterns/multi-control-plane-governance.md
   - ../../../toolkit/patterns/control-and-assurance-planes.md
   - ../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md
+  - ../../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md
 ---
 
 # ADR-0015 — Arbitragem entre múltiplos control planes
 
 ## Status e escopo
 
-Esta é uma **decisão arquitetural em rascunho** da primeira onda G1. Ela não cria um novo control nem prescreve produto. Define como o framework deve tratar fluxos em que mais de um control plane, gateway, broker, plataforma de workflow ou sistema de assurance participa da mesma decisão ou ação.
+Esta é uma **decisão arquitetural aceita com conditions** da primeira onda G1. Ela não cria um novo control nem prescreve produto. Define como o framework deve tratar fluxos em que mais de um control plane, gateway, broker, plataforma de workflow ou sistema de assurance participa da mesma decisão ou ação.
 
-A decisão permanece `draft` até ser exercitada com um caso organizacional e aprovada pela Design Authority, pelas authorities de segurança/identidade e pela Run Authority quando houver efeito em produção.
+A aceitação é limitada à camada canônica de guidance do framework e foi registrada em `SIMULATED_OWNER_AUTHORIZED_REVIEW`. Ela não é sign-off de uma organização consumidora, não prova enforcement ou operational validation e não autoriza production use. Cada implementação consumidora deve demonstrar sua própria cadeia de authority, source of truth, enforcement, fallback, recovery, evidence e substitution.
 
 ## Contexto
 
@@ -100,4 +101,4 @@ Esta ADR não escolhe produtos, não define uma topologia universal, não cria u
 
 ## Evidência e aprovação
 
-O [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md) acrescenta `demonstrated-synthetic` para matrix cross-plane, conflict, precedence, fail-safe, recovery e substitution/exit integrados; não prova enforcement operacional, effectiveness, accountability organizacional ou production readiness. A decisão precisa ser aprovada após walkthrough com Design Authority, Governance Owner, Security/IAM Authority, Data/Privacy Authority e Run Authority. A aprovação deve registrar o caso exercitado, as divergências encontradas, os controles compensatórios, as limitações e a data de revisão.
+A decisão foi revisada com o [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md), os exemplos G1, o substitution/replay drill e os testes determinísticos. O conjunto demonstra `demonstrated-deterministic` + `demonstrated-synthetic` para matrix cross-plane, conflict, precedence, fail-safe, recovery e substitution/exit integrados. A decisão é `accepted` com conditions no escopo do framework; `missing-authorized-evidence` permanece para enforcement operacional, fallback, recovery e produção. A provenance completa está no [decision record](../../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md).
