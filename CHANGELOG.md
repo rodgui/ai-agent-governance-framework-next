@@ -2,6 +2,13 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-18 — Unreleased: simulação sintética de promoção das ADRs 0013–0015
+
+- Adicionado o case fictício `toolkit/examples/cases/adr-promotion-synthetic-validation/`, exercitando delegation, observabilidade AI-native e arbitragem entre control planes de ponta a ponta.
+- O pacote inclui denies, privilege escalation, expiry/revocation, containment, recovery, deletion, export, cardinality/cost, correlation failure, fail-safe, substitution/exit e decision records sintéticos.
+- A simulação é classificada como `SIMULATED_SYNTHETIC_EVIDENCE`: demonstra aplicabilidade e coerência do framework, mas não é production evidence, não promove as ADRs a `accepted` e não altera schemas, controls, risk tiers, release ou status `draft`.
+- O case é um exemplo transversal de delivery para futuras implementações e serviços; cada consumidor deve substituir aliases, fixtures e evidence sintéticos por authorities, ambientes e records próprios.
+
 ## 2026-08-18 — Unreleased: closeout técnico T20–T28
 
 - T20 corrigiu R3 para referenciar explicitamente as quatro dimensões canônicas de metadata; T21 removeu `uv.lock` como dependência documental fictícia; T22 reconciliou ROADMAP e CHANGELOG com a evidência local e remota.

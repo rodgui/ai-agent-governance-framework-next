@@ -34,11 +34,15 @@ A terceira já se pagou. Escrever o percurso do primeiro caso revelou que o regi
 
 Os casos usam a mesma organização fictícia, para que se leia um portfólio e não três exemplos desconexos. Uma implantação real convive com tiers diferentes sob o mesmo operating model, e é isso que precisa aparecer.
 
+## Simulação transversal de promoção de ADRs
+
+O [Synthetic ADR promotion validation](adr-promotion-synthetic-validation/README.md) é um case fictício transversal para exercitar ADR-0013, ADR-0014 e ADR-0015 de ponta a ponta. Ele demonstra delegation, observability, cross-plane arbitration, denies, containment, recovery, evidence packaging e substitution/exit. Não recebe tier ou admissibility: não é um caso de implantação nem evidence operacional.
+
 ## Cobertura e extensões planejadas
 
 A cobertura publicada hoje percorre T1, T2 e T3. Um futuro caso T4 deve demonstrar explicitamente que **T4 não significa `prohibited`**: risk tier e admissibility continuam dimensões independentes, com rationale e authority próprios.
 
-A extensão multi-agent T3/T4 deve exercitar supervisor, worker, delegation edge, authority attenuation, depth, fan-out, budget, expiry, revocation, múltiplos control planes, state-changing tool, policy deny, observabilidade AI-native, containment, replay/retry denial, recovery, reactivation e evidence lineage. O pattern e os exemplos fictícios existentes já fornecem parte dos cenários; esta rodada não cria uma nova fixture nem declara cobertura de estate.
+A extensão multi-agent T3/T4 deve exercitar supervisor, worker, delegation edge, authority attenuation, depth, fan-out, budget, expiry, revocation, múltiplos control planes, state-changing tool, policy deny, observabilidade AI-native, containment, replay/retry denial, recovery, reactivation e evidence lineage. O pattern, os exemplos fictícios existentes e o [case sintético de promoção de ADRs](adr-promotion-synthetic-validation/README.md) fornecem parte dos cenários; o case não declara cobertura de estate.
 
 A estrutura permanece intencional: `toolkit/examples/cases/<case>/` contém records estruturados e fixtures; narrativas humanas permanecem em `docs/cases/` ou `docs/explanations/cases/`. Os casos são integration tests do framework, não production evidence.
 
