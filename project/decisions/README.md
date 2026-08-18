@@ -6,6 +6,7 @@ Este diretório registra decisões arquiteturais do repositório reconstruído. 
 
 - [`0001-canonical-source-and-product-boundaries.md`](0001-canonical-source-and-product-boundaries.md) — fonte canônica, neutralidade e separação do conteúdo comercial;
 - [`0002-derived-documentation-build-and-publication.md`](0002-derived-documentation-build-and-publication.md) — site derivado e publicação manual fora do Gate 1.
+- [`0004-framework-guidance-acceptance-adr-0013-0015.md`](0004-framework-guidance-acceptance-adr-0013-0015.md) — aceitação simulada, condicional e vendor-neutral das ADRs 0013–0015 como guidance do framework; não é operational validation de consumidores.
 
 ## Regras
 

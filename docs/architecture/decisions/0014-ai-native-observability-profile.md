@@ -1,8 +1,8 @@
 ---
 title: ADR-0014 — Profile opcional de observabilidade AI-native
-status: draft
+status: accepted
 owner: framework-maintainers
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: major-change
 supersedes: null
 related:
@@ -14,17 +14,18 @@ related:
   - ../../../toolkit/templates/ai-native-observability-profile.md
   - ../../../toolkit/examples/ai-native-observability.example.md
   - ../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md
+  - ../../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md
 ---
 
 # ADR-0014 — Profile opcional de observabilidade AI-native
 
 ## Status e escopo
 
-Esta é uma **decisão arquitetural em rascunho** da frente G4. Define um profile semântico opcional para tornar observáveis tarefas, delegações, chamadas de modelo, retrieval, tools, policy decisions, intervenções humanas, memória/estado, contenção e valor/custo em sistemas de IA e topologias multiagente.
+Esta é uma **decisão arquitetural aceita com conditions** da frente G4. Define um profile semântico opcional para tornar observáveis tarefas, delegações, chamadas de modelo, retrieval, tools, policy decisions, intervenções humanas, memória/estado, contenção e valor/custo em sistemas de IA e topologias multiagente.
 
 O profile complementa o envelope existente do [AI Agent Audit Event schema](../../../toolkit/schemas/audit-event.schema.json). Não altera o schema `1.0`, não cria um novo control, não obriga OpenTelemetry, não exige uma plataforma de observability específica e não autoriza capturar prompts, payloads, segredos ou dados pessoais sem finalidade, classificação, minimização e retenção aprovadas.
 
-A decisão permanece `draft` até ser exercitada com uma execução fictícia e uma implementação autorizada, incluindo reconstrução de incidente, privacy review, teste de exportação e validação de cardinalidade/custo.
+A aceitação é limitada à camada canônica de guidance do framework e foi registrada em `SIMULATED_OWNER_AUTHORIZED_REVIEW`. Ela não é sign-off de uma organização consumidora, não prova privacy compliance ou operational validation e não autoriza production use. Cada implementação consumidora deve executar privacy review, retention/deletion decision, export test, cardinality/cost review e observação longitudinal.
 
 ## Contexto
 
@@ -112,4 +113,4 @@ Instrumentação adicional aumenta custo, cardinalidade, volume de dados, risco 
 
 ## Evidência e aprovação
 
-A decisão precisa ser exercitada com o [profile de observabilidade AI-native](../../../toolkit/patterns/ai-native-observability-profile.md), o [template](../../../toolkit/templates/ai-native-observability-profile.md) e o [exemplo fictício](../../../toolkit/examples/ai-native-observability.example.md). O [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md) acrescenta `demonstrated-synthetic` para correlation/provenance, redaction, retention/deletion, export, cardinality/cost e alert-to-action integrados; não prova privacy compliance, control effectiveness, longitudinal quality ou production readiness. A aprovação deve registrar cobertura, limitações, privacy review, custo/cardinality review, export test, retention decision e data de revisão.
+A decisão foi revisada com o [profile de observabilidade AI-native](../../../toolkit/patterns/ai-native-observability-profile.md), o [template](../../../toolkit/templates/ai-native-observability-profile.md), o [exemplo fictício](../../../toolkit/examples/ai-native-observability.example.md), o operational drill fictício, os testes determinísticos e o [synthetic ADR promotion validation case](../../../toolkit/examples/cases/adr-promotion-synthetic-validation/README.md). O conjunto demonstra `demonstrated-deterministic` + `demonstrated-synthetic` para correlation/provenance, redaction, retention/deletion, export, cardinality/cost e alert-to-action integrados. A decisão é `accepted` com conditions no escopo do framework; `missing-authorized-evidence` permanece para privacy decision, implementation, longitudinal quality e produção. A provenance completa está no [decision record](../../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md).
