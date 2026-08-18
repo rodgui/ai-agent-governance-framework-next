@@ -2,7 +2,7 @@
 name = "ai-agent-governance-framework-next"
 version = "1.1.0"
 requires-python = ">=3.9"
-dependencies = ["jsonschema>=4.22,<5", "Pillow>=10,<13", "PyYAML>=6,<7"]
+dependencies = ["jsonschema>=4.22,<5", "Pillow>=10,<13", "PyYAML>=6.0.3,<7"]
 
 [tool.ruff]
 line-length = 110
