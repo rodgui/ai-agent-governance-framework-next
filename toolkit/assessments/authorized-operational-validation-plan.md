@@ -14,6 +14,7 @@ related:
   - ../../docs/framework/08-implementation-and-adoption.md
   - ../../docs/framework/09-operations-incidents-and-continuity.md
   - ./adr-promotion-readiness-0013-0014-0015.md
+  - ../examples/cases/adr-promotion-synthetic-validation/README.md
 ---
 
 # Plano de validação operacional autorizada
@@ -29,6 +30,12 @@ O plano transforma os drills fictícios existentes em uma execução autorizada 
 3. validação delimitada de estate para exercitar gates, controls, evidence, operação e melhoria.
 
 Não inclui upgrade de fornecedor, publicação em produção, alteração de schema, promoção automática de ADR, criação de control, mudança de tier ou release.
+
+### 1.1 Relação com o synthetic case — T41
+
+O [case sintético de promoção das ADRs 0013–0015](../examples/cases/adr-promotion-synthetic-validation/README.md) é `SIMULATED_SYNTHETIC_EVIDENCE`. Ele demonstra integration coherence, contract applicability, negative scenario coverage, evidence lineage, recovery model e substitution model para o escopo fictício. Não satisfaz nenhum prerequisite de organização, authority, environment, data classification, identity, privacy, evidence handling ou cleanup deste plano.
+
+O case pode ser usado como referência de preparação e como fonte de invariantes esperadas para o walkthrough autorizado, mas não reduz acceptance criteria, não transforma `BLOCKED_BY_AUTHORIZED_EVIDENCE` em `DONE` e não substitui T15, T16 ou T17.
 
 ## 2. Prerequisites e authorities
 
