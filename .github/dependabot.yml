@@ -6,9 +6,14 @@ updates:
       interval: weekly
     open-pull-requests-limit: 5
     groups:
-      python-dependencies:
+      # Minor/patch updates are compatible candidates for one review.
+      # Major updates remain individual PRs for explicit compatibility analysis.
+      python-minor-patch:
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: github-actions
     directory: "/"
@@ -16,6 +21,10 @@ updates:
       interval: weekly
     open-pull-requests-limit: 3
     groups:
-      github-actions:
+      # Keep compatible action updates together; major updates stay individual.
+      github-actions-minor-patch:
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
