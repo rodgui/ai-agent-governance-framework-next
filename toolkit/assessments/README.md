@@ -32,6 +32,8 @@ Avaliações comparativas, de risco, maturidade, tecnologia e control effectiven
 - [ADR promotion readiness — 0013, 0014 e 0015](adr-promotion-readiness-0013-0014-0015.md) — assessment de readiness técnica para walkthrough e eventual promoção; não é aprovação.
 - [Plano de validação operacional autorizada](authorized-operational-validation-plan.md) — execution package para substitution/replay, observabilidade AI-native e estate validation; permanece `BLOCKED_BY_AUTHORIZED_EVIDENCE` até haver organization, authority e environment aprovados.
 - [Dependency security triage](dependency-security-triage.md) — inventário de ecosystems, estratégia Dependabot e bloqueios para triagem alert-by-alert; permanece `NOT_CONFIRMED` sem export autorizado.
+- [Dependabot PR triage](dependabot-pr-triage.md) — disposition dos PRs Dependabot, lower bounds, compatibilidade e condições para reavaliação; nenhum merge automático.
+- [Repository quality gate and main protection](repository-quality-gate-and-protection.md) — evidência observada da fonte canônica de CI e da proteção remota de `main`; objetivo `NO GREEN CI → NO MERGE`.
 - [Crosswalk histórico Microsoft Customer Zero × Policy v1](../../project/history/assessments/microsoft-case-study-framework-crosswalk.md) — registro depreciado da primeira consolidação; não é fonte normativa corrente.
 - [Maturity model](../maturity/maturity-model.md) — escala e dimensões.
 - [Maturity assessment example](../examples/maturity-assessment.example.json) — record fictício validado.

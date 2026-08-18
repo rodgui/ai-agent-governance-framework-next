@@ -10,18 +10,20 @@ owners: [framework-maintainers]
 
 Este roadmap registra somente trabalho realmente planejado para o framework `1.1.0`. Ele não é um calendário de compliance, não cria gates, não altera a release e não promete uma data de publicação.
 
-## Trabalho em execução e decisões pendentes
+## Estado por frente
 
-| Frente | Status | Owner | Critério de saída |
-|---|---|---|---|
-| Semantic e editorial hardening T01–T14 | Implementado na branch dedicada; aguardando regressão integral | framework-maintainers | validator, testes, Markdownlint, build estrito, diff check e revisão do diff temático sem alteração de contratos fora do escopo |
-| Sign-off das ADRs 0013, 0014 e 0015 | `promotion-ready-after-signoff`; ADRs continuam `draft` | Design Authority, Governance Owner, Security/IAM, Data/Privacy e Run Authority | walkthrough formal, divergências, conditions, residual uncertainty e decisão registrada |
-| Substitution/replay autorizado | `BLOCKED_BY_AUTHORIZED_EVIDENCE` | Platform/Run Authority + Security/IAM | state, identity, policy, export, side-effect control, recovery, correlation, lineage, deny preservation, expiry replay denial e control equivalence |
-| Observabilidade AI-native autorizada | `BLOCKED_BY_AUTHORIZED_EVIDENCE` | Platform/Observability, Data/Privacy, Security e Run Authority | privacy, retention, deletion across stores, export, cardinality, cost, redaction, evidence hold e recovery |
-| Validação em estate real | Planejada; nenhum resultado operacional alegado | Governance Owner + organização autorizada | portfolio delimitado com T1, T2, T3, multi-agent, incident/containment drill, attestation e material change ou sunset, com métricas e feedback loop |
-| Casos de referência T4 e multi-agent T3/T4 | Planejamento preservado; não criar nova fixture sem necessidade demonstrada | framework-maintainers | caso fictício aprovado no escopo, com tier/admissibility distintos e evidência dos cenários exigidos; exemplos continuam integration tests, não production evidence |
-| Dependency security | `BLOCKED_BY_AUTHORIZED_EVIDENCE` para detalhes Dependabot | repository maintainers | export autorizado de todos os alerts, triagem de relevância, dependency path, fixed version e remediation |
-| Decisão de release | Não iniciada | Governance Owner + Design Authority | escolha explícita entre manter baseline, `1.1.x` ou `1.2.0`, após evidence e sign-off |
+| Frente | Implementação/documentação | Regressão local | Regressão remota | Estado e próxima evidência | Owner |
+|---|---|---|---|---|---|
+| Semantic e editorial hardening T01–T14 | `DONE` | `PASS` no validator, testes, Markdownlint incremental, build e diff check | `FAILURE` no PR #5 e no push de `main`, causado pela referência não versionada a `uv.lock` | Correção T20–T23 nesta branch; observar novo workflow antes de declarar CI verde | framework-maintainers |
+| Sign-off das ADRs 0013, 0014 e 0015 | `promotion-ready-after-signoff`; ADRs continuam `draft` | walkthrough e readiness assessment disponíveis | não aplicável | walkthrough formal, divergências, conditions, residual uncertainty e decisão registrada | Design Authority, Governance Owner, Security/IAM, Data/Privacy e Run Authority |
+| Substitution/replay autorizado | Plano e evidência determinística preparados | testes de desenho/teste determinístico disponíveis | não aplicável | `BLOCKED_BY_AUTHORIZED_EVIDENCE` até state, identity, policy, export, side-effect control, recovery, correlation, lineage, deny preservation, expiry replay denial e control equivalence autorizados | Platform/Run Authority + Security/IAM |
+| Observabilidade AI-native autorizada | Profile, template e operational plan preparados | testes de desenho/teste determinístico disponíveis | não aplicável | `BLOCKED_BY_AUTHORIZED_EVIDENCE` até privacy, retention, deletion across stores, export, cardinality, cost, redaction, evidence hold e recovery autorizados | Platform/Observability, Data/Privacy, Security e Run Authority |
+| T17 planning artifact | `DONE`; execution package existe | estrutura e critérios revisados localmente | não aplicável | Execução de estate permanece `PLANNED` / `BLOCKED_BY_AUTHORIZED_EVIDENCE`; nenhum resultado operacional alegado | framework-maintainers |
+| Estate validation execution | Não executada | nenhum resultado operacional alegado | não executada | `PLANNED` / `BLOCKED_BY_AUTHORIZED_EVIDENCE`; requer portfolio delimitado, organização autorizada, drills, métricas e feedback loop | Governance Owner + organização autorizada |
+| Casos de referência T4 e multi-agent T3/T4 | Fixtures e planos preservados | exemplos continuam fictícios e testáveis | não aplicável | Não criar nova fixture sem finding demonstrado; T4 fictício não exige ambiente autorizado | framework-maintainers |
+| Dependency security | Configuração Dependabot e assessment versionados; uv.lock removido como dependência documental em T21 | manifests e gates locais disponíveis | alert inventory `NOT_CONFIRMED`; PRs existentes tiveram failures no baseline | export autorizado dos alerts, triagem de relevância, dependency path, fixed version e remediation mínima | repository maintainers |
+| Quality gates e repository governance | consolidação T23 e proteção T27 pendentes | baseline local reproduzível | `FAILURE` observado no PR #5 e em `main` antes do closeout | uma fonte canônica de gate, checks inequívocos e `NO GREEN CI → NO MERGE` | repository maintainers |
+| Decisão de release | Não iniciada | nenhum claim de release | nenhum claim de release | recomendar `KEEP 1.1.0` até evidence e sign-off; decisão continua humana | Governance Owner + Design Authority |
 
 ## Regras de atualização
 
