@@ -149,12 +149,13 @@ class SemanticHardeningTests(unittest.TestCase):
         self.assertNotIn("A validação pós-merge passou", changelog)
         self.assertIn("Readiness das ADRs", mkdocs)
 
-    def test_readiness_preserves_draft_and_records_hardening_delta(self) -> None:
+    def test_readiness_preserves_decision_evidence_separation(self) -> None:
         readiness = self.read("toolkit/assessments/adr-promotion-readiness-0013-0014-0015.md")
         self.assertIn("T01–T13", readiness)
         self.assertIn("Semantic hardening: 8 tests — OK", readiness)
-        self.assertIn("manter `draft` até aprovação", readiness)
-        self.assertIn("não é evidência de produção", readiness)
+        self.assertIn("`accepted` com conditions para guidance arquitetural do framework", readiness)
+        self.assertIn("`missing-authorized-evidence` permanece", readiness)
+        self.assertIn("constitui evidence operacional autorizada", readiness)
 
 
     def test_authorized_operational_plan_is_honest(self) -> None:

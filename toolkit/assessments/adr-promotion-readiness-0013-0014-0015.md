@@ -21,15 +21,16 @@ related:
   - ../templates/agent-delegation-contract.md
   - ../templates/ai-native-observability-profile.md
   - ../templates/orchestrator-decision-exit-record.md
+  - ../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md
 ---
 
 # ADR promotion readiness — 0013, 0014 e 0015
 
-> Este assessment prepara uma decisão humana sobre promoção de ADRs. Não é aprovação, não é evidência de produção, não é assurance de effectiveness e não transforma exemplos fictícios em controls.
+> Este assessment registra a base criterial da decisão simulada de aceitação das ADRs no escopo de guidance do framework. Não é aprovação de uma implementação consumidora, não é evidência de produção, não é assurance de effectiveness e não transforma exemplos fictícios em controls.
 
 ## 1. Contexto e problema
 
-As ADRs `0013`, `0014` e `0015` foram implementadas como guidance, patterns, templates e exemplos vendor-neutral. O conteúdo técnico foi exercitado em casos fictícios e em drills determinísticos, mas cada ADR exige walkthrough por authorities antes de sair de `draft`.
+As ADRs `0013`, `0014` e `0015` foram implementadas como guidance, patterns, templates e exemplos vendor-neutral. O conteúdo técnico foi exercitado em casos fictícios e em drills determinísticos; esta rodada registra a aceitação simulada no escopo do framework, mantendo separada a evidence autorizada de consumidores.
 
 A rodada T01–T13 adicionou semantic e editorial hardening sem alterar schemas, controls, risk tiers, MPB, Registry ou release: `discovery.status` foi alinhado ao enum canônico; as waves de implementação passaram a W0–W6; document status, decision status, maturity e artifact type foram separados; o fluxo G2↔G3 foi explicitado; technology evaluation deixou de ter G3 como destino rígido; e o crosswalk WHAT/HOW/MINIMUM de observabilidade foi registrado.
 
@@ -37,7 +38,7 @@ A pergunta deste assessment é: **a estrutura técnica está pronta para revisã
 
 ## 2. Escopo e exclusões
 
-O escopo inclui o contrato de delegação multiagente, o profile opcional de observabilidade AI-native e a arbitragem entre múltiplos control planes. Não inclui aprovação de fornecedor, implantação de produção, alteração de schema, criação de control, mudança de risk tier, alteração da release `1.1.0` ou validação de claims de eficácia.
+O escopo inclui o contrato de delegação multiagente, o profile opcional de observabilidade AI-native e a arbitragem entre múltiplos control planes. A decisão registrada aceita os três artefatos como guidance do framework. Não inclui aprovação de fornecedor, implantação de produção, alteração de schema, criação de control, mudança de risk tier, alteração da release `1.1.0` ou validação de claims de eficácia de consumidores.
 
 ## 3. Critérios de disposição
 
@@ -58,12 +59,12 @@ O capítulo 00 já separa `status` documental/editorial, disposição da decisã
 
 A recomendação é aplicar o **Modelo A — separação**: `accepted` significa que a authority competente aceitou a decisão arquitetural, possivelmente com conditions registradas; `maturity`/evidence permanece uma dimensão independente, com os estados já usados no corpus, incluindo `demonstrated-deterministic`, `demonstrated-synthetic`, `missing-authorized-evidence` e `operationally-validated`. `accepted` não autoriza production use automaticamente e não transforma evidence sintética em evidence operacional.
 
-Para as ADRs 0013–0015, o estado atual continua `draft` porque ainda não existe decisão humana registrada pela authority competente. A ausência de authorized evidence continua bloqueando a classificação `operationally-validated` e qualquer claim de production readiness, mas não deve ser tratada como definição universal do que `accepted` significa. Não é necessário criar enum, schema, control ou nova taxonomia.
+Para as ADRs 0013–0015, o estado do framework passa a `accepted` com conditions no escopo de guidance, conforme o decision record `SIMULATED_OWNER_AUTHORIZED_REVIEW`. A ausência de authorized evidence continua bloqueando a classificação `operationally-validated` e qualquer claim de production readiness de consumidores. Não é necessário criar enum, schema, control ou nova taxonomia.
 
 | Dimensão | Responde a | Estado observado neste assessment |
 |---|---|---|
-| `status` documental | O artefato está em draft, maintained ou outro estado editorial? | ADRs 0013–0015: `draft` |
-| Decision status | A authority aceitou, rejeitou ou superseded a decisão? | Nenhuma aceitação humana registrada; promoção permanece `hold` |
+| `status` documental | O artefato está em draft, maintained ou outro estado editorial? | ADRs 0013–0015: `accepted` |
+| Decision status | A authority aceitou, rejeitou ou superseded a decisão? | `accepted` com conditions no escopo do framework; decisão simulada registrada |
 | Maturity/evidence | Que força tem a evidence disponível? | `demonstrated-deterministic` + `demonstrated-synthetic`; `missing-authorized-evidence` para operação |
 | Artifact type | Que tipo de objeto é este? | ADR/decision, assessment, example e evidence são objetos distintos |
 
@@ -71,9 +72,9 @@ Para as ADRs 0013–0015, o estado atual continua `draft` porque ainda não exis
 
 | ADR | Estrutura técnica | Pendência | Disposição recomendada |
 |---|---|---|---|
-| ADR-0013 — delegação multiagente | Cobre topologia, edges, atenuação, limits, expiry, revocation e failure propagation. | Walkthrough autorizado e caso organizacional autorizado. | `promotion-ready-after-signoff`; manter `draft` até aprovação. |
-| ADR-0014 — observabilidade AI-native | Cobre correlation, provenance, privacy, deletion, cardinality, cost, containment e export guidance. | Privacy/export/retention review e validação em implementação autorizada. | `promotion-ready-after-signoff`; manter `draft` até aprovação. |
-| ADR-0015 — arbitragem cross-plane | Cobre authority, source of truth, enforcement, precedence, conflict, fail-safe e substitution material change. | Walkthrough formal pelas authorities e caso organizacional. | `promotion-ready-after-signoff`; manter `draft` até aprovação. |
+| ADR-0013 — delegação multiagente | Cobre topologia, edges, atenuação, limits, expiry, revocation e failure propagation. | Evidence autorizada da implementação consumidora e recovery real. | `accepted` com conditions no guidance do framework; `missing-authorized-evidence` para consumidor. |
+| ADR-0014 — observabilidade AI-native | Cobre correlation, provenance, privacy, deletion, cardinality, cost, containment e export guidance. | Privacy/export/retention review e validação em implementação autorizada. | `accepted` com conditions no guidance do framework; `missing-authorized-evidence` para consumidor. |
+| ADR-0015 — arbitragem cross-plane | Cobre authority, source of truth, enforcement, precedence, conflict, fail-safe e substitution material change. | Enforcement, fallback, recovery e substitution na implementação consumidora. | `accepted` com conditions no guidance do framework; `missing-authorized-evidence` para consumidor. |
 
 ## 6. ADR-0013 — contrato de delegação multiagente
 
@@ -104,7 +105,7 @@ Para as ADRs 0013–0015, o estado atual continua `draft` porque ainda não exis
 
 ### Critério de promoção
 
-Promover somente após concluir os três cenários exigidos pela ADR, registrar divergências e compensating controls e obter confirmação dos reviewers aplicáveis. Nenhuma extensão obrigatória do `agent-blueprint.schema.json` é justificada por este assessment.
+A decisão do framework aceita a ADR com conditions após os três cenários determinísticos e sintéticos, o registro de divergências e compensating controls e a revisão simulada documentada. Uma implementação consumidora só pode reivindicar effectiveness após walkthrough e evidence autorizada próprios. Nenhuma extensão obrigatória do `agent-blueprint.schema.json` é justificada por este assessment.
 
 ## 7. ADR-0014 — profile opcional de observabilidade AI-native
 
@@ -136,7 +137,7 @@ Promover somente após concluir os três cenários exigidos pela ADR, registrar 
 
 ### Critério de promoção
 
-Promover somente após privacy review, cardinality/cost review, export test e retention/deletion decision em implementação autorizada. O `audit-event.schema.json` permanece inalterado, pois o assessment não demonstra necessidade machine-readable.
+A decisão do framework aceita o profile com conditions após a cobertura determinística e sintética e a revisão simulada documentada. Uma implementação consumidora só pode reivindicar operational validation após privacy review, cardinality/cost review, export test e retention/deletion decision autorizados. O `audit-event.schema.json` permanece inalterado, pois o assessment não demonstra necessidade machine-readable.
 
 ## 8. ADR-0015 — arbitragem entre múltiplos control planes
 
@@ -167,7 +168,7 @@ Promover somente após privacy review, cardinality/cost review, export test e re
 
 ### Critério de promoção
 
-Promover somente após walkthrough formal com o caso organizacional, matriz cross-plane, conflito determinístico, fail-safe compatível com o tier e registro de divergências. A ADR não cria taxonomia `consolidated/coordinated/federated` nem `primary_orchestrator` universal.
+A decisão do framework aceita a ADR com conditions após a matriz cross-plane, conflito determinístico, fail-safe, recovery, substitution/exit e revisão simulada documentada. Uma implementação consumidora só pode reivindicar effectiveness após walkthrough formal, enforcement, fallback e recovery evidence próprios. A ADR não cria taxonomia `consolidated/coordinated/federated` nem `primary_orchestrator` universal.
 
 ## 9. Evidence crosswalk — T39
 
@@ -195,13 +196,13 @@ ADR walkthrough evidence: 4 tests — OK
 Semantic hardening: 8 tests — OK
 ```
 
-Este teste é **verification** da integridade documental. O synthetic case acrescenta `demonstrated-synthetic` para integração end-to-end, cobertura de cenários negativos, lineage, recovery e substitution/exit. Nenhum dos dois é aprovação humana, evidence operacional autorizada, compliance evidence ou evidence de produção.
+Este teste é **verification** da integridade documental. O synthetic case acrescenta `demonstrated-synthetic` para integração end-to-end, cobertura de cenários negativos, lineage, recovery e substitution/exit. O decision record registra aceitação simulada no escopo do framework; nenhum dos dois constitui evidence operacional autorizada, compliance evidence ou evidence de produção de consumidores.
 
 ## 11. Decisão solicitada
 
-**Decisão atual recomendada:** `hold` para promoção automática; `promotion-ready-after-signoff` para os três pacotes técnicos.
+**Decisão atual recomendada:** `accepted` com conditions para guidance arquitetural do framework; nenhum status de consumidor ou produção é inferido.
 
-**Status das ADRs:** permanecer `draft` até que os walkthroughs e as decisões dos reviewers sejam registrados nos próprios documentos ou em decision records vinculados.
+**Status das ADRs:** `accepted` no escopo canônico do framework, com `demonstrated-deterministic` + `demonstrated-synthetic`; `missing-authorized-evidence` permanece para implementação consumidora, operational validation e produção.
 
 **Owners propostos:**
 
@@ -211,7 +212,7 @@ Este teste é **verification** da integridade documental. O synthetic case acres
 - Run Authority: validar falha, contenção, recovery e reativação;
 - Platform/Observability Owner: produzir export, cardinality/cost e deletion evidence.
 
-**Próxima revisão:** após o walkthrough formal, quando um caso organizacional autorizado estiver disponível ou após a execução autorizada dos drills T15/T16.
+**Próxima revisão:** em material change das ADRs, divergence de implementação, evidence operacional contraditória ou após a execução autorizada dos drills T15/T16 de um consumidor.
 
 ## 12. Limitações
 
@@ -229,3 +230,4 @@ Os casos e drills do repositório são fictícios e vendor-neutral. Os resultado
 - [Substitution/replay drill](../examples/orchestrator-substitution-replay.example.md)
 - [Synthetic ADR promotion validation case](../examples/cases/adr-promotion-synthetic-validation/README.md)
 - [ADR-0011 — Adoção da release 1.1.0](../../project/decisions/source-history/0011-framework-release-1.1-adoption.md)
+- [Decision record — aceitação condicional das ADRs 0013–0015](../../project/decisions/0004-framework-guidance-acceptance-adr-0013-0015.md)
