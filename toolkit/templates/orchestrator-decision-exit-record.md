@@ -3,7 +3,7 @@ title: Orchestrator Decision and Exit Record
 type: template
 status: maintained
 maturity: illustrative
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 owners: [architecture, governance, platform]
 related:
@@ -34,6 +34,9 @@ related:
 | `relatedAgentIds` | agents, topologies ou portfolio affected |
 | `relatedBlueprintRefs` | blueprints e versões afetadas |
 | `relatedRiskRefs` | risk records, assessments e ADRs |
+| `relatedArchitectureDecision` | decisão de arquitetura relacionada, quando aplicável |
+| `relatedPlatformDecision` | decisão de plataforma/capability relacionada, quando aplicável |
+| `governanceGateContext` | contexto opcional de G2, G3, G4 ou outro gate; não cria gate nem determina a decisão |
 
 ## 2. Problema e contexto
 

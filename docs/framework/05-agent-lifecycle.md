@@ -2,7 +2,7 @@
 title: 05 — Lifecycle de agentes
 status: maintained
 maturity: validated
-last_reviewed: 2026-08-13
+last_reviewed: 2026-08-18
 review_cycle: quarterly
 owners: [framework-maintainers]
 source_commit: 5545d9227624400ab8bb707b6032b2f61329a36e
@@ -54,7 +54,7 @@ Separar stage de operational state evita transformar quarentena em falso avanço
 
 ### 1.3 Autonomia e supervisão humana (HITL)
 
-A política de autonomia define como a empresa controla o quanto um agente pode decidir e executar sozinho. O princípio: **o agente pode propor e executar tarefas dentro de limites definidos, mas ações de impacto relevante exigem aprovação humana explícita (Human-in-the-Loop) e evidência registrada.** Ações irreversíveis de alto impacto não são permitidas sem HITL. Exceções temporárias exigem aprovação conforme a Matriz, com justificativa e plano de rollback.
+A política de autonomia define como a organização controla o quanto um agente pode decidir e executar sozinho. O agente pode propor e executar tarefas dentro de limites definidos. O nível de human oversight é proporcional ao tier, à action class, ao impacto, à reversibilidade, ao alcance e aos decision rights. Ações irreversíveis de alto impacto exigem confirmação humana explícita e evidence; qualquer exceção deve ser formal, temporária, aprovada pela authority correta, ter expiry, controls compensatórios, kill switch e plano de rollback. A aprovação segue os decision rights e a exception authority definidos no operating model para o tier e o scope avaliados.
 
 Os níveis padronizam o que significa "autonomia" e reduzem ambiguidade na decisão. Independentemente do nível, qualquer red flag (dados pessoais/sensíveis, sistemas críticos, SOX/ITGC, alto blast radius) escala para o caminho de Produção e pode exigir controles adicionais:
 
@@ -163,6 +163,7 @@ Automatizar um gatilho mal definido gera ruído e treina a organização a ignor
 **Versionamento.** Toda mudança material é versionada e vinculada a datas de efetividade, revisão e supersessão: descrição da mudança, autor, aprovador, contratos impactados, ação de migração e referência à versão anterior. Consumidores identificam a versão aplicável; registros incompatíveis são migrados, rejeitados ou explicitamente grandfather.
 
 **JML de owners.** A identidade do agente não permanece silenciosamente vinculada a alguém que mudou de função ou saiu:
+
 - **Joiner:** ao assumir, o novo owner tem role, competência e authority validadas antes da transferência de accountability.
 - **Mover:** mudança de área do owner dispara revisão de ownership, centro de custo e permissões; se a nova função não puder responder pelo agente, reatribua.
 - **Leaver:** antes do desligamento, consulte o registry por ownership, nomeie delegado temporário e suspenda os casos sem sucessor conforme o tier.
@@ -230,7 +231,7 @@ Condições mínimas que devem ser verdadeiras em cada ponto do ciclo. Use como 
 | R21 | Aposentar por transição aprovada que remova authority e resolva dados/dependências | decisão final do owner, aviso, parada de tráfego, revogação de acesso, disposição de dados, arquivo, owner da dependência, conclusão | agente não age nem consome recursos e registros retidos ficam acessíveis no período aprovado |
 | R22 | Definir leitura/alteração/recuperação do registro, prazo e regra de legal hold | classificação, grupos de acesso, custodiano, gatilho de retenção, período mínimo, disposição e recuperação de auditoria | evidências autorizadas recuperáveis no prazo e dados expirados descartados sem romper linhagem |
 
-**Autonomia e HITL (norma):** toda ação executiva relevante requer confirmação humana explícita no canal aprovado; ações irreversíveis de alto impacto não são permitidas sem HITL; exceções temporárias exigem aprovação conforme a Matriz, com justificativa e plano de rollback; mudanças de modelo ou regras de decisão exigem nova validação, testes mínimos e reavaliação do nível de autonomia. (Níveis L0–L3 na seção 1.3.)
+**Autonomia e oversight (norma):** o nível de supervisão e intervenção é proporcional ao tier, à action class, ao impacto, à reversibilidade e aos decision rights; ações irreversíveis de alto impacto exigem confirmação humana explícita e evidence. Exceções temporárias seguem a exception authority definida no operating model, com rationale, compensating controls, expiry e plano de rollback. Mudanças de modelo ou regras de decisão exigem nova validação, testes mínimos e reavaliação do nível de autonomia. (Níveis L0–L3 na seção 1.3.)
 
 **Gates G0–G7:** a sequência completa de gates de implantação é definida no capítulo 08 — Implementação e adoção; este capítulo define as condições de transição de cada estado.
 
@@ -243,6 +244,7 @@ Stages mínimos: `discovered` · `draft` · `under-review` · `approved` · `pro
 Operational states mínimos: `not-deployed` · `enabled` · `suspended` · `quarantined` · `disabled`
 
 Regras estruturais:
+
 - `draft` não vai diretamente a `production`;
 - `quarantined` não retorna a `enabled` sem correção, reteste e aprovação;
 - cada transição registra evento disparador, authority, evidência e ações automáticas;
@@ -277,14 +279,16 @@ Para levar o lifecycle do zero à operação, na primeira implantação execute 
 
 ## 6. Artefatos, evidências, métricas e failure modes
 
-**Artefatos**
+### Artefatos
+
 - Agent Lifecycle Standard: estados, transições, triggers, roles, timers, JML, quarentena, retirada e retenção;
 - matriz de transição e runbook operacional;
 - registro de attestation e de mudanças materiais;
 - template de attestation e sunset;
 - plano de sunset.
 
-**Evidências**
+### Evidências
+
 - estado atual e histórico de transições por agente e versão;
 - approval record com authority, condições e expiry;
 - attestation records e vencimentos;
@@ -292,7 +296,8 @@ Para levar o lifecycle do zero à operação, na primeira implantação execute 
 - evidência de contenção e de reativação;
 - registro de retirada com remoção de acessos e arquivamento.
 
-**Métricas**
+### Métricas
+
 - agentes em produção sem attestation válida;
 - agentes sem owner ou com owner desligado;
 - mudanças materiais detectadas por auditoria em vez de declaradas pelo owner;
@@ -302,7 +307,8 @@ Para levar o lifecycle do zero à operação, na primeira implantação execute 
 - tempo entre decisão de retirada e revogação efetiva de acesso;
 - reativações após quarentena sem regression evidence.
 
-**Failure modes**
+### Failure modes
+
 - state machine documentada que não altera permissão, evidência ou comportamento real;
 - tratar aprovação de versão como aprovação permanente do ativo;
 - usar um único "disable" para suspensão, quarentena e retirada;
