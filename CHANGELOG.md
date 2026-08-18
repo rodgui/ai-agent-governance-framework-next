@@ -2,6 +2,15 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-18 — Unreleased: rodada estruturada de hardening T00–T19
+
+- Aplicado hardening semântico e editorial no vocabulário canônico, nos estados de discovery, nas implementation waves, nas dimensões de metadata, no fluxo G0→G7, na avaliação de orchestrator e no crosswalk de observabilidade.
+- Sinalizados thresholds como `ILLUSTRATIVE`/`NON-NORMATIVE`/`RECALIBRATE`, explicitados os limites entre narrativa e records e preenchido o `ROADMAP.md` com o trabalho real da rodada.
+- Adicionados o índice de `source-history`, o assessment de ADR promotion readiness, o execution package de validação operacional autorizada, a triagem de dependency security, a configuração mínima de Dependabot e os testes de regressão semântica.
+- A validação pós-merge passou no validator, nos 81 testes unitários, no Ruff, no Markdownlint incremental, no build MkDocs e no `git diff --check`; os 63 findings do Markdownlint global permanecem históricos e fora do escopo desta rodada.
+- T15–T17 permanecem `BLOCKED_BY_AUTHORIZED_EVIDENCE`/`PLANNED`, T18 permanece `NOT_CONFIRMED` sem export autorizado dos alertas Dependabot e as ADRs 0013, 0014 e 0015 permanecem `draft`; não foram alterados schemas, controls, risk tiers, MPB, Registry, vendor ranking, release ou taxonomias externas.
+- Esta entrada permanece `Unreleased` e não altera a release `1.1.0`.
+
 ## 2026-08-18 — Unreleased: ADR promotion readiness
 
 - Criado o assessment `adr-promotion-readiness-0013-0014-0015.md`, separando evidência determinística, missing authorized evidence e sign-off necessário para as ADRs 0013, 0014 e 0015.
