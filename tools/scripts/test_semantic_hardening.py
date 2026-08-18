@@ -128,5 +128,25 @@ class SemanticHardeningTests(unittest.TestCase):
         self.assertIn("não é evidência de produção", readiness)
 
 
+    def test_authorized_operational_plan_is_honest(self) -> None:
+        plan = self.read("toolkit/assessments/authorized-operational-validation-plan.md")
+        self.assertIn("BLOCKED_BY_AUTHORIZED_EVIDENCE", plan)
+        for criterion in ("state", "identity", "policy", "export", "side-effect control", "recovery", "correlation", "lineage"):
+            self.assertIn(criterion, plan)
+        self.assertIn("deletion across stores", plan)
+        self.assertIn("T17", plan)
+
+    def test_dependency_security_strategy_is_versioned(self) -> None:
+        dependabot = self.read(".github/dependabot.yml")
+        triage = self.read("toolkit/assessments/dependency-security-triage.md")
+        self.assertIn("package-ecosystem: pip", dependabot)
+        self.assertIn("package-ecosystem: github-actions", dependabot)
+        self.assertIn("NOT_CONFIRMED", triage)
+        self.assertIn("HTTP 403", triage)
+        self.assertIn("minimum safe upgrade", triage)
+        self.assertFalse((ROOT / "tools/tests/test_validate_repository.py").exists())
+        self.assertTrue((ROOT / "tools/tests/test_validate_repository.md").exists())
+
+
 if __name__ == "__main__":
     unittest.main()
