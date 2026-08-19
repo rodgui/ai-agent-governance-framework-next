@@ -41,7 +41,7 @@ build_docs = load_build_docs()
 
 class ProductBoundaryTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.original_root = getattr(validator, "ROOT")
+        self.original_root = validator.ROOT
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
         for directory in (
@@ -73,10 +73,10 @@ class ProductBoundaryTests(unittest.TestCase):
             self.canonical_template,
             self.workflow,
         ]
-        setattr(validator, "ROOT", self.root)
+        validator.ROOT = self.root
 
     def tearDown(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         self.temporary.cleanup()
 
     def test_accepts_valid_packaging_and_optional_case(self) -> None:
@@ -219,13 +219,13 @@ class ProductBoundaryTests(unittest.TestCase):
 
 class LinkAndCitationBoundaryTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.original_root = getattr(validator, "ROOT")
+        self.original_root = validator.ROOT
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
-        setattr(validator, "ROOT", self.root)
+        validator.ROOT = self.root
 
     def tearDown(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         self.temporary.cleanup()
 
     def write(self, relative_path: str, text: str) -> Path:
@@ -299,12 +299,12 @@ class DocumentationStagingTests(unittest.TestCase):
 
 class JsonValidationRobustnessTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.original_root = getattr(validator, "ROOT")
+        self.original_root = validator.ROOT
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
         self.reset_json_tree()
         self.json_files = sorted(self.root.rglob("*.json"))
-        setattr(validator, "ROOT", self.root)
+        validator.ROOT = self.root
 
     def reset_json_tree(self) -> None:
         for source in REPO_ROOT.rglob("*.json"):
@@ -313,7 +313,7 @@ class JsonValidationRobustnessTests(unittest.TestCase):
             shutil.copy2(source, destination)
 
     def tearDown(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         self.temporary.cleanup()
 
     def rewrite_json(self, relative_path: str, mutate) -> None:
@@ -518,14 +518,14 @@ class JsonValidationRobustnessTests(unittest.TestCase):
 
 class FrontmatterRelatedPathTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.original_root = getattr(validator, "ROOT")
+        self.original_root = validator.ROOT
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
         (self.root / "docs").mkdir()
-        setattr(validator, "ROOT", self.root)
+        validator.ROOT = self.root
 
     def tearDown(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         self.temporary.cleanup()
 
     def test_accepts_existing_related_list_target(self) -> None:
@@ -546,17 +546,17 @@ class TierTaxonomyTests(unittest.TestCase):
     """ADR-0009: T1-T4 é a taxonomia canônica de tier de risco."""
 
     def setUp(self) -> None:
-        self.original_root = getattr(validator, "ROOT")
+        self.original_root = validator.ROOT
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
         for source in REPO_ROOT.rglob("*.json"):
             destination = self.root / source.relative_to(REPO_ROOT)
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, destination)
-        setattr(validator, "ROOT", self.root)
+        validator.ROOT = self.root
 
     def tearDown(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         self.temporary.cleanup()
 
     def rewrite_json(self, relative_path: str, mutate) -> None:
@@ -623,18 +623,18 @@ class CaseBundleTests(unittest.TestCase):
     """Um segundo caso de referência deve ser verificado pelas mesmas regras do primeiro."""
 
     def setUp(self) -> None:
-        self.original_root = getattr(validator, "ROOT")
+        self.original_root = validator.ROOT
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
         for source in REPO_ROOT.rglob("*.json"):
             destination = self.root / source.relative_to(REPO_ROOT)
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, destination)
-        setattr(validator, "ROOT", self.root)
+        validator.ROOT = self.root
         self.case = "toolkit/examples/cases/demo-case"
 
     def tearDown(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         self.temporary.cleanup()
 
     def seed_case(self, mutate_registry=None, mutate_blueprint=None) -> list[Path]:
@@ -748,13 +748,13 @@ class TierLabelTests(unittest.TestCase):
     """ADR-0009 em prosa: uma coluna de tier diz T1-T4, não baixo/moderado/alto/critico."""
 
     def setUp(self) -> None:
-        self.original_root = getattr(validator, "ROOT")
+        self.original_root = validator.ROOT
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
-        setattr(validator, "ROOT", self.root)
+        validator.ROOT = self.root
 
     def tearDown(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         self.temporary.cleanup()
 
     def write(self, relative_path: str, body: str) -> Path:
@@ -795,7 +795,7 @@ class TierLabelTests(unittest.TestCase):
         self.assertEqual([], validator.validate_tier_labels([path]))
 
     def test_canonical_corpus_has_no_prose_tier_labels(self) -> None:
-        setattr(validator, "ROOT", self.original_root)
+        validator.ROOT = self.original_root
         markdown = [path for path in validator.repository_files() if path.suffix == ".md"]
         self.assertEqual([], validator.validate_tier_labels(markdown))
 

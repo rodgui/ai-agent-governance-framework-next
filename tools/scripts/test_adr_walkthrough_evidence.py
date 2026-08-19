@@ -6,9 +6,8 @@ must not be interpreted as human authority approval or production evidence.
 """
 from __future__ import annotations
 
-from pathlib import Path
 import unittest
-
+from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 EXAMPLES = REPO_ROOT / "toolkit" / "examples"
