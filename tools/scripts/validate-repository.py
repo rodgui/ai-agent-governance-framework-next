@@ -827,7 +827,7 @@ def validate_json_and_schemas(json_files: list[Path]) -> list[Issue]:
             for error in schema_errors:
                 location = "/".join(str(part) for part in error.path) or "$"
                 issues.append(Issue("schema", instance_rel, f"{location}: {error.message}"))
-        except Exception as exc:  # schema-library errors have heterogeneous types
+        except Exception as exc:  # schema-library errors have heterogeneous types  # noqa: BLE001
             schema_invalid_instances.add(instance_rel)
             issues.append(Issue("schema", schema_rel, str(exc)))
 
