@@ -2,6 +2,14 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-19 — Unreleased: resolução conservadora de Dependabot sem mudança de produto
+
+- O contrato de runtime permanece inalterado: `requires-python >=3.9`, `jsonschema>=4.22,<5`, `Pillow>=10,<13` e `PyYAML>=6,<7`. Os PRs #1/#12 (Pillow 12.3.0) e #14 (jsonschema 4.26.0) não foram incorporados porque a resolução exige Python `>=3.10`, incompatível com o baseline suportado.
+- O PR #13 não foi incorporado: o lower bound de PyYAML não recebeu requisito de consumidor, security rationale ou incompatibilidade corrigida suficiente para alterar o package contract.
+- O tooling Ruff foi atualizado de `0.15.10` para `0.16.3` no contrato CI, com correções mecânicas e justificativa explícita para findings de lint; nenhum código de produto, schema, control ou conteúdo normativo foi alterado.
+- As Actions foram atualizadas isoladamente para `checkout@v7`, `setup-python@v7` e `upload-artifact@v7`, preservando comandos, paths, artifact name, permissões e comportamento dos workflows.
+- O inventário de security alerts permanece `NOT_CONFIRMED`/`BLOCKED_BY_AUTHORIZED_EVIDENCE`; nenhum update foi declarado security remediation. A resolução remota dos PRs abertos depende de rebase, decisão de fechamento e publicação autorizada.
+
 ## 2026-08-18 — Unreleased: simulação sintética de promoção das ADRs 0013–0015
 
 - Adicionado o case fictício `toolkit/examples/cases/adr-promotion-synthetic-validation/`, exercitando delegation, observabilidade AI-native e arbitragem entre control planes de ponta a ponta.
