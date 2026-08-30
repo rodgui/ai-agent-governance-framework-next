@@ -2,6 +2,15 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-30 — Unreleased: avaliação executiva de prontidão enterprise
+
+- Adicionada avaliação assistida por inteligência artificial, em estilo de advisory executivo, sobre qualidade
+  intrínseca, prontidão para divulgação, uso em pilotos e adoção por grandes empresas.
+- O assessment recomenda `PUBLICAR + PILOTAR + VALIDAR`, distingue conteúdo estruturalmente forte de eficácia
+  operacional ainda não comprovada e não constitui certificação, opinião jurídica ou assurance independente.
+- Registradas pontuações por macro categoria, lacunas prioritárias e um roadmap de validação que inclui piloto
+  autorizado, challenge multidisciplinar, crosswalks licenciados e prova de escala operacional.
+
 ## 2026-08-19 — Unreleased: resolução conservadora de Dependabot sem mudança de produto
 
 - O contrato de runtime permanece inalterado: `requires-python >=3.9`, `jsonschema>=4.22,<5`, `Pillow>=10,<13` e `PyYAML>=6,<7`. Os PRs #1/#12 (Pillow 12.3.0) e #14 (jsonschema 4.26.0) não foram incorporados porque a resolução exige Python `>=3.10`, incompatível com o baseline suportado.
