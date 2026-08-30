@@ -37,6 +37,7 @@ Avaliações comparativas, de risco, maturidade, tecnologia e control effectiven
 - [Dependabot resolution — no product change](dependabot-resolution-2026-08-19.md) — onda local de resolução de tooling e Actions, com rejeição de updates incompatíveis e preservação do runtime/package contract.
 - [Repository quality gate and main protection](repository-quality-gate-and-protection.md) — evidência observada da fonte canônica de CI e da proteção remota de `main`; objetivo `NO GREEN CI → NO MERGE`.
 - [Release readiness — framework 1.1.0](release-readiness-1.1.0.md) — recomendação `KEEP 1.1.0`, separando readiness do framework de validação operacional organizacional; não cria tag nem altera versão.
+- [Avaliação executiva de prontidão enterprise](independent-enterprise-readiness-assessment.md) — challenge assistido por inteligência artificial sobre divulgação, piloto e adoção por grandes empresas; não é auditoria, certificação ou assurance independente.
 - [Crosswalk histórico Microsoft Customer Zero × Policy v1](../../project/history/assessments/microsoft-case-study-framework-crosswalk.md) — registro depreciado da primeira consolidação; não é fonte normativa corrente.
 - [Maturity model](../maturity/maturity-model.md) — escala e dimensões.
 - [Maturity assessment example](../examples/maturity-assessment.example.json) — record fictício validado.
