@@ -65,6 +65,7 @@ Um alerta não corrigido exige reason, exposure, compensating measure, owner, re
 ## 5. Decisão atual
 
 - `.github/dependabot.yml` foi criado para `pip` e `github-actions`, os únicos ecosystems identificados.
-- Nenhum upgrade de pacote foi aplicado automaticamente.
-- A triagem alert-by-alert permanece `NOT_CONFIRMED` até que uma authority forneça acesso ou export dos alertas.
+- Em 2026-09-01, uma reprodução local com `pip-audit` encontrou alertas somente para o pin de CI `Pillow==11.3.0`; o pin foi atualizado para `12.3.0`, a menor versão que corrigia todos os IDs reproduzidos.
+- Os lower bounds de runtime foram alinhados para `Pillow>=12.3,<13`, `jsonschema>=4.26,<5` e `PyYAML>=6.0.3,<7`. Como essas versões requerem Python 3.10, o baseline passou explicitamente para `requires-python >=3.10`.
+- A confirmação alert-by-alert no GitHub permanece `NOT_CONFIRMED` até que uma authority forneça acesso ou export dos alertas; o resultado local não é usado para declarar o fechamento remoto.
 - A estratégia de atualização está versionada e agrupada para evitar ruído excessivo.
