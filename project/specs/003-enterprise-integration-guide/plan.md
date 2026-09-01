@@ -510,4 +510,3 @@ A iniciativa não termina quando o documento é publicado. Ela termina em dois n
   mede propagação/reconciliação e registra effectiveness e limitações.
 
 Até o segundo nível, o status correto é `framework-complete / not-operationally-validated`.
-
