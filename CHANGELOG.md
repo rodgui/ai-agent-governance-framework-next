@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-01 — Unreleased: correção de vulnerabilidades de dependências
+
+- Atualizados os mínimos de `Pillow` para `12.3.0`, `jsonschema` para `4.26` e `PyYAML` para `6.0.3`; o pin de CI do Pillow agora usa `12.3.0`, removendo os alertas reproduzidos localmente contra `11.3.0`.
+- O baseline do package e do Ruff passa de Python `>=3.9` para `>=3.10`, necessário para as versões corrigidas, sem alterar controls, schemas ou requisitos normativos do framework.
+
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
 ## 2026-08-30 — Unreleased: plano do Enterprise Integration Guide
