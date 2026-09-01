@@ -788,7 +788,7 @@ def validate_json_and_schemas(json_files: list[Path]) -> list[Issue]:
     try:
         from jsonschema import Draft202012Validator, FormatChecker
     except ImportError:
-        return issues + [Issue("dependency", "jsonschema", "install jsonschema>=4.22,<5")]
+        return issues + [Issue("dependency", "jsonschema", "install jsonschema>=4.26,<5")]
 
     pairs = [
         ("toolkit/schemas/agent-registry.schema.json", "toolkit/examples/agent-registry.example.json"),
