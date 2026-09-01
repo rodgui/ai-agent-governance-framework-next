@@ -6,7 +6,10 @@
 
 ## Artefatos
 
-- os records definidos neste diretório
+- [Plano de implementação do Enterprise Integration Guide](003-enterprise-integration-guide/plan.md) — backlog,
+  contrato comum, mappings por capability, waves e acceptance criteria para integrar o framework a capacidades
+  corporativas existentes;
+- os records históricos preservados em [`source-history`](source-history/).
 
 ## Regras operacionais
 

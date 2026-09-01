@@ -2,6 +2,15 @@
 
 Artefato operacional do framework canônico, mantido sob a release `1.1.0` e o source commit `5545d9227624400ab8bb707b6032b2f61329a36e`.
 
+## 2026-08-30 — Unreleased: plano do Enterprise Integration Guide
+
+- Adicionado plano vendor-neutral para mapear o framework a GRC, ITSM, ISMS, IAM, procurement, Internal Audit,
+  privacy, records management e enterprise architecture.
+- O plano define contrato comum, entregáveis, backlog `EIG-T01`–`EIG-T28`, waves, RACI, riscos, métricas e
+  acceptance criteria, sem criar equivalência com standards nem escolher fornecedores.
+- O closeout distingue `framework-complete` de `operationally-validated`; a segunda condição continua dependente
+  de organização, authority, sistemas e evidência autorizados.
+
 ## 2026-08-30 — Unreleased: avaliação executiva de prontidão enterprise
 
 - Adicionada avaliação assistida por inteligência artificial, em estilo de advisory executivo, sobre qualidade
