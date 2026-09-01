@@ -316,7 +316,7 @@ gestão; eficácia longitudinal; e ao menos um agente retirado por decisão de r
 1. **Executar piloto real controlado.**
 2. **Obter review independente multidisciplinar.**
 3. **Produzir crosswalk ISO/IEC 42001 e ISO/IEC 23894 a partir de fontes licenciadas.**
-4. **Criar enterprise integration guide.**
+4. **Executar o [plano do Enterprise Integration Guide](../../project/specs/003-enterprise-integration-guide/plan.md).**
 5. **Demonstrar capacity e operating-cost model para diferentes escalas.**
 
 ## Conclusão
