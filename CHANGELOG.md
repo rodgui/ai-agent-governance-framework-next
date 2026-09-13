@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-09-12 — Unreleased: publicação da landpage e fontes locais
+
+- `tools/build-docs-site.py` passa a copiar `landpage/` para dentro de `site/landpage/`
+  ao final do build. A publicação existente carrega a página sem passo adicional no
+  servidor, e o `rsync --delete` deixa de ser um risco para ela.
+- Só entram no site os arquivos servíveis da pasta, mais `fonts/LICENSE.md`. Documentação
+  interna e o gerador da imagem permanecem fora do site derivado.
+- As fontes Spectral e IBM Plex passam a ser servidas do próprio diretório, em subsets
+  WOFF2 de `latin` e `latin-ext`. A página deixa de fazer qualquer requisição externa e
+  passa a funcionar sob uma Content Security Policy restrita a `'self'`.
+- Novo `tools/scripts/test_build_docs_site_landpage.py` cobre a cópia, a exclusão de
+  arquivos internos, a remoção de arquivos que saíram da origem, a recusa de publicar sem
+  `index.html` e a integridade das fontes declaradas pela página.
+
 ## 2026-09-12 — Unreleased: landpage de apresentação pública
 
 - Novo diretório `landpage/` com a página estática de apresentação do framework, destinada ao domínio

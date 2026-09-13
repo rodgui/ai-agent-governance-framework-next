@@ -27,6 +27,15 @@ CONTENT_DIRS = (
 )
 CONTENT_FILES = ("README.md", "CONSUMO.md", "CHANGELOG.md", "ROADMAP.md", "LICENSE", "CONTRIBUTING.md")
 
+# A landpage é uma página estática publicada ao lado do site derivado, não um capítulo dele.
+# O MkDocs ignora HTML avulso, então ela é copiada para dentro de ``site`` depois do build,
+# preservada byte a byte. Assim o rsync de publicação já existente a carrega sem passo extra.
+LANDPAGE_DIR = "landpage"
+LANDPAGE_PUBLISHED_SUFFIXES = {".html", ".png", ".svg", ".ico", ".woff2", ".css", ".js"}
+# Servir os arquivos de fonte publicamente é redistribuição, e a OFL exige que o aviso
+# de licença acompanhe. Documentação interna da pasta continua fora do site.
+LANDPAGE_EXTRA_FILES = ("fonts/LICENSE.md",)
+
 # Extensões copiadas para a área de staging. Schemas e exemplos são publicados como
 # fonte para que o leitor possa inspecionar o contrato, não apenas sua descrição.
 # Arquivos de manutenção são publicados somente quando declarados em CONTENT_FILES.
@@ -120,6 +129,34 @@ def stage() -> None:
     )
 
 
+def publish_landpage() -> int:
+    """Copia ``landpage`` para dentro do site construído. Devolve a contagem de arquivos."""
+    source_root = ROOT / LANDPAGE_DIR
+    site_dir = ROOT / "site"
+    if not source_root.is_dir() or not site_dir.is_dir():
+        return 0
+
+    destination_root = site_dir / LANDPAGE_DIR
+    if destination_root.exists():
+        shutil.rmtree(destination_root)
+
+    extras = {source_root / name for name in LANDPAGE_EXTRA_FILES}
+    copied = 0
+    for source in sorted(source_root.rglob("*")):
+        if source.is_dir():
+            continue
+        if source.suffix.lower() not in LANDPAGE_PUBLISHED_SUFFIXES and source not in extras:
+            continue
+        destination = destination_root / source.relative_to(source_root)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        copied += 1
+
+    if copied and not (destination_root / "index.html").exists():
+        raise RuntimeError("landpage publicada sem index.html")
+    return copied
+
+
 def build(strict: bool, serve: bool) -> int:
     command = [sys.executable, "-m", "mkdocs", "serve" if serve else "build"]
     if strict:
@@ -137,7 +174,13 @@ def main() -> int:
     stage()
     if args.stage_only:
         return 0
-    return build(strict=not args.no_strict, serve=args.serve)
+    status = build(strict=not args.no_strict, serve=args.serve)
+    if status != 0 or args.serve:
+        return status
+    copied = publish_landpage()
+    if copied:
+        print(f"landpage: {copied} arquivos copiados para site/{LANDPAGE_DIR}")
+    return status
 
 
 if __name__ == "__main__":
