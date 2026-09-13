@@ -34,9 +34,12 @@ jobs:
           echo "BASE_SHA=$base" >> "$GITHUB_ENV"
       - name: Validate changed Markdown
         run: |
+          # project/history guarda provenance preservada byte a byte. Formatar aquele
+          # material para agradar o linter alteraria o registro histórico, que é
+          # exatamente o que a regra de preservação proíbe. Fica fora da varredura.
           mapfile -d '' files < <(
             git diff --name-only --diff-filter=ACMR -z \
-              "$BASE_SHA" "$GITHUB_SHA" -- '*.md'
+              "$BASE_SHA" "$GITHUB_SHA" -- '*.md' ':(exclude)project/history/**'
           )
           if ((${#files[@]})); then
             npx --yes markdownlint-cli2@0.18.1 "${files[@]}"
