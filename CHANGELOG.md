@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-09-12 — Unreleased: ritmo visual da landpage
+
+- Três figuras novas na landpage, construídas em HTML e CSS para herdar a tipografia da
+  página e permanecer legíveis em qualquer largura: os cinco planos conectados, com control
+  plane e assurance plane lado a lado; a sequência de decisão de risco, distinguindo etapa
+  sempre executada, etapa por gatilho e ponto de decisão registrado; e o mapa de calor de
+  mecanismo por tier.
+- A seção de citações passa a ser uma faixa invertida, que quebra a rolagem sem depender de
+  imagem. Os tokens de cor são redefinidos no escopo da seção, então o par de contraste
+  continua correto nos dois temas.
+- Nenhuma requisição externa foi adicionada e a Content Security Policy do servidor
+  permanece inalterada.
+
 ## 2026-09-12 — Unreleased: publicação da landpage e fontes locais
 
 - `tools/build-docs-site.py` passa a copiar `landpage/` para dentro de `site/landpage/`
