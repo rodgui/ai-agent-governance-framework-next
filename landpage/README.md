@@ -25,12 +25,17 @@ Os números citados na página (11 capítulos, 44 controls, 15 domínios, 9 sche
   `fonts/LICENSE.md`. Hospedados localmente para que a página funcione sob uma CSP
   restrita a `'self'` e não entregue o IP do visitante a terceiros.
 - `og-image.png` — imagem de prévia social, 1200x630, referenciada por `og:image`.
-- `make-og-image.py` — gerador determinístico dessa imagem, usando as fontes DejaVu
-  versionadas em `tools/assets/fonts`. Reexecutar quando os números da página mudarem:
+- `make-og-image.py` — gerador determinístico das imagens de divulgação, usando as fontes
+  DejaVu versionadas em `tools/assets/fonts`. Reexecutar quando os números mudarem:
 
   ```bash
   uv run --no-project --with pillow python3 landpage/make-og-image.py
+  uv run --no-project --with pillow python3 landpage/make-og-image.py --variant banner --output-dir <destino>
   ```
+
+  A variante `og` é a prévia de link e vive aqui. A variante `banner` é 1920x1080, para
+  cabeçalho de artigo do LinkedIn: não integra a landpage e não é versionada, porque o
+  gerador já garante reprodução idêntica.
 
 O texto do artigo de divulgação que aponta para esta página é mantido fora do repositório,
 por decisão do mantenedor.
