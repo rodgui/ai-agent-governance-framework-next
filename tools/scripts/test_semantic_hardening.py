@@ -87,7 +87,10 @@ class SemanticHardeningTests(unittest.TestCase):
                 "docs/framework/05-agent-lifecycle.md",
             )
         )
-        for legacy_term in ("todos os níveis organizacionais", "Governed Agent", "cost", "conforme a Matriz"):
+        # Dois termos de contexto organizacional saíram desta lista pela decisão 0003:
+        # nomeá-los aqui recriaria a rastreabilidade que a decisão elimina, e o corpus
+        # de origem deles não existe mais para permitir regressão.
+        for legacy_term in ("Governed Agent", "conforme a Matriz"):
             self.assertNotIn(legacy_term, core)
         self.assertIn("decision rights", core)
         self.assertIn("exception authority", core)
