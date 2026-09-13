@@ -13,7 +13,9 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[2]
 POLICY_PATH = ROOT / "project/history/ai-agent-policy-and-governance-v1.md"
-POLICY_V1_SHA256 = "cdd8c232019a4b388ebb71d7f1dd82f3c568d039d416beab1838ee59f4047140"
+# Travado após a remoção de vocabulário de contexto organizacional; ver
+# project/decisions/0003-remocao-de-vocabulario-de-contexto-organizacional.md
+POLICY_V1_SHA256 = "1bb1e8e65fe768352f0fb109738fa9f2c7d5cecb875b16297fed01d5f4378dd5"
 EXCLUDED_DIRS = {
     ".git",
     ".venv",
