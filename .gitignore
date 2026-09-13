@@ -13,3 +13,4 @@ site_src/
 uv.lock
 build/
 dist/
+.claude/
