@@ -36,7 +36,7 @@ FIGURES = [
     ("44", "CONTROLES"),
     ("15", "DOMÍNIOS"),
     ("9", "SCHEMAS"),
-    ("25", "TEMPLATES"),
+    ("28", "TEMPLATES"),
 ]
 DOMAIN = "aiframework.rodgui.com"
 

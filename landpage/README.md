@@ -15,7 +15,7 @@ que é o que a neutralidade exige. Citar fonte de estudo é outra coisa e não c
 com essa regra.
 
 Os números citados na página (11 capítulos, 44 controls, 15 domínios, 9 schemas,
-25 templates, 10 patterns) precisam ser reconferidos a cada release do framework.
+28 templates, 13 patterns) precisam ser reconferidos a cada release do framework.
 
 ## Arquivos
 
