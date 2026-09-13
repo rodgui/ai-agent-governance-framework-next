@@ -49,6 +49,10 @@
   --accent-wash:#E2EAF3;
   --warn:#8A6612;
   --crit:#A0362A;
+  --band-bg:#101A26;
+  --band-ink:#E8EEF4;
+  --band-faint:#8497A8;
+  --band-accent:#8FB4E4;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -64,6 +68,10 @@
     --accent-wash:#17263A;
     --warn:#D2A63F;
     --crit:#E28577;
+    --band-bg:#080C11;
+    --band-ink:#E3EAF1;
+    --band-faint:#8A97A4;
+    --band-accent:#8FB4E4;
   }
 }
 :root[data-theme="dark"]{
@@ -79,6 +87,10 @@
   --accent-wash:#17263A;
   --warn:#D2A63F;
   --crit:#E28577;
+  --band-bg:#080C11;
+  --band-ink:#E3EAF1;
+  --band-faint:#8A97A4;
+  --band-accent:#8FB4E4;
 }
 
 html{color-scheme:light dark}
@@ -181,6 +193,186 @@ header.mast{
   text-transform:uppercase;
   color:var(--ink-faint);
   margin-top:7px;
+}
+
+/* ---------- faixa invertida: quebra o ritmo da rolagem ---------- */
+section.invert{
+  /* Redefine os tokens no escopo da seção: tudo dentro herda o par certo. */
+  --paper:var(--band-bg);
+  --panel:#18232F;
+  --ink:var(--band-ink);
+  --ink-soft:#B9C7D4;
+  --ink-faint:var(--band-faint);
+  --accent:var(--band-accent);
+  --rule:#27343F;
+  background:var(--band-bg);
+  color:var(--band-ink);
+  border-top:none;
+}
+
+/* ---------- figuras ---------- */
+figure{margin:0;display:flex;flex-direction:column;gap:14px}
+figcaption{
+  font-size:13.5px;
+  line-height:1.5;
+  color:var(--ink-faint);
+  border-left:2px solid var(--rule);
+  padding-left:12px;
+}
+
+/* planos conectados */
+.planes{display:flex;flex-direction:column;gap:0}
+.plane{
+  border:1px solid var(--rule);
+  background:var(--panel);
+  padding:13px 16px;
+  display:grid;
+  grid-template-columns:34px 1fr;
+  align-items:baseline;
+  gap:4px;
+}
+.plane .n{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:12px;
+  font-weight:600;
+  color:var(--accent);
+}
+.plane b{display:block;font-size:15.5px;font-weight:600}
+.plane span.d{
+  display:block;
+  margin-top:3px;
+  font-size:13px;
+  color:var(--ink-soft);
+  line-height:1.45;
+}
+.plane-pair{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  position:relative;
+}
+.plane-pair .plane{border:none}
+.plane-pair::after{
+  content:"em paralelo, por agente";
+  position:absolute;
+  left:50%;
+  top:-1px;
+  transform:translate(-50%,-50%);
+  background:var(--paper);
+  padding:0 8px;
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:9.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  white-space:nowrap;
+}
+.link{
+  width:1px;
+  height:20px;
+  background:var(--rule-strong);
+  margin-left:17px;
+  position:relative;
+}
+.link::after{
+  content:"";
+  position:absolute;
+  left:-3px;
+  bottom:0;
+  border-left:3.5px solid transparent;
+  border-right:3.5px solid transparent;
+  border-top:5px solid var(--rule-strong);
+}
+
+/* fluxo de decisão */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.step{
+  flex:1 1 118px;
+  border:1px solid var(--rule-strong);
+  background:var(--panel);
+  padding:9px 11px;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  min-width:0;
+}
+.step.cond{border-style:dashed;background:transparent}
+.step.gate{border-color:var(--accent)}
+.step .s{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:9.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.step .t{font-size:13px;font-weight:600;line-height:1.25;hyphens:auto}
+.flow-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 20px;
+  font-size:12.5px;
+  color:var(--ink-faint);
+}
+.flow-legend i{font-style:normal;display:inline-flex;align-items:center;gap:7px}
+.flow-legend i::before{
+  content:"";
+  width:16px;
+  height:0;
+  border-top:1px solid var(--rule-strong);
+}
+.flow-legend i.cond::before{border-top-style:dashed}
+.flow-legend i.gate::before{border-top-color:var(--accent);border-top-width:2px}
+
+/* mapa de calor */
+.heat{
+  display:grid;
+  grid-template-columns:minmax(132px,1.6fr) repeat(4,1fr);
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  font-size:12.5px;
+  min-width:460px;
+}
+.heat > *{background:var(--paper);padding:9px 10px}
+.heat .h{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:10.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  background:var(--panel);
+}
+.heat .m{color:var(--ink-soft);line-height:1.3}
+.heat .c{line-height:1.25;font-size:12px}
+.heat .c1{background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
+.heat .c2{background:color-mix(in srgb,var(--accent) 18%,var(--paper))}
+.heat .c3{background:color-mix(in srgb,var(--accent) 32%,var(--paper))}
+.heat .c4{background:color-mix(in srgb,var(--crit) 26%,var(--paper));font-weight:600}
+.heat-scale{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 18px;
+  font-size:12.5px;
+  color:var(--ink-faint);
+}
+.heat-scale i{font-style:normal;display:inline-flex;align-items:center;gap:7px}
+.heat-scale i::before{
+  content:"";
+  width:15px;
+  height:15px;
+  border:1px solid var(--rule);
+}
+.heat-scale i.s1::before{background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
+.heat-scale i.s2::before{background:color-mix(in srgb,var(--accent) 18%,var(--paper))}
+.heat-scale i.s3::before{background:color-mix(in srgb,var(--accent) 32%,var(--paper))}
+.heat-scale i.s4::before{background:color-mix(in srgb,var(--crit) 26%,var(--paper))}
+
+@media (max-width:560px){
+  .plane-pair{grid-template-columns:1fr}
+  .plane-pair::after{content:none}
+  .step{flex:1 1 100%}
 }
 
 /* ---------- numbered list that is genuinely a sequence ---------- */
@@ -424,9 +616,40 @@ footer.block{
   </ol>
 
   <p>Enquanto essas respostas dependem de uma planilha mantida por uma pessoa, a organização não tem governança, tem uma opinião sobre o próprio portfólio. O framework existe para transformar essa opinião em registro.</p>
+
+  <figure>
+    <div class="planes">
+      <div class="plane">
+        <span class="n">01</span>
+        <div><b>Estratégia e valor</b><span class="d">mandato · risk appetite · portfólio · baseline · outcomes</span></div>
+      </div>
+      <div class="link" aria-hidden="true"></div>
+      <div class="plane-pair">
+        <div class="plane">
+          <span class="n">02</span>
+          <div><b>Control plane</b><span class="d">registry · blueprint · identidade · lifecycle · configuração</span></div>
+        </div>
+        <div class="plane">
+          <span class="n">03</span>
+          <div><b>Assurance plane</b><span class="d">risco · Responsible AI · privacy · segurança · evaluations</span></div>
+        </div>
+      </div>
+      <div class="link" aria-hidden="true"></div>
+      <div class="plane">
+        <span class="n">04</span>
+        <div><b>Adoção e suporte</b><span class="d">paved road · catálogo · enablement · suporte · feedback</span></div>
+      </div>
+      <div class="link" aria-hidden="true"></div>
+      <div class="plane">
+        <span class="n">05</span>
+        <div><b>Runtime e melhoria</b><span class="d">telemetria · decisões de política · contenção · attestation · evidência de valor</span></div>
+      </div>
+    </div>
+    <figcaption>Os cinco planos do framework. Control plane e assurance plane operam em paralelo sobre o mesmo agente, e é por isso que quem constrói não pode ser quem aprova quando o tier exige segregação. O runtime fecha o ciclo: uso, qualidade e custo realimentam a decisão de manter, corrigir, restringir ou aposentar.</figcaption>
+  </figure>
 </section>
 
-<section class="block stack-l">
+<section class="block stack-l invert">
   <div class="stack-s">
     <div class="eyebrow">Trechos do material</div>
     <h2>As frases que mudam uma reunião de aprovação</h2>
@@ -472,6 +695,25 @@ footer.block{
     <p class="lede">Duas dimensões que costumam ser confundidas e que o framework obriga a decidir separadamente. <b>Risco (T1 a T4)</b> responde quão severo pode ser o impacto. <b>Admissibilidade</b> responde se o uso pode operar, e sob quais condições. Tratar ou aceitar risco não transforma uso proibido em permitido.</p>
   </div>
 
+  <figure>
+    <div class="flow">
+      <div class="step"><span class="s">01</span><span class="t">Pre-screen</span></div>
+      <div class="step"><span class="s">02</span><span class="t">Scoring</span></div>
+      <div class="step"><span class="s">03</span><span class="t">Red flags</span></div>
+      <div class="step gate"><span class="s">04</span><span class="t">Tier e admissibilidade</span></div>
+      <div class="step"><span class="s">05</span><span class="t">Impact trigger</span></div>
+      <div class="step cond"><span class="s">06 · condicional</span><span class="t">Impact assessment de Responsible AI</span></div>
+      <div class="step cond"><span class="s">07 · condicional</span><span class="t">Domain reviews</span></div>
+      <div class="step gate"><span class="s">08</span><span class="t">Publication gate</span></div>
+    </div>
+    <div class="flow-legend">
+      <i>etapa sempre executada</i>
+      <i class="cond">executada por gatilho</i>
+      <i class="gate">ponto de decisão registrado</i>
+    </div>
+    <figcaption>A sequência que separa scoring, Responsible AI e aprovação. Elas não competem: o pre-screen coleta fatos, o scoring estima o risco base, os red flags corrigem o que não pode ser diluído por uma média, e o publication gate apenas verifica se a evidência exigida está completa. Nem toda etapa exige trabalho manual, e nenhuma substitui a anterior.</figcaption>
+  </figure>
+
   <div class="tablewrap">
     <table>
       <caption>Taxonomia canônica de tiers</caption>
@@ -506,6 +748,61 @@ footer.block{
       </tbody>
     </table>
   </div>
+
+  <figure>
+    <div class="tablewrap">
+      <div class="heat">
+        <div class="h">Mecanismo</div>
+        <div class="h">T1</div>
+        <div class="h">T2</div>
+        <div class="h">T3</div>
+        <div class="h">T4</div>
+
+        <div class="m">Pre-screen e scoring</div>
+        <div class="c c1">automatizável</div>
+        <div class="c c2">obrigatório</div>
+        <div class="c c3">formal</div>
+        <div class="c c4">formal e ampliado</div>
+
+        <div class="m">Red flags</div>
+        <div class="c c2">sempre checar</div>
+        <div class="c c2">sempre checar</div>
+        <div class="c c3">sempre checar</div>
+        <div class="c c4">default deny</div>
+
+        <div class="m">Impact trigger</div>
+        <div class="c c2">obrigatório</div>
+        <div class="c c2">obrigatório</div>
+        <div class="c c3">obrigatório</div>
+        <div class="c c4">se houver exceção</div>
+
+        <div class="m">Impact assessment de RAI</div>
+        <div class="c c1">só por gatilho</div>
+        <div class="c c2">formal por gatilho</div>
+        <div class="c c3">aprofundado</div>
+        <div class="c c4">obrigatório na exceção</div>
+
+        <div class="m">Domain reviews</div>
+        <div class="c c1">por gatilho</div>
+        <div class="c c2">formais por gatilho</div>
+        <div class="c c3">multidisciplinares</div>
+        <div class="c c4">autoridade máxima</div>
+
+        <div class="m">Publication gate</div>
+        <div class="c c1">owner, automatizável</div>
+        <div class="c c2">evidência formal</div>
+        <div class="c c3">formal com assurance</div>
+        <div class="c c4">sem rota normal</div>
+      </div>
+    </div>
+    <div class="heat-scale">
+      <i class="s1">leve, automatizável</i>
+      <i class="s2">obrigatório</i>
+      <i class="s3">formal e aprofundado</i>
+      <i class="s4">restrito, default deny</i>
+    </div>
+    <figcaption>Proporcionalidade lida na horizontal por tier e na vertical por mecanismo. O T4 não tem rota normal de publicação: se a organização admitir a exceção, ela é explícita, executiva, com prazo de validade e monitoramento contínuo.</figcaption>
+  </figure>
 </section>
 
 <section class="block stack-l">
