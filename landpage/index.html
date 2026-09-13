@@ -287,9 +287,8 @@ figcaption{
 }
 
 /* fluxo de decisão */
-.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .step{
-  flex:1 1 118px;
   border:1px solid var(--rule-strong);
   background:var(--panel);
   padding:9px 11px;
@@ -307,7 +306,7 @@ figcaption{
   text-transform:uppercase;
   color:var(--ink-faint);
 }
-.step .t{font-size:13px;font-weight:600;line-height:1.25;hyphens:auto}
+.step .t{font-size:13px;font-weight:600;line-height:1.25}
 .flow-legend{
   display:flex;
   flex-wrap:wrap;
@@ -372,7 +371,7 @@ figcaption{
 @media (max-width:560px){
   .plane-pair{grid-template-columns:1fr}
   .plane-pair::after{content:none}
-  .step{flex:1 1 100%}
+  .flow{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ---------- numbered list that is genuinely a sequence ---------- */
@@ -702,7 +701,7 @@ footer.block{
       <div class="step"><span class="s">03</span><span class="t">Red flags</span></div>
       <div class="step gate"><span class="s">04</span><span class="t">Tier e admissibilidade</span></div>
       <div class="step"><span class="s">05</span><span class="t">Impact trigger</span></div>
-      <div class="step cond"><span class="s">06 · condicional</span><span class="t">Impact assessment de Responsible AI</span></div>
+      <div class="step cond"><span class="s">06 · condicional</span><span class="t">Impact assessment de RAI</span></div>
       <div class="step cond"><span class="s">07 · condicional</span><span class="t">Domain reviews</span></div>
       <div class="step gate"><span class="s">08</span><span class="t">Publication gate</span></div>
     </div>
