@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-13 — Unreleased: fronteira da landpage e resíduo de descrição comercial
+
+- Nova decisão `project/decisions/0005-landpage-de-divulgacao-no-repositorio-canonico.md`.
+  O `AGENTS.md` restringe material de divulgação no repositório canônico; a decisão registra
+  por que a landpage fica aqui e sob quais quatro condições, incluindo ausência de oferta
+  comercial e precedência do capítulo sobre a página em caso de divergência.
+- `project/decisions/0001` descrevia a composição do empacotamento comercial. A descrição
+  dá lugar à declaração de que o empacotamento é definido fora deste repositório, alinhando
+  o texto à fronteira que o próprio documento estabelece.
+
 ## 2026-09-12 — Unreleased: remoção de vocabulário de contexto organizacional
 
 - Três expressões herdadas do contexto organizacional em que a Policy v1 foi redigida

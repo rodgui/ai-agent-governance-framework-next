@@ -60,7 +60,7 @@ Adotar a opção C:
 3. O núcleo define capabilities, outcomes, controls, evidências e boundaries sem exigir Microsoft, Agent 365, Cloudflare ou qualquer fornecedor.
 4. Conteúdo de fornecedor fica limitado a fontes, estudos de caso, assessments e mappings opcionais e removíveis.
 5. Conteúdo comercial é mantido fora do repositório público, separado da policy, do handbook e de `docs/executive/`.
-6. A oferta comercial usa três pacotes compostos pelos nove módulos existentes.
+6. O empacotamento comercial é definido fora deste repositório e não é descrito aqui.
 7. Ebook/PDF permanece adiado; publicação futura será derivada dos módulos canônicos.
 
 #### Consequências positivas
