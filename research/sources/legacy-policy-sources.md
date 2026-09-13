@@ -82,7 +82,7 @@ The minimum content covers: principles of responsible AI, risk assessment (blast
 
 ## 5. Do’s & Don’ts (Usage Rules)
 
-This section establishes simple and objective rules to guide the responsible use of AI agents within the company. The goal is to reduce recurring risks (data leakage, misuse, decisions without accountability, harassment/inappropriate behavior, dependence on unreliable sources) while simultaneously accelerating adoption through clear “guardrails.” The rules apply at all levels (every organizational level) and to any approved platform, serving as a reference for self-assessment and auditing.
+This section establishes simple and objective rules to guide the responsible use of AI agents within the company. The goal is to reduce recurring risks (data leakage, misuse, decisions without accountability, harassment/inappropriate behavior, dependence on unreliable sources) while simultaneously accelerating adoption through clear “guardrails.” The rules apply at every organizational level and to any approved platform, serving as a reference for self-assessment and auditing.
 Suppliers and partners who develop or operate agents on behalf of the company must fully comply with this policy and its annexes.
 
 ### 5.1 Allowed
@@ -261,7 +261,7 @@ leads value/risk decisions and requirements; Technical Owner leads technical int
 
 ## 16. Processes and Flows (High Level)
 
-For governance to be adoptable at scale (the organization), processes must be simple, repeatable, and auditable. This section presents the high-level flows that connect the annexes and artifacts (Self-Assessment, Publication Checklist, Catalog, and Approval Matrix), defining inputs, responsible parties, and decision points. The goal is to standardize “how” agents are created, assessed, approved, published, monitored, and closed, ensuring clarity of roles and consistency across platforms and regions.
+For governance to be adoptable at scale across the organization, processes must be simple, repeatable, and auditable. This section presents the high-level flows that connect the annexes and artifacts (Self-Assessment, Publication Checklist, Catalog, and Approval Matrix), defining inputs, responsible parties, and decision points. The goal is to standardize “how” agents are created, assessed, approved, published, monitored, and closed, ensuring clarity of roles and consistency across platforms and regions.
 
 ### 16.2 Creation
 

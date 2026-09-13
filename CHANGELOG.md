@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-12 — Unreleased: remoção de vocabulário de contexto organizacional
+
+- Três expressões herdadas do contexto em que a Policy v1 foi redigida (`cost`,
+  `every organizational level` e `the organization`) foram substituídas por formulação
+  neutra em `project/history/ai-agent-policy-and-governance-v1.md` e em
+  `research/sources/legacy-policy-sources.md`. O sentido normativo de cada frase foi
+  preservado integralmente.
+- `POLICY_V1_SHA256` atualizado para o novo digest; o travamento por hash continua valendo.
+- Alteração registrada em `project/decisions/0003-remocao-de-vocabulario-de-contexto-organizacional.md`,
+  com o hash anterior preservado para auditoria.
+
 ## 2026-09-12 — Unreleased: ritmo visual da landpage
 
 - Três figuras novas na landpage, construídas em HTML e CSS para herdar a tipografia da
