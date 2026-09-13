@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agent Governance Framework</title>
+<meta name="description" content="Framework vendor-neutral de governança de agentes de IA: 11 capítulos, 44 controles com evidência declarada, contratos estruturados e validação automatizada.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="AI Agent Governance Framework">
+<meta property="og:description" content="Governar agentes de IA com evidência, não com intenção. 11 capítulos, 44 controles, contratos estruturados e validação automatizada.">
+<meta property="og:url" content="https://aiframework.rodgui.com/landpage/">
+<meta property="og:site_name" content="AI Agent Governance Framework">
+<meta property="og:image" content="https://aiframework.rodgui.com/landpage/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Governar agentes de IA com evidência, não com intenção. 11 capítulos, 44 controles, 15 domínios, 9 schemas, 25 templates.">
+<link rel="canonical" href="https://aiframework.rodgui.com/landpage/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23173E6B'/%3E%3Cpath d='M8 21V11h2.6l2.9 6.1 2.9-6.1H19v10h-2.1v-6.4l-2.3 4.8h-1.3l-2.3-4.8V21z' fill='%23fff'/%3E%3Crect x='21' y='11' width='2.2' height='10' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,500;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --ground:#EDF0F3;
+  --paper:#FFFFFF;
+  --panel:#F6F8FA;
+  --ink:#101820;
+  --ink-soft:#4E5B68;
+  --ink-faint:#76848F;
+  --rule:#CDD7E0;
+  --rule-strong:#9FAEBC;
+  --accent:#173E6B;
+  --accent-wash:#E2EAF3;
+  --warn:#8A6612;
+  --crit:#A0362A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1117;
+    --paper:#131A22;
+    --panel:#18212B;
+    --ink:#E3EAF1;
+    --ink-soft:#9DACBA;
+    --ink-faint:#7A8794;
+    --rule:#25303B;
+    --rule-strong:#3B4957;
+    --accent:#8FB4E4;
+    --accent-wash:#17263A;
+    --warn:#D2A63F;
+    --crit:#E28577;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1117;
+  --paper:#131A22;
+  --panel:#18212B;
+  --ink:#E3EAF1;
+  --ink-soft:#9DACBA;
+  --ink-faint:#7A8794;
+  --rule:#25303B;
+  --rule-strong:#3B4957;
+  --accent:#8FB4E4;
+  --accent-wash:#17263A;
+  --warn:#D2A63F;
+  --crit:#E28577;
+}
+
+html{color-scheme:light dark}
+img{max-width:100%}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+}
+.sheet{
+  width:100%;
+  max-width:824px;
+  margin-inline:auto;
+  background:var(--paper);
+  border-left:1px solid var(--rule);
+  border-right:1px solid var(--rule);
+  min-height:100vh;
+}
+.block{
+  padding:0 clamp(18px,5vw,56px);
+}
+section.block{
+  padding-top:clamp(38px,5vw,62px);
+  padding-bottom:clamp(38px,5vw,62px);
+  border-top:1px solid var(--rule);
+}
+h1,h2,h3{font-family:Spectral,Georgia,"Times New Roman",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5.4vw,56px);line-height:1.05;font-weight:700;letter-spacing:-.015em}
+h2{font-size:clamp(24px,3.2vw,33px);line-height:1.14;font-weight:600;letter-spacing:-.01em}
+h3{font-size:19px;line-height:1.3;font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+code{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:.88em;
+  background:var(--accent-wash);
+  padding:1px 5px;
+  border-radius:2px;
+}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.stack-s{display:flex;flex-direction:column;gap:10px}
+.stack-l{display:flex;flex-direction:column;gap:30px}
+.lede{font-size:19px;line-height:1.55;color:var(--ink-soft)}
+
+/* ---------- masthead: the framework's own document-control header ---------- */
+header.mast{
+  text-align:center;
+  padding-top:clamp(34px,5vw,58px);
+  padding-bottom:clamp(30px,4vw,46px);
+  background:
+    linear-gradient(var(--accent-wash),var(--accent-wash)) 0 0/100% 5px no-repeat,
+    var(--paper);
+}
+.mast h1{margin-top:16px}
+.mast .sub{
+  font-family:Spectral,Georgia,serif;
+  font-style:italic;
+  font-size:20px;
+  color:var(--ink-soft);
+  margin:14px auto 0;
+  max-width:46ch;
+}
+/* ---------- metrics strip ---------- */
+.figures{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(104px,1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  margin-top:38px;
+}
+.fig{background:var(--paper);padding:14px 12px;text-align:center}
+.fig .n{
+  font-family:Spectral,Georgia,serif;
+  font-size:30px;
+  font-weight:600;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.fig .l{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:10.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin-top:7px;
+}
+
+/* ---------- numbered list that is genuinely a sequence ---------- */
+ol.questions{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:1px;
+  background:var(--rule);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  counter-reset:q;
+}
+ol.questions li{
+  background:var(--paper);
+  padding:13px 16px 13px 0;
+  display:grid;
+  grid-template-columns:56px 1fr;
+  align-items:baseline;
+  gap:4px;
+}
+ol.questions li::before{
+  counter-increment:q;
+  content:counter(q,decimal-leading-zero);
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:12px;
+  color:var(--accent);
+  padding-left:16px;
+}
+
+/* ---------- pull quotes: the excerpts ---------- */
+.quotes{display:grid;gap:22px}
+blockquote.q{
+  margin:0;
+  border-left:3px solid var(--accent);
+  padding:2px 0 2px 20px;
+}
+blockquote.q p{
+  font-family:Spectral,Georgia,serif;
+  font-size:21px;
+  line-height:1.4;
+  font-weight:500;
+}
+blockquote.q cite{
+  display:block;
+  margin-top:9px;
+  font-style:normal;
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+
+/* ---------- tables ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
+caption{
+  text-align:left;
+  padding:11px 14px;
+  background:var(--panel);
+  border-bottom:1px solid var(--rule);
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  background:var(--panel);
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--panel)}
+td.tier{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+}
+.pill{
+  display:inline-block;
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:2px 7px;
+  border:1px solid currentColor;
+  white-space:nowrap;
+}
+.pill.t4{color:var(--crit)}
+.pill.t3{color:var(--warn)}
+
+/* ---------- gates ---------- */
+.gates{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+.gate{background:var(--paper);padding:13px 14px}
+.gate .g{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:13px;
+  font-weight:600;
+  color:var(--accent);
+}
+.gate .t{font-size:13.5px;color:var(--ink-soft);margin-top:5px;line-height:1.35}
+
+/* ---------- sources ---------- */
+.sources{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:26px 30px;
+}
+.sources h3{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  font-weight:600;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--rule);
+}
+.sources ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.sources li{font-size:14px;color:var(--ink-soft);line-height:1.4}
+.sources li b{color:var(--ink);font-weight:600}
+
+/* ---------- honesty panel ---------- */
+.caveat{
+  border:1px solid var(--rule-strong);
+  background:var(--panel);
+  padding:22px clamp(18px,3vw,26px);
+  display:grid;
+  gap:12px;
+}
+.caveat .eyebrow{color:var(--crit)}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--panel)}
+.cta .box{
+  border:1px solid var(--rule-strong);
+  background:var(--paper);
+  padding:clamp(22px,4vw,34px);
+  display:grid;
+  gap:16px;
+}
+
+.btn{
+  justify-self:start;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--accent);
+  color:var(--paper);
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+  padding:12px 22px;
+  border:1px solid var(--accent);
+}
+.direct a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+.direct a:hover{text-decoration:none}
+.direct{
+  font-family:Spectral,Georgia,serif;
+  font-size:20px;
+  font-weight:600;
+  color:var(--accent);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:14px 0;
+}
+.btn{color:var(--ground)}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.finewrap{display:grid;gap:8px}
+.fine{font-size:13.5px;color:var(--ink-faint)}
+
+footer.block{
+  border-top:1px solid var(--rule);
+  padding-top:22px;
+  padding-bottom:34px;
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:11.5px;
+  color:var(--ink-faint);
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 20px;
+}
+@media (max-width:620px){
+  ol.questions li{grid-template-columns:44px 1fr}
+  ol.questions li::before{padding-left:12px}
+  blockquote.q p{font-size:19px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<header class="mast block">
+  <div class="eyebrow">Framework canônico · vendor-neutral · português</div>
+  <h1>Governar agentes de IA com evidência, não com intenção</h1>
+  <p class="sub">Um corpus normativo completo, do mandato executivo ao runtime, para organizações que já têm agentes em produção e ainda não sabem quantos.</p>
+
+
+  <div class="figures">
+    <div class="fig"><div class="n">11</div><div class="l">capítulos</div></div>
+    <div class="fig"><div class="n">44</div><div class="l">controles</div></div>
+    <div class="fig"><div class="n">15</div><div class="l">domínios</div></div>
+    <div class="fig"><div class="n">9</div><div class="l">schemas</div></div>
+    <div class="fig"><div class="n">25</div><div class="l">templates</div></div>
+    <div class="fig"><div class="n">10</div><div class="l">patterns</div></div>
+  </div>
+</header>
+
+<section class="block stack-l">
+  <div class="stack-s">
+    <div class="eyebrow">O problema</div>
+    <h2>Sete perguntas que quase nenhuma organização responde hoje</h2>
+    <p class="lede">Agentes não apenas produzem conteúdo. Eles recuperam dados, usam credenciais, chamam ferramentas, escrevem em sistemas e orquestram processos. O que falta não é intenção de governar. É um sistema capaz de responder, com evidência recuperável:</p>
+  </div>
+
+  <ol class="questions">
+    <li><span>quais sistemas e agentes existem;</span></li>
+    <li><span>para que servem e quem responde por eles;</span></li>
+    <li><span>que dados, identidades e ferramentas utilizam;</span></li>
+    <li><span>quanto risco e capacidade de ação possuem;</span></li>
+    <li><span>que controles estão implementados e eficazes;</span></li>
+    <li><span>quem pode liberar, conter, reativar e aposentar;</span></li>
+    <li><span>se uso, qualidade e valor justificam a continuidade.</span></li>
+  </ol>
+
+  <p>Enquanto essas respostas dependem de uma planilha mantida por uma pessoa, a organização não tem governança, tem uma opinião sobre o próprio portfólio. O framework existe para transformar essa opinião em registro.</p>
+</section>
+
+<section class="block stack-l">
+  <div class="stack-s">
+    <div class="eyebrow">Trechos do material</div>
+    <h2>As frases que mudam uma reunião de aprovação</h2>
+  </div>
+
+  <div class="quotes">
+    <blockquote class="q">
+      <p>“Missing evidence nunca equivale a aprovação.”</p>
+      <cite>cap. 08 · decision gates</cite>
+    </blockquote>
+
+    <blockquote class="q">
+      <p>“Nenhuma alegação de conformidade, eficácia ou valor excede a evidência observada.”</p>
+      <cite>critério de aceitação · repetido em todos os capítulos</cite>
+    </blockquote>
+
+    <blockquote class="q">
+      <p>“Um agente para 5 usuários que executa pagamentos é mais crítico que um para 5.000 que só resume documentos internos.”</p>
+      <cite>cap. 04 · armadilha comum na classificação de risco</cite>
+    </blockquote>
+
+    <blockquote class="q">
+      <p>“Alinhamento conceitual diz ‘pensamos sobre os mesmos problemas’; rastreabilidade diz ‘este controle atende àquele requisito’, e só a segunda sobrevive a uma pergunta de auditoria.”</p>
+      <cite>fontes · escopo e limites de uso de normas</cite>
+    </blockquote>
+
+    <blockquote class="q">
+      <p>“O paved road é mais simples que contornar a governança?”</p>
+      <cite>cap. 08 · pergunta obrigatória do gate G5</cite>
+    </blockquote>
+
+    <blockquote class="q">
+      <p>“Aprovação não reduz risco por si; ela registra que o risco foi avaliado e aceito pela autoridade certa. Sem expiry e revisão, a ‘aceitação’ vira dívida permanente.”</p>
+      <cite>cap. 04 · risco e admissibilidade</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="block stack-l">
+  <div class="stack-s">
+    <div class="eyebrow">Como o risco é decidido</div>
+    <h2>Proporcionalidade: baixo atrito para baixo risco, rigor onde dói</h2>
+    <p class="lede">Duas dimensões que costumam ser confundidas e que o framework obriga a decidir separadamente. <b>Risco (T1 a T4)</b> responde quão severo pode ser o impacto. <b>Admissibilidade</b> responde se o uso pode operar, e sob quais condições. Tratar ou aceitar risco não transforma uso proibido em permitido.</p>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Taxonomia canônica de tiers</caption>
+      <thead>
+        <tr><th scope="col">Tier</th><th scope="col">Perfil</th><th scope="col">Exemplo de controle exigido</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="tier">T1 · baixo</td><td>sugestão interna, dados não sensíveis, reversível</td><td>owner, registro, testes básicos e logging</td></tr>
+        <tr><td class="tier">T2 · moderado</td><td>influência operacional limitada ou dados internos</td><td>blueprint, revisor independente, evals e monitoramento</td></tr>
+        <tr><td class="tier">T3 · alto</td><td>escrita/ação, dados sensíveis, alto alcance ou impacto</td><td>aprovações de domínio, threat/impact assessment, kill switch e attestation</td></tr>
+        <tr><td class="tier">T4 · crítico</td><td>efeito legal, financeiro, safety-critical ou difícil de reverter</td><td>autoridade executiva, dual control, challenge com segregação formal e contenção contínua</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="stack-s">
+    <h3>Red flags: o fator crítico não pode ser diluído por uma média</h3>
+    <p>Um caso com dez respostas benignas e uma destrutiva não é um caso médio. Qualquer red flag retira o caso da rota rápida e estabelece um piso de criticidade, nunca um teto. Quatro dos dez escaladores:</p>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Escaladores · extrato de 4 dos 10</caption>
+      <thead>
+        <tr><th scope="col">Red flag</th><th scope="col">Piso</th><th scope="col">Efeito adicional</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>dados restritos enviados a provedor externo</td><td><span class="pill t4">T4</span></td><td>admissibilidade <code>restricted</code> por padrão: default deny, com exceção explícita, autoridade e prazo de validade</td></tr>
+        <tr><td>descoberta irrestrita de ferramentas ou MCP externos em runtime</td><td><span class="pill t4">T4</span></td><td>o conjunto de capacidades deixa de ser conhecido no momento da aprovação</td></tr>
+        <tr><td>decisão sobre emprego, crédito, elegibilidade ou acesso a serviço</td><td><span class="pill t3">T3</span></td><td>impact assessment formal obrigatório e canal de contestação, mesmo em caso tecnicamente simples</td></tr>
+        <tr><td>modificação de identidade, permissão ou segredos</td><td><span class="pill t3">T3</span></td><td>o agente passa a poder ampliar o próprio privilégio; segregação e logging forense</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block stack-l">
+  <div class="stack-s">
+    <div class="eyebrow">Como a implantação avança</div>
+    <h2>Oito decisões registradas, não oito fases de cronograma</h2>
+    <p class="lede">Cada gate tem critérios de entrada, evidência mínima, autoridade da decisão, critérios de saída e caminho de remediação. Os estados são <code>approve</code>, <code>condition</code>, <code>hold</code> e <code>reject</code>, e nenhum gate se conclui só porque o prazo terminou.</p>
+  </div>
+
+  <div class="gates">
+    <div class="gate"><div class="g">G0</div><div class="t">Mandato e escopo</div></div>
+    <div class="gate"><div class="g">G1</div><div class="t">Baseline e diagnóstico</div></div>
+    <div class="gate"><div class="g">G2</div><div class="t">Fundações de dados, identidade e ownership</div></div>
+    <div class="gate"><div class="g">G3</div><div class="t">Operating model e decision rights</div></div>
+    <div class="gate"><div class="g">G4</div><div class="t">Controles mínimos e assurance</div></div>
+    <div class="gate"><div class="g">G5</div><div class="t">Onboarding e release por tier</div></div>
+    <div class="gate"><div class="g">G6</div><div class="t">Operação, observabilidade e resposta</div></div>
+    <div class="gate"><div class="g">G7</div><div class="t">Valor, attestation e melhoria</div></div>
+  </div>
+
+  <p>A numeração declara dependência, não ordem no calendário: G2 e G3 se sobrepõem de propósito. Basta ter registro e ownership o bastante para saber a quem atribuir uma decisão. Um cronograma que assume ordem numérica trava esperando um G2 completo que o G3 nunca exigiu.</p>
+</section>
+
+<section class="block stack-l">
+  <div class="stack-s">
+    <div class="eyebrow">O que costuma dar errado</div>
+    <h2>Os sete modos de falha de um programa de governança</h2>
+    <p class="lede">Estão no brief executivo porque são as formas mais comuns de gastar orçamento sem reduzir risco. Cada um tem um mitigador desenhado no framework.</p>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Riscos do programa e mitigadores</caption>
+      <thead>
+        <tr><th scope="col">Risco</th><th scope="col">Mitigação</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Burocracia</td><td>tiering, defaults, self-service e SLA por gate</td></tr>
+        <tr><td>Falsa segurança documental</td><td>evidência de sistema, drills e teste de eficácia</td></tr>
+        <tr><td>Centralização</td><td>ownership federado com controles comuns</td></tr>
+        <tr><td>Governança conduzida pela ferramenta</td><td>capacidades e contratos vendor-neutral</td></tr>
+        <tr><td>Métricas de vaidade</td><td>baseline, denominadores e outcomes medidos separadamente</td></tr>
+        <tr><td>Backlog sem decisão</td><td>gates com autoridade, prazo e saída explícita</td></tr>
+        <tr><td>Escopo excessivo</td><td>fronteira de portfólio e rollout por coortes operacionais</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block stack-l">
+  <div class="stack-s">
+    <div class="eyebrow">Como foi construído</div>
+    <h2>Nove meses lendo as fontes primárias inteiras e reescrevendo em uma voz só</h2>
+    <p class="lede">O material começou em janeiro como uma pergunta prática: o que uma organização precisa ter para governar agentes sem travar a operação? A resposta exigiu ler as fontes primárias inteiras, separar o que é requisito do que é opinião, e reescrever tudo em uma única voz normativa.</p>
+  </div>
+
+  <div class="sources">
+    <div>
+      <h3>Normas e regulação</h3>
+      <ul>
+        <li><b>NIST AI RMF 1.0</b> e o perfil GenAI (AI 600-1)</li>
+        <li><b>EU AI Act</b>, Regulamento (UE) 2024/1689</li>
+        <li><b>ISO/IEC</b> 42001, 23894, 22989 e 42005</li>
+        <li><b>OECD AI Principles</b></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Segurança</h3>
+      <ul>
+        <li><b>OWASP</b> Agentic AI Threats and Mitigations</li>
+        <li><b>OWASP</b> Top 10 for LLM Applications</li>
+        <li><b>OWASP</b> Top 10 for Agentic Applications 2026 e MCP Top 10</li>
+        <li><b>MITRE ATLAS</b></li>
+        <li><b>CSA</b> AI Controls Matrix v1.1</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Evidência de aplicação</h3>
+      <ul>
+        <li><b>Microsoft Customer Zero</b>, cinco relatos técnicos sobre governar agentes na própria operação</li>
+        <li>tratados como evidência de implementação declarada, nunca como prova causal de ROI</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stack-s">
+    <h3>O que é diferente aqui</h3>
+    <p>Os 44 controles declaram mapeamento para NIST AI RMF, EU AI Act, OWASP e MITRE ATLAS, todos públicos e verificáveis. <b>ISO não está mapeada, e isso é deliberado:</b> mapear exige o texto da norma, e um número de cláusula produzido de memória seria uma afirmação que o material não pode sustentar. Enquanto o mapeamento não existir, a relação com ISO é comunicada como alinhamento conceitual. Essa disciplina atravessa o corpus inteiro.</p>
+    <p>O repositório é validado como código: um validador de 1.480 linhas verifica links, schemas, integridade da policy histórica por hash, ausência de segredos, neutralidade de fornecedor e, o mais incomum, a coerência cruzada entre registro, blueprint, manifesto de release e catálogos de um mesmo caso. Uma contradição entre dois artefatos reprova o commit.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="caveat">
+    <div class="eyebrow">Limite declarado</div>
+    <p>Nenhum controle foi exercitado contra um estate real. Os casos de referência do repositório são fictícios e provam coerência do método, não eficácia. Thresholds, tiers e prazos precisam ser recalibrados com os dados da organização adotante, e a primeira implantação é também a primeira validação. Reserve orçamento para isso.</p>
+    <p class="fine">Esse aviso está em todas as portas de entrada do material. Um framework de governança que esconde os próprios limites já falha no primeiro critério que ele mesmo exige.</p>
+  </div>
+</section>
+
+<section class="block cta">
+  <div class="box">
+    <div class="eyebrow">Acesso</div>
+    <h2>Esta página é o resumo. O material é o repositório inteiro.</h2>
+    <p>Onze capítulos, catálogo de controles com evidência declarada, contratos JSON, templates prontos para instanciar e um repositório-template separado para a sua organização preencher sem copiar a policy.</p>
+    <p><b>Quer conhecer?</b> Vale especialmente a conversa se você já tem agentes em produção e está montando o caso para governá-los.</p>
+    <p class="direct"><a href="https://www.linkedin.com/in/rodgui/">Me chame no privado no LinkedIn</a>. Respondo com o acesso.</p>
+    <div class="finewrap">
+      <p class="fine">Framework vendor-neutral, licenciado em CC BY 4.0. Adoção organizacional exige decisão da autoridade competente. Versionar um repositório não cria conformidade nem aprovação.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="block">
+  <span>AI Agent Governance Framework · release 1.1.0</span>
+  <span>CC BY 4.0</span>
+  <span>Rodrigo Garcia Guimarães</span>
+</footer>
+
+</div>
+</body>
+</html>

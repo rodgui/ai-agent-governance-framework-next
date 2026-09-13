@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-09-12 — Unreleased: landpage de apresentação pública
+
+- Novo diretório `landpage/` com a página estática de apresentação do framework, destinada ao domínio
+  `aiframework.rodgui.com`. Documento standalone, sem dependência de build, com metadados Open Graph e
+  imagem de prévia social gerada de forma determinística por `landpage/make-og-image.py` a partir das
+  fontes DejaVu já versionadas em `tools/assets/fonts`.
+- O conteúdo é derivado dos capítulos canônicos e do brief executivo; não define requisito, control ou
+  evidência, e o capítulo prevalece em caso de divergência. A página não recomenda produto, plataforma
+  ou fornecedor para implantar o framework.
+- O pipeline de documentação não carrega o diretório: `tools/build-docs-site.py` continua copiando apenas
+  as pastas de conteúdo. A publicação exige um passo explícito, descrito em `landpage/README.md`.
+
 ## 2026-09-01 — Unreleased: correção de vulnerabilidades de dependências
 
 - Atualizados os mínimos de `Pillow` para `12.3.0`, `jsonschema` para `4.26` e `PyYAML` para `6.0.3`; o pin de CI do Pillow agora usa `12.3.0`, removendo os alertas reproduzidos localmente contra `11.3.0`.
