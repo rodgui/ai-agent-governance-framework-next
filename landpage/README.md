@@ -19,8 +19,11 @@ Os números citados na página (11 capítulos, 44 controls, 15 domínios, 9 sche
 
 ## Arquivos
 
-- `index.html` — documento standalone, sem dependência de build. Estilos embutidos;
-  as únicas requisições externas são as fontes.
+- `index.html` — documento standalone, sem dependência de build nem requisição externa:
+  estilos embutidos e fontes servidas do próprio diretório.
+- `fonts/` — subsets WOFF2 de Spectral e IBM Plex, com o aviso de licença em
+  `fonts/LICENSE.md`. Hospedados localmente para que a página funcione sob uma CSP
+  restrita a `'self'` e não entregue o IP do visitante a terceiros.
 - `og-image.png` — imagem de prévia social, 1200x630, referenciada por `og:image`.
 - `make-og-image.py` — gerador determinístico dessa imagem, usando as fontes DejaVu
   versionadas em `tools/assets/fonts`. Reexecutar quando os números da página mudarem:
@@ -34,20 +37,26 @@ por decisão do mantenedor.
 
 ## Publicação
 
-O pipeline de documentação **não** carrega este diretório. `tools/build-docs-site.py`
-copia apenas `.md`, `.json`, `.csv`, `.png`, `.svg` e `.py` das pastas de conteúdo, e o
-MkDocs ignora HTML avulso. Portanto `git pull` na VPS traz o arquivo para o clone, mas
-não o coloca no docroot.
+O MkDocs ignora HTML avulso, então a página não é um capítulo do site derivado. Ela é
+copiada para dentro de `site/landpage/` por `tools/build-docs-site.py`, depois do build,
+preservada byte a byte. A publicação existente carrega a pasta junto, sem passo extra:
 
-Para publicar, uma destas duas opções precisa ser implementada:
+```text
+git pull  →  build MkDocs  →  cópia da landpage para site/landpage/
+          →  rsync --delete de site/ para o docroot
+```
 
-1. **No script da VPS** — acrescentar ao `deploy-framework.sh`, depois do build, uma cópia
-   de `landpage/` para o docroot. Verificar antes se o `rsync` do site usa `--delete`:
-   se usar, a cópia precisa acontecer depois da sincronização, ou o arquivo é apagado na
-   rodada seguinte.
-2. **No build do repositório** — fazer `tools/build-docs-site.py` copiar `landpage/` para
-   dentro de `site/` ao final da construção, de modo que a publicação existente leve a
-   página junto sem nenhuma mudança na VPS.
+Só entram no site os arquivos servíveis (`.html`, `.png`, `.svg`, `.ico`, `.woff2`,
+`.css`, `.js`) mais `fonts/LICENSE.md`, exigido pela licença das fontes. Este README e o
+gerador da imagem ficam fora.
+
+O `rsync` de publicação usa `--delete`. Por isso a landpage precisa chegar ao docroot
+**dentro** de `site/`: qualquer arquivo copiado direto para o docroot é apagado na
+sincronização seguinte.
+
+A rota é servida por um recorte público no bloco do Caddy de `aiframework.rodgui.com`.
+O restante daquele host continua atrás de `basic_auth` e marcado como `noindex`; apenas
+`/landpage*` é público e indexável, com CSP própria restrita a `'self'`.
 
 ## Estado do arquivo
 
