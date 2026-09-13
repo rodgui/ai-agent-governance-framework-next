@@ -17,7 +17,7 @@ e é obra do autor do framework.
 Uma revisão de rastreabilidade identificou três expressões herdadas do contexto
 organizacional em que o documento foi redigido: uma sigla de métrica operacional e duas
 formulações de estrutura de níveis de governança corporativa. Nenhuma nomeia organização,
-e o corpo normativo corrente já não as continha, tendo sido limpo em `e7ff2e2`. O resíduo
+e o corpo normativo corrente já não as continha, tendo sido limpo em `ab49911`. O resíduo
 permanecia apenas no registro histórico.
 
 Em conjunto, as três permitiam inferir o contexto de origem do documento. O framework é

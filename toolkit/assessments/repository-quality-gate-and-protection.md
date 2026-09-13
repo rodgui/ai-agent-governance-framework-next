@@ -51,11 +51,11 @@ O objetivo operacional é **NO GREEN CI → NO MERGE**. A configuração impede 
 | Campo | Observação |
 |---|---|
 | Pull request | PR #7 — synthetic ADR promotion validation case |
-| Head SHA | `86149945f0bfcd6f72eea0819070ace4c0f423a3` |
+| Head SHA | `bf4d0cbf4d0c9909e1c673d866e95757824d9797` |
 | Workflow run | `32175015315` — `Quality gates`, evento `pull_request` |
 | Check/job | `Canonical repository quality gate` |
 | Conclusão | `success` |
-| Merge observado | PR #7 merged em `d72e756c6d761058aaa13a3d89fea78971cb2499` |
+| Merge observado | PR #7 merged em `5cccb42e891a95ba0e6cb8127899c65ec97a615d` |
 | Push subsequente em main | Run `32175176730`, `Quality gates`, `success` |
 | Enforcement observado | O PR foi merged com o required status context técnico concluído com sucesso; a proteção remota permaneceu ativa no estado descrito acima. |
 
